@@ -1,0 +1,10 @@
+digraph "dls_data_event_id_commit_log_buffer_t"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="dls_data_event_id_commit\l_log_buffer_t",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" buf_start_addr",fontcolor="grey" ];
+  Node2 [id="Node000002",label="dls_buf_start_addr_t",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structdls__buf__start__addr__t.html",tooltip=" "];
+}
