@@ -1,0 +1,499 @@
+name: Generate API Docs
+
+# ---------------------------------------------------------------------------
+# Centralised workflow — lives in one repo, runs against any public repo.
+# Trigger via workflow_dispatch with a repo URL + SHA; no need to copy this
+# file into every project.
+# ---------------------------------------------------------------------------
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo_url:
+        description: "Target repository URL (e.g. https://github.com/org/repo)"
+        required: true
+        type: string
+      sha:
+        description: "Commit SHA, branch, or tag to check out"
+        required: true
+        type: string
+
+permissions:
+  contents: write      # needed to push to gh-pages
+
+jobs:
+  build-api-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout this workflow's own repo ──────────────────────────────
+      - name: Checkout workflow repository
+        uses: actions/checkout@v4
+
+      # ── 2. Clone target repository at the requested SHA ───────────────────
+      - name: Clone target repository
+        run: |
+          git clone "${{ inputs.repo_url }}" target-repo
+          git -C target-repo checkout "${{ inputs.sha }}"
+
+      # ── 3. Derive repo name from the URL ──────────────────────────────────
+      - name: Set workflow env vars
+        run: |
+          REPO_NAME=$(basename "${{ inputs.repo_url }}" .git)
+          echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
+          echo "WORK_DIR=target-repo"   >> $GITHUB_ENV
+
+      # ── 4. Install tools ──────────────────────────────────────────────────
+      - name: Install Doxygen and PyYAML
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y doxygen python3-yaml
+
+      # ── 5. Extract public headers from the target repo's config.yml ───────
+      - name: Parse public_headers/config.yml
+        id: parse_headers
+        run: |
+          python3 - <<'EOF'
+          import yaml, sys, os, glob
+
+          work_dir    = os.environ["WORK_DIR"]
+          config_path = os.path.join(work_dir, "public_headers/config.yml")
+
+          if not os.path.exists(config_path):
+              print(f"ERROR: {config_path} not found", file=sys.stderr)
+              sys.exit(1)
+
+          with open(config_path) as f:
+              config = yaml.safe_load(f)
+
+          patterns = set()
+
+          def collect(obj):
+              if isinstance(obj, dict):
+                  for k, v in obj.items():
+                      if k == "headers" and isinstance(v, list):
+                          patterns.update(str(h) for h in v)
+                      else:
+                          collect(v)
+              elif isinstance(obj, list):
+                  for item in obj:
+                      collect(item)
+
+          collect(config)
+
+          if not patterns:
+              print("ERROR: no 'headers' entries found in config.yml", file=sys.stderr)
+              sys.exit(1)
+
+          # Expand globs relative to work_dir so paths are prefixed correctly
+          headers = set()
+          for pattern in patterns:
+              full_pattern = os.path.join(work_dir, pattern)
+              matched = glob.glob(full_pattern, recursive=True)
+              if matched:
+                  headers.update(matched)
+              else:
+                  print(f"WARNING: no files matched pattern: {pattern}", file=sys.stderr)
+
+          if not headers:
+              print("ERROR: no header files found after glob expansion", file=sys.stderr)
+              sys.exit(1)
+
+          with open("/tmp/public_headers.txt", "w") as out:
+              for h in sorted(headers):
+                  print(h)
+                  out.write(h + "\n")
+          EOF
+
+      # ── 6. Generate Doxyfile dynamically ──────────────────────────────────
+      - name: Create Doxyfile
+        run: |
+          INPUT_LIST=$(tr '\n' ' ' < /tmp/public_headers.txt)
+
+          cat > /tmp/Doxyfile <<DOXYEOF
+          # Auto-generated — do not edit by hand
+          PROJECT_NAME           = "${REPO_NAME}"
+          PROJECT_BRIEF          = "Public API Reference"
+          OUTPUT_DIRECTORY       = api-docs
+          CREATE_SUBDIRS         = NO
+
+          # --- Input ---
+          INPUT                  = ${INPUT_LIST}
+          RECURSIVE              = NO
+          FILE_PATTERNS          = *.h *.hpp
+          # Strip the clone prefix so HTML shows paths relative to repo root
+          STRIP_FROM_PATH        = ${WORK_DIR}
+          STRIP_FROM_INC_PATH    = ${WORK_DIR}
+
+          # --- Extraction ---
+          EXTRACT_ALL            = YES
+          EXTRACT_PRIVATE        = NO
+          EXTRACT_STATIC         = YES
+          HIDE_UNDOC_MEMBERS     = NO
+          HIDE_UNDOC_CLASSES     = NO
+
+          # --- Output formats ---
+          GENERATE_HTML          = YES
+          HTML_OUTPUT            = html
+          GENERATE_TREEVIEW      = YES
+          GENERATE_LATEX         = NO
+
+          # --- XML output (used to generate MDX) ---
+          GENERATE_XML           = YES
+          XML_OUTPUT             = xml
+          XML_PROGRAMLISTING     = NO
+
+          # --- Source browsing ---
+          SOURCE_BROWSER         = NO
+          INLINE_SOURCES         = NO
+          VERBATIM_HEADERS       = NO
+          REFERENCES_LINK_SOURCE = NO
+          SHOW_USED_FILES        = NO
+
+          # --- Navigation ---
+          ALPHABETICAL_INDEX     = NO
+          CLASS_DIAGRAMS         = NO
+
+          # --- Misc ---
+          OPTIMIZE_OUTPUT_FOR_C  = YES
+          BUILTIN_STL_SUPPORT    = YES
+          MARKDOWN_SUPPORT       = YES
+          AUTOLINK_SUPPORT       = YES
+          SORT_MEMBER_DOCS       = YES
+          SHOW_INCLUDE_FILES     = YES
+          GENERATE_TODOLIST      = YES
+          WARN_IF_UNDOCUMENTED   = YES
+          QUIET                  = NO
+          SEARCHENGINE           = NO
+          DOXYEOF
+
+          echo "--- Doxyfile contents ---"
+          cat /tmp/Doxyfile
+
+      # ── 7. Run Doxygen ────────────────────────────────────────────────────
+      - name: Run Doxygen
+        run: doxygen /tmp/Doxyfile
+
+      # ── 8. Convert Doxygen XML → Docusaurus MDX ───────────────────────────
+      - name: Generate MDX from Doxygen XML
+        run: |
+          python3 - <<'EOF'
+          import xml.etree.ElementTree as ET
+          import os, sys, re, json
+
+          XML_DIR = "api-docs/xml"
+          MDX_DIR = "api-docs/mdx"
+          os.makedirs(MDX_DIR, exist_ok=True)
+
+          # ── helpers ──────────────────────────────────────────────────────
+
+          def text_of(node):
+              if node is None:
+                  return ""
+              return "".join(node.itertext()).strip()
+
+          def brief_of(parent):
+              node = parent.find("briefdescription")
+              if node is None:
+                  return ""
+              para = node.find("para")
+              return "".join(para.itertext()).strip() if para is not None else ""
+
+          def detail_of(parent):
+              node = parent.find("detaileddescription")
+              if node is None:
+                  return ""
+              parts = []
+              for para in node.findall("para"):
+                  if para.find("parameterlist") is not None:
+                      continue
+                  if para.find("simplesect") is not None:
+                      continue
+                  t = "".join(para.itertext()).strip()
+                  if t:
+                      parts.append(t)
+              return "\n\n".join(parts)
+
+          def params_doc_of(parent):
+              node = parent.find("detaileddescription")
+              if node is None:
+                  return []
+              out = []
+              for plist in node.findall(".//parameterlist[@kind='param']"):
+                  for item in plist.findall("parameteritem"):
+                      names = [text_of(n) for n in item.findall(".//parametername")]
+                      desc_node = item.find("parameterdescription")
+                      desc = "".join(desc_node.itertext()).strip() if desc_node is not None else ""
+                      for name in names:
+                          out.append({"name": name, "desc": desc})
+              return out
+
+          def returns_doc_of(parent):
+              node = parent.find("detaileddescription")
+              if node is None:
+                  return ""
+              for ss in node.findall(".//simplesect[@kind='return']"):
+                  return "".join(ss.itertext()).strip()
+              return ""
+
+          def param_types_of(memberdef):
+              types = {}
+              for param in memberdef.findall("param"):
+                  ptype = text_of(param.find("type"))
+                  declname = param.find("declname")
+                  if declname is not None:
+                      n = text_of(declname)
+                      if n:
+                          types[n] = ptype
+              return types
+
+          def slugify(s):
+              return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+
+          # ── renderers ────────────────────────────────────────────────────
+
+          def render_function(m, level=3):
+              H  = "#" * level
+              Hs = "#" * (level + 1)
+              name      = text_of(m.find("name"))
+              ret_type  = text_of(m.find("type"))
+              argsstr   = text_of(m.find("argsstring"))
+              brief     = brief_of(m)
+              detail    = detail_of(m)
+              pdocs     = params_doc_of(m)
+              ret_doc   = returns_doc_of(m)
+              ptypes    = param_types_of(m)
+              lines = [f"{H} `{name}`\n"]
+              if brief:
+                  lines.append(f"{brief}\n")
+              if detail:
+                  lines.append(f"{detail}\n")
+              lines.append(f"```c\n{ret_type} {name}{argsstr}\n```\n")
+              if pdocs:
+                  lines.append(f"{Hs} Parameters\n")
+                  lines.append("| Name | Type | Description |")
+                  lines.append("|------|------|-------------|")
+                  for p in pdocs:
+                      pt = f"`{ptypes[p['name']]}`" if p["name"] in ptypes else ""
+                      lines.append(f"| `{p['name']}` | {pt} | {p['desc']} |")
+                  lines.append("")
+              if ret_doc:
+                  lines.append(f"{Hs} Returns\n")
+                  lines.append(f"{ret_doc}\n")
+              return "\n".join(lines)
+
+          def render_enum(m, level=3):
+              H  = "#" * level
+              Hs = "#" * (level + 1)
+              name  = text_of(m.find("name"))
+              brief = brief_of(m)
+              lines = [f"{H} `{name}`\n"]
+              if brief:
+                  lines.append(f"{brief}\n")
+              values = m.findall("enumvalue")
+              if values:
+                  lines.append(f"{Hs} Values\n")
+                  lines.append("| Name | Value | Description |")
+                  lines.append("|------|-------|-------------|")
+                  for v in values:
+                      vname  = text_of(v.find("name"))
+                      vinit  = text_of(v.find("initializer"))
+                      vbrief = ""
+                      vb = v.find("briefdescription")
+                      if vb is not None:
+                          vp = vb.find("para")
+                          if vp is not None:
+                              vbrief = "".join(vp.itertext()).strip()
+                      lines.append(f"| `{vname}` | {vinit} | {vbrief} |")
+                  lines.append("")
+              return "\n".join(lines)
+
+          def render_typedef(m, level=3):
+              H    = "#" * level
+              name = text_of(m.find("name"))
+              typ  = text_of(m.find("type"))
+              brief = brief_of(m)
+              lines = [f"{H} `{name}`\n"]
+              if brief:
+                  lines.append(f"{brief}\n")
+              lines.append(f"```c\ntypedef {typ} {name}\n```\n")
+              return "\n".join(lines)
+
+          def render_define(m, level=3):
+              H    = "#" * level
+              name = text_of(m.find("name"))
+              init = text_of(m.find("initializer"))
+              brief = brief_of(m)
+              lines = [f"{H} `{name}`\n"]
+              if brief:
+                  lines.append(f"{brief}\n")
+              lines.append(f"```c\n#define {name} {init}\n```\n")
+              return "\n".join(lines)
+
+          def render_variable(m, level=3):
+              H    = "#" * level
+              name = text_of(m.find("name"))
+              typ  = text_of(m.find("type"))
+              brief = brief_of(m)
+              lines = [f"{H} `{name}`\n"]
+              if brief:
+                  lines.append(f"{brief}\n")
+              lines.append(f"```c\n{typ} {name}\n```\n")
+              return "\n".join(lines)
+
+          def render_struct_inline(cdef, level=3):
+              H  = "#" * level
+              Hs = "#" * (level + 1)
+              name  = text_of(cdef.find("compoundname"))
+              brief = brief_of(cdef)
+              lines = [f"{H} `{name}`\n"]
+              if brief:
+                  lines.append(f"{brief}\n")
+              members = cdef.findall("sectiondef/memberdef[@kind='variable']")
+              if members:
+                  lines.append(f"{Hs} Members\n")
+                  lines.append("| Name | Type | Description |")
+                  lines.append("|------|------|-------------|")
+                  for m in members:
+                      mname  = text_of(m.find("name"))
+                      mtype  = text_of(m.find("type"))
+                      mbrief = brief_of(m)
+                      lines.append(f"| `{mname}` | `{mtype}` | {mbrief} |")
+                  lines.append("")
+              return "\n".join(lines)
+
+          RENDERERS = {
+              "function": render_function,
+              "enum":     render_enum,
+              "typedef":  render_typedef,
+              "define":   render_define,
+              "variable": render_variable,
+          }
+
+          SECTION_TITLES = {
+              "function": "Functions",
+              "typedef":  "Type Definitions",
+              "enum":     "Enumerations",
+              "define":   "Macros",
+              "variable": "Variables",
+          }
+
+          # ── MDX writer ───────────────────────────────────────────────────
+
+          def write_mdx(slug, title, compound_brief, sections, structs, out_path):
+              lines = [
+                  "---",
+                  f'id: "{slug}"',
+                  f'title: "{title}"',
+                  f'sidebar_label: "{title}"',
+                  "---\n",
+                  f"# {title}\n",
+              ]
+              if compound_brief:
+                  lines.append(f"{compound_brief}\n")
+              if structs:
+                  lines.append("\n## Structures\n")
+                  for scdef in structs:
+                      lines.append(render_struct_inline(scdef, level=3))
+              for kind in ["function", "typedef", "enum", "define", "variable"]:
+                  members = sections.get(kind, [])
+                  if not members:
+                      continue
+                  lines.append(f"\n## {SECTION_TITLES[kind]}\n")
+                  for member in members:
+                      lines.append(RENDERERS[kind](member, level=3))
+              with open(out_path, "w") as f:
+                  f.write("\n".join(lines))
+              print(f"  wrote {out_path}")
+
+          # ── main loop ────────────────────────────────────────────────────
+
+          index_path = os.path.join(XML_DIR, "index.xml")
+          if not os.path.exists(index_path):
+              print(f"ERROR: {index_path} not found", file=sys.stderr)
+              sys.exit(1)
+
+          index_root = ET.parse(index_path).getroot()
+          generated  = []
+
+          for compound in index_root.findall("compound[@kind='file']"):
+              refid    = compound.get("refid")
+              cname    = text_of(compound.find("name"))
+              xml_file = os.path.join(XML_DIR, f"{refid}.xml")
+              if not os.path.exists(xml_file):
+                  print(f"WARNING: missing {xml_file}", file=sys.stderr)
+                  continue
+              try:
+                  cdef = ET.parse(xml_file).getroot().find("compounddef")
+              except ET.ParseError as e:
+                  print(f"WARNING: skipping malformed XML {xml_file}: {e}", file=sys.stderr)
+                  continue
+              if cdef is None:
+                  continue
+              sections = {}
+              for sdef in cdef.findall("sectiondef"):
+                  for mdef in sdef.findall("memberdef"):
+                      mk = mdef.get("kind")
+                      if mk in RENDERERS:
+                          sections.setdefault(mk, []).append(mdef)
+              structs = []
+              for ic in cdef.findall("innerclass"):
+                  ic_refid = ic.get("refid")
+                  ic_file  = os.path.join(XML_DIR, f"{ic_refid}.xml")
+                  if not os.path.exists(ic_file):
+                      continue
+                  try:
+                      ic_cdef = ET.parse(ic_file).getroot().find("compounddef")
+                  except ET.ParseError as e:
+                      print(f"WARNING: skipping malformed XML {ic_file}: {e}", file=sys.stderr)
+                      continue
+                  if ic_cdef is not None and ic_cdef.get("kind") in ("struct", "union"):
+                      structs.append(ic_cdef)
+              if not any(sections.values()) and not structs:
+                  continue
+              base           = os.path.splitext(cname)[0]
+              slug           = slugify(base)
+              title          = cname
+              compound_brief = brief_of(cdef)
+              out_path       = os.path.join(MDX_DIR, f"{slug}.mdx")
+              write_mdx(slug, title, compound_brief, sections, structs, out_path)
+              generated.append({"slug": slug, "title": title})
+
+          category = {
+              "label": "API Reference",
+              "position": 1,
+              "link": {"type": "generated-index", "description": "Auto-generated from public headers."}
+          }
+          with open(os.path.join(MDX_DIR, "_category_.json"), "w") as f:
+              json.dump(category, f, indent=2)
+
+          print(f"\nDone. {len(generated)} MDX file(s) written to {MDX_DIR}/")
+          EOF
+
+      # ── 9. Upload HTML artifact ───────────────────────────────────────────
+      - name: Upload API docs artifact (HTML)
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-docs-html-${{ env.REPO_NAME }}
+          path: api-docs/html/
+          if-no-files-found: error
+
+      # ── 10. Upload MDX artifact ───────────────────────────────────────────
+      - name: Upload API docs artifact (MDX)
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-docs-mdx-${{ env.REPO_NAME }}
+          path: api-docs/mdx/
+          if-no-files-found: error
+
+      # ── 11. Deploy to gh-pages under a per-repo subdirectory ──────────────
+      #  Docs are served at: https://<org>.github.io/<workflows_repo>/<repo-name>/
+      #  Each run only writes to its own subdirectory; other repos are untouched.
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: api-docs/html
+          publish_branch: gh-pages
+          destination_dir: ${{ env.REPO_NAME }}
+          commit_message: "docs: update API reference for ${{ env.REPO_NAME }} @ ${{ inputs.sha }}"
