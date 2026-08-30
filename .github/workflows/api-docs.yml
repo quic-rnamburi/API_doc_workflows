@@ -174,18 +174,23 @@ jobs:
       - name: Run Doxygen
         run: doxygen /tmp/Doxyfile
 
-      # ── 8. Convert Doxygen XML → Docusaurus MDX ───────────────────────────
+      # ── 8. Convert Doxygen XML → Mintlify MDX ────────────────────────────
       - name: Generate MDX from Doxygen XML
         run: |
           python3 - <<'EOF'
           import xml.etree.ElementTree as ET
           import os, sys, re, json
 
-          XML_DIR = "api-docs/xml"
-          MDX_DIR = "api-docs/mdx"
+          XML_DIR   = "api-docs/xml"
+          MDX_DIR   = "api-docs/mdx"
+          REPO_NAME = os.environ.get("REPO_NAME", "api")
           os.makedirs(MDX_DIR, exist_ok=True)
 
           # ── helpers ──────────────────────────────────────────────────────
+
+          def escape_fm(s):
+              """Escape a string for YAML frontmatter double-quoted scalar."""
+              return s.replace('\\', '\\\\').replace('"', '\\"').replace('\n', ' ').strip()
 
           def text_of(node):
               if node is None:
@@ -254,7 +259,6 @@ jobs:
 
           def render_function(m, level=3):
               H  = "#" * level
-              Hs = "#" * (level + 1)
               name      = text_of(m.find("name"))
               ret_type  = text_of(m.find("type"))
               argsstr   = text_of(m.find("argsstring"))
@@ -270,16 +274,16 @@ jobs:
                   lines.append(f"{detail}\n")
               lines.append(f"```c\n{ret_type} {name}{argsstr}\n```\n")
               if pdocs:
-                  lines.append(f"{Hs} Parameters\n")
-                  lines.append("| Name | Type | Description |")
-                  lines.append("|------|------|-------------|")
+                  lines.append("**Parameters**\n")
                   for p in pdocs:
-                      pt = f"`{ptypes[p['name']]}`" if p["name"] in ptypes else ""
-                      lines.append(f"| `{p['name']}` | {pt} | {p['desc']} |")
+                      pt = ptypes.get(p["name"], "")
+                      lines.append(f'<ParamField path="{p["name"]}" type="{pt}">')
+                      if p["desc"]:
+                          lines.append(f'  {p["desc"]}')
+                      lines.append("</ParamField>")
                   lines.append("")
               if ret_doc:
-                  lines.append(f"{Hs} Returns\n")
-                  lines.append(f"{ret_doc}\n")
+                  lines.append(f"**Returns**\n\n{ret_doc}\n")
               return "\n".join(lines)
 
           def render_enum(m, level=3):
@@ -342,23 +346,23 @@ jobs:
               return "\n".join(lines)
 
           def render_struct_inline(cdef, level=3):
-              H  = "#" * level
-              Hs = "#" * (level + 1)
-              name  = text_of(cdef.find("compoundname"))
+              H    = "#" * level
+              name = text_of(cdef.find("compoundname"))
               brief = brief_of(cdef)
               lines = [f"{H} `{name}`\n"]
               if brief:
                   lines.append(f"{brief}\n")
               members = cdef.findall("sectiondef/memberdef[@kind='variable']")
               if members:
-                  lines.append(f"{Hs} Members\n")
-                  lines.append("| Name | Type | Description |")
-                  lines.append("|------|------|-------------|")
+                  lines.append("**Members**\n")
                   for m in members:
                       mname  = text_of(m.find("name"))
                       mtype  = text_of(m.find("type"))
                       mbrief = brief_of(m)
-                      lines.append(f"| `{mname}` | `{mtype}` | {mbrief} |")
+                      lines.append(f'<ParamField path="{mname}" type="{mtype}">')
+                      if mbrief:
+                          lines.append(f'  {mbrief}')
+                      lines.append("</ParamField>")
                   lines.append("")
               return "\n".join(lines)
 
@@ -381,25 +385,21 @@ jobs:
           # ── MDX writer ───────────────────────────────────────────────────
 
           def write_mdx(slug, title, compound_brief, sections, structs, out_path):
-              lines = [
-                  "---",
-                  f'id: "{slug}"',
-                  f'title: "{title}"',
-                  f'sidebar_label: "{title}"',
-                  "---\n",
-                  f"# {title}\n",
-              ]
+              # Mintlify reads title/description from frontmatter and renders
+              # its own H1 — no explicit heading needed in the body.
+              lines = ["---", f'title: "{escape_fm(title)}"']
               if compound_brief:
-                  lines.append(f"{compound_brief}\n")
+                  lines.append(f'description: "{escape_fm(compound_brief)}"')
+              lines.append("---\n")
               if structs:
-                  lines.append("\n## Structures\n")
+                  lines.append("## Structures\n")
                   for scdef in structs:
                       lines.append(render_struct_inline(scdef, level=3))
               for kind in ["function", "typedef", "enum", "define", "variable"]:
                   members = sections.get(kind, [])
                   if not members:
                       continue
-                  lines.append(f"\n## {SECTION_TITLES[kind]}\n")
+                  lines.append(f"## {SECTION_TITLES[kind]}\n")
                   for member in members:
                       lines.append(RENDERERS[kind](member, level=3))
               with open(out_path, "w") as f:
@@ -459,15 +459,19 @@ jobs:
               write_mdx(slug, title, compound_brief, sections, structs, out_path)
               generated.append({"slug": slug, "title": title})
 
-          category = {
-              "label": "API Reference",
-              "position": 1,
-              "link": {"type": "generated-index", "description": "Auto-generated from public headers."}
+          # Mintlify navigation group — merge the "pages" list into mint.json
+          # under the top-level "navigation" array.
+          nav_group = {
+              "group": "API Reference",
+              "pages": [
+                  f"public/docs/api/{REPO_NAME}/{g['slug']}" for g in generated
+              ]
           }
-          with open(os.path.join(MDX_DIR, "_category_.json"), "w") as f:
-              json.dump(category, f, indent=2)
+          with open(os.path.join(MDX_DIR, "mint-navigation.json"), "w") as f:
+              json.dump(nav_group, f, indent=2)
 
           print(f"\nDone. {len(generated)} MDX file(s) written to {MDX_DIR}/")
+          print(f"Navigation group written to {MDX_DIR}/mint-navigation.json")
           EOF
 
       # ── 9. Upload HTML artifact ───────────────────────────────────────────
