@@ -1,0 +1,29 @@
+digraph "agm_session_config"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="agm_session_config",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Session Config."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" codec",fontcolor="grey" ];
+  Node2 [id="Node000002",label="agm_session_codec",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$unionagm__session__codec.html",tooltip="Session encoder/decoder parameters."];
+  Node3 -> Node2 [id="edge2_Node000002_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" aac_dec",fontcolor="grey" ];
+  Node3 [id="Node000003",label="agm_session_aac_dec",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structagm__session__aac__dec.html",tooltip="AAC decoder parameters."];
+  Node4 -> Node2 [id="edge3_Node000002_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" aac_enc",fontcolor="grey" ];
+  Node4 [id="Node000004",label="agm_session_aac_enc",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structagm__session__aac__enc.html",tooltip=" "];
+  Node5 -> Node4 [id="edge4_Node000004_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" enc_cfg",fontcolor="grey" ];
+  Node5 [id="Node000005",label="agm_session_aac_enc_cfg",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structagm__session__aac__enc__cfg.html",tooltip="AAC encoder parameters."];
+  Node6 -> Node2 [id="edge5_Node000002_Node000006",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" flac_dec",fontcolor="grey" ];
+  Node6 [id="Node000006",label="agm_session_flac_dec",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structagm__session__flac__dec.html",tooltip="FLAC decoder parameters."];
+  Node7 -> Node2 [id="edge6_Node000002_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" alac_dec",fontcolor="grey" ];
+  Node7 [id="Node000007",label="agm_session_alac_dec",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structagm__session__alac__dec.html",tooltip="ALAC decoder parameters."];
+  Node8 -> Node2 [id="edge7_Node000002_Node000008",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" ape_dec",fontcolor="grey" ];
+  Node8 [id="Node000008",label="agm_session_ape_dec",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structagm__session__ape__dec.html",tooltip="APE decoder parameters."];
+  Node9 -> Node2 [id="edge8_Node000002_Node000009",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" wma_dec",fontcolor="grey" ];
+  Node9 [id="Node000009",label="agm_session_wma_dec",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structagm__session__wma__dec.html",tooltip="WMA decoder parameters."];
+  Node10 -> Node2 [id="edge9_Node000002_Node000010",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" wmapro_dec",fontcolor="grey" ];
+  Node10 [id="Node000010",label="agm_session_wmapro_dec",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structagm__session__wmapro__dec.html",tooltip="WMA Pro decoder parameters."];
+  Node11 -> Node2 [id="edge10_Node000002_Node000011",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" opus_dec",fontcolor="grey" ];
+  Node11 [id="Node000011",label="agm_session_opus_dec",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structagm__session__opus__dec.html",tooltip="OPUS decoder parameters."];
+}
