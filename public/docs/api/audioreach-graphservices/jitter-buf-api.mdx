@@ -1,0 +1,96 @@
+---
+title: "jitter_buf_api.h"
+description: "This file contains module published by Jitter Buf CAPI intialization."
+---
+
+## Structures
+
+### `param_id_jitter_buf_config_t`
+
+**Members**
+
+<ParamField path="jitter_allowance_in_ms" type="uint32_t">
+  If 0 then used to disable module. }
+</ParamField>
+
+### `param_id_jitter_buf_settling_time_t`
+
+**Members**
+
+<ParamField path="drift_settlement_in_ms" type="uint32_t">
+  in steady state to start reporting drift. }
+</ParamField>
+
+### `param_id_jitter_buf_size_config_t`
+
+**Members**
+
+<ParamField path="jitter_allowance_in_ms" type="uint32_t">
+  If 0 then used to disable module. }
+</ParamField>
+
+## Type Definitions
+
+### `param_id_jitter_buf_config_t`
+
+```c
+typedef struct param_id_jitter_buf_config_t param_id_jitter_buf_config_t
+```
+
+### `param_id_jitter_buf_settling_time_t`
+
+```c
+typedef struct param_id_jitter_buf_settling_time_t param_id_jitter_buf_settling_time_t
+```
+
+### `param_id_jitter_buf_size_config_t`
+
+```c
+typedef struct param_id_jitter_buf_size_config_t param_id_jitter_buf_size_config_t
+```
+
+## Macros
+
+### `CAPI_JITTER_BUF_MAX_INPUT_PORTS`
+
+```c
+#define CAPI_JITTER_BUF_MAX_INPUT_PORTS (1)
+```
+
+### `CAPI_JITTER_BUF_MAX_OUTPUT_PORTS`
+
+```c
+#define CAPI_JITTER_BUF_MAX_OUTPUT_PORTS (1)
+```
+
+### `CAPI_JITTER_BUF_MAX_CTRL_PORTS`
+
+```c
+#define CAPI_JITTER_BUF_MAX_CTRL_PORTS (1)
+```
+
+### `PARAM_ID_JITTER_BUF_CONFIG`
+
+```c
+#define PARAM_ID_JITTER_BUF_CONFIG 0x080014E3
+```
+
+### `PARAM_ID_JITTER_BUF_SETTLING_TIME`
+
+```c
+#define PARAM_ID_JITTER_BUF_SETTLING_TIME 0x080014E4
+```
+
+### `PARAM_ID_JITTER_BUF_SIZE_CONFIG`
+
+```c
+#define PARAM_ID_JITTER_BUF_SIZE_CONFIG 0x080014E6
+```
+
+### `MODULE_ID_JITTER_BUFFER`
+
+Module ID of the Jitter Buffer Module.
+
+```c
+#define MODULE_ID_JITTER_BUFFER 0x07010005
+```

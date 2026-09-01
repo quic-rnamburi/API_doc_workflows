@@ -1,0 +1,7 @@
+{
+  "group": "userspace-resource-manager",
+  "pages": [
+    "public/docs/api/userspace-resource-manager/extensions",
+    "public/docs/api/userspace-resource-manager/urmplatformal"
+  ]
+}

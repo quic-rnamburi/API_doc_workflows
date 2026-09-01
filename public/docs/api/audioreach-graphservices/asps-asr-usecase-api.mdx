@@ -1,0 +1,57 @@
+---
+title: "asps_asr_usecase_api.h"
+description: "This file contains ASR Usecase ID specific APIs."
+---
+
+## Structures
+
+### `asps_asr_usecase_register_payload_t`
+
+ASR usecase(ASPS_USECASE_ID_ASR) specific payload.
+
+**Members**
+
+<ParamField path="frame_length_ms" type="uint32_t">
+  Frame length in milliseconds for ASR processing Range: 100..20000, Default: 3000.
+</ParamField>
+<ParamField path="language_code" type="uint32_t">
+  Language code for ASR output Range: Language enum values, Default: ASPS_ASR_LANG_EN_US (0)
+</ParamField>
+<ParamField path="enable_sdz" type="uint32_t">
+  Flag to enable Speaker Diarization along with ASR Range: 0..1, Default: 0.
+</ParamField>
+
+### `asps_asr_usecase_register_ack_payload_t`
+
+ASR usecase (ASPS_USECASE_ID_ASR) specific ACK Payload structure.
+
+**Members**
+
+<ParamField path="asr_module_instance_id" type="uint32_t">
+  ASR Module instance ID which is configured with the ASR settings.
+</ParamField>
+<ParamField path="sdz_module_instance_id" type="uint32_t">
+  SDZ Module instance ID (valid only if SDZ is enabled) Set to 0 if SDZ is not enabled.
+</ParamField>
+
+## Type Definitions
+
+### `asps_asr_usecase_register_payload_t`
+
+```c
+typedef struct asps_asr_usecase_register_payload_t asps_asr_usecase_register_payload_t
+```
+
+### `asps_asr_usecase_register_ack_payload_t`
+
+```c
+typedef struct asps_asr_usecase_register_ack_payload_t asps_asr_usecase_register_ack_payload_t
+```
+
+## Macros
+
+### `ASPS_USECASE_ID_ASR`
+
+```c
+#define ASPS_USECASE_ID_ASR 0x0B001011
+```

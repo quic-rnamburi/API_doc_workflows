@@ -1,0 +1,954 @@
+---
+title: "sp_vi.h"
+---
+
+## Structures
+
+### `param_id_sp_vi_op_mode_cfg_t`
+
+**Members**
+
+<ParamField path="num_speakers" type="uint32_t">
+
+</ParamField>
+<ParamField path="th_operation_mode" type="uint32_t">
+</ParamField>
+<ParamField path="th_quick_calib_flag" type="uint32_t">
+
+</ParamField>
+
+### `vi_r0t0_cfg_t`
+
+**Members**
+
+<ParamField path="r0_cali_q24" type="int32_t">
+</ParamField>
+<ParamField path="t0_cali_q6" type="int16_t">
+  This field is valid only in Normal mode (operation_mode = 0).}
+</ParamField>
+<ParamField path="reserved" type="int16_t">
+  This field is valid in both Normal mode and Calibration mode.}
+</ParamField>
+
+### `param_id_sp_th_vi_r0t0_cfg_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="r0t0_cfg" type="vi_r0t0_cfg_t">
+</ParamField>
+
+### `param_id_sp_vi_static_cfg_t`
+
+**Members**
+
+<ParamField path="num_speakers" type="uint32_t">
+
+</ParamField>
+<ParamField path="sampling_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="fpilot" type="uint32_t">
+  Pilot tone frequency values MUST be the same for the RX/TH/EX modules}
+</ParamField>
+<ParamField path="th_ctrl_rate" type="uint32_t">
+</ParamField>
+<ParamField path="th_frame_size_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="th_pow_supply_freq" type="int32_t">
+
+</ParamField>
+<ParamField path="th_temp_est_selection_flag" type="uint32_t">
+
+</ParamField>
+<ParamField path="ex_frame_size" type="uint32_t">
+  Method2 also requires setting of spk_delta_t_delta_r_ratio_u16q9 param.}
+</ParamField>
+<ParamField path="ex_tuning_mode_enable_flag" type="uint32_t">
+  It's only for laser display. should be disabled at normal mode on devices.}
+</ParamField>
+<ParamField path="ex_DC_detection_enable_flag" type="uint32_t">
+  HAL will set a periodic query on the DC presense flag. If DC is present, HAL will shut down WSA to protect spkrs.}
+</ParamField>
+<ParamField path="ex_warmup_time_ms" type="uint32_t">
+</ParamField>
+
+### `sp_vi_th_spkr_param_t`
+
+**Members**
+
+<ParamField path="r0_safe_q24" type="int32_t">
+</ParamField>
+<ParamField path="pilot_tone_scale_u16q18" type="uint32_t">
+</ParamField>
+<ParamField path="trace_resistance_tx_q24" type="int32_t">
+
+</ParamField>
+<ParamField path="r_spk_coil_typ_q8" type="int16_t">
+</ParamField>
+<ParamField path="r_spk_coil_factor_q10" type="int16_t">
+
+</ParamField>
+<ParamField path="v_full_sc_q10" type="int16_t">
+  If (Rvc > factor*(AC impedance)), the speaker is considered open.}
+</ParamField>
+<ParamField path="spk_resistivity_coeff_u16q7" type="uint16_t">
+
+</ParamField>
+<ParamField path="spk_delta_t_delta_r_ratio_u16q9" type="uint16_t">
+</ParamField>
+<ParamField path="t0_safe_q6" type="int16_t">
+</ParamField>
+<ParamField path="vsen_2_v_u16q11" type="uint16_t">
+
+</ParamField>
+<ParamField path="isen_2_a_u16q11" type="uint16_t">
+
+</ParamField>
+<ParamField path="v_pilot_thsd_u16q16" type="uint16_t">
+
+</ParamField>
+<ParamField path="reserved" type="int16_t">
+  Below this value, the resistance update is unreliable.}
+</ParamField>
+
+### `sp_vi_r0t0_cali_param_t`
+
+**Members**
+
+<ParamField path="wait_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="cali_time_ms" type="int32_t">
+
+</ParamField>
+<ParamField path="vi_wait_time_ms" type="int32_t">
+
+</ParamField>
+<ParamField path="r0_und_est_fac_q16" type="uint16_t">
+
+</ParamField>
+<ParamField path="r0_rng_fac_q10" type="int16_t">
+
+</ParamField>
+<ParamField path="t0_min_q6" type="int16_t">
+  After this threshold, calibrated resistance is considered as failed.}
+</ParamField>
+<ParamField path="t0_max_q6" type="int16_t">
+
+</ParamField>
+
+### `param_id_sp_th_vi_dynamic_cfg_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_th_vi_calib_res_cfg_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="state" type="uint32_t">
+</ParamField>
+<ParamField path="r0_cali_q24" type="int32_t">
+  The state of each speaker is tied together.}
+</ParamField>
+
+### `vi_th_ftm_cfg_t`
+
+**Members**
+
+<ParamField path="wait_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="ftm_time_ms" type="int32_t">
+</ParamField>
+
+### `param_id_sp_th_vi_ftm_cfg_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="th_vi_ftm_set_param" type="vi_th_ftm_cfg_t">
+</ParamField>
+
+### `vi_th_ftm_params_t`
+
+**Members**
+
+<ParamField path="ftm_rDC_q24" type="int32_t">
+</ParamField>
+<ParamField path="ftm_temp_q22" type="int32_t">
+</ParamField>
+<ParamField path="status" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_th_vi_ftm_params_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+
+</ParamField>
+<ParamField path="vi_th_ftm_params" type="vi_th_ftm_params_t">
+
+</ParamField>
+
+### `vi_th_v_vali_cfg_t`
+
+**Members**
+
+<ParamField path="wait_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="vali_time_ms" type="int32_t">
+</ParamField>
+
+### `param_id_sp_th_vi_v_vali_cfg_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="fbsp_th_vi_v_vali_set_param" type="vi_th_v_vali_cfg_t">
+</ParamField>
+
+### `vi_th_v_vali_params_t`
+
+**Members**
+
+<ParamField path="vrms_q24" type="uint32_t">
+</ParamField>
+<ParamField path="status" type="uint32_t">
+
+</ParamField>
+
+### `param_id_sp_th_vi_v_vali_params_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+
+</ParamField>
+<ParamField path="vi_th_v_vali_params" type="vi_th_v_vali_params_t">
+
+</ParamField>
+
+### `fbsp_tdf_2_cfg_t`
+
+**Members**
+
+<ParamField path="numCh" type="int16_t">
+
+</ParamField>
+<ParamField path="stages" type="int16_t">
+
+</ParamField>
+<ParamField path="num" type="int32_t">
+</ParamField>
+<ParamField path="den" type="int32_t">
+
+</ParamField>
+<ParamField path="numQ" type="int16_t">
+
+</ParamField>
+<ParamField path="denQ" type="int16_t">
+</ParamField>
+
+### `sp_vi_ex_spkr_param_t`
+
+**Members**
+
+<ParamField path="Re_ohm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Le_mH_q24" type="int32_t">
+</ParamField>
+<ParamField path="L2_mH_q24" type="int32_t">
+</ParamField>
+<ParamField path="R2_ohm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl_q24" type="int32_t">
+</ParamField>
+<ParamField path="Mms_gram_q24" type="int32_t">
+</ParamField>
+<ParamField path="Rms_KgSec_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms_Nmm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Fres_Hz_q20" type="int32_t">
+</ParamField>
+<ParamField path="Qms_q24" type="int32_t">
+</ParamField>
+<ParamField path="Le1_mH_mm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Le2_mH_mm2_q24" type="int32_t">
+</ParamField>
+<ParamField path="Le3_mH_mm3_q24" type="int32_t">
+</ParamField>
+<ParamField path="Le4_mH_mm4_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms1_Nmm2_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms2_Nmm3_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms3_Nmm4_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms4_Nmm5_q24" type="int32_t">
+</ParamField>
+<ParamField path="Rms1_Kgm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Rms2_Kgsm2_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl_peak_NA_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl_rest_m_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl_var_q24" type="int32_t">
+</ParamField>
+<ParamField path="dc_excursion_max_m_q24" type="int32_t">
+</ParamField>
+<ParamField path="dc_track_step_size_k_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl_peak_track_step_size_q24" type="int32_t">
+</ParamField>
+<ParamField path="dc_threshold_m_q24" type="int32_t">
+</ParamField>
+<ParamField path="dc_attack_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="dc_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="Kms_track_step_size_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms_max_abs_dev_q24" type="int32_t">
+</ParamField>
+<ParamField path="amp_gain_q24" type="int32_t">
+</ParamField>
+<ParamField path="vsens_scale_q24" type="int32_t">
+</ParamField>
+<ParamField path="isens_scale_q24" type="int32_t">
+</ParamField>
+<ParamField path="trace_resistance_tx_q24" type="int32_t">
+</ParamField>
+<ParamField path="trace_resistance_rx_q24" type="int32_t">
+</ParamField>
+<ParamField path="DC_pow_thr_mW" type="int32_t">
+</ParamField>
+<ParamField path="DC_hold_time_mSec" type="int32_t">
+</ParamField>
+<ParamField path="safety_mode" type="int32_t">
+</ParamField>
+<ParamField path="negative_DC_comp_en" type="int32_t">
+</ParamField>
+<ParamField path="bandpss_LPfilter_cfg" type="fbsp_tdf_2_cfg_t">
+</ParamField>
+<ParamField path="bandpss_HPfilter_cfg" type="fbsp_tdf_2_cfg_t">
+</ParamField>
+<ParamField path="inductor_filter_cfg" type="fbsp_tdf_2_cfg_t">
+</ParamField>
+
+### `param_id_sp_ex_vi_dynamic_cfg_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="fbsp_ex_spkr_param" type="sp_vi_ex_spkr_param_t">
+</ParamField>
+
+### `param_id_sp_ex_vi_stats_t`
+
+**Members**
+
+<ParamField path="frame_duration_in_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="frame_num" type="uint32_t">
+  This field is reset to zero after crossing the maximum limit for uint32 variables.}
+</ParamField>
+<ParamField path="num_ch" type="uint32_t">
+
+</ParamField>
+<ParamField path="xpred_from_vsens" type="int32_t">
+
+</ParamField>
+
+### `param_id_sp_ex_vi_mode_cfg_t`
+
+**Members**
+
+<ParamField path="ex_FTM_mode_enable_flag" type="uint32_t">
+  When enabled, the estimated spkr parameters are averaged and pushed out to HAL for parameter display and saving into audio.cal}
+</ParamField>
+
+### `vi_ex_ftm_cfg_t`
+
+**Members**
+
+<ParamField path="wait_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="ftm_time_ms" type="int32_t">
+</ParamField>
+
+### `param_id_sp_ex_vi_ftm_cfg_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="fbsp_ex_vi_ftm_set_param" type="vi_ex_ftm_cfg_t">
+</ParamField>
+
+### `vi_ex_ftm_params_t`
+
+**Members**
+
+<ParamField path="ftm_Re_q24" type="int32_t">
+</ParamField>
+<ParamField path="ftm_Bl_q24" type="int32_t">
+</ParamField>
+<ParamField path="ftm_Rms_q24" type="int32_t">
+</ParamField>
+<ParamField path="ftm_Kms_q24" type="int32_t">
+</ParamField>
+<ParamField path="ftm_Fres_q20" type="int32_t">
+</ParamField>
+<ParamField path="ftm_Qms_q24" type="int32_t">
+</ParamField>
+<ParamField path="status" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_ex_vi_ftm_params_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="fbsp_ex_vi_ftm_get_param" type="vi_ex_ftm_params_t">
+</ParamField>
+
+### `param_id_sp_vi_channel_map_cfg_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+
+</ParamField>
+<ParamField path="chan_info" type="int32_t">
+  SP_VI_VSENS_CHAN1(1)
+SP_VI_ISENS_CHAN1(2)
+SP_VI_VSENS_CHAN2(3)
+SP_VI_ISENS_CHAN2(4)
+SP_VI_VSENS_CHAN3(5)
+SP_VI_ISENS_CHAN3(6)
+SP_VI_VSENS_CHAN4(7)
+SP_VI_ISENS_CHAN4(8) Some possible configurations are (1,2,3,4,5,6,7,8), (2,1,4,3,6,5,8,7), (1,2,0,0),(4,3,0,0), and (2,1,0,0). All channels must be unique. The order does not matter as long as the channels are valid. If only two channels are sent (V and I), they must be first two channels: Eg: (4,3), (1,2), etc.}
+</ParamField>
+
+### `param_id_sp_ex_vi_CFSmoothing_param_t`
+
+**Members**
+
+<ParamField path="ex_CF_Smoothing_flag" type="uint16_t">
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+
+</ParamField>
+<ParamField path="ex_CF_scaling_factor" type="uint32_t">
+</ParamField>
+<ParamField path="ex_CF_subtraction_param" type="uint32_t">
+</ParamField>
+
+### `param_id_vi_output_bps_split_enable_t`
+
+**Members**
+
+<ParamField path="bps_split_enable" type="uint32_t">
+  If the input has bits per sample as 32 and this is enabled, it splits the output into two channels with bits per sample as 16 for each corresponding input channel.}
+</ParamField>
+
+### `param_id_sp_vi_spkr_diag_getpkt_param_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="spkr_cond" type="int32_t">
+</ParamField>
+
+### `sp_vi_cali_param_t`
+
+**Members**
+
+<ParamField path="state" type="int32_t">
+</ParamField>
+<ParamField path="r0_cali_q24" type="int32_t">
+</ParamField>
+
+### `param_id_sp_th_vi_calib_res_per_spkr_cfg_param_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="cali_param" type="sp_vi_cali_param_t">
+</ParamField>
+
+### `param_id_max_rated_temp_param_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="temp_rated_q6" type="int32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_sp_vi_op_mode_cfg_t`
+
+```c
+typedef struct param_id_sp_vi_op_mode_cfg_t param_id_sp_vi_op_mode_cfg_t
+```
+
+### `vi_r0t0_cfg_t`
+
+```c
+typedef struct vi_r0t0_cfg_t vi_r0t0_cfg_t
+```
+
+### `param_id_sp_th_vi_r0t0_cfg_t`
+
+```c
+typedef struct param_id_sp_th_vi_r0t0_cfg_t param_id_sp_th_vi_r0t0_cfg_t
+```
+
+### `param_id_sp_vi_static_cfg_t`
+
+```c
+typedef struct param_id_sp_vi_static_cfg_t param_id_sp_vi_static_cfg_t
+```
+
+### `sp_vi_th_spkr_param_t`
+
+```c
+typedef struct sp_vi_th_spkr_param_t sp_vi_th_spkr_param_t
+```
+
+### `sp_vi_r0t0_cali_param_t`
+
+```c
+typedef struct sp_vi_r0t0_cali_param_t sp_vi_r0t0_cali_param_t
+```
+
+### `param_id_sp_th_vi_dynamic_cfg_t`
+
+```c
+typedef struct param_id_sp_th_vi_dynamic_cfg_t param_id_sp_th_vi_dynamic_cfg_t
+```
+
+### `param_id_sp_th_vi_calib_res_cfg_t`
+
+```c
+typedef struct param_id_sp_th_vi_calib_res_cfg_t param_id_sp_th_vi_calib_res_cfg_t
+```
+
+### `vi_th_ftm_cfg_t`
+
+```c
+typedef struct vi_th_ftm_cfg_t vi_th_ftm_cfg_t
+```
+
+### `param_id_sp_th_vi_ftm_cfg_t`
+
+```c
+typedef struct param_id_sp_th_vi_ftm_cfg_t param_id_sp_th_vi_ftm_cfg_t
+```
+
+### `vi_th_ftm_params_t`
+
+```c
+typedef struct vi_th_ftm_params_t vi_th_ftm_params_t
+```
+
+### `param_id_sp_th_vi_ftm_params_t`
+
+```c
+typedef struct param_id_sp_th_vi_ftm_params_t param_id_sp_th_vi_ftm_params_t
+```
+
+### `vi_th_v_vali_cfg_t`
+
+```c
+typedef struct vi_th_v_vali_cfg_t vi_th_v_vali_cfg_t
+```
+
+### `param_id_sp_th_vi_v_vali_cfg_t`
+
+```c
+typedef struct param_id_sp_th_vi_v_vali_cfg_t param_id_sp_th_vi_v_vali_cfg_t
+```
+
+### `vi_th_v_vali_params_t`
+
+```c
+typedef struct vi_th_v_vali_params_t vi_th_v_vali_params_t
+```
+
+### `param_id_sp_th_vi_v_vali_params_t`
+
+```c
+typedef struct param_id_sp_th_vi_v_vali_params_t param_id_sp_th_vi_v_vali_params_t
+```
+
+### `fbsp_tdf_2_cfg_t`
+
+```c
+typedef struct fbsp_tdf_2_cfg_t fbsp_tdf_2_cfg_t
+```
+
+### `sp_vi_ex_spkr_param_t`
+
+```c
+typedef struct sp_vi_ex_spkr_param_t sp_vi_ex_spkr_param_t
+```
+
+### `param_id_sp_ex_vi_dynamic_cfg_t`
+
+```c
+typedef struct param_id_sp_ex_vi_dynamic_cfg_t param_id_sp_ex_vi_dynamic_cfg_t
+```
+
+### `param_id_sp_ex_vi_stats_t`
+
+```c
+typedef struct param_id_sp_ex_vi_stats_t param_id_sp_ex_vi_stats_t
+```
+
+### `param_id_sp_ex_vi_mode_cfg_t`
+
+```c
+typedef struct param_id_sp_ex_vi_mode_cfg_t param_id_sp_ex_vi_mode_cfg_t
+```
+
+### `vi_ex_ftm_cfg_t`
+
+```c
+typedef struct vi_ex_ftm_cfg_t vi_ex_ftm_cfg_t
+```
+
+### `param_id_sp_ex_vi_ftm_cfg_t`
+
+```c
+typedef struct param_id_sp_ex_vi_ftm_cfg_t param_id_sp_ex_vi_ftm_cfg_t
+```
+
+### `vi_ex_ftm_params_t`
+
+```c
+typedef struct vi_ex_ftm_params_t vi_ex_ftm_params_t
+```
+
+### `param_id_sp_ex_vi_ftm_params_t`
+
+```c
+typedef struct param_id_sp_ex_vi_ftm_params_t param_id_sp_ex_vi_ftm_params_t
+```
+
+### `param_id_sp_vi_channel_map_cfg_t`
+
+```c
+typedef struct param_id_sp_vi_channel_map_cfg_t param_id_sp_vi_channel_map_cfg_t
+```
+
+### `param_id_sp_ex_vi_CFSmoothing_param_t`
+
+```c
+typedef struct param_id_sp_ex_vi_CFSmoothing_param_t param_id_sp_ex_vi_CFSmoothing_param_t
+```
+
+### `param_id_vi_output_bps_split_enable_t`
+
+```c
+typedef struct param_id_vi_output_bps_split_enable_t param_id_vi_output_bps_split_enable_t
+```
+
+### `param_id_sp_vi_spkr_diag_getpkt_param_t`
+
+```c
+typedef struct param_id_sp_vi_spkr_diag_getpkt_param_t param_id_sp_vi_spkr_diag_getpkt_param_t
+```
+
+### `sp_vi_cali_param_t`
+
+```c
+typedef struct sp_vi_cali_param_t sp_vi_cali_param_t
+```
+
+### `param_id_sp_th_vi_calib_res_per_spkr_cfg_param_t`
+
+```c
+typedef struct param_id_sp_th_vi_calib_res_per_spkr_cfg_param_t param_id_sp_th_vi_calib_res_per_spkr_cfg_param_t
+```
+
+### `param_id_max_rated_temp_param_t`
+
+```c
+typedef struct param_id_max_rated_temp_param_t param_id_max_rated_temp_param_t
+```
+
+## Macros
+
+### `SP_VI_VSENS_CHAN1`
+
+```c
+#define SP_VI_VSENS_CHAN1 1
+```
+
+### `SP_VI_ISENS_CHAN1`
+
+```c
+#define SP_VI_ISENS_CHAN1 2
+```
+
+### `SP_VI_VSENS_CHAN2`
+
+```c
+#define SP_VI_VSENS_CHAN2 3
+```
+
+### `SP_VI_ISENS_CHAN2`
+
+```c
+#define SP_VI_ISENS_CHAN2 4
+```
+
+### `SP_VI_VSENS_CHAN3`
+
+```c
+#define SP_VI_VSENS_CHAN3 5
+```
+
+### `SP_VI_ISENS_CHAN3`
+
+```c
+#define SP_VI_ISENS_CHAN3 6
+```
+
+### `SP_VI_VSENS_CHAN4`
+
+```c
+#define SP_VI_VSENS_CHAN4 7
+```
+
+### `SP_VI_ISENS_CHAN4`
+
+```c
+#define SP_VI_ISENS_CHAN4 8
+```
+
+### `PARAM_ID_SP_VI_OP_MODE_CFG`
+
+```c
+#define PARAM_ID_SP_VI_OP_MODE_CFG 0x080011F4
+```
+
+### `PARAM_ID_SP_TH_VI_R0T0_CFG`
+
+```c
+#define PARAM_ID_SP_TH_VI_R0T0_CFG 0x080011F5
+```
+
+### `PARAM_ID_SP_VI_STATIC_CFG`
+
+```c
+#define PARAM_ID_SP_VI_STATIC_CFG 0x080011F6
+```
+
+### `PARAM_ID_SPv5_TH_VI_DYNAMIC_CFG`
+
+```c
+#define PARAM_ID_SPv5_TH_VI_DYNAMIC_CFG 0x08001B5C
+```
+
+### `PARAM_ID_SP_TH_VI_CALIB_RES_CFG`
+
+```c
+#define PARAM_ID_SP_TH_VI_CALIB_RES_CFG 0x080011F8
+```
+
+### `PARAM_ID_SP_TH_VI_FTM_CFG`
+
+```c
+#define PARAM_ID_SP_TH_VI_FTM_CFG 0x080011F9
+```
+
+### `PARAM_ID_SP_TH_VI_FTM_PARAMS`
+
+```c
+#define PARAM_ID_SP_TH_VI_FTM_PARAMS 0x080011FA
+```
+
+### `PARAM_ID_SP_TH_VI_V_VALI_CFG`
+
+```c
+#define PARAM_ID_SP_TH_VI_V_VALI_CFG 0x080011FB
+```
+
+### `PARAM_ID_SP_TH_VI_V_VALI_PARAMS`
+
+```c
+#define PARAM_ID_SP_TH_VI_V_VALI_PARAMS 0x080011FC
+```
+
+### `PARAM_ID_SPv5_EX_VI_DYNAMIC_CFG`
+
+```c
+#define PARAM_ID_SPv5_EX_VI_DYNAMIC_CFG 0x08001B5D
+```
+
+### `PARAM_ID_SP_EX_VI_STATS`
+
+```c
+#define PARAM_ID_SP_EX_VI_STATS 0x080011FE
+```
+
+### `PARAM_ID_SP_EX_VI_MODE_CFG`
+
+```c
+#define PARAM_ID_SP_EX_VI_MODE_CFG 0x080011FF
+```
+
+### `PARAM_ID_SP_EX_VI_FTM_CFG`
+
+```c
+#define PARAM_ID_SP_EX_VI_FTM_CFG 0x08001200
+```
+
+### `PARAM_ID_SP_EX_VI_FTM_PARAMS`
+
+```c
+#define PARAM_ID_SP_EX_VI_FTM_PARAMS 0x08001201
+```
+
+### `PARAM_ID_SP_VI_CHANNEL_MAP_CFG`
+
+```c
+#define PARAM_ID_SP_VI_CHANNEL_MAP_CFG 0x08001203
+```
+
+### `PARAM_ID_SP_VI_CFSMOOTHING_CFG_PARAM`
+
+```c
+#define PARAM_ID_SP_VI_CFSMOOTHING_CFG_PARAM 0x08001364
+```
+
+### `PARAM_ID_VI_OUTPUT_SPLIT_ENABLE`
+
+```c
+#define PARAM_ID_VI_OUTPUT_SPLIT_ENABLE 0x080011C2
+```
+
+### `PARAM_ID_SPv5_VI_SPKR_DIAG_GETPKT_PARAM`
+
+```c
+#define PARAM_ID_SPv5_VI_SPKR_DIAG_GETPKT_PARAM 0x08001B5E
+```
+
+### `PARAM_ID_SP_TH_VI_CALIB_RES_PER_SPKR_CFG`
+
+```c
+#define PARAM_ID_SP_TH_VI_CALIB_RES_PER_SPKR_CFG 0x0800150F
+```
+
+### `PARAM_ID_MAX_RATED_TEMP`
+
+```c
+#define PARAM_ID_MAX_RATED_TEMP 0x08001510
+```
+
+### `EVENT_ID_SPv5_SPEAKER_DIAGNOSTICS`
+
+```c
+#define EVENT_ID_SPv5_SPEAKER_DIAGNOSTICS 0x08001538
+```
+
+### `EVENT_ID_VI_CALIBRATION`
+
+```c
+#define EVENT_ID_VI_CALIBRATION 0x0800119F
+```
+
+### `EVENT_ID_TH_VI_V_VALI_PARAMS`
+
+```c
+#define EVENT_ID_TH_VI_V_VALI_PARAMS 0x08001129
+```
+
+### `EVENT_ID_VI_PER_SPKR_CALIBRATION`
+
+```c
+#define EVENT_ID_VI_PER_SPKR_CALIBRATION 0x08001511
+```
+
+### `VI_MAX_INPUT_PORTS`
+
+```c
+#define VI_MAX_INPUT_PORTS 1
+```
+
+### `VI_MAX_OUTPUT_PORTS`
+
+```c
+#define VI_MAX_OUTPUT_PORTS 1
+```
+
+### `VI_STACK_SIZE`
+
+```c
+#define VI_STACK_SIZE 4096
+```
+
+### `SP_IIR_TDF2_STAGES_MAX`
+
+```c
+#define SP_IIR_TDF2_STAGES_MAX 5
+```
+
+### `MAX_SAMPLES_IN_PACKET_48k`
+
+```c
+#define MAX_SAMPLES_IN_PACKET_48k 480
+```
+
+### `MAX_SAMPLES_IN_PACKET`
+
+```c
+#define MAX_SAMPLES_IN_PACKET 480
+```
+
+### `MAX_SAMPLES_IN_PACKET_8k`
+
+```c
+#define MAX_SAMPLES_IN_PACKET_8k 80
+```
+
+### `SP_IIR_TDF2_NUM_NUM_PER_STAGE`
+
+```c
+#define SP_IIR_TDF2_NUM_NUM_PER_STAGE 3
+```
+
+### `SP_IIR_TDF2_NUM_DEN_PER_STAGE`
+
+```c
+#define SP_IIR_TDF2_NUM_DEN_PER_STAGE 2
+```
+
+### `MODULE_ID_SPEAKER_PROTECTION_V7_VI`
+
+```c
+#define MODULE_ID_SPEAKER_PROTECTION_V7_VI 0x0702C003
+```

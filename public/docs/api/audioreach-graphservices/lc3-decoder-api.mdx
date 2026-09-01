@@ -1,0 +1,63 @@
+---
+title: "lc3_decoder_api.h"
+---
+
+## Structures
+
+### `param_id_lc3_decoder_config_payload_t`
+
+**Members**
+
+<ParamField path="fromAirConfig" type="lc3_config_t">
+</ParamField>
+<ParamField path="decoder_output_channel" type="uint32_t">
+</ParamField>
+<ParamField path="stream_map_size" type="uint32_t">
+  Each stream map entity has 3 elements - audio location, stream-id, and direction}
+</ParamField>
+<ParamField path="streamMapIn" type="stream_map_t">
+</ParamField>
+
+## Functions
+
+### `__attribute__`
+
+```c
+struct __attribute__((__packed__)) lc3_config_t
+```
+
+## Type Definitions
+
+### `lc3_config_t`
+
+```c
+typedef struct lc3_config_t lc3_config_t
+```
+
+### `stream_map_t`
+
+```c
+typedef struct stream_map_t stream_map_t
+```
+
+### `param_id_lc3_decoder_config_payload_t`
+
+```c
+typedef struct param_id_lc3_decoder_config_payload_t param_id_lc3_decoder_config_payload_t
+```
+
+## Macros
+
+### `PARAM_ID_LC3_DEC_INIT`
+
+ID of the LC3 Dec_Init parameter.This parameter should be set at init time.
+
+```c
+#define PARAM_ID_LC3_DEC_INIT 0x080012F8
+```
+
+### `MODULE_ID_LC3_DEC`
+
+```c
+#define MODULE_ID_LC3_DEC 0x070010C2
+```

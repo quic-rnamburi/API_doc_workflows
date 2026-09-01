@@ -1,0 +1,113 @@
+---
+title: "miqster_api.h"
+description: "Copyright (c) Qualcomm Technologies, Inc."
+---
+
+## Structures
+
+### `param_id_miqster_cfg_t`
+
+**Members**
+
+<ParamField path="Enable" type="int32_t">
+</ParamField>
+<ParamField path="LowerLimit" type="int32_t">
+</ParamField>
+<ParamField path="UpperLimit" type="int32_t">
+</ParamField>
+<ParamField path="StereoInputGain" type="int32_t">
+  (Use this to reduce the amount of channesl 1 and 2 in the mix without reducing the overall loudness)}
+</ParamField>
+<ParamField path="Delay" type="int32_t">
+
+</ParamField>
+<ParamField path="Mode" type="int32_t">
+  Compared to Modes 0 and 1 which add channel 3 to channel 1&2.}
+</ParamField>
+<ParamField path="Transition" type="int32_t">
+
+</ParamField>
+
+### `param_id_miqster_mix_t`
+
+**Members**
+
+<ParamField path="Mix" type="int32_t">
+  (Map the Camcorder Zoom level to this param)}
+</ParamField>
+
+## Type Definitions
+
+### `param_id_miqster_cfg_t`
+
+```c
+typedef struct param_id_miqster_cfg_t param_id_miqster_cfg_t
+```
+
+### `param_id_miqster_mix_t`
+
+```c
+typedef struct param_id_miqster_mix_t param_id_miqster_mix_t
+```
+
+## Macros
+
+### `MIQSTER_STACK_SIZE_IN_BYTES`
+
+```c
+#define MIQSTER_STACK_SIZE_IN_BYTES 0x8000
+```
+
+### `MIQSTER_MIN_NUM_INPUT_PORTS`
+
+```c
+#define MIQSTER_MIN_NUM_INPUT_PORTS 0x1
+```
+
+### `MIQSTER_MAX_NUM_INPUT_PORTS`
+
+```c
+#define MIQSTER_MAX_NUM_INPUT_PORTS 0x2
+```
+
+### `MIQSTER_MIN_NUM_OUTPUT_PORTS`
+
+```c
+#define MIQSTER_MIN_NUM_OUTPUT_PORTS 0x1
+```
+
+### `MIQSTER_MAX_NUM_OUTPUT_PORTS`
+
+```c
+#define MIQSTER_MAX_NUM_OUTPUT_PORTS 0x1
+```
+
+### `MIQSTER_PRIMARY_IN_PORT_ID`
+
+```c
+#define MIQSTER_PRIMARY_IN_PORT_ID 0x2
+```
+
+### `MIQSTER_SECONDARY_IN_PORT_ID`
+
+```c
+#define MIQSTER_SECONDARY_IN_PORT_ID 0x4
+```
+
+### `MODULE_ID_MIQSTER`
+
+```c
+#define MODULE_ID_MIQSTER 0x0700117F
+```
+
+### `PARAM_ID_MIQSTER_CFG`
+
+```c
+#define PARAM_ID_MIQSTER_CFG 0x08001B31
+```
+
+### `PARAM_ID_MIQSTER_MIX`
+
+```c
+#define PARAM_ID_MIQSTER_MIX 0x08001B32
+```

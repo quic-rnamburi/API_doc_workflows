@@ -1,0 +1,220 @@
+---
+title: "us_detect_api.h"
+---
+
+## Structures
+
+### `param_id_us_detect_tone_frequency_t`
+
+**Members**
+
+<ParamField path="frequency" type="uint32_t">
+</ParamField>
+
+### `event_id_upd_detection_event_t`
+
+**Members**
+
+<ParamField path="detection_timestamp_lsw" type="uint32_t">
+</ParamField>
+<ParamField path="detection_timestamp_msw" type="uint32_t">
+</ParamField>
+<ParamField path="proximity_event_type" type="uint32_t">
+</ParamField>
+
+### `param_id_us_detect_duty_cycling_t`
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+</ParamField>
+
+### `param_id_us_detect_codec_duty_cycling_t`
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+</ParamField>
+
+### `param_id_us_detect_sensor_access_t`
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+</ParamField>
+
+### `param_id_us_detect_param_1_t`
+
+**Members**
+
+<ParamField path="param_1_data" type="uint32_t">
+</ParamField>
+
+### `param_id_us_detect_param_2_t`
+
+**Members**
+
+<ParamField path="param_2_data" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_us_detect_tone_frequency_t`
+
+```c
+typedef struct param_id_us_detect_tone_frequency_t param_id_us_detect_tone_frequency_t
+```
+
+### `event_id_upd_detection_event_t`
+
+```c
+typedef struct event_id_upd_detection_event_t event_id_upd_detection_event_t
+```
+
+### `param_id_us_detect_duty_cycling_t`
+
+```c
+typedef struct param_id_us_detect_duty_cycling_t param_id_us_detect_duty_cycling_t
+```
+
+### `param_id_us_detect_codec_duty_cycling_t`
+
+```c
+typedef struct param_id_us_detect_codec_duty_cycling_t param_id_us_detect_codec_duty_cycling_t
+```
+
+### `param_id_us_detect_sensor_access_t`
+
+```c
+typedef struct param_id_us_detect_sensor_access_t param_id_us_detect_sensor_access_t
+```
+
+### `param_id_us_detect_param_1_t`
+
+```c
+typedef struct param_id_us_detect_param_1_t param_id_us_detect_param_1_t
+```
+
+### `param_id_us_detect_param_2_t`
+
+```c
+typedef struct param_id_us_detect_param_2_t param_id_us_detect_param_2_t
+```
+
+## Enumerations
+
+### `us_detect_event_type`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `US_DETECT_INVALID` | = 0 |  |
+| `US_DETECT_NEAR` | = 1 | Invalid detection event type. |
+| `US_DETECT_FAR` | = 2 | Near proximity event. |
+
+## Macros
+
+### `US_DETECTOR_PRIMARY_DATA_INPUT_PORT`
+
+```c
+#define US_DETECTOR_PRIMARY_DATA_INPUT_PORT 0x2
+```
+
+### `US_DETECTOR_REFERENCE_DATA_INPUT_PORT`
+
+```c
+#define US_DETECTOR_REFERENCE_DATA_INPUT_PORT 0x4
+```
+
+### `US_DETECTOR_DATA_OUTPUT_PORT`
+
+```c
+#define US_DETECTOR_DATA_OUTPUT_PORT 0x1
+```
+
+### `US_DETECTOR_DATA_MAX_INPUT_PORTS`
+
+```c
+#define US_DETECTOR_DATA_MAX_INPUT_PORTS 0x2
+```
+
+### `US_DETECTOR_DATA_MAX_OUTPUT_PORTS`
+
+```c
+#define US_DETECTOR_DATA_MAX_OUTPUT_PORTS 0x1
+```
+
+### `US_DETECTOR_MODULE_STACK_SIZE`
+
+```c
+#define US_DETECTOR_MODULE_STACK_SIZE 4096
+```
+
+### `US_MAX_DETECTION_EVENT_CLIENTS`
+
+```c
+#define US_MAX_DETECTION_EVENT_CLIENTS 4
+```
+
+### `PARAM_ID_EXAMPLE_US_DETECT_TONE_FREQUENCY`
+
+Parameter ID for US generation.
+
+```c
+#define PARAM_ID_EXAMPLE_US_DETECT_TONE_FREQUENCY 0x08001352
+```
+
+### `EVENT_ID_GENERIC_US_DETECTION`
+
+Parameter ID for Detection event raised by the US Detector Module.
+
+```c
+#define EVENT_ID_GENERIC_US_DETECTION 0x08001358
+```
+
+### `PARAM_ID_EXAMPLE_US_DETECT_DUTY_CYCLING`
+
+Parameter ID for enabling/disabling duty cycling.
+
+```c
+#define PARAM_ID_EXAMPLE_US_DETECT_DUTY_CYCLING 0x08001353
+```
+
+### `PARAM_ID_EXAMPLE_US_DETECT_CODEC_DUTY_CYCLING`
+
+Parameter ID for enabling/disabling codec duty cycling.
+
+```c
+#define PARAM_ID_EXAMPLE_US_DETECT_CODEC_DUTY_CYCLING 0x08001354
+```
+
+### `PARAM_ID_EXAMPLE_US_DETECT_SENSOR_ACCESS`
+
+Parameter ID for enabling/disabling access to sensor APIs.
+
+```c
+#define PARAM_ID_EXAMPLE_US_DETECT_SENSOR_ACCESS 0x08001355
+```
+
+### `PARAM_ID_EXAMPLE_US_DETECT_PARAM_1`
+
+Parameter ID reserved for future use.
+
+```c
+#define PARAM_ID_EXAMPLE_US_DETECT_PARAM_1 0x08001356
+```
+
+### `PARAM_ID_EXAMPLE_US_DETECT_PARAM_2`
+
+Parameter ID reserved for future use.
+
+```c
+#define PARAM_ID_EXAMPLE_US_DETECT_PARAM_2 0x08001357
+```
+
+### `MODULE_ID_EXAMPLE_US_DETECT0x070010D7`
+
+```c
+#define MODULE_ID_EXAMPLE_US_DETECT0x070010D7 
+```

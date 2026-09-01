@@ -1,0 +1,219 @@
+---
+title: "sa_hdt_api.h"
+---
+
+## Structures
+
+### `sa_hdt_stream_info_map_t`
+
+**Members**
+
+<ParamField path="stream_id" type="uint32_t">
+</ParamField>
+<ParamField path="direction" type="uint32_t">
+</ParamField>
+<ParamField path="channel_mask_lsw" type="uint32_t">
+</ParamField>
+<ParamField path="channel_mask_msw" type="uint32_t">
+</ParamField>
+
+### `param_id_sa_hdt_stream_info_t`
+
+**Members**
+
+<ParamField path="num_streams" type="uint32_t">
+</ParamField>
+
+### `param_id_sa_hdt_op_mode_t`
+
+**Members**
+
+<ParamField path="hdt_op_mode" type="uint32_t">
+</ParamField>
+
+### `param_id_sa_hdt_tracking_config_t`
+
+**Members**
+
+<ParamField path="target_tracking_mode" type="uint32_t">
+</ParamField>
+<ParamField path="stillness_detect" type="uint32_t">
+</ParamField>
+<ParamField path="stillness_timer" type="uint32_t">
+</ParamField>
+<ParamField path="stillness_threshold" type="float">
+</ParamField>
+<ParamField path="max_rotational_velocity" type="float">
+</ParamField>
+
+### `param_id_sa_hdt_tracking_recenter_t`
+
+**Members**
+
+<ParamField path="force_update" type="uint32_t">
+</ParamField>
+
+### `param_id_sa_hdt_tracking_status_t`
+
+**Members**
+
+<ParamField path="current_tracking_mode" type="uint32_t">
+</ParamField>
+<ParamField path="head_to_stage_rotation_mode" type="uint32_t">
+</ParamField>
+<ParamField path="head_to_stage_x" type="float">
+</ParamField>
+<ParamField path="head_to_stage_y" type="float">
+</ParamField>
+<ParamField path="head_to_stage_z" type="float">
+</ParamField>
+<ParamField path="head_is_still" type="uint32_t">
+</ParamField>
+<ParamField path="stillness_countdown" type="int64_t">
+</ParamField>
+
+## Type Definitions
+
+### `sa_hdt_stream_info_map_t`
+
+```c
+typedef struct sa_hdt_stream_info_map_t sa_hdt_stream_info_map_t
+```
+
+### `param_id_sa_hdt_stream_info_t`
+
+```c
+typedef struct param_id_sa_hdt_stream_info_t param_id_sa_hdt_stream_info_t
+```
+
+### `param_id_sa_hdt_op_mode_t`
+
+```c
+typedef struct param_id_sa_hdt_op_mode_t param_id_sa_hdt_op_mode_t
+```
+
+### `param_id_sa_hdt_tracking_config_t`
+
+```c
+typedef struct param_id_sa_hdt_tracking_config_t param_id_sa_hdt_tracking_config_t
+```
+
+### `param_id_sa_hdt_tracking_recenter_t`
+
+```c
+typedef struct param_id_sa_hdt_tracking_recenter_t param_id_sa_hdt_tracking_recenter_t
+```
+
+### `param_id_sa_hdt_tracking_status_t`
+
+```c
+typedef struct param_id_sa_hdt_tracking_status_t param_id_sa_hdt_tracking_status_t
+```
+
+## Macros
+
+### `SA_HDT_STACK_SIZE`
+
+```c
+#define SA_HDT_STACK_SIZE 4096
+```
+
+### `SA_HDT_MAX_IN_PORTS`
+
+```c
+#define SA_HDT_MAX_IN_PORTS 0x1
+```
+
+### `SA_HDT_MAX_OUT_PORTS`
+
+```c
+#define SA_HDT_MAX_OUT_PORTS 0x0
+```
+
+### `PORT_ID_SA_HDT_INPUT`
+
+```c
+#define PORT_ID_SA_HDT_INPUT 0x2
+```
+
+### `PORT_ID_SA_HDT_OUTPUT`
+
+```c
+#define PORT_ID_SA_HDT_OUTPUT 0x1
+```
+
+### `SA_HDT_MAX_INTENTS_PER_CTRL_PORT`
+
+```c
+#define SA_HDT_MAX_INTENTS_PER_CTRL_PORT 2
+```
+
+### `SA_HDT_OUT_RAW_DATA`
+
+```c
+#define SA_HDT_OUT_RAW_DATA AR_NON_GUID(0xC0000001)
+```
+
+### `SA_HDT_OUT_ORIENTATION_DATA`
+
+```c
+#define SA_HDT_OUT_ORIENTATION_DATA AR_NON_GUID(0xC0000002)
+```
+
+### `SA_HDT_FROM_AIR`
+
+```c
+#define SA_HDT_FROM_AIR 1
+```
+
+### `SA_HDT_TO_AIR`
+
+```c
+#define SA_HDT_TO_AIR 0
+```
+
+### `PARAM_ID_SA_HDT_STREAM_INFO`
+
+Parameter ID of SA HDT Stream Info.
+
+```c
+#define PARAM_ID_SA_HDT_STREAM_INFO 0x08001B95
+```
+
+### `PARAM_ID_SA_HDT_OP_MODE`
+
+Parameter ID of SA HDT OP Mode.
+
+```c
+#define PARAM_ID_SA_HDT_OP_MODE 0x08001B96
+```
+
+### `PARAM_ID_SA_HDT_TRACKING_CONFIG`
+
+Parameter ID for SA HDT Tracking Configuration.
+
+```c
+#define PARAM_ID_SA_HDT_TRACKING_CONFIG 0x08010007
+```
+
+### `PARAM_ID_SA_HDT_TRACKING_RECENTER`
+
+Parameter ID for SA HDT Tracking Recenter.
+
+```c
+#define PARAM_ID_SA_HDT_TRACKING_RECENTER 0x08F013DB
+```
+
+### `PARAM_ID_SA_HDT_TRACKING_STATUS`
+
+Parameter ID for SA HDT Tracking Status (Read-only)
+
+```c
+#define PARAM_ID_SA_HDT_TRACKING_STATUS 0x08F013E0
+```
+
+### `MODULE_ID_SA_HDT`
+
+```c
+#define MODULE_ID_SA_HDT 0x0702C005
+```

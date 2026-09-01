@@ -1,0 +1,68 @@
+---
+title: "lc3_encoder_api.h"
+---
+
+## Structures
+
+### `param_id_lc3_encoder_config_payload_t`
+
+**Members**
+
+<ParamField path="toAirConfig" type="lc3_config_t">
+</ParamField>
+<ParamField path="stream_map_size" type="uint32_t">
+  Each stream map entity has 3 elements - audio location, stream-id, and direction}
+</ParamField>
+<ParamField path="streamMapOut" type="stream_map_t">
+</ParamField>
+
+### `param_id_lc3_encoder_switch_enc_pcm_input_payload_t`
+
+**Members**
+
+<ParamField path="transition_direction" type="int32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_lc3_encoder_config_payload_t`
+
+```c
+typedef struct param_id_lc3_encoder_config_payload_t param_id_lc3_encoder_config_payload_t
+```
+
+### `param_id_lc3_encoder_switch_enc_pcm_input_payload_t`
+
+```c
+typedef struct param_id_lc3_encoder_switch_enc_pcm_input_payload_t param_id_lc3_encoder_switch_enc_pcm_input_payload_t
+```
+
+## Macros
+
+### `COP_ENCODER_FEEDBACK_IN`
+
+```c
+#define COP_ENCODER_FEEDBACK_IN AR_NON_GUID(0xC0000001)
+```
+
+### `PARAM_ID_LC3_ENC_INIT`
+
+ID of the LC3 Enc_Init parameter.This parameter should be set at init time, but not run time.
+
+```c
+#define PARAM_ID_LC3_ENC_INIT 0x0800118B
+```
+
+### `PARAM_ID_LC3_ENC_DOWNMIX_2_MONO`
+
+ID of the LC3 encoder downmix to mono parameter.This parameter can be set at run time.
+
+```c
+#define PARAM_ID_LC3_ENC_DOWNMIX_2_MONO 0x0800118C
+```
+
+### `MODULE_ID_LC3_ENC`
+
+```c
+#define MODULE_ID_LC3_ENC 0x07001085
+```

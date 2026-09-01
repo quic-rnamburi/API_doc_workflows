@@ -1,0 +1,222 @@
+---
+title: "ar_osal_error.h"
+description: "This file contains error codes used by AudioReach."
+---
+
+## Macros
+
+### `AR_EOK`
+
+Success.
+
+```c
+#define AR_EOK (0)
+```
+
+### `AR_EFAILED`
+
+General failure.
+
+```c
+#define AR_EFAILED (1)
+```
+
+### `AR_EBADPARAM`
+
+Bad operation parameter.
+
+```c
+#define AR_EBADPARAM (2)
+```
+
+### `AR_EUNSUPPORTED`
+
+Unsupported routine or operation.
+
+```c
+#define AR_EUNSUPPORTED (3)
+```
+
+### `AR_EVERSION`
+
+Unsupported version.
+
+```c
+#define AR_EVERSION (4)
+```
+
+### `AR_EUNEXPECTED`
+
+Unexpected problem encountered.
+
+```c
+#define AR_EUNEXPECTED (5)
+```
+
+### `AR_EPANIC`
+
+Unhandled problem occurred.
+
+```c
+#define AR_EPANIC (6)
+```
+
+### `AR_ENORESOURCE`
+
+Unable to allocate resource.
+
+```c
+#define AR_ENORESOURCE (7)
+```
+
+### `AR_EHANDLE`
+
+Invalid handle.
+
+```c
+#define AR_EHANDLE (8)
+```
+
+### `AR_EALREADY`
+
+Operation is already processed.
+
+```c
+#define AR_EALREADY (9)
+```
+
+### `AR_ENOTREADY`
+
+Operation is not ready to be processed.
+
+```c
+#define AR_ENOTREADY (10)
+```
+
+### `AR_EPENDING`
+
+Operation is pending completion.
+
+```c
+#define AR_EPENDING (11)
+```
+
+### `AR_EBUSY`
+
+Operation cannot be accepted or processed.
+
+```c
+#define AR_EBUSY (12)
+```
+
+### `AR_EABORTED`
+
+Operation was aborted due to an error.
+
+```c
+#define AR_EABORTED (13)
+```
+
+### `AR_ECONTINUE`
+
+Operation requests an intervention to complete.
+
+```c
+#define AR_ECONTINUE (14)
+```
+
+### `AR_EIMMEDIATE`
+
+Operation requests an immediate intervention to complete.
+
+```c
+#define AR_EIMMEDIATE (15)
+```
+
+### `AR_ENOTIMPL`
+
+Operation was not implemented.
+
+```c
+#define AR_ENOTIMPL (16)
+```
+
+### `AR_ENEEDMORE`
+
+Operation needs more data or resources.
+
+```c
+#define AR_ENEEDMORE (17)
+```
+
+### `AR_ENOMEMORY`
+
+Operation does not have memory.
+
+```c
+#define AR_ENOMEMORY (18)
+```
+
+### `AR_ENOTEXIST`
+
+Item does not exist.
+
+```c
+#define AR_ENOTEXIST (19)
+```
+
+### `AR_ETERMINATED`
+
+Operation is finished.
+
+```c
+#define AR_ETERMINATED (20)
+```
+
+### `AR_ETIMEOUT`
+
+Operation timeout.
+
+```c
+#define AR_ETIMEOUT (21)
+```
+
+### `AR_EIODATA`
+
+Data read/write failed.
+
+```c
+#define AR_EIODATA (22)
+```
+
+### `AR_ESUBSYSRESET`
+
+Sub system reset occured.
+
+```c
+#define AR_ESUBSYSRESET (23)
+```
+
+### `AR_EDUPLICATE`
+
+Duplicate subgraph or connection opened.
+
+```c
+#define AR_EDUPLICATE (24)
+```
+
+### `AR_SUCCEEDED`
+
+Checks if a result is a success.
+
+```c
+#define AR_SUCCEEDED (AR_EOK == (x) )
+```
+
+### `AR_FAILED`
+
+Checks if a result is failure.
+
+```c
+#define AR_FAILED (AR_EOK != (x) )
+```

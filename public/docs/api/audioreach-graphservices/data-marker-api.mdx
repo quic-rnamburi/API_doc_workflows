@@ -1,0 +1,73 @@
+---
+title: "data_marker_api.h"
+description: "data_marker_api.h: This file contains the Module Id, Param IDs and configuration structures exposed by the DATA_MARKER Module."
+---
+
+## Structures
+
+### `param_id_data_marker_insert_md_t`
+
+**Members**
+
+<ParamField path="metadata_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="token" type="uint32_t">
+</ParamField>
+
+### `event_id_delay_marker_info_t`
+
+**Members**
+
+<ParamField path="delay" type="uint32_t">
+</ParamField>
+<ParamField path="token" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_data_marker_insert_md_t`
+
+```c
+typedef struct param_id_data_marker_insert_md_t param_id_data_marker_insert_md_t
+```
+
+### `event_id_delay_marker_info_t`
+
+```c
+typedef struct event_id_delay_marker_info_t event_id_delay_marker_info_t
+```
+
+## Macros
+
+### `PARAM_ID_DATA_MARKER_INSERT_MD`
+
+```c
+#define PARAM_ID_DATA_MARKER_INSERT_MD 0x08001155
+```
+
+### `EVENT_ID_DELAY_MARKER_INFO`
+
+```c
+#define EVENT_ID_DELAY_MARKER_INFO 0x08001156
+```
+
+### `CAPI_DATA_MARKER_STACK_SIZE`
+
+```c
+#define CAPI_DATA_MARKER_STACK_SIZE 2048
+```
+
+### `CAPI_DATA_MARKER_MAX_PORTS`
+
+```c
+#define CAPI_DATA_MARKER_MAX_PORTS 1
+```
+
+### `MODULE_ID_DATA_MARKER`
+
+ID of the DATA_MARKER module, which is used to insert and intercept metadata.
+
+```c
+#define MODULE_ID_DATA_MARKER 0x0700106A
+```

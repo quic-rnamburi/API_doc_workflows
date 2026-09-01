@@ -1,0 +1,113 @@
+---
+title: "mspp_module_calibration_api.h"
+---
+
+## Structures
+
+### `mspp_param_id_config_t`
+
+**Members**
+
+<ParamField path="cfg_size" type="uint32_t">
+</ParamField>
+<ParamField path="cfg_buf" type="uint8_t">
+</ParamField>
+
+### `mspp_volume_ctrl_gain_t`
+
+**Members**
+
+<ParamField path="vol_lin_gain" type="int32_t">
+</ParamField>
+
+### `microspeaker_dev_orientation_t`
+
+**Members**
+
+<ParamField path="dev_orientation" type="uint32_t">
+</ParamField>
+
+### `microspeaker_version_t`
+
+**Members**
+
+<ParamField path="lib_version_low" type="uint32_t">
+</ParamField>
+<ParamField path="lib_version_high" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `mspp_param_id_config_t`
+
+```c
+typedef struct mspp_param_id_config_t mspp_param_id_config_t
+```
+
+### `mspp_volume_ctrl_gain_t`
+
+```c
+typedef struct mspp_volume_ctrl_gain_t mspp_volume_ctrl_gain_t
+```
+
+### `microspeaker_dev_orientation_t`
+
+```c
+typedef struct microspeaker_dev_orientation_t microspeaker_dev_orientation_t
+```
+
+### `microspeaker_version_t`
+
+```c
+typedef struct microspeaker_version_t microspeaker_version_t
+```
+
+## Macros
+
+### `PARAM_ID_MSPP_CFG`
+
+```c
+#define PARAM_ID_MSPP_CFG 0x0800137B
+```
+
+### `MICROSPEAKER_LIN_VOLUME_QFACTOR_28`
+
+```c
+#define MICROSPEAKER_LIN_VOLUME_QFACTOR_28 28
+```
+
+### `PARAM_ID_MSPP_VOLUME`
+
+```c
+#define PARAM_ID_MSPP_VOLUME 0x0800137C
+```
+
+### `PARAM_ID_MSPP_DEV_ORIENTATION`
+
+```c
+#define PARAM_ID_MSPP_DEV_ORIENTATION 0x08001394
+```
+
+### `MICROSPEAKER_RELEASE_VERSION_MAJOR`
+
+```c
+#define MICROSPEAKER_RELEASE_VERSION_MAJOR 0x00000003
+```
+
+### `MICROSPEAKER_RELEASE_VERSION_MINOR`
+
+```c
+#define MICROSPEAKER_RELEASE_VERSION_MINOR 0x00000000
+```
+
+### `PARAM_ID_MSPP_VERSION`
+
+```c
+#define PARAM_ID_MSPP_VERSION 0x0800137D
+```
+
+### `MODULE_ID_MICROSPEAKER_POST_PROCESSING`
+
+```c
+#define MODULE_ID_MICROSPEAKER_POST_PROCESSING 0x070010DE
+```

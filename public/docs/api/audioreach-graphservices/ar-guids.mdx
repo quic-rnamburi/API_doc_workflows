@@ -1,0 +1,166 @@
+---
+title: "ar_guids.h"
+description: "GUID interpretation."
+---
+
+## Macros
+
+### `AR_NON_GUID`
+
+GUIDs are 32 bit numbers.
+
+```c
+#define AR_NON_GUID x
+```
+
+### `AR_GUID_OWNER_QC`
+
+GUID Owners.
+
+```c
+#define AR_GUID_OWNER_QC 0x0
+```
+
+### `AR_GUID_OWNER_NON_QC`
+
+GUID owner is not-Qualcomm.
+
+```c
+#define AR_GUID_OWNER_NON_QC 0x1
+```
+
+### `AR_GUID_OWNER_MASK`
+
+Rest are reserved.
+
+```c
+#define AR_GUID_OWNER_MASK AR_NON_GUID(0xF0000000)
+```
+
+### `AR_GUID_OWNER_SHIFT`
+
+Shift for Owner.
+
+```c
+#define AR_GUID_OWNER_SHIFT 28
+```
+
+### `AR_GUID_TYPE_RESERVED`
+
+GUID types.
+
+```c
+#define AR_GUID_TYPE_RESERVED 0x0
+```
+
+### `AR_GUID_TYPE_CONTROL_CMD`
+
+GUID type for Control commands.
+
+```c
+#define AR_GUID_TYPE_CONTROL_CMD 0x1
+```
+
+### `AR_GUID_TYPE_CONTROL_CMD_RSP`
+
+GUID type for command responses of control commands.
+
+```c
+#define AR_GUID_TYPE_CONTROL_CMD_RSP 0x2
+```
+
+### `AR_GUID_TYPE_CONTROL_EVENT`
+
+GUID type for control events.
+
+```c
+#define AR_GUID_TYPE_CONTROL_EVENT 0x3
+```
+
+### `AR_GUID_TYPE_DATA_CMD`
+
+GUID type for data commands.
+
+```c
+#define AR_GUID_TYPE_DATA_CMD 0x4
+```
+
+### `AR_GUID_TYPE_DATA_CMD_RSP`
+
+GUID type for data command responses.
+
+```c
+#define AR_GUID_TYPE_DATA_CMD_RSP 0x5
+```
+
+### `AR_GUID_TYPE_DATA_EVENT`
+
+GUID type for data events.
+
+```c
+#define AR_GUID_TYPE_DATA_EVENT 0x6
+```
+
+### `AR_GUID_TYPE_MODULE_ID`
+
+GUID type for module-id.
+
+```c
+#define AR_GUID_TYPE_MODULE_ID 0x7
+```
+
+### `AR_GUID_TYPE_PARAM_EVENT_ID`
+
+GUID type for module's param & event-id.
+
+```c
+#define AR_GUID_TYPE_PARAM_EVENT_ID 0x8
+```
+
+### `AR_GUID_TYPE_FORMAT_ID`
+
+GUID type for media format-id.
+
+```c
+#define AR_GUID_TYPE_FORMAT_ID 0x9
+```
+
+### `AR_GUID_TYPE_CAPI`
+
+GUID type is CAPI.
+
+```c
+#define AR_GUID_TYPE_CAPI 0xA
+```
+
+### `AR_GUID_TYPE_MISC`
+
+GUID Type is miscellaneous.
+
+```c
+#define AR_GUID_TYPE_MISC 0xB
+```
+
+### `AR_GUID_TYPE_MASK`
+
+Rest are reserved.
+
+```c
+#define AR_GUID_TYPE_MASK AR_NON_GUID(0x0F000000)
+```
+
+### `AR_GUID_TYPE_SHIFT`
+
+Shift for GUID type.
+
+```c
+#define AR_GUID_TYPE_SHIFT 24
+```
+
+### `AR_GUID_INVALID`
+
+Zero is an invalid ID.
+
+```c
+#define AR_GUID_INVALID 0
+```

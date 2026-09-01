@@ -1,0 +1,40 @@
+---
+title: "aptx_adaptive_swb_decoder_api.h"
+---
+
+## Structures
+
+### `param_id_aptx_adaptive_speech_dec_init_t`
+
+**Members**
+
+<ParamField path="speechMode" type="uint32_t">
+  note that both modes use a frame interval of 7.5mS}
+</ParamField>
+<ParamField path="byteSwap" type="uint32_t">
+  If enabled, transforms AABBCCDD to DDCCBBAA}
+</ParamField>
+
+## Type Definitions
+
+### `param_id_aptx_adaptive_speech_dec_init_t`
+
+```c
+typedef struct param_id_aptx_adaptive_speech_dec_init_t param_id_aptx_adaptive_speech_dec_init_t
+```
+
+## Macros
+
+### `PARAM_ID_APTX_ADAPTIVE_SPEECH_DEC_INIT`
+
+ID of the aptx adaptive SWB Speech decoder initialization parameter.
+
+```c
+#define PARAM_ID_APTX_ADAPTIVE_SPEECH_DEC_INIT 0x0800118E
+```
+
+### `MODULE_ID_APTX_ADAPTIVE_SWB_DEC`
+
+```c
+#define MODULE_ID_APTX_ADAPTIVE_SWB_DEC 0x07001083
+```

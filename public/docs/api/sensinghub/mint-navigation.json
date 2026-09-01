@@ -1,0 +1,14 @@
+{
+  "group": "sensinghub",
+  "pages": [
+    "public/docs/api/sensinghub/suid",
+    "public/docs/api/sensinghub/qshlog",
+    "public/docs/api/sensinghub/qshpb",
+    "public/docs/api/sensinghub/qshpbsensorutils",
+    "public/docs/api/sensinghub/qshssr",
+    "public/docs/api/sensinghub/qshtrace",
+    "public/docs/api/sensinghub/qshwakelock",
+    "public/docs/api/sensinghub/qshworker",
+    "public/docs/api/sensinghub/suidlookup"
+  ]
+}

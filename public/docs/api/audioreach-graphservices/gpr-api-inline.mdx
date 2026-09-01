@@ -1,0 +1,489 @@
+---
+title: "gpr_api_inline.h"
+description: "This file contains GPR APIs."
+---
+
+## Functions
+
+### `__gpr_cmd_register`
+
+Registers a service, by its unique service ID, with the GPR.
+
+@datatypes gpr_callback_fn_t
+
+@codeexample @lstlisting #include "gpr_api_inline.h"
+
+Example of a test client service (with service ID GPR_TESTCLIENT_SERVICE_ID) trying to register with GPR. uint32_t service_callback_fn(gpr_packet_t *packet, void *callback_data); void * callback_data = NULL;
+
+int main ( void )  return 0; }
+
+Example of a callback function for a service. It is invoked by GPR every time a message is sent or received, to or from that service. static int32_t service_callback_fn( gpr_packet_t* packet,
+                                    void* callback_data )
+
+switch ( packet->opcode )  case TEST_CLIENT_RSP_FUNCTION:  case GPR_IBASIC_RSP_RESULT:  default:  } return AR_EOK; AR_EOK tells the caller that the packet was consumed (freed). } @endlstlisting
+
+```c
+uint32_t __gpr_cmd_register(uint32_t src_port, gpr_callback_fn_t callback_fn, void *callback_data)
+```
+
+**Parameters**
+
+<ParamField path="src_port" type="uint32_t">
+  Unique ID (within a domain) of the service to be registered.
+</ParamField>
+<ParamField path="callback_fn" type="gpr_callback_fn_t">
+  Callback function of the service to be registered.
+</ParamField>
+<ParamField path="callback_data" type="void *">
+  Pointer to the client-supplied data pointer for the callback function.
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.
+
+### `__gpr_cmd_deregister`
+
+Deregisters a service from the GPR.
+
+@codeexample @lstlisting #include "gpr_api_inline.h"
+
+Example of a test client service (with service ID GPR_TESTCLIENT_SERVICE_ID) trying to deregister from GPR. uint32_t callback_fn(gpr_packet_t *packet, void *callback_data); void * callback_data = NULL;
+
+int32_t rc = __gpr_cmd_register(GPR_TESTCLIENT_SERVICE_ID,
+                                callback_fn,
+                                callback_data); if ( rc )  ... rc = __gpr_cmd_deregister(GPR_TESTCLIENT_SERVICE_ID); if ( rc )  @endlstlisting
+
+```c
+uint32_t __gpr_cmd_deregister(uint32_t src_port)
+```
+
+**Parameters**
+
+<ParamField path="src_port" type="uint32_t">
+  Unique ID of the service.
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.
+
+### `__gpr_cmd_is_registered`
+
+Called by the framework to check whether a service is registered with the GPR.
+
+@codeexample @lstlisting #include "gpr_api_inline.h"
+
+Example to check if test client service (with service ID GPR_TESTCLIENT_SERVICE_ID) is registered with GPR. bool_t is_registered = FALSE; __gpr_cmd_is_registered(GPR_TESTCLIENT_SERVICE_ID, &is_registered); if(TRUE == is_registered)  else  @endlstlisting @newpage
+
+```c
+uint32_t __gpr_cmd_is_registered(uint32_t port, bool_t *is_registered)
+```
+
+**Parameters**
+
+<ParamField path="port" type="uint32_t">
+  Unique ID of the service.
+</ParamField>
+<ParamField path="is_registered" type="bool_t *">
+  Pointer to the client-supplied flag that returns TRUE if service is registered and FALSE if the service is not registered.
+</ParamField>
+
+**Returns**
+
+AR_EOK.
+
+### `__gpr_cmd_get_host_domain_id`
+
+Queries the GPR to get the local or host domain ID.
+
+@codeexample @lstlisting #include "gpr_api_inline.h"
+
+uint32_t host_domain_id; __gpr_cmd_host_domain_id( &host_domain_id ); printf( "GPR is in domain ID: %d ", host_domain_id ); @endlstlisting
+
+```c
+uint32_t __gpr_cmd_get_host_domain_id(uint32_t *host_domain_id)
+```
+
+**Parameters**
+
+<ParamField path="host_domain_id" type="uint32_t *">
+  Pointer to the GPR's host domain ID.
+</ParamField>
+
+**Returns**
+
+AR_EOK always.- Returns the host domain ID
+
+### `__gpr_cmd_get_dest_domain_ids`
+
+Utility to query list of destination domain ids with which GPR communication is supported from the current domain.
+
+@codeexample @lstlisting
+
+#include "gpr_api_inline.h"
+
+uint32_t num_domains = 0; uint32_t *dest_domains = NULL; __gpr_cmd_get_dest_domain_ids(&num_domains, dest_domains); dest_domains = (uint32_t *)malloc(sizeof(num_domains*sizeof(uint32_t))); __gpr_cmd_get_dest_domain_ids(&num_domains, dest_domains);
+
+@endlstlisting
+
+```c
+uint32_t __gpr_cmd_get_dest_domain_ids(uint32_t *num_domains, uint32_t *domain_ids)
+```
+
+**Parameters**
+
+<ParamField path="num_domains" type="uint32_t *">
+  - Pointer to the num of destination domains.
+</ParamField>
+<ParamField path="domain_ids" type="uint32_t *">
+  - Pointer to the GPR's destination domain IDs.
+</ParamField>
+
+**Returns**
+
+AR_EOK always.- Returns the number of destination domains on requesting first time. AR_EOK always.- When called again with memory allocated for domain array, fills destination domain ids info.
+
+### `__gpr_cmd_is_shared_mem_supported`
+
+Utility to query if shared memory is supported from the current domain to a given dest_domain_id.
+
+@codeexample @lstlisting #include "gpr_api_inline.h"
+
+uint32_t dest_domain_id = GPR_IDS_DOMAIN_ID_ADSP_V; bool_t supports_shared_mem = true; __gpr_cmd_is_shared_mem_supported(dest_domain_id, &supports_shared_mem); if (supports_shared_mem) do something else do something @endlstlisting
+
+```c
+uint32_t __gpr_cmd_is_shared_mem_supported(uint32_t dest_domain_id, bool_t *supports_shared_mem)
+```
+
+**Parameters**
+
+<ParamField path="dest_domain_id" type="uint32_t">
+  - Destination domain id.
+</ParamField>
+<ParamField path="supports_shared_mem" type="bool_t *">
+  - Pointer to know if domain supports shared memory
+</ParamField>
+
+**Returns**
+
+AR_EOK always.- Returns if a destination domain supports shared memory.
+
+### `__gpr_cmd_get_gpr_packet_info`
+
+Queries for the GPR's packet pool information.
+
+@datatypes gpr_cmd_gpr_packet_pool_info_t
+
+@codeexample @lstlisting #include "gpr_api_inline.h"
+
+gpr_cmd_gpr_packet_pool_info_t packet_info; __gpr_cmd_get_gpr_packet_info( &packet_info );
+
+printf( "GPR packet pool information:
+         Bytes in minimum-sized gpr packet: %d,
+         Number of minimum-sized gpr packets allocated at initialization: %d,
+         Bytes in maximum-sized gpr packet: %d,
+         Number of maximum-sized gpr packets allocated at initialization: %d ", packet_info.bytes_per_min_size_packet, packet_info.num_min_size_packets, packet_info.bytes_per_max_size_packet, packet_info.num_max_size_packets); @endlstlisting
+
+@inputfile
+
+```c
+uint32_t __gpr_cmd_get_gpr_packet_info(gpr_cmd_gpr_packet_pool_info_t *args)
+```
+
+**Parameters**
+
+<ParamField path="args" type="gpr_cmd_gpr_packet_pool_info_t *">
+  Pointer to the packet pool information, such as the number and sizes of the packets.
+</ParamField>
+
+**Returns**
+
+AR_EOK  Returns the GPR packet pool information.
+
+### `__gpr_cmd_get_gpr_packet_info_v2`
+
+Queries for the GPR's V2 packet pool information.
+
+@datatypes gpr_packet_pool_info_v2_t
+
+@codeexample @lstlisting #include "gpr_api_inline.h"
+
+gpr_packet_pool_info_v2_t *packet_pool_info_arr = NULL; uint32_t num_packet_pools = 0;
+
+Calling first time, to gets number of packet pools and allocates the array accordingly. __gpr_cmd_get_gpr_packet_info_v2( &num_packet_pools, packet_pool_info_arr ); packet_pool_info_arr = (gpr_packet_pool_info_v2_t *)malloc(sizeof(num_packet_pools*sizeof(gpr_packet_pool_info_v2_t)));
+
+Calling second time to the get the populated packet_pool_info_arr __gpr_cmd_get_gpr_packet_info_v2( &num_packet_pools, packet_pool_info_arr );
+
+@endlstlisting
+
+@inputfile
+
+```c
+uint32_t __gpr_cmd_get_gpr_packet_info_v2(uint32_t *num_packet_pools, gpr_packet_pool_info_v2_t *packet_pool_info_arr)
+```
+
+**Parameters**
+
+<ParamField path="num_packet_pools" type="uint32_t *">
+  Number of packet pools that are created.
+</ParamField>
+<ParamField path="packet_pool_info_arr" type="gpr_packet_pool_info_v2_t *">
+  Packet pool info array, with each element in array containing pool related info like number of packets, packet size, heap index and if the packets are dynamically/statically allocated.
+</ParamField>
+
+**Returns**
+
+AR_EOK always.- Returns the number of packet pools on requesting first time. AR_EOK always.- When called again with memory allocated for Packet pool info array, fills the array elements with the pool info.
+
+### `__gpr_cmd_async_send`
+
+Sends an asynchronous message to other services.
+
+@datatypes gpr_packet_t
+
+int32_t rc; gpr_packet_t* packet_ptr; uint32_t payload_size; uint32_t packet_size;
+
+Example of a payload structure that needs to be populated and sent. test_client_cmd_function_t payload; payload_size = sizeof( test_client_cmd_function_t ); packet_size = payload_size + GPR_PKT_HEADER_WORD_SIZE_V;
+
+Allocate a free packet. rc = __gpr_cmd_alloc( payload_size, &packet ); if ( rc )
+
+Fill in the packet details. packet->header GPR_SET_FIELD(GPR_PKT_VERSION, GPR_PKT_VERSION_V) | GPR_SET_FIELD(GPR_PKT_HEADER_SIZE, GPR_PKT_HEADER_WORD_SIZE_V) | GPR_SET_FIELD(GPR_PKT_PACKET_SIZE, packet_size); packet->dst_domain = GPR_CLIENT_SERVICE_DOMAIN_ID_DESTINATION; packet->src_domain = GPR_CLIENT_SERVICE_DOMAIN_ID_SOURCE; packet->dst_port = GPR_CLIENT_SERVICE_PORT_ID_DESTINATION; packet->src_port = GPR_CLIENT_SERVICE_PORT_ID_SOURCE; packet->token = 0x12345678; packet->opcode = TEST_CLIENT_CMD_FUNCTION;
+
+Fill in the payload. payload.param1 = 1; payload.param2 = 2; memscpy( GPR_PKT_GET_PAYLOAD( void, packet ), payload_size, payload, payload_size );
+
+Send the packet. rc = __gpr_cmd_async_send( packet_ptr ); if ( rc )  @endlstlisting
+
+```c
+uint32_t __gpr_cmd_async_send(gpr_packet_t *packet)
+```
+
+**Parameters**
+
+<ParamField path="packet" type="gpr_packet_t *">
+  Pointer to the packet (message) to send.
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.
+
+### `__gpr_cmd_alloc`
+
+Allocates a free message for delivery.
+
+@datatypes gpr_packet_t
+
+@codeexample See the code example for __gpr_cmd_async_send().
+
+```c
+uint32_t __gpr_cmd_alloc(uint32_t alloc_size, gpr_packet_t **ret_packet)
+```
+
+**Parameters**
+
+<ParamField path="alloc_size" type="uint32_t">
+  Amount of memory (in bytes) required for allocation.
+</ParamField>
+<ParamField path="ret_packet" type="gpr_packet_t **">
+  Double pointer to the allocated packet that is returned by this function.
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.
+
+### `__gpr_cmd_alloc_v2`
+
+Allocates a free message for delivery from a specified heap.
+
+@datatypes gpr_packet_t
+
+@codeexample See the code example for __gpr_cmd_async_send().
+
+```c
+uint32_t __gpr_cmd_alloc_v2(uint32_t alloc_size, gpr_heap_index_t heap_index, gpr_packet_t **ret_packet)
+```
+
+**Parameters**
+
+<ParamField path="alloc_size" type="uint32_t">
+  Amount of memory (in bytes) required for allocation.
+</ParamField>
+<ParamField path="heap_index" type="gpr_heap_index_t">
+  Heap index of the packet pool.
+</ParamField>
+<ParamField path="ret_packet" type="gpr_packet_t **">
+  Double pointer to the allocated packet that is returned by this function.
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.
+
+### `__gpr_cmd_free`
+
+Frees a specified GPR packet and returns it to the owner.
+
+@datatypes gpr_packet_t
+
+@codeexample See the code example for __gpr_cmd_async_send().
+
+```c
+uint32_t __gpr_cmd_free(gpr_packet_t *packet)
+```
+
+**Parameters**
+
+<ParamField path="packet" type="gpr_packet_t *">
+  Pointer to the GPR packet to be freed.
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.
+
+### `__gpr_cmd_alloc_ext`
+
+Allocates a formatted free packet for delivery.
+
+@datatypes gpr_cmd_alloc_ext_t
+
+int32_t rc; gpr_packet_t* packet_ptr; uint32_t payload_size;
+
+Example payload required to be sent. test_client_cmd_function_t * payload;
+
+gpr_cmd_alloc_ext_t alloc_args; alloc_args.src_domain_id = GPR_CLIENT_SERVICE_DOMAIN_ID_SOURCE; alloc_args.src_port = GPR_CLIENT_SERVICE_PORT_ID_SOURCE; alloc_args.dst_domain_id = GPR_CLIENT_SERVICE_DOMAIN_ID_DESTINATION; alloc_args.dst_port = GPR_CLIENT_SERVICE_PORT_ID_DESTINATION; alloc_args.token = 0x12345678; alloc_args.opcode = TEST_CLIENT_CMD_FUNCTION; alloc_args.payload_size = sizeof( test_client_cmd_function_t ); alloc_args.ret_packet = &packet_ptr;
+
+Allocate memory for the packet. rc = __gpr_cmd_alloc_ext(alloc_args); if ( rc )
+
+Fill in the payload. payload = GPR_PKT_GET_PAYLOAD( test_client_cmd_function_t, packet_ptr ); payload->param1 = 1; payload->param2 = 2;
+
+Send the packet. rc = __gpr_cmd_async_send( packet_ptr ); if ( rc )  @endlstlisting
+
+@inputfile
+
+```c
+uint32_t __gpr_cmd_alloc_ext(gpr_cmd_alloc_ext_t *args)
+```
+
+**Parameters**
+
+<ParamField path="args" type="gpr_cmd_alloc_ext_t *">
+  Pointer to the allocated packet information, such as domain and port IDs, token and opcode values, and payload size.
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.
+
+### `__gpr_cmd_alloc_ext_v2`
+
+Allocates a formatted free packet for delivery from a specified heap.
+
+@datatypes #gpr_cmd_alloc_ext_v2
+
+int32_t rc; gpr_packet_t* packet_ptr; uint32_t payload_size;
+
+Example payload required to be sent. test_client_cmd_function_t * payload;
+
+gpr_cmd_alloc_ext_v2_t alloc_args; alloc_args.src_domain_id = GPR_CLIENT_SERVICE_DOMAIN_ID_SOURCE; alloc_args.src_port = GPR_CLIENT_SERVICE_PORT_ID_SOURCE; alloc_args.dst_domain_id = GPR_CLIENT_SERVICE_DOMAIN_ID_DESTINATION; alloc_args.dst_port = GPR_CLIENT_SERVICE_PORT_ID_DESTINATION; alloc_args.token = 0x12345678; alloc_args.heap_index = GPR_HEAP_INDEX_DEFAULT; alloc_args.opcode = TEST_CLIENT_CMD_FUNCTION; alloc_args.payload_size = sizeof( test_client_cmd_function_t ); alloc_args.ret_packet = &packet_ptr;
+
+Allocate memory for the packet. rc = __gpr_cmd_alloc_ext_v2(alloc_args); if ( rc )
+
+Fill in the payload. payload = GPR_PKT_GET_PAYLOAD( test_client_cmd_function_t, packet_ptr ); payload->param1 = 1; payload->param2 = 2;
+
+Send the packet. rc = __gpr_cmd_async_send( packet_ptr ); if ( rc )  @endlstlisting
+
+@inputfile
+
+```c
+uint32_t __gpr_cmd_alloc_ext_v2(gpr_cmd_alloc_ext_v2_t *args)
+```
+
+**Parameters**
+
+<ParamField path="args" type="gpr_cmd_alloc_ext_v2_t *">
+  Pointer to the allocated packet information, such as domain and port IDs, token and opcode values, heap_index and payload size.
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.
+
+### `__gpr_cmd_alloc_send`
+
+Allocates and sends a formatted free packet.
+
+@datatypes gpr_cmd_alloc_send_t
+
+int32_t rc; gpr_packet_t* packet_ptr; uint32_t payload_size;
+
+Example payload required to be sent. test_client_cmd_function_t payload;
+
+Fill in the payload. payload.param1 = 1; payload.param2 = 2;
+
+gpr_cmd_alloc_send_t alloc_send_args; alloc_send_args.src_domain_id = GPR_CLIENT_SERVICE_DOMAIN_ID_SOURCE; alloc_send_args.src_port = GPR_CLIENT_SERVICE_PORT_ID_SOURCE; alloc_send_args.dst_domain_id = GPR_CLIENT_SERVICE_DOMAIN_ID_DESTINATION; alloc_send_args.dst_port = GPR_CLIENT_SERVICE_PORT_ID_DESTINATION; alloc_send_args.token = 0x12345678; alloc_send_args.opcode = TEST_CLIENT_CMD_FUNCTION; alloc_send_args.payload_size = sizeof( test_client_cmd_function_t ); alloc_send_args.payload = &payload;
+
+Create and send packet. rc = __gpr_cmd_alloc_send(alloc_send_args); if ( rc )  @endlstlisting
+
+@inputfile
+
+```c
+uint32_t __gpr_cmd_alloc_send(gpr_cmd_alloc_send_t *args)
+```
+
+**Parameters**
+
+<ParamField path="args" type="gpr_cmd_alloc_send_t *">
+  Pointer to the allocated packet information, such as domain and port IDs, token and opcode values, and payload size.
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.
+
+### `__gpr_cmd_accept_command`
+
+Accepts a command packet by replying with a GPR_IBASIC_EVT_ACCEPTED message to the sender.
+
+@datatypes gpr_packet_t
+
+```c
+uint32_t __gpr_cmd_accept_command(gpr_packet_t *packet)
+```
+
+**Parameters**
+
+<ParamField path="packet" type="gpr_packet_t *">
+  Pointer to the command packet to be accepted.
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.
+
+### `__gpr_cmd_end_command`
+
+Completes a command message by replying with a GPR_IBASIC_RSP_RESULT command response message to the sender.
+
+The indicated packet is then freed.
+
+@datatypes gpr_packet_t
+
+```c
+uint32_t __gpr_cmd_end_command(gpr_packet_t *packet, uint32_t status)
+```
+
+**Parameters**
+
+<ParamField path="packet" type="gpr_packet_t *">
+  Pointer to the command message to complete.
+</ParamField>
+<ParamField path="status" type="uint32_t">
+  Completion or error status to respond to the client (see Section@xref).
+</ParamField>
+
+**Returns**
+
+AR_EOK  When successful.

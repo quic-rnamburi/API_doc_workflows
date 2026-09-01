@@ -1,0 +1,180 @@
+---
+title: "ar_osal_log_pkt_op.h"
+description: "Defines platform agnostic APIs for sending log packets to the PC."
+---
+
+## Structures
+
+### `ar_log_pkt_op_init_info_t`
+
+**Members**
+
+<ParamField path="data_transport" type="ar_log_data_transport_t">
+  The data transport to use when sending log packets.
+</ParamField>
+<ParamField path="heap_info" type="ar_heap_info">
+  Heap information used to identify memory allocated by the data transport.
+</ParamField>
+
+## Functions
+
+### `ar_log_pkt_op_init`
+
+ar_log_pkt_op_init
+
+```c
+int32_t ar_log_pkt_op_init(ar_log_pkt_op_init_info_t *info)
+```
+
+**Parameters**
+
+<ParamField path="info" type="ar_log_pkt_op_init_info_t *">
+  pointer to info structure containing heap and data transport information that is used to initialize the pai
+</ParamField>
+
+**Returns**
+
+Success  0 Failure  non-zero
+
+### `ar_log_pkt_op_deinit`
+
+ar_log_pkt_op_deinit
+
+Deinitializes the utility and release any/all
+   resources aquired
+ \depends ar_log_pkt_op_init(...) must be called before this function
+
+```c
+int32_t ar_log_pkt_op_deinit(void)
+```
+
+**Returns**
+
+Success  returns a pointer to the allocated memory Failure  returns null if the allocation fails
+
+### `ar_log_pkt_get_max_size`
+
+ar_log_pkt_get_max_size
+
+Retrieve the max size of a log packet that can be sent through
+   the data transport
+ \depends ar_log_pkt_op_init(...) must be called before this function
+
+```c
+uint32_t ar_log_pkt_get_max_size(void)
+```
+
+**Returns**
+
+return the max log packet size
+
+### `ar_log_pkt_alloc`
+
+ar_log_pkt_alloc
+
+```c
+void * ar_log_pkt_alloc(uint16_t logcode, uint32_t length)
+```
+
+**Parameters**
+
+<ParamField path="logcode" type="uint16_t">
+  the log code used for the packet. See ar_util_data_log_codes.h in the AR Util
+</ParamField>
+<ParamField path="length" type="uint32_t">
+  the size of the packet to allocate
+</ParamField>
+
+**Returns**
+
+Success  returns a pointer to the allocated memory Failure  returns null if the allocation fails
+
+### `ar_log_pkt_commit`
+
+ar_log_pkt_commit
+
+```c
+int32_t ar_log_pkt_commit(void *ptr)
+```
+
+**Parameters**
+
+<ParamField path="ptr" type="void *">
+  pointer to memory allocated through ar_log_pkt_alloc
+</ParamField>
+
+**Returns**
+
+Success  0 Failure  non-zero
+
+### `ar_log_pkt_free`
+
+ar_log_pkt_free
+
+```c
+void ar_log_pkt_free(void *ptr)
+```
+
+**Parameters**
+
+<ParamField path="ptr" type="void *">
+  pointer to memory allocated through ar_log_pkt_alloc
+</ParamField>
+
+**Returns**
+
+n/a
+
+### `ar_log_code_status`
+
+ar_log_code_status
+
+```c
+bool_t ar_log_code_status(uint16_t logcode)
+```
+
+**Parameters**
+
+<ParamField path="logcode" type="uint16_t">
+  the log code to check. See ar_util_data_log_codes.h in the AR Util
+</ParamField>
+
+**Returns**
+
+TRUE  ENABLED FALSE  DISABLED
+
+## Type Definitions
+
+### `ar_log_data_transport_t`
+
+An enumeration of supported transports
+
+```c
+typedef enum ar_log_data_transport_t ar_log_data_transport_t
+```
+
+### `ar_log_pkt_op_init_info_t`
+
+```c
+typedef struct ar_log_pkt_op_init_info_t ar_log_pkt_op_init_info_t
+```
+
+### `par_log_pkt_op_init_info_t`
+
+```c
+typedef struct ar_log_pkt_op_init_info_t * par_log_pkt_op_init_info_t
+```
+
+## Enumerations
+
+### `ar_log_data_transport_t`
+
+An enumeration of supported transports
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_LOG_DATA_TRANSPORT_UNKNOWN` | = 0x0 |  |
+| `AR_LOG_DATA_TRANSPORT_DIAG` | = 0x1 |  |
+| `AR_LOG_DATA_TRANSPORT_TCPIP` | = 0x2 |  |

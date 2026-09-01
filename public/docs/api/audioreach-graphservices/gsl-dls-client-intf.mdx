@@ -1,0 +1,215 @@
+---
+title: "gsl_dls_client_intf.h"
+description: "Defines a set of APIs that the realtime tuning client can use to register log codes and recieve log packet data from the gsl dls client."
+---
+
+## Structures
+
+### `gsl_dls_ready_buffer_index_list_t`
+
+**Members**
+
+<ParamField path="buffer_count" type="uint16_t">
+</ParamField>
+<ParamField path="buffer_index_list" type="uint16_t">
+</ParamField>
+
+### `gsl_dls_buffer_pool_config_t`
+
+**Members**
+
+<ParamField path="buffer_size" type="uint32_t">
+</ParamField>
+<ParamField path="buffer_count" type="uint32_t">
+</ParamField>
+
+### `gls_dls_buffer_t`
+
+**Members**
+
+<ParamField path="size" type="uint32_t">
+</ParamField>
+<ParamField path="buffer" type="uint8_t *">
+</ParamField>
+
+## Functions
+
+### `gsl_dls_client_is_feature_supported`
+
+Checks if the DLS feature is enabled in GSL \detdesc feature needs to be enabled by defining ATS_DATA_LOGGING in your build configuration.
+
+```c
+int32_t gsl_dls_client_is_feature_supported()
+```
+
+**Returns**
+
+AR_EOK on success, AR_EUNSUPPORTED otherwise
+
+### `gsl_dls_client_init`
+
+Initializes the DLS Client.
+
+```c
+int32_t gsl_dls_client_init(struct gsl_dls_buffer_pool_config_t *buffer_pool_config, GSL_DLS_CLIENT_BUFFER_READY_CALLBACK callback)
+```
+
+**Parameters**
+
+<ParamField path="buffer_pool_config" type="struct gsl_dls_buffer_pool_config_t *">
+  configuration used to setup the dls buffer pool size.
+</ParamField>
+<ParamField path="callback" type="GSL_DLS_CLIENT_BUFFER_READY_CALLBACK">
+  callback function that is called when SPF notifies the DLS client about buffers that are ready to read.
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error otherwise
+
+### `gsl_dls_client_deinit`
+
+Cleans up resources aquired during gsl_dls_client_init(...)
+
+```c
+int32_t gsl_dls_client_deinit()
+```
+
+**Returns**
+
+AR_EOK on success, error otherwise
+
+### `gsl_dls_client_create_buffer_pool`
+
+Allocates and configures shared memory for storing log buffers and registers for log buffer commit notifications from DLS on SPF.
+
+```c
+int32_t gsl_dls_client_create_buffer_pool(struct gsl_dls_buffer_pool_config_t *buffer_pool_config)
+```
+
+**Parameters**
+
+<ParamField path="buffer_pool_config" type="struct gsl_dls_buffer_pool_config_t *">
+  contains the number of DLS Log Buffers and the size of each buffer
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error otherwise
+
+### `gsl_dls_client_get_ready_dls_buffer_list`
+
+Retrieves a list of buffers index for dls buffers that are ready to read from.
+
+```c
+void gsl_dls_client_get_ready_dls_buffer_list(struct gsl_dls_ready_buffer_index_list_t *buffer_ready_list)
+```
+
+**Parameters**
+
+<ParamField path="buffer_ready_list" type="struct gsl_dls_ready_buffer_index_list_t *">
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error otherwise
+
+### `gsl_dls_client_get_log_buffer`
+
+Gets a log buffer from the dls buffer pool.
+
+```c
+int32_t gsl_dls_client_get_log_buffer(uint32_t log_buffer_index, struct gls_dls_buffer_t *dls_log_buffer)
+```
+
+**Parameters**
+
+<ParamField path="buffer_index_read" type="">
+  the index of the buffer to read from the dls buffer pool
+</ParamField>
+<ParamField path="dls_log_buffer" type="struct gls_dls_buffer_t *">
+  contains the size of the log buffer and a pointer to the buffer in the shared memory buffer pool
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error otherwise
+
+### `gsl_dls_client_set_used_buffers`
+
+Stores used log buffers in gsl dsl client context.
+
+```c
+void gsl_dls_client_set_used_buffers(struct gsl_dls_ready_buffer_index_list_t *buffer_index_list)
+```
+
+**Parameters**
+
+<ParamField path="buffer_index_list" type="struct gsl_dls_ready_buffer_index_list_t *">
+  list of buffers to be stored
+</ParamField>
+
+### `gsl_dls_client_return_used_buffers`
+
+Returns used DLS buffers back to SPF.
+
+```c
+int32_t gsl_dls_client_return_used_buffers(struct gsl_dls_ready_buffer_index_list_t *buffer_index_list)
+```
+
+**Parameters**
+
+<ParamField path="buffer_index_list" type="struct gsl_dls_ready_buffer_index_list_t *">
+  the list of buffers to return to DLS on SPF
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error otherwise
+
+### `gsl_dls_client_register_deregister_log_code`
+
+Registers or deregisters a log code.
+
+Registered log codes will start to accumulate binary buffers in SPFs DLS
+
+```c
+int32_t gsl_dls_client_register_deregister_log_code(uint32_t log_code, bool_t is_log_code_enabled)
+```
+
+**Parameters**
+
+<ParamField path="log_code" type="uint32_t">
+  The log code to register/de-register
+</ParamField>
+<ParamField path="is_log_code_enabled:true" type="">
+  for registering a log code and false for de-registering
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error otherwise
+
+## Type Definitions
+
+### `GSL_DLS_CLIENT_BUFFER_READY_CALLBACK`
+
+callback function that is called when SPF notifies the DLS client about buffers that are ready to read.
+
+```c
+typedef int32_t(* GSL_DLS_CLIENT_BUFFER_READY_CALLBACK
+```
+
+## Macros
+
+### `GSL_DLS_CLIENT_MIN_BUFFER_COUNT`
+
+```c
+#define GSL_DLS_CLIENT_MIN_BUFFER_COUNT 10
+```
+
+### `GSL_DLS_CLIENT_MAX_BUFFER_COUNT`
+
+```c
+#define GSL_DLS_CLIENT_MAX_BUFFER_COUNT 256
+```

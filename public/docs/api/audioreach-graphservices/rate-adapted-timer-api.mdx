@@ -1,0 +1,90 @@
+---
+title: "rate_adapted_timer_api.h"
+description: "This file contains RATE_ADAPTED_TIMER module APIs."
+---
+
+## Structures
+
+### `param_id_rat_mf_t`
+
+**Members**
+
+<ParamField path="sample_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="bits_per_sample" type="uint16_t">
+
+</ParamField>
+<ParamField path="q_factor" type="uint16_t">
+</ParamField>
+<ParamField path="data_format" type="uint32_t">
+</ParamField>
+<ParamField path="num_channels" type="uint32_t">
+
+</ParamField>
+<ParamField path="channel_map" type="uint16_t">
+  ->Specify a channel mapping for each output channel 
+ ->If the number of channels is not a multiple of four, zero padding must be added to the channel type array to align the packet to a multiple of 32 bits}
+</ParamField>
+
+## Type Definitions
+
+### `param_id_rat_mf_t`
+
+```c
+typedef struct param_id_rat_mf_t param_id_rat_mf_t
+```
+
+## Macros
+
+### `QT_REFCLK_TIMING_INPUT`
+
+```c
+#define QT_REFCLK_TIMING_INPUT AR_NON_GUID(0xC0000001)
+```
+
+### `REFCLK_REMOTE_TIMING_INPUT`
+
+```c
+#define REFCLK_REMOTE_TIMING_INPUT AR_NON_GUID(0xC0000002)
+```
+
+### `QT_REMOTE_TIMING_INPUT`
+
+```c
+#define QT_REMOTE_TIMING_INPUT AR_NON_GUID(0xC0000003)
+```
+
+### `RATE_ADAPTED_TIMER_STACK_SIZE`
+
+```c
+#define RATE_ADAPTED_TIMER_STACK_SIZE 4096
+```
+
+### `PORT_ID_RATE_ADAPTED_TIMER_INPUT`
+
+```c
+#define PORT_ID_RATE_ADAPTED_TIMER_INPUT 0x2
+```
+
+### `PORT_ID_RATE_ADAPTED_TIMER_OUTPUT`
+
+```c
+#define PORT_ID_RATE_ADAPTED_TIMER_OUTPUT 0x1
+```
+
+### `PARAM_ID_RAT_MEDIA_FORMAT`
+
+ID of the parameter used to configure the RAT media format.
+
+```c
+#define PARAM_ID_RAT_MEDIA_FORMAT 0x080010D0
+```
+
+### `MODULE_ID_RATE_ADAPTED_TIMER`
+
+Module ID for Rate Adapted Timer module.
+
+```c
+#define MODULE_ID_RATE_ADAPTED_TIMER 0x07001041
+```

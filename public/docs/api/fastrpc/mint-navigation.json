@@ -1,0 +1,7 @@
+{
+  "group": "fastrpc",
+  "pages": [
+    "public/docs/api/fastrpc/dspqueue",
+    "public/docs/api/fastrpc/remote"
+  ]
+}

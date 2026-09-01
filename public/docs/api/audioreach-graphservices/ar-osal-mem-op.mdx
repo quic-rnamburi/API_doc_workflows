@@ -1,0 +1,108 @@
+---
+title: "ar_osal_mem_op.h"
+description: "Defines public APIs for memory operations."
+---
+
+## Functions
+
+### `ar_mem_cpy`
+
+ar_mem_cpy copies bytes between buffers.
+
+```c
+int32_t ar_mem_cpy(void *dest, size_t dest_size, const void *src, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="[in_out]" type="">
+  dest: destinatiopn buffer to copy data.
+</ParamField>
+<ParamField path="dest_size" type="size_t">
+  destination buffer size.
+</ParamField>
+<ParamField path="src" type="const void *">
+  source buffer pointer to copy data from.
+</ParamField>
+<ParamField path="size" type="size_t">
+  bytes to copy from source buffer.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_mem_move`
+
+ar_mem_move copies bytes from source area to destination area.
+
+```c
+int32_t ar_mem_move(void *dest, size_t dest_size, const void *src, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="[in_out]" type="">
+  dest: destinatiopn buffer to copy data.
+</ParamField>
+<ParamField path="dest_size" type="size_t">
+  destination buffer size.
+</ParamField>
+<ParamField path="src" type="const void *">
+  source buffer pointer to copy data from.
+</ParamField>
+<ParamField path="size" type="size_t">
+  bytes to copy from source buffer.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure note: If some regions of the source area and the destination overlap, ar_mem_move ensures that the original source bytes in the overlapping region are copied before being overwritten.
+
+### `ar_mem_set`
+
+ar_mem_set set buffer to specified value.
+
+```c
+int32_t ar_mem_set(void *dest, int32_t c, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="[in_out]" type="">
+  dest: destinatiopn buffer to set the specified value.
+</ParamField>
+<ParamField path="c" type="int32_t">
+  specified value to set, of integer type.
+</ParamField>
+<ParamField path="size" type="size_t">
+  buffer bytes to set the value, must be multiple of specified value "c" data size.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_mem_cmp`
+
+ar_mem_cmp compare two buffers.
+
+```c
+int32_t ar_mem_cmp(const void *buff1, const void *buff2, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="buff1" type="const void *">
+  first buffer.
+</ParamField>
+<ParamField path="buff2" type="const void *">
+  second buffer.
+</ParamField>
+<ParamField path="size" type="size_t">
+  bytes to compare.
+</ParamField>
+
+**Returns**
+
+\< 0 buff1 \< buff2 0 buff1 == buff2 0 buff1 > buff2

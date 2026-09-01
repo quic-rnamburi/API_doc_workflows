@@ -1,0 +1,110 @@
+---
+title: "rx_haptics_shmem_api.h"
+description: "Copyright (c) Qualcomm Technologies, Inc."
+---
+
+## Structures
+
+### `rx_haptics_shmem_config`
+
+**Members**
+
+<ParamField path="config_type" type="rx_haptics_shmem_config_type_t">
+</ParamField>
+<ParamField path="pid" type="uint32_t">
+</ParamField>
+<ParamField path="config_addr_offset" type="uint32_t">
+</ParamField>
+<ParamField path="config_size" type="uint32_t">
+</ParamField>
+<ParamField path="err_code" type="uint32_t">
+</ParamField>
+
+### `rx_haptics_shmem_payload_hdr`
+
+**Members**
+
+<ParamField path="num_config" type="uint32_t">
+</ParamField>
+<ParamField path="shmem_config_rsp_mode" type="rx_haptics_shmem_rsp_type_t">
+</ParamField>
+<ParamField path="shmem_msg_mode" type="rx_haptics_shmem_msg_mode_t">
+</ParamField>
+<ParamField path="shmem_property_flag" type="uint32_t">
+</ParamField>
+
+### `rx_haptics_shmem_ipc_protocol`
+
+**Members**
+
+<ParamField path="version" type="uint32_t">
+</ParamField>
+<ParamField path="payload_header_size" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `rx_haptics_shmem_config_type_t`
+
+```c
+typedef enum rx_haptics_shmem_config_type rx_haptics_shmem_config_type_t
+```
+
+### `rx_haptics_shmem_msg_mode_t`
+
+```c
+typedef enum rx_haptics_shmem_msg_mode rx_haptics_shmem_msg_mode_t
+```
+
+### `rx_haptics_shmem_rsp_type_t`
+
+```c
+typedef enum rx_haptics_shmem_rsp_type rx_haptics_shmem_rsp_type_t
+```
+
+### `rx_haptics_shmem_config_t`
+
+```c
+typedef struct rx_haptics_shmem_config rx_haptics_shmem_config_t
+```
+
+### `rx_haptics_shmem_payload_hdr_t`
+
+```c
+typedef struct rx_haptics_shmem_payload_hdr rx_haptics_shmem_payload_hdr_t
+```
+
+### `rx_haptics_shmem_ipc_protocol_t`
+
+```c
+typedef struct rx_haptics_shmem_ipc_protocol rx_haptics_shmem_ipc_protocol_t
+```
+
+## Enumerations
+
+### `rx_haptics_shmem_config_type`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `SET_CFG` | = 0 |  |
+| `GET_CFG` | = 1 |  |
+
+### `rx_haptics_shmem_msg_mode`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `POLLING_BASED` | = 0 |  |
+| `TRIGGER_BASED` | = 1 |  |
+
+### `rx_haptics_shmem_rsp_type`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `RSP_POLLING` | = 0 |  |
+| `RSP_EVENT_TRIGGER` | = 1 |  |

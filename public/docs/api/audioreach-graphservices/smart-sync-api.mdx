@@ -1,0 +1,99 @@
+---
+title: "smart_sync_api.h"
+description: "This file contains Smart Sync module APIs."
+---
+
+## Structures
+
+### `smart_sync_voice_proc_info_t`
+
+**Members**
+
+<ParamField path="is_subscribe" type="uint32_t">
+  Flag to indicate whether to subscribe/unsubscribe with Voice Timer.
+</ParamField>
+<ParamField path="voice_proc_start_offset_us" type="uint32_t">
+  voice processing start tick in microseconds
+</ParamField>
+<ParamField path="voice_proc_start_samples_us" type="uint32_t">
+  minimum number of samples (in microseconds) required to start processing at voice processing start tick
+</ParamField>
+<ParamField path="vfr_cycle_duration_ms" type="uint32_t">
+  vfr cycle duration in milliseconds @values :
+</ParamField>
+<ParamField path="vsid" type="uint32_t">
+</ParamField>
+<ParamField path="vfr_mode" type="uint32_t">
+</ParamField>
+<ParamField path="path_delay_us" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `smart_sync_voice_proc_info_t`
+
+```c
+typedef struct smart_sync_voice_proc_info_t smart_sync_voice_proc_info_t
+```
+
+## Macros
+
+### `SMART_SYNC_MAX_IN_PORTS`
+
+```c
+#define SMART_SYNC_MAX_IN_PORTS 2
+```
+
+### `SMART_SYNC_MAX_OUT_PORTS`
+
+```c
+#define SMART_SYNC_MAX_OUT_PORTS 2
+```
+
+### `SMART_SYNC_PRIMARY_IN_PORT_ID`
+
+```c
+#define SMART_SYNC_PRIMARY_IN_PORT_ID 0x2
+```
+
+### `SMART_SYNC_PRIMARY_OUT_PORT_ID`
+
+```c
+#define SMART_SYNC_PRIMARY_OUT_PORT_ID 0x1
+```
+
+### `SMART_SYNC_SECONDARY_IN_PORT_ID`
+
+```c
+#define SMART_SYNC_SECONDARY_IN_PORT_ID 0x4
+```
+
+### `SMART_SYNC_SECONDARY_OUT_PORT_ID`
+
+```c
+#define SMART_SYNC_SECONDARY_OUT_PORT_ID 0x3
+```
+
+### `SMART_SYNC_MAX_CHANNELS`
+
+```c
+#define SMART_SYNC_MAX_CHANNELS 8
+```
+
+### `SMART_SYNC_STACK_SIZE`
+
+```c
+#define SMART_SYNC_STACK_SIZE 4096
+```
+
+### `PARAM_ID_SMART_SYNC_VOICE_PROC_INFO`
+
+```c
+#define PARAM_ID_SMART_SYNC_VOICE_PROC_INFO 0x08001027
+```
+
+### `MODULE_ID_SMART_SYNC`
+
+```c
+#define MODULE_ID_SMART_SYNC 0x0700103C
+```

@@ -1,0 +1,134 @@
+---
+title: "tsm_module_api.h"
+---
+
+## Structures
+
+### `param_id_tsm_max_min_speed_t`
+
+**Members**
+
+<ParamField path="min_speed_factor" type="uint32_t">
+</ParamField>
+<ParamField path="max_speed_factor" type="uint32_t">
+</ParamField>
+
+### `param_id_tsm_speed_t`
+
+**Members**
+
+<ParamField path="speed_factor" type="uint32_t">
+</ParamField>
+<ParamField path="reserved" type="uint32_t">
+</ParamField>
+
+### `param_id_tsm_ver_t`
+
+**Members**
+
+<ParamField path="ver_high" type="uint32_t">
+</ParamField>
+<ParamField path="ver_low" type="uint32_t">
+</ParamField>
+<ParamField path="reserved1" type="uint32_t">
+</ParamField>
+<ParamField path="reserved2" type="uint32_t">
+</ParamField>
+
+### `param_id_tsm_session_time_scaling_t`
+
+**Members**
+
+<ParamField path="is_session_time_scaling_enabled" type="uint32_t">
+
+</ParamField>
+<ParamField path="reserved" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_tsm_max_min_speed_t`
+
+```c
+typedef struct param_id_tsm_max_min_speed_t param_id_tsm_max_min_speed_t
+```
+
+### `param_id_tsm_speed_t`
+
+```c
+typedef struct param_id_tsm_speed_t param_id_tsm_speed_t
+```
+
+### `param_id_tsm_ver_t`
+
+```c
+typedef struct param_id_tsm_ver_t param_id_tsm_ver_t
+```
+
+### `param_id_tsm_session_time_scaling_t`
+
+```c
+typedef struct param_id_tsm_session_time_scaling_t param_id_tsm_session_time_scaling_t
+```
+
+## Macros
+
+### `TSM_STACK_SIZE`
+
+```c
+#define TSM_STACK_SIZE 100 * 1024
+```
+
+### `TSM_MAX_PORTS`
+
+```c
+#define TSM_MAX_PORTS 1
+```
+
+### `TSM_MIN_CHANNELS`
+
+```c
+#define TSM_MIN_CHANNELS 1
+```
+
+### `TSM_MAX_CHANNELS`
+
+```c
+#define TSM_MAX_CHANNELS 2
+```
+
+### `CAPI_TSM_DEFAULT_PORT`
+
+```c
+#define CAPI_TSM_DEFAULT_PORT 0
+```
+
+### `PARAM_ID_TSM_MAX_MIN_SPEED`
+
+```c
+#define PARAM_ID_TSM_MAX_MIN_SPEED 0x08001A62
+```
+
+### `PARAM_ID_TSM_SPEED_FACTOR`
+
+```c
+#define PARAM_ID_TSM_SPEED_FACTOR 0x08001A63
+```
+
+### `PARAM_ID_TSM_VERSION`
+
+```c
+#define PARAM_ID_TSM_VERSION 0x08001A65
+```
+
+### `PARAM_ID_TSM_SESSION_TIME_SCALING`
+
+```c
+#define PARAM_ID_TSM_SESSION_TIME_SCALING 0x08001A58
+```
+
+### `MODULE_ID_TSM`
+
+```c
+#define MODULE_ID_TSM 0x07001172
+```

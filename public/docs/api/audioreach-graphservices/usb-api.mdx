@@ -1,0 +1,68 @@
+---
+title: "usb_api.h"
+description: "This file contains USB module APIs."
+---
+
+## Structures
+
+### `param_id_usb_audio_intf_cfg_t`
+
+**Members**
+
+<ParamField path="usb_token" type="uint32_t">
+</ParamField>
+<ParamField path="svc_interval" type="uint32_t">
+  Though the acceptable values are between 125- 3276800, the actual supported values are determined by the equation specified in USB 3.0 documentation.}
+</ParamField>
+
+## Type Definitions
+
+### `param_id_usb_audio_intf_cfg_t`
+
+```c
+typedef struct param_id_usb_audio_intf_cfg_t param_id_usb_audio_intf_cfg_t
+```
+
+## Macros
+
+### `USB_STACK_SIZE`
+
+```c
+#define USB_STACK_SIZE 4096
+```
+
+### `PORT_ID_USB_INPUT`
+
+```c
+#define PORT_ID_USB_INPUT 0x2
+```
+
+### `PORT_ID_USB_OUTPUT`
+
+```c
+#define PORT_ID_USB_OUTPUT 0x1
+```
+
+### `PARAM_ID_USB_AUDIO_INTF_CFG`
+
+Parameter used to configure the USB interface
+
+```c
+#define PARAM_ID_USB_AUDIO_INTF_CFG 0x080010D6
+```
+
+### `MODULE_ID_USB_AUDIO_SINK`
+
+Module ID for USB sink module.
+
+```c
+#define MODULE_ID_USB_AUDIO_SINK 0x0700104F
+```
+
+### `MODULE_ID_USB_AUDIO_SOURCE`
+
+End of the Module -->
+
+```c
+#define MODULE_ID_USB_AUDIO_SOURCE 0x07001050
+```

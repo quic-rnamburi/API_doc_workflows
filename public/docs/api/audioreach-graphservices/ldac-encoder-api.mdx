@@ -1,0 +1,77 @@
+---
+title: "ldac_encoder_api.h"
+---
+
+## Structures
+
+### `bitrate_level_map_t`
+
+-> Quality levels are always in ascending order of bit rate
+
+**Members**
+
+<ParamField path="level" type="uint32_t">
+</ParamField>
+<ParamField path="bitrate" type="uint32_t">
+</ParamField>
+
+### `param_id_ldac_bitrate_level_map_payload_t`
+
+**Members**
+
+<ParamField path="num_levels" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `bitrate_level_map_t`
+
+```c
+typedef struct bitrate_level_map_t bitrate_level_map_t
+```
+
+### `param_id_ldac_bitrate_level_map_payload_t`
+
+```c
+typedef struct param_id_ldac_bitrate_level_map_payload_t param_id_ldac_bitrate_level_map_payload_t
+```
+
+## Macros
+
+### `LDAC_ENC_DATA_INPUT_PORT`
+
+```c
+#define LDAC_ENC_DATA_INPUT_PORT 0x2
+```
+
+### `LDAC_ENC_DATA_OUTPUT_PORT`
+
+```c
+#define LDAC_ENC_DATA_OUTPUT_PORT 0x1
+```
+
+### `LDAC_ENC_MODULE_STACK_SIZE`
+
+```c
+#define LDAC_ENC_MODULE_STACK_SIZE 8192
+```
+
+### `COP_ENCODER_FEEDBACK_IN`
+
+```c
+#define COP_ENCODER_FEEDBACK_IN AR_NON_GUID(0xC0000001)
+```
+
+### `PARAM_ID_LDAC_BIT_RATE_LEVEL_MAP`
+
+ID of the encoder Bit Rate level map parameter.This parameter can be set at run time.
+
+```c
+#define PARAM_ID_LDAC_BIT_RATE_LEVEL_MAP 0x08001171
+```
+
+### `MODULE_ID_LDAC_ENC`
+
+```c
+#define MODULE_ID_LDAC_ENC 0x0700107A
+```

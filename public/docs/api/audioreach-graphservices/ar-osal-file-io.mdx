@@ -1,0 +1,291 @@
+---
+title: "ar_osal_file_io.h"
+description: "Defines public APIs for file IO operations."
+---
+
+## Functions
+
+### `ar_fopen`
+
+ar_fopen open a file or create if does not exist.
+
+```c
+int32_t ar_fopen(ar_fhandle *handle, const char_t *path, uint32_t access)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="ar_fhandle *">
+  Handle to the file.
+</ParamField>
+<ParamField path="path" type="const char_t *">
+  Absolute file path.
+</ParamField>
+<ParamField path="access" type="uint32_t">
+  Type of access AR_FILE_OPEN_READ_ONLY AR_FILE_OPEN_WRITE_ONLY AR_FILE_OPEN_READ_WRITE AR_FOPEN_WRITE_ONLY_APPEND AR_FOPEN_READ_WRITE_APPEND AR_FOPEN_READ_ONLY_WRITE
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_fsize`
+
+ar_fsize Return file size.
+
+```c
+size_t ar_fsize(ar_fhandle handle)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="ar_fhandle">
+  Handle to the file.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_fmap`
+
+ar_fmap Map a file into Data Memory for Read Only access
+
+Whether this allocates heap memory for the buffer or not is platform dependent. On some platforms with low memory this may map non-volatile storage into a readable memory window instead. To free any possible resources allocated by this call, the caller MUST call ar_funmap
+
+```c
+int32_t ar_fmap(ar_fhandle handle, const void **fbuffer)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="ar_fhandle">
+  Handle to the file
+</ParamField>
+<ParamField path="fbuffer" type="const void **">
+  A pointer to the read-only Data memory buffer
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_funmap`
+
+ar_funmap Un-map a file from Data Memory
+
+This call releases a buffer obtained by a previous call to ar_fmap and frees any resources that may be in use by it. The file still needs to be closed by a call to ar_fclose
+
+```c
+int32_t ar_funmap(const void *fbuffer)
+```
+
+**Parameters**
+
+<ParamField path="fbuffer" type="const void *">
+  The pointer to the file buffer obtained by ar_fmap
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_fseek`
+
+ar_fseek Move the file pointer for read/write to the required offset.
+
+```c
+int32_t ar_fseek(ar_fhandle handle, size_t offset, ar_fseek_reference_t ref)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="ar_fhandle">
+  Handle to the file.
+</ParamField>
+<ParamField path="offset" type="size_t">
+  The number of bytes to move the file pointer.
+</ParamField>
+<ParamField path="ref" type="ar_fseek_reference_t">
+  Refer to ar_fseek_reference_t for options.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_fread`
+
+ar_fread Read from file.
+
+```c
+int32_t ar_fread(ar_fhandle handle, void *buf_ptr, size_t read_size, size_t *bytes_read)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="ar_fhandle">
+  Handle to the file.
+</ParamField>
+<ParamField path="[in_out]" type="">
+  buf_ptr: Buffer pointer to read data into.
+</ParamField>
+<ParamField path="read_size" type="size_t">
+  Data size to read from file.
+</ParamField>
+<ParamField path="[in_out]" type="">
+  bytes_read: Actual data size read from file.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_fwrite`
+
+ar_fwrite write to file.
+
+```c
+int32_t ar_fwrite(ar_fhandle handle, void *buf_ptr, size_t write_size, size_t *bytes_written)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="ar_fhandle">
+  Handle to the file.
+</ParamField>
+<ParamField path="buf_ptr" type="void *">
+  Buffer pointer to write data from.
+</ParamField>
+<ParamField path="write_size" type="size_t">
+  Data size to write into file.
+</ParamField>
+<ParamField path="[in_out]" type="">
+  bytes_written: Actual data size written into file.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_fclose`
+
+ar_fclose
+
+```c
+int32_t ar_fclose(ar_fhandle handle)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="ar_fhandle">
+  Handle to the file.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_fdelete`
+
+ar_fdelete
+
+```c
+int32_t ar_fdelete(const char_t *path)
+```
+
+**Parameters**
+
+<ParamField path="path" type="const char_t *">
+  Absolute file path.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+## Type Definitions
+
+### `ar_fhandle`
+
+Structures and Typedefs.
+
+```c
+typedef void * ar_fhandle
+```
+
+### `ar_fseek_reference_t`
+
+```c
+typedef enum ar_fseek_reference ar_fseek_reference_t
+```
+
+## Enumerations
+
+### `ar_fseek_reference`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_FSEEK_BEGIN` | = 0 | The starting point is zero or the beginning of the file. |
+| `AR_FSEEK_END` | = 1 | The starting point is the current end-of-file position. |
+| `AR_FSEEK_CURRENT` | = 2 | The start point is the current value of the file pointer. |
+
+## Macros
+
+### `AR_FOPEN_READ_ONLY`
+
+Opens for reading, file position is at the beginning.
+
+```c
+#define AR_FOPEN_READ_ONLY (0x00000001)
+```
+
+### `AR_FOPEN_WRITE_ONLY`
+
+Opens an empty file for writing.
+
+```c
+#define AR_FOPEN_WRITE_ONLY (0x00000002)
+```
+
+### `AR_FOPEN_READ_WRITE`
+
+Opens an empty file for both reading and writing.
+
+```c
+#define AR_FOPEN_READ_WRITE (AR_FOPEN_READ_ONLY|AR_FOPEN_WRITE_ONLY)
+```
+
+### `AR_FOPEN_APPEND`
+
+Open for appending (writing at end of file), this parameter alone cannot be used with ar_fopen.
+
+```c
+#define AR_FOPEN_APPEND (0x00000004)
+```
+
+### `AR_FOPEN_WRITE_ONLY_APPEND`
+
+Opens for writing at the end of the file(appending).
+
+```c
+#define AR_FOPEN_WRITE_ONLY_APPEND (AR_FOPEN_WRITE_ONLY|AR_FOPEN_APPEND)
+```
+
+### `AR_FOPEN_READ_WRITE_APPEND`
+
+Opens for reading and appending.
+
+```c
+#define AR_FOPEN_READ_WRITE_APPEND (AR_FOPEN_READ_ONLY|AR_FOPEN_WRITE_ONLY|AR_FOPEN_APPEND)
+```
+
+### `AR_FOPEN_READ_ONLY_WRITE`
+
+Opens for both reading and writing.
+
+```c
+#define AR_FOPEN_READ_ONLY_WRITE (0x00000008)
+```

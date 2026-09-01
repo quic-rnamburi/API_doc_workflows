@@ -1,0 +1,25 @@
+---
+title: "gpr_msg_if.h"
+description: "This file contains GPR list APIs."
+---
+
+## Structures
+
+### `gpr_ibasic_rsp_result_t`
+
+**Members**
+
+<ParamField path="opcode" type="uint32_t">
+  Command operation code that completed.
+</ParamField>
+<ParamField path="status" type="uint32_t">
+  Completion status (see Section @xref).
+</ParamField>
+
+### `gpr_ibasic_evt_accepted_t`
+
+**Members**
+
+<ParamField path="opcode" type="uint32_t">
+  Operation code of the command that was accepted.
+</ParamField>

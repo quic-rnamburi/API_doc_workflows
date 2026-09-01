@@ -1,0 +1,26 @@
+---
+title: "ar_osal_sleep.h"
+description: "This file contains APIs to suspend thread execution for the required duration."
+---
+
+## Functions
+
+### `ar_osal_micro_sleep`
+
+Micro second sleep function.
+
+Sleep internal may not be accurate as requested, it would vary based on resolution of system clock ticks. Note that a ready thread is not guaranteed to run immediately. Consequently, the thread may not run until some time after the sleep interval elapses.
+
+```c
+int32_t ar_osal_micro_sleep(uint64_t micro_seconds)
+```
+
+**Parameters**
+
+<ParamField path="micro_seconds" type="uint64_t">
+  sleep duration in micro seconds.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure

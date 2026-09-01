@@ -1,0 +1,6 @@
+{
+  "group": "audioreach-graphmgr",
+  "pages": [
+    "public/docs/api/audioreach-graphmgr/agm-api"
+  ]
+}

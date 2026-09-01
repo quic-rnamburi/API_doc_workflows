@@ -1,0 +1,461 @@
+---
+title: "ar_osal_shmem.h"
+description: "Defines public APIs for shared memory allocation for DSP."
+---
+
+## Structures
+
+### `ar_shmem_proc_info_t`
+
+**Members**
+
+<ParamField path="proc_id" type="uint8_t">
+</ParamField>
+<ParamField path="proc_type" type="ar_shmem_pd_type_t">
+</ParamField>
+<ParamField path="is_active" type="bool_t">
+</ParamField>
+
+### `ar_shmem_info_t`
+
+Shared memory info structure.
+
+**Members**
+
+<ParamField path="cache_type" type="ar_shmem_cache_type_t">
+  in, cache type, cached or uncached memory
+</ParamField>
+<ParamField path="buf_size" type="size_t">
+  in, shared buffer size, should be a minimum of 4K and multiple of 4K only
+</ParamField>
+<ParamField path="mem_type" type="ar_shmem_memory_type_t">
+  out, shmem memory type, virtual or physical for ar_shmem_alloc()
+</ParamField>
+<ParamField path="index_type" type="ar_shmem_buffer_index_type_t">
+  out, DSP to operate on buffer offsets or on address pointers.
+</ParamField>
+<ParamField path="ipa_lsw" type="uint32_t">
+  out, smmu mapped ipa lsw, output for ar_shmem_alloc()/ar_shmem_map()
+</ParamField>
+<ParamField path="ipa_msw" type="uint32_t">
+  out, smmu mapped ipa msw, output for ar_shmem_alloc()/ar_shmem_map()
+</ParamField>
+<ParamField path="pa_lsw" type="uint32_t">
+  out, physical address lsw, alignment requirements apply, like 4k, start address multiple of 64, output of ar_shmem_alloc()
+</ParamField>
+<ParamField path="pa_msw" type="uint32_t">
+  out, physical address msw, alignment requirements apply, like 4k, start address multiple of 64, output of ar_shmem_alloc()
+</ParamField>
+<ParamField path="vaddr" type="void *">
+  out, virtual address 64bit/32bit, alignment requirements apply, like 4k, start address multiple of 64, input for ar_shmem_alloc()
+</ParamField>
+<ParamField path="metadata" type="uint64_t">
+  out opt, pointer address to metadata structure defined by each platform for ar_shmem_alloc()
+</ParamField>
+<ParamField path="num_sys_id" type="uint8_t">
+  in, number of subsystem IDs provided with ar_shmem_alloc()/ar_shmem_map() call.
+</ParamField>
+<ParamField path="sys_id" type="ar_shmem_proc_info *">
+  in, pointer to array of size num_sys_id for sub-system Ids provided in ar_osal_sys_id.h, used to allocate shared memory between the given list of sys_id provided with ar_shmem_alloc()/ar_shmem_map() call.
+</ParamField>
+<ParamField path="platform_info" type="uint32_t">
+  in opt, optional field for passing platform specific data to OSAL, this can be used for example to communicate some heap properties provided only for ar_shmem_alloc()
+</ParamField>
+<ParamField path="flags" type="uint32_t">
+  in, Bit field for flags.
+</ParamField>
+
+### `ar_shmem_hyp_assign_phys_addr_t`
+
+Shared memory physical address and size details for hyp assign.
+
+**Members**
+
+<ParamField path="phys_addr" type="uint64_t">
+  64-bit physical address.
+</ParamField>
+<ParamField path="size" type="size_t">
+  size in bytes for the buffer pointed by phys_addr
+</ParamField>
+
+### `ar_shmem_hyp_assign_dest_sys_info_t`
+
+Destination sub system id details and permission required for hyp assign.
+
+**Members**
+
+<ParamField path="dest_sys_id" type="uint64_t">
+  destination sub system id, refer to ar_osal_sys_id.h
+</ParamField>
+<ParamField path="dest_perm" type="ar_shmem_hyp_assign_dest_sys_perm">
+  destination permissions
+</ParamField>
+
+### `ar_shmem_hyp_assign_phys_info_t`
+
+Hyp assign physical memory info structure.
+
+**Members**
+
+<ParamField path="phys_addr_list" type="ar_shmem_hyp_assign_phys_addr *">
+  list of hyp_assign_phys_addr structures.
+</ParamField>
+<ParamField path="phys_addr_list_size" type="uint32_t">
+  number of phys_addr_list entries.
+</ParamField>
+<ParamField path="src_sys_list" type="uint64_t *">
+  source sub system Id list, refer to ar_osal_sys_id.h for sys ids.
+</ParamField>
+<ParamField path="src_sys_list_size" type="uint32_t">
+  number of src_sys_list entries.
+</ParamField>
+<ParamField path="dest_sys_list" type="ar_shmem_hyp_assign_dest_sys_info *">
+  destination sys list hyp_assign_dest_sys_info.
+</ParamField>
+<ParamField path="dest_sys_list_size" type="uint32_t">
+  number of destination sys list/dest_sys_list entires.
+</ParamField>
+<ParamField path="metadata" type="uint64_t">
+  in opt, pointer address to metadata structure defined by platform during ar_shmem_alloc() call.
+</ParamField>
+
+## Functions
+
+### `ar_shmem_init`
+
+Initialize the shared memory interface (V1 API).
+
+This function initializes the shared memory interface using the default configuration. It performs the legacy initialization flow.
+
+```c
+int32_t ar_shmem_init()
+```
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_shmem_init_v2`
+
+Initialize the shared memory interface using a list of processor domains (V2 API).
+
+This V2 API selects the appropriate shared memory implementation based on the provided list of processor domain IDs.
+
+Passing num_master_procs = 0 results in behavior equivalent to the V1 API (ar_shmem_init), allowing a smooth transition from V1 to V2.
+
+```c
+int32_t ar_shmem_init_v2(uint32_t num_master_procs, uint32_t *master_procs)
+```
+
+**Parameters**
+
+<ParamField path="num_master_procs" type="uint32_t">
+  Number of processor domain IDs.
+</ParamField>
+<ParamField path="master_procs" type="uint32_t *">
+  Pointer to an array of processor domain IDs.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_shmem_alloc`
+
+Allocates shared memory.
+
+Only non cached memory allocation supported. Size if multiple of 4KB and the returned is aligned to 4KB boundary. Buffer start address should be atleast 64bit multiple aligned.
+
+```c
+int32_t ar_shmem_alloc(ar_shmem_info *info)
+```
+
+**Parameters**
+
+<ParamField path="[in_out]" type="">
+  info: pointer to ar_shmem_info.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_shmem_free`
+
+Frees shared memory.
+
+```c
+int32_t ar_shmem_free(ar_shmem_info *info)
+```
+
+**Parameters**
+
+<ParamField path="info" type="ar_shmem_info *">
+  pointer to ar_shmem_info.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_shmem_map`
+
+Helps map memory with SMMU an already allocated shared memory for a give sub system.
+
+Size should be multiple of 4KB boundary. Buffer start address should be 64bit aligned.
+
+```c
+int32_t ar_shmem_map(ar_shmem_info *info)
+```
+
+**Parameters**
+
+<ParamField path="[in_out]" type="">
+  info: pointer to ar_shmem_info. required input parameters in ar_shmem_info ar_shmem_info_t.cache_type ar_shmem_info_t.buf_size ar_shmem_info_t.mem_type ar_shmem_info_t.pa_lsw ar_shmem_info_t.pa_msw ar_shmem_info_t.num_sys_id ar_shmem_info_t.sys_id required output parameters in ar_shmem_info ar_shmem_info_t.ipa_lsw ar_shmem_info_t.ipa_msw
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_shmem_unmap`
+
+Helps unmap the shared memory allocated externally with SMMU.
+
+```c
+int32_t ar_shmem_unmap(ar_shmem_info *info)
+```
+
+**Parameters**
+
+<ParamField path="info" type="ar_shmem_info *">
+  pointer to ar_shmem_info. required input parameters in ar_shmem_info ar_shmem_info_t.cache_type ar_shmem_info_t.buf_size ar_shmem_info_t.mem_type ar_shmem_info_t.pa_lsw ar_shmem_info_t.pa_msw ar_shmem_info_t.num_sys_id ar_shmem_info_t.sys_id
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_shmem_hyp_assign_phys`
+
+Helps to hyp assign physical memory between source and destination sub systems.
+
+```c
+int32_t ar_shmem_hyp_assign_phys(ar_shmem_hyp_assign_phys_info *info)
+```
+
+**Parameters**
+
+<ParamField path="info" type="ar_shmem_hyp_assign_phys_info *">
+  pointer to ar_shmem_hyp_assign_phys_info.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_shmem_get_uid`
+
+ar_shmem_get_uid.
+
+Get associated unique identifier(UID) for the shared memory pointed by alloc_handle, platform which doesn`t support UID should return alloc_handle as UID with expectation of alloc_handle being unique.
+
+```c
+int32_t ar_shmem_get_uid(uint64_t alloc_handle, uint64_t *uid)
+```
+
+**Parameters**
+
+<ParamField path="alloc_handle" type="uint64_t">
+  handle for the shared memory.
+</ParamField>
+<ParamField path="uid" type="uint64_t *">
+  unique identifier to the shmem.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_shmem_deinit`
+
+ar_shmem_deinit.
+
+```c
+int32_t ar_shmem_deinit(void)
+```
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+## Type Definitions
+
+### `ar_shmem_memory_type_t`
+
+enum for shmem memory type
+
+```c
+typedef enum ar_shmem_memory_type ar_shmem_memory_type_t
+```
+
+### `ar_shmem_cache_type_t`
+
+enum for shmem cache type
+
+```c
+typedef enum ar_shmem_cache_type ar_shmem_cache_type_t
+```
+
+### `ar_shmem_buffer_index_type_t`
+
+enum for shmem offset/address buffer index type
+
+```c
+typedef enum ar_shmem_buffer_index_type ar_shmem_buffer_index_type_t
+```
+
+### `ar_shmem_pd_type_t`
+
+Bits to indicate if hardware accelerator is enabled/disabled.
+
+```c
+typedef enum ar_shmem_pd_type ar_shmem_pd_type_t
+```
+
+### `ar_shmem_proc_info`
+
+```c
+typedef struct ar_shmem_proc_info_t ar_shmem_proc_info
+```
+
+### `ar_shmem_info`
+
+Shared memory info structure.
+
+```c
+typedef struct ar_shmem_info_t ar_shmem_info
+```
+
+### `ar_shmem_hyp_assign_phys_addr`
+
+Shared memory physical address and size details for hyp assign.
+
+```c
+typedef struct ar_shmem_hyp_assign_phys_addr_t ar_shmem_hyp_assign_phys_addr
+```
+
+### `ar_shmem_hyp_assign_dest_sys_perm`
+
+Destination sub system permission bit mask types supported.
+
+```c
+typedef enum ar_shmem_hyp_assign_dest_sys_perm_t ar_shmem_hyp_assign_dest_sys_perm
+```
+
+### `ar_shmem_hyp_assign_dest_sys_info`
+
+Destination sub system id details and permission required for hyp assign.
+
+```c
+typedef struct ar_shmem_hyp_assign_dest_sys_info_t ar_shmem_hyp_assign_dest_sys_info
+```
+
+### `ar_shmem_hyp_assign_phys_info`
+
+Hyp assign physical memory info structure.
+
+```c
+typedef struct ar_shmem_hyp_assign_phys_info_t ar_shmem_hyp_assign_phys_info
+```
+
+## Enumerations
+
+### `ar_shmem_memory_type`
+
+enum for shmem memory type
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_SHMEM_PHYSICAL_MEMORY` | = 0 | 0 Shared physical memory allocation. |
+| `AR_SHMEM_VIRTUAL_MEMORY` | = 1 | 1 Shared virtual memory allocation |
+
+### `ar_shmem_cache_type`
+
+enum for shmem cache type
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_SHMEM_CACHED` | = 0 | 0 cached. |
+| `AR_SHMEM_UNCACHED` | = 1 | 1 uncached. |
+
+### `ar_shmem_buffer_index_type`
+
+enum for shmem offset/address buffer index type
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_SHMEM_BUFFER_ADDRESS` | = 0 | 0 use physical or virtual addresses. |
+| `AR_SHMEM_BUFFER_OFFSET` | = 1 | 1 use offsets, the offset is from the base address. |
+
+### `ar_shmem_pd_type`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `STATIC_PD` | = 1 |  |
+| `DYNAMIC_PD` | = 2 |  |
+
+### `ar_shmem_hyp_assign_dest_sys_perm_t`
+
+Destination sub system permission bit mask types supported.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `DEST_SYS_PERM_INVALID` | = 0x0 | Invalid permission bit mask. |
+| `DEST_SYS_PERM_EXEC` | = 0x1 | Execute permission bit mask. |
+| `DEST_SYS_PERM_WRITE_ONLY` | = 0x2 | Write only permission bit mask. |
+| `DEST_SYS_PERM_EXEC_WRITE` | = (DEST_SYS_PERM_EXEC | DEST_SYS_PERM_WRITE_ONLY) | Execute and Write permission. |
+| `DEST_SYS_PERM_READ_ONLY` | = 0x4 | Read only permission bit mask. |
+| `DEST_SYS_PERM_EXEC_READ` | = (DEST_SYS_PERM_EXEC | DEST_SYS_PERM_READ_ONLY) | Execute and Read permission. |
+| `DEST_SYS_PERM_WRITE_READ` | = (DEST_SYS_PERM_WRITE_ONLY | DEST_SYS_PERM_READ_ONLY) | Write and Read permission. |
+| `DEST_SYS_PERM_EXEC_WRITE_READ` | = (DEST_SYS_PERM_EXEC | DEST_SYS_PERM_WRITE_ONLY | DEST_SYS_PERM_READ_ONLY) | Execute, Write and Read permission. |
+
+## Macros
+
+### `AR_SHMEM_HW_ACCELERATOR_ENABLED`
+
+```c
+#define AR_SHMEM_HW_ACCELERATOR_ENABLED 0x1
+```
+
+### `AR_SHMEM_HW_ACCELERATOR_DISABLED`
+
+Bit mask for hardware accelerator flag.
+
+```c
+#define AR_SHMEM_HW_ACCELERATOR_DISABLED 0x0
+```
+
+### `AR_SHMEM_BIT_MASK_HW_ACCELERATOR_FLAG`
+
+Shift amount for hardware accelerator setup flag.
+
+```c
+#define AR_SHMEM_BIT_MASK_HW_ACCELERATOR_FLAG 0x1
+```
+
+### `AR_SHMEM_SHIFT_HW_ACCELERATOR_FLAG`
+
+```c
+#define AR_SHMEM_SHIFT_HW_ACCELERATOR_FLAG 0x0
+```

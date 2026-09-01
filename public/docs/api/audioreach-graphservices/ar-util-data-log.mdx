@@ -1,0 +1,371 @@
+---
+title: "ar_util_data_log.h"
+description: "Defines platform agnostic APIs for logging data through a data transport(diag, tcpip, etc...)"
+---
+
+## Structures
+
+### `ar_data_log_pcm_info_t`
+
+PCM data format information for the logging utility user.
+
+**Members**
+
+<ParamField path="sampling_rate" type="uint32_t">
+  PCM sampling rate.
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+  Number of channels in the PCM stream.
+</ParamField>
+<ParamField path="bits_per_sample" type="uint8_t">
+  Bits per sample for the PCM data.
+</ParamField>
+<ParamField path="interleaved" type="uint8_t">
+  Specifies whether the data is interleaved.
+</ParamField>
+<ParamField path="channel_mapping" type="uint16_t *">
+  Array of channel mappings.
+</ParamField>
+
+### `ar_data_log_audio_fmt_info_t`
+
+Format of the data being logged: PCM or bitstream.
+
+**Members**
+
+<ParamField path="pcm_data_fmt" type="ar_data_log_pcm_info_t">
+  Format of the PCM data.
+</ParamField>
+<ParamField path="media_fmt_id" type="uint32_t">
+  Format of the bitstream data.
+</ParamField>
+
+### `ar_data_log_alloc_info_t`
+
+**Members**
+
+<ParamField path="log_code" type="uint32_t">
+  The log code used for logging.
+</ParamField>
+<ParamField path="buffer_size" type="uint32_t">
+  The length of the buffer to log.
+</ParamField>
+<ParamField path="pkt_type" type="ar_log_pkt_type_t">
+  The type of packet to use for logging data.
+</ParamField>
+
+### `ar_data_log_commit_info_t`
+
+**Members**
+
+<ParamField path="session_id" type="uint32_t">
+  The session id for the log packet.
+</ParamField>
+<ParamField path="log_tap_id" type="uint32_t">
+  The log tap point id.
+</ParamField>
+<ParamField path="buffer_size" type="uint32_t">
+  The length of the buffer to log.
+</ParamField>
+<ParamField path="pkt_type" type="ar_log_pkt_type_t">
+  The type of packet to use for logging data.
+</ParamField>
+<ParamField path="pkt_info" type="void *">
+  Pointer to the packet info structure that is determined by pkt_type.
+</ParamField>
+<ParamField path="log_pkt_data" type="void *">
+  Pointer to the data section of the log packet.
+</ParamField>
+
+### `ar_data_log_submit_info_t`
+
+**Members**
+
+<ParamField path="log_code" type="uint16_t">
+  The log code used for logging.
+</ParamField>
+<ParamField path="session_id" type="uint32_t">
+  The session id for the log packet.
+</ParamField>
+<ParamField path="log_tap_id" type="uint32_t">
+  The log tap point id.
+</ParamField>
+<ParamField path="pkt_type" type="ar_log_pkt_type_t">
+  The type of packet to use for logging data.
+</ParamField>
+<ParamField path="pkt_info" type="void *">
+  Pointer to the packet info structure that is determined by pkt_type.
+</ParamField>
+<ParamField path="buffer_size" type="uint32_t">
+  The length of the buffer to log.
+</ParamField>
+<ParamField path="buffer" type="int8_t *">
+  Pointer to the buffer to be logged.
+</ParamField>
+
+### `ar_data_log_pcm_pkt_info_t`
+
+Additional packet information for PCM/Bitstream packets used in conjunction with the pkt_info field in ar_data_log_submit_info_t and ar_data_log_commit_info_t
+
+**Members**
+
+<ParamField path="log_time_stamp" type="uint64_t">
+  Timestamp in microseconds.
+</ParamField>
+<ParamField path="data_info" type="ar_data_log_audio_fmt_info_t">
+  Pointer to the data packet information.
+</ParamField>
+<ParamField path="seq_number_ptr" type="uint32_t *">
+  Reference to sequence number variable shared by client.
+</ParamField>
+
+### `ar_data_log_generic_pkt_info_t`
+
+**Members**
+
+<ParamField path="log_time_stamp" type="uint64_t">
+  Timestamp in microseconds.
+</ParamField>
+<ParamField path="token_id" type="uint32_t">
+  Used to distinguish the logging source of a packet or set of packets.
+</ParamField>
+<ParamField path="format" type="ar_data_log_generic_fmt_t">
+  Specifies the command format to use in the generic log packet.
+</ParamField>
+
+### `ar_data_log_blob_fmt_t`
+
+**Members**
+
+<ParamField path="data_size" type="uint32_t">
+  The length in bytes of the data that follows this header.
+</ParamField>
+<ParamField path="data" type="uint8_t">
+  The data.
+</ParamField>
+
+## Functions
+
+### `ar_data_log_init`
+
+Initializes the data logging utility.
+
+```c
+int32_t ar_data_log_init(void)
+```
+
+**Returns**
+
+AR_EOK : on success AR_E<other error> : on failure
+
+### `ar_data_log_deinit`
+
+Deitializes the data logging utility.
+
+```c
+int32_t ar_data_log_deinit(void)
+```
+
+**Returns**
+
+AR_EOK : on success AR_E<other error> : on failure
+
+### `ar_data_log_code_status`
+
+Checks whether the log code is enabled.
+
+```c
+bool_t ar_data_log_code_status(uint16_t log_code)
+```
+
+**Returns**
+
+TRUE : is enabled FALSE : is disabled
+
+### `ar_data_log_get_max_packet_size`
+
+Returns the max log packet size.
+
+\dependencies None
+
+```c
+uint32_t ar_data_log_get_max_packet_size(void)
+```
+
+### `ar_data_log_alloc`
+
+Allocates a data log packet.
+
+```c
+void * ar_data_log_alloc(ar_data_log_alloc_info_t *info)
+```
+
+**Parameters**
+
+<ParamField path="info" type="ar_data_log_alloc_info_t *">
+  Contains the info needed to allocate a log packet
+</ParamField>
+
+**Returns**
+
+Pointer to the payload of the allocated log packet. Returns NULL if buffer allocation fails or log code is disabled.
+
+### `ar_data_log_commit`
+
+Commits a packet for logging.
+
+The log header is populated by this call. The client fills in the data portion of the packet.
+
+```c
+int32_t ar_data_log_commit(ar_data_log_commit_info_t *info)
+```
+
+**Parameters**
+
+<ParamField path="info" type="ar_data_log_commit_info_t *">
+  A pointer to the commit info structure that contains info needed to commit a packet.
+</ParamField>
+
+**Returns**
+
+0  Success
+
+### `ar_data_log_submit`
+
+Segments a buffer into log packets and commits each packet for data logging.
+
+Log packet allocation and disposal are automatically taken care of.
+
+```c
+int32_t ar_data_log_submit(ar_data_log_submit_info_t *info)
+```
+
+**Parameters**
+
+<ParamField path="info" type="ar_data_log_submit_info_t *">
+  A pointer to the submit info structure that contains the buffer to log as well as info for creating the log packet
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_data_log_free`
+
+Releases the memory allocated for a log packet.
+
+```c
+void ar_data_log_free(void *log_pkt_payload_ptr, ar_log_pkt_type_t pkt_type)
+```
+
+**Parameters**
+
+<ParamField path="log_ptr" type="">
+  : pointer to the payload of the data log packet
+</ParamField>
+<ParamField path="pkt_type" type="ar_log_pkt_type_t">
+  : the type of packet that needs to be freed
+</ParamField>
+
+**Returns**
+
+None.
+
+## Type Definitions
+
+### `ar_log_pkt_type_t`
+
+An enumeration of the log packet types supported by the utility.
+
+```c
+typedef enum ar_log_pkt_type_t ar_log_pkt_type_t
+```
+
+### `ar_data_log_generic_fmt_t`
+
+```c
+typedef enum ar_data_log_generic_fmt_t ar_data_log_generic_fmt_t
+```
+
+### `ar_data_log_pcm_info_t`
+
+PCM data format information for the logging utility user.
+
+```c
+typedef struct ar_data_log_pcm_info_t ar_data_log_pcm_info_t
+```
+
+### `ar_data_log_audio_fmt_info_t`
+
+Format of the data being logged: PCM or bitstream.
+
+```c
+typedef struct ar_data_log_audio_fmt_info_t ar_data_log_audio_fmt_info_t
+```
+
+### `ar_data_log_alloc_info_t`
+
+Contains information needed to log a packet through the ar_data_log_commit(...) API.
+
+```c
+typedef struct ar_data_log_alloc_info_t ar_data_log_alloc_info_t
+```
+
+### `ar_data_log_commit_info_t`
+
+Contains information needed to log a buffer through the ar_data_log_submit(...) API.
+
+```c
+typedef struct ar_data_log_commit_info_t ar_data_log_commit_info_t
+```
+
+### `ar_data_log_submit_info_t`
+
+```c
+typedef struct ar_data_log_submit_info_t ar_data_log_submit_info_t
+```
+
+### `ar_data_log_pcm_pkt_info_t`
+
+Additional packet information for PCM/Bitstream packets used in conjunction with the pkt_info field in ar_data_log_submit_info_t and ar_data_log_commit_info_t
+
+```c
+typedef struct ar_data_log_pcm_pkt_info_t ar_data_log_pcm_pkt_info_t
+```
+
+### `ar_data_log_generic_pkt_info_t`
+
+```c
+typedef struct ar_data_log_generic_pkt_info_t ar_data_log_generic_pkt_info_t
+```
+
+### `ar_data_log_blob_fmt_t`
+
+```c
+typedef struct ar_data_log_blob_fmt_t ar_data_log_blob_fmt_t
+```
+
+## Enumerations
+
+### `ar_log_pkt_type_t`
+
+An enumeration of the log packet types supported by the utility.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_DATA_LOG_PKT_TYPE_UNKNOWN` | = 0x00 | Unknown log packet. |
+| `AR_DATA_LOG_PKT_TYPE_AUDIO_BITSTREAM` | = 0x01 | Bitstream log packet format. |
+| `AR_DATA_LOG_PKT_TYPE_AUDIO_PCM` | = 0x02 | PCM Log packet. |
+| `AR_DATA_LOG_PKT_TYPE_GENERIC` | = 0x03 | A general purpose log packets that adds headers for handling fragmentation and re-assembly. |
+| `AR_DATA_LOG_PKT_TYPE_RAW` | = 0x04 | A raw data packet where data is sent as is. |
+
+### `ar_data_log_generic_fmt_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_LOG_PKT_GENERIC_FMT_CAL_BLOB` | = 0x5043414C | 'P''C''A''L'. |
+| `AR_LOG_PKT_GENERIC_FMT_RAW` | = 0x52415720 | 'R''A''W'''. |

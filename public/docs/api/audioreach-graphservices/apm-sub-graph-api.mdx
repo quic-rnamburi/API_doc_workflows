@@ -1,0 +1,232 @@
+---
+title: "apm_sub_graph_api.h"
+description: "This file contains APM sub-graph related commands and events data structures definitions."
+---
+
+## Structures
+
+### `apm_param_id_sub_graph_cfg_t`
+
+**Members**
+
+<ParamField path="num_sub_graphs" type="uint32_t">
+</ParamField>
+
+### `apm_sub_graph_cfg_t`
+
+**Members**
+
+<ParamField path="sub_graph_id" type="uint32_t">
+</ParamField>
+<ParamField path="num_sub_graph_prop" type="uint32_t">
+</ParamField>
+
+### `apm_sg_prop_id_perf_mode_t`
+
+**Members**
+
+<ParamField path="perf_mode" type="uint32_t">
+</ParamField>
+
+### `apm_sg_prop_id_direction_t`
+
+**Members**
+
+<ParamField path="direction" type="uint32_t">
+</ParamField>
+
+### `apm_sg_prop_id_scenario_id_t`
+
+**Members**
+
+<ParamField path="scenario_id" type="uint32_t">
+</ParamField>
+
+### `apm_sg_prop_id_vsid_t`
+
+**Members**
+
+<ParamField path="vsid" type="uint32_t">
+</ParamField>
+
+### `apm_param_id_sub_graph_list_t`
+
+**Members**
+
+<ParamField path="num_sub_graphs" type="uint32_t">
+</ParamField>
+
+### `apm_sub_graph_id_t`
+
+**Members**
+
+<ParamField path="sub_graph_id" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `apm_sg_prop_id_perf_mode_t`
+
+```c
+typedef struct apm_sg_prop_id_perf_mode_t apm_sg_prop_id_perf_mode_t
+```
+
+### `apm_sg_prop_id_direction_t`
+
+```c
+typedef struct apm_sg_prop_id_direction_t apm_sg_prop_id_direction_t
+```
+
+### `apm_sg_prop_id_scenario_id_t`
+
+```c
+typedef struct apm_sg_prop_id_scenario_id_t apm_sg_prop_id_scenario_id_t
+```
+
+### `apm_sg_prop_id_vsid_t`
+
+```c
+typedef struct apm_sg_prop_id_vsid_t apm_sg_prop_id_vsid_t
+```
+
+### `apm_param_id_sub_graph_cfg_t`
+
+```c
+typedef struct apm_param_id_sub_graph_cfg_t apm_param_id_sub_graph_cfg_t
+```
+
+### `apm_sub_graph_cfg_t`
+
+```c
+typedef struct apm_sub_graph_cfg_t apm_sub_graph_cfg_t
+```
+
+### `apm_param_id_sub_graph_list_t`
+
+```c
+typedef struct apm_param_id_sub_graph_list_t apm_param_id_sub_graph_list_t
+```
+
+### `apm_sub_graph_id_t`
+
+```c
+typedef struct apm_sub_graph_id_t apm_sub_graph_id_t
+```
+
+## Macros
+
+### `APM_SUB_GRAPH_PROP_ID_PERF_MODE`
+
+\\< Start of subgraph_cfg -->
+
+```c
+#define APM_SUB_GRAPH_PROP_ID_PERF_MODE 0x0800100E
+```
+
+### `APM_SG_PERF_MODE_LOW_POWER`
+
+```c
+#define APM_SG_PERF_MODE_LOW_POWER 0x1
+```
+
+### `APM_SG_PERF_MODE_LOW_LATENCY`
+
+```c
+#define APM_SG_PERF_MODE_LOW_LATENCY 0x2
+```
+
+### `APM_SUB_GRAPH_PROP_ID_DIRECTION`
+
+```c
+#define APM_SUB_GRAPH_PROP_ID_DIRECTION 0x0800100F
+```
+
+### `APM_SUB_GRAPH_DIRECTION_TX`
+
+```c
+#define APM_SUB_GRAPH_DIRECTION_TX 0x1
+```
+
+### `APM_SUB_GRAPH_DIRECTION_RX`
+
+```c
+#define APM_SUB_GRAPH_DIRECTION_RX 0x2
+```
+
+### `APM_SUB_GRAPH_PROP_ID_SCENARIO_ID`
+
+```c
+#define APM_SUB_GRAPH_PROP_ID_SCENARIO_ID 0x08001010
+```
+
+### `APM_SUB_GRAPH_SID_AUDIO_PLAYBACK`
+
+```c
+#define APM_SUB_GRAPH_SID_AUDIO_PLAYBACK 0x1
+```
+
+### `APM_SUB_GRAPH_SID_AUDIO_RECORD`
+
+Enumeration for Scenario ID Voice call.
+
+```c
+#define APM_SUB_GRAPH_SID_AUDIO_RECORD 0x2
+```
+
+### `APM_SUB_GRAPH_SID_VOICE_CALL`
+
+```c
+#define APM_SUB_GRAPH_SID_VOICE_CALL 0x3
+```
+
+### `APM_SUB_GRAPH_PROP_ID_VSID`
+
+```c
+#define APM_SUB_GRAPH_PROP_ID_VSID 0x080010CC
+```
+
+### `APM_SUB_GRAPH_VSID_SUB1`
+
+```c
+#define APM_SUB_GRAPH_VSID_SUB1 AR_NON_GUID(0x11C05000)
+```
+
+### `APM_SUB_GRAPH_VSID_SUB2`
+
+```c
+#define APM_SUB_GRAPH_VSID_SUB2 AR_NON_GUID(0x11DC5000)
+```
+
+### `APM_SUB_GRAPH_VSID_VOC_LB_SUB1`
+
+Apps only mode with vocoder loopback on SUB1.
+
+```c
+#define APM_SUB_GRAPH_VSID_VOC_LB_SUB1 AR_NON_GUID(0x12006000)
+```
+
+### `APM_SUB_GRAPH_VSID_VOC_LB_SUB2`
+
+Apps only mode with vocoder loopback on SUB2.
+
+```c
+#define APM_SUB_GRAPH_VSID_VOC_LB_SUB2 AR_NON_GUID(0x121C6000)
+```
+
+### `APM_SUB_GRAPH_VSID_DONT_CARE`
+
+```c
+#define APM_SUB_GRAPH_VSID_DONT_CARE AR_NON_GUID(0xFFFFFFFF)
+```
+
+### `APM_PARAM_ID_SUB_GRAPH_CONFIG`
+
+```c
+#define APM_PARAM_ID_SUB_GRAPH_CONFIG 0x08001001
+```
+
+### `APM_PARAM_ID_SUB_GRAPH_LIST`
+
+```c
+#define APM_PARAM_ID_SUB_GRAPH_LIST 0x08001005
+```

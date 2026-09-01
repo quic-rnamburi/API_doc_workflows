@@ -1,0 +1,58 @@
+---
+title: "display_port_api.h"
+description: "This file contains DISPLAY_PORT module APIs."
+---
+
+## Structures
+
+### `param_id_display_port_intf_cfg_t`
+
+**Members**
+
+<ParamField path="channel_allocation" type="uint32_t">
+  The default is FL_FR_0_0_0_0_0_0 (Stereo).This information is defined in the HDMI standard, CEA 861-D. The number of channels is also inferred from this parameter. 0 in name below indicates blank channel allocation.}
+</ParamField>
+<ParamField path="mst_idx" type="uint32_t">
+  Suppported values range from 0 to (Max streams supported - 1).}
+</ParamField>
+<ParamField path="dptx_idx" type="uint32_t">
+  Suppported values range from 0 to (Max DPTX controllers supported - 1).}
+</ParamField>
+
+## Type Definitions
+
+### `param_id_display_port_intf_cfg_t`
+
+```c
+typedef struct param_id_display_port_intf_cfg_t param_id_display_port_intf_cfg_t
+```
+
+## Macros
+
+### `PORT_ID_DISPLAY_PORT_INPUT`
+
+```c
+#define PORT_ID_DISPLAY_PORT_INPUT 0x2
+```
+
+### `DISPLAY_PORT_STACK_SIZE`
+
+```c
+#define DISPLAY_PORT_STACK_SIZE 1024
+```
+
+### `PARAM_ID_DISPLAY_PORT_INTF_CFG`
+
+Parameter used to configure the DISPLAY_PORT interface
+
+```c
+#define PARAM_ID_DISPLAY_PORT_INTF_CFG 0x08001154
+```
+
+### `MODULE_ID_DISPLAY_PORT_SINK`
+
+Module ID for DISPLAY_PORT sink module.
+
+```c
+#define MODULE_ID_DISPLAY_PORT_SINK 0x07001069
+```

@@ -1,0 +1,108 @@
+---
+title: "mux_demux_api.h"
+description: "This file contains APIs for mux_demux module."
+---
+
+## Structures
+
+### `mux_demux_connection_config_t`
+
+**Members**
+
+<ParamField path="input_port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="input_channel_index" type="uint32_t">
+
+</ParamField>
+<ParamField path="output_port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="output_channel_index" type="uint32_t">
+
+</ParamField>
+
+### `param_id_mux_demux_config_t`
+
+**Members**
+
+<ParamField path="num_of_connections" type="uint32_t">
+
+</ParamField>
+
+### `mux_demux_out_format_t`
+
+**Members**
+
+<ParamField path="output_port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="bits_per_sample" type="uint16_t">
+
+</ParamField>
+<ParamField path="q_factor" type="uint16_t">
+
+</ParamField>
+<ParamField path="num_channels" type="uint32_t">
+
+</ParamField>
+
+### `param_id_mux_demux_out_format_t`
+
+**Members**
+
+<ParamField path="num_config" type="uint32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `mux_demux_connection_config_t`
+
+```c
+typedef struct mux_demux_connection_config_t mux_demux_connection_config_t
+```
+
+### `param_id_mux_demux_config_t`
+
+```c
+typedef struct param_id_mux_demux_config_t param_id_mux_demux_config_t
+```
+
+### `mux_demux_out_format_t`
+
+```c
+typedef struct mux_demux_out_format_t mux_demux_out_format_t
+```
+
+### `param_id_mux_demux_out_format_t`
+
+```c
+typedef struct param_id_mux_demux_out_format_t param_id_mux_demux_out_format_t
+```
+
+## Macros
+
+### `MUX_DEMUX_STACK_SIZE`
+
+```c
+#define MUX_DEMUX_STACK_SIZE 2048
+```
+
+### `PARAM_ID_MUX_DEMUX_CONFIG`
+
+```c
+#define PARAM_ID_MUX_DEMUX_CONFIG 0x080011BD
+```
+
+### `PARAM_ID_MUX_DEMUX_OUT_FORMAT`
+
+```c
+#define PARAM_ID_MUX_DEMUX_OUT_FORMAT 0x080011BE
+```
+
+### `MODULE_ID_MUX_DEMUX`
+
+```c
+#define MODULE_ID_MUX_DEMUX 0x07001098
+```

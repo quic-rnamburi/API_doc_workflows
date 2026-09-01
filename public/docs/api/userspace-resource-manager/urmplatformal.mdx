@@ -1,0 +1,253 @@
+---
+title: "UrmPlatformAL.h"
+---
+
+## Structures
+
+### `SysResource`
+
+Used to store information regarding Resources / Tunables which need to be Provisioned as part of the tuneResources API.
+
+**Members**
+
+<ParamField path="mResCode" type="uint32_t">
+  A uniqued 32-bit (unsigned) identifier for the Resource.
+</ParamField>
+<ParamField path="mResInfo" type="int32_t">
+  Holds Logical Core and Cluster Information:
+</ParamField>
+<ParamField path="mOptionalInfo" type="int32_t">
+  Field to hold optional information for Request Processing.
+</ParamField>
+<ParamField path="mNumValues" type="int32_t">
+  Number of values to be configured for the Resource, both single-valued and multi-valued Resources are supported.
+</ParamField>
+<ParamField path="value" type="int32_t">
+  Use this field for single Valued Resources.
+</ParamField>
+<ParamField path="values" type="int32_t *">
+  Use this field for Multi Valued Resources.
+</ParamField>
+<ParamField path="mResValue" type="union SysResource">
+  The value to be Configured for this Resource Node.
+</ParamField>
+
+### `ResPair`
+
+**Members**
+
+<ParamField path="name" type="const char *">
+</ParamField>
+<ParamField path="code" type="uint32_t">
+</ParamField>
+
+## Functions
+
+### `getResCodeFromString`
+
+```c
+uint32_t getResCodeFromString(const char *strCode, int8_t *found)
+```
+
+## Enumerations
+
+### `RequestPriority`
+
+Requests can have 2 levels of Priorities, HIGH or LOW.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `REQ_PRIORITY_HIGH` | = 0 |  |
+| `REQ_PRIORITY_LOW` |  |  |
+| `NUMBER_OF_RQUEST_PRIORITIES` |  |  |
+
+### `Modes`
+
+Represents the operational modes based on the device's display state.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `MODE_RESUME` | = 0x01 | Tuning allowed when the display is on. |
+| `MODE_SUSPEND` | = 0x02 | Tuning allowed when the display is off. |
+| `MODE_DOZE` | = 0x04 | Tuning allowed during doze (low-power idle) mode. |
+
+### `ResCodesDef`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `RES_CODE_LIST` |  |  |
+
+### ``
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `URM_SIG_CAT_TEST` | = 0x01 |  |
+| `URM_SIG_CAT_GENERIC` | = 0x02 |  |
+| `URM_SIG_CAT_MULTIMEDIA` | = 0x03 |  |
+| `URM_SIG_CAT_GAMING` | = 0x04 |  |
+| `URM_SIG_CAT_BROWSER` | = 0x05 |  |
+| `URM_SIG_CAT_CUSTOM` | = 0x80 |  |
+
+### ``
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `URM_SIG_APP_OPEN` | = 0x00020001 |  |
+| `URM_SIG_BROWSER_APP_OPEN` | = 0x00020002 |  |
+| `URM_SIG_GAME_APP_OPEN` | = 0x00020003 |  |
+| `URM_SIG_MULTIMEDIA_APP_OPEN` | = 0x00020004 |  |
+| `URM_SIG_VIDEO_DECODE` | = 0x00030001 |  |
+| `URM_SIG_CAMERA_PREVIEW` | = 0x00030002 |  |
+| `URM_SIG_CAMERA_ENCODE` | = 0x00030003 |  |
+| `URM_SIG_CAMERA_ENCODE_MULTI_STREAMS` | = 0x00030004 |  |
+| `URM_SIG_ENCODE_DECODE` | = 0x00030005 |  |
+
+## Macros
+
+### `OPT_WITHMAX`
+
+```c
+#define OPT_WITHMAX 0x00000001
+```
+
+### `OPT_WITHMIN`
+
+```c
+#define OPT_WITHMIN 0x00000002
+```
+
+### `OPT_WITHREL`
+
+```c
+#define OPT_WITHREL 0X00000004
+```
+
+### `SET_REQUEST_PRIORITY`
+
+```c
+#define SET_REQUEST_PRIORITY ( else                                                                                          \
+    retVal;                                                                                   \
+})                                                                                            \
+```
+
+### `ADD_ALLOWED_MODE`
+
+```c
+#define ADD_ALLOWED_MODE ( else                                                                                          \
+    retVal;                                                                                   \
+})                                                                                            \
+```
+
+### `EXTRACT_REQUEST_PRIORITY`
+
+```c
+#define EXTRACT_REQUEST_PRIORITY ()
+```
+
+### `EXTRACT_ALLOWED_MODES`
+
+```c
+#define EXTRACT_ALLOWED_MODES ()                                                                                            \
+```
+
+### `EXTRACT_RESOURCE_CORE_VALUE`
+
+```c
+#define EXTRACT_RESOURCE_CORE_VALUE ()                                                                                            \
+```
+
+### `EXTRACT_RESOURCE_CLUSTER_VALUE`
+
+```c
+#define EXTRACT_RESOURCE_CLUSTER_VALUE ()                                                                                            \
+```
+
+### `EXTRACT_RESOURCE_MPAM_VALUE`
+
+```c
+#define EXTRACT_RESOURCE_MPAM_VALUE ()                                                                                            \
+```
+
+### `SET_RESOURCE_CORE_VALUE`
+
+```c
+#define SET_RESOURCE_CORE_VALUE ()                                                                                            \
+```
+
+### `SET_RESOURCE_CLUSTER_VALUE`
+
+```c
+#define SET_RESOURCE_CLUSTER_VALUE ()                                                                                            \
+```
+
+### `SET_RESOURCE_MPAM_VALUE`
+
+```c
+#define SET_RESOURCE_MPAM_VALUE ()                                                                                            \
+```
+
+### `GET_SIGNAL_ID`
+
+```c
+#define GET_SIGNAL_ID ()                                                                                            \
+```
+
+### `GET_SIGNAL_TYPE`
+
+```c
+#define GET_SIGNAL_TYPE ()                                                                                            \
+```
+
+### `CONSTRUCT_RES_CODE`
+
+```c
+#define CONSTRUCT_RES_CODE ()                                                                                            \
+```
+
+### `CONSTRUCT_SIG_CODE`
+
+```c
+#define CONSTRUCT_SIG_CODE ()                                                                                            \
+```
+
+### `CUSTOM`
+
+```c
+#define CUSTOM ()                                                                                            \
+```
+
+### `RES_CODE_LIST`
+
+```c
+#define RES_CODE_LIST 
+```
+
+### `X`
+
+```c
+#define X name = value,
+```
+
+### `X`
+
+```c
+#define X ,
+```
+
+## Variables
+
+### `resCodeMapping`
+
+```c
+ResPair resCodeMapping
+```

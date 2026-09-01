@@ -1,0 +1,83 @@
+---
+title: "congestion_buf_api.h"
+description: "This file contains module published by Congestion Buf CAPI intialization."
+---
+
+## Structures
+
+### `param_id_congestion_buf_config_t`
+
+**Members**
+
+<ParamField path="bit_rate_mode" type="uint32_t">
+</ParamField>
+<ParamField path="bit_rate" type="uint32_t">
+  A value of '0' indicates unknown\unset bitrate}
+</ParamField>
+<ParamField path="congestion_buffer_duration_ms" type="uint32_t">
+</ParamField>
+<ParamField path="delay_buffer_duration_ms" type="uint32_t">
+</ParamField>
+<ParamField path="frame_size_mode" type="uint32_t">
+</ParamField>
+<ParamField path="frame_size_value" type="uint32_t">
+</ParamField>
+<ParamField path="sampling_rate" type="uint32_t">
+</ParamField>
+<ParamField path="mtu_size" type="uint32_t">
+</ParamField>
+
+### `param_id_congestion_buf_size_config_t`
+
+**Members**
+
+<ParamField path="congestion_buffer_duration_ms" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_congestion_buf_config_t`
+
+```c
+typedef struct param_id_congestion_buf_config_t param_id_congestion_buf_config_t
+```
+
+### `param_id_congestion_buf_size_config_t`
+
+```c
+typedef struct param_id_congestion_buf_size_config_t param_id_congestion_buf_size_config_t
+```
+
+## Macros
+
+### `CAPI_CONGESTION_BUF_MAX_INPUT_PORTS`
+
+```c
+#define CAPI_CONGESTION_BUF_MAX_INPUT_PORTS (1)
+```
+
+### `CAPI_CONGESTION_BUF_MAX_OUTPUT_PORTS`
+
+```c
+#define CAPI_CONGESTION_BUF_MAX_OUTPUT_PORTS (1)
+```
+
+### `PARAM_ID_CONGESTION_BUF_CONFIG`
+
+```c
+#define PARAM_ID_CONGESTION_BUF_CONFIG 0x080014E2
+```
+
+### `PARAM_ID_CONGESTION_BUF_SIZE_CONFIG`
+
+```c
+#define PARAM_ID_CONGESTION_BUF_SIZE_CONFIG 0x080014E5
+```
+
+### `MODULE_ID_CONGESTION_AUDIO_BUFFER`
+
+Module ID of the Congestion Buf Module.
+
+```c
+#define MODULE_ID_CONGESTION_AUDIO_BUFFER 0x07010004
+```

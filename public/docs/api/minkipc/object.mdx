@@ -1,0 +1,81 @@
+---
+title: "object.h"
+---
+
+## Structures
+
+### `Object`
+
+**Members**
+
+<ParamField path="invoke" type="ObjectInvoke">
+</ParamField>
+<ParamField path="context" type="ObjectCxt">
+  context data to pass to the invoke function.
+</ParamField>
+
+### `Object64`
+
+**Members**
+
+<ParamField path="invoke_l" type="ObjectInvoke">
+</ParamField>
+<ParamField path="invoke_h" type="ObjectInvoke">
+</ParamField>
+<ParamField path="context_l" type="ObjectCxt">
+  context data to pass to the invoke function.
+</ParamField>
+<ParamField path="context_h" type="ObjectCxt">
+  context data to pass to the invoke function.
+</ParamField>
+
+### `ObjectBuf`
+
+**Members**
+
+<ParamField path="ptr" type="void *">
+</ParamField>
+<ParamField path="size" type="size_t">
+</ParamField>
+
+### `ObjectBuf64`
+
+**Members**
+
+<ParamField path="ptr_l" type="void *">
+</ParamField>
+<ParamField path="ptr_h" type="void *">
+</ParamField>
+<ParamField path="size_l" type="size_t">
+</ParamField>
+<ParamField path="size_h" type="size_t">
+</ParamField>
+
+### `ObjectBufIn`
+
+**Members**
+
+<ParamField path="ptr" type="const void *">
+</ParamField>
+<ParamField path="size" type="size_t">
+</ParamField>
+
+### `ObjectArg`
+
+**Members**
+
+<ParamField path="b" type="ObjectBuf">
+</ParamField>
+<ParamField path="bi" type="ObjectBufIn">
+</ParamField>
+<ParamField path="o" type="Object">
+</ParamField>
+
+### `ObjectArg64`
+
+**Members**
+
+<ParamField path="b" type="ObjectBuf64">
+</ParamField>
+<ParamField path="o" type="Object64">
+</ParamField>

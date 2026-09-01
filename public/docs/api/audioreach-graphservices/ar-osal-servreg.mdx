@@ -1,0 +1,273 @@
+---
+title: "ar_osal_servreg.h"
+description: "Defines public APIs for service location, notification and state registration."
+---
+
+## Structures
+
+### `ar_osal_servreg_entry_type`
+
+Struct representing the name of the service or domain and the instance id.
+
+**Members**
+
+<ParamField path="name" type="char_t">
+  Name of the service or domain.
+</ParamField>
+<ParamField path="instance_id" type="uint32_t">
+</ParamField>
+
+### `ar_osal_servreg_state_notify_payload`
+
+servreg service state notify callback payload.
+
+**Members**
+
+<ParamField path="service" type="ar_osal_servreg_entry_type">
+</ParamField>
+<ParamField path="domain" type="ar_osal_servreg_entry_type">
+</ParamField>
+<ParamField path="service_state" type="ar_osal_service_state_type">
+</ParamField>
+
+## Functions
+
+### `ar_osal_servreg_init`
+
+ar_osal_servreg_init Initialize servreg interface.
+
+```c
+int32_t ar_osal_servreg_init(void)
+```
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_osal_servreg_deinit`
+
+ar_osal_servreg_deinit Uninitialize servreg interface.
+
+```c
+int32_t ar_osal_servreg_deinit(void)
+```
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_osal_servreg_get_domainlist`
+
+ar_osal_servreg_get_domainlist Client to call this API to get a list of domains(msm/domain/subdomain) on which a given service(provider/service) is supported.
+
+```c
+int32_t ar_osal_servreg_get_domainlist(ar_osal_servreg_entry_type *service, ar_osal_servreg_entry_type *domain_list, uint32_t *num_domains)
+```
+
+**Parameters**
+
+<ParamField path="service" type="ar_osal_servreg_entry_type *">
+  service(provider/service) for which domain(s) list is required.
+</ParamField>
+<ParamField path="domain_list" type="ar_osal_servreg_entry_type *">
+  service supported in domain(s), client to provide . payload buffer pointer.
+</ParamField>
+<ParamField path="num_domains" type="uint32_t *">
+  Client to provide the num_domains to get the domain list. . If num_domains is zero and domain_list is NULL, API will return . the number of domains for the given service if available.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure AR_ENOMEMORY- Failed due to insufficient memory, client to call the API again with required size as returned in num_domains.
+
+### `ar_osal_servreg_register`
+
+ar_osal_servreg_register Service client(s) to register for the domain service state change notifications.
+
+```c
+ar_osal_servreg_t ar_osal_servreg_register(ar_osal_client_type client_type, ar_osal_servreg_callback cb_func, void *cb_context, ar_osal_servreg_entry_type *domain, ar_osal_servreg_entry_type *service)
+```
+
+**Parameters**
+
+<ParamField path="client_type" type="ar_osal_client_type">
+  indicates registering client is a listener or service provider.
+</ParamField>
+<ParamField path="[in" type="">
+  opt] cb_func: callback function pointer to get notifications on. . This is parameter is optional to Service provider registration.
+</ParamField>
+<ParamField path="[in" type="">
+  opt] cb_context: callback function payload/context provided by client. . This is parameter is optional to Service provider registration.
+</ParamField>
+<ParamField path="domain" type="ar_osal_servreg_entry_type *">
+  domain of the service(msm/domain/subdomain) for which the . state change notifications to be provided.
+</ParamField>
+<ParamField path="service" type="ar_osal_servreg_entry_type *">
+  service(provider/service) for which the . state change notifications to be provided.
+</ParamField>
+
+**Returns**
+
+servreg_handle on success. null on failure.
+
+### `ar_osal_servreg_deregister`
+
+ar_osal_servreg_deregister Service client(s) to deregister for the service state change notifications.
+
+```c
+int32_t ar_osal_servreg_deregister(ar_osal_servreg_t servreg_handle)
+```
+
+**Parameters**
+
+<ParamField path="servreg_handle" type="ar_osal_servreg_t">
+  interface handle returned by ar_osal_servreg_register().
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_osal_servreg_set_state`
+
+ar_osal_servreg_set_state Service provider to call this API to register its service states(UP/DOWN).
+
+This API to be used only by the service provider(msm/domain/subdomain/provider/service) and not by service client(s).
+
+```c
+int32_t ar_osal_servreg_set_state(ar_osal_servreg_t servreg_handle, ar_osal_service_state_type state)
+```
+
+**Parameters**
+
+<ParamField path="servreg_handle" type="ar_osal_servreg_t">
+  interface handle returned by ar_osal_servreg_register().
+</ParamField>
+<ParamField path="state" type="ar_osal_service_state_type">
+  new service state for service registered using ar_osal_servreg_register().
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_osal_servreg_restart_service`
+
+ar_osal_servreg_restart_service HLOS calls this API to trigger a restart (PDR or SSR) on a given processor
+
+```c
+int32_t ar_osal_servreg_restart_service(ar_osal_servreg_t servreg_handle)
+```
+
+**Parameters**
+
+<ParamField path="servreg_handle" type="ar_osal_servreg_t">
+  interface handle returned by ar_osal_servreg_register() which identifies the desired processor
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_osal_panic`
+
+induce panic to crash the system
+
+```c
+void ar_osal_panic()
+```
+
+## Type Definitions
+
+### `ar_osal_servreg_t`
+
+ar osal servreg type object.
+
+```c
+typedef void * ar_osal_servreg_t
+```
+
+### `ar_osal_service_state_type`
+
+Service state up/down indicator.
+
+```c
+typedef enum ar_osal_service_state ar_osal_service_state_type
+```
+
+### `ar_osal_client_type`
+
+Servreg client type: listener or service provider.
+
+```c
+typedef enum ar_osal_client ar_osal_client_type
+```
+
+### `ar_osal_servreg_cb_event_type`
+
+Servreg callback notify events.
+
+```c
+typedef enum ar_osal_servreg_cb_event ar_osal_servreg_cb_event_type
+```
+
+### `ar_osal_servreg_state_notify_payload_type`
+
+servreg service state notify callback payload.
+
+```c
+typedef struct ar_osal_servreg_state_notify_payload ar_osal_servreg_state_notify_payload_type
+```
+
+### `ar_osal_servreg_callback`
+
+ar_osal_servreg_callback Callback function to notify clients for any changes in service state(up/down).
+
+```c
+typedef void(* ar_osal_servreg_callback
+```
+
+## Enumerations
+
+### `ar_osal_service_state`
+
+Service state up/down indicator.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_OSAL_SERVICE_STATE_DOWN` | = 0 |  |
+| `AR_OSAL_SERVICE_STATE_UP` | = 1 |  |
+
+### `ar_osal_client`
+
+Servreg client type: listener or service provider.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_OSAL_CLIENT_INVALID` | = 0 |  |
+| `AR_OSAL_CLIENT_LISTENER` | = 1 |  |
+| `AR_OSAL_CLIENT_SERVICE_PROVIDER` | = 2 |  |
+
+### `ar_osal_servreg_cb_event`
+
+Servreg callback notify events.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_OSAL_SERVICE_STATE_NOTIFY` | = 1 |  |
+
+## Macros
+
+### `AR_OSAL_SERVREG_NAME_LENGTH_MAX`
+
+Max length of the domain name i.e "soc/domain/subdomain" or service name i.e "provider/service" is 64 bytes e.g.
+
+```c
+#define AR_OSAL_SERVREG_NAME_LENGTH_MAX (64)
+```

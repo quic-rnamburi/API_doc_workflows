@@ -1,0 +1,59 @@
+---
+title: "audio_route.h"
+---
+
+## Functions
+
+### `audio_route_init`
+
+```c
+struct audio_route * audio_route_init(unsigned int card, const char *xml_path)
+```
+
+### `audio_route_free`
+
+```c
+void audio_route_free(struct audio_route *ar)
+```
+
+### `audio_route_apply_path`
+
+```c
+int audio_route_apply_path(struct audio_route *ar, const char *name)
+```
+
+### `audio_route_apply_and_update_path`
+
+```c
+int audio_route_apply_and_update_path(struct audio_route *ar, const char *name)
+```
+
+### `audio_route_reset_path`
+
+```c
+int audio_route_reset_path(struct audio_route *ar, const char *name)
+```
+
+### `audio_route_reset_and_update_path`
+
+```c
+int audio_route_reset_and_update_path(struct audio_route *ar, const char *name)
+```
+
+### `audio_route_force_reset_and_update_path`
+
+```c
+int audio_route_force_reset_and_update_path(struct audio_route *ar, const char *name)
+```
+
+### `audio_route_reset`
+
+```c
+void audio_route_reset(struct audio_route *ar)
+```
+
+### `audio_route_update_mixer`
+
+```c
+int audio_route_update_mixer(struct audio_route *ar)
+```

@@ -1,0 +1,101 @@
+---
+title: "Extensions.h"
+---
+
+## Structures
+
+### `PostProcessCBData`
+
+**Members**
+
+<ParamField path="mPid" type="pid_t">
+</ParamField>
+<ParamField path="mSigId" type="uint32_t">
+</ParamField>
+<ParamField path="mSigType" type="uint32_t">
+</ParamField>
+<ParamField path="mNumArgs" type="int32_t">
+</ParamField>
+<ParamField path="mArgs" type="uint32_t *">
+</ParamField>
+<ParamField path="mHandleAcq" type="int64_t">
+</ParamField>
+
+## Type Definitions
+
+### `ResourceLifecycleCallback`
+
+```c
+typedef void(* ResourceLifecycleCallback
+```
+
+### `PostProcessingCallback`
+
+```c
+typedef void(* PostProcessingCallback
+```
+
+## Enumerations
+
+### `ConfigType`
+
+Different Config (via YAML) Types supported.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `RESOURCE_CONFIG` |  |  |
+| `PROPERTIES_CONFIG` |  |  |
+| `SIGNALS_CONFIG` |  |  |
+| `EXT_FEATURES_CONFIG` |  |  |
+| `TARGET_CONFIG` |  |  |
+| `INIT_CONFIG` |  |  |
+| `APP_CONFIG` |  |  |
+| `TOTAL_CONFIGS_COUNT` |  |  |
+
+## Macros
+
+### `CONCAT_IMPL`
+
+```c
+#define CONCAT_IMPL a##b
+```
+
+### `CONCAT`
+
+```c
+#define CONCAT CONCAT_IMPL(a, b)
+```
+
+### `URM_REGISTER_RES_APPLIER_CB`
+
+Register a Customer Resource Applier Callback for a particular ResCode.
+
+```c
+#define URM_REGISTER_RES_APPLIER_CB static Extensions CONCAT(_resourceApplier, resCode)(resCode, 0, resourceApplierCallback);
+```
+
+### `URM_REGISTER_RES_TEAR_CB`
+
+Register a Customer Resource Teardown Callback for a particular ResCode.
+
+```c
+#define URM_REGISTER_RES_TEAR_CB static Extensions CONCAT(_resourceTear, resCode)(resCode, 1, resourceTearCallback);
+```
+
+### `URM_REGISTER_CONFIG`
+
+Register custom Config (YAML) file.
+
+```c
+#define URM_REGISTER_CONFIG static Extensions CONCAT(_regConfig, configType)(configType, yamlFile);
+```
+
+### `URM_REGISTER_POST_PROCESS_CB`
+
+Register post processing callbacks for different workloads and per-process.
+
+```c
+#define URM_REGISTER_POST_PROCESS_CB static Extensions CONCAT(callback, __LINE__)(identifier, callback);
+```

@@ -1,0 +1,8 @@
+{
+  "group": "minkipc",
+  "pages": [
+    "public/docs/api/minkipc/minkcom",
+    "public/docs/api/minkipc/object",
+    "public/docs/api/minkipc/tee-client-api"
+  ]
+}

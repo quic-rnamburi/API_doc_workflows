@@ -1,0 +1,98 @@
+---
+title: "dls_log_pkt_hdr_api.h"
+description: "This file contains data structures for log packet header."
+---
+
+## Functions
+
+### `DLS_PACKED`
+
+Audio log PCM data format container.
+
+Complete log packet structure for logging raw data.
+
+Complete log packet structure for logging bitstream data.
+
+Complete log packet structure for logging PCM data.
+
+Common header structure for PCM/bitstream data.
+
+Audio log header for bitstream data.
+
+log_hdr_type ,includes length, code and timestamp
+
+```c
+typedef DLS_PACKED(struct)
+```
+
+## Enumerations
+
+### `dls_audiolog_tag_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIOLOG_PCM_DATA_FORMAT` | = 4 |  |
+| `AUDIOLOG_BS_DATA_FORMAT` | = 5 |  |
+
+### `dls_audiolog_data_format_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIOLOG_FIXED_POINT_DATA_FORMAT` | = 0 |  |
+| `AUDIOLOG_FLOATING_POINT_DATA_FORMAT` | = 1 |  |
+
+## Macros
+
+### `DLS_PACKED`
+
+```c
+#define DLS_PACKED x __attribute__((__packed__))
+```
+
+## Variables
+
+### `dls_header_pcm_data_t`
+
+```c
+ dls_header_pcm_data_t
+```
+
+### `dls_header_bitstream_data_t`
+
+```c
+ dls_header_bitstream_data_t
+```
+
+### `dls_header_cmn_t`
+
+```c
+ dls_header_cmn_t
+```
+
+### `dls_log_hdr_type`
+
+```c
+ dls_log_hdr_type
+```
+
+### `dls_log_pkt_pcm_data_t`
+
+```c
+ dls_log_pkt_pcm_data_t
+```
+
+### `dls_log_pkt_bitstream_data_t`
+
+```c
+ dls_log_pkt_bitstream_data_t
+```
+
+### `dls_log_pkt_raw_data_t`
+
+```c
+ dls_log_pkt_raw_data_t
+```

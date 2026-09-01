@@ -1,0 +1,446 @@
+---
+title: "audio_if_api.h"
+description: "This file contains audio_if module APIs."
+---
+
+## Structures
+
+### `param_id_audio_if_intf_cfg_t`
+
+Payload for #PARAM_ID_AUDIO_IF_CFG.
+
+**Members**
+
+<ParamField path="qaif_type" type="uint16_t">
+  QAIF types.
+</ParamField>
+<ParamField path="intf_idx" type="uint16_t">
+  Index types for the audio_if interface.
+</ParamField>
+<ParamField path="intf_mode" type="uint16_t">
+  Audio interface mode.
+</ParamField>
+<ParamField path="ctrl_data_out_enable" type="uint16_t">
+  Specifies whether the PCM block shares the data-out signal to the driver with other masters.
+</ParamField>
+<ParamField path="active_slot_mask" type="uint32_t">
+  Specifies the position of the active slot.
+</ParamField>
+<ParamField path="nslots_per_frame" type="uint16_t">
+  Number of slots per frame.
+</ParamField>
+<ParamField path="slot_width" type="uint16_t">
+  Width of the slot in a audio_if frame.
+</ParamField>
+<ParamField path="active_lane_mask" type="uint32_t">
+  Position of the active audio_if lanes: 1 to ((2^N)-1), where N is the number of physical lanes supported by the hardware interface.
+</ParamField>
+<ParamField path="frame_sync_rate" type="uint32_t">
+  Defines the sampling rate of frame sync of the interface.
+</ParamField>
+<ParamField path="frame_sync_src" type="uint16_t">
+  Specifies the Slave or Master mode of operation.
+</ParamField>
+<ParamField path="frame_sync_mode" type="uint16_t">
+  Indicates the audio_if Synchronization mode.
+</ParamField>
+<ParamField path="invert_frame_sync_pulse" type="uint16_t">
+  Specifies whether to invert synchronization.
+</ParamField>
+<ParamField path="frame_sync_data_delay" type="uint16_t">
+  Indicates the number of bit-clock cycles when delaying data for synchronization.
+</ParamField>
+<ParamField path="bit_clk_type" type="uint16_t">
+  Indicates the bit clock type.
+</ParamField>
+<ParamField path="inv_int_bit_clk" type="uint8_t">
+  Specifies whether to invert the clock supplied to the blocks inside QAIF.
+</ParamField>
+<ParamField path="inv_ext_bit_clk" type="uint8_t">
+  Specifies whether to invert the clock supplied to the blocks outside of QAIF.
+</ParamField>
+
+### `param_id_audio_if_full_cycle_cfg_t`
+
+Payload for PARAM_ID_AUDIO_IF_FULL_CYCLE_CFG.
+
+**Members**
+
+<ParamField path="full_cycle_enable" type="uint16_t">
+  Full Cycle configuration enable.
+</ParamField>
+<ParamField path="inv_launch_clk" type="uint8_t">
+  Specifies whether to invert the launch clock.
+</ParamField>
+<ParamField path="inv_capture_clk" type="uint8_t">
+  Specifies whether to invert the capture clock.
+</ParamField>
+
+## Type Definitions
+
+### `audio_if_idx_t`
+
+Valid indices of Audio Interface.
+
+```c
+typedef enum audio_if_idx_t audio_if_idx_t
+```
+
+### `audio_if_intf_mode_t`
+
+Valid modes of Audio Interface.
+
+```c
+typedef enum audio_if_intf_mode_t audio_if_intf_mode_t
+```
+
+### `audio_if_frame_sync_mode_t`
+
+Valid frame sync modes.
+
+```c
+typedef enum audio_if_frame_sync_mode_t audio_if_frame_sync_mode_t
+```
+
+### `audio_if_frame_sync_data_delay_t`
+
+Valid frame sync data delay.
+
+```c
+typedef enum audio_if_frame_sync_data_delay_t audio_if_frame_sync_data_delay_t
+```
+
+### `audio_if_frame_sync_src_t`
+
+Valid frame sync source.
+
+```c
+typedef enum audio_if_frame_sync_src_t audio_if_frame_sync_src_t
+```
+
+### `audio_if_slots_per_frame_t`
+
+Valid slots per frame.
+
+```c
+typedef enum audio_if_slots_per_frame_t audio_if_slots_per_frame_t
+```
+
+### `audio_if_slot_width_t`
+
+Valid slot width.
+
+```c
+typedef enum audio_if_slot_width_t audio_if_slot_width_t
+```
+
+### `audio_if_bit_clk_type_t`
+
+Valid bit clock types.
+
+```c
+typedef enum audio_if_bit_clk_type_t audio_if_bit_clk_type_t
+```
+
+### `param_id_audio_if_intf_cfg_t`
+
+```c
+typedef struct param_id_audio_if_intf_cfg_t param_id_audio_if_intf_cfg_t
+```
+
+### `audio_if_full_cycle_en_t`
+
+```c
+typedef enum audio_if_full_cycle_en_t audio_if_full_cycle_en_t
+```
+
+### `param_id_audio_if_full_cycle_cfg_t`
+
+```c
+typedef struct param_id_audio_if_full_cycle_cfg_t param_id_audio_if_full_cycle_cfg_t
+```
+
+## Enumerations
+
+### `audio_if_idx_t`
+
+Valid indices of Audio Interface.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_IF_IDX_INVALID` | = -1 |  |
+| `AUDIO_IF_IDX_0` | = 0 |  |
+| `AUDIO_IF_IDX_1` |  |  |
+| `AUDIO_IF_IDX_2` |  |  |
+| `AUDIO_IF_IDX_3` |  |  |
+| `AUDIO_IF_IDX_4` |  |  |
+| `AUDIO_IF_IDX_5` |  |  |
+| `AUDIO_IF_IDX_6` |  |  |
+| `AUDIO_IF_IDX_7` |  |  |
+| `AUDIO_IF_IDX_8` |  |  |
+| `AUDIO_IF_IDX_9` |  |  |
+| `AUDIO_IF_IDX_10` |  |  |
+| `AUDIO_IF_IDX_11` |  |  |
+| `AUDIO_IF_IDX_12` |  |  |
+| `AUDIO_IF_IDX_13` |  |  |
+| `AUDIO_IF_IDX_14` |  |  |
+| `AUDIO_IF_IDX_15` |  |  |
+| `AUDIO_IF_IDX_NUM_MAX` |  |  |
+
+### `audio_if_intf_mode_t`
+
+Valid modes of Audio Interface.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_IF_INTF_MODE_TDM` | = 0 |  |
+| `AUDIO_IF_INTF_MODE_PCM` | = 1 |  |
+| `AUDIO_IF_INTF_MODE_I2S` | = 2 |  |
+
+### `audio_if_frame_sync_mode_t`
+
+Valid frame sync modes.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_IF_FRAME_SYNC_MODE_SHORT_SYNC` | = 0 |  |
+| `AUDIO_IF_FRAME_SYNC_MODE_ONE_SLOT_SYNC` | = 1 |  |
+| `AUDIO_IF_FRAME_SYNC_MODE_LONG_SYNC` | = 2 |  |
+
+### `audio_if_frame_sync_data_delay_t`
+
+Valid frame sync data delay.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_IF_FRAME_SYNC_DATA_DELAY_0BCLK` | = 0 |  |
+| `AUDIO_IF_FRAME_SYNC_DATA_DELAY_1BCLK` | = 1 |  |
+| `AUDIO_IF_FRAME_SYNC_DATA_DELAY_2BCLK` | = 2 |  |
+
+### `audio_if_frame_sync_src_t`
+
+Valid frame sync source.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_IF_FRAME_SYNC_SRC_EXTERNAL` | = 0 |  |
+| `AUDIO_IF_FRAME_SYNC_SRC_INTERNAL` |  |  |
+
+### `audio_if_slots_per_frame_t`
+
+Valid slots per frame.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_IF_SLOTS_PER_FRAME_1` | = 1 |  |
+| `AUDIO_IF_SLOTS_PER_FRAME_2` | = 2 |  |
+| `AUDIO_IF_SLOTS_PER_FRAME_4` | = 4 |  |
+| `AUDIO_IF_SLOTS_PER_FRAME_8` | = 8 |  |
+| `AUDIO_IF_SLOTS_PER_FRAME_16` | = 16 |  |
+| `AUDIO_IF_SLOTS_PER_FRAME_32` | = 32 |  |
+| `AUDIO_IF_MAX_SLOTS_PER_FRAME` | = AUDIO_IF_SLOTS_PER_FRAME_32 |  |
+
+### `audio_if_slot_width_t`
+
+Valid slot width.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_IF_SLOT_WIDTH_16` | = 16 |  |
+| `AUDIO_IF_SLOT_WIDTH_24` | = 24 |  |
+| `AUDIO_IF_SLOT_WIDTH_32` | = 32 |  |
+
+### `audio_if_bit_clk_type_t`
+
+Valid bit clock types.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_IF_I_BIT_CLK_EN` | = 0 |  |
+| `AUDIO_IF_E_BIT_CLK_EN` |  |  |
+| `AUDIO_IF_SKIP_BIT_CLK_EN` |  |  |
+
+### `audio_if_full_cycle_en_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_IF_FULL_CYCLE_DISABLE` | = 0 |  |
+| `AUDIO_IF_FULL_CYCLE_ENABLE` |  |  |
+
+## Macros
+
+### `PORT_ID_AUDIO_IF_INPUT`
+
+Input port ID of audio_if module.
+
+```c
+#define PORT_ID_AUDIO_IF_INPUT 0x2
+```
+
+### `PORT_ID_AUDIO_IF_OUTPUT`
+
+Output port ID of audio_if module.
+
+```c
+#define PORT_ID_AUDIO_IF_OUTPUT 0x1
+```
+
+### `AUDIO_IF_STACK_SIZE`
+
+```c
+#define AUDIO_IF_STACK_SIZE 2048
+```
+
+### `AUDIO_IF_CTRL_DATA_OE_DISABLE`
+
+Enumeration for disabling the audio_if configuration ctrl_data_out_enable parameter.
+
+```c
+#define AUDIO_IF_CTRL_DATA_OE_DISABLE 0x0
+```
+
+### `AUDIO_IF_CTRL_DATA_OE_ENABLE`
+
+Enumeration for enabling the audio_if configuration ctrl_data_out_enable parameter.
+
+```c
+#define AUDIO_IF_CTRL_DATA_OE_ENABLE 0x1
+```
+
+### `AUDIO_IF_FRAME_SYNC_NORMAL`
+
+Enumeration for the Normal synchronization.
+
+```c
+#define AUDIO_IF_FRAME_SYNC_NORMAL 0
+```
+
+### `AUDIO_IF_FRAME_SYNC_INVERT`
+
+Enumeration for inverting the synchronization.
+
+```c
+#define AUDIO_IF_FRAME_SYNC_INVERT 1
+```
+
+### `AUDIO_IF_INT_CLK_NORMAL`
+
+Enumeration for the bit clock supply without inversion to the blocks inside QAIF.
+
+```c
+#define AUDIO_IF_INT_CLK_NORMAL 0
+```
+
+### `AUDIO_IF_INT_CLK_INVERT`
+
+Enumeration for inverting the bit clock supply to the blocks inside QAIF.
+
+```c
+#define AUDIO_IF_INT_CLK_INVERT 1
+```
+
+### `AUDIO_IF_EXT_CLK_NORMAL`
+
+Enumeration for the bit clock supply without inversion to the blocks outside QAIF.
+
+```c
+#define AUDIO_IF_EXT_CLK_NORMAL 0
+```
+
+### `AUDIO_IF_EXT_CLK_INVERT`
+
+Enumeration for the bit clock supply with inversion to the blocks outside QAIF.
+
+```c
+#define AUDIO_IF_EXT_CLK_INVERT 1
+```
+
+### `AUDIO_IF_CAPTURE_CLK_NORMAL`
+
+Enumeration for normal capture clock.
+
+```c
+#define AUDIO_IF_CAPTURE_CLK_NORMAL 0
+```
+
+### `AUDIO_IF_CAPTURE_CLK_INVERT`
+
+Enumeration for inverting the capture clock.
+
+```c
+#define AUDIO_IF_CAPTURE_CLK_INVERT 1
+```
+
+### `AUDIO_IF_LAUNCH_CLK_NORMAL`
+
+Enumeration for the Normal launch clock.
+
+```c
+#define AUDIO_IF_LAUNCH_CLK_NORMAL 0
+```
+
+### `AUDIO_IF_LAUNCH_CLK_INVERT`
+
+Enumeration for inverting the launch clock.
+
+```c
+#define AUDIO_IF_LAUNCH_CLK_INVERT 1
+```
+
+### `AUDIO_IF_MAX_CHANNEL_CNT`
+
+Maximum number of channels for the audio_if interface.
+
+```c
+#define AUDIO_IF_MAX_CHANNEL_CNT 32
+```
+
+### `PARAM_ID_AUDIO_IF_INTF_CFG`
+
+Identifier for the parameter that configure the audio_if interface.
+
+```c
+#define PARAM_ID_AUDIO_IF_INTF_CFG 0x08001B11
+```
+
+### `PARAM_ID_AUDIO_IF_FULL_CYCLE_CFG`
+
+Identifier for the parameter that configure the full cycle setting of audio_if interface.
+
+```c
+#define PARAM_ID_AUDIO_IF_FULL_CYCLE_CFG 0x08001B12
+```
+
+### `MODULE_ID_AUDIO_IF_SINK`
+
+Identifier for the hardware audio_if Sink module.
+
+```c
+#define MODULE_ID_AUDIO_IF_SINK 0x0700117C
+```
+
+### `MODULE_ID_AUDIO_IF_SOURCE`
+
+Identifier for the audio_if Source module.
+
+```c
+#define MODULE_ID_AUDIO_IF_SOURCE 0x0700117D
+```

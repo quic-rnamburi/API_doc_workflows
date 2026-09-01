@@ -1,0 +1,330 @@
+---
+title: "sh_mem_pull_push_mode_api.h"
+description: "This file contains CAPI pull mode and push mode module APIs."
+---
+
+## Structures
+
+### `event_cfg_sh_mem_pull_push_mode_watermark_level_t`
+
+Payload of the EVENT_ID_SH_MEM_PULL_PUSH_MODE_WATERMARK event.
+
+**Members**
+
+<ParamField path="watermark_level_bytes" type="uint32_t">
+  Watermark level in the circular buffer, in bytes.
+</ParamField>
+
+### `event_cfg_sh_mem_pull_push_mode_watermark_t`
+
+Immediately following this structure are watermark level structures of type sh_mem_pull_push_mode_watermark_level_t.
+
+**Members**
+
+<ParamField path="num_water_mark_levels" type="uint32_t">
+  Number of watermark levels in the array.
+</ParamField>
+
+### `event_sh_mem_pull_push_mode_watermark_level_t`
+
+Payload of the EVENT_ID_SH_MEM_PULL_PUSH_MODE_WATERMARK event.
+
+**Members**
+
+<ParamField path="watermark_level_bytes" type="uint32_t">
+  Watermark level in the circular buffer in bytes.
+</ParamField>
+
+### `event_sh_mem_push_mode_eos_marker_t`
+
+Payload of the event EVENT_ID_SH_MEM_PUSH_MODE_EOS_MARKER, contains the timestamp of the EOS marker.
+
+**Members**
+
+<ParamField path="index" type="uint32_t">
+  Index of the sample in the circular buffer at which EOS marker is set.
+</ParamField>
+<ParamField path="timestamp_us_lsw" type="uint32_t">
+  Lower 32 bits of Timestamp at which push mode module received EOS.
+</ParamField>
+<ParamField path="timestamp_us_msw" type="uint32_t">
+  Higher 32 bits of Timestamp at which push mode module received EOS.
+</ParamField>
+
+### `sh_mem_pull_push_mode_position_buffer_t`
+
+Common structure definition for the shared circular buffer between the SPF and clients.
+
+**Members**
+
+<ParamField path="frame_counter" type="volatile uint32_t">
+  Counter used to handle interprocessor synchronization issues associated with reading write_index, wall_clock_us_lsw, and wall_clock_us_msw.
+</ParamField>
+<ParamField path="index" type="volatile uint32_t">
+  Index (in bytes) to the buffer where the SPF is writing (Push mode) or reading (Pull mode).
+</ParamField>
+<ParamField path="timestamp_us_lsw" type="volatile uint32_t">
+  Upper 32 bits of the 64-bit timestamp, in microseconds.
+</ParamField>
+<ParamField path="timestamp_us_msw" type="volatile uint32_t">
+  Upper 32 bits of the 64-bit timestamp, in microseconds.
+</ParamField>
+
+### `sh_mem_pull_push_mode_cfg_t`
+
+Payload of the PARAM_ID_SH_MEM_PULL_PUSH_MODE_CFG parameter.
+
+**Members**
+
+<ParamField path="shared_circ_buf_addr_lsw" type="uint32_t">
+  Lower 32 bits of the address of the shared circular buffer.
+</ParamField>
+<ParamField path="shared_circ_buf_addr_msw" type="uint32_t">
+  Upper 32 bits of the address of the shared circular buffer.
+</ParamField>
+<ParamField path="shared_circ_buf_size" type="uint32_t">
+  Number of bytes in the shared circular buffer.
+</ParamField>
+<ParamField path="circ_buf_mem_map_handle" type="uint32_t">
+  Unique identifier for the shared memory address of shared circular buffer.
+</ParamField>
+<ParamField path="shared_pos_buf_addr_lsw" type="uint32_t">
+  Lower 32 bits of the address of the shared position buffer.
+</ParamField>
+<ParamField path="shared_pos_buf_addr_msw" type="uint32_t">
+  Upper 32 bits of the address of the shared position buffer.
+</ParamField>
+<ParamField path="pos_buf_mem_map_handle" type="uint32_t">
+  Unique identifier for the shared memory address of position buffer.
+</ParamField>
+
+### `sh_mem_push_mode_header_cfg_t`
+
+**Members**
+
+<ParamField path="header_type" type="uint32_t">
+  Bit field to enable/disable additional information to be sent along with the audio data in the buffer.
+</ParamField>
+
+### `sh_mem_push_mode_batch_header_t`
+
+Batch header structure that appears at the start of each batch in shared memory.
+
+**Members**
+
+<ParamField path="sync_word" type="uint32_t">
+  Sync word for validation.
+</ParamField>
+
+### `sh_mem_push_mode_param_header_t`
+
+Parameter header type information structure (PARAM_ID + SIZE).
+
+**Members**
+
+<ParamField path="param_id" type="uint32_t">
+  Parameter ID identifying the type of data that follows.
+</ParamField>
+<ParamField path="actual_size" type="uint32_t">
+  Actual size of the payload in bytes.
+</ParamField>
+<ParamField path="padding_size" type="uint32_t">
+  Size of the padded bytes in param payload, to make next header SYNC_WORD 4-byte aligned.
+</ParamField>
+
+### `sh_mem_push_mode_timestamp_payload_t`
+
+Timestamp parameter payload structure.
+
+**Members**
+
+<ParamField path="timestamp_us_lsw" type="uint32_t">
+  Lower 32 bits of the 64-bit timestamp, in microseconds.
+</ParamField>
+<ParamField path="timestamp_us_msw" type="uint32_t">
+  Upper 32 bits of the 64-bit timestamp, in microseconds.
+</ParamField>
+
+## Type Definitions
+
+### `event_cfg_sh_mem_pull_push_mode_watermark_level_t`
+
+```c
+typedef struct event_cfg_sh_mem_pull_push_mode_watermark_level_t event_cfg_sh_mem_pull_push_mode_watermark_level_t
+```
+
+### `event_cfg_sh_mem_pull_push_mode_watermark_t`
+
+```c
+typedef struct event_cfg_sh_mem_pull_push_mode_watermark_t event_cfg_sh_mem_pull_push_mode_watermark_t
+```
+
+### `event_sh_mem_pull_push_mode_watermark_level_t`
+
+```c
+typedef struct event_sh_mem_pull_push_mode_watermark_level_t event_sh_mem_pull_push_mode_watermark_level_t
+```
+
+### `event_sh_mem_push_mode_eos_marker_t`
+
+```c
+typedef struct event_sh_mem_push_mode_eos_marker_t event_sh_mem_push_mode_eos_marker_t
+```
+
+### `sh_mem_pull_push_mode_position_buffer_t`
+
+```c
+typedef struct sh_mem_pull_push_mode_position_buffer_t sh_mem_pull_push_mode_position_buffer_t
+```
+
+### `sh_mem_pull_push_mode_cfg_t`
+
+```c
+typedef struct sh_mem_pull_push_mode_cfg_t sh_mem_pull_push_mode_cfg_t
+```
+
+### `sh_mem_push_mode_header_cfg_t`
+
+```c
+typedef struct sh_mem_push_mode_header_cfg_t sh_mem_push_mode_header_cfg_t
+```
+
+### `sh_mem_push_mode_batch_header_t`
+
+```c
+typedef struct sh_mem_push_mode_batch_header_t sh_mem_push_mode_batch_header_t
+```
+
+### `sh_mem_push_mode_param_header_t`
+
+```c
+typedef struct sh_mem_push_mode_param_header_t sh_mem_push_mode_param_header_t
+```
+
+### `sh_mem_push_mode_timestamp_payload_t`
+
+```c
+typedef struct sh_mem_push_mode_timestamp_payload_t sh_mem_push_mode_timestamp_payload_t
+```
+
+## Macros
+
+### `SH_MEM_PULL_MODE_MAX_INPUT_PORTS`
+
+Enumerates the maximum number of input ports for Pull mode.
+
+```c
+#define SH_MEM_PULL_MODE_MAX_INPUT_PORTS 0x0
+```
+
+### `SH_MEM_PULL_MODE_MAX_OUTPUT_PORTS`
+
+Enumerates the maximum number of output ports for Pull mode.
+
+```c
+#define SH_MEM_PULL_MODE_MAX_OUTPUT_PORTS 0x1
+```
+
+### `SH_MEM_PULL_MODE_STACK_SIZE_REQUIREMENT`
+
+Enumerates the stack size of the module for Pull mode.
+
+```c
+#define SH_MEM_PULL_MODE_STACK_SIZE_REQUIREMENT 4096
+```
+
+### `SH_MEM_PUSH_MODE_MAX_INPUT_PORTS`
+
+Enumerates the maximum number of input ports for Push mode.
+
+```c
+#define SH_MEM_PUSH_MODE_MAX_INPUT_PORTS 0x1
+```
+
+### `SH_MEM_PUSH_MODE_MAX_OUTPUT_PORTS`
+
+Enumerates the maximum number of output ports for Push mode.
+
+```c
+#define SH_MEM_PUSH_MODE_MAX_OUTPUT_PORTS 0x0
+```
+
+### `SH_MEM_PUSH_MODE_STACK_SIZE_REQUIREMENT`
+
+Enumerates the stack size of the module for Push mode.
+
+```c
+#define SH_MEM_PUSH_MODE_STACK_SIZE_REQUIREMENT 4096
+```
+
+### `EVENT_ID_SH_MEM_PULL_PUSH_MODE_WATERMARK`
+
+Identifier of the watermark event from the MODULE_ID_SH_MEM_PULL_MODE and MODULE_ID_SH_MEM_PUSH_MODE modules to the client.
+
+```c
+#define EVENT_ID_SH_MEM_PULL_PUSH_MODE_WATERMARK 0x0800101C
+```
+
+### `EVENT_ID_SH_MEM_PUSH_MODE_EOS_MARKER`
+
+Identifier of the EOS marker event from the MODULE_ID_SH_MEM_PUSH_MODE modules to the client.
+
+```c
+#define EVENT_ID_SH_MEM_PUSH_MODE_EOS_MARKER 0x080013DD
+```
+
+### `PARAM_ID_SH_MEM_PULL_PUSH_MODE_CFG`
+
+Identifier of the parameter that configures shared memory information for Pull mode and Push mode.
+
+```c
+#define PARAM_ID_SH_MEM_PULL_PUSH_MODE_CFG 0x0800100A
+```
+
+### `PARAM_ID_SH_MEM_PUSH_MODE_HEADER_CFG`
+
+Identifier of the parameter that configures header information for Push mode.
+
+```c
+#define PARAM_ID_SH_MEM_PUSH_MODE_HEADER_CFG 0x08001BDF
+```
+
+### `SH_MEM_PUSH_MODE_HEADER_SYNC_WORD`
+
+Sync word for header validation.
+
+```c
+#define SH_MEM_PUSH_MODE_HEADER_SYNC_WORD 0x5350464D
+```
+
+### `PARAM_ID_HEADER_TYPE_UTC_TIMESTAMP`
+
+Header Parameter ID for UTC timestamp.
+
+```c
+#define PARAM_ID_HEADER_TYPE_UTC_TIMESTAMP 0x08001BE0
+```
+
+### `PARAM_ID_HEADER_TYPE_PCM_DATA`
+
+Header Parameter ID for PCM data.
+
+```c
+#define PARAM_ID_HEADER_TYPE_PCM_DATA 0x08001BE1
+```
+
+### `MODULE_ID_SH_MEM_PULL_MODE`
+
+Identifier for the Shared Memory Pull mode module, which writes data to the SPF from the host through a shared circular buffer.
+
+```c
+#define MODULE_ID_SH_MEM_PULL_MODE 0x07001006
+```
+
+### `MODULE_ID_SH_MEM_PUSH_MODE`
+
+Identifier for the shared memory Push mode module, which reads data from the SPF to the host through a shared circular buffer.
+
+```c
+#define MODULE_ID_SH_MEM_PUSH_MODE 0x07001007
+```

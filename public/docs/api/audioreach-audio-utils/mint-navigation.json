@@ -1,0 +1,7 @@
+{
+  "group": "audioreach-audio-utils",
+  "pages": [
+    "public/docs/api/audioreach-audio-utils/audio-route",
+    "public/docs/api/audioreach-audio-utils/audio"
+  ]
+}

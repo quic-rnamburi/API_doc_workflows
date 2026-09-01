@@ -1,0 +1,91 @@
+---
+title: "cop_v2_packetizer_api.h"
+---
+
+## Structures
+
+### `cop_v2_stream_info_map_t`
+
+**Members**
+
+<ParamField path="stream_id" type="uint32_t">
+</ParamField>
+<ParamField path="direction" type="uint32_t">
+</ParamField>
+<ParamField path="channel_mask_lsw" type="uint32_t">
+</ParamField>
+<ParamField path="channel_mask_msw" type="uint32_t">
+</ParamField>
+
+### `param_id_cop_v2_stream_info_t`
+
+**Members**
+
+<ParamField path="num_streams" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_cop_v2_stream_info_t`
+
+```c
+typedef struct param_id_cop_v2_stream_info_t param_id_cop_v2_stream_info_t
+```
+
+## Macros
+
+### `COP_V2_PACK_STACK_SIZE`
+
+```c
+#define COP_V2_PACK_STACK_SIZE 6144
+```
+
+### `PORT_ID_COP_V2_PACK_INPUT`
+
+```c
+#define PORT_ID_COP_V2_PACK_INPUT 0x2
+```
+
+### `PORT_ID_COP_V2_PACK_OUTPUT`
+
+```c
+#define PORT_ID_COP_V2_PACK_OUTPUT 0x1
+```
+
+### `COP_PACK_MAX_INTENTS_PER_CTRL_PORT`
+
+```c
+#define COP_PACK_MAX_INTENTS_PER_CTRL_PORT 1
+```
+
+### `COP_PACKETIZER_FEEDBACK_IN`
+
+```c
+#define COP_PACKETIZER_FEEDBACK_IN AR_NON_GUID(0xC0000001)
+```
+
+### `COP_V2_FROM_AIR`
+
+```c
+#define COP_V2_FROM_AIR 1
+```
+
+### `COP_V2_TO_AIR`
+
+```c
+#define COP_V2_TO_AIR 0
+```
+
+### `PARAM_ID_COP_V2_STREAM_INFO`
+
+Parameter ID of CoP V2 Stream Info.
+
+```c
+#define PARAM_ID_COP_V2_STREAM_INFO 0x08001255
+```
+
+### `MODULE_ID_COP_V2_PACKETIZER`
+
+```c
+#define MODULE_ID_COP_V2_PACKETIZER 0x070010B0
+```

@@ -1,0 +1,208 @@
+---
+title: "soft_pause_api.h"
+---
+
+## Structures
+
+### `pause_ramp_params_t`
+
+Payload for the PARAM_ID_SOFT_PAUSE_RAMP_PARAMETERS parameter.
+
+**Members**
+
+<ParamField path="period_ms_ramp_up" type="uint32_t">
+  Duration of the up ramp.
+</ParamField>
+<ParamField path="step_us_ramp_up" type="uint32_t">
+  Duration for which a constant gain is applied before calculating the next gain in the ramp up curve.
+</ParamField>
+<ParamField path="ramping_curve_ramp_up" type="uint32_t">
+  Specifies ramp up of the ramping curve.
+</ParamField>
+<ParamField path="period_ms_ramp_down" type="uint32_t">
+  Duration of the down ramp.
+</ParamField>
+<ParamField path="step_us_ramp_down" type="uint32_t">
+  Duration for which the same gain is applied before calculating the next gain in the ramp down curve.
+</ParamField>
+<ParamField path="ramping_curve_ramp_down" type="uint32_t">
+  Specifies the ramp down of the ramping curve.
+</ParamField>
+
+### `pause_resume_threshold_t`
+
+Payload of the PARAM_ID_SOFT_PAUSE_RESUME_THRESHOLD parameter.
+
+**Members**
+
+<ParamField path="threshold_Q15" type="uint16_t">
+  Specifies the set or get resume threshold (in Q15 format).
+</ParamField>
+
+### `pause_downstream_delay_t`
+
+Payload of the PARAM_ID_SOFT_PAUSE_DOWNSTREAM_DELAY parameter.
+
+**Members**
+
+<ParamField path="delay_ms" type="uint32_t">
+  Specifies the downstream delay from the stream to the device leg.
+</ParamField>
+
+### `pause_rampup_delay_t`
+
+Payload of the PARAM_ID_SOFT_PAUSE_RESUME_DEFERRED_RAMPUP parameter.
+
+**Members**
+
+<ParamField path="delay_ms" type="uint32_t">
+  Specifies the time that the module mutes before ramping up during resume.
+</ParamField>
+
+## Type Definitions
+
+### `pause_ramp_params_t`
+
+```c
+typedef struct pause_ramp_params_t pause_ramp_params_t
+```
+
+### `pause_resume_threshold_t`
+
+```c
+typedef struct pause_resume_threshold_t pause_resume_threshold_t
+```
+
+### `pause_downstream_delay_t`
+
+```c
+typedef struct pause_downstream_delay_t pause_downstream_delay_t
+```
+
+### `pause_rampup_delay_t`
+
+```c
+typedef struct pause_rampup_delay_t pause_rampup_delay_t
+```
+
+## Macros
+
+### `PARAM_PAUSE_RAMPINGCURVE_LINEAR`
+
+Soft stepping linear ramping curve.
+
+```c
+#define PARAM_PAUSE_RAMPINGCURVE_LINEAR 0
+```
+
+### `PARAM_PAUSE_RAMPINGCURVE_EXP`
+
+Exponential ramping curve.
+
+```c
+#define PARAM_PAUSE_RAMPINGCURVE_EXP 1
+```
+
+### `PARAM_PAUSE_RAMPINGCURVE_LOG`
+
+Logarithmic ramping curve.
+
+```c
+#define PARAM_PAUSE_RAMPINGCURVE_LOG 2
+```
+
+### `PARAM_PAUSE_RAMPINGCURVE_FRAC_EXP`
+
+Fractional exponent ramping curve.
+
+```c
+#define PARAM_PAUSE_RAMPINGCURVE_FRAC_EXP 3
+```
+
+### `PAUSE_DATA_INPUT_PORT`
+
+Input port ID for the Soft Pause module.
+
+```c
+#define PAUSE_DATA_INPUT_PORT 2
+```
+
+### `PAUSE_DATA_OUTPUT_PORT`
+
+Output port ID for the Soft Pause module.
+
+```c
+#define PAUSE_DATA_OUTPUT_PORT 1
+```
+
+### `MODULE_ID_SOFT_PAUSE`
+
+Identifier for the Soft Pause module.
+
+```c
+#define MODULE_ID_SOFT_PAUSE 0x07001019
+```
+
+### `PARAM_ID_SOFT_PAUSE_RAMP_PARAMETERS`
+
+Identifier for the parameter that configures the ramp curve parameters for pause, where:
+
+```c
+#define PARAM_ID_SOFT_PAUSE_RAMP_PARAMETERS 0x0800102D
+```
+
+### `PARAM_ID_SOFT_PAUSE_START`
+
+Identifier for the parameter used to signal a pause to start.
+
+```c
+#define PARAM_ID_SOFT_PAUSE_START 0x0800102E
+```
+
+### `PARAM_ID_SOFT_PAUSE_RESUME`
+
+Identifier for the parameter used to signal a resume to start.
+
+```c
+#define PARAM_ID_SOFT_PAUSE_RESUME 0x0800102F
+```
+
+### `PARAM_ID_SOFT_PAUSE_RESUME_THRESHOLD`
+
+Identifier for the parameter that configures the threshold required for a pause to resume.
+
+```c
+#define PARAM_ID_SOFT_PAUSE_RESUME_THRESHOLD 0x08001030
+```
+
+### `PARAM_ID_SOFT_PAUSE_DOWNSTREAM_DELAY`
+
+Identifier for the parameter used to configure the downstream delay from the stream to a device leg.
+
+```c
+#define PARAM_ID_SOFT_PAUSE_DOWNSTREAM_DELAY 0x0800103E
+```
+
+### `PARAM_ID_SOFT_PAUSE_RESUME_DEFERRED_RAMPUP`
+
+Identifier for the parameter that configures the ramp up delay.
+
+```c
+#define PARAM_ID_SOFT_PAUSE_RESUME_DEFERRED_RAMPUP 0x08001170
+```
+
+### `EVENT_ID_SOFT_PAUSE_PAUSE_COMPLETE`
+
+Identifier for the Pause Complete event that the Soft Pause module sends to the client.
+
+```c
+#define EVENT_ID_SOFT_PAUSE_PAUSE_COMPLETE 0x0800103F
+```
+
+### `EVENT_ID_SOFT_PAUSE_RESUME_COMPLETE`
+
+Identifier for the Resume Complete event that the Soft Pause module sends to the client.
+
+```c
+#define EVENT_ID_SOFT_PAUSE_RESUME_COMPLETE 0x08001043
+```

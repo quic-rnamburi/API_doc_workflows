@@ -1,0 +1,428 @@
+---
+title: "apm_api.h"
+description: "This file contains Audio Processing Manager Commands Data Structures."
+---
+
+## Structures
+
+### `apm_cmd_header_t`
+
+In-band : This structure is followed by an in-band payload of type, apm_module_param_data_t Out-of-band : Out of band payload can be extracted from the mem_map_handle, payload_address_lsw and payload_address_msw using the posal api posal_memorymap_get_virtual_addr_from_shmm_handle.
+
+**Members**
+
+<ParamField path="payload_address_lsw" type="uint32_t">
+  Lower 32 bits of the payload address.
+</ParamField>
+<ParamField path="payload_address_msw" type="uint32_t">
+  Upper 32 bits of the payload address.
+</ParamField>
+<ParamField path="mem_map_handle" type="uint32_t">
+  Unique identifier for a shared memory address.
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Actual size of the variable payload accompanying the message or in shared memory.
+</ParamField>
+
+### `apm_module_param_data_t`
+
+Payload of the module parameter data structure.
+
+**Members**
+
+<ParamField path="module_instance_id" type="uint32_t">
+  Valid instance ID of module @values
+</ParamField>
+<ParamField path="param_id" type="uint32_t">
+  Valid ID of the parameter.
+</ParamField>
+<ParamField path="param_size" type="uint32_t">
+  Size of the parameter data based upon the module_instance_id/param_id combination.
+</ParamField>
+<ParamField path="error_code" type="uint32_t">
+  Error code populated by the entity hosting the module.
+</ParamField>
+
+### `apm_module_param_shared_data_t`
+
+Payload of the shared persistent module parameter data structure.
+
+**Members**
+
+<ParamField path="param_id" type="uint32_t">
+  Valid ID of the parameter.
+</ParamField>
+<ParamField path="param_size" type="uint32_t">
+  Size of the parameter data based upon the module_instance_id/param_id combination.
+</ParamField>
+
+### `apm_prop_data_t`
+
+Payload of the property data structure.
+
+**Members**
+
+<ParamField path="prop_id" type="uint32_t">
+  Property ID @values
+</ParamField>
+<ParamField path="prop_size" type="uint32_t">
+  Size of the property ID structure.
+</ParamField>
+
+### `apm_module_register_events_t`
+
+Payload of the register events data structure.
+
+**Members**
+
+<ParamField path="module_instance_id" type="uint32_t">
+  Valid instance ID of module.
+</ParamField>
+<ParamField path="event_id" type="uint32_t">
+  Valid event ID of the module.
+</ParamField>
+<ParamField path="is_register" type="uint32_t">
+  1 - to register the event 0 - to de-register the event
+</ParamField>
+<ParamField path="error_code" type="uint32_t">
+  Error code populated by the entity hosting the module.
+</ParamField>
+<ParamField path="event_config_payload_size" type="uint32_t">
+  Size of the event config data based upon the module_instance_id/event_id combination.
+</ParamField>
+<ParamField path="reserved" type="uint32_t">
+  reserved must be set to zero.
+</ParamField>
+
+### `apm_module_event_t`
+
+Payload of the module event data structure.
+
+**Members**
+
+<ParamField path="event_id" type="uint32_t">
+  Valid event ID of the module.
+</ParamField>
+<ParamField path="event_payload_size" type="uint32_t">
+  Size of the event data based upon the module_instance_id/eveny_id combination.
+</ParamField>
+
+### `apm_cmd_rsp_get_cfg_t`
+
+**Members**
+
+<ParamField path="status" type="uint32_t">
+</ParamField>
+
+### `apm_cmd_rsp_get_spf_status_t`
+
+**Members**
+
+<ParamField path="status" type="uint32_t">
+  spf status.
+</ParamField>
+
+### `apm_path_defn_for_delay_t`
+
+This struct defines the start and end of path for which delay is queried.
+
+**Members**
+
+<ParamField path="src_module_instance_id" type="uint32_t">
+  Source module instance ID input parameter.
+</ParamField>
+<ParamField path="src_port_id" type="uint32_t">
+  Source port-ID.
+</ParamField>
+<ParamField path="dst_module_instance_id" type="uint32_t">
+  Destination module instance ID.
+</ParamField>
+<ParamField path="dst_port_id" type="uint32_t">
+  Destination port-ID.
+</ParamField>
+<ParamField path="delay_us" type="uint32_t">
+  Microsecond delay This is an output parameter.
+</ParamField>
+
+### `apm_param_id_path_delay_t`
+
+defines the main payload for the APM_PARAM_ID_PATH_DELAY query
+
+**Members**
+
+<ParamField path="num_paths" type="uint32_t">
+</ParamField>
+<ParamField path="paths" type="apm_path_defn_for_delay_t">
+  number of paths to be queried
+</ParamField>
+
+### `apm_param_id_satellite_pd_info_t`
+
+**Members**
+
+<ParamField path="num_proc_domain_ids" type="uint32_t">
+  Number of satellite proc domain ids.
+</ParamField>
+<ParamField path="proc_domain_id_list" type="uint32_t">
+  List of atellite proc domain IDs.
+</ParamField>
+
+## Type Definitions
+
+### `apm_cmd_header_t`
+
+```c
+typedef struct apm_cmd_header_t apm_cmd_header_t
+```
+
+### `apm_module_param_data_t`
+
+```c
+typedef struct apm_module_param_data_t apm_module_param_data_t
+```
+
+### `apm_module_param_shared_data_t`
+
+```c
+typedef struct apm_module_param_shared_data_t apm_module_param_shared_data_t
+```
+
+### `apm_prop_data_t`
+
+```c
+typedef struct apm_prop_data_t apm_prop_data_t
+```
+
+### `apm_module_register_events_t`
+
+```c
+typedef struct apm_module_register_events_t apm_module_register_events_t
+```
+
+### `apm_module_event_t`
+
+```c
+typedef struct apm_module_event_t apm_module_event_t
+```
+
+### `apm_cmd_rsp_get_cfg_t`
+
+```c
+typedef struct apm_cmd_rsp_get_cfg_t apm_cmd_rsp_get_cfg_t
+```
+
+### `apm_cmd_rsp_get_spf_status_t`
+
+```c
+typedef struct apm_cmd_rsp_get_spf_status_t apm_cmd_rsp_get_spf_status_t
+```
+
+### `apm_path_defn_for_delay_t`
+
+```c
+typedef struct apm_path_defn_for_delay_t apm_path_defn_for_delay_t
+```
+
+### `apm_param_id_path_delay_t`
+
+```c
+typedef struct apm_param_id_path_delay_t apm_param_id_path_delay_t
+```
+
+### `apm_param_id_satellite_pd_info_t`
+
+```c
+typedef struct apm_param_id_satellite_pd_info_t apm_param_id_satellite_pd_info_t
+```
+
+## Macros
+
+### `APM_MODULE_INSTANCE_ID`
+
+Instance ID of the Audio Processing Manager module.
+
+```c
+#define APM_MODULE_INSTANCE_ID 0x00000001
+```
+
+### `APM_CMD_GRAPH_OPEN`
+
+```c
+#define APM_CMD_GRAPH_OPEN 0x01001000
+```
+
+### `APM_CMD_GRAPH_PREPARE`
+
+Prepares one or more sub-graph ID's that have been configured Graph prepare command is issued against APM module instance iD.
+
+```c
+#define APM_CMD_GRAPH_PREPARE 0x01001001
+```
+
+### `APM_CMD_GRAPH_START`
+
+Starts one or more sub-graph ID's that have been configured using the APM_CMD_GRAPH_OPEN.
+
+```c
+#define APM_CMD_GRAPH_START 0x01001002
+```
+
+### `APM_CMD_GRAPH_STOP`
+
+Stops one or more sub-graph ID's that have been configured using the APM_CMD_GRAPH_OPEN.
+
+```c
+#define APM_CMD_GRAPH_STOP 0x01001003
+```
+
+### `APM_CMD_GRAPH_CLOSE`
+
+Closes one or more sub-graph ID's, data and control links that have been configured using the APM_CMD_GRAPH_OPEN command.
+
+```c
+#define APM_CMD_GRAPH_CLOSE 0x01001004
+```
+
+### `APM_CMD_CLOSE_ALL`
+
+This command is used by the client for cleaning up all the allocated resources within the framework including.
+
+```c
+#define APM_CMD_CLOSE_ALL 0x01001013
+```
+
+### `APM_CMD_GRAPH_FLUSH`
+
+Flushes one or more sub-graph ID's that have been configured Graph flush command is issued against APM module instance iD.
+
+```c
+#define APM_CMD_GRAPH_FLUSH 0x01001005
+```
+
+### `APM_CMD_SET_CFG`
+
+Configures one or more parameter ID's for one more module instances present in the graph.
+
+```c
+#define APM_CMD_SET_CFG 0x01001006
+```
+
+### `APM_CMD_GET_CFG`
+
+This parameter is used for querying one or more configuration/calibration parameter ID corresponding to any module instance ID.
+
+```c
+#define APM_CMD_GET_CFG 0x01001007
+```
+
+### `APM_CMD_RSP_GET_CFG`
+
+The response code returned as an acknowledgment for the APM_CMD_GET_CFG command.
+
+```c
+#define APM_CMD_RSP_GET_CFG 0x02001000
+```
+
+### `APM_CMD_REGISTER_CFG`
+
+This command is used for registering persistent calibration/configuration data corresponding to one or more parameter ID's for one ore more data/control processing modules.
+
+```c
+#define APM_CMD_REGISTER_CFG 0x01001008
+```
+
+### `APM_CMD_DEREGISTER_CFG`
+
+This command is used for de-registering persistent calibration/configuration data corresponding to one or more parameter ID's for one or more data/control processing modules.
+
+```c
+#define APM_CMD_DEREGISTER_CFG 0x01001009
+```
+
+### `APM_CMD_REGISTER_SHARED_CFG`
+
+This command is used for registering shared persistent calibration/configuration data corresponding to one 
+ parameter ID's for any data/control processing modules.
+
+```c
+#define APM_CMD_REGISTER_SHARED_CFG 0x0100100A
+```
+
+### `APM_CMD_DEREGISTER_SHARED_CFG`
+
+This command is used for registering shared persistent calibration/configuration data corresponding to one 
+ parameter ID's for any data/control processing modules.
+
+```c
+#define APM_CMD_DEREGISTER_SHARED_CFG 0x0100100B
+```
+
+### `APM_CMD_REGISTER_MODULE_EVENTS`
+
+Registers/de-registers one or more event ID's for one or more module instances present in the graph.
+
+```c
+#define APM_CMD_REGISTER_MODULE_EVENTS 0x0100100E
+```
+
+### `APM_CMD_GET_SPF_STATE`
+
+This parameter is used for querying SPF status.
+
+```c
+#define APM_CMD_GET_SPF_STATE 0x01001021
+```
+
+### `APM_SPF_STATE_NOT_READY`
+
+Definition for the spf Not-Ready State.
+
+```c
+#define APM_SPF_STATE_NOT_READY 0
+```
+
+### `APM_SPF_STATE_READY`
+
+Definition for the spf Ready State.
+
+```c
+#define APM_SPF_STATE_READY 1
+```
+
+### `APM_CMD_RSP_GET_SPF_STATE`
+
+The response code returned as an acknowledgment for the APM_CMD_GET_SPF_STATE command.
+
+```c
+#define APM_CMD_RSP_GET_SPF_STATE 0x02001007
+```
+
+### `APM_EVENT_MODULE_TO_CLIENT`
+
+Event raised by module to client, if the event is registered by the client.
+
+```c
+#define APM_EVENT_MODULE_TO_CLIENT 0x03001000
+```
+
+### `APM_PARAM_ID_PATH_DELAY`
+
+Parameter ID for getting path delay from APM.
+
+```c
+#define APM_PARAM_ID_PATH_DELAY 0x08001119
+```
+
+### `APM_CMD_GRAPH_SUSPEND`
+
+```c
+#define APM_CMD_GRAPH_SUSPEND 0x01001043
+```
+
+### `APM_PARAM_ID_SATELLITE_PD_INFO`
+
+This parameter is used for setting satellite proc domain info to the master APM.
+
+```c
+#define APM_PARAM_ID_SATELLITE_PD_INFO 0x08001251
+```

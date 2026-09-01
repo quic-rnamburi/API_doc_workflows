@@ -1,0 +1,49 @@
+---
+title: "asps_us_rendering_usecase_api.h"
+---
+
+## Structures
+
+### `asps_ultrasound_rendering_usecase_register_payload_t`
+
+Ultrasound Renderer sepcific payload.
+
+**Members**
+
+<ParamField path="sampling_rate" type="uint32_t">
+</ParamField>
+<ParamField path="bit_width" type="uint32_t">
+</ParamField>
+<ParamField path="num_channels" type="uint32_t">
+</ParamField>
+
+### `asps_ultrasound_rendering_usecase_register_ack_payload_t`
+
+Ultrasound Renderer usecase specific information.
+
+**Members**
+
+<ParamField path="module_iid_us_tone_renderer" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `asps_ultrasound_rendering_usecase_register_payload_t`
+
+```c
+typedef struct asps_ultrasound_rendering_usecase_register_payload_t asps_ultrasound_rendering_usecase_register_payload_t
+```
+
+### `asps_ultrasound_rendering_usecase_register_ack_payload_t`
+
+```c
+typedef struct asps_ultrasound_rendering_usecase_register_ack_payload_t asps_ultrasound_rendering_usecase_register_ack_payload_t
+```
+
+## Macros
+
+### `ASPS_USECASE_ID_ULTRASOUND_RENDERING`
+
+```c
+#define ASPS_USECASE_ID_ULTRASOUND_RENDERING 0x0B00100B
+```

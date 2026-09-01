@@ -1,0 +1,147 @@
+---
+title: "aac_encoder_api.h"
+---
+
+## Structures
+
+### `aac_bitrate_level_map_t`
+
+**Members**
+
+<ParamField path="level" type="uint32_t">
+</ParamField>
+<ParamField path="bitrate" type="uint32_t">
+</ParamField>
+
+### `param_id_aac_bitrate_level_map_payload_t`
+
+**Members**
+
+<ParamField path="num_levels" type="uint32_t">
+</ParamField>
+
+### `cutoff_freq_level_info_t`
+
+**Members**
+
+<ParamField path="cutoff_bitrate_low" type="uint32_t">
+</ParamField>
+<ParamField path="cutoff_bitrate_high" type="uint32_t">
+</ParamField>
+<ParamField path="cutoff_freq_value" type="int32_t">
+
+</ParamField>
+
+### `param_id_aac_enc_cutoff_freq_config_t`
+
+**Members**
+
+<ParamField path="freq_cutoff_mode" type="uint32_t">
+  Mode0 – use to retain existing logic in encoder w.r.t cutoff frequency handling. Mode1 – Use to enable a global cutoff frequency. For example, for usecases with requirement to limit cutoff frequency to a particular level irrespective of configuration(sampling rate, bit rate etc.,) Mode2 – Use to enable a cutoff frequency table based on bitrate range. For example, user can choose to configure different cutoff frequencies for different bitrate ranges, with upto 6 levels. Mode3 – Use to disable cutoff frequency logic in the encoder. This will pick max cutoff frequency as default, i.e., half the sampling rate. All other values are reserved. }
+</ParamField>
+<ParamField path="global_cutoff_freq" type="uint32_t">
+  This value will be picked as global cutoff frequency when 'freq_cutoff_mode' field is set to 'mode1'. NOTE : Any value above maximum cutoff frequency will be discarded and cutoff frequency will be set to max cutoff frequency.}
+</ParamField>
+<ParamField path="num_cutoff_levels" type="uint32_t">
+  This value and immediately following variable size array based on num_cutoff_levels will be chosen for cutoff frequency configuration when 'freq_cutoff_mode' field is set to ‘mode2’.}
+</ParamField>
+
+## Type Definitions
+
+### `aac_bitrate_level_map_t`
+
+```c
+typedef struct aac_bitrate_level_map_t aac_bitrate_level_map_t
+```
+
+### `param_id_aac_bitrate_level_map_payload_t`
+
+```c
+typedef struct param_id_aac_bitrate_level_map_payload_t param_id_aac_bitrate_level_map_payload_t
+```
+
+### `cutoff_freq_level_info_t`
+
+```c
+typedef struct cutoff_freq_level_info_t cutoff_freq_level_info_t
+```
+
+### `param_id_aac_enc_cutoff_freq_config_t`
+
+```c
+typedef struct param_id_aac_enc_cutoff_freq_config_t param_id_aac_enc_cutoff_freq_config_t
+```
+
+## Macros
+
+### `AAC_ENC_DATA_INPUT_PORT`
+
+```c
+#define AAC_ENC_DATA_INPUT_PORT 0x2
+```
+
+### `AAC_ENC_DATA_OUTPUT_PORT`
+
+```c
+#define AAC_ENC_DATA_OUTPUT_PORT 0x1
+```
+
+### `AAC_ENC_DATA_MAX_INPUT_PORTS`
+
+```c
+#define AAC_ENC_DATA_MAX_INPUT_PORTS 0x1
+```
+
+### `AAC_ENC_DATA_MAX_OUTPUT_PORTS`
+
+```c
+#define AAC_ENC_DATA_MAX_OUTPUT_PORTS 0x1
+```
+
+### `AAC_ENC_MODULE_STACK_SIZE`
+
+```c
+#define AAC_ENC_MODULE_STACK_SIZE 4096
+```
+
+### `MAX_NUM_CUTOFF_LEVELS`
+
+```c
+#define MAX_NUM_CUTOFF_LEVELS 6
+```
+
+### `COP_ENCODER_FEEDBACK_IN`
+
+```c
+#define COP_ENCODER_FEEDBACK_IN AR_NON_GUID(0xC0000001)
+```
+
+### `PARAM_ID_AAC_BIT_RATE_LEVEL_MAP`
+
+ID of the encoder Bit Rate level map parameter.This parameter can be set at run time.
+
+```c
+#define PARAM_ID_AAC_BIT_RATE_LEVEL_MAP 0x08001312
+```
+
+### `PARAM_ID_AAC_CUTOFF_FREQ_CONFIG`
+
+-> Quality levels are always in ascending order of bit rate
+
+```c
+#define PARAM_ID_AAC_CUTOFF_FREQ_CONFIG 0x08001A5C
+```
+
+### `MODULE_ID_AAC_ENC`
+
+```c
+#define MODULE_ID_AAC_ENC 0x0700101E
+```
+
+### `MODULE_ID_AAC_LC_ENC`
+
+End of the Module -->
+
+```c
+#define MODULE_ID_AAC_LC_ENC 0x070010DF
+```

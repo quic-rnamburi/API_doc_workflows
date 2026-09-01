@@ -1,0 +1,182 @@
+---
+title: "ar_osal_types.h"
+description: "This file contains basic types and pre processor macros."
+---
+
+## Type Definitions
+
+### `char_t`
+
+else of defined(H2XML)
+
+```c
+typedef char char_t
+```
+
+### `bool_t`
+
+Boolean value type.
+
+```c
+typedef unsigned char bool_t
+```
+
+## Macros
+
+### `FALSE`
+
+```c
+#define FALSE 0
+```
+
+### `TRUE`
+
+```c
+#define TRUE 1
+```
+
+### `PAGED_FUNCTIONS_START`
+
+PAGING functiona and data.
+
+```c
+#define PAGED_FUNCTIONS_START 
+```
+
+### `PAGED_FUNCTIONS_END`
+
+Should be used at the end of functions group to be paged.
+
+```c
+#define PAGED_FUNCTIONS_END 
+```
+
+### `PAGED_FUNCTION`
+
+Should be used at the start of the paged function definition.
+
+```c
+#define PAGED_FUNCTION 
+```
+
+### `PAGED_DATA_START`
+
+Paged Data.
+
+```c
+#define PAGED_DATA_START 
+```
+
+### `PAGED_DATA_END`
+
+Should be used at the end of the variables group to be paged.
+
+```c
+#define PAGED_DATA_END 
+```
+
+### `__UNREFERENCED_PARAM`
+
+```c
+#define __UNREFERENCED_PARAM 
+```
+
+### `__UNUSED`
+
+```c
+#define __UNUSED 
+```
+
+### `_In_`
+
+Function parameter annotations.
+
+```c
+#define _In_ 
+```
+
+### `_In_opt_`
+
+This parameter may not have valid value and will not be changed by the function.
+
+```c
+#define _In_opt_ 
+```
+
+### `_Out_`
+
+This parameter does not have a valid value, but must be a valid value after the function call returns.
+
+```c
+#define _Out_ 
+```
+
+### `_Out_opt_`
+
+This parameter does not have a valid value before and after the function call returns.
+
+```c
+#define _Out_opt_ 
+```
+
+### `_Inout_`
+
+This parameter must have a valid value before and should have a different value after the function call returns.
+
+```c
+#define _Inout_ 
+```
+
+### `_Inout_opt_`
+
+This parameter may not have a valid value before and after the function call returns.
+
+```c
+#define _Inout_opt_ 
+```
+
+### `_Outptr_`
+
+This Parameter cannot be null and should have a valid pointer to location after the function call returns.
+
+```c
+#define _Outptr_ 
+```
+
+### `_Outptr_opt_`
+
+This Parameter can be null and should have a valid pointer to location after the function call returns.
+
+```c
+#define _Outptr_opt_ 
+```
+
+### `_IRQL_requires_max_`
+
+Interrupt request level(IRQL)
+
+```c
+#define _IRQL_requires_max_ 
+```
+
+### `_IRQL_requires_min_`
+
+```c
+#define _IRQL_requires_min_ 
+```
+
+### `PASSIVE_LEVEL`
+
+Normal priority level.
+
+```c
+#define PASSIVE_LEVEL 
+```
+
+### `DISPATCH_LEVEL`
+
+Runs at high priority level, these functions should not be paged.
+
+```c
+#define DISPATCH_LEVEL 
+```

@@ -1,0 +1,251 @@
+---
+title: "ar_util_list.h"
+description: "Defines public AudioReach UTIL APIs for double linked list."
+---
+
+## Structures
+
+### `ar_list_node_t`
+
+**Members**
+
+<ParamField path="list" type="ar_list_t *">
+  Indicates the last known list for which this node belonged.
+</ParamField>
+<ParamField path="prev" type="ar_list_node_t *">
+  The next node.
+</ParamField>
+<ParamField path="next" type="ar_list_node_t *">
+</ParamField>
+
+### `ar_list_t`
+
+**Members**
+
+<ParamField path="dummy" type="ar_list_node_t">
+  A special dummy node to implement the NULL object pattern.
+</ParamField>
+<ParamField path="size" type="uint32_t">
+  Optional, the user supplied lock implementation function.
+</ParamField>
+<ParamField path="lock_fn" type="ar_list_lock_enter_fn_t">
+  optional, the user supplied unlock implementation function.
+</ParamField>
+<ParamField path="unlock_fn" type="ar_list_lock_leave_fn_t">
+  Enable secure linked list flag.
+</ParamField>
+<ParamField path="en_secure" type="bool_t">
+</ParamField>
+
+## Functions
+
+### `ar_list_init`
+
+ar_list_init: initialize a list to itself.
+
+```c
+int32_t ar_list_init(ar_list_t *list, ar_list_lock_enter_fn_t lock_fn, ar_list_lock_leave_fn_t unlock_fn)
+```
+
+**Parameters**
+
+<ParamField path="list" type="ar_list_t *">
+  pointer to ar_list_t.
+</ParamField>
+<ParamField path="[in_opt]" type="">
+  lock_fn: lock function pointer.
+</ParamField>
+<ParamField path="[in_opt]" type="">
+  unlock_fn: unlock function pointer.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_list_init_node`
+
+ar_list_init_node
+
+```c
+int32_t ar_list_init_node(ar_list_node_t *node)
+```
+
+**Parameters**
+
+<ParamField path="node" type="ar_list_node_t *">
+  pointer to ar_list_node_t.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_list_add_tail`
+
+ar_list_add_tail
+
+```c
+int32_t ar_list_add_tail(ar_list_t *list, ar_list_node_t *node)
+```
+
+**Parameters**
+
+<ParamField path="list" type="ar_list_t *">
+  pointer to ar_list_t.
+</ParamField>
+<ParamField path="node" type="ar_list_node_t *">
+  node to be added to the list.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_list_remove_head`
+
+ar_list_remove_head
+
+```c
+int32_t ar_list_remove_head(ar_list_t *list, ar_list_node_t **ret_node)
+```
+
+**Parameters**
+
+<ParamField path="list" type="ar_list_t *">
+  pointer to ar_list_t.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_list_delete`
+
+ar_list_delete
+
+```c
+int32_t ar_list_delete(ar_list_t *list, ar_list_node_t *node)
+```
+
+**Parameters**
+
+<ParamField path="list" type="ar_list_t *">
+  pointer to ar_list_t.
+</ParamField>
+<ParamField path="node" type="ar_list_node_t *">
+  pointer to node to be deleted.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_list_clear`
+
+ar_list_clear
+
+```c
+int32_t ar_list_clear(ar_list_t *list)
+```
+
+**Parameters**
+
+<ParamField path="list" type="ar_list_t *">
+  pointer to ar_list_t.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_list_is_empty`
+
+ar_list_is_empty: check if the list is empty.
+
+```c
+int32_t ar_list_is_empty(ar_list_t *list)
+```
+
+**Parameters**
+
+<ParamField path="list" type="ar_list_t *">
+  pointer to ar_list_t.
+</ParamField>
+
+**Returns**
+
+1 if the list is empty 0 otherwise
+
+### `ar_list_get_head`
+
+ar_list_get_head: return the head node from list.
+
+```c
+ar_list_node_t * ar_list_get_head(ar_list_t *list)
+```
+
+**Parameters**
+
+<ParamField path="list" type="ar_list_t *">
+  pointer to ar_list_t.
+</ParamField>
+
+**Returns**
+
+address of head node
+
+### `ar_list_get_tail`
+
+ar_list_get_tail: return the tail node from list.
+
+```c
+ar_list_node_t * ar_list_get_tail(ar_list_t *list)
+```
+
+**Parameters**
+
+<ParamField path="list" type="ar_list_t *">
+  pointer to ar_list_t.
+</ParamField>
+
+**Returns**
+
+address of tail node
+
+## Type Definitions
+
+### `ar_list_node_t`
+
+```c
+typedef struct ar_list_node_t ar_list_node_t
+```
+
+### `ar_list_t`
+
+```c
+typedef struct ar_list_t ar_list_t
+```
+
+### `ar_list_lock_enter_fn_t`
+
+```c
+typedef void(* ar_list_lock_enter_fn_t
+```
+
+### `ar_list_lock_leave_fn_t`
+
+```c
+typedef void(* ar_list_lock_leave_fn_t
+```
+
+## Macros
+
+### `ar_list_for_each_entry`
+
+ar_list_for_each_entry: iterate over list
+
+```c
+#define ar_list_for_each_entry for (iter = (list)->dummy.next; \
+	iter != &((list)->dummy); iter = iter->next)
+```

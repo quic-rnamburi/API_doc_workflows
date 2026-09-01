@@ -1,0 +1,543 @@
+---
+title: "sdz_api.h"
+---
+
+## Structures
+
+### `sdz_version_t`
+
+**Members**
+
+<ParamField path="lib_version_low" type="uint32_t">
+</ParamField>
+<ParamField path="lib_version_high" type="uint32_t">
+</ParamField>
+
+### `param_id_sdz_input_threshold_t`
+
+**Members**
+
+<ParamField path="buf_duration_ms" type="uint32_t">
+  }  ms
+</ParamField>
+
+### `param_id_sdz_input_threshold_v2_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+  This API provide the input threshold requirement of each client. The lowest threshold will be chosen as the operating threshold.}
+</ParamField>
+<ParamField path="buf_duration_ms" type="uint32_t">
+  }  ms
+</ParamField>
+
+### `param_id_sdz_output_config_t`
+
+**Members**
+
+<ParamField path="output_mode" type="uint32_t">
+  SDZ_NON_BUFFERED - Output of each SDZ algo process is immediately sent to client. SDZ_BUFFERED - Output of each SDZ algo process is buffered and sent to client intermittently.}
+</ParamField>
+<ParamField path="out_buf_size" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_bufs" type="uint32_t">
+
+</ParamField>
+
+### `param_id_sdz_output_config_v2_base_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+  This API allow multiple clients to have unique configurations.}
+</ParamField>
+<ParamField path="output_mode" type="uint32_t">
+  SDZ_NON_BUFFERED - Output of each SDZ algo process is immediately sent to client. SDZ_BUFFERED - Output of each SDZ algo process is buffered and sent to client intermittently.}
+</ParamField>
+<ParamField path="out_buf_size" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_bufs" type="uint32_t">
+
+</ParamField>
+
+### `param_id_sdz_output_config_v2_t`
+
+**Members**
+
+<ParamField path="num_clients" type="uint32_t">
+</ParamField>
+<ParamField path="client_configs" type="param_id_sdz_output_config_v2_base_t">
+</ParamField>
+
+### `param_id_sdz_force_output_t`
+
+**Members**
+
+<ParamField path="force_output" type="uint32_t">
+
+</ParamField>
+
+### `param_id_sdz_force_output_v2_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+  This allows forcing output for a specific client independently.}
+</ParamField>
+<ParamField path="force_output" type="uint32_t">
+
+</ParamField>
+
+### `event_id_sdz_output_reg_cfg_t`
+
+**Members**
+
+<ParamField path="event_payload_type" type="uint32_t">
+  QUERY - Client queries the output via getparam upon receiving SDZ output event.
+</ParamField>
+
+### `event_id_sdz_output_reg_cfg_v2_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="event_payload_type" type="uint32_t">
+  QUERY - Client queries the output via getparam upon receiving SDZ output event.
+</ParamField>
+
+### `sdz_speaker_info_t`
+
+**Members**
+
+<ParamField path="speaker_id" type="uint32_t">
+</ParamField>
+<ParamField path="start_ts_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="start_ts_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="end_ts_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="end_ts_msw" type="uint32_t">
+
+</ParamField>
+
+### `sdz_speaker_segment_t`
+
+**Members**
+
+<ParamField path="time_stamp_start_lsw" type="uint32_t">
+</ParamField>
+<ParamField path="time_stamp_start_msw" type="uint32_t">
+</ParamField>
+<ParamField path="time_stamp_end_lsw" type="uint32_t">
+</ParamField>
+<ParamField path="time_stamp_end_msw" type="uint32_t">
+</ParamField>
+<ParamField path="diarization_score" type="float">
+</ParamField>
+<ParamField path="identification_score" type="float">
+</ParamField>
+<ParamField path="speaker_name" type="uint8_t">
+</ParamField>
+<ParamField path="speaker_uuid" type="uint8_t">
+</ParamField>
+<ParamField path="speaker_id" type="int32_t">
+</ParamField>
+<ParamField path="speaker_is_owner" type="uint32_t">
+</ParamField>
+
+### `sdz_output_status_t`
+
+**Members**
+
+<ParamField path="num_speakers" type="uint32_t">
+</ParamField>
+<ParamField path="overlap_detected" type="uint32_t">
+
+</ParamField>
+
+### `sdz_output_status_v2_t`
+
+**Members**
+
+<ParamField path="num_segments" type="uint32_t">
+</ParamField>
+
+### `event_id_sdz_output_event_t`
+
+**Members**
+
+<ParamField path="event_payload_type" type="uint32_t">
+  Query = Client will query via getparam upon receiving this event, using the output_token provided as part of this payload. Inband = SDZ output payload follows inband after the payload_size field }
+</ParamField>
+<ParamField path="output_token" type="uint32_t">
+  This is used to query the corresponding output payload. If not configured or invalid, Payload corresponds to next output buffer is sent.}
+</ParamField>
+<ParamField path="num_outputs" type="uint32_t">
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Following this field is the payload of this size. Payload is variable array of type sdz_output_status_t}
+</ParamField>
+
+### `event_id_sdz_output_event_v2_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+  This must match the client_id used in PARAM_ID_SDZ_OUTPUT_CONFIG_V2. Allows multiple clients to independently query their own output buffers.}
+</ParamField>
+<ParamField path="event_payload_type" type="uint32_t">
+  Query = Client will query via getparam upon receiving this event, using the output_token provided as part of this payload. Inband = SDZ output payload follows inband after the payload_size field }
+</ParamField>
+<ParamField path="output_token" type="uint32_t">
+  This is used to query the corresponding output payload. If not configured or invalid, Payload corresponds to next output buffer is sent.}
+</ParamField>
+<ParamField path="num_outputs" type="uint32_t">
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Following this field is the payload of this size. Payload is variable array of type sdz_output_status_v2_t}
+</ParamField>
+
+### `param_id_sdz_output_v2_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+  This must match the client_id used in PARAM_ID_SDZ_OUTPUT_CONFIG_V2. Allows multiple clients to independently query their own output buffers.}
+</ParamField>
+<ParamField path="output_token" type="uint32_t">
+  This is used to query the corresponding output payload. If not configured or invalid, Payload corresponds to next output buffer is sent.}
+</ParamField>
+<ParamField path="num_outputs" type="uint32_t">
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Following this field is the payload of this size. Payload is variable array of type sdz_output_status_v2_t}
+</ParamField>
+
+### `param_id_sdz_model_t`
+
+**Members**
+
+<ParamField path="model_align" type="uint32_t">
+</ParamField>
+<ParamField path="model_offset" type="uint32_t">
+</ParamField>
+<ParamField path="model_size" type="uint32_t">
+</ParamField>
+
+### `param_id_sdz_voice_profile_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+  (reserved for future use, currently not being utilized)}
+</ParamField>
+<ParamField path="voiceprint_size" type="uint32_t">
+</ParamField>
+<ParamField path="voiceprint_data" type="uint8_t">
+</ParamField>
+
+### `param_id_sdz_ts_fmt_t`
+
+**Members**
+
+<ParamField path="ts_fmt" type="uint32_t">
+</ParamField>
+<ParamField path="reset_period" type="uint32_t">
+  Note: '0' means module latches to UTC time only at the beginning of the usecase and doesn't periodically sync to UTC time for dynamic changes. For non-zero values say 'x' seconds, the module will dynamically sync and update the UTC time at every x seconds. The maximum reset period allowed is a day.}
+</ParamField>
+<ParamField path="timestamp_unit" type="uint32_t">
+  Currently only TIME_USEC is supported}
+</ParamField>
+
+## Type Definitions
+
+### `sdz_version_t`
+
+```c
+typedef struct sdz_version_t sdz_version_t
+```
+
+### `param_id_sdz_input_threshold_t`
+
+```c
+typedef struct param_id_sdz_input_threshold_t param_id_sdz_input_threshold_t
+```
+
+### `param_id_sdz_input_threshold_v2_t`
+
+```c
+typedef struct param_id_sdz_input_threshold_v2_t param_id_sdz_input_threshold_v2_t
+```
+
+### `sdz_output_mode_t`
+
+```c
+typedef enum sdz_output_mode_t sdz_output_mode_t
+```
+
+### `param_id_sdz_output_config_t`
+
+```c
+typedef struct param_id_sdz_output_config_t param_id_sdz_output_config_t
+```
+
+### `param_id_sdz_output_config_v2_base_t`
+
+```c
+typedef struct param_id_sdz_output_config_v2_base_t param_id_sdz_output_config_v2_base_t
+```
+
+### `param_id_sdz_output_config_v2_t`
+
+```c
+typedef struct param_id_sdz_output_config_v2_t param_id_sdz_output_config_v2_t
+```
+
+### `param_id_sdz_force_output_t`
+
+```c
+typedef struct param_id_sdz_force_output_t param_id_sdz_force_output_t
+```
+
+### `param_id_sdz_force_output_v2_t`
+
+```c
+typedef struct param_id_sdz_force_output_v2_t param_id_sdz_force_output_v2_t
+```
+
+### `event_id_sdz_output_reg_cfg_t`
+
+```c
+typedef struct event_id_sdz_output_reg_cfg_t event_id_sdz_output_reg_cfg_t
+```
+
+### `event_id_sdz_output_reg_cfg_v2_t`
+
+```c
+typedef struct event_id_sdz_output_reg_cfg_v2_t event_id_sdz_output_reg_cfg_v2_t
+```
+
+### `sdz_speaker_info_t`
+
+```c
+typedef struct sdz_speaker_info_t sdz_speaker_info_t
+```
+
+### `sdz_speaker_segment_t`
+
+```c
+typedef struct sdz_speaker_segment_t sdz_speaker_segment_t
+```
+
+### `sdz_output_status_t`
+
+```c
+typedef struct sdz_output_status_t sdz_output_status_t
+```
+
+### `sdz_output_status_v2_t`
+
+```c
+typedef struct sdz_output_status_v2_t sdz_output_status_v2_t
+```
+
+### `event_id_sdz_output_event_t`
+
+```c
+typedef struct event_id_sdz_output_event_t event_id_sdz_output_event_t
+```
+
+### `param_id_sdz_output_t`
+
+```c
+typedef event_id_sdz_output_event_t param_id_sdz_output_t
+```
+
+### `event_id_sdz_output_event_v2_t`
+
+```c
+typedef struct event_id_sdz_output_event_v2_t event_id_sdz_output_event_v2_t
+```
+
+### `param_id_sdz_output_v2_t`
+
+```c
+typedef struct param_id_sdz_output_v2_t param_id_sdz_output_v2_t
+```
+
+### `param_id_sdz_model_t`
+
+```c
+typedef struct param_id_sdz_model_t param_id_sdz_model_t
+```
+
+### `param_id_sdz_voice_profile_t`
+
+```c
+typedef struct param_id_sdz_voice_profile_t param_id_sdz_voice_profile_t
+```
+
+### `param_id_sdz_ts_fmt_t`
+
+```c
+typedef struct param_id_sdz_ts_fmt_t param_id_sdz_ts_fmt_t
+```
+
+### `sdz_client_id_t`
+
+```c
+typedef enum sdz_client_id_t sdz_client_id_t
+```
+
+## Enumerations
+
+### `sdz_output_mode_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `SDZ_NON_BUFFERED` | = 0 |  |
+| `SDZ_BUFFERED` |  |  |
+
+### `sdz_client_id_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `SDZ_CLIENT_INVALID` | = 0 |  |
+| `SDZ_CLIENT_HLOS` | = 1 |  |
+| `SDZ_CLIENT_SENSOR` | = 2 |  |
+| `SDZ_CLIENT_MAX` | = SDZ_CLIENT_SENSOR |  |
+
+## Macros
+
+### `PARAM_ID_SDZ_VERSION`
+
+```c
+#define PARAM_ID_SDZ_VERSION 0x08001B08
+```
+
+### `PARAM_ID_SDZ_INPUT_THRESHOLD`
+
+```c
+#define PARAM_ID_SDZ_INPUT_THRESHOLD 0x08001B09
+```
+
+### `PARAM_ID_SDZ_INPUT_THRESHOLD_V2`
+
+```c
+#define PARAM_ID_SDZ_INPUT_THRESHOLD_V2 0x08001BC7
+```
+
+### `PARAM_ID_SDZ_OUTPUT_CONFIG`
+
+```c
+#define PARAM_ID_SDZ_OUTPUT_CONFIG 0x08001B0D
+```
+
+### `PARAM_ID_SDZ_OUTPUT_CONFIG_V2`
+
+```c
+#define PARAM_ID_SDZ_OUTPUT_CONFIG_V2 0x08001BDA
+```
+
+### `PARAM_ID_SDZ_FORCE_OUTPUT`
+
+```c
+#define PARAM_ID_SDZ_FORCE_OUTPUT 0x08001B0E
+```
+
+### `PARAM_ID_SDZ_FORCE_OUTPUT_V2`
+
+```c
+#define PARAM_ID_SDZ_FORCE_OUTPUT_V2 0x08001BDB
+```
+
+### `EVENT_ID_SDZ_OUTPUT`
+
+```c
+#define EVENT_ID_SDZ_OUTPUT 0x08001B0A
+```
+
+### `EVENT_ID_SDZ_OUTPUT_V2`
+
+```c
+#define EVENT_ID_SDZ_OUTPUT_V2 0x08001BC8
+```
+
+### `PARAM_ID_SDZ_OUTPUT`
+
+```c
+#define PARAM_ID_SDZ_OUTPUT 0x08001B0C
+```
+
+### `PARAM_ID_SDZ_OUTPUT_V2`
+
+```c
+#define PARAM_ID_SDZ_OUTPUT_V2 0x08001BA7
+```
+
+### `PARAM_ID_SDZ_MODEL`
+
+```c
+#define PARAM_ID_SDZ_MODEL 0x08001B0B
+```
+
+### `PARAM_ID_SDZ_VOICE_PROFILE`
+
+```c
+#define PARAM_ID_SDZ_VOICE_PROFILE 0x08001BA5
+```
+
+### `PARAM_ID_SDZ_TIMESTAMP_FORMAT`
+
+```c
+#define PARAM_ID_SDZ_TIMESTAMP_FORMAT 0x08001B84
+```
+
+### `CAPI_SDZ_MAX_INPUT_PORTS`
+
+```c
+#define CAPI_SDZ_MAX_INPUT_PORTS 1
+```
+
+### `CAPI_SDZ_MAX_OUTPUT_PORTS`
+
+```c
+#define CAPI_SDZ_MAX_OUTPUT_PORTS 0
+```
+
+### `SDZ_STACK_SIZE`
+
+```c
+#define SDZ_STACK_SIZE 2048
+```
+
+### `SDZ_SPEAKER_INFO_SPEAKER_NAME_SIZE`
+
+```c
+#define SDZ_SPEAKER_INFO_SPEAKER_NAME_SIZE 64
+```
+
+### `SDZ_SPEAKER_INFO_SPEAKER_UUID_SIZE`
+
+```c
+#define SDZ_SPEAKER_INFO_SPEAKER_UUID_SIZE 40
+```
+
+### `MODULE_ID_SDZ`
+
+```c
+#define MODULE_ID_SDZ 0x0702C000
+```

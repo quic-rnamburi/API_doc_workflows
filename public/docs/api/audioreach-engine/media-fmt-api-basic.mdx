@@ -1,0 +1,721 @@
+---
+title: "media_fmt_api_basic.h"
+description: "This file contains media format IDs and definitions."
+---
+
+## Structures
+
+### `payload_data_fmt_iec_packetized_t`
+
+**Members**
+
+<ParamField path="sample_rate" type="uint32_t">
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+</ParamField>
+
+### `payload_data_fmt_generic_compressed_t`
+
+Payload structure used when media_format_t::data_format = DATA_FORMAT_GENERIC_COMPRESSED.
+
+**Members**
+
+<ParamField path="sample_rate" type="uint32_t">
+  Number of samples per second in the audio stream.
+</ParamField>
+<ParamField path="bits_per_sample" type="uint16_t">
+  Number of bits required to store one sample.
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+  Number of channels.
+</ParamField>
+
+### `payload_media_fmt_pcm_t`
+
+Payload of MEDIA_FMT_ID_PCM when media_format_t::fmt_id = MEDIA_FMT_ID_PCM and data_format = DATA_FORMAT_FIXED_POINT.
+
+**Members**
+
+<ParamField path="sample_rate" type="uint32_t">
+  Number of samples per second in the audio stream.
+</ParamField>
+<ParamField path="bit_width" type="uint16_t">
+  Bit width of each sample.
+</ParamField>
+<ParamField path="alignment" type="uint8_t">
+  Alignment of bits_per_sample in sample_word_size.
+</ParamField>
+<ParamField path="interleaved" type="uint8_t">
+  Indicates whether the data is interleaved.
+</ParamField>
+<ParamField path="bits_per_sample" type="uint16_t">
+  Number of bits required to store one sample.
+</ParamField>
+<ParamField path="q_factor" type="uint16_t">
+  Indicates the Q factor of the PCM data:
+</ParamField>
+<ParamField path="endianness" type="uint16_t">
+  Indicates whether PCM samples are stored in little endian or big endian format.
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+  Number of channels in the channel_mapping array.
+</ParamField>
+
+### `media_format_t`
+
+Payload structure used by the following opcodes:
+
+**Members**
+
+<ParamField path="data_format" type="uint32_t">
+  Format of the data.
+</ParamField>
+<ParamField path="fmt_id" type="uint32_t">
+  Media format ID of the data stream.
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Size of the payload that immediately follows this structure.
+</ParamField>
+
+### `param_id_encoder_output_config_t`
+
+Payload of the PARAM_ID_ENCODER_OUTPUT_CONFIG parameter.
+
+**Members**
+
+<ParamField path="data_format" type="uint32_t">
+  Format of the output data.
+</ParamField>
+<ParamField path="fmt_id" type="uint32_t">
+  Media format ID for the output data stream.
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Size of the custom payload that immediately follows this structure.
+</ParamField>
+
+## Type Definitions
+
+### `payload_data_fmt_iec_packetized_t`
+
+```c
+typedef struct payload_data_fmt_iec_packetized_t payload_data_fmt_iec_packetized_t
+```
+
+### `payload_data_fmt_generic_compressed_t`
+
+```c
+typedef struct payload_data_fmt_generic_compressed_t payload_data_fmt_generic_compressed_t
+```
+
+### `payload_media_fmt_pcm_t`
+
+```c
+typedef struct payload_media_fmt_pcm_t payload_media_fmt_pcm_t
+```
+
+### `media_format_t`
+
+```c
+typedef struct media_format_t media_format_t
+```
+
+### `param_id_encoder_output_config_t`
+
+```c
+typedef struct param_id_encoder_output_config_t param_id_encoder_output_config_t
+```
+
+## Enumerations
+
+### `pcm_channel_map`
+
+Channel map values.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `PCM_CHANNEL_L` | = 1 | Front left channel. |
+| `PCM_CHANNEL_R` | = 2 | Front right channel. |
+| `PCM_CHANNEL_C` | = 3 | Front center channel. |
+| `PCM_CHANNEL_LS` | = 4 | Left surround channel. |
+| `PCM_CHANNEL_RS` | = 5 | Right surround channel. |
+| `PCM_CHANNEL_LFE` | = 6 | Low frequency effect channel. |
+| `PCM_CHANNEL_CS` | = 7 | Center surround channel; rear center channel. |
+| `PCM_CHANNEL_CB` | = PCM_CHANNEL_CS | Center back channel. |
+| `PCM_CHANNEL_LB` | = 8 | Left back channel; rear left channel. |
+| `PCM_CHANNEL_RB` | = 9 | Right back channel; rear right channel. |
+| `PCM_CHANNEL_TS` | = 10 | Top surround channel. |
+| `PCM_CHANNEL_CVH` | = 11 | Center vertical height channel. |
+| `PCM_CHANNEL_TFC` | = PCM_CHANNEL_CVH | Top front center channel. |
+| `PCM_CHANNEL_MS` | = 12 | Mono surround channel. |
+| `PCM_CHANNEL_FLC` | = 13 | Front left of center channel. |
+| `PCM_CHANNEL_FRC` | = 14 | Front right of center channel. |
+| `PCM_CHANNEL_RLC` | = 15 | Rear left of center channel. |
+| `PCM_CHANNEL_RRC` | = 16 | Rear right of center channel. |
+| `PCM_CHANNEL_LFE2` | = 17 | Secondary low frequency effect channel. |
+| `PCM_CHANNEL_SL` | = 18 | Side left channel. |
+| `PCM_CHANNEL_SR` | = 19 | Side right channel. |
+| `PCM_CHANNEL_TFL` | = 20 | Top front left channel. |
+| `PCM_CHANNEL_LVH` | = PCM_CHANNEL_TFL | Left vertical height channel. |
+| `PCM_CHANNEL_TFR` | = 21 | Top front right channel. |
+| `PCM_CHANNEL_RVH` | = PCM_CHANNEL_TFR | Right vertical height channel. |
+| `PCM_CHANNEL_TC` | = 22 | Top center channel. |
+| `PCM_CHANNEL_TBL` | = 23 | Top back left channel. |
+| `PCM_CHANNEL_TBR` | = 24 | Top back right channel. |
+| `PCM_CHANNEL_TSL` | = 25 | Top side left channel. |
+| `PCM_CHANNEL_TSR` | = 26 | Top side right channel. |
+| `PCM_CHANNEL_TBC` | = 27 | Top back center channel. |
+| `PCM_CHANNEL_BFC` | = 28 | Bottom front center channel. |
+| `PCM_CHANNEL_BFL` | = 29 | Bottom front left channel. |
+| `PCM_CHANNEL_BFR` | = 30 | Bottom front right channel. |
+| `PCM_CHANNEL_LW` | = 31 | Left wide channel. |
+| `PCM_CHANNEL_RW` | = 32 | Right wide channel. |
+| `PCM_CHANNEL_LSD` | = 33 | Left side direct channel. |
+| `PCM_CHANNEL_RSD` | = 34 | Right side direct channel. |
+| `PCM_CUSTOM_CHANNEL_MAP_17` | = 35 | Custom channel map 35. |
+| `PCM_CUSTOM_CHANNEL_MAP_18` | = 36 | Custom channel map 36. |
+| `PCM_CUSTOM_CHANNEL_MAP_19` | = 37 | Custom channel map 37. |
+| `PCM_CUSTOM_CHANNEL_MAP_20` | = 38 | Custom channel map 38. |
+| `PCM_CUSTOM_CHANNEL_MAP_21` | = 39 | Custom channel map 39. |
+| `PCM_CUSTOM_CHANNEL_MAP_22` | = 40 | Custom channel map 40. |
+| `PCM_CUSTOM_CHANNEL_MAP_23` | = 41 | Custom channel map 41. |
+| `PCM_CUSTOM_CHANNEL_MAP_24` | = 42 | Custom channel map 42. |
+| `PCM_CUSTOM_CHANNEL_MAP_25` | = 43 | Custom channel map 43. |
+| `PCM_CUSTOM_CHANNEL_MAP_26` | = 44 | Custom channel map 44. |
+| `PCM_CUSTOM_CHANNEL_MAP_27` | = 45 | Custom channel map 45. |
+| `PCM_CUSTOM_CHANNEL_MAP_28` | = 46 | Custom channel map 46. |
+| `PCM_CUSTOM_CHANNEL_MAP_29` | = 47 | Custom channel map 47. |
+| `PCM_CUSTOM_CHANNEL_MAP_1` | = 48 | Custom channel map 48. |
+| `PCM_CUSTOM_CHANNEL_MAP_2` | = 49 | Custom channel map 49. |
+| `PCM_CUSTOM_CHANNEL_MAP_3` | = 50 | Custom channel map 50. |
+| `PCM_CUSTOM_CHANNEL_MAP_4` | = 51 | Custom channel map 51. |
+| `PCM_CUSTOM_CHANNEL_MAP_5` | = 52 | Custom channel map 52. |
+| `PCM_CUSTOM_CHANNEL_MAP_6` | = 53 | Custom channel map 53. |
+| `PCM_CUSTOM_CHANNEL_MAP_7` | = 54 | Custom channel map 54. |
+| `PCM_CUSTOM_CHANNEL_MAP_8` | = 55 | Custom channel map 55. |
+| `PCM_CUSTOM_CHANNEL_MAP_9` | = 56 | Custom channel map 56. |
+| `PCM_CUSTOM_CHANNEL_MAP_10` | = 57 | Custom channel map 57. |
+| `PCM_CUSTOM_CHANNEL_MAP_11` | = 58 | Custom channel map 58. |
+| `PCM_CUSTOM_CHANNEL_MAP_12` | = 59 | Custom channel map 59. |
+| `PCM_CUSTOM_CHANNEL_MAP_13` | = 60 | Custom channel map 60. |
+| `PCM_CUSTOM_CHANNEL_MAP_14` | = 61 | Custom channel map 61. |
+| `PCM_CUSTOM_CHANNEL_MAP_15` | = 62 | Custom channel map 62. |
+| `PCM_CUSTOM_CHANNEL_MAP_16` | = 63 | Custom channel map 63. |
+| `PCM_CUSTOM_CHANNEL_MAP_30` | = 64 | Custom channel map 64. |
+| `PCM_CUSTOM_CHANNEL_MAP_31` | = 65 | Custom channel map 65. |
+| `PCM_CUSTOM_CHANNEL_MAP_32` | = 66 | Custom channel map 66. |
+| `PCM_CUSTOM_CHANNEL_MAP_33` | = 67 | Custom channel map 67. |
+| `PCM_CUSTOM_CHANNEL_MAP_34` | = 68 | Custom channel map 68. |
+| `PCM_CUSTOM_CHANNEL_MAP_35` | = 69 | Custom channel map 69. |
+| `PCM_CUSTOM_CHANNEL_MAP_36` | = 70 | Custom channel map 70. |
+| `PCM_CUSTOM_CHANNEL_MAP_37` | = 71 | Custom channel map 71. |
+| `PCM_CUSTOM_CHANNEL_MAP_38` | = 72 | Custom channel map 72. |
+| `PCM_CUSTOM_CHANNEL_MAP_39` | = 73 | Custom channel map 73. |
+| `PCM_CUSTOM_CHANNEL_MAP_40` | = 74 | Custom channel map 74. |
+| `PCM_CUSTOM_CHANNEL_MAP_41` | = 75 | Custom channel map 75. |
+| `PCM_CUSTOM_CHANNEL_MAP_42` | = 76 | Custom channel map 76. |
+| `PCM_CUSTOM_CHANNEL_MAP_43` | = 77 | Custom channel map 77. |
+| `PCM_CUSTOM_CHANNEL_MAP_44` | = 78 | Custom channel map 78. |
+| `PCM_CUSTOM_CHANNEL_MAP_45` | = 79 | Custom channel map 79. |
+| `PCM_CUSTOM_CHANNEL_MAP_46` | = 80 | Custom channel map 80. |
+| `PCM_CUSTOM_CHANNEL_MAP_47` | = 81 | Custom channel map 81. |
+| `PCM_CUSTOM_CHANNEL_MAP_48` | = 82 | Custom channel map 82. |
+| `PCM_CUSTOM_CHANNEL_MAP_49` | = 83 | Custom channel map 83. |
+| `PCM_CUSTOM_CHANNEL_MAP_50` | = 84 | Custom channel map 84. |
+| `PCM_CUSTOM_CHANNEL_MAP_51` | = 85 | Custom channel map 85. |
+| `PCM_CUSTOM_CHANNEL_MAP_52` | = 86 | Custom channel map 86. |
+| `PCM_CUSTOM_CHANNEL_MAP_53` | = 87 | Custom channel map 87. |
+| `PCM_CUSTOM_CHANNEL_MAP_54` | = 88 | Custom channel map 88. |
+| `PCM_CUSTOM_CHANNEL_MAP_55` | = 89 | Custom channel map 89. |
+| `PCM_CUSTOM_CHANNEL_MAP_56` | = 90 | Custom channel map 90. |
+| `PCM_CUSTOM_CHANNEL_MAP_57` | = 91 | Custom channel map 91. |
+| `PCM_CUSTOM_CHANNEL_MAP_58` | = 92 | Custom channel map 92. |
+| `PCM_CUSTOM_CHANNEL_MAP_59` | = 93 | Custom channel map 93. |
+| `PCM_CUSTOM_CHANNEL_MAP_60` | = 94 | Custom channel map 94. |
+| `PCM_CUSTOM_CHANNEL_MAP_61` | = 95 | Custom channel map 95. |
+| `PCM_CUSTOM_CHANNEL_MAP_62` | = 96 | Custom channel map 96. |
+| `PCM_CUSTOM_CHANNEL_MAP_63` | = 97 | Custom channel map 97. |
+| `PCM_CUSTOM_CHANNEL_MAP_64` | = 98 | Custom channel map 98. |
+| `PCM_CUSTOM_CHANNEL_MAP_65` | = 99 | Custom channel map 99. |
+| `PCM_CUSTOM_CHANNEL_MAP_66` | = 100 | Custom channel map 100. |
+| `PCM_CUSTOM_CHANNEL_MAP_67` | = 101 | Custom channel map 101. |
+| `PCM_CUSTOM_CHANNEL_MAP_68` | = 102 | Custom channel map 102. |
+| `PCM_CUSTOM_CHANNEL_MAP_69` | = 103 | Custom channel map 103. |
+| `PCM_CUSTOM_CHANNEL_MAP_70` | = 104 | Custom channel map 104. |
+| `PCM_CUSTOM_CHANNEL_MAP_71` | = 105 | Custom channel map 105. |
+| `PCM_CUSTOM_CHANNEL_MAP_72` | = 106 | Custom channel map 106. |
+| `PCM_CUSTOM_CHANNEL_MAP_73` | = 107 | Custom channel map 107. |
+| `PCM_CUSTOM_CHANNEL_MAP_74` | = 108 | Custom channel map 108. |
+| `PCM_CUSTOM_CHANNEL_MAP_75` | = 109 | Custom channel map 109. |
+| `PCM_CUSTOM_CHANNEL_MAP_76` | = 110 | Custom channel map 110. |
+| `PCM_CUSTOM_CHANNEL_MAP_77` | = 111 | Custom channel map 111. |
+| `PCM_CUSTOM_CHANNEL_MAP_78` | = 112 | Custom channel map 112. |
+| `PCM_CUSTOM_CHANNEL_MAP_79` | = 113 | Custom channel map 113. |
+| `PCM_CUSTOM_CHANNEL_MAP_80` | = 114 | Custom channel map 114. |
+| `PCM_CUSTOM_CHANNEL_MAP_81` | = 115 | Custom channel map 115. |
+| `PCM_CUSTOM_CHANNEL_MAP_82` | = 116 | Custom channel map 116. |
+| `PCM_CUSTOM_CHANNEL_MAP_83` | = 117 | Custom channel map 117. |
+| `PCM_CUSTOM_CHANNEL_MAP_84` | = 118 | Custom channel map 118. |
+| `PCM_CUSTOM_CHANNEL_MAP_85` | = 119 | Custom channel map 119. |
+| `PCM_CUSTOM_CHANNEL_MAP_86` | = 120 | Custom channel map 120. |
+| `PCM_CUSTOM_CHANNEL_MAP_87` | = 121 | Custom channel map 121. |
+| `PCM_CUSTOM_CHANNEL_MAP_88` | = 122 | Custom channel map 122. |
+| `PCM_CUSTOM_CHANNEL_MAP_89` | = 123 | Custom channel map 123. |
+| `PCM_CUSTOM_CHANNEL_MAP_90` | = 124 | Custom channel map 124. |
+| `PCM_CUSTOM_CHANNEL_MAP_91` | = 125 | Custom channel map 125. |
+| `PCM_CUSTOM_CHANNEL_MAP_92` | = 126 | Custom channel map 126. |
+| `PCM_CUSTOM_CHANNEL_MAP_93` | = 127 | Custom channel map 127. |
+| `PCM_CUSTOM_CHANNEL_MAP_94` | = 128 | Custom channel map 127. |
+| `PCM_MAX_CHANNEL_MAP` | = 63 | (Deprecated)Last item in the list. |
+| `PCM_MAX_CHANNEL_MAP_V2` | = 128 | Last item in the list. |
+
+## Macros
+
+### `INFINITE`
+
+Enumeration for infinity.
+
+```c
+#define INFINITE -1
+```
+
+### `INVALID_VALUE`
+
+Enumeration for an invalid value.
+
+```c
+#define INVALID_VALUE 0
+```
+
+### `BITS_PER_SAMPLE_16`
+
+Sixteen bits per sample (= sample word size).
+
+```c
+#define BITS_PER_SAMPLE_16 16
+```
+
+### `BITS_PER_SAMPLE_24`
+
+Twenty-four bits per sample (= sample word size).
+
+```c
+#define BITS_PER_SAMPLE_24 24
+```
+
+### `BITS_PER_SAMPLE_32`
+
+Thirty-two bits per sample (= sample word size).
+
+```c
+#define BITS_PER_SAMPLE_32 32
+```
+
+### `BITS_PER_SAMPLE_64`
+
+Sixty-four bits per sample (= sample word size).
+
+```c
+#define BITS_PER_SAMPLE_64 64
+```
+
+### `BYTES_PER_SAMPLE_TWO`
+
+Two bytes per sample.
+
+```c
+#define BYTES_PER_SAMPLE_TWO 2
+```
+
+### `BYTES_PER_SAMPLE_THREE`
+
+Three bytes per sample.
+
+```c
+#define BYTES_PER_SAMPLE_THREE 3
+```
+
+### `BYTES_PER_SAMPLE_FOUR`
+
+Four bytes per sample.
+
+```c
+#define BYTES_PER_SAMPLE_FOUR 4
+```
+
+### `BIT_WIDTH_16`
+
+Sample has a bit width of 16 (the actual width of the sample in a word).
+
+```c
+#define BIT_WIDTH_16 16
+```
+
+### `BIT_WIDTH_24`
+
+Sample has a bit width of 24 (the actual width of the sample in a word).
+
+```c
+#define BIT_WIDTH_24 24
+```
+
+### `BIT_WIDTH_32`
+
+Sample has a bit width of 32 (the actual width of the sample in a word).
+
+```c
+#define BIT_WIDTH_32 32
+```
+
+### `BIT_WIDTH_64`
+
+Sample has a bit width of 64 (the actual width of the sample in a word).
+
+```c
+#define BIT_WIDTH_64 64
+```
+
+### `PCM_LSB_ALIGNED`
+
+Enumeration for LSB alignment.
+
+```c
+#define PCM_LSB_ALIGNED 1
+```
+
+### `PCM_MSB_ALIGNED`
+
+Enumeration for MSB alignment.
+
+```c
+#define PCM_MSB_ALIGNED 2
+```
+
+### `PCM_Q_FACTOR_15`
+
+Enumeration for the Q15 factor.
+
+```c
+#define PCM_Q_FACTOR_15 15
+```
+
+### `PCM_Q_FACTOR_23`
+
+Enumeration for the Q23 factor.
+
+```c
+#define PCM_Q_FACTOR_23 23
+```
+
+### `PCM_Q_FACTOR_27`
+
+Enumeration for the Q27 factor.
+
+```c
+#define PCM_Q_FACTOR_27 27
+```
+
+### `PCM_Q_FACTOR_31`
+
+Enumeration for the Q31 factor.
+
+```c
+#define PCM_Q_FACTOR_31 31
+```
+
+### `PCM_QFORMAT_SHIFT_FACTOR`
+
+Shift factor for Q31 \\<\=> Q28 conversion for 32-bit P.
+
+```c
+#define PCM_QFORMAT_SHIFT_FACTOR (PCM_Q_FACTOR_31 - PCM_Q_FACTOR_27)
+```
+
+### `SAMPLE_RATE_8K`
+
+Sampling rate is 8 kHz.
+
+```c
+#define SAMPLE_RATE_8K 8000
+```
+
+### `SAMPLE_RATE_11_025K`
+
+Sampling rate is 11.025 kHz.
+
+```c
+#define SAMPLE_RATE_11_025K 11025
+```
+
+### `SAMPLE_RATE_12K`
+
+Sampling rate is 12 kHz.
+
+```c
+#define SAMPLE_RATE_12K 12000
+```
+
+### `SAMPLE_RATE_16K`
+
+Sampling rate is 16 kHz.
+
+```c
+#define SAMPLE_RATE_16K 16000
+```
+
+### `SAMPLE_RATE_22_05K`
+
+Sampling rate is 22.05 kHz.
+
+```c
+#define SAMPLE_RATE_22_05K 22050
+```
+
+### `SAMPLE_RATE_24K`
+
+Sampling rate is 24 kHz.
+
+```c
+#define SAMPLE_RATE_24K 24000
+```
+
+### `SAMPLE_RATE_32K`
+
+Sampling rate is 32 kHz.
+
+```c
+#define SAMPLE_RATE_32K 32000
+```
+
+### `SAMPLE_RATE_44_1K`
+
+Sampling rate is 44.1 kHz.
+
+```c
+#define SAMPLE_RATE_44_1K 44100
+```
+
+### `SAMPLE_RATE_48K`
+
+Sampling rate is 48 kHz.
+
+```c
+#define SAMPLE_RATE_48K 48000
+```
+
+### `SAMPLE_RATE_88_2K`
+
+Sampling rate is 88.2 kHz.
+
+```c
+#define SAMPLE_RATE_88_2K 88200
+```
+
+### `SAMPLE_RATE_96K`
+
+Sampling rate is 96 kHz.
+
+```c
+#define SAMPLE_RATE_96K 96000
+```
+
+### `SAMPLE_RATE_176_4K`
+
+Sampling rate is 176.4 kHz.
+
+```c
+#define SAMPLE_RATE_176_4K 176400
+```
+
+### `SAMPLE_RATE_192K`
+
+Sampling rate is 192 kHz.
+
+```c
+#define SAMPLE_RATE_192K 192000
+```
+
+### `SAMPLE_RATE_352_8K`
+
+Sampling rate is 352.8 kHz.
+
+```c
+#define SAMPLE_RATE_352_8K 352800
+```
+
+### `SAMPLE_RATE_384K`
+
+Sampling rate is 384 kHz.
+
+```c
+#define SAMPLE_RATE_384K 384000
+```
+
+### `PCM_LITTLE_ENDIAN`
+
+Byte order is little endian.
+
+```c
+#define PCM_LITTLE_ENDIAN 1
+```
+
+### `PCM_BIG_ENDIAN`
+
+Byte order is big endian.
+
+```c
+#define PCM_BIG_ENDIAN 2
+```
+
+### `PCM_INTERLEAVED`
+
+PCM data is interleaved.
+
+```c
+#define PCM_INTERLEAVED 1
+```
+
+### `PCM_DEINTERLEAVED_PACKED`
+
+PCM data is de-interleaved packed.
+
+```c
+#define PCM_DEINTERLEAVED_PACKED 2
+```
+
+### `PCM_DEINTERLEAVED_UNPACKED`
+
+PCM data is de-interleaved unpacked.
+
+```c
+#define PCM_DEINTERLEAVED_UNPACKED 3
+```
+
+### `DATA_FORMAT_FIXED_POINT`
+
+Enumeration for the fixed-point data format.
+
+```c
+#define DATA_FORMAT_FIXED_POINT 1
+```
+
+### `DATA_FORMAT_IEC61937_PACKETIZED`
+
+Data format is an IEC 61937 packetized stream.
+
+```c
+#define DATA_FORMAT_IEC61937_PACKETIZED 2
+```
+
+### `DATA_FORMAT_IEC60958_PACKETIZED`
+
+Data format is IEC 60958 packetized stream for PCM only.
+
+```c
+#define DATA_FORMAT_IEC60958_PACKETIZED 3
+```
+
+### `DATA_FORMAT_DSD_OVER_PCM`
+
+Data format is a DSD-over-PCM stream.
+
+```c
+#define DATA_FORMAT_DSD_OVER_PCM 4
+```
+
+### `DATA_FORMAT_GENERIC_COMPRESSED`
+
+Data format is a generic compressed stream.
+
+```c
+#define DATA_FORMAT_GENERIC_COMPRESSED 5
+```
+
+### `DATA_FORMAT_RAW_COMPRESSED`
+
+Data format is a Raw compressed stream.
+
+```c
+#define DATA_FORMAT_RAW_COMPRESSED 6
+```
+
+### `DATA_FORMAT_COMPR_OVER_PCM_PACKETIZED`
+
+Compressed bitstreams are packetized like PCM using a QTI-designed packetizer.
+
+```c
+#define DATA_FORMAT_COMPR_OVER_PCM_PACKETIZED 7
+```
+
+### `DATA_FORMAT_IEC60958_PACKETIZED_NON_LINEAR`
+
+Data format is an IEC 60958 packetized stream for compressed streams.
+
+```c
+#define DATA_FORMAT_IEC60958_PACKETIZED_NON_LINEAR 8
+```
+
+### `DATA_FORMAT_FLOATING_POINT`
+
+```c
+#define DATA_FORMAT_FLOATING_POINT 9
+```
+
+### `DATA_FORMAT_DEINTERLEAVED_RAW_COMPRESSED`
+
+Data format is deinterleaved raw compressed unlike other formats it has no channels or buffers.
+
+```c
+#define DATA_FORMAT_DEINTERLEAVED_RAW_COMPRESSED 10
+```
+
+### `PARAM_VAL_UNSET`
+
+Value of a configured parameter (like bits_per_sample and num_channels) is don't care .
+
+```c
+#define PARAM_VAL_UNSET (-2)
+```
+
+### `PARAM_VAL_NATIVE`
+
+Value of a configured parameter (like bits_per_sample and num_channels) must follow the input media format that the module will receive or has received.
+
+```c
+#define PARAM_VAL_NATIVE (-1)
+```
+
+### `PARAM_VAL_INVALID`
+
+Value of a configured parameter (like bits_per_sample and num_channels) is considered invalid and the Set parameter command should result in an error.
+
+```c
+#define PARAM_VAL_INVALID 0
+```
+
+### `MEDIA_FMT_ID_PCM`
+
+Identifier for the media format used to identify a PCM stream.
+
+```c
+#define MEDIA_FMT_ID_PCM 0x09001000
+```
+
+### `PARAM_ID_MEDIA_FORMAT`
+
+Identifier for the parameter used to set the media format on any Shared Memory Endpoint module.
+
+```c
+#define PARAM_ID_MEDIA_FORMAT 0x0800100C
+```
+
+### `PARAM_ID_ENCODER_OUTPUT_CONFIG`
+
+Identifier for the parameter that configures the encoder.
+
+```c
+#define PARAM_ID_ENCODER_OUTPUT_CONFIG 0x08001009
+```

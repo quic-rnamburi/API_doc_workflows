@@ -1,0 +1,81 @@
+---
+title: "asps_ads_usecase_api.h"
+---
+
+## Structures
+
+### `asps_pcm_data_usecase_register_payload_t`
+
+PCM DATA usecase(ASPS_USECASE_ID_PCM_DATA) specific payload.
+
+**Members**
+
+<ParamField path="stream_type" type="uint32_t">
+</ParamField>
+
+### `asps_pcm_data_v2_usecase_register_payload_t`
+
+PCM DATA usecase(ASPS_USECASE_ID_PCM_DATA_V2) specific payload.
+
+**Members**
+
+<ParamField path="stream_type" type="uint32_t">
+</ParamField>
+<ParamField path="requires_buffering" type="uint32_t">
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+</ParamField>
+<ParamField path="bit_width" type="uint32_t">
+</ParamField>
+<ParamField path="num_channels" type="uint32_t">
+</ParamField>
+
+### `asps_audio_data_usecase_register_ack_payload_t`
+
+PCM DATA usecase (ASPS_USECASE_ID_PCM_DATA/V2) specific Payload structure.
+
+**Members**
+
+<ParamField path="sns_rd_ep_miid" type="uint32_t">
+  Module instance ID of SNS read end point module.
+</ParamField>
+<ParamField path="mfc_miid" type="uint32_t">
+  Module instance ID of MFC module.
+</ParamField>
+<ParamField path="pcm_cnv_miid" type="uint32_t">
+  Module instance ID of PCM_CNV module.
+</ParamField>
+
+## Type Definitions
+
+### `asps_pcm_data_usecase_register_payload_t`
+
+```c
+typedef struct asps_pcm_data_usecase_register_payload_t asps_pcm_data_usecase_register_payload_t
+```
+
+### `asps_pcm_data_v2_usecase_register_payload_t`
+
+```c
+typedef struct asps_pcm_data_v2_usecase_register_payload_t asps_pcm_data_v2_usecase_register_payload_t
+```
+
+### `asps_audio_data_usecase_register_ack_payload_t`
+
+```c
+typedef struct asps_audio_data_usecase_register_ack_payload_t asps_audio_data_usecase_register_ack_payload_t
+```
+
+## Macros
+
+### `ASPS_USECASE_ID_PCM_DATA`
+
+```c
+#define ASPS_USECASE_ID_PCM_DATA 0x0B00100A
+```
+
+### `ASPS_USECASE_ID_PCM_DATA_V2`
+
+```c
+#define ASPS_USECASE_ID_PCM_DATA_V2 0x0B00100C
+```

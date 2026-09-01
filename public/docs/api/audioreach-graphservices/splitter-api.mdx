@@ -1,0 +1,68 @@
+---
+title: "splitter_api.h"
+description: "splitter_api.h: This file contains the Module Id, Param IDs and configuration"
+---
+
+## Structures
+
+### `per_port_md_cfg_t`
+
+**Members**
+
+<ParamField path="port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_white_listed_md" type="uint32_t">
+</ParamField>
+
+### `param_id_splitter_metadata_prop_cfg_t`
+
+**Members**
+
+<ParamField path="num_ports" type="uint32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `per_port_md_cfg_t`
+
+```c
+typedef struct per_port_md_cfg_t per_port_md_cfg_t
+```
+
+### `param_id_splitter_metadata_prop_cfg_t`
+
+```c
+typedef struct param_id_splitter_metadata_prop_cfg_t param_id_splitter_metadata_prop_cfg_t
+```
+
+## Macros
+
+### `PARAM_ID_SPLITTER_METADATA_PROP_CFG`
+
+ID of the Port EoS parameter, used by the Splitter Module Used to disable the EoS metadata propagation on certain output ports.
+
+```c
+#define PARAM_ID_SPLITTER_METADATA_PROP_CFG 0x0800103C
+```
+
+### `CAPI_SPLITTER_STACK_SIZE`
+
+```c
+#define CAPI_SPLITTER_STACK_SIZE 512
+```
+
+### `SPLITTER_MAX_INPUT_PORTS`
+
+```c
+#define SPLITTER_MAX_INPUT_PORTS 1
+```
+
+### `MODULE_ID_SPLITTER`
+
+ID of the SPLITTER module, which is used for splitting the data on the input port on all the output ports.
+
+```c
+#define MODULE_ID_SPLITTER 0x07001011
+```

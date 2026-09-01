@@ -1,0 +1,90 @@
+---
+title: "imcl_spm_intent_api.h"
+description: "========================================================================"
+---
+
+## Macros
+
+### `INTENT_ID_AUDIO_DAM_DETECTION_ENGINE_CTRL`
+
+Intent defines the payload structure of the IMCL message.
+
+```c
+#define INTENT_ID_AUDIO_DAM_DETECTION_ENGINE_CTRL 0x08001064
+```
+
+### `INTENT_ID_FFECNS_SVA_FREEZE`
+
+```c
+#define INTENT_ID_FFECNS_SVA_FREEZE 0x080010BA
+```
+
+### `INTENT_ID_AVC`
+
+Intent ID for the control link between AVC Tx and Rx module.
+
+```c
+#define INTENT_ID_AVC 0x080010DB
+```
+
+### `INTENT_ID_DRC_CONFIG`
+
+Intent ID to send DRC parameters over control link.
+
+```c
+#define INTENT_ID_DRC_CONFIG 0x080010F3
+```
+
+### `INTENT_ID_GAIN_INFO`
+
+Intent ID for the control link to send gain information.
+
+```c
+#define INTENT_ID_GAIN_INFO 0x080010F5
+```
+
+### `INTENT_ID_P_EQ_VOL_HEADROOM`
+
+```c
+#define INTENT_ID_P_EQ_VOL_HEADROOM 0x08001118
+```
+
+### `INTENT_ID_RVE`
+
+Intent ID for the control link between RVE Tx and Rx module.
+
+```c
+#define INTENT_ID_RVE 0x080010DD
+```
+
+### `INTENT_ID_BT_ENCODER_FEEDBACK`
+
+IMCL intent ID for sending sideband data to the encoder This intent id supports two param ids:
+
+```c
+#define INTENT_ID_BT_ENCODER_FEEDBACK 0x080010D7
+```
+
+### `INTENT_ID_PACKETIZER_V1_FEEDBACK`
+
+IMCL intent ID for sending the notification to the packetizer v1 to send sideband ack to BT that the primer sideband has been received by the RX RAT module.
+
+```c
+#define INTENT_ID_PACKETIZER_V1_FEEDBACK 0x08001148
+```
+
+### `INTENT_ID_CTM_TTY`
+
+Intent ID for the control link between CTM Tx and Rx module.
+
+```c
+#define INTENT_ID_CTM_TTY 0x08001191
+```
+
+### `INTENT_ID_MUTE`
+
+Intent ID for the control link between TTY module(1x/CTM/LTE_TTY in Rx path) and soft volume module(in Tx path).
+
+```c
+#define INTENT_ID_MUTE 0x08001195
+```

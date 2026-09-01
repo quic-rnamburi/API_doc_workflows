@@ -1,0 +1,310 @@
+---
+title: "gsl_rtc_intf.h"
+description: "Interface definition for GSL RTC functionality."
+---
+
+## Structures
+
+### `gsl_rtc_key_vector`
+
+**Members**
+
+<ParamField path="num_kvps" type="uint32_t">
+  number of key-value pairs
+</ParamField>
+<ParamField path="kvp" type="struct gsl_key_value_pair">
+  key-value pairs
+</ParamField>
+
+### `gsl_rtc_uc_data`
+
+**Members**
+
+<ParamField path="graph_handle" type="uint32_t">
+  graph handle id for the active use-case
+</ParamField>
+<ParamField path="num_gkvs" type="uint32_t">
+  number of gkvs in the graph
+</ParamField>
+<ParamField path="num_ckvs" type="uint32_t">
+  number of ckvs in the graph
+</ParamField>
+<ParamField path="payload" type="uint8_t">
+  GKV vectors followed by CKV vectors.
+</ParamField>
+
+### `gsl_rtc_active_uc_info`
+
+**Members**
+
+<ParamField path="num_usecases" type="uint32_t">
+  total number of active use-cases
+</ParamField>
+<ParamField path="total_size" type="uint32_t">
+  total size for gsl_rtc_active_uc_data
+</ParamField>
+<ParamField path="uc_data" type="struct gsl_rtc_uc_data *">
+  memory pointing to active use-case data
+</ParamField>
+
+### `gsl_rtc_param`
+
+**Members**
+
+<ParamField path="graph_handle" type="uint32_t">
+  GSL graph handle.
+</ParamField>
+<ParamField path="sgid" type="uint32_t">
+  sgid of the non-persist cal data
+</ParamField>
+<ParamField path="total_size" type="uint32_t">
+  total size of the non-persist cal data
+</ParamField>
+<ParamField path="sg_cal_data" type="uint8_t *">
+  Pointer to non-persist cal data.
+</ParamField>
+
+### `gsl_rtc_persist_param`
+
+**Members**
+
+<ParamField path="graph_handle" type="uint32_t">
+  GSL graph handle.
+</ParamField>
+<ParamField path="sgid" type="uint32_t">
+  sgid of the persist cal data
+</ParamField>
+<ParamField path="proc_id" type="uint32_t">
+  processor id of the persist cal data within the sgid
+</ParamField>
+<ParamField path="total_size" type="uint32_t *">
+  Total size of the perist cal data.
+</ParamField>
+<ParamField path="sg_cal_data" type="uint8_t *">
+  Pointer to persist cal data.
+</ParamField>
+<ParamField path="ckv" type="struct gsl_rtc_key_vector *">
+  pointer to CKV used to query acdb in-case above pointer is NULL
+</ParamField>
+
+### `gsl_rtc_prepare_change_graph_info`
+
+**Members**
+
+<ParamField path="graph_handle" type="uint32_t">
+</ParamField>
+<ParamField path="old_gkv" type="struct gsl_rtc_key_vector *">
+  GKV corresponding to active use-case.
+</ParamField>
+<ParamField path="num_sgs" type="uint32_t">
+</ParamField>
+<ParamField path="size_of_sg_conn_info" type="uint32_t">
+</ParamField>
+<ParamField path="sg_conn_info" type="uint32_t *">
+</ParamField>
+<ParamField path="num_modified_sgs" type="uint32_t">
+</ParamField>
+<ParamField path="modified_sgs" type="uint32_t *">
+</ParamField>
+<ParamField path="num_modified_sg_connections" type="uint32_t">
+</ParamField>
+<ParamField path="size_of_modified_sg_conn_info" type="uint32_t">
+</ParamField>
+<ParamField path="modified_sg_conn_info" type="uint32_t *">
+</ParamField>
+
+### `gsl_rtc_change_graph_info`
+
+**Members**
+
+<ParamField path="graph_handle" type="uint32_t">
+</ParamField>
+<ParamField path="old_gkv" type="struct gsl_rtc_key_vector *">
+  GKV corresponding to active use-case.
+</ParamField>
+<ParamField path="new_gkv" type="struct gsl_rtc_key_vector *">
+  GKV used to replace the old_gkv, this typically only changes if there is a subgraph add or delete, it is allowed to be same as old_gkv.
+</ParamField>
+<ParamField path="new_ckv" type="struct gsl_rtc_key_vector *">
+  CKV used to identy calibration data for the new graph.
+</ParamField>
+<ParamField path="tag_data_size" type="uint32_t">
+  Size of tag data blob.
+</ParamField>
+<ParamField path="tag_data" type="uint8_t *">
+  Tag data blob pointer.
+</ParamField>
+
+### `gsl_rtc_conn_info`
+
+**Members**
+
+<ParamField path="state" type="gsl_rtc_conn_state">
+  The state of an RTC session.
+</ParamField>
+
+## Functions
+
+### `gsl_rtc_get_active_usecase_info`
+
+Get active use-case info.
+
+```c
+int32_t gsl_rtc_get_active_usecase_info(struct gsl_rtc_active_uc_info *info)
+```
+
+**Parameters**
+
+<ParamField path="[in/out]" type="">
+  rsp: rsp pointer
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_rtc_get_persist_data`
+
+get persist calibration data
+
+```c
+int32_t gsl_rtc_get_persist_data(struct gsl_rtc_persist_param *rtc_param)
+```
+
+**Parameters**
+
+<ParamField path="[in/out]" type="">
+  rtc_param: pointer to struct gsl_rtc_persist_param RTC client is responsible to allocate/free the memory for gsl_rtc_persist_param
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_rtc_get_non_persist_data`
+
+get non-persist calibration data RTC client is responsible to allocate/free the memory for gsl_rtc_param
+
+```c
+int32_t gsl_rtc_get_non_persist_data(struct gsl_rtc_param *rtc_param)
+```
+
+**Parameters**
+
+<ParamField path="[in/out]" type="">
+  rtc_param: pointer to struct gsl_rtc_param
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_rtc_set_persist_data`
+
+set persist calibration data RTC client is responsible to allocate/free the memory for gsl_rtc_persist_param
+
+```c
+int32_t gsl_rtc_set_persist_data(struct gsl_rtc_persist_param *rtc_param)
+```
+
+**Parameters**
+
+<ParamField path="[in/out]" type="">
+  rtc_param: pointer to struct gsl_rtc_persist_param
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_rtc_set_non_persist_data`
+
+set non-persist calibration data
+
+```c
+int32_t gsl_rtc_set_non_persist_data(struct gsl_rtc_param *rtc_param)
+```
+
+**Parameters**
+
+<ParamField path="[in/out]" type="">
+  rtc_param: pointer to struct gsl_rtc_param RTC client is responsible to allocate/free the memory for gsl_rtc_param
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_rtc_prepare_change_graph`
+
+Prepare for graph change operation, this will update GSL state and close subgraphs and connections that are no longer needed but will not open anything on Spf.
+
+This must be called before the ACDB data is updated.
+
+```c
+int32_t gsl_rtc_prepare_change_graph(struct gsl_rtc_prepare_change_graph_info *rtc_param)
+```
+
+**Parameters**
+
+<ParamField path="rtc_param" type="struct gsl_rtc_prepare_change_graph_info *">
+  pointer to struct gsl_rtc_prepare_change_graph, carries information about the RTGM operation to be performed
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_rtc_change_graph`
+
+Complete the graph change operation that is already prepared.
+
+Note calling gsl_rtc_prepare_change_graph is mandatory before calling this API also the ACDB data on the device must be updated before calling this API.
+
+```c
+int32_t gsl_rtc_change_graph(struct gsl_rtc_change_graph_info *rtc_param)
+```
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_rtc_notify_conn_state`
+
+Notifies GSL about client connectivity.
+
+```c
+int32_t gsl_rtc_notify_conn_state(struct gsl_rtc_conn_info *rtgm_session_info)
+```
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+## Type Definitions
+
+### `gsl_rtc_conn_state`
+
+```c
+typedef enum gsl_rtc_conn_state gsl_rtc_conn_state
+```
+
+## Enumerations
+
+### `gsl_rtc_conn_state`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `GSL_RTC_CONNECTION_STATE_START` |  | The rtc connection 'start' state. |
+| `GSL_RTC_CONNECTION_STATE_STOP` |  | The rtc connection 'stop' state. |
+
+## Macros
+
+### `GSL_RTC_GKV_SIZE_BYTES`
+
+```c
+#define GSL_RTC_GKV_SIZE_BYTES (sizeof(struct gsl_rtc_key_vector) +\
+	((num_kvps) * sizeof(struct gsl_key_value_pair)))
+```

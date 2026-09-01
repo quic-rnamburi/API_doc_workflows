@@ -1,0 +1,58 @@
+---
+title: "Session.h"
+---
+
+## Structures
+
+### `Session::eventPayload`
+
+**Members**
+
+<ParamField path="eventId" type="uint32_t">
+</ParamField>
+<ParamField path="payload" type="void *">
+</ParamField>
+<ParamField path="payloadSize" type="size_t">
+</ParamField>
+
+## Type Definitions
+
+### `session_callback`
+
+```c
+typedef void(* session_callback
+```
+
+### `SessionCreate`
+
+```c
+typedef Session *(* SessionCreate
+```
+
+## Enumerations
+
+### `configType`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `GRAPH` | = 0 |  |
+| `MODULE` |  |  |
+| `CALIBRATION` |  |  |
+| `CODEC_DMA_CONFIG` |  |  |
+| `MEDIA_CONFIG` |  |  |
+| `IN_MEDIA_CONFIG` |  |  |
+| `OUT_MEDIA_CONFIG` |  |  |
+
+### `sessionState`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `SESSION_IDLE` |  |  |
+| `SESSION_OPENED` |  |  |
+| `SESSION_STARTED` |  |  |
+| `SESSION_FLUSHED` |  |  |
+| `SESSION_STOPPED` |  |  |

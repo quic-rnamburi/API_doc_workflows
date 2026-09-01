@@ -1,0 +1,610 @@
+---
+title: "asr_module_calibration_api.h"
+---
+
+## Structures
+
+### `asr_version_t`
+
+**Members**
+
+<ParamField path="lib_version_low" type="uint32_t">
+</ParamField>
+<ParamField path="lib_version_high" type="uint32_t">
+</ParamField>
+
+### `param_id_asr_config_t`
+
+**Members**
+
+<ParamField path="input_language_code" type="uint32_t">
+</ParamField>
+<ParamField path="output_language_code" type="uint32_t">
+
+</ParamField>
+<ParamField path="enable_language_detection" type="uint32_t">
+
+</ParamField>
+<ParamField path="enable_translation" type="uint32_t">
+
+</ParamField>
+<ParamField path="enable_continuous_mode" type="uint32_t">
+
+</ParamField>
+<ParamField path="enable_partial_transcription" type="uint32_t">
+
+</ParamField>
+<ParamField path="threshold" type="uint32_t">
+
+</ParamField>
+<ParamField path="timeout_duration" type="uint32_t">
+</ParamField>
+<ParamField path="vad_hangover_duration" type="uint32_t">
+  }  ms
+</ParamField>
+
+### `param_id_asr_input_threshold_t`
+
+**Members**
+
+<ParamField path="buf_duration_ms" type="uint32_t">
+</ParamField>
+
+### `param_id_asr_input_threshold_v2_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+</ParamField>
+<ParamField path="buf_duration_ms" type="uint32_t">
+  This API allows multiple clients to have unique input threshold configurations. ASR_CLIENT_HLOS - Client is HLOS. ASR_CLIENT_LLS - Client is Sensor.}
+</ParamField>
+
+### `param_id_asr_force_output_t`
+
+**Members**
+
+<ParamField path="force_output" type="uint32_t">
+</ParamField>
+
+### `param_id_asr_force_output_v2_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+</ParamField>
+<ParamField path="force_output" type="uint32_t">
+  This API allows forcing output for a specific client in multi-client scenarios. ASR_CLIENT_HLOS - Force output for HLOS client. ASR_CLIENT_LLS - Force output for Sensor client.}
+</ParamField>
+
+### `param_id_asr_output_config_t`
+
+**Members**
+
+<ParamField path="output_mode" type="uint32_t">
+</ParamField>
+<ParamField path="out_buf_size" type="uint32_t">
+  ASR_NON_BUFFERED - Output of each ASR algo process is immediately sent to client. ASR_BUFFERED - Output of each ASR algo process is buffered and sent to client intermittently. ASR_LOGGER - Output of each ASR algo process is stored and sent to client on demand. ASR_TS_NON_BUFFERED - Output of each ASR algo process is immediately sent to client with timestamps. ASR_TS_BUFFERED - Output of each ASR algo process is buffered and sent to client intermittently with timestamps. ASR_TS_LOGGER - Output of each ASR algo process is stored and sent to client on demand with timestamps.}
+</ParamField>
+<ParamField path="num_bufs" type="uint32_t">
+  }  // ASR engine controlled default if not configured
+</ParamField>
+
+### `param_id_asr_output_config_v2_base_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+</ParamField>
+<ParamField path="output_mode" type="uint32_t">
+  This API allow multiple clients to have unique configurations ASR_CLIENT_HLOS - Client is HLOS. ASR_CLIENT_LLS - Client is Sensor.}
+</ParamField>
+<ParamField path="out_buf_size" type="uint32_t">
+  ASR_NON_BUFFERED - Output of every process input frame is immediately sent to client. ASR_BUFFERED - Output of every process input frame is buffered and sent to client intermittently. ASR_LOGGER - Output of every process input frame is stored and sent to client on demand. ASR_TS_NON_BUFFERED - Output of every process input frame is immediately sent to client with timestamps. ASR_TS_BUFFERED - Output of every process input frame is buffered and sent to client intermittently with timestamps. ASR_TS_LOGGER - Output of every process input frame is stored and sent to client on demand with timestamps.}
+</ParamField>
+<ParamField path="num_bufs" type="uint32_t">
+  }  // ASR engine controlled default if not configured
+</ParamField>
+
+### `param_id_asr_output_config_v2_t`
+
+**Members**
+
+<ParamField path="num_clients" type="uint32_t">
+</ParamField>
+
+### `event_id_asr_output_reg_cfg_t`
+
+@parameter  @description  @toolPolicy
+
+**Members**
+
+<ParamField path="event_payload_type" type="uint32_t">
+  QUERY - Client queries the output via getparam upon receiving ASR output event.
+</ParamField>
+
+### `event_id_asr_output_reg_cfg_v2_t`
+
+@parameter  @description  @toolPolicy
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+  ASR_CLIENT_HLOS - Client is HLOS.
+</ParamField>
+<ParamField path="event_payload_type" type="uint32_t">
+  QUERY - Client queries the output via getparam upon receiving ASR output event.
+</ParamField>
+
+### `asr_output_status_t`
+
+**Members**
+
+<ParamField path="status" type="uint32_t">
+</ParamField>
+<ParamField path="is_final" type="uint32_t">
+</ParamField>
+<ParamField path="confidence" type="uint32_t">
+</ParamField>
+<ParamField path="text_size" type="uint32_t">
+</ParamField>
+<ParamField path="text" type="uint8_t">
+</ParamField>
+
+### `asr_model_param_t`
+
+**Members**
+
+<ParamField path="model_align" type="uint32_t">
+</ParamField>
+<ParamField path="model_offset" type="uint32_t">
+</ParamField>
+<ParamField path="model_size" type="uint32_t">
+</ParamField>
+<ParamField path="model" type="uint8_t">
+</ParamField>
+
+### `event_id_asr_output_event_t`
+
+**Members**
+
+<ParamField path="event_payload_type" type="uint32_t">
+  Default mode is Query. QUERY = Client will query via getparam upon receiving this event, using the output_token provided as part of this payload. Inband = ASR output payload follows inband after the payload_size field }
+</ParamField>
+<ParamField path="output_token" type="uint32_t">
+  This can be used by clients to query the payload param in 'Getparam' mode}
+</ParamField>
+<ParamField path="num_outputs" type="uint32_t">
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Following this field is the payload of this size. Payload is variable array of type asr_output_status_t . Size '0' indicates this is an event generated without any valid output, for example : in response to a force output param set by client. }
+</ParamField>
+
+### `param_id_asr_output_t`
+
+**Members**
+
+<ParamField path="output_token" type="uint32_t">
+  This can be used by clients to query the corresponding payload. If not configured or invalid, Payload corresponds to output buffers in sequential order as produced by ASR engine.}
+</ParamField>
+<ParamField path="num_outputs" type="uint32_t">
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Following this field is the payload of this size. Payload is variable array of type asr_output_status_t . Size '0' indicates this is an event generated without any valid output, for example : in response to a force output param set by client. }
+</ParamField>
+
+### `param_id_asr_algo_max_inference_time_t`
+
+**Members**
+
+<ParamField path="worstcase_time_ms" type="uint32_t">
+</ParamField>
+
+### `asr_word_status_t`
+
+**Members**
+
+<ParamField path="word_confidence" type="uint32_t">
+</ParamField>
+<ParamField path="word_size" type="uint32_t">
+  (Not including the NULL character)}
+</ParamField>
+<ParamField path="word" type="uint8_t">
+  MAX_WORD_SIZE to be a multiple of 4. Client should read only word_size from this array for the actual word which does not include any null term char}
+</ParamField>
+<ParamField path="word_start_time_ms_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="word_start_time_ms_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="word_end_time_ms_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="word_end_time_ms_msw" type="uint32_t">
+
+</ParamField>
+
+### `asr_output_status_v2_t`
+
+**Members**
+
+<ParamField path="status" type="uint32_t">
+</ParamField>
+<ParamField path="is_final" type="uint32_t">
+</ParamField>
+<ParamField path="confidence" type="uint32_t">
+</ParamField>
+<ParamField path="text_size" type="uint32_t">
+</ParamField>
+<ParamField path="text" type="uint8_t">
+</ParamField>
+<ParamField path="segment_start_time_ms_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_start_time_ms_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_end_time_ms_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_end_time_ms_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_words" type="uint32_t">
+  this is variable payload based on num_words field above.}
+</ParamField>
+
+### `param_id_asr_output_v2_t`
+
+**Members**
+
+<ParamField path="output_token" type="uint32_t">
+  This can be used by clients to query the corresponding payload. If not configured or invalid, Payload corresponds to output buffers in sequential order as produced by ASR engine.}
+</ParamField>
+<ParamField path="num_outputs" type="uint32_t">
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Following this field is the payload of this size. Payload is variable array of type asr_output_status_v2_t . Size '0' indicates this is an event generated without any valid output, for example : in response to a force output param set by client. }
+</ParamField>
+
+### `param_id_asr_output_v3_t`
+
+**Members**
+
+<ParamField path="client_id" type="uint32_t">
+  This must match the client_id used in PARAM_ID_ASR_OUTPUT_CONFIG_V2. Allows multiple clients to independently query their own output buffers.}
+</ParamField>
+<ParamField path="output_token" type="uint32_t">
+  This can be used by clients to query the corresponding payload. If not configured or invalid, Payload corresponds to output buffers in sequential order as produced by ASR engine.}
+</ParamField>
+<ParamField path="num_outputs" type="uint32_t">
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Following this field is the payload of this size. Payload is variable array of type asr_output_status_v2_t . Size '0' indicates this is an event generated without any valid output, for example : in response to a force output param set by client. }
+</ParamField>
+
+### `param_id_asr_ts_fmt_t`
+
+**Members**
+
+<ParamField path="ts_fmt" type="uint32_t">
+  Note: the this will only work with timestamp enabled modes.}
+</ParamField>
+<ParamField path="reset_period" type="uint32_t">
+  Note: '0' means module latches to UTC time only at the beginning of the usecase and doesn't periodically sync to UTC time for dynamic changes. For non-zero values say 'x' seconds, the module will dynamically sync and update the UTC time at every x seconds. The maximum reset period allowed is a day.}
+</ParamField>
+<ParamField path="timestamp_unit" type="uint32_t">
+  Currently only TIME_USEC is supported}
+</ParamField>
+
+## Type Definitions
+
+### `asr_version_t`
+
+```c
+typedef struct asr_version_t asr_version_t
+```
+
+### `param_id_asr_config_t`
+
+```c
+typedef struct param_id_asr_config_t param_id_asr_config_t
+```
+
+### `param_id_asr_input_threshold_t`
+
+```c
+typedef struct param_id_asr_input_threshold_t param_id_asr_input_threshold_t
+```
+
+### `param_id_asr_input_threshold_v2_t`
+
+```c
+typedef struct param_id_asr_input_threshold_v2_t param_id_asr_input_threshold_v2_t
+```
+
+### `param_id_asr_force_output_t`
+
+```c
+typedef struct param_id_asr_force_output_t param_id_asr_force_output_t
+```
+
+### `param_id_asr_force_output_v2_t`
+
+```c
+typedef struct param_id_asr_force_output_v2_t param_id_asr_force_output_v2_t
+```
+
+### `param_id_asr_output_config_t`
+
+```c
+typedef struct param_id_asr_output_config_t param_id_asr_output_config_t
+```
+
+### `param_id_asr_output_config_v2_t`
+
+```c
+typedef struct param_id_asr_output_config_v2_t param_id_asr_output_config_v2_t
+```
+
+### `event_id_asr_output_reg_cfg_t`
+
+```c
+typedef struct event_id_asr_output_reg_cfg_t event_id_asr_output_reg_cfg_t
+```
+
+### `event_id_asr_output_reg_cfg_v2_t`
+
+```c
+typedef struct event_id_asr_output_reg_cfg_v2_t event_id_asr_output_reg_cfg_v2_t
+```
+
+### `asr_output_status_t`
+
+```c
+typedef struct asr_output_status_t asr_output_status_t
+```
+
+### `asr_model_param_t`
+
+```c
+typedef struct asr_model_param_t asr_model_param_t
+```
+
+### `event_id_asr_output_event_t`
+
+```c
+typedef struct event_id_asr_output_event_t event_id_asr_output_event_t
+```
+
+### `param_id_asr_output_t`
+
+```c
+typedef struct param_id_asr_output_t param_id_asr_output_t
+```
+
+### `param_id_asr_algo_max_inference_time_t`
+
+```c
+typedef struct param_id_asr_algo_max_inference_time_t param_id_asr_algo_max_inference_time_t
+```
+
+### `asr_output_status_v2_t`
+
+```c
+typedef struct asr_output_status_v2_t asr_output_status_v2_t
+```
+
+### `param_id_asr_output_v2_t`
+
+```c
+typedef struct param_id_asr_output_v2_t param_id_asr_output_v2_t
+```
+
+### `param_id_asr_output_v3_t`
+
+```c
+typedef struct param_id_asr_output_v3_t param_id_asr_output_v3_t
+```
+
+### `param_id_asr_ts_fmt_t`
+
+```c
+typedef struct param_id_asr_ts_fmt_t param_id_asr_ts_fmt_t
+```
+
+### `asr_client_id_t`
+
+```c
+typedef enum asr_client_id_t asr_client_id_t
+```
+
+### `asr_output_mode_t`
+
+```c
+typedef enum asr_output_mode_t asr_output_mode_t
+```
+
+### `ASR_LANGUAGE_CODE_t`
+
+```c
+typedef enum ASR_LANGUAGE_CODE_t ASR_LANGUAGE_CODE_t
+```
+
+## Enumerations
+
+### `asr_output_status_value`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `ASR_SUCCESS` | = 0 |  |
+| `ASR_FAIL` | = 1 |  |
+| `ASR_TIMEOUT` | = 12 |  |
+
+### `asr_client_id_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `ASR_CLIENT_INVALID` | = 0 |  |
+| `ASR_CLIENT_HLOS` | = 1 |  |
+| `ASR_CLIENT_LLS` | = 2 |  |
+
+### `asr_output_mode_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `ASR_NON_BUFFERED` | = 0 |  |
+| `ASR_BUFFERED` |  |  |
+| `ASR_LOGGER` |  |  |
+| `ASR_TS_NON_BUFFERED` |  |  |
+| `ASR_TS_BUFFERED` |  |  |
+| `ASR_TS_LOGGER` |  |  |
+
+### `ASR_LANGUAGE_CODE_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `en_US` | =0 |  |
+| `zh_CN` |  |  |
+| `hi_IN` |  |  |
+| `es_US` |  |  |
+| `ko_KR` |  |  |
+| `ja_JP` |  |  |
+| `language_code_end_1` |  |  |
+
+## Macros
+
+### `ASR_ENPU_RELEASE_VERSION_MAJOR`
+
+```c
+#define ASR_ENPU_RELEASE_VERSION_MAJOR 0x00000001
+```
+
+### `ASR_ENPU_RELEASE_VERSION_MINOR`
+
+```c
+#define ASR_ENPU_RELEASE_VERSION_MINOR 0x00000000
+```
+
+### `PARAM_ID_ASR_VERSION`
+
+```c
+#define PARAM_ID_ASR_VERSION 0x08001AA3
+```
+
+### `PARAM_ID_ASR_CONFIG`
+
+```c
+#define PARAM_ID_ASR_CONFIG 0x08001AA4
+```
+
+### `PARAM_ID_ASR_INPUT_THRESHOLD`
+
+```c
+#define PARAM_ID_ASR_INPUT_THRESHOLD 0x08001AA5
+```
+
+### `PARAM_ID_ASR_INPUT_THRESHOLD_V2`
+
+```c
+#define PARAM_ID_ASR_INPUT_THRESHOLD_V2 0x08001BC5
+```
+
+### `PARAM_ID_ASR_FORCE_OUTPUT`
+
+```c
+#define PARAM_ID_ASR_FORCE_OUTPUT 0x08001AA6
+```
+
+### `PARAM_ID_ASR_FORCE_OUTPUT_V2`
+
+```c
+#define PARAM_ID_ASR_FORCE_OUTPUT_V2 0x08001BC6
+```
+
+### `PARAM_ID_ASR_OUTPUT_CONFIG`
+
+```c
+#define PARAM_ID_ASR_OUTPUT_CONFIG 0x08001AA7
+```
+
+### `PARAM_ID_ASR_OUTPUT_CONFIG_V2`
+
+```c
+#define PARAM_ID_ASR_OUTPUT_CONFIG_V2 0x08001BC3
+```
+
+### `EVENT_ID_ASR_OUTPUT`
+
+```c
+#define EVENT_ID_ASR_OUTPUT 0x08001AA8
+```
+
+### `EVENT_ID_ASR_OUTPUT_V2`
+
+```c
+#define EVENT_ID_ASR_OUTPUT_V2 0x08001BCA
+```
+
+### `MAX_TRANSCRIPTION_CHAR_SIZE`
+
+```c
+#define MAX_TRANSCRIPTION_CHAR_SIZE 1024
+```
+
+### `PARAM_ID_ASR_LLM`
+
+```c
+#define PARAM_ID_ASR_LLM 0x08001AA9
+```
+
+### `PARAM_ID_ASR_OUTPUT`
+
+```c
+#define PARAM_ID_ASR_OUTPUT 0x08001AAA
+```
+
+### `PARAM_ID_ASR_ALGO_MAX_INFERENCE_TIME`
+
+```c
+#define PARAM_ID_ASR_ALGO_MAX_INFERENCE_TIME 0x08001B06
+```
+
+### `MAX_WORD_SIZE`
+
+```c
+#define MAX_WORD_SIZE 28
+```
+
+### `PARAM_ID_ASR_OUTPUT_V2`
+
+```c
+#define PARAM_ID_ASR_OUTPUT_V2 0x08001B04
+```
+
+### `PARAM_ID_ASR_OUTPUT_V3`
+
+```c
+#define PARAM_ID_ASR_OUTPUT_V3 0x08001BCB
+```
+
+### `PARAM_ID_ASR_TIMESTAMP_FORMAT`
+
+```c
+#define PARAM_ID_ASR_TIMESTAMP_FORMAT 0x08001B83
+```
+
+### `MODULE_ID_ASR`
+
+```c
+#define MODULE_ID_ASR 0x7001176
+```

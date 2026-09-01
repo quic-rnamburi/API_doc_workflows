@@ -1,0 +1,186 @@
+---
+title: "i2s_api.h"
+description: "This file contains I2S module APIs."
+---
+
+## Structures
+
+### `param_id_i2s_intf_cfg_t`
+
+**Members**
+
+<ParamField path="lpaif_type" type="uint32_t">
+
+</ParamField>
+<ParamField path="intf_idx" type="uint32_t">
+
+</ParamField>
+<ParamField path="sd_line_idx" type="uint16_t">
+</ParamField>
+<ParamField path="ws_src" type="uint16_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `param_id_i2s_intf_cfg_t`
+
+```c
+typedef struct param_id_i2s_intf_cfg_t param_id_i2s_intf_cfg_t
+```
+
+## Macros
+
+### `I2S_INTF_TYPE_PRIMARY`
+
+```c
+#define I2S_INTF_TYPE_PRIMARY 0
+```
+
+### `I2S_INTF_TYPE_SECONDARY`
+
+```c
+#define I2S_INTF_TYPE_SECONDARY 1
+```
+
+### `I2S_INTF_TYPE_TERTIARY`
+
+```c
+#define I2S_INTF_TYPE_TERTIARY 2
+```
+
+### `I2S_INTF_TYPE_QUATERNARY`
+
+```c
+#define I2S_INTF_TYPE_QUATERNARY 3
+```
+
+### `I2S_INTF_TYPE_QUINARY`
+
+```c
+#define I2S_INTF_TYPE_QUINARY 4
+```
+
+### `I2S_SD0`
+
+Enumeration for setting the I2S configuration sd_line_idx parameter to serial data wire number 0 (SD0).
+
+```c
+#define I2S_SD0 0x1
+```
+
+### `I2S_SD1`
+
+Enumeration for setting the I2S configuration sd_line_idx parameter to serial data wire number 1 (SD1).
+
+```c
+#define I2S_SD1 0x2
+```
+
+### `I2S_SD2`
+
+Enumeration for setting the I2S configuration sd_line_idx parameter to serial data wire number 2 (SD2).
+
+```c
+#define I2S_SD2 0x3
+```
+
+### `I2S_SD3`
+
+Enumeration for setting the I2S configuration sd_line_idx parameter to serial data wire number 3 (SD3).
+
+```c
+#define I2S_SD3 0x4
+```
+
+### `I2S_QUAD01`
+
+Enumeration for setting the I2S configuration sd_line_idx parameter to SD0 and SD1.
+
+```c
+#define I2S_QUAD01 0x5
+```
+
+### `I2S_QUAD23`
+
+Enumeration for setting the I2S configuration sd_line_idx parameter to SD2 and SD3.
+
+```c
+#define I2S_QUAD23 0x6
+```
+
+### `I2S_6CHS`
+
+Enumeration for setting the I2S configuration sd_line_idx parameter to six channels.
+
+```c
+#define I2S_6CHS 0x7
+```
+
+### `I2S_8CHS`
+
+Enumeration for setting the I2S configuration sd_line_idx parameter to 8 channels.
+
+```c
+#define I2S_8CHS 0x8
+```
+
+### `CONFIG_I2S_WS_SRC_EXTERNAL`
+
+Enumeration for setting the I2S configuration ws_src parameter to external.
+
+```c
+#define CONFIG_I2S_WS_SRC_EXTERNAL 0x0
+```
+
+### `CONFIG_I2S_WS_SRC_INTERNAL`
+
+Enumeration for setting the I2S configuration ws_src parameter to internal.
+
+```c
+#define CONFIG_I2S_WS_SRC_INTERNAL 0x1
+```
+
+### `PORT_ID_I2S_INPUT`
+
+```c
+#define PORT_ID_I2S_INPUT 0x2
+```
+
+### `PORT_ID_I2S_OUTPUT`
+
+```c
+#define PORT_ID_I2S_OUTPUT 0x1
+```
+
+### `I2S_STACK_SIZE`
+
+On MDMs, audio runs in root PD.
+
+```c
+#define I2S_STACK_SIZE 2048
+```
+
+### `PARAM_ID_I2S_INTF_CFG`
+
+Parameter used to configure the I2S interface
+
+```c
+#define PARAM_ID_I2S_INTF_CFG 0x08001019
+```
+
+### `MODULE_ID_I2S_SINK`
+
+Module ID for I2S sink module.
+
+```c
+#define MODULE_ID_I2S_SINK 0x0700100A
+```
+
+### `MODULE_ID_I2S_SOURCE`
+
+End of the Module -->
+
+```c
+#define MODULE_ID_I2S_SOURCE 0x0700100B
+```

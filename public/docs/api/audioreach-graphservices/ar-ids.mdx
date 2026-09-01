@@ -1,0 +1,134 @@
+---
+title: "ar_ids.h"
+description: "GUID interpretation."
+---
+
+## Macros
+
+### `AR_INVALID_INSTANCE_ID`
+
+Zero is an invalid instance ID.
+
+```c
+#define AR_INVALID_INSTANCE_ID 0
+```
+
+### `AR_SPF_STATIC_INSTANCE_ID_RANGE_BEGIN`
+
+spf static instance ID range is from 1-0x2000 (including both ends) E.g.
+
+```c
+#define AR_SPF_STATIC_INSTANCE_ID_RANGE_BEGIN 1
+```
+
+### `AR_SPF_STATIC_INSTANCE_ID_RANGE_END`
+
+```c
+#define AR_SPF_STATIC_INSTANCE_ID_RANGE_END AR_NON_GUID(0x2000)
+```
+
+### `AR_PLATFORM_DRIVER_STATIC_INSTANCE_ID_RANGE_BEGIN`
+
+Static instance ID range for platform driver 0x2001-0x4000 (including both ends)
+
+```c
+#define AR_PLATFORM_DRIVER_STATIC_INSTANCE_ID_RANGE_BEGIN AR_NON_GUID(0x2001)
+```
+
+### `AR_PLATFORM_DRIVER_STATIC_INSTANCE_ID_RANGE_END`
+
+```c
+#define AR_PLATFORM_DRIVER_STATIC_INSTANCE_ID_RANGE_END AR_NON_GUID(0x4000)
+```
+
+### `AR_DYNAMIC_INSTANCE_ID_RANGE_BEGIN`
+
+Dynamic instance IDs starts from 0x4001.
+
+```c
+#define AR_DYNAMIC_INSTANCE_ID_RANGE_BEGIN AR_NON_GUID(0x4001)
+```
+
+### `AR_PORT_ID_INVALID`
+
+Following masks apply to Port-IDs.
+
+```c
+#define AR_PORT_ID_INVALID 0
+```
+
+### `AR_PORT_DATA_TYPE_MASK`
+
+Control ports have MSB set.
+
+```c
+#define AR_PORT_DATA_TYPE_MASK AR_NON_GUID(0x80000000)
+```
+
+### `AR_PORT_DATA_TYPE_SHIFT`
+
+```c
+#define AR_PORT_DATA_TYPE_SHIFT 31
+```
+
+### `AR_PORT_DATA_TYPE_DATA`
+
+```c
+#define AR_PORT_DATA_TYPE_DATA 0
+```
+
+### `AR_PORT_DATA_TYPE_CONTROL`
+
+```c
+#define AR_PORT_DATA_TYPE_CONTROL 1
+```
+
+### `AR_CONTROL_PORT_TYPE_MASK`
+
+```c
+#define AR_CONTROL_PORT_TYPE_MASK AR_NON_GUID(0x40000000)
+```
+
+### `AR_CONTROL_PORT_TYPE_SHIFT`
+
+```c
+#define AR_CONTROL_PORT_TYPE_SHIFT 30
+```
+
+### `AR_CONTROL_PORT_TYPE_STATIC`
+
+```c
+#define AR_CONTROL_PORT_TYPE_STATIC 1
+```
+
+### `AR_CONTROL_PORT_TYPE_DYNAMIC`
+
+```c
+#define AR_CONTROL_PORT_TYPE_DYNAMIC 0
+```
+
+### `AR_PORT_DIR_TYPE_MASK`
+
+LSB determines if a port id input (0) or output (1) input - even output - odd.
+
+```c
+#define AR_PORT_DIR_TYPE_MASK AR_NON_GUID(0x00000001)
+```
+
+### `AR_PORT_DIR_TYPE_SHIFT`
+
+```c
+#define AR_PORT_DIR_TYPE_SHIFT 0
+```
+
+### `AR_PORT_DIR_TYPE_INPUT`
+
+```c
+#define AR_PORT_DIR_TYPE_INPUT 0
+```
+
+### `AR_PORT_DIR_TYPE_OUTPUT`
+
+```c
+#define AR_PORT_DIR_TYPE_OUTPUT 1
+```

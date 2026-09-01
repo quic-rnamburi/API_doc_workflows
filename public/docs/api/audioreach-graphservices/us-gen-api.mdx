@@ -1,0 +1,144 @@
+---
+title: "us_gen_api.h"
+---
+
+## Structures
+
+### `param_id_us_gen_struct_frequency_t`
+
+**Members**
+
+<ParamField path="frequency" type="uint32_t">
+</ParamField>
+
+### `param_id_us_gen_duty_cycling_t`
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+</ParamField>
+
+### `param_id_us_gen_codec_duty_cycling_t`
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+</ParamField>
+
+### `param_id_us_gen_param_1_t`
+
+**Members**
+
+<ParamField path="param_1_data" type="uint32_t">
+</ParamField>
+
+### `param_id_us_gen_param_2_t`
+
+**Members**
+
+<ParamField path="param_2_data" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_us_gen_struct_frequency_t`
+
+```c
+typedef struct param_id_us_gen_struct_frequency_t param_id_us_gen_struct_frequency_t
+```
+
+### `param_id_us_gen_duty_cycling_t`
+
+```c
+typedef struct param_id_us_gen_duty_cycling_t param_id_us_gen_duty_cycling_t
+```
+
+### `param_id_us_gen_codec_duty_cycling_t`
+
+```c
+typedef struct param_id_us_gen_codec_duty_cycling_t param_id_us_gen_codec_duty_cycling_t
+```
+
+### `param_id_us_gen_param_1_t`
+
+```c
+typedef struct param_id_us_gen_param_1_t param_id_us_gen_param_1_t
+```
+
+### `param_id_us_gen_param_2_t`
+
+```c
+typedef struct param_id_us_gen_param_2_t param_id_us_gen_param_2_t
+```
+
+## Macros
+
+### `US_GEN_DATA_OUTPUT_PORT`
+
+```c
+#define US_GEN_DATA_OUTPUT_PORT 0x1
+```
+
+### `US_GEN_DATA_MAX_INPUT_PORTS`
+
+```c
+#define US_GEN_DATA_MAX_INPUT_PORTS 0x0
+```
+
+### `US_GEN_DATA_MAX_OUTPUT_PORTS`
+
+```c
+#define US_GEN_DATA_MAX_OUTPUT_PORTS 0x1
+```
+
+### `US_GEN_MODULE_STACK_SIZE`
+
+```c
+#define US_GEN_MODULE_STACK_SIZE 4096
+```
+
+### `PARAM_ID_EXAMPLE_US_GEN_TONE_FREQUENCY`
+
+Parameter ID for US generation.
+
+```c
+#define PARAM_ID_EXAMPLE_US_GEN_TONE_FREQUENCY 0x08001347
+```
+
+### `PARAM_ID_EXAMPLE_US_GEN_DUTY_CYCLING`
+
+Parameter ID for enabling/disabling duty cycling.
+
+```c
+#define PARAM_ID_EXAMPLE_US_GEN_DUTY_CYCLING 0x08001348
+```
+
+### `PARAM_ID_EXAMPLE_US_GEN_CODEC_DUTY_CYCLING`
+
+Parameter ID for enabling/disabling codec duty cycling.
+
+```c
+#define PARAM_ID_EXAMPLE_US_GEN_CODEC_DUTY_CYCLING 0x08001349
+```
+
+### `PARAM_ID_EXAMPLE_US_GEN_PARAM_1`
+
+Parameter ID reserved for future use.
+
+```c
+#define PARAM_ID_EXAMPLE_US_GEN_PARAM_1 0x08001350
+```
+
+### `PARAM_ID_EXAMPLE_US_GEN_PARAM_2`
+
+Parameter ID reserved for future use.
+
+```c
+#define PARAM_ID_EXAMPLE_US_GEN_PARAM_2 0x08001351
+```
+
+### `MODULE_ID_EXAMPLE_US_GEN`
+
+```c
+#define MODULE_ID_EXAMPLE_US_GEN 0x070010D6
+```

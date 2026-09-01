@@ -1,0 +1,57 @@
+---
+title: "pcm_encoder_api.h"
+---
+
+## Structures
+
+### `param_id_pcm_encoder_frame_size_t`
+
+**Members**
+
+<ParamField path="frame_size_type" type="uint32_t">
+
+</ParamField>
+<ParamField path="frame_size_in_samples" type="uint32_t">
+  We recommend the frame size in samples to be limited to 100ms(or 384khz*100ms=38400 samples)}
+</ParamField>
+<ParamField path="frame_size_in_us" type="uint32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `param_id_pcm_encoder_frame_size_t`
+
+```c
+typedef struct param_id_pcm_encoder_frame_size_t param_id_pcm_encoder_frame_size_t
+```
+
+## Macros
+
+### `PCM_ENC_DATA_INPUT_PORT`
+
+```c
+#define PCM_ENC_DATA_INPUT_PORT 0x2
+```
+
+### `PCM_ENC_DATA_OUTPUT_PORT`
+
+```c
+#define PCM_ENC_DATA_OUTPUT_PORT 0x1
+```
+
+### `PARAM_ID_PCM_ENCODER_FRAME_SIZE`
+
+ID of the parameter used to set frame size of the pcm encoder In general,the PCM encoder frame size is determined by the perf_mode of the container.For Low latency it is 1 ms and for low Power it is 5 ms.
+
+```c
+#define PARAM_ID_PCM_ENCODER_FRAME_SIZE 0x0800136B
+```
+
+### `MODULE_ID_PCM_ENC`
+
+Module ID for PCM encoder.
+
+```c
+#define MODULE_ID_PCM_ENC 0x07001004
+```

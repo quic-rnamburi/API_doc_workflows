@@ -1,0 +1,104 @@
+---
+title: "codec_dma_api.h"
+description: "This file contains CODEC_DMA module APIs."
+---
+
+## Structures
+
+### `param_id_codec_dma_intf_cfg_t`
+
+Configures the CODEC DMA interface.
+
+**Members**
+
+<ParamField path="lpaif_type" type="uint32_t">
+  LPAIF types.
+</ParamField>
+<ParamField path="intf_indx" type="uint32_t">
+  CODEC DMA interface index which picks an instance of codec DMA.
+</ParamField>
+<ParamField path="active_channels_mask" type="uint32_t">
+  Active channels mask to denote the bit mask for active channels.
+</ParamField>
+
+### `param_id_codec_dma_codec_fs_sel_cfg_t`
+
+Configures the CODEC DMA Frame select.
+
+**Members**
+
+<ParamField path="enable_codec_fs_config" type="uint16_t">
+  allowed only when HLOS audio driver wants to program frame select value explictly. Disable - (legacy approach) }
+</ParamField>
+<ParamField path="codec_fs_sel_value" type="uint16_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_codec_dma_intf_cfg_t`
+
+```c
+typedef struct param_id_codec_dma_intf_cfg_t param_id_codec_dma_intf_cfg_t
+```
+
+### `param_id_codec_dma_codec_fs_sel_cfg_t`
+
+```c
+typedef struct param_id_codec_dma_codec_fs_sel_cfg_t param_id_codec_dma_codec_fs_sel_cfg_t
+```
+
+## Macros
+
+### `PORT_ID_GEN_CNTR_DMA_INPUT`
+
+```c
+#define PORT_ID_GEN_CNTR_DMA_INPUT 0x2
+```
+
+### `PORT_ID_GEN_CNTR_DMA_OUTPUT`
+
+Output port ID of Codec DMA module.
+
+```c
+#define PORT_ID_GEN_CNTR_DMA_OUTPUT 0x1
+```
+
+### `GEN_CNTR_DMA_STACK_SIZE`
+
+Stack size for Codec DMA Module.
+
+```c
+#define GEN_CNTR_DMA_STACK_SIZE 2048
+```
+
+### `PARAM_ID_CODEC_DMA_INTF_CFG`
+
+Parameter used to configure the CODEC DMA interface
+
+```c
+#define PARAM_ID_CODEC_DMA_INTF_CFG 0x08001063
+```
+
+### `PARAM_ID_CODEC_DMA_CODEC_FS_SEL_CFG`
+
+Parameter used to configure the CODEC DMA interface Frame select.
+
+```c
+#define PARAM_ID_CODEC_DMA_CODEC_FS_SEL_CFG 0x08001B8B
+```
+
+### `MODULE_ID_CODEC_DMA_SINK`
+
+CODEC DMA Sink module.
+
+```c
+#define MODULE_ID_CODEC_DMA_SINK 0x07001023
+```
+
+### `MODULE_ID_CODEC_DMA_SOURCE`
+
+End of the Module -->
+
+```c
+#define MODULE_ID_CODEC_DMA_SOURCE 0x07001024
+```

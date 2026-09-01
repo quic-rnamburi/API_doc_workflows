@@ -1,0 +1,321 @@
+---
+title: "hw_intf_cmn_api.h"
+---
+
+## Structures
+
+### `param_id_silence_detection_t`
+
+**Members**
+
+<ParamField path="enable_detection" type="uint32_t">
+</ParamField>
+<ParamField path="detection_duration_ms" type="uint32_t">
+</ParamField>
+
+### `event_cfg_silence_detection_status_t`
+
+Payload for silence detection status.
+
+**Members**
+
+<ParamField path="status_ch_mask" type="uint32_t">
+  Current silence detection status mask for groups of 32 channels.
+</ParamField>
+
+### `event_cfg_silence_detection_t`
+
+**Members**
+
+<ParamField path="num_32_channel_group" type="uint32_t">
+  Number of silence detection 32 channel groups.
+</ParamField>
+<ParamField path="detections" type="event_cfg_silence_detection_status_t">
+  Array of silence detection status of size num_32_channel_group.
+</ParamField>
+
+### `param_id_hw_ep_mf_t`
+
+**Members**
+
+<ParamField path="sample_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="bit_width" type="uint16_t">
+
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+
+</ParamField>
+<ParamField path="data_format" type="uint32_t">
+</ParamField>
+
+### `param_id_frame_size_factor_t`
+
+**Members**
+
+<ParamField path="frame_size_factor" type="uint32_t">
+
+</ParamField>
+
+### `param_id_hw_intf_clk_cfg_t`
+
+**Members**
+
+<ParamField path="clock_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="clock_freq" type="uint32_t">
+
+</ParamField>
+<ParamField path="clock_attri" type="uint32_t">
+
+</ParamField>
+<ParamField path="clock_root" type="uint32_t">
+
+</ParamField>
+
+### `param_id_hw_ep_power_mode_cfg_t`
+
+**Members**
+
+<ParamField path="power_mode" type="uint32_t">
+  POWER_MODE_0 -> EP is not in LPI - Default Mode; 
+
+POWER_MODE_1 -> XO shutdown is allowed (deep sleep)
+
+POWER_MODE_2 -> XO shutdown is NOT allowed}
+</ParamField>
+
+### `param_id_hw_ep_src_channel_map_t`
+
+**Members**
+
+<ParamField path="num_channels" type="uint16_t">
+</ParamField>
+
+### `param_id_hw_ep_dma_data_align_t`
+
+**Members**
+
+<ParamField path="dma_data_align" type="uint32_t">
+  Indicates the data alignment in DMA buffer.
+</ParamField>
+
+## Type Definitions
+
+### `lpaif_type_t`
+
+```c
+typedef enum lpaif_type_t lpaif_type_t
+```
+
+### `qaif_type_t`
+
+```c
+typedef enum qaif_type_t qaif_type_t
+```
+
+### `param_id_silence_detection_t`
+
+```c
+typedef struct param_id_silence_detection_t param_id_silence_detection_t
+```
+
+### `event_cfg_silence_detection_status_t`
+
+```c
+typedef struct event_cfg_silence_detection_status_t event_cfg_silence_detection_status_t
+```
+
+### `event_cfg_silence_detection_t`
+
+```c
+typedef struct event_cfg_silence_detection_t event_cfg_silence_detection_t
+```
+
+### `param_id_hw_ep_mf_t`
+
+```c
+typedef struct param_id_hw_ep_mf_t param_id_hw_ep_mf_t
+```
+
+### `param_id_frame_size_factor_t`
+
+```c
+typedef struct param_id_frame_size_factor_t param_id_frame_size_factor_t
+```
+
+### `param_id_hw_intf_clk_cfg_t`
+
+```c
+typedef struct param_id_hw_intf_clk_cfg_t param_id_hw_intf_clk_cfg_t
+```
+
+### `param_id_hw_ep_power_mode_cfg_t`
+
+```c
+typedef struct param_id_hw_ep_power_mode_cfg_t param_id_hw_ep_power_mode_cfg_t
+```
+
+### `param_id_hw_ep_src_channel_map_t`
+
+```c
+typedef struct param_id_hw_ep_src_channel_map_t param_id_hw_ep_src_channel_map_t
+```
+
+### `param_id_hw_ep_dma_data_align_t`
+
+```c
+typedef struct param_id_hw_ep_dma_data_align_t param_id_hw_ep_dma_data_align_t
+```
+
+## Enumerations
+
+### `lpaif_type_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `LPAIF` | = 0 |  |
+| `LPAIF_RXTX` | = 1 |  |
+| `LPAIF_WSA` | = 2 |  |
+| `LPAIF_VA` | = 3 |  |
+| `LPAIF_AXI` | = 4 |  |
+| `LPAIF_AUD` | = 5 |  |
+| `LPAIF_SDR` | = 6 |  |
+| `LPAIF_WSA2` | = 7 |  |
+| `LPAIF_RXTX_SDCA` | = 8 |  |
+| `LPAIF_RXTX_WSA` | = 9 |  |
+| `LPAIF_QAIF_AUD` | = 10 |  |
+| `LPAIF_QAIF_VA` | = 11 |  |
+| `MAX_NUM_LPAIF_TYPES` |  |  |
+| `LPAIF_BLK_INVALID` | = 0x7FFFFFFF |  |
+
+### `qaif_type_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `QAIF_AUD` | = 0 |  |
+| `QAIF_VA` | = 1 |  |
+| `MAX_NUM_QAIF_TYPES` |  |  |
+| `QAIF_BLK_INVALID` | = 0x7FFFFFFF |  |
+
+## Macros
+
+### `FRAME_SIZE_FACTOR_1`
+
+```c
+#define FRAME_SIZE_FACTOR_1 1
+```
+
+### `FRAME_SIZE_MIN_MS`
+
+```c
+#define FRAME_SIZE_MIN_MS 1
+```
+
+### `FRAME_SIZE_MAX_MS`
+
+```c
+#define FRAME_SIZE_MAX_MS 40
+```
+
+### `PARAM_ID_SILENCE_DETECTION`
+
+Parameter used to configure the Silence detection for the CODEC DMA Interface To be notified of the detection status, client can register with the codec dma source module using EVENT_ID_SILENCE_DETECTION.
+
+```c
+#define PARAM_ID_SILENCE_DETECTION 0x08001AC2
+```
+
+### `EVENT_ID_SILENCE_DETECTION`
+
+Identifier of the silence detection event from CODEC DMA module.
+
+```c
+#define EVENT_ID_SILENCE_DETECTION 0x08001AC3
+```
+
+### `PARAM_ID_HW_EP_MF_CFG`
+
+ID of the parameter used to configure the HW endpoint media format.
+
+```c
+#define PARAM_ID_HW_EP_MF_CFG 0x08001017
+```
+
+### `PARAM_ID_HW_EP_FRAME_SIZE_FACTOR`
+
+ID of the parameter used to configure the operating frame size.
+
+```c
+#define PARAM_ID_HW_EP_FRAME_SIZE_FACTOR 0x08001018
+```
+
+### `PARAM_ID_HW_INTF_CLK_CFG`
+
+```c
+#define PARAM_ID_HW_INTF_CLK_CFG 0x0800113C
+```
+
+### `PARAM_ID_HW_EP_POWER_MODE_CFG`
+
+```c
+#define PARAM_ID_HW_EP_POWER_MODE_CFG 0x08001176
+```
+
+### `POWER_MODE_0`
+
+```c
+#define POWER_MODE_0 0
+```
+
+### `POWER_MODE_1`
+
+```c
+#define POWER_MODE_1 1
+```
+
+### `POWER_MODE_2`
+
+```c
+#define POWER_MODE_2 2
+```
+
+### `HW_EP_POWER_MODE_MAX`
+
+```c
+#define HW_EP_POWER_MODE_MAX POWER_MODE_2
+```
+
+### `PARAM_ID_HW_EP_SRC_CHANNEL_MAP`
+
+Param ID used to configure hw ep source custom channel maps.
+
+```c
+#define PARAM_ID_HW_EP_SRC_CHANNEL_MAP 0x0800108A
+```
+
+### `PARAM_ID_HW_EP_DMA_DATA_ALIGN`
+
+Parameter used to configure DMA data alignment for Codec DMA interface
+
+```c
+#define PARAM_ID_HW_EP_DMA_DATA_ALIGN 0x08001233
+```
+
+### `DMA_DATA_ALIGN_MSB`
+
+```c
+#define DMA_DATA_ALIGN_MSB 0
+```
+
+### `DMA_DATA_ALIGN_LSB`
+
+```c
+#define DMA_DATA_ALIGN_LSB 1
+```

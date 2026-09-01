@@ -1,0 +1,86 @@
+---
+title: "history_buffer_api.h"
+---
+
+## Structures
+
+### `param_id_history_buffer_mode_t`
+
+**Members**
+
+<ParamField path="data_flow_mode" type="uint32_t">
+  1: HISTORY_BUFFER_BATCHING sends the data to the client in batches.}
+</ParamField>
+<ParamField path="batch_size_ms" type="uint32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `param_id_history_buffer_mode_t`
+
+```c
+typedef struct param_id_history_buffer_mode_t param_id_history_buffer_mode_t
+```
+
+## Macros
+
+### `HISTORY_BUFFER_MAX_INPUT_PORTS`
+
+```c
+#define HISTORY_BUFFER_MAX_INPUT_PORTS 1
+```
+
+### `HISTORY_BUFFER_MAX_OUTPUT_PORTS`
+
+```c
+#define HISTORY_BUFFER_MAX_OUTPUT_PORTS 0
+```
+
+### `HISTORY_BUFFER_MAX_CONTROL_PORTS`
+
+```c
+#define HISTORY_BUFFER_MAX_CONTROL_PORTS ( 1 )
+```
+
+### `HISTORY_BUFFER_MAX_INTENTS_PER_CTRL_PORT`
+
+```c
+#define HISTORY_BUFFER_MAX_INTENTS_PER_CTRL_PORT ( 1 )
+```
+
+### `HISTORY_BUFFER_STACK_SIZE_REQUIREMENT`
+
+```c
+#define HISTORY_BUFFER_STACK_SIZE_REQUIREMENT 4096 /* Bytes */
+```
+
+### `PARAM_ID_HISTORY_BUFFER_DETECTION_TRIGGER`
+
+```c
+#define PARAM_ID_HISTORY_BUFFER_DETECTION_TRIGGER 0x08001B7E
+```
+
+### `PARAM_ID_HISTORY_BUFFER_MODE`
+
+```c
+#define PARAM_ID_HISTORY_BUFFER_MODE 0x08001B87
+```
+
+### `HISTORY_BUFFER_ON_DEMAND`
+
+```c
+#define HISTORY_BUFFER_ON_DEMAND 0
+```
+
+### `HISTORY_BUFFER_BATCHING`
+
+```c
+#define HISTORY_BUFFER_BATCHING 1
+```
+
+### `MODULE_ID_HISTORY_BUFFER`
+
+```c
+#define MODULE_ID_HISTORY_BUFFER 0x07001182
+```

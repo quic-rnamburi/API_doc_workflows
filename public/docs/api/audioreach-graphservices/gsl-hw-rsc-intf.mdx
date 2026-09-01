@@ -1,0 +1,145 @@
+---
+title: "gsl_hw_rsc_intf.h"
+description: "GSL Hardware Resource API layer."
+---
+
+## Functions
+
+### `gsl_request_hw_rsc_config`
+
+Request for HW resource configuration.
+
+Look up into ACDB to retrieve the configuration and send request command to SPF PRM module
+
+```c
+int32_t gsl_request_hw_rsc_config(uint32_t miid, const struct gsl_key_vector *key_vect)
+```
+
+**Parameters**
+
+<ParamField path="miid" type="uint32_t">
+  Module instance ID against which HW resource configuration is stored in ACDB
+</ParamField>
+<ParamField path="key_vect" type="const struct gsl_key_vector *">
+  Key vector used to look up data base for HW resource configuration
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_release_hw_rsc_config`
+
+Release HW resource configuration.
+
+Look up into ACDB to retrieve the configuration and send release command to SPF PRM module
+
+```c
+int32_t gsl_release_hw_rsc_config(uint32_t miid, const struct gsl_key_vector *key_vect)
+```
+
+**Parameters**
+
+<ParamField path="miid" type="uint32_t">
+  Module instance ID against which HW resource configuration is stored in ACDB
+</ParamField>
+<ParamField path="key_vect" type="const struct gsl_key_vector *">
+  Key vector used to look up data base for HW resource configuration
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_request_hw_rsc_custom_config`
+
+Request for HW resource configuration.
+
+Clients provide the configuration that needs to be sent to SPF PRM module
+
+```c
+int32_t gsl_request_hw_rsc_custom_config(const uint8_t *payload, size_t payload_size, void *buff, uint32_t *buff_size)
+```
+
+**Parameters**
+
+<ParamField path="payload" type="const uint8_t *">
+  Pointer to HW resource configuration payload should be in the form  followed by variable payload. Client is expected to send only one PID at a time using this API.
+</ParamField>
+<ParamField path="payload_size" type="size_t">
+  Size of the HW resource configuration
+</ParamField>
+<ParamField path="buff" type="void *">
+  OPTIONAL buffer to receive the response payload from Spf. Will be filled if present.
+</ParamField>
+<ParamField path="buff_size" type="uint32_t *">
+  OPTIONAL size of memory allocated for buff. If buff is written to, contains the number of bytes written.
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_release_hw_rsc_custom_config`
+
+Release HW resource configuration.
+
+Clients provide the configuration that needs to be sent to SPF PRM module
+
+```c
+int32_t gsl_release_hw_rsc_custom_config(const uint8_t *payload, size_t payload_size, void *buff, uint32_t *buff_size)
+```
+
+**Parameters**
+
+<ParamField path="payload" type="const uint8_t *">
+  Pointer to HW resource configuration payload should be in the form  followed by variable payload. Client is expected to send only one PID at a time using this API.
+</ParamField>
+<ParamField path="payload_size" type="size_t">
+  Size of the HW resource configuration
+</ParamField>
+<ParamField path="buff" type="void *">
+  OPTIONAL buffer to receive the response payload from Spf. Will be filled if present.
+</ParamField>
+<ParamField path="buff_size" type="uint32_t *">
+  OPTIONAL size of memory allocated for buff. If buff is written to, contains the number of bytes written.
+</ParamField>
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_hw_rsc_init`
+
+Initialize GSL HW resource manager layer.
+
+```c
+int32_t gsl_hw_rsc_init(void)
+```
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+### `gsl_hw_rsc_deinit`
+
+De-Initialize GSL HW resource manager layer.
+
+```c
+int32_t gsl_hw_rsc_deinit(void)
+```
+
+**Returns**
+
+AR_EOK on success, error code otherwise
+
+## Enumerations
+
+### `gsl_hw_rsc_command_rsp`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `GSL_HW_RSC_REQUEST_RSP` |  |  |
+| `GSL_HW_RSC_RELEASE_RSP` |  |  |

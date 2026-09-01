@@ -1,0 +1,67 @@
+---
+title: "prm_api.h"
+description: "This file contains Proxy Resource Manager module interface."
+---
+
+## Structures
+
+### `prm_cmd_rsp_hw_rsc_cfg_t`
+
+This structure is the common payload structure used by resource request and release response API's.
+
+**Members**
+
+<ParamField path="param_id" type="uint32_t">
+  @ PARAM_ID_RSC_LPASS_CORE @ PARAM_ID_RSC_AUDIO_HW_CLK
+</ParamField>
+<ParamField path="status" type="uint32_t">
+  Status representing of request/release cmd @ 0 - Success @ Non-Zero - Failure.
+</ParamField>
+
+## Type Definitions
+
+### `prm_cmd_rsp_hw_rsc_cfg_t`
+
+```c
+typedef struct prm_cmd_rsp_hw_rsc_cfg_t prm_cmd_rsp_hw_rsc_cfg_t
+```
+
+## Macros
+
+### `PRM_MODULE_INSTANCE_ID`
+
+Instance ID of the Proxy Resource Manager module.
+
+```c
+#define PRM_MODULE_INSTANCE_ID 0x00000002
+```
+
+### `EVENT_ID_MBHC_INTR_DETECTION`
+
+```c
+#define EVENT_ID_MBHC_INTR_DETECTION 0x0800115E
+```
+
+### `PRM_CMD_REQUEST_HW_RSC`
+
+```c
+#define PRM_CMD_REQUEST_HW_RSC 0x0100100F
+```
+
+### `PRM_CMD_RELEASE_HW_RSC`
+
+```c
+#define PRM_CMD_RELEASE_HW_RSC 0x01001010
+```
+
+### `PRM_CMD_RSP_REQUEST_HW_RSC`
+
+```c
+#define PRM_CMD_RSP_REQUEST_HW_RSC 0x02001002
+```
+
+### `PRM_CMD_RSP_RELEASE_HW_RSC`
+
+```c
+#define PRM_CMD_RSP_RELEASE_HW_RSC 0x02001003
+```

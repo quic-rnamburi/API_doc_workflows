@@ -1,0 +1,659 @@
+---
+title: "mma_api.h"
+---
+
+## Structures
+
+### `param_id_mma_static_cfg_t`
+
+**Members**
+
+<ParamField path="num_channel_processing" type="int32_t">
+</ParamField>
+<ParamField path="conf_change" type="int32_t">
+</ParamField>
+<ParamField path="mic_gain" type="int16_t">
+</ParamField>
+<ParamField path="reserved" type="int16_t">
+</ParamField>
+
+### `param_id_mma_mode_bit_config_t`
+
+**Members**
+
+<ParamField path="mode_bit" type="uint32_t">
+</ParamField>
+
+### `param_id_mma_context_ml_model_config_t`
+
+**Members**
+
+<ParamField path="model_align" type="uint32_t">
+</ParamField>
+<ParamField path="model_offset" type="uint32_t">
+</ParamField>
+<ParamField path="model_size" type="uint32_t">
+</ParamField>
+<ParamField path="model" type="uint8_t">
+</ParamField>
+
+### `capi_mma_context_threshold_struct_t`
+
+**Members**
+
+<ParamField path="context_id" type="uint32_t">
+  Context_id is indepedent of mode_bit and usecase designer has to tune this based on model which is being set from application}
+</ParamField>
+<ParamField path="threshold" type="uint32_t">
+</ParamField>
+
+### `param_id_mma_context_threshold_t`
+
+**Members**
+
+<ParamField path="num_contexts" type="uint32_t">
+</ParamField>
+
+### `param_id_mma_speech_dynamic_config_t`
+
+**Members**
+
+<ParamField path="len_hangover_speech" type="uint32_t">
+</ParamField>
+<ParamField path="max_conf_frames_speech" type="uint32_t">
+</ParamField>
+<ParamField path="min_conf_frames_speech" type="uint32_t">
+</ParamField>
+
+### `param_id_mma_continuous_listen_enable_config_t`
+
+**Members**
+
+<ParamField path="continuous_listen_enable" type="int32_t">
+</ParamField>
+
+### `param_id_mma_continuous_listen_timeout_config_t`
+
+**Members**
+
+<ParamField path="continuous_listen_timeout_in_ms" type="int32_t">
+</ParamField>
+
+### `param_id_mma_detection_timeout_config_t`
+
+**Members**
+
+<ParamField path="detection_timeout_in_ms" type="int32_t">
+</ParamField>
+
+### `param_id_mma_enable_speech_reset_t`
+
+**Members**
+
+<ParamField path="enable_reset" type="int32_t">
+</ParamField>
+
+### `param_id_mma_speech_reset_period_t`
+
+**Members**
+
+<ParamField path="speech_reset_period_in_ms" type="int32_t">
+</ParamField>
+
+### `param_id_mma_ild_config_param_t`
+
+**Members**
+
+<ParamField path="ild_enable" type="int32_t">
+
+</ParamField>
+<ParamField path="ild_threshold_Q16" type="int32_t">
+
+</ParamField>
+<ParamField path="ild_buff_duration_in_ms" type="int32_t">
+</ParamField>
+
+### `param_id_mma_ild_rms_config_param_t`
+
+**Members**
+
+<ParamField path="ild_bot_mic_dBFS" type="int32_t">
+
+</ParamField>
+<ParamField path="ild_top_mic_dBFS" type="int32_t">
+
+</ParamField>
+<ParamField path="ild_freq_min_bin" type="int32_t">
+
+</ParamField>
+<ParamField path="ild_freq_max_bin" type="int32_t">
+
+</ParamField>
+<ParamField path="ild_threshold_upbound_Q16" type="int32_t">
+
+</ParamField>
+<ParamField path="ild_time_domain_check_enable" type="int32_t">
+
+</ParamField>
+<ParamField path="reserved" type="int32_t">
+
+</ParamField>
+
+### `param_id_mma_ild_coh_config_param_t`
+
+**Members**
+
+<ParamField path="coh_1st_enable" type="int16_t">
+
+</ParamField>
+<ParamField path="coh_2nd_enable" type="int16_t">
+
+</ParamField>
+<ParamField path="coh_1st_threshold_Q16" type="int32_t">
+  Default value 19660 corresponds to 0.3 in floating format}
+</ParamField>
+<ParamField path="coh_1st_start_bin" type="int32_t">
+
+</ParamField>
+<ParamField path="coh_1st_end_bin" type="int32_t">
+
+</ParamField>
+<ParamField path="coh_2nd_threshold_Q16" type="int32_t">
+  Default value 19660 corresponds to 0.3 in floating format}
+</ParamField>
+<ParamField path="coh_2nd_start_bin" type="int32_t">
+
+</ParamField>
+<ParamField path="coh_2nd_end_bin" type="int32_t">
+
+</ParamField>
+<ParamField path="reserved" type="int32_t">
+
+</ParamField>
+
+### `param_id_mma_ild_medfilt_config_param_t`
+
+**Members**
+
+<ParamField path="medfilt_enable" type="int16_t">
+
+</ParamField>
+<ParamField path="medfilt_kernel_width" type="int16_t">
+
+</ParamField>
+<ParamField path="reserved" type="int32_t">
+
+</ParamField>
+
+### `param_id_mma_ild_pnd_config_param_t`
+
+**Members**
+
+<ParamField path="pnd_enable" type="int32_t">
+
+</ParamField>
+<ParamField path="pnd_long_window_in_frame" type="int32_t">
+
+</ParamField>
+<ParamField path="pnd_short_window_in_frame" type="int32_t">
+
+</ParamField>
+<ParamField path="pnd_threshold_Q16" type="int32_t">
+  Default value 3284580 corresponds to 17dB in floating format}
+</ParamField>
+<ParamField path="reserved" type="int32_t">
+
+</ParamField>
+
+### `param_id_mma_ild_lms_config_param_t`
+
+**Members**
+
+<ParamField path="lms_enable" type="int32_t">
+
+</ParamField>
+<ParamField path="lms_tap_num" type="int32_t">
+
+</ParamField>
+<ParamField path="lms_delay" type="int32_t">
+
+</ParamField>
+<ParamField path="lms_mu_Q15" type="int32_t">
+
+</ParamField>
+<ParamField path="lms_peak_index_min" type="int32_t">
+
+</ParamField>
+<ParamField path="lms_peak_index_max" type="int32_t">
+
+</ParamField>
+<ParamField path="lms_peak_value_thres_Q29" type="int32_t">
+
+</ParamField>
+<ParamField path="lms_p2s_ratio_Q16" type="int32_t">
+
+</ParamField>
+<ParamField path="lms_erle_ratio_Q16" type="int32_t">
+
+</ParamField>
+<ParamField path="reserved" type="int32_t">
+
+</ParamField>
+
+### `param_id_mma_lvd_config_param_t`
+
+**Members**
+
+<ParamField path="lvd_enable" type="int32_t">
+
+</ParamField>
+<ParamField path="lvd_threshold_Q20" type="int32_t">
+
+</ParamField>
+<ParamField path="lvd_lookback_window_in_ms" type="int32_t">
+
+</ParamField>
+<ParamField path="lvd_lookahead_window_in_ms" type="int32_t">
+
+</ParamField>
+<ParamField path="reserved" type="int32_t">
+
+</ParamField>
+
+### `param_id_mma_speech_state_forget_factor_t`
+
+**Members**
+
+<ParamField path="state_forget_factor" type="int16_t">
+</ParamField>
+<ParamField path="reserved" type="int16_t">
+</ParamField>
+
+### `param_id_mma_camera_config_t`
+
+**Members**
+
+<ParamField path="delivery_mode" type="uint32_t">
+</ParamField>
+<ParamField path="detections_per_delivery" type="uint32_t">
+</ParamField>
+<ParamField path="delivery_period_in_ms" type="uint32_t">
+  Delivery period in ms is applicable only when delivery_mode is set as TIME_BASED.}
+</ParamField>
+
+### `param_id_mma_history_buffer_size_t`
+
+**Members**
+
+<ParamField path="history_buffer_size_in_ms" type="uint32_t">
+</ParamField>
+
+### `param_id_mma_synthetic_modality_detection_duration_t`
+
+**Members**
+
+<ParamField path="synthetic_modality_detection_duration_in_ms" type="uint32_t">
+  Only active when bit 31 of mode_bit is enabled.}
+</ParamField>
+
+### `event_id_mma_detection_event_t`
+
+**Members**
+
+<ParamField path="context_id" type="uint32_t">
+</ParamField>
+<ParamField path="mode_mask_bits" type="uint32_t">
+</ParamField>
+<ParamField path="detection_event_bits" type="uint32_t">
+</ParamField>
+<ParamField path="detection_event_bits_after_mask" type="uint32_t">
+</ParamField>
+<ParamField path="multi_modal_detection_flag" type="int32_t">
+</ParamField>
+<ParamField path="curr_detection_timer_enabled_flag" type="int32_t">
+</ParamField>
+<ParamField path="curr_detection_timer_counter_in_frames" type="int32_t">
+</ParamField>
+<ParamField path="detection_timeout_in_frames" type="int32_t">
+</ParamField>
+<ParamField path="continuous_listen_enabled_flag" type="int32_t">
+</ParamField>
+<ParamField path="continuous_listen_mode_on_flag_after_detection" type="int32_t">
+</ParamField>
+<ParamField path="continuous_listen_timer_counter_in_frames" type="int32_t">
+</ParamField>
+<ParamField path="continuous_listen_timeout_in_frames" type="int32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_mma_static_cfg_t`
+
+```c
+typedef struct param_id_mma_static_cfg_t param_id_mma_static_cfg_t
+```
+
+### `param_id_mma_mode_bit_config_t`
+
+```c
+typedef struct param_id_mma_mode_bit_config_t param_id_mma_mode_bit_config_t
+```
+
+### `param_id_mma_context_ml_model_config_t`
+
+```c
+typedef struct param_id_mma_context_ml_model_config_t param_id_mma_context_ml_model_config_t
+```
+
+### `capi_mma_context_threshold_struct_t`
+
+```c
+typedef struct capi_mma_context_threshold_struct_t capi_mma_context_threshold_struct_t
+```
+
+### `param_id_mma_context_threshold_t`
+
+```c
+typedef struct param_id_mma_context_threshold_t param_id_mma_context_threshold_t
+```
+
+### `param_id_mma_speech_dynamic_config_t`
+
+```c
+typedef struct param_id_mma_speech_dynamic_config_t param_id_mma_speech_dynamic_config_t
+```
+
+### `param_id_mma_continuous_listen_enable_config_t`
+
+```c
+typedef struct param_id_mma_continuous_listen_enable_config_t param_id_mma_continuous_listen_enable_config_t
+```
+
+### `param_id_mma_continuous_listen_timeout_config_t`
+
+```c
+typedef struct param_id_mma_continuous_listen_timeout_config_t param_id_mma_continuous_listen_timeout_config_t
+```
+
+### `param_id_mma_detection_timeout_config_t`
+
+```c
+typedef struct param_id_mma_detection_timeout_config_t param_id_mma_detection_timeout_config_t
+```
+
+### `param_id_mma_enable_speech_reset_t`
+
+```c
+typedef struct param_id_mma_enable_speech_reset_t param_id_mma_enable_speech_reset_t
+```
+
+### `param_id_mma_speech_reset_period_t`
+
+```c
+typedef struct param_id_mma_speech_reset_period_t param_id_mma_speech_reset_period_t
+```
+
+### `param_id_mma_ild_config_param_t`
+
+```c
+typedef struct param_id_mma_ild_config_param_t param_id_mma_ild_config_param_t
+```
+
+### `param_id_mma_ild_rms_config_param_t`
+
+```c
+typedef struct param_id_mma_ild_rms_config_param_t param_id_mma_ild_rms_config_param_t
+```
+
+### `param_id_mma_ild_coh_config_param_t`
+
+```c
+typedef struct param_id_mma_ild_coh_config_param_t param_id_mma_ild_coh_config_param_t
+```
+
+### `param_id_mma_ild_medfilt_config_param_t`
+
+```c
+typedef struct param_id_mma_ild_medfilt_config_param_t param_id_mma_ild_medfilt_config_param_t
+```
+
+### `param_id_mma_ild_pnd_config_param_t`
+
+```c
+typedef struct param_id_mma_ild_pnd_config_param_t param_id_mma_ild_pnd_config_param_t
+```
+
+### `param_id_mma_ild_lms_config_param_t`
+
+```c
+typedef struct param_id_mma_ild_lms_config_param_t param_id_mma_ild_lms_config_param_t
+```
+
+### `param_id_mma_lvd_config_param_t`
+
+```c
+typedef struct param_id_mma_lvd_config_param_t param_id_mma_lvd_config_param_t
+```
+
+### `param_id_mma_speech_state_forget_factor_t`
+
+```c
+typedef struct param_id_mma_speech_state_forget_factor_t param_id_mma_speech_state_forget_factor_t
+```
+
+### `camera_fd_delivery_mode`
+
+```c
+typedef enum _camera_fd_delivery_mode camera_fd_delivery_mode
+```
+
+### `param_id_mma_camera_config_t`
+
+```c
+typedef struct param_id_mma_camera_config_t param_id_mma_camera_config_t
+```
+
+### `param_id_mma_history_buffer_size_t`
+
+```c
+typedef struct param_id_mma_history_buffer_size_t param_id_mma_history_buffer_size_t
+```
+
+### `param_id_mma_synthetic_modality_detection_duration_t`
+
+```c
+typedef struct param_id_mma_synthetic_modality_detection_duration_t param_id_mma_synthetic_modality_detection_duration_t
+```
+
+### `event_id_mma_detection_event_t`
+
+```c
+typedef struct event_id_mma_detection_event_t event_id_mma_detection_event_t
+```
+
+## Enumerations
+
+### `_camera_fd_delivery_mode`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `MMA_CAMERA_FD_DELIVERY_MODE_MOTION_BASED` | = 0 |  |
+| `MMA_CAMERA_FD_DELIVERY_MODE_TIME_BASED` | = 1 |  |
+
+## Macros
+
+### `PARAM_ID_MMA_STATIC_CFG`
+
+```c
+#define PARAM_ID_MMA_STATIC_CFG 0x08001AC4
+```
+
+### `PARAM_ID_MMA_MODE_BIT_CONFIG`
+
+```c
+#define PARAM_ID_MMA_MODE_BIT_CONFIG 0x08001AC5
+```
+
+### `PARAM_ID_MMA_CONTEXT_ML_MODEL_CONFIG`
+
+```c
+#define PARAM_ID_MMA_CONTEXT_ML_MODEL_CONFIG 0x08001AC6
+```
+
+### `PARAM_ID_MMA_CONTEXT_THRESHOLD`
+
+```c
+#define PARAM_ID_MMA_CONTEXT_THRESHOLD 0x08001AC7
+```
+
+### `PARAM_ID_MMA_SPEECH_DYNAMIC_CONFIG`
+
+```c
+#define PARAM_ID_MMA_SPEECH_DYNAMIC_CONFIG 0x08001AC8
+```
+
+### `PARAM_ID_MMA_CONTINUOUS_LISTEN_ENABLE_CONFIG`
+
+```c
+#define PARAM_ID_MMA_CONTINUOUS_LISTEN_ENABLE_CONFIG 0x08001AC9
+```
+
+### `PARAM_ID_MMA_CONTINUOUS_LISTEN_TIMEOUT_CONFIG`
+
+```c
+#define PARAM_ID_MMA_CONTINUOUS_LISTEN_TIMEOUT_CONFIG 0x08001ACA
+```
+
+### `PARAM_ID_MMA_DETECTION_TIMEOUT_CONFIG`
+
+```c
+#define PARAM_ID_MMA_DETECTION_TIMEOUT_CONFIG 0x08001ACB
+```
+
+### `PARAM_ID_MMA_ENABLE_SPEECH_RESET`
+
+```c
+#define PARAM_ID_MMA_ENABLE_SPEECH_RESET 0x08001ACC
+```
+
+### `PARAM_ID_MMA_SPEECH_RESET_PERIOD`
+
+```c
+#define PARAM_ID_MMA_SPEECH_RESET_PERIOD 0x08001ACD
+```
+
+### `PARAM_ID_MMA_ILD_CONFIG`
+
+```c
+#define PARAM_ID_MMA_ILD_CONFIG 0x08001ACE
+```
+
+### `PARAM_ID_MMA_ILD_RMS_CONFIG`
+
+```c
+#define PARAM_ID_MMA_ILD_RMS_CONFIG 0x08001BD4
+```
+
+### `PARAM_ID_MMA_ILD_COH_CONFIG`
+
+```c
+#define PARAM_ID_MMA_ILD_COH_CONFIG 0x08001BD5
+```
+
+### `PARAM_ID_MMA_ILD_MEDFILT_CONFIG`
+
+```c
+#define PARAM_ID_MMA_ILD_MEDFILT_CONFIG 0x08001BD6
+```
+
+### `PARAM_ID_MMA_ILD_PND_CONFIG`
+
+```c
+#define PARAM_ID_MMA_ILD_PND_CONFIG 0x08001BD7
+```
+
+### `PARAM_ID_MMA_ILD_LMS_CONFIG`
+
+```c
+#define PARAM_ID_MMA_ILD_LMS_CONFIG 0x08001BD8
+```
+
+### `PARAM_ID_MMA_LVD_CONFIG`
+
+```c
+#define PARAM_ID_MMA_LVD_CONFIG 0x08001BD9
+```
+
+### `PARAM_ID_MMA_SPEECH_STATE_FORGET_FACTOR`
+
+```c
+#define PARAM_ID_MMA_SPEECH_STATE_FORGET_FACTOR 0x08001AD2
+```
+
+### `PARAM_ID_MMA_CAMERA_CONFIG`
+
+```c
+#define PARAM_ID_MMA_CAMERA_CONFIG 0x08001B0F
+```
+
+### `PARAM_ID_MMA_HISTORY_BUFFER_SIZE`
+
+```c
+#define PARAM_ID_MMA_HISTORY_BUFFER_SIZE 0x08001ACF
+```
+
+### `PARAM_ID_MMA_SYNTHETIC_MODALITY_DETECTION_DURATION`
+
+```c
+#define PARAM_ID_MMA_SYNTHETIC_MODALITY_DETECTION_DURATION 0x08001BE8
+```
+
+### `PARAM_ID_MMA_RESET`
+
+```c
+#define PARAM_ID_MMA_RESET 0x08001AD0
+```
+
+### `EVENT_ID_MMA_DETECTION_EVENT`
+
+```c
+#define EVENT_ID_MMA_DETECTION_EVENT 0x08001AD1
+```
+
+### `MMA_RELEASE_VERSION_MSB`
+
+```c
+#define MMA_RELEASE_VERSION_MSB AR_NON_GUID(0x01000100)
+```
+
+### `MMA_RELEASE_VERSION_LSB`
+
+```c
+#define MMA_RELEASE_VERSION_LSB AR_NON_GUID(0x00000000)
+```
+
+### `CAPI_MMA_MAX_INPUT_PORTS`
+
+```c
+#define CAPI_MMA_MAX_INPUT_PORTS 1
+```
+
+### `CAPI_MMA_MAX_OUTPUT_PORTS`
+
+```c
+#define CAPI_MMA_MAX_OUTPUT_PORTS 0
+```
+
+### `CAPI_MMA_STACK_SIZE_REQUIREMENT`
+
+```c
+#define CAPI_MMA_STACK_SIZE_REQUIREMENT 8192
+```
+
+### `MODULE_ID_MMA`
+
+```c
+#define MODULE_ID_MMA 0x07001177
+```

@@ -1,0 +1,136 @@
+---
+title: "sound_dose_api.h"
+---
+
+## Structures
+
+### `param_id_sounddose_mel_events_config`
+
+**Members**
+
+<ParamField path="mel_event_interval_in_sec" type="uint32_t">
+
+</ParamField>
+
+### `param_id_sounddose_rs2_upper_bound`
+
+**Members**
+
+<ParamField path="rs2_upper_bound" type="uint32_t">
+</ParamField>
+
+### `param_id_sounddose_mel_timestamp_info`
+
+**Members**
+
+<ParamField path="timestamp_info" type="uint32_t">
+  The client can communicate whether it is expecting absolute or relative timestamp. }
+</ParamField>
+
+### `event_id_sound_dose_mel_values`
+
+**Members**
+
+<ParamField path="is_momentary_exposure_raised" type="uint32_t">
+</ParamField>
+<ParamField path="num_mel_values" type="uint32_t">
+</ParamField>
+<ParamField path="mel_value" type="float">
+</ParamField>
+<ParamField path="timestamp_mel_value" type="uint32_t">
+  The 64 bit timestamp value is split into two 32 bit values and stored consecutively. For example, the first item in this section is the LSB of the 64 bit timestamp associated with first mel value The second item is the MSB of the 64 bit timestamp associated with first mel value. Timestamp for the other mel values will be in the same order}
+</ParamField>
+
+### `param_id_sounddose_flush_mel_values`
+
+**Members**
+
+<ParamField path="num_mel_values" type="uint32_t">
+</ParamField>
+<ParamField path="mel_value" type="float">
+</ParamField>
+<ParamField path="timestamp_mel_value" type="uint32_t">
+  The 64 bit timestamp value is split into two 32 bit values and stored consecutively. For example, the first item in this section is the LSB of the 64 bit timestamp associated with first mel value The second item is the MSB of the 64 bit timestamp associated with first mel value. Timestamp for the other mel values will be in the same order}
+</ParamField>
+
+## Type Definitions
+
+### `param_id_sounddose_mel_events_config`
+
+```c
+typedef struct param_id_sounddose_mel_events_config param_id_sounddose_mel_events_config
+```
+
+### `param_id_sounddose_rs2_upper_bound`
+
+```c
+typedef struct param_id_sounddose_rs2_upper_bound param_id_sounddose_rs2_upper_bound
+```
+
+### `param_id_sounddose_mel_timestamp_info`
+
+```c
+typedef struct param_id_sounddose_mel_timestamp_info param_id_sounddose_mel_timestamp_info
+```
+
+### `event_id_sound_dose_mel_values`
+
+```c
+typedef struct event_id_sound_dose_mel_values event_id_sound_dose_mel_values
+```
+
+### `param_id_sounddose_flush_mel_values`
+
+```c
+typedef struct param_id_sounddose_flush_mel_values param_id_sounddose_flush_mel_values
+```
+
+## Macros
+
+### `PARAM_ID_SOUND_DOSE_MEL_EVENTS_CONFIG`
+
+```c
+#define PARAM_ID_SOUND_DOSE_MEL_EVENTS_CONFIG 0x18030FFA
+```
+
+### `PARAM_ID_SOUND_DOSE_RS2_UPPER_BOUND`
+
+Param ID of RS2 Upper bound used for momentary exposure detection.
+
+```c
+#define PARAM_ID_SOUND_DOSE_RS2_UPPER_BOUND 0x18030FFB
+```
+
+### `PARAM_ID_SOUND_DOSE_MEL_TIMESTAMP_INFO`
+
+Param ID related to the timestamp info attached to the mel values.
+
+```c
+#define PARAM_ID_SOUND_DOSE_MEL_TIMESTAMP_INFO 0x18030FFC
+```
+
+### `EVENT_ID_SOUND_DOSE_MEL_VALUES`
+
+Event ID of the events raised to client for momentary exposure or new mel values.
+
+```c
+#define EVENT_ID_SOUND_DOSE_MEL_VALUES 0x18030FFE
+```
+
+### `PARAM_ID_SOUND_DOSE_FLUSH_MEL_VALUES`
+
+```c
+#define PARAM_ID_SOUND_DOSE_FLUSH_MEL_VALUES 0x18030FFD
+```
+
+### `CAPI_SOUND_DOSE_STACK_SIZE`
+
+```c
+#define CAPI_SOUND_DOSE_STACK_SIZE 2048
+```
+
+### `MODULE_ID_SOUND_DOSE`
+
+```c
+#define MODULE_ID_SOUND_DOSE 0x17030FFF
+```

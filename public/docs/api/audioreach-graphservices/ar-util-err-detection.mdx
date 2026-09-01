@@ -1,0 +1,103 @@
+---
+title: "ar_util_err_detection.h"
+description: "Header for SPF error detection framework."
+---
+
+## Functions
+
+### `ar_err_det_init_ctxt`
+
+Initializes one error detection context.
+
+Multiple error detection contexts are useful in multi-master DSP scenarios, so that a fatal error on one master does not require the other to restart. The error detection context stores some persistent data which is used in error analysis
+
+```c
+int32_t ar_err_det_init_ctxt(uint32_t proc_handle, void *client_data)
+```
+
+**Parameters**
+
+<ParamField path="proc_handle" type="uint32_t">
+  the master proc to initialize context for
+</ParamField>
+<ParamField path="client_data" type="void *">
+  data to return when this master proc needs restart
+</ParamField>
+
+**Returns**
+
+AR_EOK : on success AR_E<other error> : on failure
+
+### `ar_err_det_destroy_ctxt`
+
+Destroys one error detection context.
+
+Multiple error detection contexts are useful in multi-master SPF scenarios, so that a fatal error on one master does not require the other to restart
+
+```c
+int32_t ar_err_det_destroy_ctxt(uint32_t proc_handle)
+```
+
+**Parameters**
+
+<ParamField path="proc_handle" type="uint32_t">
+  the master proc to destroy context for
+</ParamField>
+
+**Returns**
+
+AR_EOK : on success AR_E<other error> : on failure
+
+### `ar_err_det_reset_ctxt`
+
+Reset state variables for an error detection context.
+
+After SSR or PDR we must reset state variables in a context, like time since last restart or number of timeouts logged. This API will not reset the client data stored on context init.
+
+```c
+int32_t ar_err_det_reset_ctxt(uint32_t proc_handle)
+```
+
+**Parameters**
+
+<ParamField path="proc_handle" type="uint32_t">
+  the master proc ID to reset the context for
+</ParamField>
+
+**Returns**
+
+AR_EOK : on success AR_E<other error> : on failure
+
+### `ar_err_det_detect_spf_error`
+
+Determines whether SPF is in an unrecoverable state.
+
+Multiple error detection contexts are useful in multi-master DSP scenarios, so that a fatal error on one master does not require the other to restart We identify them by the proc_id.
+
+\dependencies None
+
+```c
+int32_t ar_err_det_detect_spf_error(uint32_t proc_handle, int32_t err_code, uint32_t opcode, bool_t *do_restart, void **client_data)
+```
+
+**Parameters**
+
+<ParamField path="proc_handle" type="uint32_t">
+  the master proc to use for error analysis
+</ParamField>
+<ParamField path="err_code" type="int32_t">
+  the error code returned by SPF
+</ParamField>
+<ParamField path="opcode" type="uint32_t">
+  the opcode for which the error code was returned
+</ParamField>
+<ParamField path="do_restart" type="bool_t *">
+  true when serious error requiring restart is detected. false otherwise
+</ParamField>
+<ParamField path="client_data" type="void **">
+  data to return when this master proc needs restart.
+</ParamField>
+
+**Returns**
+
+AR_EOK : on successful error analysis, meaning do_restart is valid AR_E<other error> : otherwise, meaning do_restart should be ignored

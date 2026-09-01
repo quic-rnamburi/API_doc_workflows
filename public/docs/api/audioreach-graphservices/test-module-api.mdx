@@ -1,0 +1,297 @@
+---
+title: "test_module_api.h"
+description: "This file contains test module APIs."
+---
+
+## Structures
+
+### `param_id_test_threshold_cfg_t`
+
+Configures whether to act as a threshold module.
+
+**Members**
+
+<ParamField path="threshold_us" type="uint32_t">
+  Threshold duration.
+</ParamField>
+<ParamField path="is_input" type="uint16_t">
+  Whether the threshold applies to the input port or output port.
+</ParamField>
+<ParamField path="is_hard_thresh" type="uint16_t">
+  Whether the threshold is a hard threshold or soft threshold.
+</ParamField>
+
+### `param_id_busy_wait_cfg_t`
+
+Configures the threshold module to busy-wait at the end of process.
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+  } rangeList  default
+</ParamField>
+<ParamField path="busy_wait_cycles" type="uint32_t">
+  TODO(claguna) Estimates of cycle-to-duration: MSM8998: 1ms = X cycles, 5ms = X cycles, 10ms = X cycles} range  default
+</ParamField>
+<ParamField path="period" type="uint16_t">
+  } range  default
+</ParamField>
+<ParamField path="duty_cycle" type="uint16_t">
+  If larger than the period, then the module will busy wait every process cycle.} range  default
+</ParamField>
+
+### `param_id_algo_delay_cfg_t`
+
+Configures the threshold module to busy-wait at the end of process.
+
+**Members**
+
+<ParamField path="delay_in_us" type="uint32_t">
+  } range  default
+</ParamField>
+
+### `param_id_hw_acc_proc_delay_cfg_t`
+
+**Members**
+
+<ParamField path="delay_in_us" type="uint32_t">
+  } range  default
+</ParamField>
+
+### `param_id_set_ttr_delay_t`
+
+Creates ttr metadata with delay.
+
+**Members**
+
+<ParamField path="ttr_delay_in_us" type="uint32_t">
+  } range  default
+</ParamField>
+
+### `param_id_timestamp_offset_t`
+
+Configures the timestamp offset - all timestamps are adjust by algo delay + this amount.
+
+**Members**
+
+<ParamField path="offset_us" type="int32_t">
+  } range  default
+</ParamField>
+<ParamField path="delay_num_proc_calls" type="int32_t">
+</ParamField>
+
+### `test_module_periodicity_t`
+
+**Members**
+
+<ParamField path="mode" type="periodicity_mode_t">
+  range  default
+</ParamField>
+<ParamField path="period" type="uint32_t">
+  range  default
+</ParamField>
+
+### `param_id_test_periodic_md_gen_cfg_t`
+
+**Members**
+
+<ParamField path="gen_enable" type="uint32_t">
+  range  default
+</ParamField>
+<ParamField path="md_id" type="uint32_t">
+</ParamField>
+<ParamField path="periodicity" type="test_module_periodicity_t">
+  relevant cfg needs to have been received - if reqd} range  default
+</ParamField>
+
+### `param_id_test_md_tracking_cfg_t`
+
+**Members**
+
+<ParamField path="tracking_enable" type="uint32_t">
+  range  default
+</ParamField>
+<ParamField path="md_id" type="uint32_t">
+</ParamField>
+<ParamField path="tracking_info" type="uint8_t">
+</ParamField>
+
+### `param_id_test_force_output_samples_cfg_t`
+
+Configures the test module to force it to output a certain number of samples per channel for a single process call.
+
+**Members**
+
+<ParamField path="samples_per_channel" type="uint32_t">
+  If larger than current frame, size is cropped to actual frame size.} range  default
+</ParamField>
+
+## Type Definitions
+
+### `param_id_test_threshold_cfg_t`
+
+```c
+typedef struct param_id_test_threshold_cfg_t param_id_test_threshold_cfg_t
+```
+
+### `param_id_busy_wait_cfg_t`
+
+```c
+typedef struct param_id_busy_wait_cfg_t param_id_busy_wait_cfg_t
+```
+
+### `param_id_algo_delay_cfg_t`
+
+```c
+typedef struct param_id_algo_delay_cfg_t param_id_algo_delay_cfg_t
+```
+
+### `param_id_hw_acc_proc_delay_cfg_t`
+
+```c
+typedef struct param_id_hw_acc_proc_delay_cfg_t param_id_hw_acc_proc_delay_cfg_t
+```
+
+### `param_id_set_ttr_delay_t`
+
+```c
+typedef struct param_id_set_ttr_delay_t param_id_set_ttr_delay_t
+```
+
+### `param_id_timestamp_offset_t`
+
+```c
+typedef struct param_id_timestamp_offset_t param_id_timestamp_offset_t
+```
+
+### `periodicity_mode_t`
+
+```c
+typedef enum periodicity_mode_t periodicity_mode_t
+```
+
+### `test_module_periodicity_t`
+
+```c
+typedef struct test_module_periodicity_t test_module_periodicity_t
+```
+
+### `param_id_test_periodic_md_gen_cfg_t`
+
+```c
+typedef struct param_id_test_periodic_md_gen_cfg_t param_id_test_periodic_md_gen_cfg_t
+```
+
+### `param_id_test_md_tracking_cfg_t`
+
+```c
+typedef struct param_id_test_md_tracking_cfg_t param_id_test_md_tracking_cfg_t
+```
+
+### `param_id_test_force_output_samples_cfg_t`
+
+```c
+typedef struct param_id_test_force_output_samples_cfg_t param_id_test_force_output_samples_cfg_t
+```
+
+## Enumerations
+
+### `periodicity_mode_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `FRAME_PERIODIC` |  |  |
+
+## Macros
+
+### `MODULE_ID_GAIN_CUSTOM`
+
+Module IDs for testing custom stub modules in AMDB tests.
+
+```c
+#define MODULE_ID_GAIN_CUSTOM 0x07001025
+```
+
+### `MODULE_ID_AAC_DEC_CUSTOM`
+
+```c
+#define MODULE_ID_AAC_DEC_CUSTOM 0x07001026
+```
+
+### `MODULE_ID_AAC_ENC_CUSTOM`
+
+```c
+#define MODULE_ID_AAC_ENC_CUSTOM 0x07001027
+```
+
+### `PARAM_ID_TEST_THRESHOLD_CFG`
+
+```c
+#define PARAM_ID_TEST_THRESHOLD_CFG 0x0800100D
+```
+
+### `PARAM_ID_TEST_BUSY_WAIT_CFG`
+
+```c
+#define PARAM_ID_TEST_BUSY_WAIT_CFG 0x0800106D
+```
+
+### `PARAM_ID_TEST_ALGO_DELAY_CFG`
+
+```c
+#define PARAM_ID_TEST_ALGO_DELAY_CFG 0x080010F7
+```
+
+### `PARAM_ID_TEST_HW_ACCL_PROC_DELAY`
+
+```c
+#define PARAM_ID_TEST_HW_ACCL_PROC_DELAY 0x0800130F
+```
+
+### `PARAM_ID_TEST_DTMF_GEN_MD_CFG`
+
+```c
+#define PARAM_ID_TEST_DTMF_GEN_MD_CFG 0x08001147
+```
+
+### `PARAM_ID_TEST_SET_TTR_DELAY`
+
+Sends configuration as DTMF Gen metadata.
+
+```c
+#define PARAM_ID_TEST_SET_TTR_DELAY 0x0800101D
+```
+
+### `PARAM_ID_TEST_TIMESTAMP_OFFSET`
+
+```c
+#define PARAM_ID_TEST_TIMESTAMP_OFFSET 0x080010F8
+```
+
+### `PARAM_ID_TEST_PERIODIC_MD_GEN_CFG`
+
+```c
+#define PARAM_ID_TEST_PERIODIC_MD_GEN_CFG 0x0800125C
+```
+
+### `PARAM_ID_TEST_MD_TRACKING_CFG`
+
+```c
+#define PARAM_ID_TEST_MD_TRACKING_CFG 0x080012EA
+```
+
+### `PARAM_ID_TEST_FORCE_OUTPUT_SAMPLES_CFG`
+
+```c
+#define PARAM_ID_TEST_FORCE_OUTPUT_SAMPLES_CFG 0x08001318
+```
+
+### `MODULE_ID_TEST_MODULE`
+
+Module ID for test module
+
+```c
+#define MODULE_ID_TEST_MODULE 0x07001021
+```

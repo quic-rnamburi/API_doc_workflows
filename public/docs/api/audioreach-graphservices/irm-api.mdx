@@ -1,0 +1,265 @@
+---
+title: "irm_api.h"
+description: "API header for Integrated Resource Monitor (IRM)."
+---
+
+## Structures
+
+### `irm_metric_id_processor_cycles_t`
+
+**Members**
+
+<ParamField path="processor_cycles" type="uint32_t">
+  Number of processor cycles that elapsed during the frame size time (in Hertz).
+</ParamField>
+
+### `irm_metric_id_current_clock_t`
+
+**Members**
+
+<ParamField path="current_clock" type="uint32_t">
+  Current system clock rate (in kilohertz).
+</ParamField>
+
+### `irm_metric_id_heap_info_t`
+
+Contains information about heap statistics per heap ID.
+
+**Members**
+
+<ParamField path="num_heap_id" type="uint32_t">
+  Number of heap IDs.
+</ParamField>
+
+### `irm_per_heap_id_info_payload_t`
+
+**Members**
+
+<ParamField path="heap_id" type="uint32_t">
+  Heap ID.
+</ParamField>
+<ParamField path="current_heap_usage" type="uint32_t">
+  Current heap usage (in bytes).
+</ParamField>
+<ParamField path="max_allowed_heap_size" type="uint32_t">
+  Maximum possible heap usage (in bytes).
+</ParamField>
+
+### `irm_metric_id_packet_count_t`
+
+**Members**
+
+<ParamField path="packet_count" type="uint32_t">
+  Number of packets executed in the frame size period (irm_report_metric_payload_t::frame_size_ms).
+</ParamField>
+
+### `irm_metric_id_mem_transactions_t`
+
+**Members**
+
+<ParamField path="read_mem_transactions_bytes" type="uint32_t">
+  Number of read memory transactions (in bytes).
+</ParamField>
+<ParamField path="write_mem_transactions_bytes" type="uint32_t">
+  Number of write memory transactions (in bytes).
+</ParamField>
+
+### `param_id_irm_version_t`
+
+**Members**
+
+<ParamField path="version" type="uint32_t">
+  Version of the IRM.
+</ParamField>
+
+### `irm_metric_id_q6_hw_info_t`
+
+**Members**
+
+<ParamField path="num_hw_threads" type="uint32_t">
+</ParamField>
+<ParamField path="q6_arch_version" type="uint32_t">
+</ParamField>
+
+### `irm_metric_id_timestamp_t`
+
+**Members**
+
+<ParamField path="timestamp_ms" type="uint64_t">
+</ParamField>
+
+### `param_id_irm_system_capabilities_t`
+
+Contains information about system capabilities per processor domain ID.
+
+**Members**
+
+<ParamField path="num_proc_domain" type="uint32_t">
+  Number of processor domain IDs.
+</ParamField>
+
+### `irm_system_capabilities_t`
+
+**Members**
+
+<ParamField path="proc_domain" type="uint32_t">
+  ID for the processor domain.
+</ParamField>
+<ParamField path="processor_type" type="uint32_t">
+  Type of processor the IRM is running.
+</ParamField>
+<ParamField path="min_profiling_period_us" type="uint32_t">
+  Minimum number of profiling periods in which statistics are collected.
+</ParamField>
+<ParamField path="min_profile_per_report" type="uint32_t">
+  Minimum number of times profiling is to be done before it must be reported.
+</ParamField>
+<ParamField path="max_num_containers_supported" type="uint32_t">
+  Maximum number of threads supported by the IRM that is to be profiled.
+</ParamField>
+<ParamField path="max_module_supported" type="uint32_t">
+  Maximum number of modules supported by the IRM that is to be profiled.
+</ParamField>
+
+### `param_id_irm_metric_capabilities_t`
+
+Contains metric capabilities information per processor domain.
+
+**Members**
+
+<ParamField path="num_proc_domain" type="uint32_t">
+  Number of processor domain IDs.
+</ParamField>
+
+### `irm_metric_capabilities_t`
+
+Contains metric capabilities information per block.
+
+**Members**
+
+<ParamField path="proc_domain" type="uint32_t">
+  ID for the processor domain.
+</ParamField>
+<ParamField path="num_blocks" type="uint32_t">
+  Number of blocks in the array.
+</ParamField>
+
+### `irm_metric_capability_block_t`
+
+Contains metric IDs.
+
+**Members**
+
+<ParamField path="block_id" type="uint32_t">
+  Valid block IDs.
+</ParamField>
+<ParamField path="num_metric_ids" type="uint32_t">
+  Number of metric IDs.
+</ParamField>
+
+### `param_id_irm_profiling_params_t`
+
+**Members**
+
+<ParamField path="proc_domain" type="uint32_t">
+  ID for the processor domain.
+</ParamField>
+<ParamField path="profiling_period_us" type="uint32_t">
+  Profiling period in which statistics is to be collected (in microseconds).
+</ParamField>
+<ParamField path="num_profiles_per_report" type="uint32_t">
+  Number of profiles to be done before they are to be reported.
+</ParamField>
+
+### `param_id_enable_disable_metrics_t`
+
+Contains the enable and disable information per block.
+
+**Members**
+
+<ParamField path="is_enable" type="uint32_t">
+  Indicates whether the entire variable array is enabled.
+</ParamField>
+<ParamField path="proc_domain" type="uint32_t">
+  ID for the processor domain.
+</ParamField>
+<ParamField path="num_blocks" type="uint32_t">
+  Number of blocks.
+</ParamField>
+
+### `irm_enable_disable_block_t`
+
+Contains metrics IDs.
+
+**Members**
+
+<ParamField path="block_id" type="uint32_t">
+  Valid block IDs.
+</ParamField>
+<ParamField path="instance_id" type="uint32_t">
+  Instance ID for the block.
+</ParamField>
+<ParamField path="num_metric_ids" type="uint32_t">
+  Number of metric IDs.
+</ParamField>
+
+### `param_id_report_metrics_t`
+
+Contains collected metric information per block.
+
+**Members**
+
+<ParamField path="routing_id" type="uint32_t">
+  Routing ID for the block.
+</ParamField>
+<ParamField path="proc_domain" type="uint32_t">
+  ID for the processor domain.
+</ParamField>
+<ParamField path="num_blocks" type="uint32_t">
+  Number of blocks that are collected.
+</ParamField>
+
+### `irm_report_metrics_block_t`
+
+Contains information about a block ID, instance ID, and the number of metric IDs.
+
+**Members**
+
+<ParamField path="block_id" type="uint32_t">
+  Valid block IDs.
+</ParamField>
+<ParamField path="instance_id" type="uint32_t">
+  Instance ID for the block.
+</ParamField>
+<ParamField path="num_metric_ids" type="uint32_t">
+  Number of metric IDs.
+</ParamField>
+
+### `irm_report_metric_t`
+
+Contains information about a metric ID and the number of metric payloads.
+
+**Members**
+
+<ParamField path="metric_id" type="uint32_t">
+  ID for the metric information.
+</ParamField>
+<ParamField path="num_metric_payloads" type="uint32_t">
+  Number of payloads present for the given metric ID.
+</ParamField>
+
+### `irm_report_metric_payload_t`
+
+Contains collected metric information per profiling period.
+
+**Members**
+
+<ParamField path="is_valid" type="uint32_t">
+  Indicates whether the payload information is valid.
+</ParamField>
+<ParamField path="frame_size_ms" type="uint32_t">
+  Frame size (in milliseconds) during which the metric data was accumulated.
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Size of the metric payload.
+</ParamField>

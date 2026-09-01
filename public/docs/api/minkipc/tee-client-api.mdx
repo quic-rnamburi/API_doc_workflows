@@ -1,0 +1,713 @@
+---
+title: "tee_client_api.h"
+---
+
+## Structures
+
+### `TEEC_UUID`
+
+**Members**
+
+<ParamField path="timeLow" type="uint32_t">
+</ParamField>
+<ParamField path="timeMid" type="uint16_t">
+</ParamField>
+<ParamField path="timeHiAndVersion" type="uint16_t">
+</ParamField>
+<ParamField path="clockSeqAndNode" type="uint8_t">
+</ParamField>
+
+### `TEEC_Context`
+
+**Members**
+
+<ParamField path="root_obj" type="Object">
+</ParamField>
+<ParamField path="app_client" type="Object">
+</ParamField>
+<ParamField path="waiter_cbo" type="Object">
+</ParamField>
+<ParamField path="imp" type="struct TEEC_Context">
+</ParamField>
+
+### `TEEC_Session`
+
+**Members**
+
+<ParamField path="ctx" type="TEEC_Context *">
+</ParamField>
+<ParamField path="session_obj" type="Object">
+</ParamField>
+<ParamField path="imp" type="struct TEEC_Session">
+</ParamField>
+
+### `TEEC_SharedMemory`
+
+**Members**
+
+<ParamField path="buffer" type="void *">
+</ParamField>
+<ParamField path="size" type="size_t">
+</ParamField>
+<ParamField path="flags" type="uint32_t">
+</ParamField>
+<ParamField path="ctx" type="TEEC_Context *">
+</ParamField>
+<ParamField path="type" type="uint8_t">
+</ParamField>
+<ParamField path="converted" type="uint8_t">
+</ParamField>
+<ParamField path="mem_obj" type="Object">
+</ParamField>
+<ParamField path="imp" type="struct TEEC_SharedMemory">
+</ParamField>
+
+### `TEEC_RegisteredMemoryReference`
+
+**Members**
+
+<ParamField path="parent" type="TEEC_SharedMemory *">
+</ParamField>
+<ParamField path="size" type="size_t">
+</ParamField>
+<ParamField path="offset" type="size_t">
+</ParamField>
+
+### `TEEC_TempMemoryReference`
+
+**Members**
+
+<ParamField path="buffer" type="void *">
+</ParamField>
+<ParamField path="size" type="size_t">
+</ParamField>
+
+### `TEEC_Value`
+
+**Members**
+
+<ParamField path="a" type="uint32_t">
+</ParamField>
+<ParamField path="b" type="uint32_t">
+</ParamField>
+
+### `TEEC_Parameter`
+
+**Members**
+
+<ParamField path="tmpref" type="TEEC_TempMemoryReference">
+</ParamField>
+<ParamField path="memref" type="TEEC_RegisteredMemoryReference">
+</ParamField>
+<ParamField path="value" type="TEEC_Value">
+</ParamField>
+<ParamField path="" type="union TEEC_Parameter">
+</ParamField>
+
+### `TEEC_Operation`
+
+**Members**
+
+<ParamField path="started" type="uint32_t">
+</ParamField>
+<ParamField path="paramTypes" type="uint32_t">
+</ParamField>
+<ParamField path="params" type="TEEC_Parameter">
+</ParamField>
+<ParamField path="session" type="TEEC_Session *">
+</ParamField>
+<ParamField path="cancel_code" type="uint32_t">
+</ParamField>
+<ParamField path="imp" type="struct TEEC_Operation">
+</ParamField>
+
+## Functions
+
+### `TEEC_InitializeContext`
+
+Open a handle to the TEE device.
+
+This function initializes a new TEE Context, forming a connection between this Client Application and the TEE identified by the string identifier name. The Client Application MAY pass a NULL name, which means that a default TEE will be connected to. The caller MUST pass a pointer to a valid TEEC_Context in context. The API assume all fields of the TEEC_Context structure are in an undefined state.
+
+```c
+TEEC_Result TEEC_InitializeContext(const char *name, TEEC_Context *context)
+```
+
+**Parameters**
+
+<ParamField path="name" type="const char *">
+  a zero-terminated string describing the TEE to connect to. If this parameter is set to NULL default "QSEE" is selected.
+</ParamField>
+<ParamField path="[in/out]" type="">
+  context: a TEEC_Context structure that is initialized this API
+</ParamField>
+
+**Returns**
+
+: TEEC_SUCCESS: the initialization was successful. Another error code from above: initialization was not successful.
+
+### `TEEC_FinalizeContext`
+
+This function finalizes an initialized TEE Context, closing the connection between the Client Application and the TEE.
+
+The Client Application MUST only call this function when ALL Sessions inside this TEE_Context have been closed and all Shared Memory blocks have been released. The functiona does not fail: after this function returns the Client Application must be able to consider that the Context has been closed. The API does not do anything if context is NULL, simply returns.
+
+```c
+void TEEC_FinalizeContext(TEEC_Context *context)
+```
+
+**Parameters**
+
+<ParamField path="context" type="TEEC_Context *">
+  an initialized TEEC_Context structure which is to be finalized.
+</ParamField>
+
+**Returns**
+
+. NO retuirn value
+
+### `TEEC_RegisterSharedMemory`
+
+This function registers a block of existing Client Application memory as a block of Shared Memory within the scope of the specified TEE Context, in accordance with the parameters which have been set by the Client Application inside the sharedMem structure.
+
+The parameter context MUST point to an initialized TEE Context. The parameter sharedMem MUST point to the Shared Memory structure defining the memory region to register. The Client Application MUST have populated the following fields of the Shared Memory structure before calling this function:
+The buffer field MUST point to the memory region to be shared, and MUST not be NULL.
+The size field MUST contain the size of the buffer, in bytes. (0 is a valid size).
+The flags field indicates the intended directions of data flow between the ClientApplication and the TEE.
+The API assumes that all other fields in the Shared Memory structure have undefined content. The size of the buffer is limited defined by the constant TEEC_CONFIG_SHAREDMEM_MAX_SIZE. However, note that this function may fail to register a block smaller than this limit due to low resource condition encountered at run-time.
+
+```c
+TEEC_Result TEEC_RegisterSharedMemory(TEEC_Context *context, TEEC_SharedMemory *sharedMem)
+```
+
+**Parameters**
+
+<ParamField path="context" type="TEEC_Context *">
+  a pointer to an initialized TEE Context
+</ParamField>
+<ParamField path="sharedMem" type="TEEC_SharedMemory *">
+  a pointer to a Shared Memory structure to register: o the buffer, size, and flags fields of the sharedMem structure MUST be set in accordance with the specification described above
+</ParamField>
+
+**Returns**
+
+: TEEC_SUCCESS: the initialization was successful. TEEC_ERROR_OUT_OF_MEMORY: registration could not be completed due to lack of resources. Another error code from above: initialization was not successful for another reason.
+
+### `TEEC_AllocateSharedMemory`
+
+This function allocates a new block of memory as a block of Shared Memory within the scope of the specified TEE Context, in accordance with the parameters which have been set by the Client Application inside the sharedMem structure.
+
+The context parameter MUST point to an initialized TEE Context. The sharedMem parameter MUST point to the Shared Memory structure defining the region to allocate. Client Applications MUST have populated the following fields of the Shared Memory structure: The size field MUST contain the desired s ize of the buffer, in bytes. The size is allowedto be zero. In this case memory is allocated and the pointer written in to the buffer field on return MUST not be NULL but MUST never be de-referenced by the Client Application. In this case however, the Shared Memory block can be used in Registered Memory References. The flags field indicates the allowed directions of data flow between the ClientApplication and the TEE. The API assumes that all other fields in the Shared Memory structure have undefined content. The size of the buffer is limited defined by the constant TEEC_CONFIG_SHAREDMEM_MAX_SIZE. However, note that this function may fail to register a block smaller than this limit due to low resource condition encountered at run-time. If this function returns any code other than TEEC_SUCCESS, The API will return with buffe field of sharedMem to NULL.
+
+```c
+TEEC_Result TEEC_AllocateSharedMemory(TEEC_Context *context, TEEC_SharedMemory *sharedMem)
+```
+
+**Parameters**
+
+<ParamField path="context" type="TEEC_Context *">
+  a pointer to an initialized TEE Context
+</ParamField>
+<ParamField path="sharedMem" type="TEEC_SharedMemory *">
+  a pointer to a Shared Memory structure to allocate: o Before calling this API, Client Application MUST set the size, and flags fields o On return, for a successful allocation the API will set the pointer buffer to the address of the allocated block, otherwise it will set buffer to NULL.
+</ParamField>
+
+**Returns**
+
+: TEEC_SUCCESS: the initialization was successful. TEEC_ERROR_OUT_OF_MEMORY: allocation could not be completed due to lack of resources. Another error code from above: initialization was not successful for another reason.
+
+### `TEEC_ReleaseSharedMemory`
+
+This function deregisters or deallocates a previously initialized block of.
+
+Shared Memory For a memory buffer allocated using TEEC_AllocateSharedMemory, this API will free the underlying memory. It will set the buffer and size fields of the sharedMem structure to NULL and 0 respectively before returning. Client Application MUST NOT access this region after this function has been called.
+
+For memory registered using TEEC_RegisterSharedMemory this API deregister the underlying memory from the TEE, but the memory region will stay available to the Client Application for other purposes as the memory is owned by it.
+
+This API does nothing if the sharedMem parameter is NULL.
+
+```c
+void TEEC_ReleaseSharedMemory(TEEC_SharedMemory *sharedMem)
+```
+
+**Parameters**
+
+<ParamField path="context" type="">
+  a pointer to an initialized TEE Context
+</ParamField>
+<ParamField path="sharedMem" type="TEEC_SharedMemory *">
+  haredMem: a pointer to a valid Shared Memory structure
+</ParamField>
+
+**Returns**
+
+: No return value
+
+### `TEEC_OpenSession`
+
+This function opens a new Session between the Client Application and the specified Trusted Application.
+
+The API assumes that all fields of this session structure are in an undefined state. When this function returns TEEC_SUCCESS this structure is populated with all the information necessary for subsequent operations within the Session. The target Trusted Application is identified by a UUID passed in the parameter destination. The Session MAY be opened using a specific connection method that can carry additional connection data, such as data about the user or user-group running the Client Application, or about the Client Application itself. This allows the Trusted Application to implement access control methods which separate functionality or data accesses for different actors in the rich environment outside of the TEE.
+
+The additional data associated with each connection method is passed in via the pointer connectionData (Unsupported for QTEE context). For the core login types the following connection data is required:: TEEC_LOGIN_PUBLIC o connectionData SHOULD be NULL. TEEC_LOGIN_USER o connectionData SHOULD be NULL. TEEC_LOGIN_GROUP : Unsupported for QTEE/default context o connectionData MUST point to a uint32_t which contains the group which this Client Application wants to connect as. The Implementation is responsible for securely ensuring that the Client Application instance is actually a member of this group. TEEC_LOGIN_APPLICATION o connectionData SHOULD be NULL. TEEC_LOGIN_USER_APPLICATION o connectionData SHOULD be NULL. TEEC_LOGIN_GROUP_APPLICATION : Unsupported for QTEE/default context o connectionData MUST point to a uint32_t which contains the group which this Client Application wants to connect as. The Implementation is responsible for securely ensuring that the Client Application instance is actually a member of this group.
+
+User MAY optionally send an Operation Payload, and MAY also cancel it. When the payload is present, the parameter operation MUST point to a TEEC_Operation structure populated by the Client Application. If operation is NULL then no data buffers are exchanged with the Trusted Application, and the operation cannot be cancelled by the Client Application.
+
+The result of this function is returned both in the function TEEC_Result return code and the return orig stored in the variable pointed to by returnOrigin.
+
+```c
+TEEC_Result TEEC_OpenSession(TEEC_Context *context, TEEC_Session *session, const TEEC_UUID *destination, uint32_t connectionMethod, const void *connectionData, TEEC_Operation *operation, uint32_t *returnOrigin)
+```
+
+**Parameters**
+
+<ParamField path="context" type="TEEC_Context *">
+  pointer to an initialized TEE Context
+</ParamField>
+<ParamField path="session" type="TEEC_Session *">
+  pointer to a Session structure to open.
+</ParamField>
+<ParamField path="destination" type="const TEEC_UUID *">
+  pointer to a structure containing the UUID of the destination Trusted Application.
+</ParamField>
+<ParamField path="connectionMethod" type="uint32_t">
+  the method of connection to use.
+</ParamField>
+<ParamField path="connectionData" type="const void *">
+  any necessary data required to support the connection method chosen
+</ParamField>
+<ParamField path="operation" type="TEEC_Operation *">
+  pointer to an Operation containing a set of Parameters to exchange with the Trusted Application, or NULL if no Parameters are to be exchanged or if the operation cannot be cancelled. Refer to TEEC_InvokeCommand for more details.
+</ParamField>
+<ParamField path="returnOrigin" type="uint32_t *">
+  pointer to a variable which will contain the return origin. This field may be NULL if the return origin is not needed.
+</ParamField>
+
+**Returns**
+
+: If the returnOrigin is different from TEEC_ORIGIN_TRUSTED_APP, an error code from above is returned. If the returnOrigin is equal to TEEC_ORIGIN_TRUSTED_APP, a return code defined by the protocol between the Client Application and the Trusted Application. In any case, a return code set to TEEC_SUCCESS means that the session was successfully opened and a return code different from TEEC_SUCCESS means that the session opening failed.
+
+### `TEEC_CloseSession`
+
+This function closes a Session which has been opened with a Trusted Application.
+
+All Commands within the Session MUST have completed before calling this function. This API does nto do anything if the session parameter is NULL. This API does not return any failure: after this function returns the Client Application should consider that the Session has been closed.
+
+```c
+void TEEC_CloseSession(TEEC_Session *session)
+```
+
+**Parameters**
+
+<ParamField path="session" type="TEEC_Session *">
+  pointer to a Session to close.
+</ParamField>
+
+**Returns**
+
+: No return value
+
+### `TEEC_InvokeCommand`
+
+This function invokes a Command within the specified Session.
+
+The parameter session MUST point to a valid open Session. The parameter commandID is an identifier that is used to indicate which of the exposed TrustedApplication functions should be invoked. The supported command identifiers are defined by the Trusted Application?s protocol.
+
+Operation Handling A Command MAY optionally carry an Operation Payload. When the payload is present the parameter operation MUST point to a TEEC_Operation structure populated by the Client Application. If operation is NULL then no parameters are exchanged with the Trusted Application, and only the Command ID is exchanged. The operation structure is also used to manage cancellation of the Command. If cancellation is required then the operation pointer MUST be non-NULL and the Client Application MUST have zeroed the started field of the operation structure before calling this function.
+
+NOTE: Cancellation of pending operations is unsupported for QTEE/default context
+
+The operation structure MAY contain no Parameters if no data payload is to be exchanged.
+
+The result of this function is returned both in the function TEEC_Result return code and the return orig stored in the variable pointed to by returnOrigin: If the return origin is different from TEEC_ORIGIN_TRUSTED_APP, the return TEEC_ERROR_CANCEL code MUST be one of the error codes defined above. If the return code is then means that the operation was cancelled before it reached the Trusted Application. If the return origin is TEEC_ORIGIN_TRUSTED_APP, the meaning of the return code depends on the protocol between the Client Application and the Trusted Application. If TEEC_SUCCESS is returned, it always means the operatin was succesful. However, and if the function returns a code different from TEEC_SUCCESS, it means that the operation failed.
+
+```c
+TEEC_Result TEEC_InvokeCommand(TEEC_Session *session, uint32_t commandID, TEEC_Operation *operation, uint32_t *returnOrigin)
+```
+
+**Parameters**
+
+<ParamField path="session" type="TEEC_Session *">
+  the open Session in which the command will be invoked.
+</ParamField>
+<ParamField path="commandID" type="uint32_t">
+  the identifier of the Command within the Trusted Application to invoke. The meaning of each Command Identifier must be defined in the protocol exposed by the Trusted Application
+</ParamField>
+<ParamField path="operation" type="TEEC_Operation *">
+  pointer to an Operation containing a set of Parameters to exchange with the Trusted Application, or NULL if no Parameters are to be exchangedor if the operation cannot be cancelled. Refer to TEEC_InvokeCommand for more details.
+</ParamField>
+<ParamField path="returnOrigin" type="uint32_t *">
+  pointer to a variable which will contain the return. origin. This field may be NULL if the return origin is not needed.
+</ParamField>
+
+**Returns**
+
+: If the returnOrigin is different from TEEC_ORIGIN_TRUSTED_APP, an error code from above is returned. If the returnOrigin is equal to TEEC_ORIGIN_TRUSTED_APP, a return code defined by the protocol between the Client Application and the Trusted Application.
+
+### `TEEC_RequestCancellation`
+
+This function requests the cancellation of a pending open Session operation or a Command invocation operation.
+
+As this is a synchronous API, this function must be called from a thread other than the one executing the TEEC_OpenSession or TEEC_InvokeCommand function.
+
+This function just sends a cancellation signal to the TEE and returns immediately; the operation is not guaranteed to have been cancelled when this function returns. In addition, the cancellation request is just a hint; the TEE or the Trusted Application MAY ignore the cancellation request. It is valid to call this function using a TEEC_Operation structure any time after the Client Application has set the started field of an Operation structure to zero. In particular, an operation can be cancelled before it is actually invoked, during invocation, and after invocation. Note that the Client Application MUST reset the started field to zero each time an Operation structure is used or re-used to open a Session or invoke a Command if the new operation is to be cancellable.
+
+```c
+void TEEC_RequestCancellation(TEEC_Operation *operation)
+```
+
+**Parameters**
+
+<ParamField path="session" type="">
+  pointer to a Session to close.
+</ParamField>
+
+**Returns**
+
+: No return value
+
+## Type Definitions
+
+### `TEEC_Result`
+
+```c
+typedef uint32_t TEEC_Result
+```
+
+## Macros
+
+### `MAX_NUM_PARAMS`
+
+```c
+#define MAX_NUM_PARAMS 4
+```
+
+### `TEEC_CONFIG_SHAREDMEM_MAX_SIZE`
+
+```c
+#define TEEC_CONFIG_SHAREDMEM_MAX_SIZE (0x80000 * 32)
+```
+
+### `TEEC_SUCCESS`
+
+```c
+#define TEEC_SUCCESS 0x00000000
+```
+
+### `TEEC_ERROR_GENERIC`
+
+```c
+#define TEEC_ERROR_GENERIC 0xFFFF0000
+```
+
+### `TEEC_ERROR_ACCESS_DENIED`
+
+```c
+#define TEEC_ERROR_ACCESS_DENIED 0xFFFF0001
+```
+
+### `TEEC_ERROR_CANCEL`
+
+```c
+#define TEEC_ERROR_CANCEL 0xFFFF0002
+```
+
+### `TEEC_ERROR_ACCESS_CONFLICT`
+
+```c
+#define TEEC_ERROR_ACCESS_CONFLICT 0xFFFF0003
+```
+
+### `TEEC_ERROR_EXCESS_DATA`
+
+```c
+#define TEEC_ERROR_EXCESS_DATA 0xFFFF0004
+```
+
+### `TEEC_ERROR_BAD_FORMAT`
+
+```c
+#define TEEC_ERROR_BAD_FORMAT 0xFFFF0005
+```
+
+### `TEEC_ERROR_BAD_PARAMETERS`
+
+```c
+#define TEEC_ERROR_BAD_PARAMETERS 0xFFFF0006
+```
+
+### `TEEC_ERROR_BAD_STATE`
+
+```c
+#define TEEC_ERROR_BAD_STATE 0xFFFF0007
+```
+
+### `TEEC_ERROR_ITEM_NOT_FOUND`
+
+```c
+#define TEEC_ERROR_ITEM_NOT_FOUND 0xFFFF0008
+```
+
+### `TEEC_ERROR_NOT_IMPLEMENTED`
+
+```c
+#define TEEC_ERROR_NOT_IMPLEMENTED 0xFFFF0009
+```
+
+### `TEEC_ERROR_NOT_SUPPORTED`
+
+```c
+#define TEEC_ERROR_NOT_SUPPORTED 0xFFFF000A
+```
+
+### `TEEC_ERROR_NO_DATA`
+
+```c
+#define TEEC_ERROR_NO_DATA 0xFFFF000B
+```
+
+### `TEEC_ERROR_OUT_OF_MEMORY`
+
+```c
+#define TEEC_ERROR_OUT_OF_MEMORY 0xFFFF000C
+```
+
+### `TEEC_ERROR_BUSY`
+
+```c
+#define TEEC_ERROR_BUSY 0xFFFF000D
+```
+
+### `TEEC_ERROR_COMMUNICATION`
+
+```c
+#define TEEC_ERROR_COMMUNICATION 0xFFFF000E
+```
+
+### `TEEC_ERROR_SECURITY`
+
+```c
+#define TEEC_ERROR_SECURITY 0xFFFF000F
+```
+
+### `TEEC_ERROR_SHORT_BUFFER`
+
+```c
+#define TEEC_ERROR_SHORT_BUFFER 0xFFFF0010
+```
+
+### `TEE_ERROR_EXTERNAL_CANCEL`
+
+```c
+#define TEE_ERROR_EXTERNAL_CANCEL 0xFFFF0011
+```
+
+### `TEEC_ERROR_EXTERNAL_CANCEL`
+
+```c
+#define TEEC_ERROR_EXTERNAL_CANCEL 0xFFFF0011
+```
+
+### `TEE_ERROR_OVERFLOW`
+
+```c
+#define TEE_ERROR_OVERFLOW 0xFFFF300F
+```
+
+### `TEEC_ERROR_TARGET_DEAD`
+
+```c
+#define TEEC_ERROR_TARGET_DEAD 0xFFFF3024
+```
+
+### `TEE_ERROR_STORAGE_NO_SPACE`
+
+```c
+#define TEE_ERROR_STORAGE_NO_SPACE 0xFFFF3041
+```
+
+### `TEE_ERROR_MAC_INVALID`
+
+```c
+#define TEE_ERROR_MAC_INVALID 0xFFFF3071
+```
+
+### `TEE_ERROR_SIGNATURE_INVALID`
+
+```c
+#define TEE_ERROR_SIGNATURE_INVALID 0xFFFF3072
+```
+
+### `TEE_ERROR_TIME_NOT_SET`
+
+```c
+#define TEE_ERROR_TIME_NOT_SET 0xFFFF5000
+```
+
+### `TEE_ERROR_TIME_NEEDS_RESET`
+
+```c
+#define TEE_ERROR_TIME_NEEDS_RESET 0xFFFF5001
+```
+
+### `TEEC_ORIGIN_API`
+
+```c
+#define TEEC_ORIGIN_API 0x00000001
+```
+
+### `TEEC_ORIGIN_COMMS`
+
+```c
+#define TEEC_ORIGIN_COMMS 0x00000002
+```
+
+### `TEEC_ORIGIN_TEE`
+
+```c
+#define TEEC_ORIGIN_TEE 0x00000003
+```
+
+### `TEEC_ORIGIN_TRUSTED_APP`
+
+```c
+#define TEEC_ORIGIN_TRUSTED_APP 0x00000004
+```
+
+### `TEEC_MEM_INPUT`
+
+```c
+#define TEEC_MEM_INPUT 0x00000001
+```
+
+### `TEEC_MEM_OUTPUT`
+
+```c
+#define TEEC_MEM_OUTPUT 0x00000002
+```
+
+### `TEEC_NONE`
+
+```c
+#define TEEC_NONE 0x00000000
+```
+
+### `TEEC_VALUE_INPUT`
+
+```c
+#define TEEC_VALUE_INPUT 0x00000001
+```
+
+### `TEEC_VALUE_OUTPUT`
+
+```c
+#define TEEC_VALUE_OUTPUT 0x00000002
+```
+
+### `TEEC_VALUE_INOUT`
+
+```c
+#define TEEC_VALUE_INOUT 0x00000003
+```
+
+### `TEEC_MEMREF_TEMP_INPUT`
+
+```c
+#define TEEC_MEMREF_TEMP_INPUT 0x00000005
+```
+
+### `TEEC_MEMREF_TEMP_OUTPUT`
+
+```c
+#define TEEC_MEMREF_TEMP_OUTPUT 0x00000006
+```
+
+### `TEEC_MEMREF_TEMP_INOUT`
+
+```c
+#define TEEC_MEMREF_TEMP_INOUT 0x00000007
+```
+
+### `TEEC_MEMREF_WHOLE`
+
+```c
+#define TEEC_MEMREF_WHOLE 0x0000000C
+```
+
+### `TEEC_MEMREF_PARTIAL_INPUT`
+
+```c
+#define TEEC_MEMREF_PARTIAL_INPUT 0x0000000D
+```
+
+### `TEEC_MEMREF_PARTIAL_OUTPUT`
+
+```c
+#define TEEC_MEMREF_PARTIAL_OUTPUT 0x0000000E
+```
+
+### `TEEC_MEMREF_PARTIAL_INOUT`
+
+```c
+#define TEEC_MEMREF_PARTIAL_INOUT 0x0000000F
+```
+
+### `TEEC_LOGIN_PUBLIC`
+
+```c
+#define TEEC_LOGIN_PUBLIC 0x00000000
+```
+
+### `TEEC_LOGIN_USER`
+
+```c
+#define TEEC_LOGIN_USER 0x00000001
+```
+
+### `TEEC_LOGIN_GROUP`
+
+```c
+#define TEEC_LOGIN_GROUP 0x00000002
+```
+
+### `TEEC_LOGIN_APPLICATION`
+
+```c
+#define TEEC_LOGIN_APPLICATION 0x00000004
+```
+
+### `TEEC_LOGIN_USER_APPLICATION`
+
+```c
+#define TEEC_LOGIN_USER_APPLICATION 0x00000005
+```
+
+### `TEEC_LOGIN_GROUP_APPLICATION`
+
+```c
+#define TEEC_LOGIN_GROUP_APPLICATION 0x00000006
+```
+
+### `TEEC_PARAM_TYPES`
+
+```c
+#define TEEC_PARAM_TYPES ((P0) | ((P1) \\<\\< 4) | ((P2) \\<\\< 8) | ((P3) \\<\\< 12))
+```
+
+### `TEEC_PARAM_MASK`
+
+```c
+#define TEEC_PARAM_MASK 0xFFFF0000
+```
+
+### `TEEC_PARAM_TYPE_GET`
+
+```c
+#define TEEC_PARAM_TYPE_GET (((t) >> ((i)*4)) & 0xF)
+```
+
+### `TEEC_PARAM_TYPE_SET`
+
+```c
+#define TEEC_PARAM_TYPE_SET (((~(0xF \\<\\< ((i) *4))) & (t)) | ((p) \\<\\< ((i)*4)))
+```

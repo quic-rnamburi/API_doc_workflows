@@ -1,0 +1,46 @@
+---
+title: "hw_core_api.h"
+description: "This file contains hw core api."
+---
+
+## Structures
+
+### `hw_core_request_t`
+
+Struct for response for hw core request by HLOS
+
+**Members**
+
+<ParamField path="hw_core_id" type="uint32_t">
+  HW core id @values HW_CORE_ID_LPASS HW_CORE_ID_DCODEC.
+</ParamField>
+
+## Type Definitions
+
+### `hw_core_request_t`
+
+```c
+typedef struct hw_core_request_t hw_core_request_t
+```
+
+## Macros
+
+### `PARAM_ID_RSC_HW_CORE`
+
+Param ID for hw core This ID should only be used under PRM module instance.
+
+```c
+#define PARAM_ID_RSC_HW_CORE 0x08001032
+```
+
+### `HW_CORE_ID_LPASS`
+
+```c
+#define HW_CORE_ID_LPASS 1
+```
+
+### `HW_CORE_ID_DCODEC`
+
+```c
+#define HW_CORE_ID_DCODEC 2
+```

@@ -1,0 +1,211 @@
+---
+title: "us_tone_renderer_api.h"
+description: "This file contains CAPI us tone renderer params."
+---
+
+## Structures
+
+### `param_id_us_tone_renderer_ep_media_format_cfg_t`
+
+**Members**
+
+<ParamField path="status" type="uint32_t">
+  Rest of the fields are not applicable if status is either US_TONE_RENDERER_EP_MEDIA_FORMAT_INFO_INVALID or US_TONE_RENDERER_EP_MEDIA_FORMAT_INFO_CHANGE_DONE. }
+</ParamField>
+<ParamField path="sampling_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="bit_width" type="uint32_t">
+</ParamField>
+<ParamField path="num_channels" type="uint32_t">
+
+</ParamField>
+
+### `param_id_us_tone_renderer_output_media_format_t`
+
+**Members**
+
+<ParamField path="sampling_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="bit_width" type="uint32_t">
+</ParamField>
+<ParamField path="num_channels" type="uint32_t">
+
+</ParamField>
+
+### `param_id_us_tone_renderer_tone_cfg_t`
+
+**Members**
+
+<ParamField path="period_us" type="uint32_t">
+</ParamField>
+<ParamField path="num_repetitions" type="uint32_t">
+</ParamField>
+<ParamField path="phase_offset_us" type="uint32_t">
+  If phase offset is 10us then second channel tone will be at an offset of 10us third will be 20us so on.
+</ParamField>
+<ParamField path="gain" type="uint32_t">
+
+</ParamField>
+<ParamField path="buffer_data_interleaving" type="uint32_t">
+</ParamField>
+<ParamField path="tone_num_channels" type="uint32_t">
+</ParamField>
+<ParamField path="payload_len" type="uint32_t">
+</ParamField>
+
+### `param_id_us_tone_renderer_enable_t`
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+</ParamField>
+
+### `param_id_us_tone_renderer_duty_cycle_enable_t`
+
+**Members**
+
+<ParamField path="duty_cycle_enable" type="uint32_t">
+</ParamField>
+
+### `param_id_us_tone_renderer_duty_cycle_threshold_t`
+
+**Members**
+
+<ParamField path="duty_cycle_threshold_us" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_us_tone_renderer_ep_media_format_cfg_t`
+
+```c
+typedef struct param_id_us_tone_renderer_ep_media_format_cfg_t param_id_us_tone_renderer_ep_media_format_cfg_t
+```
+
+### `param_id_us_tone_renderer_output_media_format_t`
+
+```c
+typedef struct param_id_us_tone_renderer_output_media_format_t param_id_us_tone_renderer_output_media_format_t
+```
+
+### `param_id_us_tone_renderer_tone_cfg_t`
+
+```c
+typedef struct param_id_us_tone_renderer_tone_cfg_t param_id_us_tone_renderer_tone_cfg_t
+```
+
+### `param_id_us_tone_renderer_enable_t`
+
+```c
+typedef struct param_id_us_tone_renderer_enable_t param_id_us_tone_renderer_enable_t
+```
+
+### `param_id_us_tone_renderer_duty_cycle_enable_t`
+
+```c
+typedef struct param_id_us_tone_renderer_duty_cycle_enable_t param_id_us_tone_renderer_duty_cycle_enable_t
+```
+
+### `param_id_us_tone_renderer_duty_cycle_threshold_t`
+
+```c
+typedef struct param_id_us_tone_renderer_duty_cycle_threshold_t param_id_us_tone_renderer_duty_cycle_threshold_t
+```
+
+### `data_event_id_us_tone_renderer_media_format_change_t`
+
+```c
+typedef struct param_id_us_tone_renderer_ep_media_format_cfg_t data_event_id_us_tone_renderer_media_format_change_t
+```
+
+## Enumerations
+
+### `us_tone_renderer_ep_media_format_status_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `US_TONE_RENDERER_EP_MEDIA_FORMAT_INFO_INVALID` | = 0 |  |
+| `US_TONE_RENDERER_EP_MEDIA_FORMAT_INFO_CHANGE_START` | = 1 |  |
+| `US_TONE_RENDERER_EP_MEDIA_FORMAT_INFO_CHANGE_DONE` | = 2 |  |
+
+### `us_tone_cfg_buffer_interleaving_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `US_TONE_CFG_BUFFER_INTERLEAVING_INVALID` | = 0 |  |
+| `US_TONE_CFG_BUFFER_INTERLEAVING_INTERLEAVED` | = 1 |  |
+| `US_TONE_CFG_BUFFER_INTERLEAVING_DEINTERLEAVED` | = 2 |  |
+
+## Macros
+
+### `US_TONE_RENDERER_STACK_SIZE`
+
+```c
+#define US_TONE_RENDERER_STACK_SIZE 1024
+```
+
+### `US_TONE_RENDERER_MAX_INPUT_PORTS`
+
+```c
+#define US_TONE_RENDERER_MAX_INPUT_PORTS 0
+```
+
+### `US_TONE_RENDERER_MAX_OUTPUT_PORTS`
+
+```c
+#define US_TONE_RENDERER_MAX_OUTPUT_PORTS 1
+```
+
+### `PARAM_ID_US_TONE_RENDERER_EP_MEDIA_FORMAT_CFG`
+
+```c
+#define PARAM_ID_US_TONE_RENDERER_EP_MEDIA_FORMAT_CFG 0x08001A79
+```
+
+### `PARAM_ID_US_TONE_RENDERER_OUTPUT_MEDIA_FORMAT`
+
+```c
+#define PARAM_ID_US_TONE_RENDERER_OUTPUT_MEDIA_FORMAT 0x08001A82
+```
+
+### `PARAM_ID_US_TONE_RENDERER_TONE_CFG`
+
+```c
+#define PARAM_ID_US_TONE_RENDERER_TONE_CFG 0x08001A7A
+```
+
+### `PARAM_ID_US_TONE_RENDERER_ENABLE`
+
+```c
+#define PARAM_ID_US_TONE_RENDERER_ENABLE 0x08001A7B
+```
+
+### `PARAM_ID_US_TONE_RENDERER_DUTY_CYCLE_ENABLE`
+
+```c
+#define PARAM_ID_US_TONE_RENDERER_DUTY_CYCLE_ENABLE 0x08001A7C
+```
+
+### `PARAM_ID_US_TONE_RENDERER_DUTY_CYCLE_THRESHOLD`
+
+```c
+#define PARAM_ID_US_TONE_RENDERER_DUTY_CYCLE_THRESHOLD 0x08001A7D
+```
+
+### `DATA_EVENT_ID_US_TONE_RENDERER_EP_MEDIA_FORMAT_CHANGE`
+
+```c
+#define DATA_EVENT_ID_US_TONE_RENDERER_EP_MEDIA_FORMAT_CHANGE 0x06001002
+```
+
+### `MODULE_ID_US_TONE_RENDERER`
+
+```c
+#define MODULE_ID_US_TONE_RENDERER 0x07001175
+```

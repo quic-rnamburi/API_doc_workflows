@@ -1,0 +1,83 @@
+---
+title: "vcpm_config_api.h"
+description: "This file contains declarations of the VCPM config API."
+---
+
+## Structures
+
+### `vcpm_param_id_scale_factor_payload_t`
+
+**Members**
+
+<ParamField path="proc_id" type="uint32_t">
+</ParamField>
+<ParamField path="kpps_sf" type="uint32_t">
+  KPPS SF is defined as follows: 10-100: final kpps = ( kpps_scale_factor / 10 ) * initial kpps So, a scale factor of 10 translates to unity kpps scaling. A scale factor of 50 translates to kpps scaling of 5x.}
+</ParamField>
+<ParamField path="bus_bw_sf" type="uint32_t">
+  BW SF is defined as follows: 10-100: final BW = ( BW_scale_factor / 10 )* initial BW So, a scale factor of 10 translates to unity BW scaling. A scale factor of 50 translates to BW scaling of 5x.}
+</ParamField>
+
+### `vcpm_param_id_scale_factor_t`
+
+**Members**
+
+<ParamField path="num_configs" type="uint32_t">
+  Each proc domain should not have more than one config.}
+</ParamField>
+<ParamField path="scale_factor" type="vcpm_param_id_scale_factor_payload_t">
+
+</ParamField>
+
+### `vcpm_param_id_safety_margin_t`
+
+**Members**
+
+<ParamField path="safety_margin_us" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `vcpm_param_id_scale_factor_payload_t`
+
+```c
+typedef struct vcpm_param_id_scale_factor_payload_t vcpm_param_id_scale_factor_payload_t
+```
+
+### `vcpm_param_id_scale_factor_t`
+
+```c
+typedef struct vcpm_param_id_scale_factor_t vcpm_param_id_scale_factor_t
+```
+
+### `vcpm_param_id_safety_margin_t`
+
+Payload for VCPM_PARAM_ID_SAFETY_MARGIN.
+
+```c
+typedef struct vcpm_param_id_safety_margin_t vcpm_param_id_safety_margin_t
+```
+
+## Macros
+
+### `VCPM_PARAM_ID_SCALE_FACTOR`
+
+```c
+#define VCPM_PARAM_ID_SCALE_FACTOR 0x08001B33
+```
+
+### `VCPM_PARAM_ID_SAFETY_MARGIN`
+
+Identifier for the parameter that sets the safety margin.
+
+```c
+#define VCPM_PARAM_ID_SAFETY_MARGIN 0x08001B34
+```
+
+### `VCPM_MODULE_INSTANCE_ID`
+
+Instance identifier for the VCPM static module.
+
+```c
+#define VCPM_MODULE_INSTANCE_ID 0x00000004
+```

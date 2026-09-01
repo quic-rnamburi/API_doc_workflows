@@ -1,0 +1,100 @@
+---
+title: "rtm_logging_api.h"
+description: "This file contains audio rtm logging parameters."
+---
+
+## Structures
+
+### `rtm_logging_enable_payload_t`
+
+**Members**
+
+<ParamField path="enable_rtm_logging" type="uint32_t">
+</ParamField>
+<ParamField path="log_code" type="uint32_t">
+</ParamField>
+
+### `rtm_logging_header_t`
+
+**Members**
+
+<ParamField path="version" type="uint32_t">
+</ParamField>
+
+### `rtm_logging_param_data_t`
+
+**Members**
+
+<ParamField path="module_instance_id" type="uint32_t">
+</ParamField>
+<ParamField path="param_id" type="uint32_t">
+</ParamField>
+<ParamField path="param_size" type="uint16_t">
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+</ParamField>
+
+### `rtm_pcm_logging_payload_t`
+
+**Members**
+
+<ParamField path="pcm_size" type="uint32_t">
+</ParamField>
+<ParamField path="log_tap_id" type="uint32_t">
+</ParamField>
+<ParamField path="sampling_rate" type="uint32_t">
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+</ParamField>
+<ParamField path="pcm_width" type="uint8_t">
+</ParamField>
+<ParamField path="interleaved" type="uint8_t">
+</ParamField>
+<ParamField path="channel_map" type="uint8_t">
+</ParamField>
+
+## Type Definitions
+
+### `rtm_logging_enable_payload_t`
+
+```c
+typedef struct rtm_logging_enable_payload_t rtm_logging_enable_payload_t
+```
+
+### `rtm_logging_header_t`
+
+```c
+typedef struct rtm_logging_header_t rtm_logging_header_t
+```
+
+### `rtm_logging_param_data_t`
+
+```c
+typedef struct rtm_logging_param_data_t rtm_logging_param_data_t
+```
+
+### `rtm_pcm_logging_payload_t`
+
+```c
+typedef struct rtm_pcm_logging_payload_t rtm_pcm_logging_payload_t
+```
+
+## Macros
+
+### `PARAM_ID_RTM_LOGGING_ENABLE`
+
+```c
+#define PARAM_ID_RTM_LOGGING_ENABLE 0x080010A6
+```
+
+### `RTM_HEADER_VERSION_0`
+
+```c
+#define RTM_HEADER_VERSION_0 0
+```
+
+### `PARAM_ID_RTM_PCM_LOGGING`
+
+```c
+#define PARAM_ID_RTM_PCM_LOGGING 0x080010A7
+```

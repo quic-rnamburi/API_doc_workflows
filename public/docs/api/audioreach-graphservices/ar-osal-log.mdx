@@ -1,0 +1,180 @@
+---
+title: "ar_osal_log.h"
+description: "Defines public APIs for message logging."
+---
+
+## Functions
+
+### `ar_log_init`
+
+```c
+void ar_log_init(void)
+```
+
+### `ar_log_deinit`
+
+```c
+void ar_log_deinit(void)
+```
+
+### `ar_log`
+
+```c
+void ar_log(uint32_t level, const char_t *log_tag, const char_t *file, const char_t *fn, int32_t ln, const char_t *format,...)
+```
+
+### `ar_set_log_level`
+
+```c
+void ar_set_log_level(uint32_t level)
+```
+
+## Macros
+
+### `AR_CRITICAL`
+
+critical message, log unrecoverable condition .
+
+```c
+#define AR_CRITICAL (0x1)
+```
+
+### `AR_ERROR`
+
+error message, represents code bugs that should be debugged and fixed.
+
+```c
+#define AR_ERROR (0x2)
+```
+
+### `AR_DEBUG`
+
+debug message, required for debug.
+
+```c
+#define AR_DEBUG (0x4)
+```
+
+### `AR_INFO`
+
+Use for vital info that needs to exist in default logs.
+
+```c
+#define AR_INFO (0x8)
+```
+
+### `AR_VERBOSE`
+
+verbose message, useful primarily to help developers debug low-level code
+
+```c
+#define AR_VERBOSE (0x10
+```
+
+### `AR_LOG_VERBOSE`
+
+```c
+#define AR_LOG_VERBOSE if (ar_log_lvl & AR_VERBOSE) 
+```
+
+### `AR_LOG_INFO`
+
+```c
+#define AR_LOG_INFO if (ar_log_lvl & AR_INFO) 
+```
+
+### `AR_LOG_DEBUG`
+
+```c
+#define AR_LOG_DEBUG if (ar_log_lvl & AR_DEBUG) 
+```
+
+### `AR_LOG_ERR`
+
+```c
+#define AR_LOG_ERR if (ar_log_lvl & AR_ERROR) 
+```
+
+### `AR_LOG_CRITICAL`
+
+```c
+#define AR_LOG_CRITICAL if (ar_log_lvl & AR_CRITICAL) 
+```
+
+### `AR_FATAL_PRIO`
+
+Fatal priority debug message.
+
+```c
+#define AR_FATAL_PRIO (AR_CRITICAL)
+```
+
+### `AR_ERROR_PRIO`
+
+Error priority debug message.
+
+```c
+#define AR_ERROR_PRIO (AR_ERROR   )
+```
+
+### `AR_HIGH_PRIO`
+
+High priority debug message.
+
+```c
+#define AR_HIGH_PRIO (AR_INFO   )
+```
+
+### `AR_MED_PRIO`
+
+Medium priority debug message.
+
+```c
+#define AR_MED_PRIO (AR_DEBUG    )
+```
+
+### `AR_LOW_PRIO`
+
+Low priority debug message.
+
+```c
+#define AR_LOW_PRIO (AR_VERBOSE )
+```
+
+### `AR_LOG_FATAL`
+
+```c
+#define AR_LOG_FATAL AR_LOG_CRITICAL(log_tag, __VA_ARGS__)
+```
+
+### `AR_LOG_HIGH`
+
+```c
+#define AR_LOG_HIGH AR_LOG_INFO(log_tag, __VA_ARGS__)
+```
+
+### `AR_LOG_ERROR`
+
+```c
+#define AR_LOG_ERROR AR_LOG_ERR(log_tag, __VA_ARGS__)
+```
+
+### `AR_LOG_MED`
+
+```c
+#define AR_LOG_MED AR_LOG_DEBUG(log_tag, __VA_ARGS__)
+```
+
+### `AR_LOG_LOW`
+
+```c
+#define AR_LOG_LOW AR_LOG_VERBOSE(log_tag, __VA_ARGS__)
+```
+
+## Variables
+
+### `ar_log_lvl`
+
+```c
+uint32_t ar_log_lvl
+```

@@ -1,0 +1,208 @@
+---
+title: "common_enc_dec_api.h"
+description: "This file contains media format IDs and definitions."
+---
+
+## Structures
+
+### `param_id_placeholder_real_module_id_t`
+
+**Members**
+
+<ParamField path="real_module_id" type="uint32_t">
+  E.g. MODULE_ID_AAC_DEC or MODULE_ID_AAC_ENC, etc}
+</ParamField>
+
+### `param_id_pcm_output_format_cfg_t`
+
+**Members**
+
+<ParamField path="data_format" type="uint32_t">
+</ParamField>
+<ParamField path="fmt_id" type="uint32_t">
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  The struct of payload is defined by combination of data_format and fmt_id. E.g. PCM fixed point (payload_pcm_output_format_cfg_t) and floating point may have different payloads. This size does not include bytes added for 32-bit alignment.}
+</ParamField>
+
+### `payload_pcm_output_format_cfg_t`
+
+**Members**
+
+<ParamField path="bit_width" type="int16_t">
+  E.g. 16 bit, 24 bit or 32 bit}
+</ParamField>
+<ParamField path="alignment" type="int16_t">
+  Relevant only when bits_per_sample is 24 and word_size is 32 For bits_per_sample 24, word_size 32, qfactor 23 -> PCM_LSB_ALIGNED 
+ For bits_per_sample 24, word_size 32, qfactor 31 -> PCM_MSB_ALIGNED}
+</ParamField>
+<ParamField path="bits_per_sample" type="int16_t">
+  16-bits per sample always contain 16-bit samples.
+24-bits per sample always contain 24-bit samples.
+32-bits per sample have below cases:
+If bit width = 24 and alignment = LSB aligned, then 24-bit samples are placed in the lower 24 bits of a 32-bit word. Upper bits may or may not be sign-extended.
+If bit width = 24 and alignment = MSB aligned, then 24-bit samples are placed in the upper 24 bits of a 32-bit word. Lower bits may or may not be zeroed.
+If bit width = 32, 32-bit samples are placed in the 32-bit words }
+</ParamField>
+<ParamField path="q_factor" type="int16_t">
+  15 for 16 bit signed data 23 for 24 bit signed packed (24 word size) data 27 for LSB aligned 24 bit unpacked (32 word size) signed data used internal to spf. 31 for MSB aligned 24 bit unpacked (32 word size) signed data 23 for LSB aligned 24 bit unpacked (32 word size) signed data 31 for 32 bit signed data}
+</ParamField>
+<ParamField path="endianness" type="int16_t">
+
+</ParamField>
+<ParamField path="interleaved" type="int16_t">
+</ParamField>
+<ParamField path="reserved" type="int16_t">
+</ParamField>
+<ParamField path="num_channels" type="int16_t">
+</ParamField>
+
+### `param_id_enc_bitrate_param_t`
+
+**Members**
+
+<ParamField path="bitrate" type="uint32_t">
+</ParamField>
+
+### `param_id_enc_frame_size_control_t`
+
+**Members**
+
+<ParamField path="frame_size_control_type" type="uint32_t">
+
+</ParamField>
+<ParamField path="frame_size_control_value" type="uint32_t">
+  MTU_SIZE: MTU size in bytes as per the connected BT sink device. NOTE: Expectation is that mtu_size is >= 'frame size'.
+PEAK_BIT_RATE: Peak bit rate in bits/second. Eg : 96000 if 96kbps is the peak bitrate to be set. Assumption is that peak bit rate set is > configured bitrate. BIT_RATE_MODE: Bit rate mode such as Constant
+Bit Rate (CBR), Variable Bit Rate (VBR) etc., a) 0: Default(CBR) b) 1: VBR}
+</ParamField>
+
+### `param_id_remove_initial_silence_t`
+
+**Members**
+
+<ParamField path="samples_per_ch_to_remove" type="uint32_t">
+
+</ParamField>
+
+### `param_id_remove_trailing_silence_t`
+
+**Members**
+
+<ParamField path="samples_per_ch_to_remove" type="uint32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `param_id_placeholder_real_module_id_t`
+
+```c
+typedef struct param_id_placeholder_real_module_id_t param_id_placeholder_real_module_id_t
+```
+
+### `param_id_pcm_output_format_cfg_t`
+
+```c
+typedef struct param_id_pcm_output_format_cfg_t param_id_pcm_output_format_cfg_t
+```
+
+### `payload_pcm_output_format_cfg_t`
+
+```c
+typedef struct payload_pcm_output_format_cfg_t payload_pcm_output_format_cfg_t
+```
+
+### `param_id_enc_bitrate_param_t`
+
+```c
+typedef struct param_id_enc_bitrate_param_t param_id_enc_bitrate_param_t
+```
+
+### `param_id_enc_frame_size_control_t`
+
+```c
+typedef struct param_id_enc_frame_size_control_t param_id_enc_frame_size_control_t
+```
+
+### `param_id_remove_initial_silence_t`
+
+```c
+typedef struct param_id_remove_initial_silence_t param_id_remove_initial_silence_t
+```
+
+### `param_id_remove_trailing_silence_t`
+
+```c
+typedef struct param_id_remove_trailing_silence_t param_id_remove_trailing_silence_t
+```
+
+## Macros
+
+### `PARAM_ID_REAL_MODULE_ID`
+
+```c
+#define PARAM_ID_REAL_MODULE_ID 0x0800100B
+```
+
+### `PARAM_ID_RESET_PLACEHOLDER_MODULE`
+
+```c
+#define PARAM_ID_RESET_PLACEHOLDER_MODULE 0x08001173
+```
+
+### `MODULE_ID_PLACEHOLDER_ENCODER`
+
+ID of the placeholder encoder.
+
+```c
+#define MODULE_ID_PLACEHOLDER_ENCODER 0x07001008
+```
+
+### `MODULE_ID_PLACEHOLDER_DECODER`
+
+End of the Module -->
+
+```c
+#define MODULE_ID_PLACEHOLDER_DECODER 0x07001009
+```
+
+### `PARAM_ID_PCM_OUTPUT_FORMAT_CFG`
+
+End of the Module -->
+
+```c
+#define PARAM_ID_PCM_OUTPUT_FORMAT_CFG 0x08001008
+```
+
+### `PARAM_ID_ENC_BITRATE`
+
+ID of the parameter used to configure the encoder bit rate.
+
+```c
+#define PARAM_ID_ENC_BITRATE 0x08001052
+```
+
+### `PARAM_ID_ENC_FRAME_SIZE_CONTROL`
+
+ID of the parameter used to configure the AAC encoder frame size.
+
+```c
+#define PARAM_ID_ENC_FRAME_SIZE_CONTROL 0x08001053
+```
+
+### `PARAM_ID_REMOVE_INITIAL_SILENCE`
+
+Id of the parameter used to remove initial silence in gapless use cases.
+
+```c
+#define PARAM_ID_REMOVE_INITIAL_SILENCE 0x0800114B
+```
+
+### `PARAM_ID_REMOVE_TRAILING_SILENCE`
+
+Id of the parameter used to remove initial silence in gapless use cases.
+
+```c
+#define PARAM_ID_REMOVE_TRAILING_SILENCE 0x0800115D
+```

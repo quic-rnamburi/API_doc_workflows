@@ -8,6 +8,304 @@
     "dark": "#1A3AB8"
   },
   "navigation": {
-    "groups": []
+    "groups": [
+      {
+        "group": "AudioReach",
+        "pages": [
+          {
+            "group": "audioreach-graphservices",
+            "pages": [
+              "public/docs/api/audioreach-graphservices/acdb",
+              "public/docs/api/audioreach-graphservices/ats",
+              "public/docs/api/audioreach-graphservices/ar-osal-dyn-pd",
+              "public/docs/api/audioreach-graphservices/ar-osal-error",
+              "public/docs/api/audioreach-graphservices/ar-osal-file-io",
+              "public/docs/api/audioreach-graphservices/ar-osal-heap",
+              "public/docs/api/audioreach-graphservices/ar-osal-log",
+              "public/docs/api/audioreach-graphservices/ar-osal-log-pkt-op",
+              "public/docs/api/audioreach-graphservices/ar-osal-mem-op",
+              "public/docs/api/audioreach-graphservices/ar-osal-servreg",
+              "public/docs/api/audioreach-graphservices/ar-osal-shmem",
+              "public/docs/api/audioreach-graphservices/ar-osal-signal2",
+              "public/docs/api/audioreach-graphservices/ar-osal-sleep",
+              "public/docs/api/audioreach-graphservices/ar-osal-string",
+              "public/docs/api/audioreach-graphservices/ar-osal-sys-id",
+              "public/docs/api/audioreach-graphservices/ar-osal-thread",
+              "public/docs/api/audioreach-graphservices/ar-osal-timer",
+              "public/docs/api/audioreach-graphservices/ar-osal-types",
+              "public/docs/api/audioreach-graphservices/ar-util-data-log",
+              "public/docs/api/audioreach-graphservices/ar-util-data-log-codes",
+              "public/docs/api/audioreach-graphservices/ar-util-err-detection",
+              "public/docs/api/audioreach-graphservices/ar-util-list",
+              "public/docs/api/audioreach-graphservices/ar-guids",
+              "public/docs/api/audioreach-graphservices/ar-guids",
+              "public/docs/api/audioreach-graphservices/gpr-api",
+              "public/docs/api/audioreach-graphservices/gpr-api-inline",
+              "public/docs/api/audioreach-graphservices/gpr-msg-if",
+              "public/docs/api/audioreach-graphservices/gpr-packet",
+              "public/docs/api/audioreach-graphservices/gpr-proc-info-api",
+              "public/docs/api/audioreach-graphservices/ipc-dl-api",
+              "public/docs/api/audioreach-graphservices/gsl-intf",
+              "public/docs/api/audioreach-graphservices/gsl-subgraph-driver-props",
+              "public/docs/api/audioreach-graphservices/gsl-dls-client-intf",
+              "public/docs/api/audioreach-graphservices/gsl-hw-rsc-intf",
+              "public/docs/api/audioreach-graphservices/gsl-rtc-intf",
+              "public/docs/api/audioreach-graphservices/apm-api",
+              "public/docs/api/audioreach-graphservices/apm-api-version",
+              "public/docs/api/audioreach-graphservices/apm-container-api",
+              "public/docs/api/audioreach-graphservices/apm-graph-properties",
+              "public/docs/api/audioreach-graphservices/apm-memmap-api",
+              "public/docs/api/audioreach-graphservices/apm-module-api",
+              "public/docs/api/audioreach-graphservices/apm-sub-graph-api",
+              "public/docs/api/audioreach-graphservices/ar-ids",
+              "public/docs/api/audioreach-graphservices/ar-spf-cmd-api",
+              "public/docs/api/audioreach-graphservices/ar-msg",
+              "public/docs/api/audioreach-graphservices/asps-acd-usecase-api",
+              "public/docs/api/audioreach-graphservices/asps-acm-api",
+              "public/docs/api/audioreach-graphservices/asps-ads-usecase-api",
+              "public/docs/api/audioreach-graphservices/asps-asr-usecase-api",
+              "public/docs/api/audioreach-graphservices/asps-sdz-usecase-api",
+              "public/docs/api/audioreach-graphservices/asps-upd-usecase-api",
+              "public/docs/api/audioreach-graphservices/asps-us-rendering-usecase-api",
+              "public/docs/api/audioreach-graphservices/aac-decoder-api",
+              "public/docs/api/audioreach-graphservices/aac-encoder-api",
+              "public/docs/api/audioreach-graphservices/acd-api",
+              "public/docs/api/audioreach-graphservices/alac-decoder-api",
+              "public/docs/api/audioreach-graphservices/amdb-api",
+              "public/docs/api/audioreach-graphservices/amrwb-decoder-api",
+              "public/docs/api/audioreach-graphservices/amrwb-encoder-api",
+              "public/docs/api/audioreach-graphservices/amrwbplus-decoder-api",
+              "public/docs/api/audioreach-graphservices/ape-decoder-api",
+              "public/docs/api/audioreach-graphservices/aptx-adaptive3-ble-encoder-api",
+              "public/docs/api/audioreach-graphservices/aptx-adaptive-encoder-api",
+              "public/docs/api/audioreach-graphservices/aptx-adaptive-swb-decoder-api",
+              "public/docs/api/audioreach-graphservices/aptx-adaptive-swb-encoder-api",
+              "public/docs/api/audioreach-graphservices/aptx-classic-decoder-api",
+              "public/docs/api/audioreach-graphservices/aptx-classic-encoder-api",
+              "public/docs/api/audioreach-graphservices/aptx-hd-decoder-api",
+              "public/docs/api/audioreach-graphservices/aptx-hd-encoder-api",
+              "public/docs/api/audioreach-graphservices/asr-module-calibration-api",
+              "public/docs/api/audioreach-graphservices/audio-dam-buffer-api",
+              "public/docs/api/audioreach-graphservices/audio-hw-clk-api",
+              "public/docs/api/audioreach-graphservices/audio-hw-dma-api",
+              "public/docs/api/audioreach-graphservices/audio-hw-lpm-api",
+              "public/docs/api/audioreach-graphservices/audio-if-api",
+              "public/docs/api/audioreach-graphservices/celt-enc-api",
+              "public/docs/api/audioreach-graphservices/codec-dma-api",
+              "public/docs/api/audioreach-graphservices/codec-metadata-api",
+              "public/docs/api/audioreach-graphservices/common-enc-dec-api",
+              "public/docs/api/audioreach-graphservices/congestion-buf-api",
+              "public/docs/api/audioreach-graphservices/contexts-api",
+              "public/docs/api/audioreach-graphservices/cop-packetizer-cmn-api",
+              "public/docs/api/audioreach-graphservices/cop-packetizer-v0-api",
+              "public/docs/api/audioreach-graphservices/cop-v2-depacketizer-api",
+              "public/docs/api/audioreach-graphservices/cop-v2-packetizer-api",
+              "public/docs/api/audioreach-graphservices/cps-data-router",
+              "public/docs/api/audioreach-graphservices/data-logging-api",
+              "public/docs/api/audioreach-graphservices/data-marker-api",
+              "public/docs/api/audioreach-graphservices/detection-cmn-api",
+              "public/docs/api/audioreach-graphservices/display-port-api",
+              "public/docs/api/audioreach-graphservices/dls-api",
+              "public/docs/api/audioreach-graphservices/dls-log-pkt-hdr-api",
+              "public/docs/api/audioreach-graphservices/dtmf-detection-api",
+              "public/docs/api/audioreach-graphservices/flac-decoder-api",
+              "public/docs/api/audioreach-graphservices/fluence-ffv-common-calibration",
+              "public/docs/api/audioreach-graphservices/gapless-api",
+              "public/docs/api/audioreach-graphservices/gate-api",
+              "public/docs/api/audioreach-graphservices/history-buffer-api",
+              "public/docs/api/audioreach-graphservices/hw-core-api",
+              "public/docs/api/audioreach-graphservices/hw-intf-cmn-api",
+              "public/docs/api/audioreach-graphservices/i2s-api",
+              "public/docs/api/audioreach-graphservices/imcl-fwk-intent-api",
+              "public/docs/api/audioreach-graphservices/imcl-spm-intent-api",
+              "public/docs/api/audioreach-graphservices/irm-api",
+              "public/docs/api/audioreach-graphservices/jitter-buf-api",
+              "public/docs/api/audioreach-graphservices/lc3-decoder-api",
+              "public/docs/api/audioreach-graphservices/lc3-encoder-api",
+              "public/docs/api/audioreach-graphservices/ldac-encoder-api",
+              "public/docs/api/audioreach-graphservices/lpass-core-api",
+              "public/docs/api/audioreach-graphservices/mailbox-api",
+              "public/docs/api/audioreach-graphservices/media-fmt-api-basic",
+              "public/docs/api/audioreach-graphservices/media-fmt-api-ext",
+              "public/docs/api/audioreach-graphservices/metadata-api",
+              "public/docs/api/audioreach-graphservices/miqster-api",
+              "public/docs/api/audioreach-graphservices/mma-api",
+              "public/docs/api/audioreach-graphservices/module-cmn-api",
+              "public/docs/api/audioreach-graphservices/mp2-decoder-api",
+              "public/docs/api/audioreach-graphservices/mp3-decoder-api",
+              "public/docs/api/audioreach-graphservices/mspp-module-calibration-api",
+              "public/docs/api/audioreach-graphservices/mux-demux-api",
+              "public/docs/api/audioreach-graphservices/nmt-module-calibration-api",
+              "public/docs/api/audioreach-graphservices/opus-decoder-api",
+              "public/docs/api/audioreach-graphservices/pcm-decoder-api",
+              "public/docs/api/audioreach-graphservices/pcm-encoder-api",
+              "public/docs/api/audioreach-graphservices/pcm-tdm-api",
+              "public/docs/api/audioreach-graphservices/pop-suppressor-api",
+              "public/docs/api/audioreach-graphservices/priority-sync-api",
+              "public/docs/api/audioreach-graphservices/prm-api",
+              "public/docs/api/audioreach-graphservices/quasar-module-api",
+              "public/docs/api/audioreach-graphservices/rate-adapted-timer-api",
+              "public/docs/api/audioreach-graphservices/rd-sh-mem-client-api",
+              "public/docs/api/audioreach-graphservices/rd-sh-mem-ep-api",
+              "public/docs/api/audioreach-graphservices/rt-proxy-api",
+              "public/docs/api/audioreach-graphservices/rtm-logging-api",
+              "public/docs/api/audioreach-graphservices/rx-haptics-api",
+              "public/docs/api/audioreach-graphservices/rx-haptics-shmem-api",
+              "public/docs/api/audioreach-graphservices/sa-hdt-api",
+              "public/docs/api/audioreach-graphservices/sbc-decoder-api",
+              "public/docs/api/audioreach-graphservices/sbc-encoder-api",
+              "public/docs/api/audioreach-graphservices/sdz-api",
+              "public/docs/api/audioreach-graphservices/sh-mem-pull-push-mode-api",
+              "public/docs/api/audioreach-graphservices/slimbus-api",
+              "public/docs/api/audioreach-graphservices/smart-sync-api",
+              "public/docs/api/audioreach-graphservices/soft-pause-api",
+              "public/docs/api/audioreach-graphservices/sound-dose-api",
+              "public/docs/api/audioreach-graphservices/sp-dc-api",
+              "public/docs/api/audioreach-graphservices/sp-rx",
+              "public/docs/api/audioreach-graphservices/sp-vi",
+              "public/docs/api/audioreach-graphservices/splitter-api",
+              "public/docs/api/audioreach-graphservices/spr-api",
+              "public/docs/api/audioreach-graphservices/sync-api",
+              "public/docs/api/audioreach-graphservices/test-module-api",
+              "public/docs/api/audioreach-graphservices/trm-api",
+              "public/docs/api/audioreach-graphservices/tsm-module-api",
+              "public/docs/api/audioreach-graphservices/tts-module-calibration-api",
+              "public/docs/api/audioreach-graphservices/tty-cmn-api",
+              "public/docs/api/audioreach-graphservices/us-detect-api",
+              "public/docs/api/audioreach-graphservices/us-gen-api",
+              "public/docs/api/audioreach-graphservices/us-tone-renderer-api",
+              "public/docs/api/audioreach-graphservices/usb-api",
+              "public/docs/api/audioreach-graphservices/vad-api",
+              "public/docs/api/audioreach-graphservices/vocoder-cmn-api",
+              "public/docs/api/audioreach-graphservices/vorbis-decoder-api",
+              "public/docs/api/audioreach-graphservices/wr-sh-mem-client-api",
+              "public/docs/api/audioreach-graphservices/wr-sh-mem-ep-api",
+              "public/docs/api/audioreach-graphservices/wsa-haptics-vi-api",
+              "public/docs/api/audioreach-graphservices/vcpm-api"
+            ]
+          },
+          {
+            "group": "audioreach-engine",
+            "pages": [
+              "public/docs/api/audioreach-engine/apm-api",
+              "public/docs/api/audioreach-engine/apm-container-api",
+              "public/docs/api/audioreach-engine/apm-debug-info",
+              "public/docs/api/audioreach-engine/apm-graph-properties",
+              "public/docs/api/audioreach-engine/apm-memmap-api",
+              "public/docs/api/audioreach-engine/apm-module-api",
+              "public/docs/api/audioreach-engine/apm-proxy-graph-mgmt-api",
+              "public/docs/api/audioreach-engine/apm-sub-graph-api",
+              "public/docs/api/audioreach-engine/ar-guids",
+              "public/docs/api/audioreach-engine/amdb-api",
+              "public/docs/api/audioreach-engine/ar-spf-cmd-api",
+              "public/docs/api/audioreach-engine/audioss-dsp-mem-api",
+              "public/docs/api/audioreach-engine/codec-metadata-api",
+              "public/docs/api/audioreach-engine/common-enc-dec-api",
+              "public/docs/api/audioreach-engine/congestion-buf-api",
+              "public/docs/api/audioreach-engine/contexts-api",
+              "public/docs/api/audioreach-engine/detection-cmn-api",
+              "public/docs/api/audioreach-engine/dtmf-detection-api",
+              "public/docs/api/audioreach-engine/imcl-fwk-intent-api",
+              "public/docs/api/audioreach-engine/jitter-buf-api",
+              "public/docs/api/audioreach-engine/media-fmt-api-basic",
+              "public/docs/api/audioreach-engine/media-fmt-api-ext",
+              "public/docs/api/audioreach-engine/metadata-api",
+              "public/docs/api/audioreach-engine/module-cmn-api",
+              "public/docs/api/audioreach-engine/module-cmn-shmem-api",
+              "public/docs/api/audioreach-engine/rd-sh-mem-client-api",
+              "public/docs/api/audioreach-engine/rd-sh-mem-ep-api",
+              "public/docs/api/audioreach-engine/rtm-logging-api",
+              "public/docs/api/audioreach-engine/vocoder-cmn-api",
+              "public/docs/api/audioreach-engine/wr-sh-mem-client-api",
+              "public/docs/api/audioreach-engine/wr-sh-mem-ep-api",
+              "public/docs/api/audioreach-engine/vcpm-api",
+              "public/docs/api/audioreach-engine/vcpm-config-api",
+              "public/docs/api/audioreach-engine/vcpm-tst-fwk-api",
+              "public/docs/api/audioreach-engine/dls-api",
+              "public/docs/api/audioreach-engine/dls-log-pkt-hdr-api"
+            ]
+          },
+          {
+            "group": "audioreach-graphmgr",
+            "pages": [
+              "public/docs/api/audioreach-graphmgr/agm-api"
+            ]
+          },
+          {
+            "group": "audioreach-pal",
+            "pages": [
+              "public/docs/api/audioreach-pal/device",
+              "public/docs/api/audioreach-pal/palapi",
+              "public/docs/api/audioreach-pal/paldefs",
+              "public/docs/api/audioreach-pal/session",
+              "public/docs/api/audioreach-pal/stream"
+            ]
+          },
+          {
+            "group": "audioreach-audio-utils",
+            "pages": [
+              "public/docs/api/audioreach-audio-utils/audio-route",
+              "public/docs/api/audioreach-audio-utils/audio"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "FastRPC",
+        "pages": [
+          {
+            "group": "fastrpc",
+            "pages": [
+              "public/docs/api/fastrpc/dspqueue",
+              "public/docs/api/fastrpc/remote"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Userspace Resource Manager",
+        "pages": [
+          {
+            "group": "userspace-resource-manager",
+            "pages": [
+              "public/docs/api/userspace-resource-manager/extensions",
+              "public/docs/api/userspace-resource-manager/urmplatformal"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Sensing Hub",
+        "pages": [
+          {
+            "group": "sensinghub",
+            "pages": [
+              "public/docs/api/sensinghub/suid",
+              "public/docs/api/sensinghub/qshlog",
+              "public/docs/api/sensinghub/qshpb",
+              "public/docs/api/sensinghub/qshpbsensorutils",
+              "public/docs/api/sensinghub/qshssr",
+              "public/docs/api/sensinghub/qshtrace",
+              "public/docs/api/sensinghub/qshwakelock",
+              "public/docs/api/sensinghub/qshworker",
+              "public/docs/api/sensinghub/suidlookup"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "MINK IPC",
+        "pages": [
+          {
+            "group": "minkipc",
+            "pages": [
+              "public/docs/api/minkipc/minkcom",
+              "public/docs/api/minkipc/object",
+              "public/docs/api/minkipc/tee-client-api"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

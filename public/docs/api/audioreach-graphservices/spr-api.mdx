@@ -1,0 +1,510 @@
+---
+title: "spr_api.h"
+description: "This file contains Public APIs for Splitter-Renderer module."
+---
+
+## Structures
+
+### `time_us_t`
+
+Defines the timestamp value.
+
+**Members**
+
+<ParamField path="value_lsw" type="uint32_t">
+  Lower 32 bits of 64-bit time value in microseconds.
+</ParamField>
+<ParamField path="value_msw" type="uint32_t">
+  Upper 32 bits of 64-bit time value in microseconds.
+</ParamField>
+
+### `config_spr_render_mode_t`
+
+Contains configuration information for the Render mode.
+
+**Members**
+
+<ParamField path="render_mode" type="uint32_t">
+  Mode that indicates when to start rendering data.
+</ParamField>
+<ParamField path="render_start_time" type="time_us_t">
+  Render start time in microseconds.
+</ParamField>
+
+### `config_spr_render_window_t`
+
+Contains configuration information for the render window.
+
+**Members**
+
+<ParamField path="render_window_start" type="time_us_t">
+  Start of the tolerance window for incoming timestamps used to make rendering decisions.
+</ParamField>
+<ParamField path="render_window_end" type="time_us_t">
+  End of the tolerance window for incoming timestamps used to make rendering decisions.
+</ParamField>
+
+### `config_spr_render_reference_t`
+
+Contains configuration information for the render decision reference.
+
+**Members**
+
+<ParamField path="render_reference" type="uint32_t">
+  Indicates the choice of render decision reference for incoming data.
+</ParamField>
+
+### `config_spr_render_hold_duration_t`
+
+Defines the duration of the hold buffer when a render decision is to hold data in the buffer.
+
+**Members**
+
+<ParamField path="max_hold_buffer_duration" type="time_us_t">
+  Maximum size (in microseconds) of the hold buffer.
+</ParamField>
+
+### `param_id_spr_delay_path_end_t`
+
+Payload of the PARAM_ID_SPR_DELAY_PATH_END parameter.
+
+**Members**
+
+<ParamField path="module_instance_id" type="uint32_t">
+  Identifier for the module instance ID at the end of the path used for delay calculations.
+</ParamField>
+
+### `param_id_spr_session_time_t`
+
+Payload of the PARAM_ID_SPR_SESSION_TIME parameter.
+
+**Members**
+
+<ParamField path="session_time" type="time_us_t">
+  Value of the current session time in microseconds.
+</ParamField>
+<ParamField path="absolute_time" type="time_us_t">
+  Value of the absolute time in microseconds when the sample that corresponds to the session time is rendered at the hardware.
+</ParamField>
+<ParamField path="timestamp" type="time_us_t">
+  Value of the last processed timestamp in microseconds.
+</ParamField>
+<ParamField path="flags" type="uint32_t">
+  Configures additional properties associated with this payload.
+</ParamField>
+
+### `param_id_spr_session_time_reset_info_t`
+
+Payload of the PARAM_ID_SPR_SESSION_TIME_RESET_INFO parameter.
+
+**Members**
+
+<ParamField path="mode" type="uint32_t">
+  Indicates the configuration for handling session time reset.
+</ParamField>
+
+### `param_id_spr_avsync_config_t`
+
+Payload of the PARAM_ID_SPR_AVSYNC_CONFIG parameter.
+
+**Members**
+
+<ParamField path="enable" type="uint16_t">
+  Indicates if the AVSync functionality is to be enabled.
+</ParamField>
+<ParamField path="render_mask" type="uint16_t">
+  Render mask with bitfields to selectively configure fields.
+</ParamField>
+<ParamField path="render_mode_config" type="config_spr_render_mode_t">
+  Configuration parameter for the Render mode and start time.
+</ParamField>
+<ParamField path="render_reference_config" type="config_spr_render_reference_t">
+  Configuration parameter for the render reference.
+</ParamField>
+<ParamField path="render_window" type="config_spr_render_window_t">
+  Configuration parameter for the render window.
+</ParamField>
+<ParamField path="render_hold_buffer_size" type="config_spr_render_hold_duration_t">
+  Configuration parameter for the size of the render hold buffer.
+</ParamField>
+
+### `spr_port_binding_t`
+
+Defines a control port-to-output data port mapping.
+
+**Members**
+
+<ParamField path="control_port_id" type="uint32_t">
+  Identifier for the control port of the module.
+</ParamField>
+<ParamField path="output_port_id" type="uint32_t">
+  Identifier for the output port to which a control port is linked.
+</ParamField>
+
+### `param_id_spr_ctrl_to_data_port_map_t`
+
+Payload of the PARAM_ID_SPR_CTRL_TO_DATA_PORT_MAP parameter.
+
+**Members**
+
+<ParamField path="num_ctrl_ports" type="uint32_t">
+  Number of control port IDs attached to the module.
+</ParamField>
+
+### `event_id_spr_underrun_t`
+
+Payload of the EVENT_ID_SPR_UNDERRUN event.
+
+**Members**
+
+<ParamField path="status" type="uint32_t">
+  Status of the underrun event being raised by the SPR module.
+</ParamField>
+
+## Type Definitions
+
+### `time_us_t`
+
+```c
+typedef struct time_us_t time_us_t
+```
+
+### `config_spr_render_mode_t`
+
+```c
+typedef struct config_spr_render_mode_t config_spr_render_mode_t
+```
+
+### `config_spr_render_window_t`
+
+```c
+typedef struct config_spr_render_window_t config_spr_render_window_t
+```
+
+### `config_spr_render_reference_t`
+
+```c
+typedef struct config_spr_render_reference_t config_spr_render_reference_t
+```
+
+### `config_spr_render_hold_duration_t`
+
+```c
+typedef struct config_spr_render_hold_duration_t config_spr_render_hold_duration_t
+```
+
+### `param_id_spr_delay_path_end_t`
+
+```c
+typedef struct param_id_spr_delay_path_end_t param_id_spr_delay_path_end_t
+```
+
+### `param_id_spr_session_time_t`
+
+```c
+typedef struct param_id_spr_session_time_t param_id_spr_session_time_t
+```
+
+### `param_id_spr_session_time_reset_info_t`
+
+```c
+typedef struct param_id_spr_session_time_reset_info_t param_id_spr_session_time_reset_info_t
+```
+
+### `param_id_spr_avsync_config_t`
+
+```c
+typedef struct param_id_spr_avsync_config_t param_id_spr_avsync_config_t
+```
+
+### `spr_port_binding_t`
+
+```c
+typedef struct spr_port_binding_t spr_port_binding_t
+```
+
+### `param_id_spr_ctrl_to_data_port_map_t`
+
+```c
+typedef struct param_id_spr_ctrl_to_data_port_map_t param_id_spr_ctrl_to_data_port_map_t
+```
+
+### `event_id_spr_underrun_t`
+
+```c
+typedef struct event_id_spr_underrun_t event_id_spr_underrun_t
+```
+
+## Macros
+
+### `SPR_RENDER_MODE_IMMEDIATE`
+
+Indicates that the render start time is immediate.
+
+```c
+#define SPR_RENDER_MODE_IMMEDIATE 1
+```
+
+### `SPR_RENDER_MODE_ABSOLUTE_TIME`
+
+Indicates that the render start time is at given value of absolute time.
+
+```c
+#define SPR_RENDER_MODE_ABSOLUTE_TIME 2
+```
+
+### `SPR_RENDER_MODE_DELAYED`
+
+Indicates that the render start time is at a specified offset from the current absolute time wall clock time.
+
+```c
+#define SPR_RENDER_MODE_DELAYED 3
+```
+
+### `DEFAULT_RENDER_WINDOW_START_MSW`
+
+MSW of the sign-extended default time (-infinity) for the render window start time.
+
+```c
+#define DEFAULT_RENDER_WINDOW_START_MSW AR_NON_GUID(0x80000000)
+```
+
+### `DEFAULT_RENDER_WINDOW_START_LSW`
+
+LSW of the sign-extended default time (-infinity) for the render window start time.
+
+```c
+#define DEFAULT_RENDER_WINDOW_START_LSW AR_NON_GUID(0x00000000)
+```
+
+### `DEFAULT_RENDER_WINDOW_END_MSW`
+
+MSW of the sign-extended default time (-infinity) for the render window end time.
+
+```c
+#define DEFAULT_RENDER_WINDOW_END_MSW AR_NON_GUID(0x7FFFFFFF)
+```
+
+### `DEFAULT_RENDER_WINDOW_END_LSW`
+
+LSW of the sign extended default time (-infinity) for the render window end time.
+
+```c
+#define DEFAULT_RENDER_WINDOW_END_LSW AR_NON_GUID(0xFFFFFFFF)
+```
+
+### `SPR_RENDER_REFERENCE_DEFAULT`
+
+Indicates that the render decision is based on the rendering rate of the primary device (or the session clock mode) served by the SPF module.
+
+```c
+#define SPR_RENDER_REFERENCE_DEFAULT 1
+```
+
+### `SPR_RENDER_REFERENCE_WALL_CLOCK`
+
+Indicates that the render decision is based on the local wall clock reference.
+
+```c
+#define SPR_RENDER_REFERENCE_WALL_CLOCK 2
+```
+
+### `SPR_RENDER_BIT_MASK_RENDER_MODE`
+
+Definition of the Render mode bitmask.
+
+```c
+#define SPR_RENDER_BIT_MASK_RENDER_MODE AR_NON_GUID(0x00000001)
+```
+
+### `SPR_RENDER_SHIFT_RENDER_MODE`
+
+Definition of the Render mode shift value.
+
+```c
+#define SPR_RENDER_SHIFT_RENDER_MODE 0
+```
+
+### `SPR_RENDER_BIT_MASK_RENDER_REFERENCE`
+
+Definition of the render reference bitmask.
+
+```c
+#define SPR_RENDER_BIT_MASK_RENDER_REFERENCE AR_NON_GUID(0x00000002)
+```
+
+### `SPR_RENDER_SHIFT_RENDER_REFERENCE`
+
+Definition of the render reference shift value.
+
+```c
+#define SPR_RENDER_SHIFT_RENDER_REFERENCE 1
+```
+
+### `SPR_RENDER_BIT_MASK_RENDER_WINDOW`
+
+Definition of the render window bitmask.
+
+```c
+#define SPR_RENDER_BIT_MASK_RENDER_WINDOW AR_NON_GUID(0x00000004)
+```
+
+### `SPR_RENDER_SHIFT_RENDER_WINDOW`
+
+Definition of the render window shift value.
+
+```c
+#define SPR_RENDER_SHIFT_RENDER_WINDOW 2
+```
+
+### `SPR_RENDER_BIT_MASK_HOLD_DURATION`
+
+Definition of the render hold duration.
+
+```c
+#define SPR_RENDER_BIT_MASK_HOLD_DURATION AR_NON_GUID(0x00000008)
+```
+
+### `SPR_RENDER_SHIFT_HOLD_DURATION`
+
+Definition of the render hold duration shift value.
+
+```c
+#define SPR_RENDER_SHIFT_HOLD_DURATION 3
+```
+
+### `SPR_RENDER_BIT_MASK_ALLOW_NON_TIMESTAMP_HONOR_MODE`
+
+Indicates Non-time stamp honor mode can be enabled or not.
+
+```c
+#define SPR_RENDER_BIT_MASK_ALLOW_NON_TIMESTAMP_HONOR_MODE AR_NON_GUID(0x00000010)
+```
+
+### `SPR_RENDER_SHIFT_ALLOW_NONTIMESTAMP_HONOR_MODE`
+
+Definition of Non-time stamp honor mode shift value.
+
+```c
+#define SPR_RENDER_SHIFT_ALLOW_NONTIMESTAMP_HONOR_MODE 4
+```
+
+### `PARAM_ID_SPR_DELAY_PATH_END`
+
+ID of the parameter that defines end of the delay path.
+
+```c
+#define PARAM_ID_SPR_DELAY_PATH_END 0x080010C4
+```
+
+### `PARAM_ID_SESSION_TIME_BIT_MASK_IS_TIMESTAMP_VALID`
+
+Bitmask for the Timestamp Valid flag in param_id_session_time_t.
+
+```c
+#define PARAM_ID_SESSION_TIME_BIT_MASK_IS_TIMESTAMP_VALID AR_NON_GUID(0x80000000UL)
+```
+
+### `PARAM_ID_SESSION_TIME_SHIFT_IS_TIMESTAMP_VALID`
+
+Shift value for the Timestamp Valid flag in param_id_session_time_t.
+
+```c
+#define PARAM_ID_SESSION_TIME_SHIFT_IS_TIMESTAMP_VALID 31
+```
+
+### `PARAM_ID_SPR_SESSION_TIME`
+
+Identifier for the Get parameter used to query the session time.
+
+```c
+#define PARAM_ID_SPR_SESSION_TIME 0x0800113D
+```
+
+### `SPR_SESSION_TIME_RESET_MODE_DEFAULT`
+
+Indicates that the SPR operates in the Default Mode where session_time is reset when 1) Flush command is issued 2) Gapless stream switch occurs.
+
+```c
+#define SPR_SESSION_TIME_RESET_MODE_DEFAULT 0
+```
+
+### `SPR_SESSION_TIME_SKIP_RESET_GAPLESS_SWITCH`
+
+Indicates that the SPR operates in the mode where session_time reset is skipped when Gapless stream switch occurs.
+
+```c
+#define SPR_SESSION_TIME_SKIP_RESET_GAPLESS_SWITCH 1
+```
+
+### `PARAM_ID_SPR_SESSION_TIME_RESET_INFO`
+
+Identifier for the parameter used to configure the SPR module behavior with respect to resetting session time.
+
+```c
+#define PARAM_ID_SPR_SESSION_TIME_RESET_INFO 0x08001B07
+```
+
+### `PARAM_ID_SPR_AVSYNC_CONFIG`
+
+Identifier for the parameter that configures information required for AV synchronization functionalities in the SPR module, including a data render decision.
+
+```c
+#define PARAM_ID_SPR_AVSYNC_CONFIG 0x0800115B
+```
+
+### `PARAM_ID_SPR_CTRL_TO_DATA_PORT_MAP`
+
+Identifier for the parameter that defines the control port-to-data port mapping.
+
+```c
+#define PARAM_ID_SPR_CTRL_TO_DATA_PORT_MAP 0x0800113A
+```
+
+### `UNDERRUN_STATUS_INPUT_NOT_AVAILABLE`
+
+Indicates an underrun occurred because input is not available.
+
+```c
+#define UNDERRUN_STATUS_INPUT_NOT_AVAILABLE 0x1
+```
+
+### `UNDERRUN_STATUS_INPUT_HOLD`
+
+Indicates an underrun occurred because the input is held after the render decision (AVSync).
+
+```c
+#define UNDERRUN_STATUS_INPUT_HOLD 0x2
+```
+
+### `UNDERRUN_STATUS_INPUT_DROP`
+
+Indicates an underrun occurred because input is dropped after the render decision (AVSync).
+
+```c
+#define UNDERRUN_STATUS_INPUT_DROP 0x3
+```
+
+### `EVENT_ID_SPR_UNDERRUN`
+
+Identifier for the underrun event raised by the SPR module.
+
+```c
+#define EVENT_ID_SPR_UNDERRUN 0x080011E6
+```
+
+### `EVENT_ID_SPR_SESSION_TIME_RESET`
+
+Identifier for the session time reset event raised by SPR module.
+
+```c
+#define EVENT_ID_SPR_SESSION_TIME_RESET 0x08001B60
+```
+
+### `MODULE_ID_SPR`
+
+Identifier for the Splitter Renderer module, which is used to split an audio stream into multiple devices.
+
+```c
+#define MODULE_ID_SPR 0x07001032
+```

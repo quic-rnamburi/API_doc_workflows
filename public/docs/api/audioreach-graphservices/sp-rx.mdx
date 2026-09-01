@@ -1,0 +1,1722 @@
+---
+title: "sp_rx.h"
+---
+
+## Structures
+
+### `param_id_sp_static_cfg_t`
+
+**Members**
+
+<ParamField path="sampling_rate" type="uint32_t">
+</ParamField>
+<ParamField path="bits_per_sample" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_speakers" type="uint32_t">
+
+</ParamField>
+<ParamField path="frame_size_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="features" type="uint32_t">
+
+</ParamField>
+<ParamField path="tuning_mode_en_flag" type="uint32_t">
+
+//todo: check once on this grouping field.
+</ParamField>
+<ParamField path="ctrl_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_nch_filter_stages" type="uint32_t">
+
+</ParamField>
+<ParamField path="temp_loop_dly_ms" type="int16_t">
+
+</ParamField>
+<ParamField path="pow_est_smooth_flag" type="int16_t">
+
+</ParamField>
+<ParamField path="pt_lvl_switch_en" type="uint16_t">
+
+</ParamField>
+<ParamField path="pt_masking_delay_ms" type="uint16_t">
+
+</ParamField>
+<ParamField path="pt_masking_thr_q27" type="int32_t">
+
+</ParamField>
+<ParamField path="hist_buf_length" type="int32_t">
+
+</ParamField>
+<ParamField path="rx_static_gain_q27" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_delay_ms" type="int32_t">
+</ParamField>
+<ParamField path="log_dump_en_flag" type="uint32_t">
+  ms
+</ParamField>
+<ParamField path="logging_count_period" type="uint32_t">
+</ParamField>
+<ParamField path="fpilot" type="uint32_t">
+</ParamField>
+<ParamField path="cps_sampling_rate" type="uint32_t">
+  Pilot tone frequency values MUST be the same for the RX/TH/EX modules}
+</ParamField>
+<ParamField path="chip" type="uint32_t">
+</ParamField>
+<ParamField path="cps_mode_flag" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_cps_static_cfg_t`
+
+**Members**
+
+<ParamField path="limiter_cps_en_flag" type="uint16_t">
+</ParamField>
+<ParamField path="limiter_cps_smooth_VbDT_en_flag" type="uint16_t">
+</ParamField>
+<ParamField path="limiter_cps_margin_dB_q15" type="int32_t">
+</ParamField>
+<ParamField path="FourOhmTable_GaindB_q24" type="int32_t">
+</ParamField>
+<ParamField path="SixOhmTable_GaindB_q24" type="int32_t">
+
+</ParamField>
+<ParamField path="EightOhmTable_GaindB_q24" type="int32_t">
+
+</ParamField>
+
+### `param_id_sp_ex_cps_demo_cfg_t`
+
+**Members**
+
+<ParamField path="dsr" type="uint16_t">
+
+</ParamField>
+
+### `sp_ex_rx_cps_param_t`
+
+**Members**
+
+<ParamField path="Vbatt_rt_q24" type="int32_t">
+</ParamField>
+<ParamField path="DieTemp_rt_q20" type="int32_t">
+</ParamField>
+<ParamField path="dB_cps_Gain_rt_q24" type="int32_t">
+</ParamField>
+
+### `param_id_sp_ex_cps_stats_t`
+
+**Members**
+
+<ParamField path="frame_duration_in_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="frame_num" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_op_mode_t`
+
+**Members**
+
+<ParamField path="operation_mode" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_transition_asp_enable_t`
+
+**Members**
+
+<ParamField path="trans_asp_mode" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_transition_asp_calib_param_t`
+
+**Members**
+
+<ParamField path="initial_target_gain" type="uint32_t">
+</ParamField>
+<ParamField path="initial_target_gain_period_in_msec" type="uint32_t">
+</ParamField>
+<ParamField path="rampup_transition_time_in_msec" type="uint32_t">
+</ParamField>
+
+### `sp_rx_nch_filt_param_t`
+
+**Members**
+
+<ParamField path="num" type="int32_t">
+
+</ParamField>
+<ParamField path="den" type="int32_t">
+
+</ParamField>
+<ParamField path="num_q" type="int16_t">
+
+</ParamField>
+<ParamField path="den_q" type="int16_t">
+
+</ParamField>
+
+### `sp_tdf2_cfg_t`
+
+**Members**
+
+<ParamField path="numCh" type="int16_t">
+
+</ParamField>
+<ParamField path="stages" type="int16_t">
+
+</ParamField>
+<ParamField path="num" type="int32_t">
+</ParamField>
+<ParamField path="den" type="int32_t">
+
+</ParamField>
+<ParamField path="numQ" type="int16_t">
+
+</ParamField>
+<ParamField path="denQ" type="int16_t">
+</ParamField>
+
+### `sp_th_ctrl_param_t`
+
+**Members**
+
+<ParamField path="pi_scale_u16q18" type="uint32_t">
+</ParamField>
+<ParamField path="rx_scale_u16q16" type="uint32_t">
+
+</ParamField>
+<ParamField path="r_spk_coil_q8" type="int32_t">
+
+</ParamField>
+<ParamField path="v_full_scale_q10" type="int32_t">
+
+</ParamField>
+<ParamField path="thermal_resistance_q6" type="int32_t">
+
+</ParamField>
+<ParamField path="thermal_time_constant_low_q10" type="int32_t">
+
+</ParamField>
+<ParamField path="thermal_time_constant_high_q10" type="int32_t">
+  (in seconds)}
+</ParamField>
+<ParamField path="temp_tgt_q6" type="int32_t">
+  (in seconds)}
+</ParamField>
+<ParamField path="pi_ctrl_prop_value_q12" type="int32_t">
+  (in degrees C)}
+</ParamField>
+<ParamField path="pi_ctrl_intg_value_q12" type="int32_t">
+
+</ParamField>
+
+### `sp_fir_cfg_t`
+
+**Members**
+
+<ParamField path="numTaps" type="int16_t">
+</ParamField>
+<ParamField path="Q" type="int16_t">
+</ParamField>
+<ParamField path="taps" type="int32_t">
+</ParamField>
+
+### `sp_ex_ctrl_param_t`
+
+**Members**
+
+<ParamField path="amp_gain_q24" type="int32_t">
+</ParamField>
+<ParamField path="ptone_excursion_mm_q27" type="int32_t">
+</ParamField>
+<ParamField path="dc_excursion_mm_q27" type="int32_t">
+  This excursion is added to the computed peak excursion.}
+</ParamField>
+<ParamField path="max_excursion_mm_q27" type="int32_t">
+</ParamField>
+<ParamField path="max_amplitude_q27" type="int32_t">
+</ParamField>
+<ParamField path="max_power_W_q27" type="int32_t">
+</ParamField>
+<ParamField path="trace_resistance_rx_q24" type="int32_t">
+</ParamField>
+<ParamField path="exc_model_tuning_factor_q27" type="int32_t">
+</ParamField>
+<ParamField path="Re_ohm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl_q24" type="int32_t">
+</ParamField>
+<ParamField path="Mms_gram_q24" type="int32_t">
+</ParamField>
+<ParamField path="Rms_KgSec_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms_Nmm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Qms_q24" type="int32_t">
+</ParamField>
+<ParamField path="Fres_Hz_q20" type="int32_t">
+</ParamField>
+<ParamField path="dc_sensitivity_Vmm_q24" type="int32_t">
+</ParamField>
+<ParamField path="band_splitting_even_filter_cfg" type="sp_tdf2_cfg_t">
+</ParamField>
+<ParamField path="band_splitting_odd_filter_cfg" type="sp_tdf2_cfg_t">
+</ParamField>
+<ParamField path="band_splitting_linear_phase_filter_cfg" type="sp_fir_cfg_t">
+</ParamField>
+
+### `param_id_sp_dynamic_cfg_t`
+
+**Members**
+
+<ParamField path="rx_notch_filter_cfg" type="sp_rx_nch_filt_param_t">
+</ParamField>
+<ParamField path="link_all_channels_gain" type="uint32_t">
+</ParamField>
+<ParamField path="temp_control_mthd" type="uint32_t">
+
+</ParamField>
+<ParamField path="temp_nominal_q6" type="int32_t">
+
+</ParamField>
+<ParamField path="temp_min_q6" type="int32_t">
+  (in degree C)}
+</ParamField>
+<ParamField path="temp_max_q6" type="int32_t">
+  A temperature lower than this value is ignored. (in degree C)}
+</ParamField>
+<ParamField path="temp_max_chg_sec_q6" type="int32_t">
+  A temperature higher than this value is ignored.(in degree C)}
+</ParamField>
+<ParamField path="temp_smoothing_factor_q31" type="int32_t">
+  A new temperature is ignored if it falls outside this range.(Set 0 to disables this feature)}
+</ParamField>
+<ParamField path="max_attenuation_db_q7" type="int32_t">
+
+</ParamField>
+<ParamField path="attack_gain_smoothing_factor" type="int32_t">
+
+</ParamField>
+<ParamField path="release_gain_smoothing_factor" type="int32_t">
+
+</ParamField>
+<ParamField path="temp_dead_zone_q6" type="int32_t">
+
+</ParamField>
+<ParamField path="dead_zone_scaling_q15" type="int32_t">
+  (in degree C)}
+</ParamField>
+<ParamField path="clip_time_out_ms" type="int32_t">
+
+</ParamField>
+<ParamField path="vbat_time_out_ms" type="int32_t">
+  (value greater than 0 enables the clip interrupt timeout)}
+</ParamField>
+<ParamField path="link_all_channels_ex_gain" type="int32_t">
+  (value greater than 0 enables the VBAT interrupt timeout)}
+</ParamField>
+<ParamField path="max_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_type" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_fc_q20" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_Q_q24" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_threshold_dBq23" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_ratio_q24" type="int32_t">
+  . 1677721600}
+</ParamField>
+<ParamField path="dyn_proc_makeup_gain_q27" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_attack_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_auto_release_flag" type="int32_t">
+</ParamField>
+<ParamField path="lfsn_type" type="int32_t">
+</ParamField>
+<ParamField path="lfsn_fc_q20" type="int32_t">
+</ParamField>
+<ParamField path="lfsn_Q_q24" type="int32_t">
+</ParamField>
+<ParamField path="lfsn_min_gain_q27" type="int32_t">
+</ParamField>
+<ParamField path="lfsn_attack_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="lfsn_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="lfsn_auto_release_flag" type="int32_t">
+</ParamField>
+<ParamField path="exc_ctrl_attack_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="exc_ctrl_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="exc_ctrl_auto_release_flag" type="int32_t">
+</ParamField>
+<ParamField path="exc_ctrl_min_gain_q27" type="int32_t">
+</ParamField>
+<ParamField path="pow_lim_enable_flag" type="int32_t">
+</ParamField>
+<ParamField path="limiter_attack_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="limiter_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="limiter_auto_release_flag" type="int32_t">
+</ParamField>
+<ParamField path="num_ch" type="uint32_t">
+  int32_t filterbank_type; // 0 IIR and 1 FIR
+</ParamField>
+
+### `param_id_sp_th_demo_cfg_t`
+
+**Members**
+
+<ParamField path="dsr" type="uint16_t">
+
+</ParamField>
+<ParamField path="lpass_alph_q16" type="uint16_t">
+  Q16 format.}
+</ParamField>
+
+### `param_id_sp_ex_demo_cfg_t`
+
+**Members**
+
+<ParamField path="dsr" type="uint16_t">
+
+</ParamField>
+
+### `sp_th_rx_param_t`
+
+**Members**
+
+<ParamField path="vc_resis_q24" type="int32_t">
+</ParamField>
+<ParamField path="vc_temp_q22" type="int32_t">
+  (in degrees C)}
+</ParamField>
+<ParamField path="th_gain_lnk_db_q23" type="int32_t">
+</ParamField>
+<ParamField path="target_temp_q22" type="int32_t">
+  (in degrees C)}
+</ParamField>
+
+### `param_id_sp_th_stats_t`
+
+**Members**
+
+<ParamField path="frame_duration_in_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="frame_num" type="uint32_t">
+
+</ParamField>
+<ParamField path="demo_out_valid" type="int32_t">
+</ParamField>
+<ParamField path="demo_out_pkt_cnt" type="uint32_t">
+</ParamField>
+<ParamField path="demo_out_samp_dist_ms" type="int32_t">
+</ParamField>
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+
+### `sp_ex_rx_param_t`
+
+**Members**
+
+<ParamField path="Re_rt_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl_rt_q24" type="int32_t">
+</ParamField>
+<ParamField path="Rms_rt_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms_rt_q24" type="int32_t">
+</ParamField>
+<ParamField path="Fres_rt_q20" type="int32_t">
+</ParamField>
+<ParamField path="Qms_rt_q24" type="int32_t">
+</ParamField>
+<ParamField path="dc_rt_q27" type="int32_t">
+</ParamField>
+<ParamField path="dp_in_rms_q27" type="int32_t">
+</ParamField>
+<ParamField path="dp_out_rms_q27" type="int32_t">
+</ParamField>
+<ParamField path="dp_notch_gain_q27" type="int32_t">
+</ParamField>
+<ParamField path="dp_tgt_rms_q27" type="int32_t">
+</ParamField>
+<ParamField path="lfsn_in_peak_pred_exc_q27" type="int32_t">
+</ParamField>
+<ParamField path="lfsn_out_peak_pred_exc_q27" type="int32_t">
+</ParamField>
+<ParamField path="lfsn_filter_gain_q27" type="int32_t">
+</ParamField>
+<ParamField path="exc_ctrl_in_peak_pred_exc_q27" type="int32_t">
+</ParamField>
+<ParamField path="exc_ctrl_out_peak_pred_exc_q27" type="int32_t">
+</ParamField>
+<ParamField path="exc_ctrl_tot_out_peak_pred_exc_q27" type="int32_t">
+</ParamField>
+<ParamField path="exc_ctrl_gain_q27" type="int32_t">
+</ParamField>
+<ParamField path="exc_ctrl_tgt_excursion_q27" type="int32_t">
+</ParamField>
+<ParamField path="amp_lim_in_peak_pred_amp_q27" type="int32_t">
+</ParamField>
+<ParamField path="amp_lim_out_peak_pred_amp_q27" type="int32_t">
+</ParamField>
+<ParamField path="pow_lim_in_peak_pred_pow_q27" type="int32_t">
+</ParamField>
+<ParamField path="pow_lim_out_peak_pred_pow_q27" type="int32_t">
+</ParamField>
+<ParamField path="amp_lim_tgt_amplitude_q27" type="int32_t">
+</ParamField>
+<ParamField path="pow_lim_tgt_power_q27" type="int32_t">
+</ParamField>
+<ParamField path="tot_lim_gain_q27" type="int32_t">
+</ParamField>
+
+### `param_id_sp_ex_stats_t`
+
+**Members**
+
+<ParamField path="frame_duration_in_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="frame_num" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="demo_out_valid" type="int32_t">
+</ParamField>
+<ParamField path="demo_out_pkt_cnt" type="uint32_t">
+</ParamField>
+<ParamField path="demo_out_samp_dist_ms" type="int32_t">
+</ParamField>
+
+### `param_id_sp_stats_t`
+
+**Members**
+
+<ParamField path="frame_duration_in_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="frame_num" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_speakers" type="uint32_t">
+
+</ParamField>
+<ParamField path="features" type="uint32_t">
+
+</ParamField>
+
+### `sp_tmax_xmax_params_t`
+
+**Members**
+
+<ParamField path="max_excursion" type="int32_t">
+</ParamField>
+<ParamField path="count_exceeded_excursion" type="uint32_t">
+</ParamField>
+<ParamField path="max_temperature" type="int32_t">
+</ParamField>
+<ParamField path="count_exceeded_temperature" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_tmax_xmax_logging_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+
+</ParamField>
+<ParamField path="tmax_xmax_params" type="sp_tmax_xmax_params_t">
+
+</ParamField>
+
+### `param_id_sp_tmax_xmax_logging_extn_params_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="Mode" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_th_pi_derv_ctrl_cfg_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_rx_cps_fine_param_t`
+
+**Members**
+
+<ParamField path="cps_fine_tbl_en_flag" type="uint16_t">
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+</ParamField>
+<ParamField path="FourOhmTable_fine_GaindB_q24" type="int32_t">
+  Range: -9dB to 21dB}
+</ParamField>
+<ParamField path="SixOhmTable_fine_GaindB_q24" type="int32_t">
+  Range: -9dB to 21dB}
+</ParamField>
+<ParamField path="EightOhmTable_fine_GaindB_q24" type="int32_t">
+  Range: -9dB to 21dB}
+</ParamField>
+
+### `param_id_sp_ex_rx_power_limiter_mode2_param_t`
+
+**Members**
+
+<ParamField path="mode2power_limiter_attack_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="mode2power_limiter_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="temp_nominal_q22" type="int32_t">
+  (in degrees C)}
+</ParamField>
+<ParamField path="temp_tgt_q22" type="int32_t">
+  (in degrees C)}
+</ParamField>
+<ParamField path="temp_delta_q22" type="int32_t">
+  (in degrees C)}
+</ParamField>
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_version_t`
+
+**Members**
+
+<ParamField path="lib_version_low" type="uint32_t">
+
+</ParamField>
+<ParamField path="lib_version_high" type="uint32_t">
+
+</ParamField>
+
+### `cps_reg_wr_values_t`
+
+**Members**
+
+<ParamField path="value_normal_threshold" type="uint32_t">
+  vbatt greater than or equal to vbatt_lower_threshold_1}
+</ParamField>
+<ParamField path="value_lower_threshold_1" type="uint32_t">
+</ParamField>
+<ParamField path="value_lower_threshold_2" type="uint32_t">
+</ParamField>
+
+### `param_id_cps_lpass_swr_thresholds_cfg_t`
+
+**Members**
+
+<ParamField path="num_spkr" type="uint32_t">
+
+</ParamField>
+<ParamField path="vbatt_lower_threshold_1" type="uint32_t">
+  Size = 8bits. if vbatt is greater than or equal to value_lower_threshold_2 and vbatt is less than vbatt_lower_threshold_1, write configured values to LPASS WR CMD register}
+</ParamField>
+<ParamField path="vbatt_lower_threshold_2" type="uint32_t">
+  Size = 8bits. If vbatt is less than vbatt_lower_threshold_2, write configured values to LPASS WR CMD register}
+</ParamField>
+<ParamField path="cps_reg_wr_values" type="cps_reg_wr_values_t">
+</ParamField>
+
+### `pkd_reg_addr_t`
+
+**Members**
+
+<ParamField path="vbatt_pkd_reg_addr" type="uint32_t">
+  To read Voltage value}
+</ParamField>
+<ParamField path="temp_pkd_reg_addr" type="uint32_t">
+  To read Temp value}
+</ParamField>
+
+### `lpass_swr_hw_reg_cfg_t`
+
+**Members**
+
+<ParamField path="num_spkr" type="uint32_t">
+
+</ParamField>
+<ParamField path="lpass_wr_cmd_reg_phy_addr" type="uint32_t">
+  Threshold values to be written based on vbatt value read. Write only at transitions from either of the following values: lower threshold 1, lower threshold 2 and normal}
+</ParamField>
+<ParamField path="lpass_rd_cmd_reg_phy_addr" type="uint32_t">
+</ParamField>
+<ParamField path="lpass_rd_fifo_reg_phy_addr" type="uint32_t">
+
+</ParamField>
+<ParamField path="pkd_reg_addr" type="pkd_reg_addr_t">
+  To read Voltage/Temp value}
+</ParamField>
+
+### `param_id_cps_lpass_hw_intf_cfg_t`
+
+**Members**
+
+<ParamField path="lpass_hw_intf_cfg_mode" type="uint32_t">
+  1 - SOUNDWIRE MODE 2 - DMA MODE}
+</ParamField>
+
+### `param_id_sp_rx_ex_cps2_battconfig_lfatten_param_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+
+### `param_id_sp_cps2_param_t`
+
+**Members**
+
+<ParamField path="battery_configuration" type="int32_t">
+</ParamField>
+<ParamField path="Vph_WSA_min_q24" type="int32_t">
+</ParamField>
+<ParamField path="Ibatt_max_per_channel_q24" type="int32_t">
+  For 2S/3S; insert Vph_2S/2; Vph_3S/3 for simplicity. Range from 2.5 to 5V for 1S}
+</ParamField>
+<ParamField path="Iboost_throttled_perchannel_q24" type="int32_t">
+
+</ParamField>
+<ParamField path="Rph_series_q24" type="int32_t">
+
+</ParamField>
+<ParamField path="PA_eta_q24" type="int32_t">
+  series resistance between the battery and the Vph tap point on the amp.}
+</ParamField>
+<ParamField path="pbxo_band_splitting_even_filter_cfg" type="sp_tdf2_cfg_t">
+</ParamField>
+<ParamField path="pbxo_band_splitting_odd_filter_cfg" type="sp_tdf2_cfg_t">
+</ParamField>
+<ParamField path="clip_detect_hold_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="clip_detect_attenuation_perframe_q27" type="int32_t">
+</ParamField>
+<ParamField path="clip_detect_max_attenuation_thr_q27" type="int32_t">
+
+</ParamField>
+<ParamField path="battery_config_low_frequency_attenuation_q27" type="int32_t">
+</ParamField>
+<ParamField path="Vph_WSA_throttlelvl_q24" type="int32_t">
+  default is idb(-2) in q27}
+</ParamField>
+<ParamField path="Vph_WSA_max_q24" type="int32_t">
+  apply nominal values for 1/2/3S as is.}
+</ParamField>
+<ParamField path="CPS2_max_inst_power_limit_W_q24" type="int32_t">
+  apply nominal values as is for 1/2/3S.}
+</ParamField>
+
+### `param_id_sp_ex_rx_cps2_param_t`
+
+**Members**
+
+<ParamField path="clipdetect_limiter_attack_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="clipdetect_limiter_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="num_ch" type="int32_t">
+</ParamField>
+
+### `param_id_sp_cps_batttemp_param_t`
+
+**Members**
+
+<ParamField path="attenuateSmallerLoads" type="int16_t">
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+
+</ParamField>
+<ParamField path="RphDelta_LowTemp" type="int32_t">
+</ParamField>
+<ParamField path="BattTempRange" type="int32_t">
+  }  // 1 Ohm max   : 0.060 Ohms
+</ParamField>
+
+### `param_id_sp_cps_boostoperation_param_t`
+
+**Members**
+
+<ParamField path="boost_headroom_voltage" type="int32_t">
+</ParamField>
+<ParamField path="UVLO_voltage" type="int32_t">
+  // auto multiplied by 2 for 2S
+</ParamField>
+<ParamField path="switching_freq" type="int32_t">
+
+</ParamField>
+<ParamField path="boost_max_voltage" type="int32_t">
+  // 8-20V
+</ParamField>
+<ParamField path="boost_inductor_muH" type="int32_t">
+</ParamField>
+<ParamField path="efficiency_classD" type="int32_t">
+</ParamField>
+<ParamField path="peak_power_per_channel" type="int32_t">
+</ParamField>
+<ParamField path="peak_power_per_pair" type="int32_t">
+</ParamField>
+<ParamField path="inductor_current_limit" type="int32_t">
+  ;}
+</ParamField>
+
+### `param_id_spkr_prot_ex_rx_cps_boostoperation_param_t`
+
+**Members**
+
+<ParamField path="boost_limiter_attack_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="boost_limiter_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="cps_batttemp_param" type="param_id_sp_cps_batttemp_param_t">
+</ParamField>
+<ParamField path="num_ch" type="int32_t">
+</ParamField>
+
+### `param_id_sp_speakers_link_mode_param_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="speakers_link_mode" type="uint32_t">
+</ParamField>
+
+### `sp_ex_rx_cps3_param_t`
+
+**Members**
+
+<ParamField path="BoostLimiterThr_rt_q27" type="uint32_t">
+</ParamField>
+<ParamField path="DutyCycle_rt_q27" type="uint32_t">
+</ParamField>
+<ParamField path="inductorcurrent_rt_q27" type="uint32_t">
+  //
+</ParamField>
+
+### `param_id_spkr_prot_ex_rx_cps3_demo_pkt_param_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="demo_out_valid" type="int32_t">
+</ParamField>
+
+### `param_id_spkr_prot_t0_cali_param_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+
+### `param_id_spkr_prot_ex_rx_batttemp_data_param_t`
+
+**Members**
+
+<ParamField path="batttemp_data" type="int32_t">
+</ParamField>
+
+### `param_id_spkr_prot_ex_rx_cps3_demo_param_t`
+
+**Members**
+
+<ParamField path="dsr" type="uint16_t">
+</ParamField>
+
+### `sp_ex_rx_cps2_param_t`
+
+**Members**
+
+<ParamField path="ClipSmthThr_rt_q27" type="int32_t">
+</ParamField>
+<ParamField path="GainLow_rt_q27" type="int32_t">
+</ParamField>
+<ParamField path="GainHigh_rt_q27" type="int32_t">
+</ParamField>
+
+### `param_id_sp_ex_rx_cps2_demo_pkt_param_t`
+
+**Members**
+
+<ParamField path="frame_duration_in_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="frame_num" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+<ParamField path="demo_out_valid" type="int32_t">
+</ParamField>
+
+### `param_id_sp_ex_rx_cps2_demo_param_t`
+
+**Members**
+
+<ParamField path="dsr" type="uint16_t">
+</ParamField>
+
+### `sp_dynamic_notch_param_t`
+
+**Members**
+
+<ParamField path="dyn_proc_type" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_fc_q20" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_Q_q24" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_threshold_dBq23" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_ratio_q24" type="int32_t">
+  . 1677721600}
+</ParamField>
+<ParamField path="dyn_proc_makeup_gain_q27" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_attack_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="dyn_proc_auto_release_flag" type="int32_t">
+</ParamField>
+
+### `param_id_spkr_prot_dynamic_notch_param_t`
+
+**Members**
+
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+
+### `sp_lin_ex_common_ctrl_param_t`
+
+**Members**
+
+<ParamField path="amp_gain_q24" type="int32_t">
+</ParamField>
+<ParamField path="trace_resistance_rx_q24" type="int32_t">
+</ParamField>
+<ParamField path="Re_ohm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl_q24" type="int32_t">
+</ParamField>
+<ParamField path="Mms_gram_q24" type="int32_t">
+</ParamField>
+<ParamField path="Rms_KgSec_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms_Nmm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms1_Nmm2_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms2_Nmm3_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms3_Nmm4_q24" type="int32_t">
+</ParamField>
+<ParamField path="Kms4_Nmm5_q24" type="int32_t">
+</ParamField>
+<ParamField path="Rms1_Kgm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Rms2_Kgsm2_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl1_NAmm_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl2_NAmm2_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl3_NAmm3_q24" type="int32_t">
+</ParamField>
+<ParamField path="Bl4_NAmm4_q24" type="int32_t">
+</ParamField>
+
+### `sp_lin_ctrl_param_t`
+
+**Members**
+
+<ParamField path="lin_ex_common_ctrl_param" type="sp_lin_ex_common_ctrl_param_t">
+</ParamField>
+<ParamField path="input_gain_q24" type="int32_t">
+</ParamField>
+<ParamField path="max_amplitude_q24" type="int32_t">
+</ParamField>
+
+### `param_id_spkr_prot_lin_rx_dynamic_cfg_t`
+
+**Members**
+
+<ParamField path="link_all_channels_gain" type="int32_t">
+</ParamField>
+<ParamField path="limiter_release_time_ms" type="int32_t">
+</ParamField>
+<ParamField path="num_ch" type="uint32_t">
+</ParamField>
+
+### `sp_cps_basic_param_t`
+
+**Members**
+
+<ParamField path="power_W_perchannel" type="int32_t">
+  use the first 20-21 entries here for SoC }  //0-14W  in W assuming 8 ohm loads: 0.0007176, 0.07176, 0.18025, 0.7176, 2.8568, 4.5277, 5.7001, 5.8328, 5.9687, 6.1077, 6.25, 6.3956, 6.5446, 6.6203, 6.697, 6.697, 6.7745, 6.9323, 7.0126, 7.176, 7.176, 7.176, 7.176, 7.176, 7.176}
+</ParamField>
+
+### `sp_cpsbasic_ctrl_param_t`
+
+**Members**
+
+<ParamField path="useSoC" type="int32_t">
+
+</ParamField>
+<ParamField path="SoC_CV_mode" type="int32_t">
+
+</ParamField>
+<ParamField path="PowerW_CV_mode" type="int32_t">
+  //0 to 8W   7W
+</ParamField>
+<ParamField path="low_batt_temperature_threshold" type="int32_t">
+  }  //-40C to 20C
+</ParamField>
+<ParamField path="min_low_batt_temperature" type="int32_t">
+  }  //-40C to 0C
+</ParamField>
+<ParamField path="lowbatttemp_limthr_dB_slope" type="int32_t">
+  }  //-40C to 0C
+</ParamField>
+
+### `sp_cps_basic_stereopower_param_t`
+
+**Members**
+
+<ParamField path="power_W_perpair" type="int32_t">
+  use the first 20-21 entries here for SoC }  //0-14W  in W assuming 8 ohm loads: 0.0007 0.0718 0.1802 4.7176 6.8568 8.5277 9.7001 9.8328 9.9687 10.1077 10.2500 10.3956 10.5446 10.6203 10.6970 10.6970 10.7745 10.9323 11.0126 11.1760 11.1760 11.1760 11.1760 11.1760 11.1760}
+</ParamField>
+
+### `param_id_spkr_prot_cpsbasic_param_t`
+
+**Members**
+
+<ParamField path="fbsp_rx_cps_cpsbasic_ctrl_params" type="sp_cpsbasic_ctrl_param_t">
+</ParamField>
+<ParamField path="fbsp_rx_cps_stereopower_params" type="sp_cps_basic_stereopower_param_t">
+
+</ParamField>
+<ParamField path="num_ch" type="int32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_sp_static_cfg_t`
+
+```c
+typedef struct param_id_sp_static_cfg_t param_id_sp_static_cfg_t
+```
+
+### `param_id_sp_cps_static_cfg_t`
+
+```c
+typedef struct param_id_sp_cps_static_cfg_t param_id_sp_cps_static_cfg_t
+```
+
+### `param_id_sp_ex_cps_demo_cfg_t`
+
+```c
+typedef struct param_id_sp_ex_cps_demo_cfg_t param_id_sp_ex_cps_demo_cfg_t
+```
+
+### `sp_ex_rx_cps_param_t`
+
+```c
+typedef struct sp_ex_rx_cps_param_t sp_ex_rx_cps_param_t
+```
+
+### `param_id_sp_ex_cps_stats_t`
+
+```c
+typedef struct param_id_sp_ex_cps_stats_t param_id_sp_ex_cps_stats_t
+```
+
+### `param_id_sp_op_mode_t`
+
+```c
+typedef struct param_id_sp_op_mode_t param_id_sp_op_mode_t
+```
+
+### `param_id_sp_transition_asp_enable_t`
+
+```c
+typedef struct param_id_sp_transition_asp_enable_t param_id_sp_transition_asp_enable_t
+```
+
+### `param_id_sp_transition_asp_calib_param_t`
+
+```c
+typedef struct param_id_sp_transition_asp_calib_param_t param_id_sp_transition_asp_calib_param_t
+```
+
+### `sp_rx_nch_filt_param_t`
+
+```c
+typedef struct sp_rx_nch_filt_param_t sp_rx_nch_filt_param_t
+```
+
+### `sp_tdf2_cfg_t`
+
+```c
+typedef struct sp_tdf2_cfg_t sp_tdf2_cfg_t
+```
+
+### `sp_th_ctrl_param_t`
+
+```c
+typedef struct sp_th_ctrl_param_t sp_th_ctrl_param_t
+```
+
+### `sp_fir_cfg_t`
+
+```c
+typedef struct sp_fir_cfg_t sp_fir_cfg_t
+```
+
+### `sp_ex_ctrl_param_t`
+
+```c
+typedef struct sp_ex_ctrl_param_t sp_ex_ctrl_param_t
+```
+
+### `param_id_sp_dynamic_cfg_t`
+
+```c
+typedef struct param_id_sp_dynamic_cfg_t param_id_sp_dynamic_cfg_t
+```
+
+### `param_id_sp_th_demo_cfg_t`
+
+```c
+typedef struct param_id_sp_th_demo_cfg_t param_id_sp_th_demo_cfg_t
+```
+
+### `param_id_sp_ex_demo_cfg_t`
+
+```c
+typedef struct param_id_sp_ex_demo_cfg_t param_id_sp_ex_demo_cfg_t
+```
+
+### `sp_th_rx_param_t`
+
+```c
+typedef struct sp_th_rx_param_t sp_th_rx_param_t
+```
+
+### `param_id_sp_th_stats_t`
+
+```c
+typedef struct param_id_sp_th_stats_t param_id_sp_th_stats_t
+```
+
+### `sp_ex_rx_param_t`
+
+```c
+typedef struct sp_ex_rx_param_t sp_ex_rx_param_t
+```
+
+### `param_id_sp_ex_stats_t`
+
+```c
+typedef struct param_id_sp_ex_stats_t param_id_sp_ex_stats_t
+```
+
+### `param_id_sp_stats_t`
+
+```c
+typedef struct param_id_sp_stats_t param_id_sp_stats_t
+```
+
+### `sp_tmax_xmax_params_t`
+
+```c
+typedef struct sp_tmax_xmax_params_t sp_tmax_xmax_params_t
+```
+
+### `param_id_sp_tmax_xmax_logging_t`
+
+```c
+typedef struct param_id_sp_tmax_xmax_logging_t param_id_sp_tmax_xmax_logging_t
+```
+
+### `param_id_sp_tmax_xmax_logging_extn_params_t`
+
+```c
+typedef struct param_id_sp_tmax_xmax_logging_extn_params_t param_id_sp_tmax_xmax_logging_extn_params_t
+```
+
+### `param_id_sp_th_pi_derv_ctrl_cfg_t`
+
+```c
+typedef struct param_id_sp_th_pi_derv_ctrl_cfg_t param_id_sp_th_pi_derv_ctrl_cfg_t
+```
+
+### `param_id_sp_rx_cps_fine_param_t`
+
+```c
+typedef struct param_id_sp_rx_cps_fine_param_t param_id_sp_rx_cps_fine_param_t
+```
+
+### `param_id_sp_ex_rx_power_limiter_mode2_param_t`
+
+```c
+typedef struct param_id_sp_ex_rx_power_limiter_mode2_param_t param_id_sp_ex_rx_power_limiter_mode2_param_t
+```
+
+### `param_id_sp_version_t`
+
+```c
+typedef struct param_id_sp_version_t param_id_sp_version_t
+```
+
+### `cps_reg_wr_values_t`
+
+```c
+typedef struct cps_reg_wr_values_t cps_reg_wr_values_t
+```
+
+### `param_id_cps_lpass_swr_thresholds_cfg_t`
+
+```c
+typedef struct param_id_cps_lpass_swr_thresholds_cfg_t param_id_cps_lpass_swr_thresholds_cfg_t
+```
+
+### `pkd_reg_addr_t`
+
+```c
+typedef struct pkd_reg_addr_t pkd_reg_addr_t
+```
+
+### `lpass_swr_hw_reg_cfg_t`
+
+```c
+typedef struct lpass_swr_hw_reg_cfg_t lpass_swr_hw_reg_cfg_t
+```
+
+### `param_id_cps_lpass_hw_intf_cfg_t`
+
+```c
+typedef struct param_id_cps_lpass_hw_intf_cfg_t param_id_cps_lpass_hw_intf_cfg_t
+```
+
+### `param_id_sp_rx_ex_cps2_battconfig_lfatten_param_t`
+
+```c
+typedef struct param_id_sp_rx_ex_cps2_battconfig_lfatten_param_t param_id_sp_rx_ex_cps2_battconfig_lfatten_param_t
+```
+
+### `param_id_sp_cps2_param_t`
+
+```c
+typedef struct param_id_sp_cps2_param_t param_id_sp_cps2_param_t
+```
+
+### `param_id_sp_ex_rx_cps2_param_t`
+
+```c
+typedef struct param_id_sp_ex_rx_cps2_param_t param_id_sp_ex_rx_cps2_param_t
+```
+
+### `param_id_sp_cps_batttemp_param_t`
+
+```c
+typedef struct param_id_sp_cps_batttemp_param_t param_id_sp_cps_batttemp_param_t
+```
+
+### `param_id_sp_cps_boostoperation_param_t`
+
+```c
+typedef struct param_id_sp_cps_boostoperation_param_t param_id_sp_cps_boostoperation_param_t
+```
+
+### `param_id_spkr_prot_ex_rx_cps_boostoperation_param_t`
+
+```c
+typedef struct param_id_spkr_prot_ex_rx_cps_boostoperation_param_t param_id_spkr_prot_ex_rx_cps_boostoperation_param_t
+```
+
+### `param_id_sp_speakers_link_mode_param_t`
+
+```c
+typedef struct param_id_sp_speakers_link_mode_param_t param_id_sp_speakers_link_mode_param_t
+```
+
+### `sp_ex_rx_cps3_param_t`
+
+```c
+typedef struct sp_ex_rx_cps3_param_t sp_ex_rx_cps3_param_t
+```
+
+### `param_id_spkr_prot_ex_rx_cps3_demo_pkt_param_t`
+
+```c
+typedef struct param_id_spkr_prot_ex_rx_cps3_demo_pkt_param_t param_id_spkr_prot_ex_rx_cps3_demo_pkt_param_t
+```
+
+### `param_id_spkr_prot_t0_cali_param_t`
+
+```c
+typedef struct param_id_spkr_prot_t0_cali_param_t param_id_spkr_prot_t0_cali_param_t
+```
+
+### `param_id_spkr_prot_ex_rx_batttemp_data_param_t`
+
+```c
+typedef struct param_id_spkr_prot_ex_rx_batttemp_data_param_t param_id_spkr_prot_ex_rx_batttemp_data_param_t
+```
+
+### `param_id_spkr_prot_ex_rx_cps3_demo_param_t`
+
+```c
+typedef struct param_id_spkr_prot_ex_rx_cps3_demo_param_t param_id_spkr_prot_ex_rx_cps3_demo_param_t
+```
+
+### `sp_ex_rx_cps2_param_t`
+
+```c
+typedef struct sp_ex_rx_cps2_param_t sp_ex_rx_cps2_param_t
+```
+
+### `param_id_sp_ex_rx_cps2_demo_pkt_param_t`
+
+```c
+typedef struct param_id_sp_ex_rx_cps2_demo_pkt_param_t param_id_sp_ex_rx_cps2_demo_pkt_param_t
+```
+
+### `param_id_sp_ex_rx_cps2_demo_param_t`
+
+```c
+typedef struct param_id_sp_ex_rx_cps2_demo_param_t param_id_sp_ex_rx_cps2_demo_param_t
+```
+
+### `sp_dynamic_notch_param_t`
+
+```c
+typedef struct sp_dynamic_notch_param_t sp_dynamic_notch_param_t
+```
+
+### `param_id_spkr_prot_dynamic_notch_param_t`
+
+```c
+typedef struct param_id_spkr_prot_dynamic_notch_param_t param_id_spkr_prot_dynamic_notch_param_t
+```
+
+### `sp_lin_ex_common_ctrl_param_t`
+
+```c
+typedef struct sp_lin_ex_common_ctrl_param_t sp_lin_ex_common_ctrl_param_t
+```
+
+### `sp_lin_ctrl_param_t`
+
+```c
+typedef struct sp_lin_ctrl_param_t sp_lin_ctrl_param_t
+```
+
+### `param_id_spkr_prot_lin_rx_dynamic_cfg_t`
+
+```c
+typedef struct param_id_spkr_prot_lin_rx_dynamic_cfg_t param_id_spkr_prot_lin_rx_dynamic_cfg_t
+```
+
+### `sp_cps_basic_param_t`
+
+```c
+typedef struct sp_cps_basic_param_t sp_cps_basic_param_t
+```
+
+### `sp_cpsbasic_ctrl_param_t`
+
+```c
+typedef struct sp_cpsbasic_ctrl_param_t sp_cpsbasic_ctrl_param_t
+```
+
+### `sp_cps_basic_stereopower_param_t`
+
+```c
+typedef struct sp_cps_basic_stereopower_param_t sp_cps_basic_stereopower_param_t
+```
+
+### `param_id_spkr_prot_cpsbasic_param_t`
+
+```c
+typedef struct param_id_spkr_prot_cpsbasic_param_t param_id_spkr_prot_cpsbasic_param_t
+```
+
+## Macros
+
+### `SP_MAX_INPUT_PORTS`
+
+```c
+#define SP_MAX_INPUT_PORTS 1
+```
+
+### `SP_MAX_OUTPUT_PORTS`
+
+```c
+#define SP_MAX_OUTPUT_PORTS 1
+```
+
+### `SP_STACK_SIZE`
+
+```c
+#define SP_STACK_SIZE 16384
+```
+
+### `MODULE_ID_SPEAKER_PROTECTION_V7`
+
+```c
+#define MODULE_ID_SPEAKER_PROTECTION_V7 0x0701000F
+```
+
+### `SP_NUM_MAX_SPKRS`
+
+```c
+#define SP_NUM_MAX_SPKRS 8
+```
+
+### `SP_NCH_FILT_STAGES_MAX`
+
+```c
+#define SP_NCH_FILT_STAGES_MAX 5
+```
+
+### `SP_TH_RX_DEMO_SMPL_PER_PKT`
+
+```c
+#define SP_TH_RX_DEMO_SMPL_PER_PKT 10
+```
+
+### `SP_EX_RX_DEMO_SMPL_PER_PKT`
+
+```c
+#define SP_EX_RX_DEMO_SMPL_PER_PKT 10
+```
+
+### `SP_IIR_TDF2_STAGES_MAX`
+
+```c
+#define SP_IIR_TDF2_STAGES_MAX 5
+```
+
+### `SP_IIR_TDF2_NUM_NUM_PER_STAGE`
+
+```c
+#define SP_IIR_TDF2_NUM_NUM_PER_STAGE 3
+```
+
+### `SP_IIR_TDF2_NUM_DEN_PER_STAGE`
+
+```c
+#define SP_IIR_TDF2_NUM_DEN_PER_STAGE 2
+```
+
+### `MAX_SAMPLES_IN_PACKET`
+
+```c
+#define MAX_SAMPLES_IN_PACKET 480
+```
+
+### `SP_NVBATT_DISCRETE`
+
+```c
+#define SP_NVBATT_DISCRETE 9
+```
+
+### `SP_NDTEMP_DISCRETE`
+
+```c
+#define SP_NDTEMP_DISCRETE 14
+```
+
+### `SP_NVBATT_DISCRETE_FINE`
+
+```c
+#define SP_NVBATT_DISCRETE_FINE (13)
+```
+
+### `SOUNDWIRE_MODE`
+
+```c
+#define SOUNDWIRE_MODE 1
+```
+
+### `DMA_MODE`
+
+```c
+#define DMA_MODE 2
+```
+
+### `MAX_CPS_BOOST_INDUCTOR_CURRENT_SAMPLES_IN_PACKET_48K`
+
+```c
+#define MAX_CPS_BOOST_INDUCTOR_CURRENT_SAMPLES_IN_PACKET_48K (4800)
+```
+
+### `MAX_CPS_BOOST_INDUCTOR_CURRENT_SAMPLES_IN_PACKET_96K`
+
+```c
+#define MAX_CPS_BOOST_INDUCTOR_CURRENT_SAMPLES_IN_PACKET_96K (9600)
+```
+
+### `MAX_CPS_BOOST_INDUCTOR_CURRENT_SAMPLES_IN_PACKET_192K`
+
+```c
+#define MAX_CPS_BOOST_INDUCTOR_CURRENT_SAMPLES_IN_PACKET_192K (19200)
+```
+
+### `SP_NILIM_DISCRETE`
+
+```c
+#define SP_NILIM_DISCRETE (11)
+```
+
+### `FIR_LEN_MAX`
+
+```c
+#define FIR_LEN_MAX (385)
+```
+
+### `N_VPH_RANGE`
+
+```c
+#define N_VPH_RANGE (25)
+```
+
+### `PARAM_ID_SP_STATIC_CFG`
+
+```c
+#define PARAM_ID_SP_STATIC_CFG 0x08001B3C
+```
+
+### `PARAM_ID_SP_CPS_STATIC_CFG`
+
+```c
+#define PARAM_ID_SP_CPS_STATIC_CFG 0x08001B3D
+```
+
+### `CPS_NUM_VBATT_THRESHOLD_VALUES`
+
+```c
+#define CPS_NUM_VBATT_THRESHOLD_VALUES 3
+```
+
+### `PARAM_ID_SP_EX_CPS_DEMO_CFG`
+
+```c
+#define PARAM_ID_SP_EX_CPS_DEMO_CFG 0x08001B3E
+```
+
+### `PARAM_ID_SP_EX_CPS_STATS`
+
+```c
+#define PARAM_ID_SP_EX_CPS_STATS 0x08001B3F
+```
+
+### `PARAM_ID_SP_OP_MODE`
+
+```c
+#define PARAM_ID_SP_OP_MODE 0x08001B40
+```
+
+### `PARAM_ID_SP_OP_MODE_V5`
+
+```c
+#define PARAM_ID_SP_OP_MODE_V5 0x080011E9
+```
+
+### `PARAM_ID_SP_TRANSITION_ASP_ENABLE`
+
+```c
+#define PARAM_ID_SP_TRANSITION_ASP_ENABLE 0x08001B41
+```
+
+### `PARAM_ID_SP_TRANSITION_ASP_CALIB_PARAM`
+
+```c
+#define PARAM_ID_SP_TRANSITION_ASP_CALIB_PARAM 0x08001B42
+```
+
+### `PARAM_ID_SPv5_SP_DYNAMIC_CFG`
+
+```c
+#define PARAM_ID_SPv5_SP_DYNAMIC_CFG 0x08001B43
+```
+
+### `PARAM_ID_SP_TH_DEMO_CFG`
+
+```c
+#define PARAM_ID_SP_TH_DEMO_CFG 0x08001B44
+```
+
+### `PARAM_ID_SP_EX_DEMO_CFG`
+
+```c
+#define PARAM_ID_SP_EX_DEMO_CFG 0x08001B45
+```
+
+### `PARAM_ID_SP_TH_STATS`
+
+```c
+#define PARAM_ID_SP_TH_STATS 0x08001B46
+```
+
+### `PARAM_ID_SP_EX_STATS`
+
+```c
+#define PARAM_ID_SP_EX_STATS 0x08001B47
+```
+
+### `PARAM_ID_SP_STATS`
+
+```c
+#define PARAM_ID_SP_STATS 0x08001B48
+```
+
+### `PARAM_ID_SP_TMAX_XMAX_LOGGING`
+
+```c
+#define PARAM_ID_SP_TMAX_XMAX_LOGGING 0x08001B49
+```
+
+### `PARAM_ID_SPv5_SP_TMAX_XMAX_LOGGING_EXTN`
+
+```c
+#define PARAM_ID_SPv5_SP_TMAX_XMAX_LOGGING_EXTN 0x08001B4A
+```
+
+### `PARAM_ID_SP_TH_PI_DERV_CTRL_CFG`
+
+```c
+#define PARAM_ID_SP_TH_PI_DERV_CTRL_CFG 0x08001B4B
+```
+
+### `PARAM_ID_RX_CPS_FINE_PARAM`
+
+```c
+#define PARAM_ID_RX_CPS_FINE_PARAM 0x08001B4C
+```
+
+### `PARAM_ID_SP_EX_RX_POWLIM_MODE2_CFG_PARAM`
+
+```c
+#define PARAM_ID_SP_EX_RX_POWLIM_MODE2_CFG_PARAM 0x08001B4D
+```
+
+### `PARAM_ID_SP_VERSION`
+
+```c
+#define PARAM_ID_SP_VERSION 0x08001B4E
+```
+
+### `PARAM_ID_CPS_LPASS_HW_INTF_CFG`
+
+```c
+#define PARAM_ID_CPS_LPASS_HW_INTF_CFG 0x08001259
+```
+
+### `PARAM_ID_CPS_LPASS_SWR_THRESHOLDS_CFG`
+
+```c
+#define PARAM_ID_CPS_LPASS_SWR_THRESHOLDS_CFG 0x08001254
+```
+
+### `PARAM_ID_SP_RX_EX_CPS2_BATTCONFIG_LFATTEN_PARAM`
+
+```c
+#define PARAM_ID_SP_RX_EX_CPS2_BATTCONFIG_LFATTEN_PARAM 0x08001B4F
+```
+
+### `PARAM_ID_SP_EX_RX_CPS2_PARAM`
+
+```c
+#define PARAM_ID_SP_EX_RX_CPS2_PARAM 0x08001B50
+```
+
+### `PARAM_ID_SPKR_PROT_EX_RX_CPS_BOOSTOPERATION_PARAM`
+
+```c
+#define PARAM_ID_SPKR_PROT_EX_RX_CPS_BOOSTOPERATION_PARAM 0x08001B51
+```
+
+### `PARAM_ID_SP_SPEAKERS_LINK_MODE_PARAM`
+
+```c
+#define PARAM_ID_SP_SPEAKERS_LINK_MODE_PARAM 0x08001B52
+```
+
+### `PARAM_ID_SPKR_PROT_EX_RX_CPS3_DEMO_PKT_PARAM`
+
+```c
+#define PARAM_ID_SPKR_PROT_EX_RX_CPS3_DEMO_PKT_PARAM 0x08001B53
+```
+
+### `PARAM_ID_SPKR_PROT_T0_CALI_PARAM`
+
+```c
+#define PARAM_ID_SPKR_PROT_T0_CALI_PARAM 0x08001B54
+```
+
+### `PARAM_ID_SPKR_PROT_EX_RX_BATTTEMP_DATA_PARAM`
+
+```c
+#define PARAM_ID_SPKR_PROT_EX_RX_BATTTEMP_DATA_PARAM 0x08001B55
+```
+
+### `PARAM_ID_SPKR_PROT_EX_RX_CPS3_DEMO_PARAM`
+
+```c
+#define PARAM_ID_SPKR_PROT_EX_RX_CPS3_DEMO_PARAM 0x08001B56
+```
+
+### `PARAM_ID_SPKR_PROT_EX_RX_CPS2_DEMO_PKT_PARAM`
+
+```c
+#define PARAM_ID_SPKR_PROT_EX_RX_CPS2_DEMO_PKT_PARAM 0x08001B57
+```
+
+### `PARAM_ID_SP_EX_RX_CPS2_DEMO_PARAM`
+
+```c
+#define PARAM_ID_SP_EX_RX_CPS2_DEMO_PARAM 0x08001B58
+```
+
+### `PARAM_ID_SPKR_PROT_DYNAMIC_NOTCH_PARAM`
+
+```c
+#define PARAM_ID_SPKR_PROT_DYNAMIC_NOTCH_PARAM 0x08001B59
+```
+
+### `PARAM_ID_SPKR_PROT_LIN_RX_DYNAMIC_CFG`
+
+```c
+#define PARAM_ID_SPKR_PROT_LIN_RX_DYNAMIC_CFG 0x08001B5A
+```
+
+### `PARAM_ID_SPKR_PROT_CPSBASIC_CFG`
+
+```c
+#define PARAM_ID_SPKR_PROT_CPSBASIC_CFG 0x08001B5B
+```

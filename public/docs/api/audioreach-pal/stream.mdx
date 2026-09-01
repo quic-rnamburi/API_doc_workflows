@@ -1,0 +1,97 @@
+---
+title: "Stream.h"
+---
+
+## Enumerations
+
+### `dataFlags`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `DATA_MODE_SHMEM` | = 0 |  |
+| `DATA_MODE_BLOCKING` |  |  |
+| `DATA_MODE_NONBLOCKING` |  |  |
+
+### `stream_state_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `STREAM_IDLE` | = 0 |  |
+| `STREAM_INIT` |  |  |
+| `STREAM_OPENED` |  |  |
+| `STREAM_STARTED` |  |  |
+| `STREAM_PAUSED` |  |  |
+| `STREAM_SUSPENDED` |  |  |
+| `STREAM_STOPPED` |  |  |
+
+## Macros
+
+### `BUF_SIZE_PLAYBACK`
+
+```c
+#define BUF_SIZE_PLAYBACK 1024
+```
+
+### `BUF_SIZE_CAPTURE`
+
+```c
+#define BUF_SIZE_CAPTURE 960
+```
+
+### `AUDIO_CAPTURE_PERIOD_DURATION_MSEC`
+
+```c
+#define AUDIO_CAPTURE_PERIOD_DURATION_MSEC 20
+```
+
+### `DEEP_BUFFER_OUTPUT_PERIOD_DURATION`
+
+```c
+#define DEEP_BUFFER_OUTPUT_PERIOD_DURATION 40
+```
+
+### `PCM_OFFLOAD_OUTPUT_PERIOD_DURATION`
+
+```c
+#define PCM_OFFLOAD_OUTPUT_PERIOD_DURATION 80
+```
+
+### `COMPRESS_OFFLOAD_FRAGMENT_SIZE`
+
+```c
+#define COMPRESS_OFFLOAD_FRAGMENT_SIZE (32 * 1024)
+```
+
+### `NO_OF_BUF`
+
+```c
+#define NO_OF_BUF 4
+```
+
+### `SSR_RECOVERY`
+
+```c
+#define SSR_RECOVERY 10000
+```
+
+### `VOLUME_RAMP_PERIOD`
+
+```c
+#define VOLUME_RAMP_PERIOD (200*1000)
+```
+
+### `MUTE_RAMP_PERIOD`
+
+```c
+#define MUTE_RAMP_PERIOD (40*1000)
+```
+
+### `DEFAULT_RAMP_PERIOD`
+
+```c
+#define DEFAULT_RAMP_PERIOD 0x28
+```

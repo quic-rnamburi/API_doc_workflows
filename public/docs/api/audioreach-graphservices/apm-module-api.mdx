@@ -1,0 +1,234 @@
+---
+title: "apm_module_api.h"
+description: "This file contains APM module related commands and events structures definitions."
+---
+
+## Structures
+
+### `apm_param_id_modules_list_t`
+
+combination of sub-graph and container ID's.
+
+**Members**
+
+<ParamField path="num_modules_list" type="uint32_t">
+</ParamField>
+
+### `apm_modules_list_t`
+
+**Members**
+
+<ParamField path="sub_graph_id" type="uint32_t">
+</ParamField>
+<ParamField path="container_id" type="uint32_t">
+</ParamField>
+<ParamField path="num_modules" type="uint32_t">
+</ParamField>
+
+### `apm_module_cfg_t`
+
+**Members**
+
+<ParamField path="module_id" type="uint32_t">
+</ParamField>
+<ParamField path="instance_id" type="uint32_t">
+</ParamField>
+
+### `apm_param_id_module_prop_t`
+
+**Members**
+
+<ParamField path="num_module_prop_cfg" type="uint32_t">
+</ParamField>
+
+### `apm_module_prop_cfg_t`
+
+**Members**
+
+<ParamField path="instance_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_props" type="uint32_t">
+
+</ParamField>
+
+### `apm_module_prop_id_port_info_t`
+
+**Members**
+
+<ParamField path="max_ip_port" type="uint32_t">
+
+</ParamField>
+<ParamField path="max_op_port" type="uint32_t">
+
+</ParamField>
+
+### `apm_param_id_module_conn_t`
+
+**Members**
+
+<ParamField path="num_connections" type="uint32_t">
+
+</ParamField>
+
+### `apm_module_conn_cfg_t`
+
+**Members**
+
+<ParamField path="src_mod_inst_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="src_mod_op_port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="dst_mod_inst_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="dst_mod_ip_port_id" type="uint32_t">
+
+</ParamField>
+
+### `apm_param_id_module_ctrl_link_cfg_t`
+
+**Members**
+
+<ParamField path="num_ctrl_link_cfg" type="uint32_t">
+
+</ParamField>
+
+### `apm_module_ctrl_link_cfg_t`
+
+**Members**
+
+<ParamField path="peer_1_mod_iid" type="uint32_t">
+
+</ParamField>
+<ParamField path="peer_1_mod_ctrl_port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="peer_2_mod_iid" type="uint32_t">
+
+</ParamField>
+<ParamField path="peer_2_mod_ctrl_port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_props" type="uint32_t">
+
+</ParamField>
+
+### `apm_module_ctrl_link_prop_id_intent_list_t`
+
+**Members**
+
+<ParamField path="num_intents" type="uint32_t">
+
+</ParamField>
+<ParamField path="intent_id_list" type="uint32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `apm_param_id_modules_list_t`
+
+```c
+typedef struct apm_param_id_modules_list_t apm_param_id_modules_list_t
+```
+
+### `apm_modules_list_t`
+
+```c
+typedef struct apm_modules_list_t apm_modules_list_t
+```
+
+### `apm_module_cfg_t`
+
+```c
+typedef struct apm_module_cfg_t apm_module_cfg_t
+```
+
+### `apm_param_id_module_prop_t`
+
+```c
+typedef struct apm_param_id_module_prop_t apm_param_id_module_prop_t
+```
+
+### `apm_module_prop_cfg_t`
+
+```c
+typedef struct apm_module_prop_cfg_t apm_module_prop_cfg_t
+```
+
+### `apm_module_prop_id_port_info_t`
+
+```c
+typedef struct apm_module_prop_id_port_info_t apm_module_prop_id_port_info_t
+```
+
+### `apm_param_id_module_conn_t`
+
+```c
+typedef struct apm_param_id_module_conn_t apm_param_id_module_conn_t
+```
+
+### `apm_module_conn_cfg_t`
+
+```c
+typedef struct apm_module_conn_cfg_t apm_module_conn_cfg_t
+```
+
+### `apm_param_id_module_ctrl_link_cfg_t`
+
+```c
+typedef struct apm_param_id_module_ctrl_link_cfg_t apm_param_id_module_ctrl_link_cfg_t
+```
+
+### `apm_module_ctrl_link_cfg_t`
+
+```c
+typedef struct apm_module_ctrl_link_cfg_t apm_module_ctrl_link_cfg_t
+```
+
+### `apm_module_ctrl_link_prop_id_intent_list_t`
+
+```c
+typedef struct apm_module_ctrl_link_prop_id_intent_list_t apm_module_ctrl_link_prop_id_intent_list_t
+```
+
+## Macros
+
+### `APM_PARAM_ID_MODULES_LIST`
+
+```c
+#define APM_PARAM_ID_MODULES_LIST 0x08001002
+```
+
+### `APM_PARAM_ID_MODULE_PROP`
+
+```c
+#define APM_PARAM_ID_MODULE_PROP 0x08001003
+```
+
+### `APM_MODULE_PROP_ID_PORT_INFO`
+
+```c
+#define APM_MODULE_PROP_ID_PORT_INFO 0x08001015
+```
+
+### `APM_PARAM_ID_MODULE_CONN`
+
+```c
+#define APM_PARAM_ID_MODULE_CONN 0x08001004
+```
+
+### `APM_PARAM_ID_MODULE_CTRL_LINK_CFG`
+
+```c
+#define APM_PARAM_ID_MODULE_CTRL_LINK_CFG 0x08001061
+```
+
+### `APM_MODULE_PROP_ID_CTRL_LINK_INTENT_LIST`
+
+```c
+#define APM_MODULE_PROP_ID_CTRL_LINK_INTENT_LIST 0x08001062
+```

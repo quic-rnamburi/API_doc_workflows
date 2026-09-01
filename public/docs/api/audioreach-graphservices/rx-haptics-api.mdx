@@ -1,0 +1,1547 @@
+---
+title: "rx_haptics_api.h"
+---
+
+## Structures
+
+### `param_id_haptics_static_config_t`
+
+**Members**
+
+<ParamField path="sampling_rate" type="uint32_t">
+</ParamField>
+<ParamField path="bits_per_sample" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_channels" type="uint32_t">
+
+</ParamField>
+<ParamField path="frame_size_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="features" type="uint32_t">
+
+</ParamField>
+<ParamField path="pt_lvl_switch_en" type="uint32_t">
+
+</ParamField>
+<ParamField path="pt_masking_thr_q27" type="int32_t">
+
+</ParamField>
+<ParamField path="ex_block_size" type="uint32_t">
+  Default = 1.3, Range: 0 to 15.99}
+</ParamField>
+<ParamField path="Mu_gram_q20" type="int32_t">
+  Default value: 200g, Range: 0 to 2048g}
+</ParamField>
+<ParamField path="fpilot_Hz" type="uint32_t">
+</ParamField>
+<ParamField path="fpilot_amplitude_db" type="int32_t">
+  Pilot tone frequency values MUST be the same for the RX/TH/EX modules}  Hz
+</ParamField>
+<ParamField path="tracked_freq_warmup_time_ms" type="int32_t">
+  Pilot tone amplitude values MUST be the same for the RX/TH/EX modules}  dB
+</ParamField>
+<ParamField path="settling_time_ms" type="int32_t">
+  }  ms
+</ParamField>
+<ParamField path="rise_fall_time_max_ms" type="int32_t">
+  }  ms
+</ParamField>
+<ParamField path="delay_time_ms" type="int32_t">
+  Defines time taken for the LRA to reach specified accelaration at 0% sharpness, in ms.}  ms
+</ParamField>
+<ParamField path="pwl_max_pulse_points" type="int32_t">
+  Time delay at the start and end of the parametric waveform, in ms}  ms
+</ParamField>
+<ParamField path="wave_dsgn_max_pulse_duration_ms" type="int32_t">
+  of pulse points supported in PWL mode by the waveform designer}
+</ParamField>
+<ParamField path="wave_dsgn_max_duty_cycle" type="int32_t">
+  ms
+</ParamField>
+<ParamField path="phase_index" type="int32_t">
+</ParamField>
+
+### `param_id_haptics_op_mode`
+
+**Members**
+
+<ParamField path="operation_mode" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_rx_pcmv_playback`
+
+**Members**
+
+<ParamField path="channel_mask" type="uint32_t">
+</ParamField>
+<ParamField path="buffer_size" type="int32_t">
+
+</ParamField>
+
+### `param_id_haptics_rx_ftm_cfg_t`
+
+**Members**
+
+<ParamField path="non_linearity_compensation" type="uint32_t">
+</ParamField>
+<ParamField path="ftm_amplitude_q24" type="int32_t">
+</ParamField>
+<ParamField path="f0_tracking_duration_ms" type="int32_t">
+</ParamField>
+<ParamField path="f0_duffing_duration_ms" type="int32_t">
+</ParamField>
+<ParamField path="rtcl_gain_k_0_q27" type="int32_t">
+</ParamField>
+<ParamField path="rtcl_gain_k_1_q27" type="int32_t">
+</ParamField>
+<ParamField path="rtcl_gain_l_0_q27" type="int32_t">
+</ParamField>
+<ParamField path="rtcl_gain_l_1_q27" type="int32_t">
+</ParamField>
+
+### `haptics_ex_ctrl_param_h`
+
+**Members**
+
+<ParamField path="amp_gain_q24" type="int32_t">
+</ParamField>
+<ParamField path="max_excursion_mm_q27" type="int32_t">
+  Default = 10, Range: 0 to 128}
+</ParamField>
+<ParamField path="max_acceleration_q27" type="int32_t">
+  Default = 0.3mm, Range: 0.05 to 16mm}
+</ParamField>
+<ParamField path="trace_resistance_rx_q24" type="int32_t">
+  Default = 1G, Range: 0.1 to 16G}
+</ParamField>
+<ParamField path="Re_ohm_q24" type="int32_t">
+  Default = 8Ohm, Range: 2 to 128Ohms}
+</ParamField>
+<ParamField path="Le_mH_q24" type="int32_t">
+  Default = 0.04mH, Range: 0.001mH to 128mH}
+</ParamField>
+<ParamField path="Bl_q24" type="int32_t">
+  Default = 1, Range: 0.01 to 128}
+</ParamField>
+<ParamField path="Mms_gram_q24" type="int32_t">
+  Default = 1g, Range: 0.05 to 128g}
+</ParamField>
+<ParamField path="Rms_KgSec_q24" type="int32_t">
+  Default = 0.0945kg/s, Range = 0.0001 to 20kg/s}
+</ParamField>
+<ParamField path="Kms_Nmm_q24" type="int32_t">
+  Default = 1.838N/mm, Range = 0.1 to 50N/mm}
+</ParamField>
+<ParamField path="Fres_Hz_q20" type="int32_t">
+  Default = 160Hz, Range = 50 to 400Hz}
+</ParamField>
+
+### `param_id_haptics_dynamic_cfg`
+
+**Members**
+
+<ParamField path="num_channels" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_rx_ftm_data_param_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_rx_calib_data_param_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_rx_persistent_data_param_t`
+
+**Members**
+
+<ParamField path="Re_ohm_q24" type="int32_t">
+  Default = 8Ohm, Range: 2 to 128Ohms}
+</ParamField>
+<ParamField path="Le_mH_q24" type="int32_t">
+  Default = 0.04mH, Range: 0.001mH to 128mH}
+</ParamField>
+<ParamField path="Bl_q24" type="int32_t">
+  Default = 1, Range: 0.01 to 128}
+</ParamField>
+<ParamField path="Rms_KgSec_q24" type="int32_t">
+  Default = 0.0945kg/s, Range = 0.0001 to 20kg/s}
+</ParamField>
+<ParamField path="Kms_Nmm_q24" type="int32_t">
+  Default = 1.838N/mm, Range = 0.1 to 50N/mm}
+</ParamField>
+<ParamField path="Fres_Hz_q20" type="int32_t">
+  Default = 160Hz, Range = 50 to 400Hz}
+</ParamField>
+
+### `rx_wave_designer_config_h`
+
+**Members**
+
+<ParamField path="wave_design_mode" type="uint32_t">
+</ParamField>
+<ParamField path="auto_overdrive_brake_en" type="int32_t">
+  Lower 16b represents the wave designer mode. When mode is Pre-canned (Effects), upper 16b represents the effect ID; for all other modes these bits are ignored.}
+</ParamField>
+<ParamField path="f0_tracking_en" type="int32_t">
+  Considered in Sinusoidal mode only.}
+</ParamField>
+<ParamField path="f0_tracking_param_reset_flag" type="int32_t">
+  Considered in Sinusoidal mode only.}
+</ParamField>
+<ParamField path="override_flag" type="uint32_t">
+  Considered in all modes.}
+</ParamField>
+<ParamField path="tracked_freq_warmup_time_ms" type="int32_t">
+  Considered in all modes.}
+</ParamField>
+<ParamField path="settling_time_ms" type="int32_t">
+  Considered only if corresponding bit is enabled in override_flag.}  ms
+</ParamField>
+<ParamField path="delay_time_ms" type="int32_t">
+  Considered only if corresponding bit is enabled in override_flag.}  ms
+</ParamField>
+<ParamField path="wavegen_fstart_hz_q20" type="int32_t">
+  Time delay at the start and end of the parametric waveform, in ms. Considered only if corresponding bit is enabled in override_flag.}  ms
+</ParamField>
+<ParamField path="repetition_count" type="int32_t">
+  Considered only if corresponding bit is enabled in override_flag.}  Hz
+</ParamField>
+<ParamField path="repetition_period_ms" type="int32_t">
+  of repetitions of the haptics waveform. Considered in Parametric, PWL, Sinusoidal modes only.}
+</ParamField>
+<ParamField path="pilot_tone_en" type="uint32_t">
+  Considered in Parametric, PWL, Sinusoidal modes only.}
+</ParamField>
+<ParamField path="pulse_intensity" type="int32_t">
+  Considered in all modes.}
+</ParamField>
+<ParamField path="pulse_width_ms" type="int32_t">
+  Considered in Parametric, Sinusoidal modes only.}
+</ParamField>
+<ParamField path="pulse_sharpness" type="int32_t">
+  Considered in Parametric, Sinusoidal modes only.}
+</ParamField>
+<ParamField path="num_pwl" type="int32_t">
+  Considered in Parametric mode only.}
+</ParamField>
+
+### `param_id_haptics_wave_designer_config_t`
+
+**Members**
+
+<ParamField path="num_channels" type="uint32_t">
+  num_channels= 1 supports channel_mask 1 and 2, num_channels= 2 supports channel_mask 3}
+</ParamField>
+<ParamField path="channel_mask" type="uint32_t">
+
+</ParamField>
+
+### `rx_wave_designer_config_v2_h`
+
+**Members**
+
+<ParamField path="wave_design_mode" type="uint32_t">
+</ParamField>
+<ParamField path="auto_overdrive_brake_en" type="int32_t">
+  Lower 16b represents the wave designer mode. When mode is Pre-canned (Effects), upper 16b represents the effect ID; for all other modes these bits are ignored.}
+</ParamField>
+<ParamField path="f0_tracking_en" type="int32_t">
+  Considered in Sinusoidal mode only.}
+</ParamField>
+<ParamField path="rtcl_mode" type="int32_t">
+  Considered in Sinusoidal mode only.}
+</ParamField>
+<ParamField path="pmic_autobrake_en" type="int32_t">
+  Considered in all waveform designer modes.}
+</ParamField>
+<ParamField path="f0_tracking_param_reset_flag" type="int32_t">
+  Considered in all modes except PCMV Ringtone.}
+</ParamField>
+<ParamField path="override_flag" type="uint32_t">
+  Considered in all modes.}
+</ParamField>
+<ParamField path="tracked_freq_warmup_time_ms" type="int32_t">
+  Considered in all modes.}
+</ParamField>
+<ParamField path="settling_time_ms" type="int32_t">
+  Considered only if corresponding bit is enabled in override_flag.}  ms
+</ParamField>
+<ParamField path="delay_time_ms" type="int32_t">
+  Considered only if corresponding bit is enabled in override_flag.}  ms
+</ParamField>
+<ParamField path="wavegen_fstart_hz_q20" type="int32_t">
+  Time delay at the start and end of the parametric waveform, in ms. Considered only if corresponding bit is enabled in override_flag.}  ms
+</ParamField>
+<ParamField path="repetition_count" type="int32_t">
+  Considered only if corresponding bit is enabled in override_flag.}  Hz
+</ParamField>
+<ParamField path="repetition_period_ms" type="int32_t">
+  of repetitions of the haptics waveform. Considered in Parametric, PWL, Sinusoidal modes only.}
+</ParamField>
+<ParamField path="pilot_tone_en" type="uint32_t">
+  Considered in Parametric, PWL, Sinusoidal modes only.}
+</ParamField>
+<ParamField path="pulse_intensity" type="int32_t">
+  Considered in all modes.}
+</ParamField>
+<ParamField path="pulse_width_ms" type="int32_t">
+  Considered in Parametric, Sinusoidal, PWL, PCMV Playback modes only.}
+</ParamField>
+<ParamField path="pulse_sharpness" type="int32_t">
+  Considered in Parametric, Sinusoidal modes only.}
+</ParamField>
+<ParamField path="num_pwl" type="int32_t">
+  Considered in Parametric mode only.}
+</ParamField>
+
+### `param_id_haptics_wave_designer_config_v2_t`
+
+**Members**
+
+<ParamField path="num_channels" type="uint32_t">
+  num_channels= 1 supports channel_mask 1 and 2, num_channels= 2 supports channel_mask 3}
+</ParamField>
+<ParamField path="channel_mask" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_wave_designer_stop_param_t`
+
+**Members**
+
+<ParamField path="channel_mask" type="uint32_t">
+</ParamField>
+
+### `rx_wave_designer_update_config_t`
+
+**Members**
+
+<ParamField path="pulse_intensity" type="int32_t">
+</ParamField>
+<ParamField path="pulse_sharpness" type="int32_t">
+  Valid in Parametric, Sinusoidal modes only.}
+</ParamField>
+
+### `param_id_haptics_wave_designer_update_param_t`
+
+**Members**
+
+<ParamField path="num_channels" type="uint32_t">
+  num_channels = 1 supports channel_mask 1 and 2, num_channels = 2 supports channel_mask 3}
+</ParamField>
+<ParamField path="channel_mask" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_effect_0_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_1_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_2_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_3_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_4_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_5_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_6_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_7_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_8_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_9_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_10_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_11_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_12_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_13_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_effect_14_data_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_rx_effects_config_param_t`
+
+**Members**
+
+<ParamField path="Fres_Hz_q20" type="int32_t">
+</ParamField>
+<ParamField path="Re_ohm_q24" type="int32_t">
+  Default = 0Hz, Range = 0 to 400Hz}
+</ParamField>
+
+### `param_id_haptics_rx_tuning_data_0_param_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_rx_tuning_data_1_param_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_rx_tuning_data_2_param_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_rx_tuning_data_3_param_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_rx_tuning_data_4_param_t`
+
+**Members**
+
+<ParamField path="alignment" type="uint32_t">
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+</ParamField>
+<ParamField path="size" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_rx_visense_t`
+
+**Members**
+
+<ParamField path="vsens_scale_q24" type="int32_t">
+</ParamField>
+<ParamField path="isens_scale_q24" type="int32_t">
+  Default = 10.48, Range: 0 to 128}
+</ParamField>
+
+### `param_id_haptics_rx_thermal_gain_cfg_t`
+
+**Members**
+
+<ParamField path="delta_r_percent_q24" type="int32_t">
+</ParamField>
+<ParamField path="gain_q27" type="int32_t">
+  Default = 0.0, Range: -100.0 to 100.0}
+</ParamField>
+
+### `haptics_rx_lra_param_range_cfg_h`
+
+**Members**
+
+<ParamField path="Re_min_percent_q20" type="int32_t">
+  Default = -60%, Range: -100% to +100%}
+</ParamField>
+<ParamField path="Re_max_percent_q20" type="int32_t">
+  Default = +60%, Range: -100% to +100%}
+</ParamField>
+<ParamField path="Le_min_percent_q20" type="int32_t">
+  Default = -30%, Range: -100% to +100%}
+</ParamField>
+<ParamField path="Le_max_percent_q20" type="int32_t">
+  Default = +30%, Range: -100% to +100%}
+</ParamField>
+<ParamField path="Bl_min_percent_q20" type="int32_t">
+  Default = -50%, Range: -100% to +100%}
+</ParamField>
+<ParamField path="Bl_max_percent_q20" type="int32_t">
+  Default = +50%, Range: -100% to +100%}
+</ParamField>
+<ParamField path="Rms_min_percent_q20" type="int32_t">
+  Default = -80%, Range: -1000% to +1000%}
+</ParamField>
+<ParamField path="Rms_max_percent_q20" type="int32_t">
+  Default = +200%, Range: -1000% to +1000%}
+</ParamField>
+<ParamField path="Fres_min_percent_q20" type="int32_t">
+  Default = -20%, Range: -50% to +50%}
+</ParamField>
+<ParamField path="Fres_max_percent_q20" type="int32_t">
+  Default = +20%, Range: -50% to +50%}
+</ParamField>
+
+### `param_id_haptics_rx_lra_param_range_cfg_t`
+
+**Members**
+
+<ParamField path="num_channels" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_rx_test_mode_cfg_t`
+
+**Members**
+
+<ParamField path="test_mode" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_cps_fine_param_t`
+
+**Members**
+
+<ParamField path="cps_fine_tbl_en_flag" type="uint16_t">
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+</ParamField>
+<ParamField path="FourOhmTable_fine_GaindB_q24" type="int32_t">
+  Range: -9dB to 21dB}
+</ParamField>
+<ParamField path="SixOhmTable_fine_GaindB_q24" type="int32_t">
+  Range: -9dB to 21dB}
+</ParamField>
+<ParamField path="EightOhmTable_fine_GaindB_q24" type="int32_t">
+  Range: -9dB to 21dB}
+</ParamField>
+
+### `param_id_haptics_cps_data_param_t`
+
+**Members**
+
+<ParamField path="num_channels" type="uint32_t">
+</ParamField>
+<ParamField path="Vbatt_rt" type="uint8_t">
+</ParamField>
+<ParamField path="DieTemp_rt" type="uint8_t">
+</ParamField>
+
+### `haptics_ex_cps_param_t`
+
+**Members**
+
+<ParamField path="Vbatt_rt_q24" type="int32_t">
+</ParamField>
+<ParamField path="DieTemp_rt_q20" type="int32_t">
+</ParamField>
+<ParamField path="dB_cps_Gain_rt_q24" type="int32_t">
+</ParamField>
+
+### `param_id_haptics_ex_cps_demo_pkt_param_t`
+
+**Members**
+
+<ParamField path="num_channels" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_ex_cps_demo_param_t`
+
+**Members**
+
+<ParamField path="dsr" type="uint16_t">
+</ParamField>
+
+### `haptics_ex_param_t`
+
+**Members**
+
+<ParamField path="Re_rt_q24" type="int32_t">
+  Default = 8Ohm, Range: 2 to 128Ohms}
+</ParamField>
+<ParamField path="Bl_rt_q24" type="int32_t">
+  Default = 1, Range: 0.01 to 128}
+</ParamField>
+<ParamField path="Rms_rt_q24" type="int32_t">
+  Default = 0.0945kg/s, Range = 0.0001 to 20kg/s}
+</ParamField>
+<ParamField path="Kms_rt_q24" type="int32_t">
+  Default = 1.838N/mm, Range = 0.1 to 50N/mm}
+</ParamField>
+<ParamField path="Fres_rt_q20" type="int32_t">
+  Default = 160Hz, Range = 50 to 400Hz}
+</ParamField>
+
+### `param_id_haptics_ex_demo_pkt_param_t`
+
+**Members**
+
+<ParamField path="num_channels" type="uint32_t">
+</ParamField>
+<ParamField path="demo_out_valid" type="int32_t">
+</ParamField>
+<ParamField path="demo_out_pkt_cnt" type="uint32_t">
+</ParamField>
+<ParamField path="demo_out_samp_dist_ms" type="int32_t">
+</ParamField>
+
+### `haptics_v3_rtcl_lra_param_t`
+
+**Members**
+
+<ParamField path="tracked_Param_1" type="int32_t">
+  Default = 0, Range: -127.99 to +127.99}
+</ParamField>
+<ParamField path="tracked_Param_2" type="int32_t">
+  Default = 0, Range: -127.99 to +127.99}
+</ParamField>
+<ParamField path="tracked_Param_3" type="int32_t">
+  Default = 0, Range: -127.99 to +127.99}
+</ParamField>
+
+### `param_id_haptics_v3_rx_rtcl_logging_param_t`
+
+**Members**
+
+<ParamField path="num_channels" type="uint32_t">
+</ParamField>
+<ParamField path="demo_out_valid" type="int32_t">
+</ParamField>
+
+### `param_id_haptics_ex_demo_param_t`
+
+**Members**
+
+<ParamField path="dsr" type="uint16_t">
+</ParamField>
+
+### `param_id_haptics_version_t`
+
+**Members**
+
+<ParamField path="lib_version_low" type="uint32_t">
+
+</ParamField>
+<ParamField path="lib_version_high" type="uint32_t">
+
+</ParamField>
+
+### `param_id_haptics_global_shmem_msg_t`
+
+**Members**
+
+<ParamField path="shmem_id" type="uint32_t">
+</ParamField>
+<ParamField path="reserved" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_wave_designer_state`
+
+**Members**
+
+<ParamField path="state" type="uint16_t">
+</ParamField>
+
+### `haptics_pkd_reg_addr_t`
+
+**Members**
+
+<ParamField path="ab_initialize_pkd_reg_addr" type="uint32_t">
+
+</ParamField>
+<ParamField path="ab_trigger_pkd_reg_addr" type="uint32_t">
+
+</ParamField>
+<ParamField path="ab_stop_pkd_reg_addr" type="uint32_t">
+</ParamField>
+
+### `param_id_haptics_lpass_swr_hw_reg_cfg_t`
+
+**Members**
+
+<ParamField path="num_channel" type="uint32_t">
+
+</ParamField>
+<ParamField path="lpass_wr_cmd_reg_phy_addr" type="uint32_t">
+
+</ParamField>
+<ParamField path="lpass_rd_cmd_reg_phy_addr" type="uint32_t">
+</ParamField>
+<ParamField path="lpass_rd_fifo_reg_phy_addr" type="uint32_t">
+
+</ParamField>
+<ParamField path="haptics_pkd_reg_addr" type="haptics_pkd_reg_addr_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `param_id_haptics_static_config_t`
+
+```c
+typedef struct param_id_haptics_static_config_t param_id_haptics_static_config_t
+```
+
+### `param_id_haptics_op_mode`
+
+```c
+typedef struct param_id_haptics_op_mode param_id_haptics_op_mode
+```
+
+### `param_id_haptics_rx_pcmv_playback`
+
+```c
+typedef struct param_id_haptics_rx_pcmv_playback param_id_haptics_rx_pcmv_playback
+```
+
+### `param_id_haptics_rx_ftm_cfg_t`
+
+```c
+typedef struct param_id_haptics_rx_ftm_cfg_t param_id_haptics_rx_ftm_cfg_t
+```
+
+### `haptics_ex_ctrl_param_h`
+
+```c
+typedef struct haptics_ex_ctrl_param_h haptics_ex_ctrl_param_h
+```
+
+### `param_id_haptics_dynamic_cfg`
+
+```c
+typedef struct param_id_haptics_dynamic_cfg param_id_haptics_dynamic_cfg
+```
+
+### `param_id_haptics_rx_ftm_data_param_t`
+
+```c
+typedef struct param_id_haptics_rx_ftm_data_param_t param_id_haptics_rx_ftm_data_param_t
+```
+
+### `param_id_haptics_rx_calib_data_param_t`
+
+```c
+typedef struct param_id_haptics_rx_calib_data_param_t param_id_haptics_rx_calib_data_param_t
+```
+
+### `param_id_haptics_rx_persistent_data_param_t`
+
+```c
+typedef struct param_id_haptics_rx_persistent_data_param_t param_id_haptics_rx_persistent_data_param_t
+```
+
+### `rx_wave_designer_config_h`
+
+```c
+typedef struct rx_wave_designer_config_h rx_wave_designer_config_h
+```
+
+### `param_id_haptics_wave_designer_config_t`
+
+```c
+typedef struct param_id_haptics_wave_designer_config_t param_id_haptics_wave_designer_config_t
+```
+
+### `rx_wave_designer_config_v2_h`
+
+```c
+typedef struct rx_wave_designer_config_v2_h rx_wave_designer_config_v2_h
+```
+
+### `param_id_haptics_wave_designer_config_v2_t`
+
+```c
+typedef struct param_id_haptics_wave_designer_config_v2_t param_id_haptics_wave_designer_config_v2_t
+```
+
+### `param_id_haptics_wave_designer_wave_designer_stop_param_t`
+
+```c
+typedef struct param_id_haptics_wave_designer_stop_param_t param_id_haptics_wave_designer_wave_designer_stop_param_t
+```
+
+### `rx_wave_designer_update_config_t`
+
+```c
+typedef struct rx_wave_designer_update_config_t rx_wave_designer_update_config_t
+```
+
+### `param_id_haptics_wave_designer_update_param_t`
+
+```c
+typedef struct param_id_haptics_wave_designer_update_param_t param_id_haptics_wave_designer_update_param_t
+```
+
+### `param_id_haptics_effect_0_data_t`
+
+```c
+typedef struct param_id_haptics_effect_0_data_t param_id_haptics_effect_0_data_t
+```
+
+### `param_id_haptics_effect_1_data_t`
+
+```c
+typedef struct param_id_haptics_effect_1_data_t param_id_haptics_effect_1_data_t
+```
+
+### `param_id_haptics_effect_2_data_t`
+
+```c
+typedef struct param_id_haptics_effect_2_data_t param_id_haptics_effect_2_data_t
+```
+
+### `param_id_haptics_effect_3_data_t`
+
+```c
+typedef struct param_id_haptics_effect_3_data_t param_id_haptics_effect_3_data_t
+```
+
+### `param_id_haptics_effect_4_data_t`
+
+```c
+typedef struct param_id_haptics_effect_4_data_t param_id_haptics_effect_4_data_t
+```
+
+### `param_id_haptics_effect_5_data_t`
+
+```c
+typedef struct param_id_haptics_effect_5_data_t param_id_haptics_effect_5_data_t
+```
+
+### `param_id_haptics_effect_6_data_t`
+
+```c
+typedef struct param_id_haptics_effect_6_data_t param_id_haptics_effect_6_data_t
+```
+
+### `param_id_haptics_effect_7_data_t`
+
+```c
+typedef struct param_id_haptics_effect_7_data_t param_id_haptics_effect_7_data_t
+```
+
+### `param_id_haptics_effect_8_data_t`
+
+```c
+typedef struct param_id_haptics_effect_8_data_t param_id_haptics_effect_8_data_t
+```
+
+### `param_id_haptics_effect_9_data_t`
+
+```c
+typedef struct param_id_haptics_effect_9_data_t param_id_haptics_effect_9_data_t
+```
+
+### `param_id_haptics_effect_10_data_t`
+
+```c
+typedef struct param_id_haptics_effect_10_data_t param_id_haptics_effect_10_data_t
+```
+
+### `param_id_haptics_effect_11_data_t`
+
+```c
+typedef struct param_id_haptics_effect_11_data_t param_id_haptics_effect_11_data_t
+```
+
+### `param_id_haptics_effect_12_data_t`
+
+```c
+typedef struct param_id_haptics_effect_12_data_t param_id_haptics_effect_12_data_t
+```
+
+### `param_id_haptics_effect_13_data_t`
+
+```c
+typedef struct param_id_haptics_effect_13_data_t param_id_haptics_effect_13_data_t
+```
+
+### `param_id_haptics_effect_14_data_t`
+
+```c
+typedef struct param_id_haptics_effect_14_data_t param_id_haptics_effect_14_data_t
+```
+
+### `param_id_haptics_rx_effects_config_param_t`
+
+```c
+typedef struct param_id_haptics_rx_effects_config_param_t param_id_haptics_rx_effects_config_param_t
+```
+
+### `param_id_haptics_rx_tuning_data_0_param_t`
+
+```c
+typedef struct param_id_haptics_rx_tuning_data_0_param_t param_id_haptics_rx_tuning_data_0_param_t
+```
+
+### `param_id_haptics_rx_tuning_data_1_param_t`
+
+```c
+typedef struct param_id_haptics_rx_tuning_data_1_param_t param_id_haptics_rx_tuning_data_1_param_t
+```
+
+### `param_id_haptics_rx_tuning_data_2_param_t`
+
+```c
+typedef struct param_id_haptics_rx_tuning_data_2_param_t param_id_haptics_rx_tuning_data_2_param_t
+```
+
+### `param_id_haptics_rx_tuning_data_3_param_t`
+
+```c
+typedef struct param_id_haptics_rx_tuning_data_3_param_t param_id_haptics_rx_tuning_data_3_param_t
+```
+
+### `param_id_haptics_rx_tuning_data_4_param_t`
+
+```c
+typedef struct param_id_haptics_rx_tuning_data_4_param_t param_id_haptics_rx_tuning_data_4_param_t
+```
+
+### `param_id_haptics_rx_visense_t`
+
+```c
+typedef struct param_id_haptics_rx_visense_t param_id_haptics_rx_visense_t
+```
+
+### `param_id_haptics_rx_thermal_gain_cfg_t`
+
+```c
+typedef struct param_id_haptics_rx_thermal_gain_cfg_t param_id_haptics_rx_thermal_gain_cfg_t
+```
+
+### `haptics_rx_lra_param_range_cfg_h`
+
+```c
+typedef struct haptics_rx_lra_param_range_cfg_h haptics_rx_lra_param_range_cfg_h
+```
+
+### `param_id_haptics_rx_lra_param_range_cfg_t`
+
+```c
+typedef struct param_id_haptics_rx_lra_param_range_cfg_t param_id_haptics_rx_lra_param_range_cfg_t
+```
+
+### `param_id_haptics_rx_test_mode_cfg_t`
+
+```c
+typedef struct param_id_haptics_rx_test_mode_cfg_t param_id_haptics_rx_test_mode_cfg_t
+```
+
+### `param_id_haptics_cps_fine_param_t`
+
+```c
+typedef struct param_id_haptics_cps_fine_param_t param_id_haptics_cps_fine_param_t
+```
+
+### `param_id_haptics_cps_data_param_t`
+
+```c
+typedef struct param_id_haptics_cps_data_param_t param_id_haptics_cps_data_param_t
+```
+
+### `haptics_ex_cps_param_t`
+
+```c
+typedef struct haptics_ex_cps_param_t haptics_ex_cps_param_t
+```
+
+### `param_id_haptics_ex_cps_demo_pkt_param_t`
+
+```c
+typedef struct param_id_haptics_ex_cps_demo_pkt_param_t param_id_haptics_ex_cps_demo_pkt_param_t
+```
+
+### `param_id_haptics_ex_cps_demo_param_t`
+
+```c
+typedef struct param_id_haptics_ex_cps_demo_param_t param_id_haptics_ex_cps_demo_param_t
+```
+
+### `haptics_ex_param_t`
+
+```c
+typedef struct haptics_ex_param_t haptics_ex_param_t
+```
+
+### `param_id_haptics_ex_demo_pkt_param_t`
+
+```c
+typedef struct param_id_haptics_ex_demo_pkt_param_t param_id_haptics_ex_demo_pkt_param_t
+```
+
+### `haptics_v3_rtcl_lra_param_t`
+
+```c
+typedef struct haptics_v3_rtcl_lra_param_t haptics_v3_rtcl_lra_param_t
+```
+
+### `param_id_haptics_v3_ex_rx_demo_pkt_param_t`
+
+```c
+typedef struct param_id_haptics_v3_rx_rtcl_logging_param_t param_id_haptics_v3_ex_rx_demo_pkt_param_t
+```
+
+### `param_id_haptics_ex_demo_param_t`
+
+```c
+typedef struct param_id_haptics_ex_demo_param_t param_id_haptics_ex_demo_param_t
+```
+
+### `param_id_haptics_version_t`
+
+```c
+typedef struct param_id_haptics_version_t param_id_haptics_version_t
+```
+
+### `param_id_haptics_global_shmem_msg_t`
+
+```c
+typedef struct param_id_haptics_global_shmem_msg_t param_id_haptics_global_shmem_msg_t
+```
+
+### `param_id_haptics_wave_designer_state`
+
+```c
+typedef struct param_id_haptics_wave_designer_state param_id_haptics_wave_designer_state
+```
+
+### `pkd_reg_addr_t`
+
+```c
+typedef struct pkd_reg_addr_t pkd_reg_addr_t
+```
+
+### `param_id_haptics_lpass_swr_hw_reg_cfg_t`
+
+```c
+typedef struct param_id_haptics_lpass_swr_hw_reg_cfg_t param_id_haptics_lpass_swr_hw_reg_cfg_t
+```
+
+## Macros
+
+### `HAPTICS_MAX_INPUT_PORTS`
+
+```c
+#define HAPTICS_MAX_INPUT_PORTS 1
+```
+
+### `HAPTICS_MAX_OUTPUT_PORTS`
+
+```c
+#define HAPTICS_MAX_OUTPUT_PORTS 1
+```
+
+### `HAPTICS_STACK_SIZE`
+
+```c
+#define HAPTICS_STACK_SIZE 4096
+```
+
+### `MODULE_ID_HAPTICS`
+
+```c
+#define MODULE_ID_HAPTICS 0x070010E6
+```
+
+### `HAPTICS_EX_RX_DEMO_SMPL_PER_PKT`
+
+```c
+#define HAPTICS_EX_RX_DEMO_SMPL_PER_PKT 10*8
+```
+
+### `HAPTICS_CPS_EX_RX_DEMO_SMPL_PER_PKT`
+
+```c
+#define HAPTICS_CPS_EX_RX_DEMO_SMPL_PER_PKT 10
+```
+
+### `NVBATT_DISCRETE`
+
+```c
+#define NVBATT_DISCRETE (9)
+```
+
+### `NDTEMP_DISCRETE`
+
+```c
+#define NDTEMP_DISCRETE (14)
+```
+
+### `NVBATT_DISCRETE_FINE`
+
+```c
+#define NVBATT_DISCRETE_FINE (13)
+```
+
+### `NRE_DISCRETE`
+
+```c
+#define NRE_DISCRETE (3)
+```
+
+### `HAPTICS_MAX_OUT_CHAN`
+
+```c
+#define HAPTICS_MAX_OUT_CHAN (2)
+```
+
+### `HAPTICS_THERMAL_GAIN_COUNT`
+
+```c
+#define HAPTICS_THERMAL_GAIN_COUNT (11)
+```
+
+### `PARAM_ID_HAPTICS_STATIC_CFG`
+
+```c
+#define PARAM_ID_HAPTICS_STATIC_CFG 0x080014E7
+```
+
+### `PARAM_ID_HAPTICS_OP_MODE`
+
+```c
+#define PARAM_ID_HAPTICS_OP_MODE 0x0800136D
+```
+
+### `PARAM_ID_HAPTICS_RX_PCMV_PLAYBACK`
+
+```c
+#define PARAM_ID_HAPTICS_RX_PCMV_PLAYBACK 0x08001AE3
+```
+
+### `PARAM_ID_HAPTICS_RX_FTM_CFG`
+
+```c
+#define PARAM_ID_HAPTICS_RX_FTM_CFG 0x08001B1C
+```
+
+### `PARAM_ID_HAPTICS_DYNAMIC_CFG`
+
+```c
+#define PARAM_ID_HAPTICS_DYNAMIC_CFG 0x08001398
+```
+
+### `PARAM_ID_HAPTICS_RX_FTM_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_RX_FTM_DATA_PARAM 0x08001ADE
+```
+
+### `PARAM_ID_HAPTICS_RX_CALIB_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_RX_CALIB_DATA_PARAM 0x08001ADF
+```
+
+### `PARAM_ID_HAPTICS_RX_PERSISTENT_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_RX_PERSISTENT_DATA_PARAM 0x08001B1A
+```
+
+### `PARAM_ID_HAPTICS_WAVE_DESIGNER_CFG`
+
+```c
+#define PARAM_ID_HAPTICS_WAVE_DESIGNER_CFG 0x08001399
+```
+
+### `PARAM_ID_HAPTICS_WAVE_DESIGNER_CFG_V2`
+
+```c
+#define PARAM_ID_HAPTICS_WAVE_DESIGNER_CFG_V2 0x08001B1B
+```
+
+### `PARAM_ID_HAPTICS_WAVE_DESIGNER_STOP_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_WAVE_DESIGNER_STOP_PARAM 0x0800139A
+```
+
+### `PARAM_ID_HAPTICS_WAVE_DESIGNER_UPDATE_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_WAVE_DESIGNER_UPDATE_PARAM 0x0800139B
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_0_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_0_DATA_PARAM 0x08001522
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_1_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_1_DATA_PARAM 0x08001523
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_2_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_2_DATA_PARAM 0x08001524
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_3_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_3_DATA_PARAM 0x08001525
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_4_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_4_DATA_PARAM 0x08001526
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_5_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_5_DATA_PARAM 0x08001527
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_6_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_6_DATA_PARAM 0x08001528
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_7_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_7_DATA_PARAM 0x08001529
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_8_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_8_DATA_PARAM 0x0800152A
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_9_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_9_DATA_PARAM 0x0800152B
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_10_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_10_DATA_PARAM 0x0800152C
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_11_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_11_DATA_PARAM 0x0800152D
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_12_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_12_DATA_PARAM 0x0800152E
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_13_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_13_DATA_PARAM 0x0800152F
+```
+
+### `PARAM_ID_HAPTICS_EFFECT_14_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EFFECT_14_DATA_PARAM 0x08001530
+```
+
+### `PARAM_ID_HAPTICS_RX_EFFECTS_CONFIG_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_RX_EFFECTS_CONFIG_PARAM 0x08001ADA
+```
+
+### `PARAM_ID_HAPTICS_RX_TUNING_DATA_0_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_RX_TUNING_DATA_0_PARAM 0x08001B36
+```
+
+### `PARAM_ID_HAPTICS_RX_TUNING_DATA_1_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_RX_TUNING_DATA_1_PARAM 0x08001B37
+```
+
+### `PARAM_ID_HAPTICS_RX_TUNING_DATA_2_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_RX_TUNING_DATA_2_PARAM 0x08001B38
+```
+
+### `PARAM_ID_HAPTICS_RX_TUNING_DATA_3_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_RX_TUNING_DATA_3_PARAM 0x08001B39
+```
+
+### `PARAM_ID_HAPTICS_RX_TUNING_DATA_4_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_RX_TUNING_DATA_4_PARAM 0x08001B3A
+```
+
+### `PARAM_ID_HAPTICS_RX_VISENSE_CFG`
+
+```c
+#define PARAM_ID_HAPTICS_RX_VISENSE_CFG 0x08001B3B
+```
+
+### `PARAM_ID_HAPTICS_RX_THERMAL_GAIN_CFG`
+
+```c
+#define PARAM_ID_HAPTICS_RX_THERMAL_GAIN_CFG 0x08001B7D
+```
+
+### `PARAM_ID_HAPTICS_RX_LRA_PARAM_RANGE_CFG`
+
+```c
+#define PARAM_ID_HAPTICS_RX_LRA_PARAM_RANGE_CFG 0x08001B8D
+```
+
+### `PARAM_ID_HAPTICS_RX_TEST_MODE_CFG`
+
+```c
+#define PARAM_ID_HAPTICS_RX_TEST_MODE_CFG 0x08001B8E
+```
+
+### `PARAM_ID_HAPTICS_CPS_FINE_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_CPS_FINE_PARAM 0x0800139D
+```
+
+### `PARAM_ID_HAPTICS_CPS_DATA_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_CPS_DATA_PARAM 0x0800139E
+```
+
+### `PARAM_ID_HAPTICS_EX_CPS_DEMO_PKT_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EX_CPS_DEMO_PKT_PARAM 0x080013A0
+```
+
+### `PARAM_ID_HAPTICS_EX_CPS_DEMO_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EX_CPS_DEMO_PARAM 0x080013A1
+```
+
+### `PARAM_ID_HAPTICS_EX_DEMO_PKT_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EX_DEMO_PKT_PARAM 0x080013A2
+```
+
+### `PARAM_ID_HAPTICS_RX_RTCL_LOGGING_PARAM_V3`
+
+```c
+#define PARAM_ID_HAPTICS_RX_RTCL_LOGGING_PARAM_V3 0x08001BA8
+```
+
+### `PARAM_ID_HAPTICS_EX_DEMO_PARAM`
+
+```c
+#define PARAM_ID_HAPTICS_EX_DEMO_PARAM 0x080013A3
+```
+
+### `PARAM_ID_HAPTICS_VERSION`
+
+```c
+#define PARAM_ID_HAPTICS_VERSION 0x0800139F
+```
+
+### `PARAM_ID_HAPTICS_GLOBAL_SHMEM_MSG`
+
+```c
+#define PARAM_ID_HAPTICS_GLOBAL_SHMEM_MSG 0x08001BC2
+```
+
+### `PARAM_ID_HAPTICS_WAVE_DESIGNER_STATE`
+
+```c
+#define PARAM_ID_HAPTICS_WAVE_DESIGNER_STATE 0x080013D7
+```
+
+### `PARAM_ID_HAPTICS_LPASS_SWR_HW_REG_CFG`
+
+```c
+#define PARAM_ID_HAPTICS_LPASS_SWR_HW_REG_CFG 0x08001AE1
+```
+
+### `EVENT_ID_WAVEFORM_STATE`
+
+```c
+#define EVENT_ID_WAVEFORM_STATE 0x080013B2
+```

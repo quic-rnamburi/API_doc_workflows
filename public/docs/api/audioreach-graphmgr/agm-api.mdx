@@ -1,0 +1,2049 @@
+---
+title: "agm_api.h"
+---
+
+## Structures
+
+### `agm_key_value`
+
+A single entry of a Key Vector.
+
+**Members**
+
+<ParamField path="key" type="uint32_t">
+  key
+</ParamField>
+<ParamField path="value" type="uint32_t">
+  value
+</ParamField>
+
+### `prop_data`
+
+**Members**
+
+<ParamField path="prop_id" type="uint32_t">
+</ParamField>
+<ParamField path="num_values" type="uint32_t">
+</ParamField>
+<ParamField path="values" type="uint32_t">
+</ParamField>
+
+### `agm_cshm_info`
+
+**Members**
+
+<ParamField path="mem_id" type="uint32_t">
+  memID of the memory allocated
+</ParamField>
+<ParamField path="type" type="agm_cshm_type">
+  type of the memory allocated
+</ParamField>
+<ParamField path="fd" type="int64_t">
+  fd of the memory allocated
+</ParamField>
+<ParamField path="flags" type="uint32_t">
+</ParamField>
+
+### `agm_msg_config`
+
+**Members**
+
+<ParamField path="mem_id" type="uint32_t">
+  memID of the memory allocated
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+  offset of memory allocated
+</ParamField>
+<ParamField path="length" type="uint32_t">
+  Size of the chunk of memory.
+</ParamField>
+<ParamField path="miid" type="uint32_t">
+  module ID to which msg is sent
+</ParamField>
+<ParamField path="flags" type="uint32_t">
+  Flags to provide additional information, if it is a release memory or not.
+</ParamField>
+
+### `agm_extern_alloc_buff_info`
+
+**Members**
+
+<ParamField path="alloc_handle" type="int">
+  unique handle identifying extern mem allocation
+</ParamField>
+<ParamField path="alloc_size" type="uint32_t">
+  size of external allocation
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+  offset of buffer within extern allocation
+</ParamField>
+
+### `agm_buff`
+
+**Members**
+
+<ParamField path="timestamp" type="uint64_t">
+  timestamp in micro-secs
+</ParamField>
+<ParamField path="flags" type="uint32_t">
+  bitmasked flags for e.g.
+</ParamField>
+<ParamField path="size" type="uint32_t">
+  size of buffer in bytes
+</ParamField>
+<ParamField path="addr" type="uint8_t *">
+  data buffer
+</ParamField>
+<ParamField path="metadata_size" type="uint32_t">
+  size of metadata blob
+</ParamField>
+<ParamField path="metadata" type="uint8_t *">
+  Blob for metadata.
+</ParamField>
+<ParamField path="alloc_info" type="struct agm_extern_alloc_buff_info">
+  holds info for extern buff
+</ParamField>
+
+### `agm_session_aac_dec`
+
+AAC decoder parameters.
+
+**Members**
+
+<ParamField path="aac_fmt_flag" type="uint16_t">
+  AAC format flag.
+</ParamField>
+<ParamField path="audio_obj_type" type="uint16_t">
+  AAC obj type.
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+  AAC obj type.
+</ParamField>
+<ParamField path="total_size_of_PCE_bits" type="uint16_t">
+  PCE bits size.
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+  Sample rate.
+</ParamField>
+
+### `agm_session_aac_enc_cfg`
+
+AAC encoder parameters.
+
+**Members**
+
+<ParamField path="aac_enc_mode" type="uint16_t">
+  AAC encoder mode.
+</ParamField>
+<ParamField path="aac_fmt_flag" type="uint16_t">
+  AAC format flag.
+</ParamField>
+
+### `agm_session_aac_enc`
+
+**Members**
+
+<ParamField path="aac_bit_rate" type="uint32_t">
+</ParamField>
+<ParamField path="global_cutoff_freq" type="uint32_t">
+</ParamField>
+<ParamField path="enc_cfg" type="struct agm_session_aac_enc_cfg">
+</ParamField>
+
+### `agm_session_flac_dec`
+
+FLAC decoder parameters.
+
+**Members**
+
+<ParamField path="num_channels" type="uint16_t">
+  Number of channels.
+</ParamField>
+<ParamField path="sample_size" type="uint16_t">
+  Sample size.
+</ParamField>
+<ParamField path="min_blk_size" type="uint16_t">
+  Minimum block size.
+</ParamField>
+<ParamField path="max_blk_size" type="uint16_t">
+  Maximum block size.
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+  Sample rate.
+</ParamField>
+<ParamField path="min_frame_size" type="uint32_t">
+  Minimum frame size.
+</ParamField>
+<ParamField path="max_frame_size" type="uint32_t">
+  Maximum frame size.
+</ParamField>
+
+### `agm_session_alac_dec`
+
+ALAC decoder parameters.
+
+**Members**
+
+<ParamField path="frame_length" type="uint32_t">
+  Frame length.
+</ParamField>
+<ParamField path="compatible_version" type="uint8_t">
+  Version.
+</ParamField>
+<ParamField path="bit_depth" type="uint8_t">
+  bit depth
+</ParamField>
+<ParamField path="pb" type="uint8_t">
+  tuning parameters
+</ParamField>
+<ParamField path="mb" type="uint8_t">
+  tuning parameters
+</ParamField>
+<ParamField path="kb" type="uint8_t">
+  tuning parameters
+</ParamField>
+<ParamField path="num_channels" type="uint8_t">
+  Number of channels.
+</ParamField>
+<ParamField path="max_run" type="uint16_t">
+  Max run.
+</ParamField>
+<ParamField path="max_frame_bytes" type="uint32_t">
+  Max Frame bytes.
+</ParamField>
+<ParamField path="avg_bit_rate" type="uint32_t">
+  avg bit rate
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+  sample rate
+</ParamField>
+<ParamField path="channel_layout_tag" type="uint32_t">
+  Channel layout tag.
+</ParamField>
+
+### `agm_session_ape_dec`
+
+APE decoder parameters.
+
+**Members**
+
+<ParamField path="compatible_version" type="uint16_t">
+  Version.
+</ParamField>
+<ParamField path="compression_level" type="uint16_t">
+  Compression Level.
+</ParamField>
+<ParamField path="format_flags" type="uint32_t">
+  Format flags.
+</ParamField>
+<ParamField path="blocks_per_frame" type="uint32_t">
+  Blocks per frame.
+</ParamField>
+<ParamField path="final_frame_blocks" type="uint32_t">
+  Final frame blocks.
+</ParamField>
+<ParamField path="total_frames" type="uint32_t">
+  Total frames.
+</ParamField>
+<ParamField path="bit_width" type="uint16_t">
+  Bit width.
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+  Number of channels.
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+  Sample rate.
+</ParamField>
+<ParamField path="seek_table_present" type="uint32_t">
+  Seek table present.
+</ParamField>
+
+### `agm_session_wma_dec`
+
+WMA decoder parameters.
+
+**Members**
+
+<ParamField path="fmt_tag" type="uint16_t">
+  Format Tag.
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+  Number of channels.
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+  Sample rate.
+</ParamField>
+<ParamField path="avg_bytes_per_sec" type="uint32_t">
+  Avg bytes per sec.
+</ParamField>
+<ParamField path="blk_align" type="uint16_t">
+  Block align.
+</ParamField>
+<ParamField path="bits_per_sample" type="uint16_t">
+  Bits per sample.
+</ParamField>
+<ParamField path="channel_mask" type="uint32_t">
+  Channel mask.
+</ParamField>
+<ParamField path="enc_options" type="uint16_t">
+  Encoder options.
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+  reserved
+</ParamField>
+
+### `agm_session_wmapro_dec`
+
+WMA Pro decoder parameters.
+
+**Members**
+
+<ParamField path="fmt_tag" type="uint16_t">
+  Format Tag.
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+  Number of channels.
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+  Sample rate.
+</ParamField>
+<ParamField path="avg_bytes_per_sec" type="uint32_t">
+  Avg bytes per sec.
+</ParamField>
+<ParamField path="blk_align" type="uint16_t">
+  Block align.
+</ParamField>
+<ParamField path="bits_per_sample" type="uint16_t">
+  Bits per sample.
+</ParamField>
+<ParamField path="channel_mask" type="uint32_t">
+  Channel mask.
+</ParamField>
+<ParamField path="enc_options" type="uint16_t">
+  Encoder options.
+</ParamField>
+<ParamField path="advanced_enc_option" type="uint16_t">
+  Adv encoder options.
+</ParamField>
+<ParamField path="advanced_enc_option2" type="uint32_t">
+  Adv encoder options2.
+</ParamField>
+
+### `agm_session_opus_dec`
+
+OPUS decoder parameters.
+
+**Members**
+
+<ParamField path="bitstream_format" type="uint16_t">
+</ParamField>
+<ParamField path="payload_type" type="uint16_t">
+</ParamField>
+<ParamField path="version" type="uint8_t">
+</ParamField>
+<ParamField path="num_channels" type="uint8_t">
+</ParamField>
+<ParamField path="pre_skip" type="uint16_t">
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+</ParamField>
+<ParamField path="output_gain" type="uint16_t">
+</ParamField>
+<ParamField path="mapping_family" type="uint8_t">
+</ParamField>
+<ParamField path="stream_count" type="uint8_t">
+</ParamField>
+<ParamField path="coupled_count" type="uint8_t">
+</ParamField>
+<ParamField path="channel_map" type="uint8_t">
+</ParamField>
+<ParamField path="reserved" type="uint8_t">
+</ParamField>
+
+### `agm_session_codec`
+
+Session encoder/decoder parameters.
+
+**Members**
+
+<ParamField path="aac_dec" type="struct agm_session_aac_dec">
+  AAC decoder config.
+</ParamField>
+<ParamField path="aac_enc" type="struct agm_session_aac_enc">
+  AAC encoder config.
+</ParamField>
+<ParamField path="flac_dec" type="struct agm_session_flac_dec">
+  Flac decoder config.
+</ParamField>
+<ParamField path="alac_dec" type="struct agm_session_alac_dec">
+  Alac decoder config.
+</ParamField>
+<ParamField path="ape_dec" type="struct agm_session_ape_dec">
+  APE decoder config.
+</ParamField>
+<ParamField path="wma_dec" type="struct agm_session_wma_dec">
+  WMA decoder config.
+</ParamField>
+<ParamField path="wmapro_dec" type="struct agm_session_wmapro_dec">
+  WMAPro decoder config.
+</ParamField>
+<ParamField path="opus_dec" type="struct agm_session_opus_dec">
+  OPUS decoder config.
+</ParamField>
+
+### `agm_buf_info`
+
+Shared memory buffer info 211.
+
+**Members**
+
+<ParamField path="data_buf_fd" type="int32_t">
+</ParamField>
+<ParamField path="data_buf_size" type="int32_t">
+</ParamField>
+<ParamField path="pos_buf_fd" type="int32_t">
+</ParamField>
+<ParamField path="pos_buf_size" type="int32_t">
+</ParamField>
+
+### `agm_media_config`
+
+Media Config.
+
+**Members**
+
+<ParamField path="rate" type="uint32_t">
+  sample rate
+</ParamField>
+<ParamField path="channels" type="uint32_t">
+  number of channels
+</ParamField>
+<ParamField path="format" type="enum agm_media_format">
+  format
+</ParamField>
+<ParamField path="data_format" type="uint32_t">
+  data format
+</ParamField>
+
+### `agm_group_media_config`
+
+**Members**
+
+<ParamField path="config" type="struct agm_media_config">
+</ParamField>
+<ParamField path="slot_mask" type="uint32_t">
+  slot_mask for TDM
+</ParamField>
+
+### `aif_info`
+
+AIF Info.
+
+**Members**
+
+<ParamField path="aif_name" type="char">
+  AIF name
+</ParamField>
+<ParamField path="dir" type="enum direction">
+  direction
+</ParamField>
+
+### `agm_session_config`
+
+Session Config.
+
+**Members**
+
+<ParamField path="dir" type="enum direction">
+  TX or RX.
+</ParamField>
+<ParamField path="sess_mode" type="enum agm_session_mode">
+  indicates mode of agm sesison, non-tunnel, or hostless
+</ParamField>
+<ParamField path="start_threshold" type="uint32_t">
+  start_threshold: number of buffers * buffer size
+</ParamField>
+<ParamField path="stop_threshold" type="uint32_t">
+  stop_th6reshold: number of buffers * buffer size
+</ParamField>
+<ParamField path="codec" type="union agm_session_codec">
+  codec configuration
+</ParamField>
+<ParamField path="data_mode" type="enum agm_data_mode">
+  compress format ID
+</ParamField>
+<ParamField path="sess_flags" type="uint32_t">
+  pass session specific flags e.g enable inband SRCM event
+</ParamField>
+
+### `agm_buffer_config`
+
+Buffer Config.
+
+**Members**
+
+<ParamField path="count" type="uint32_t">
+  number of buffers
+</ParamField>
+<ParamField path="size" type="size_t">
+  size of each buffer
+</ParamField>
+<ParamField path="max_metadata_size" type="size_t">
+  max metadata size a client attaches to a buffer
+</ParamField>
+
+### `agm_module_id_iid_map`
+
+Maps the modules instance id to module id for a single module.
+
+**Members**
+
+<ParamField path="module_id" type="uint32_t">
+  module id
+</ParamField>
+<ParamField path="module_iid" type="uint32_t">
+  globally unique module instance id
+</ParamField>
+
+### `agm_tag_info`
+
+Structure which holds tag and corresponding modules tagged with tag id.
+
+**Members**
+
+<ParamField path="tag_id" type="uint32_t">
+  tag id
+</ParamField>
+<ParamField path="num_modules" type="uint32_t">
+  number of modules matching the tag_id
+</ParamField>
+<ParamField path="mid_iid_list" type="struct agm_module_id_iid_map">
+  agm_module_id_iid_map list
+</ParamField>
+
+### `agm_tag_module_info_list`
+
+Structure which holds tag info of a given graph.
+
+**Members**
+
+<ParamField path="num_tags" type="uint32_t">
+  number of tags
+</ParamField>
+<ParamField path="tag_info_list" type="uint8_t">
+  variable payload of type struct agm_tag_module_info
+</ParamField>
+
+### `agm_tag_config`
+
+Structure which holds tag config for setparams.
+
+**Members**
+
+<ParamField path="tag" type="uint32_t">
+  tag id
+</ParamField>
+<ParamField path="num_tkvs" type="uint32_t">
+  num of tag key values
+</ParamField>
+<ParamField path="kv" type="struct agm_key_value">
+  tag key vector
+</ParamField>
+
+### `agm_cal_config`
+
+**Members**
+
+<ParamField path="num_ckvs" type="uint32_t">
+  num of tag key values
+</ParamField>
+<ParamField path="kv" type="struct agm_key_value">
+  tag key vector
+</ParamField>
+
+### `agm_acdb_param`
+
+**Members**
+
+<ParamField path="isTKV" type="bool">
+</ParamField>
+<ParamField path="tag" type="uint32_t">
+</ParamField>
+<ParamField path="num_kvs" type="uint32_t">
+  number of ckv or tkv
+</ParamField>
+<ParamField path="blob_size" type="uint32_t">
+  kv size + payload size
+</ParamField>
+<ParamField path="blob" type="uint8_t">
+  kv + payload
+</ParamField>
+
+### `agm_acdb_tunnel_param`
+
+**Members**
+
+<ParamField path="isTKV" type="bool">
+</ParamField>
+<ParamField path="tag" type="uint32_t">
+</ParamField>
+<ParamField path="num_gkvs" type="uint32_t">
+  number of gkv
+</ParamField>
+<ParamField path="num_kvs" type="uint32_t">
+  number of ckv or tkv
+</ParamField>
+<ParamField path="blob_size" type="uint32_t">
+  gkv size + t/ckv size + payload size
+</ParamField>
+<ParamField path="blob" type="uint8_t">
+  gkv + t/ckv + payload
+</ParamField>
+
+### `agm_event_read_write_done_payload`
+
+**Members**
+
+<ParamField path="tag" type="uint32_t">
+  tag that was used to read/write this buffer
+</ParamField>
+<ParamField path="status" type="uint32_t">
+  data buffer status as defined in ar_osal_error.h
+</ParamField>
+<ParamField path="md_status" type="uint32_t">
+  meta-data status as defined in ar_osal_error.h
+</ParamField>
+<ParamField path="buff" type="struct agm_buff">
+  buffer that was passed to agm_read/agm_write
+</ParamField>
+
+### `agm_event_reg_cfg`
+
+Event registration structure.
+
+**Members**
+
+<ParamField path="module_instance_id" type="uint32_t">
+  Valid instance ID of module.
+</ParamField>
+<ParamField path="event_id" type="uint32_t">
+  Valid event ID of the module.
+</ParamField>
+<ParamField path="event_config_payload_size" type="uint32_t">
+  Size of the event config data based upon the module_instance_id/event_id combination.
+</ParamField>
+<ParamField path="is_register" type="uint8_t">
+  1 - to register the event 0 - to de-register the event
+</ParamField>
+<ParamField path="event_config_payload" type="uint8_t">
+  module specifc event registration payload
+</ParamField>
+
+### `agm_event_cb_params`
+
+data that will be passed to client in the event callback
+
+**Members**
+
+<ParamField path="source_module_id" type="uint32_t">
+  identifies the module which generated event
+</ParamField>
+<ParamField path="event_id" type="uint32_t">
+  size of payload below
+</ParamField>
+<ParamField path="event_payload_size" type="uint32_t">
+  payload associated with the event if any
+</ParamField>
+<ParamField path="event_payload" type="uint8_t">
+</ParamField>
+
+### `agm_dump_info`
+
+Data passed by the client when requesting dump.
+
+**Members**
+
+<ParamField path="signal" type="int32_t">
+  identifies the signal received by client
+</ParamField>
+<ParamField path="pid" type="uint32_t">
+  identifies client uid
+</ParamField>
+<ParamField path="uid" type="uint32_t">
+</ParamField>
+
+## Functions
+
+### `agm_init`
+
+Initialize agm.
+
+```c
+int agm_init()
+```
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `agm_deinit`
+
+De-Initialize agm.
+
+```c
+int agm_deinit()
+```
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `agm_aif_set_media_config`
+
+Set media configuration for an audio interface.
+
+```c
+int agm_aif_set_media_config(uint32_t aif_id, struct agm_media_config *media_config)
+```
+
+**Parameters**
+
+<ParamField path="aif_id" type="uint32_t">
+  - Valid audio interface id
+</ParamField>
+<ParamField path="media_config" type="struct agm_media_config *">
+  - valid media configuration for the audio interafce.
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the audio interface is already in use and the new media_config is different from previous, api will return failure.
+
+### `agm_aif_set_metadata`
+
+Set metadata for an audio interface.
+
+```c
+int agm_aif_set_metadata(uint32_t aif_id, uint32_t size, uint8_t *metadata)
+```
+
+**Parameters**
+
+<ParamField path="aif_id" type="uint32_t">
+  - Valid audio interface id
+</ParamField>
+<ParamField path="size" type="uint32_t">
+  - size of metadata in bytes
+</ParamField>
+<ParamField path="metadata" type="uint8_t *">
+  - valid metadata for the audio interface.
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the audio interface is already in use and the new meta data is set, api will return failure.
+
+### `agm_session_set_metadata`
+
+Set metadata for the session.
+
+```c
+int agm_session_set_metadata(uint32_t session_id, uint32_t size, uint8_t *metadata)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="size" type="uint32_t">
+  - size of metadata in bytes
+</ParamField>
+<ParamField path="metadata" type="uint8_t *">
+  - valid metadata for the session.
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the session is already opened and the new meta data is set, api will return failure.
+
+### `agm_session_aif_set_metadata`
+
+Set metadata for the session, audio intf pair.
+
+```c
+int agm_session_aif_set_metadata(uint32_t session_id, uint32_t aif_id, uint32_t size, uint8_t *metadata)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid session id
+</ParamField>
+<ParamField path="aif_id" type="uint32_t">
+  - Valid audio interface id
+</ParamField>
+<ParamField path="size" type="uint32_t">
+  - size of metadata in bytes
+</ParamField>
+<ParamField path="metadata" type="uint8_t *">
+  - valid metadata for the session and audio_intf.
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the session is already opened and the new meta data is set, api will return failure.
+
+### `agm_session_aif_connect`
+
+Set metadata for the session, audio intf pair.
+
+```c
+int agm_session_aif_connect(uint32_t session_id, uint32_t aif_id, bool state)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="aif_id" type="uint32_t">
+  - Valid audio interface id
+</ParamField>
+<ParamField path="state" type="bool">
+  - Connect or Disconnect AIF to Session
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the session is already opened and the new meta data is set, api will return failure.
+
+### `agm_session_aif_get_tag_module_info`
+
+Set metadata for the session, audio intf pair.
+
+```c
+int agm_session_aif_get_tag_module_info(uint32_t session_id, uint32_t aif_id, void *payload, size_t *size)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="aif_id" type="uint32_t">
+  - Valid audio interface id
+</ParamField>
+<ParamField path="payload" type="void *">
+  - payload containing tag module info list in the graph. The memory for this pointer is allocated by client.
+</ParamField>
+<ParamField path="size" type="size_t *">
+  size of the payload. if the value of size is zero, AGM will update required module info list of a given graph. if size equal or greater than the required size, AGM will copy the module info.
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `agm_aif_set_params`
+
+Set parameters for modules in audio interface.
+
+```c
+int agm_aif_set_params(uint32_t aif_id, void *payload, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="aif_id" type="uint32_t">
+  - Valid audio interface id
+</ParamField>
+<ParamField path="payload" type="void *">
+  - payload
+</ParamField>
+<ParamField path="size" type="size_t">
+  - payload size in bytes
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `agm_session_aif_set_params`
+
+Set parameters for modules in b/w stream and audio interface.
+
+```c
+int agm_session_aif_set_params(uint32_t session_id, uint32_t aif_id, void *payload, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="aif_id" type="uint32_t">
+  - Valid audio interface id
+</ParamField>
+<ParamField path="payload" type="void *">
+  - payload
+</ParamField>
+<ParamField path="size" type="size_t">
+  - payload size in bytes
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the session is already opened and the new meta data is set, api will return failure.
+
+### `agm_session_aif_set_cal`
+
+Set calibration for modules in b/w stream and audio interface.
+
+```c
+int agm_session_aif_set_cal(uint32_t session_id, uint32_t aif_id, struct agm_cal_config *cal_config)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="aif_id" type="uint32_t">
+  - Valid audio interface id
+</ParamField>
+<ParamField path="cal_config" type="struct agm_cal_config *">
+  - calibration key vector
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `agm_session_set_params`
+
+Set parameters for modules in stream.
+
+```c
+int agm_session_set_params(uint32_t session_id, void *payload, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="payload" type="void *">
+  - payload
+</ParamField>
+<ParamField path="size" type="size_t">
+  - payload size in bytes
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the session is already opened and the new meta data is set, api will return failure.
+
+### `agm_session_get_params`
+
+Get parameters of the modules of a given session.
+
+```c
+int agm_session_get_params(uint32_t session_id, void *payload, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="payload" type="void *">
+  - payload
+</ParamField>
+<ParamField path="size" type="size_t">
+  - payload size in bytes
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the session is not opened, api will return failure.
+
+### `agm_get_params_from_acdb_tunnel`
+
+Get parameters for modules at acdb without session.
+
+```c
+int agm_get_params_from_acdb_tunnel(void *payload, size_t *size)
+```
+
+**Parameters**
+
+<ParamField path="payload" type="void *">
+  - payload with tag and calibration date
+</ParamField>
+<ParamField path="size" type="size_t *">
+  - size of payload
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `agm_set_params_with_tag`
+
+Set parameters for modules in b/w stream and audio interface.
+
+```c
+int agm_set_params_with_tag(uint32_t session_id, uint32_t aif_id, struct agm_tag_config *tag_config)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="aif_id" type="uint32_t">
+  - valid audio interface id
+</ParamField>
+<ParamField path="tag_config" type="struct agm_tag_config *">
+  - tag config structure with tag id and tag key vector
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the session is already opened and the new meta data is set, api will return failure.
+
+### `agm_set_params_with_tag_to_acdb`
+
+Set parameters for modules in b/w stream and audio interface.
+
+```c
+int agm_set_params_with_tag_to_acdb(uint32_t session_id, uint32_t aif_id, void *payload, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="aif_id" type="uint32_t">
+  - valid audio interface id
+</ParamField>
+<ParamField path="payload" type="void *">
+  - payload with tag and calibration date
+</ParamField>
+<ParamField path="size" type="size_t">
+  - size of payload
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the session is already opened and the new meta data is set, api will return failure.
+
+### `agm_set_params_to_acdb_tunnel`
+
+Set parameters for modules at acdb without session.
+
+```c
+int agm_set_params_to_acdb_tunnel(void *payload, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="payload" type="void *">
+  - payload with tag and calibration date
+</ParamField>
+<ParamField path="size" type="size_t">
+  - size of payload
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `agm_session_register_cb`
+
+Open the session with specified session id.
+
+```c
+int agm_session_register_cb(uint32_t session_id, agm_event_cb cb, enum event_type evt_type, void *client_data)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="cb" type="agm_event_cb">
+  - callback function to be invoked when an event occurs.
+</ParamField>
+<ParamField path="evt_type" type="enum event_type">
+  - event type that
+</ParamField>
+<ParamField path="client_data" type="void *">
+  - client data.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_register_for_events`
+
+Register for events from Modules.
+
+Not needed for data path events.
+
+```c
+int agm_session_register_for_events(uint32_t session_id, struct agm_event_reg_cfg *evt_reg_cfg)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="evt_reg_info" type="">
+  - event specific configuration.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_open`
+
+Open the session with specified session id.
+
+```c
+int agm_session_open(uint32_t session_id, enum agm_session_mode sess_mode, uint64_t *handle)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="sess_mode" type="enum agm_session_mode">
+  - Mode in which this agm session is to be opened
+</ParamField>
+<ParamField path="handle" type="uint64_t *">
+  - updated with valid session handle if the operation is successful.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_set_config`
+
+Set Session config.
+
+```c
+int agm_session_set_config(uint64_t hndl, struct agm_session_config *session_config, struct agm_media_config *media_config, struct agm_buffer_config *buffer_config)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+<ParamField path="session_config" type="struct agm_session_config *">
+  - valid stream configuration of the sessions
+</ParamField>
+<ParamField path="media_config" type="struct agm_media_config *">
+  - valid media configuration of the session.
+</ParamField>
+<ParamField path="buffer_config" type="struct agm_buffer_config *">
+  - buffer configuration for the session. Null if hostless
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_close`
+
+Close the session.
+
+```c
+int agm_session_close(uint64_t hndl)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_prepare`
+
+prepare the session.
+
+```c
+int agm_session_prepare(uint64_t hndl)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_start`
+
+Start the session.
+
+```c
+int agm_session_start(uint64_t hndl)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_stop`
+
+Stop the session.
+
+session must be in started/paused state before stopping.
+
+```c
+int agm_session_stop(uint64_t hndl)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_pause`
+
+Pause the session.
+
+session must be in started state before resuming.
+
+```c
+int agm_session_pause(uint64_t hndl)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_flush`
+
+flush the session.
+
+session must be in pause state before flushing.
+
+```c
+int agm_session_flush(uint64_t hndl)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_sessionid_flush`
+
+flush the session.
+
+session must be in pause state before flushing.
+
+```c
+int agm_sessionid_flush(uint32_t session_id)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_resume`
+
+Resume the session.
+
+session must be in paused state before resuming.
+
+```c
+int agm_session_resume(uint64_t hndl)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_suspend`
+
+suspend the session.
+
+session must be in started state before suspending.
+
+```c
+int agm_session_suspend(uint64_t hndl)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_read`
+
+Read data buffers.from session.
+
+```c
+int agm_session_read(uint64_t handle, void *buff, size_t *count)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="uint64_t">
+  session handle returned from agm_session_open
+</ParamField>
+<ParamField path="buff" type="void *">
+  buffer where data will be copied to
+</ParamField>
+<ParamField path="count" type="size_t *">
+  number of bytes requested to fill into the buffer. AGM will update the count with actual number of bytes filled.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_write`
+
+Write data buffers.to session.
+
+```c
+int agm_session_write(uint64_t hndl, void *buff, size_t *count)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  session handle returned from agm_session_open
+</ParamField>
+<ParamField path="buff" type="void *">
+  buffer where data will be copied from
+</ParamField>
+<ParamField path="count" type="size_t *">
+  actual number of bytes in the buffer. AGM will update the count with number of bytes consumed/written.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_get_hw_processed_buff_cnt`
+
+Get count of Buffer processed by h/w.
+
+```c
+size_t agm_get_hw_processed_buff_cnt(uint64_t hndl, enum direction dir)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  session handle returned from agm_session_open
+</ParamField>
+<ParamField path="dir" type="enum direction">
+  indicates whether to return the write or read buffer count
+</ParamField>
+
+**Returns**
+
+: An increasing count of buffers, value wraps back to zero once it reaches SIZE_MAX
+
+### `agm_get_aif_info_list`
+
+Get list of AIF info objects.
+
+```c
+int agm_get_aif_info_list(struct aif_info *aif_list, size_t *num_aif_info)
+```
+
+**Parameters**
+
+<ParamField path="aif_list" type="struct aif_info *">
+  list of aif_info objects
+</ParamField>
+<ParamField path="num_aif_info" type="size_t *">
+  number of aif info items in the list. if num_aif_info value is listed as zero, AGM will update num_aif_info with the number of aif info items in AGM. if num_aif_info is greater than zero, AGM will copy client specified num_aif_info of items into aif_list.
+</ParamField>
+
+**Returns**
+
+: 0 on success, error code otherwise
+
+### `agm_session_set_loopback`
+
+Set loopback between capture and playback sessions.
+
+```c
+int agm_session_set_loopback(uint32_t capture_session_id, uint32_t playback_session_id, bool state)
+```
+
+**Parameters**
+
+<ParamField path="capture_session_id" type="uint32_t">
+  : a non zero capture session id
+</ParamField>
+<ParamField path="playback_session_id" type="uint32_t">
+  playback session id.
+</ParamField>
+<ParamField path="state" type="bool">
+  : flag to indicate to enable(true) or disable(false) loopback
+</ParamField>
+
+**Returns**
+
+: 0 on success, error code otherwise
+
+### `agm_session_set_ec_ref`
+
+Set ec reference on capture session.
+
+```c
+int agm_session_set_ec_ref(uint32_t capture_session_id, uint32_t aif_id, bool state)
+```
+
+**Parameters**
+
+<ParamField path="capture_session_id" type="uint32_t">
+  : a non zero capture session id
+</ParamField>
+<ParamField path="aif_id" type="uint32_t">
+  aif_id on RX path.
+</ParamField>
+<ParamField path="state" type="bool">
+  : flag to indicate to enable(true) or disable(false) ec_ref
+</ParamField>
+
+**Returns**
+
+: 0 on success, error code otherwise
+
+### `agm_session_eos`
+
+send eos of the session.
+
+```c
+int agm_session_eos(uint64_t handle)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="uint64_t">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_get_session_time`
+
+get timestamp of the session.
+
+```c
+int agm_get_session_time(uint64_t handle, uint64_t *timestamp)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="uint64_t">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+<ParamField path="timestamp" type="uint64_t *">
+  - updated with valid timestamp if the operation is successful.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_get_buffer_timestamp`
+
+get timestamp of last read buffer.
+
+```c
+int agm_get_buffer_timestamp(uint32_t session_id, uint64_t *timestamp)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="timestamp" type="uint64_t *">
+  - updated with valid timestamp if the operation is successful.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_get_buf_info`
+
+Get shared memory buf_info of a given session.
+
+```c
+int agm_session_get_buf_info(uint32_t session_id, struct agm_buf_info *buf_info, uint32_t flag)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="buf_info" type="struct agm_buf_info *">
+  - agm_buf_info structure with dma_buf_fd
+</ParamField>
+<ParamField path="buf_info" type="struct agm_buf_info *">
+  - flag to determine data buf/pos buf
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the session is not opened, api will return failure.
+
+### `agm_register_service_crash_callback`
+
+This api is a no-op if agm runs in clients context.
+
+In scenarios where AGM runs in its own process context and clients talk to AGM over IPC, this api could be used by clients to register a callback with the agm client wrapper implentation, which is then responsible to trigger this callback when the agm service crashes. Once the callback is invoked clients then can decide on the approach they want to take with respect to clean up of the agm sesisons
+
+```c
+int agm_register_service_crash_callback(agm_service_crash_cb cb, uint64_t cookie)
+```
+
+**Parameters**
+
+<ParamField path="agm_service_crash_cb" type="">
+  - Callback passed by clients
+</ParamField>
+<ParamField path="cookie" type="uint64_t">
+  - Cookie that client expect to be passed during the invocation of the callback.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_set_gapless_session_metadata`
+
+set gapless metadata of the session.
+
+```c
+int agm_set_gapless_session_metadata(uint64_t handle, enum agm_gapless_silence_type type, uint32_t silence)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="uint64_t">
+  - Valid session handle obtained from agm_session_open
+</ParamField>
+<ParamField path="type" type="enum agm_gapless_silence_type">
+  - Silence Type (Initial or Trailing)
+</ParamField>
+<ParamField path="silence" type="uint32_t">
+  - Initial/Trailing silence samples to be removed
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_write_with_metadata`
+
+Write data buffers with metadata to session.
+
+```c
+int agm_session_write_with_metadata(uint64_t hndl, struct agm_buff *buff, size_t *consumed_size)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  session handle returned from agm_session_open
+</ParamField>
+<ParamField path="buff" type="struct agm_buff *">
+  agm_buffer where data will be copied from
+</ParamField>
+<ParamField path="consumed" type="">
+  size: Actual number of bytes that were consumed by AGM
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_read_with_metadata`
+
+Read data buffers with metadata to session.
+
+```c
+int agm_session_read_with_metadata(uint64_t hndl, struct agm_buff *buff, uint32_t *captured_size)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  session handle returned from agm_session_open
+</ParamField>
+<ParamField path="buff" type="struct agm_buff *">
+  agm_buffer where data will be copied to
+</ParamField>
+<ParamField path="captured_size" type="uint32_t *">
+  Actual number of bytes that were captured
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_session_set_non_tunnel_mode_config`
+
+Helps set config for non tunnel mode (rx and tx path)
+
+```c
+int agm_session_set_non_tunnel_mode_config(uint64_t hndl, struct agm_session_config *session_config, struct agm_media_config *in_media_config, struct agm_media_config *out_media_config, struct agm_buffer_config *in_buffer_config, struct agm_buffer_config *out_buffer_config)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="">
+  session handle returned from agm_session_open
+</ParamField>
+<ParamField path="session_config" type="struct agm_session_config *">
+  - valid stream configuration of the sessions
+</ParamField>
+<ParamField path="in_media_config" type="struct agm_media_config *">
+  - valid media configuration of the input data.
+</ParamField>
+<ParamField path="in_buffer_config" type="struct agm_buffer_config *">
+  - buffer configuration for the input data path.
+</ParamField>
+<ParamField path="out_media_config" type="struct agm_media_config *">
+  - valid media configuration of the output data.
+</ParamField>
+<ParamField path="out_buffer_config" type="struct agm_buffer_config *">
+  - buffer configuration for the output data path.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_get_group_aif_info_list`
+
+Get list of group AIF objects.
+
+```c
+int agm_get_group_aif_info_list(struct aif_info *aif_list, size_t *num_groups)
+```
+
+**Parameters**
+
+<ParamField path="aif_list" type="struct aif_info *">
+  list of group aif_info objects
+</ParamField>
+<ParamField path="num_groups" type="size_t *">
+  number of group aif items in the list. if num_groups value is listed as zero, AGM will update num_groups with the number of group aif items in AGM. if num_groups is greater than zero, AGM will copy client specified num_groups of items into aif_list.
+</ParamField>
+
+**Returns**
+
+: 0 on success, error code otherwise
+
+### `agm_aif_group_set_media_config`
+
+Set media configuration for a group AIF.
+
+```c
+int agm_aif_group_set_media_config(uint32_t aif_group_id, struct agm_group_media_config *media_config)
+```
+
+**Parameters**
+
+<ParamField path="aif_group_id" type="uint32_t">
+  - Valid group id
+</ParamField>
+<ParamField path="media_config" type="struct agm_group_media_config *">
+  - valid media configuration for the audio interafce.
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure. If the audio interface is already in use and the new media_config is different from previous, api will return failure.
+
+### `agm_session_write_datapath_params`
+
+Write buffers containing codec params to session on datapath.
+
+```c
+int agm_session_write_datapath_params(uint32_t session_id, struct agm_buff *buff)
+```
+
+**Parameters**
+
+<ParamField path="session_id" type="uint32_t">
+  - Valid audio session id
+</ParamField>
+<ParamField path="buff" type="struct agm_buff *">
+  agm_buffer where data will be copied from
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `agm_dump`
+
+Dump AGM information based on client.
+
+```c
+int agm_dump(struct agm_dump_info *dump_info)
+```
+
+**Parameters**
+
+<ParamField path="dump_info" type="struct agm_dump_info *">
+  - dump information populated by the client to facilitate dump
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `agm_cshm_alloc`
+
+Allocate shared memory and map it with SPF.
+
+```c
+int agm_cshm_alloc(uint32_t size, agm_cshm_info *info)
+```
+
+**Parameters**
+
+<ParamField path="size" type="uint32_t">
+  - Size of memory to alloc in bytes.
+</ParamField>
+<ParamField path="[in/out]" type="">
+  info - Info regarding the allocated shared memory
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `agm_cshm_msg`
+
+Send a Global MSG to a module.
+
+```c
+int agm_cshm_msg(uint32_t mem_id, uint32_t offset, uint32_t length, uint32_t miid, uint32_t flags)
+```
+
+**Parameters**
+
+<ParamField path="mem_id" type="uint32_t">
+  - Valid mem_id returned as part of agm_cshm_alloc.
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+  - Offset from the beginning of allocted memory.
+</ParamField>
+<ParamField path="length" type="uint32_t">
+  - Length of the memory for module to use.
+</ParamField>
+<ParamField path="miid" type="uint32_t">
+  - Module Instance ID of the module for which this MSG is intented.
+</ParamField>
+<ParamField path="flags" type="uint32_t">
+  - Flag conveying additional info regarding the MSG.
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `agm_cshm_dealloc`
+
+Unmap the shared memory with SPF and Deallocate it.
+
+```c
+int agm_cshm_dealloc(uint32_t mem_id)
+```
+
+**Parameters**
+
+<ParamField path="mem_id" type="uint32_t">
+  - Valid mem_id returned as part of agm_cshm_alloc.
+</ParamField>
+
+**Returns**
+
+0 on success, error code on failure.
+
+## Type Definitions
+
+### `agm_event_cb`
+
+Callback function signature for events to client.
+
+```c
+typedef void(* agm_event_cb
+```
+
+### `agm_service_crash_cb`
+
+Callback function signature for crash notification to clients.
+
+```c
+typedef void(* agm_service_crash_cb
+```
+
+## Enumerations
+
+### `agm_media_format`
+
+Bit formats.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AGM_FORMAT_INVALID` |  |  |
+| `AGM_FORMAT_PCM_S8` |  | 8-bit signed |
+| `AGM_FORMAT_PCM_S16_LE` |  | 16-bit signed |
+| `AGM_FORMAT_PCM_S24_LE` |  | 24-bits in 4-bytes |
+| `AGM_FORMAT_PCM_S24_3LE` |  | 24-bits in 3-bytes |
+| `AGM_FORMAT_PCM_S32_LE` |  | 32-bit signed |
+| `AGM_FORMAT_MP3` |  | MP3 codec. |
+| `AGM_FORMAT_AAC` |  | AAC codec. |
+| `AGM_FORMAT_FLAC` |  | FLAC codec. |
+| `AGM_FORMAT_ALAC` |  | ALAC codec. |
+| `AGM_FORMAT_APE` |  | APE codec. |
+| `AGM_FORMAT_WMASTD` |  | WMA codec. |
+| `AGM_FORMAT_WMAPRO` |  | WMA pro codec. |
+| `AGM_FORMAT_VORBIS` |  | Vorbis codec. |
+| `AGM_FORMAT_AMR_NB` |  | AMR NB codec. |
+| `AGM_FORMAT_AMR_WB` |  | AMR WB codec. |
+| `AGM_FORMAT_AMR_WB_PLUS` |  | AMR WB Plus codec. |
+| `AGM_FORMAT_EVRC` |  | EVRC codec. |
+| `AGM_FORMAT_G711` |  | G711 codec. |
+| `AGM_FORMAT_QCELP` |  | G711 codec. |
+| `AGM_FORMAT_OPUS` |  | OPUS codec. |
+| `AGM_FORMAT_MAX` |  |  |
+
+### `agm_data_format`
+
+Data format MUST stay in sync with media_fmt_api.h.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AGM_DATA_FORMAT_INVALID` |  |  |
+| `AGM_DATA_FORMAT_FIXED_POINT` |  | fixed point |
+| `AGM_DATA_FORMAT_IEC61937_PACKETIZED` |  | IEC61937 packetized stream. |
+| `AGM_DATA_FORMAT_IEC60958_PACKETIZED` |  | IEC60958 packetized stream for PCM only. |
+| `AGM_DATA_FORMAT_DSD_OVER_PCM` |  | DSD over PCM stream. |
+| `AGM_DATA_FORMAT_GENERIC_COMPRESSED` |  | generic compressed stream |
+| `AGM_DATA_FORMAT_RAW_COMPRESSED` |  | raw compressed stream |
+| `AGM_DATA_FORMAT_COMPR_OVER_PCM_PACKETIZED` |  | Compressed bitstreams packetized. |
+| `AGM_DATA_FORMAT_IEC60958_PACKETIZED_NON_LINEAR` |  | IEC60958 packetized stream for compressed streams. |
+
+### `agm_data_mode`
+
+AGM data modes.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AGM_DATA_INVALID` |  |  |
+| `AGM_DATA_BLOCKING` |  | Blocking mode. |
+| `AGM_DATA_NON_BLOCKING` |  | Non blocking mode. |
+| `AGM_DATA_PUSH_PULL` |  | Push Pull mode. |
+| `AGM_DATA_EXTERN_MEM` |  | Push Pull mode. |
+| `AGM_DATA_MODE_MAX` |  |  |
+
+### `agm_session_mode`
+
+AGM session modes.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AGM_SESSION_DEFAULT` |  | Normal agm tunnel session. |
+| `AGM_SESSION_NO_HOST` |  | Hostless mode. |
+| `AGM_SESSION_NON_TUNNEL` |  | Non tunnel mode. |
+| `AGM_SESSION_NO_CONFIG` |  | No Config mode. |
+| `AGM_SESSION_COMPRESS` |  | Compress mode. |
+
+### `agm_cshm_type`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `CACHED` | = 1 | Indicates that the allocated shared memory is cacheable. |
+| `UNCACHED` |  | Indicates that the allocated shared memory is non-cacheable. |
+
+### `agm_gapless_silence_type`
+
+Gapless playback Silence type.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `INITIAL_SILENCE` |  | Initial silence sample to be removed. |
+| `TRAILING_SILENCE` |  | Trailing silence sample to be removed. |
+
+### `buf_flag`
+
+Flag to determine data buf or postion buf.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `DATA_BUF` | = 0x1 |  |
+| `POS_BUF` | = 0x2 |  |
+
+### `direction`
+
+Session Direction.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `RX` | = 1 | RX. |
+| `TX` |  | TX. |
+
+### `event_type`
+
+Event types.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AGM_EVENT_DATA_PATH` | = 1 | Events on the Data path, READ_DONE or WRITE_DONE. |
+| `AGM_EVENT_MODULE` |  | Events raised by modules. |
+
+### `agm_event_id`
+
+Data Events that will be notified to client from AGM.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AGM_EVENT_EOS_RENDERED` | = 0x0 | Indicates EOS rendered event. |
+| `AGM_EVENT_READ_DONE` | = 0x1 | Indicates buffer provided as part of read call has been filled. |
+| `AGM_EVENT_WRITE_DONE` | = 0x2 | Indicates buffer provided as part of write has been consumed. |
+| `AGM_EVENT_EARLY_EOS_INTERNAL` | = 0x5 | Indicates early EOS event flagged internally by AGM in case flush. |
+| `AGM_EVENT_EARLY_EOS` | = 0x08001126 | Indicates early EOS event. |
+| `AGM_EVENT_ID_MAX` |  |  |
+
+## Macros
+
+### `AGM_BUFF_FLAG_EOS`
+
+used to indicate a given buffer is the final buffer, client will get notified once the buffer has been rendered
+
+```c
+#define AGM_BUFF_FLAG_EOS 0x1
+```
+
+### `AGM_BUFF_FLAG_TS_VALID`
+
+true if buffer is marked as EOF
+
+```c
+#define AGM_BUFF_FLAG_TS_VALID 0x2
+```
+
+### `AGM_BUFF_FLAG_EOF`
+
+true if buffer contains media format
+
+```c
+#define AGM_BUFF_FLAG_EOF 0x4
+```
+
+### `AGM_BUFF_FLAG_MEDIA_FORMAT`
+
+```c
+#define AGM_BUFF_FLAG_MEDIA_FORMAT 0x8
+```
+
+### `AGM_SESSION_FLAG_INBAND_SRCM`
+
+```c
+#define AGM_SESSION_FLAG_INBAND_SRCM 0x1
+```
+
+### `AIF_NAME_MAX_LEN`
+
+MAX length of the AIF Name.
+
+```c
+#define AIF_NAME_MAX_LEN 32
+```

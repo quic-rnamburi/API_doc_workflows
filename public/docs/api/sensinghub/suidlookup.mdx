@@ -1,0 +1,19 @@
+---
+title: "suidLookUp.h"
+---
+
+## Type Definitions
+
+### `suid`
+
+```c
+typedef com::quic::sensinghub::suid suid
+```
+
+### `suidEventCb`
+
+type alias for an suid event function
+
+```c
+typedef std::function\< void(const std::string &datatype, const std::vector\< suid > &suids)> suidEventCb
+```

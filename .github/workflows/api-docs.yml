@@ -219,6 +219,8 @@ jobs:
               # Escape bare < and > that are not valid JSX tags
               s = re.sub(r'<(?!/?\w)', r'\\<', s)
               s = re.sub(r'(?<=\w)>', r'\\>', s)
+              # Escape << bitshift operator
+              s = re.sub(r'<<', r'\\<\\<', s)
               # Escape <=> and similar operator sequences
               s = re.sub(r'\\<=>', r'\\<\\=>', s)
               return s.strip()

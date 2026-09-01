@@ -1,0 +1,158 @@
+---
+title: "aptx_adaptive_encoder_api.h"
+---
+
+## Structures
+
+### `param_id_aptx_adaptive_enc_init_t`
+
+**Members**
+
+<ParamField path="sampleRate" type="uint32_t">
+</ParamField>
+<ParamField path="mtulink0" type="uint32_t">
+  A value of 0 means "do not change"}
+</ParamField>
+<ParamField path="channelMode0" type="int32_t">
+</ParamField>
+<ParamField path="minsinkBufLL" type="uint32_t">
+</ParamField>
+<ParamField path="maxsinkBufLL" type="uint32_t">
+</ParamField>
+<ParamField path="minsinkBufHQ" type="uint32_t">
+</ParamField>
+<ParamField path="maxsinkBufHQ" type="uint32_t">
+</ParamField>
+<ParamField path="minsinkBufTws" type="uint32_t">
+</ParamField>
+<ParamField path="maxsinkBufTws" type="uint32_t">
+  the A2DP Sink can accept.
+</ParamField>
+<ParamField path="profile" type="uint32_t">
+</ParamField>
+<ParamField path="twsplusDualMonoMode" type="uint32_t">
+</ParamField>
+<ParamField path="twsplusFadeDuration" type="uint32_t">
+</ParamField>
+<ParamField path="sinkCapability" type="uint8_t">
+
+</ParamField>
+
+### `param_id_aptx_adaptive_enc_profile_t`
+
+**Members**
+
+<ParamField path="primprofile" type="uint32_t">
+</ParamField>
+<ParamField path="secprofile" type="uint32_t">
+</ParamField>
+<ParamField path="LLModeLatTarget0" type="uint32_t">
+  Each bit represents 1mS of audio. 
+ A value of 0 means 'do not change'}
+</ParamField>
+<ParamField path="LLModeLatTarget1" type="uint32_t">
+  Each bit represents 1mS of audio. 
+ A value of 0 means 'do not change'}
+</ParamField>
+<ParamField path="hQLatTarget0" type="uint32_t">
+  Each bit represents 4mS of audio. 
+ A value of 0 means 'do not change'}
+</ParamField>
+<ParamField path="hQLatTarget1" type="uint32_t">
+  Each bit represents 4mS of audio. 
+ A value of 0 means 'do not change'}
+</ParamField>
+
+### `param_id_aptx_adaptive_enc_original_samplerate_t`
+
+**Members**
+
+<ParamField path="original_sample_rate" type="uint16_t">
+
+</ParamField>
+
+### `param_id_aptx_adaptive_enc_switch_to_mono_t`
+
+**Members**
+
+<ParamField path="switch_between_mono_and_stereo" type="uint32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `param_id_aptx_adaptive_enc_init_t`
+
+```c
+typedef struct param_id_aptx_adaptive_enc_init_t param_id_aptx_adaptive_enc_init_t
+```
+
+### `param_id_aptx_adaptive_enc_profile_t`
+
+```c
+typedef struct param_id_aptx_adaptive_enc_profile_t param_id_aptx_adaptive_enc_profile_t
+```
+
+### `param_id_aptx_adaptive_enc_original_samplerate_t`
+
+```c
+typedef struct param_id_aptx_adaptive_enc_original_samplerate_t param_id_aptx_adaptive_enc_original_samplerate_t
+```
+
+### `param_id_aptx_adaptive_enc_switch_to_mono_t`
+
+```c
+typedef struct param_id_aptx_adaptive_enc_switch_to_mono_t param_id_aptx_adaptive_enc_switch_to_mono_t
+```
+
+## Macros
+
+### `COP_ENCODER_FEEDBACK_IN`
+
+```c
+#define COP_ENCODER_FEEDBACK_IN AR_NON_GUID(0xC0000001)
+```
+
+### `SINK_CAPABILITIES_LEN`
+
+```c
+#define SINK_CAPABILITIES_LEN 11
+```
+
+### `PARAM_ID_APTX_ADAPTIVE_ENC_INIT`
+
+ID of the aptx adaptive encoder initialization parameter.
+
+```c
+#define PARAM_ID_APTX_ADAPTIVE_ENC_INIT 0x08001183
+```
+
+### `PARAM_ID_APTX_ADAPTIVE_ENC_PROFILE`
+
+ID of the aptx adaptive encoder profile parameter.
+
+```c
+#define PARAM_ID_APTX_ADAPTIVE_ENC_PROFILE 0x08001184
+```
+
+### `PARAM_ID_APTX_ADAPTIVE_ENC_AUDIOSRC_INFO`
+
+ID of the aptx adaptive encoder Source Audio sample rate parameter.
+
+```c
+#define PARAM_ID_APTX_ADAPTIVE_ENC_AUDIOSRC_INFO 0x08001186
+```
+
+### `PARAM_ID_APTX_ADAPTIVE_ENC_SWITCH_TO_MONO`
+
+ID of the aptx adaptive encoder Source Audio sample rate parameter.
+
+```c
+#define PARAM_ID_APTX_ADAPTIVE_ENC_SWITCH_TO_MONO 0x08001187
+```
+
+### `MODULE_ID_APTX_ADAPTIVE_ENC`
+
+```c
+#define MODULE_ID_APTX_ADAPTIVE_ENC 0x07001082
+```

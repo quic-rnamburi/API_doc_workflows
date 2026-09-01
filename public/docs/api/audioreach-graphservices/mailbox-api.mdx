@@ -1,0 +1,205 @@
+---
+title: "mailbox_api.h"
+description: "This file contains CAPI Mailbox rx and tx module APIs."
+---
+
+## Structures
+
+### `payload_media_fmt_dtmf_tone_t`
+
+Payload of fmt-id = MEDIA_FMT_ID_DTMF.
+
+**Members**
+
+<ParamField path="low_freq" type="uint16_t">
+</ParamField>
+<ParamField path="high_freq" type="uint16_t">
+</ParamField>
+<ParamField path="duration_ms" type="uint32_t">
+  The duration includes ramp-up and ramp-down periods of 1 ms and 2 ms, respectively. -1 - Infinite or Continuous tone mode, tone is played until stop is received. 0 - Stops the current tone, >0 - tone is generated for the given duration (milli secs) }
+</ParamField>
+<ParamField path="gain" type="uint16_t">
+  Because the level of tone generation is fixed at 0 dBFS, this parameter must be set to a value in Q13 format.}
+</ParamField>
+<ParamField path="generate_unmixed_output" type="uint16_t">
+  >0 - Indicates only tone must be played 0 - Indicates tone needs to be mixed with primary path. }
+</ParamField>
+
+### `mailbox_config_t`
+
+**Members**
+
+<ParamField path="mem_handle" type="uint32_t">
+  The spf returns this handle through APM_CMD_RSP_SHARED_MEM_MAP_REGIONS.}
+</ParamField>
+<ParamField path="circ_buf_mem_address_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="circ_buf_mem_address_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="circ_buf_mem_size" type="uint32_t">
+  The amount of memory available to hold vocoding requests must be an integer multiple of the size of a single vocoding request data structure.}
+</ParamField>
+
+### `mailbox_voc_packet_t`
+
+**Members**
+
+<ParamField path="minor_version" type="uint32_t">
+
+</ParamField>
+<ParamField path="timestamp_us" type="uint64_t">
+  The clock source used for interpreting the timestamp is specific per product requirements.}
+</ParamField>
+<ParamField path="status_mask" type="uint32_t">
+  if bit 0 is set  Indicates a general vocoding error, informing that the packet has been dropped. The data_size set to 0.
+bits 1 to 31 are Reserved.}
+</ParamField>
+<ParamField path="media_fmt_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="data_size" type="uint32_t">
+
+</ParamField>
+
+### `mailbox_voc_request_t`
+
+**Members**
+
+<ParamField path="mem_address_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="mem_address_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="mem_size" type="uint32_t">
+  The amount of memory allocated must be sufficient to hold the largest possible vocoder packet for the media ID currently configured on the stream.}
+</ParamField>
+
+### `mailbox_voc_req_circ_buffer_t`
+
+**Members**
+
+<ParamField path="read_offset" type="uint32_t">
+
+</ParamField>
+<ParamField path="padding_1" type="uint8_t">
+  The content in the padding is ignored.}
+</ParamField>
+<ParamField path="write_offset" type="uint32_t">
+
+</ParamField>
+<ParamField path="padding_2" type="uint8_t">
+  The content in the padding is ignored.}
+</ParamField>
+
+## Type Definitions
+
+### `payload_media_fmt_dtmf_tone_t`
+
+```c
+typedef struct payload_media_fmt_dtmf_tone_t payload_media_fmt_dtmf_tone_t
+```
+
+### `mailbox_config_t`
+
+```c
+typedef struct mailbox_config_t mailbox_config_t
+```
+
+### `mailbox_voc_packet_t`
+
+```c
+typedef struct mailbox_voc_packet_t mailbox_voc_packet_t
+```
+
+### `mailbox_voc_request_t`
+
+```c
+typedef struct mailbox_voc_request_t mailbox_voc_request_t
+```
+
+### `mailbox_voc_req_circ_buffer_t`
+
+```c
+typedef struct mailbox_voc_req_circ_buffer_t mailbox_voc_req_circ_buffer_t
+```
+
+## Macros
+
+### `MAILBOX_TX_MAX_INPUT_PORTS`
+
+```c
+#define MAILBOX_TX_MAX_INPUT_PORTS 0x1
+```
+
+### `MAILBOX_TX_MAX_OUTPUT_PORTS`
+
+```c
+#define MAILBOX_TX_MAX_OUTPUT_PORTS 0x0
+```
+
+### `MAILBOX_TX_STACK_SIZE_REQUIREMENT`
+
+```c
+#define MAILBOX_TX_STACK_SIZE_REQUIREMENT 4096
+```
+
+### `MAILBOX_RX_MAX_INPUT_PORTS`
+
+```c
+#define MAILBOX_RX_MAX_INPUT_PORTS 0x0
+```
+
+### `MAILBOX_RX_MAX_OUTPUT_PORTS`
+
+```c
+#define MAILBOX_RX_MAX_OUTPUT_PORTS 0x1
+```
+
+### `MAILBOX_RX_STACK_SIZE_REQUIREMENT`
+
+```c
+#define MAILBOX_RX_STACK_SIZE_REQUIREMENT 4096
+```
+
+### `MAILBOX_RX_DTMF_GEN_STATIC_CONTROL_PORT_ID`
+
+```c
+#define MAILBOX_RX_DTMF_GEN_STATIC_CONTROL_PORT_ID AR_NON_GUID(0xC0000001)
+```
+
+### `MEDIA_FMT_ID_DTMF`
+
+Media format ID for DTMF tone and the payload.
+
+```c
+#define MEDIA_FMT_ID_DTMF 0x09001038
+```
+
+### `MAILBOX_PKTEXG_EVT_NO_DATA_PACKET`
+
+```c
+#define MAILBOX_PKTEXG_EVT_NO_DATA_PACKET 0x08001257
+```
+
+### `PARAM_ID_MAILBOX_CFG`
+
+```c
+#define PARAM_ID_MAILBOX_CFG 0x080010DF
+```
+
+### `MODULE_ID_MAILBOX_RX`
+
+```c
+#define MODULE_ID_MAILBOX_RX 0x07001057
+```
+
+### `MODULE_ID_MAILBOX_TX`
+
+End of the Module -->
+
+```c
+#define MODULE_ID_MAILBOX_TX 0x07001056
+```

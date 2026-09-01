@@ -1,0 +1,196 @@
+---
+title: "dls_api.h"
+description: "This file contains Data Logging Service command/param/event ID's and public data structures."
+---
+
+## Structures
+
+### `dls_param_id_config_buffer_t`
+
+Payload for #DLS_CMD_CONFIG_BUFFER.
+
+**Members**
+
+<ParamField path="buf_start_addr_lsw" type="uint32_t">
+  Lower 32-bits of the 64-bit buffer starting address.
+</ParamField>
+<ParamField path="buf_start_addr_msw" type="uint32_t">
+  Upper 32-bits of the 64-bit buffer starting address.
+</ParamField>
+<ParamField path="mem_map_handle" type="uint32_t">
+  Unique identifier for a shared memory address.
+</ParamField>
+<ParamField path="total_buf_size" type="uint32_t">
+  Total allocated buffer size for the data logging service.
+</ParamField>
+<ParamField path="max_log_pkt_size" type="uint32_t">
+  Maximum one single log packet size.
+</ParamField>
+<ParamField path="is_cfg" type="uint32_t">
+  This parameter is used to differentiate between the buffer configuration before starting the data logging and deconfiguration when the data logging is complete 1 - Configuration at the beginning to use the given memory space for the data logging.
+</ParamField>
+
+### `dls_param_id_enable_disable_log_code_t`
+
+Payload for DLS_PARAM_ID_ENABLE_DISABLE_LOG_CODE.
+
+**Members**
+
+<ParamField path="is_enabled" type="uint32_t">
+  Flag to indicate the log code is requested to be enabled or disabled.
+</ParamField>
+<ParamField path="num_log_codes" type="uint32_t">
+  Number of log codes to enable/disable.
+</ParamField>
+<ParamField path="log_codes" type="uint32_t">
+  This is a Flexible Array Member to list the log codes to be enabled/disabled.
+</ParamField>
+
+### `dls_buf_start_addr_t`
+
+**Members**
+
+<ParamField path="buf_addr_lsw" type="uint32_t">
+  This field contains the lower 32-bits of the 64-bit buffer starting address.
+</ParamField>
+<ParamField path="buf_addr_msw" type="uint32_t">
+  This field contains the upper 32-bits of the 64-bit buffer starting address.
+</ParamField>
+<ParamField path="mem_map_handle" type="uint32_t">
+  Unique identifier for a shared memory address.
+</ParamField>
+
+### `dls_data_event_id_commit_log_buffer_t`
+
+Payload for DLS_DATA_CMD_BUFFER_RETURN.
+
+**Members**
+
+<ParamField path="num_bufs" type="uint32_t">
+  Total number of logged buffers that are committed.
+</ParamField>
+<ParamField path="buf_start_addr" type="dls_buf_start_addr_t">
+  This is a flexible array member and it contains the following: lower 32-bits of the 64-bit buffer starting addresses upper 32-bits of the 64-bit buffer starting addresses.
+</ParamField>
+
+### `dls_data_cmd_buffer_return_t`
+
+Payload for DLS_DATA_CMD_BUFFER_RETURN.
+
+**Members**
+
+<ParamField path="num_bufs" type="uint32_t">
+  Total number of buffers that need to be returned.
+</ParamField>
+<ParamField path="buf_start_addr" type="dls_buf_start_addr_t">
+  This field contains the 64-bit buffer starting addresses.
+</ParamField>
+
+### `dls_buf_hdr_t`
+
+**Members**
+
+<ParamField path="buf_size" type="uint32_t">
+  It indicates the size of the data logged into the buffer.
+</ParamField>
+<ParamField path="buf_state" type="dls_buf_state_t">
+  It indicates the current state of a data logging buffer.
+</ParamField>
+<ParamField path="buf_in_use" type="uint32_t">
+  It indicates the available buffer space in percentage.
+</ParamField>
+
+## Type Definitions
+
+### `dls_param_id_config_buffer_t`
+
+```c
+typedef struct dls_param_id_config_buffer_t dls_param_id_config_buffer_t
+```
+
+### `dls_param_id_enable_disable_log_code_t`
+
+```c
+typedef struct dls_param_id_enable_disable_log_code_t dls_param_id_enable_disable_log_code_t
+```
+
+### `dls_buf_start_addr_t`
+
+```c
+typedef struct dls_buf_start_addr_t dls_buf_start_addr_t
+```
+
+### `dls_data_event_id_commit_log_buffer_t`
+
+```c
+typedef struct dls_data_event_id_commit_log_buffer_t dls_data_event_id_commit_log_buffer_t
+```
+
+### `dls_data_cmd_buffer_return_t`
+
+```c
+typedef struct dls_data_cmd_buffer_return_t dls_data_cmd_buffer_return_t
+```
+
+### `dls_buf_hdr_t`
+
+```c
+typedef struct dls_buf_hdr_t dls_buf_hdr_t
+```
+
+## Enumerations
+
+### `dls_buf_state_t`
+
+Used to identify the state of the buffer.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `DLS_BUF_UNAVAILABLE` | = 0 |  |
+| `DLS_BUF_AVAILABLE` |  |  |
+| `DLS_BUF_ACQUIRED` |  |  |
+| `DLS_BUF_READY` |  |  |
+
+## Macros
+
+### `DLS_MODULE_INSTANCE_ID`
+
+Identifier for an instance of the Audio Logging Server module.
+
+```c
+#define DLS_MODULE_INSTANCE_ID 0x0000000A
+```
+
+### `DLS_PARAM_ID_CONFIG_BUFFER`
+
+Used to configure the data logging service buffer information.
+
+```c
+#define DLS_PARAM_ID_CONFIG_BUFFER 0x08001A83
+```
+
+### `DLS_PARAM_ID_ENABLE_DISABLE_LOG_CODE`
+
+Used to configure the log code to start/stop the data logging.
+
+```c
+#define DLS_PARAM_ID_ENABLE_DISABLE_LOG_CODE 0x08001A84
+```
+
+### `DLS_DATA_EVENT_ID_COMMIT_LOG_BUFFER`
+
+Used to let the client know that a buffer of data is logged and is ready to be read at client side.
+
+```c
+#define DLS_DATA_EVENT_ID_COMMIT_LOG_BUFFER 0x06001006
+```
+
+### `DLS_DATA_CMD_BUFFER_RETURN`
+
+Used to return the logged buffer.
+
+```c
+#define DLS_DATA_CMD_BUFFER_RETURN 0x0400100D
+```

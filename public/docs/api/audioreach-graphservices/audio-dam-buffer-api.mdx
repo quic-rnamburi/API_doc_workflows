@@ -1,0 +1,189 @@
+---
+title: "audio_dam_buffer_api.h"
+description: "This file contains Public APIs for Audio Dam Buffer module."
+---
+
+## Structures
+
+### `audio_dam_input_port_cfg_t`
+
+**Members**
+
+<ParamField path="input_port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_channels" type="uint32_t">
+
+</ParamField>
+
+### `param_id_audio_dam_input_ports_cfg_t`
+
+**Members**
+
+<ParamField path="num_input_ports" type="uint32_t">
+
+</ParamField>
+
+### `channel_map_t`
+
+**Members**
+
+<ParamField path="input_ch_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="output_ch_id" type="uint32_t">
+  This will be the channel type propagated downstream.}
+</ParamField>
+
+### `audio_dam_output_port_cfg_t`
+
+**Members**
+
+<ParamField path="output_port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="num_channels" type="uint32_t">
+
+</ParamField>
+
+### `param_id_audio_dam_output_ports_cfg_t`
+
+**Members**
+
+<ParamField path="num_output_ports" type="uint32_t">
+
+</ParamField>
+
+### `audio_dam_downstream_setup_duration_t`
+
+**Members**
+
+<ParamField path="output_port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="dwnstrm_setup_duration_ms" type="uint32_t">
+
+</ParamField>
+
+### `param_id_audio_dam_downstream_setup_duration_t`
+
+**Members**
+
+<ParamField path="num_output_ports" type="uint32_t">
+
+</ParamField>
+
+### `audio_dam_port_binding_t`
+
+**Members**
+
+<ParamField path="control_port_id" type="uint32_t">
+
+</ParamField>
+<ParamField path="output_port_id" type="uint32_t">
+
+</ParamField>
+
+### `param_id_audio_ctrl_to_data_port_map_t`
+
+**Members**
+
+<ParamField path="num_ctrl_ports" type="uint32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `audio_dam_input_port_cfg_t`
+
+```c
+typedef struct audio_dam_input_port_cfg_t audio_dam_input_port_cfg_t
+```
+
+### `param_id_audio_dam_input_ports_cfg_t`
+
+```c
+typedef struct param_id_audio_dam_input_ports_cfg_t param_id_audio_dam_input_ports_cfg_t
+```
+
+### `channel_map_t`
+
+```c
+typedef struct channel_map_t channel_map_t
+```
+
+### `audio_dam_output_port_cfg_t`
+
+```c
+typedef struct audio_dam_output_port_cfg_t audio_dam_output_port_cfg_t
+```
+
+### `param_id_audio_dam_output_ports_cfg_t`
+
+```c
+typedef struct param_id_audio_dam_output_ports_cfg_t param_id_audio_dam_output_ports_cfg_t
+```
+
+### `audio_dam_downstream_setup_duration_t`
+
+```c
+typedef struct audio_dam_downstream_setup_duration_t audio_dam_downstream_setup_duration_t
+```
+
+### `param_id_audio_dam_downstream_setup_duration_t`
+
+```c
+typedef struct param_id_audio_dam_downstream_setup_duration_t param_id_audio_dam_downstream_setup_duration_t
+```
+
+### `audio_dam_port_binding_t`
+
+Sub structure forward declaration.
+
+```c
+typedef struct audio_dam_port_binding_t audio_dam_port_binding_t
+```
+
+### `param_id_audio_ctrl_to_data_port_map_t`
+
+```c
+typedef struct param_id_audio_ctrl_to_data_port_map_t param_id_audio_ctrl_to_data_port_map_t
+```
+
+## Macros
+
+### `PARAM_ID_AUDIO_DAM_INPUT_PORTS_CFG`
+
+```c
+#define PARAM_ID_AUDIO_DAM_INPUT_PORTS_CFG 0x08001058
+```
+
+### `PARAM_ID_AUDIO_DAM_OUTPUT_PORTS_CFG`
+
+```c
+#define PARAM_ID_AUDIO_DAM_OUTPUT_PORTS_CFG 0x08001059
+```
+
+### `PARAM_ID_AUDIO_DAM_DOWNSTREAM_SETUP_DURATION`
+
+```c
+#define PARAM_ID_AUDIO_DAM_DOWNSTREAM_SETUP_DURATION 0x0800105A
+```
+
+### `PARAM_ID_AUDIO_DAM_CTRL_TO_DATA_PORT_MAP`
+
+```c
+#define PARAM_ID_AUDIO_DAM_CTRL_TO_DATA_PORT_MAP 0x0800105B
+```
+
+### `AUDIO_DAM_STACK_SIZE_REQUIREMENT`
+
+```c
+#define AUDIO_DAM_STACK_SIZE_REQUIREMENT 1024
+```
+
+### `MODULE_ID_AUDIO_DAM_BUFFER`
+
+```c
+#define MODULE_ID_AUDIO_DAM_BUFFER 0x07001020
+```

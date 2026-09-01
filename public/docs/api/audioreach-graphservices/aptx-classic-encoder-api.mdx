@@ -1,0 +1,82 @@
+---
+title: "aptx_classic_encoder_api.h"
+---
+
+## Structures
+
+### `param_id_aptx_classic_output_threshold_payload_t`
+
+**Members**
+
+<ParamField path="output_threshold" type="uint32_t">
+</ParamField>
+
+### `param_id_aptx_classic_sync_mode_payload_t`
+
+**Members**
+
+<ParamField path="sync_mode" type="int32_t">
+</ParamField>
+<ParamField path="startup_mode" type="int32_t">
+</ParamField>
+<ParamField path="cvr_fade_duration" type="int32_t">
+</ParamField>
+
+### `param_id_aptx_classic_switch_enc_pcm_input_payload_t`
+
+**Members**
+
+<ParamField path="transition_direction" type="int32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_aptx_classic_output_threshold_payload_t`
+
+```c
+typedef struct param_id_aptx_classic_output_threshold_payload_t param_id_aptx_classic_output_threshold_payload_t
+```
+
+### `param_id_aptx_classic_sync_mode_payload_t`
+
+```c
+typedef struct param_id_aptx_classic_sync_mode_payload_t param_id_aptx_classic_sync_mode_payload_t
+```
+
+### `param_id_aptx_classic_switch_enc_pcm_input_payload_t`
+
+```c
+typedef struct param_id_aptx_classic_switch_enc_pcm_input_payload_t param_id_aptx_classic_switch_enc_pcm_input_payload_t
+```
+
+## Macros
+
+### `PARAM_ID_APTX_CLASSIC_SET_OUTPUT_THRESHOLD`
+
+ID of the aptx classic encoder output threshold parameter.This parameter should be set at init time.
+
+```c
+#define PARAM_ID_APTX_CLASSIC_SET_OUTPUT_THRESHOLD 0x08001180
+```
+
+### `PARAM_ID_APTX_CLASSIC_SET_SYNC_MODE`
+
+ID of the aptx classic encoder sync mode parameter.This parameter should be set at init time.
+
+```c
+#define PARAM_ID_APTX_CLASSIC_SET_SYNC_MODE 0x08001181
+```
+
+### `PARAM_ID_APTX_CLASSIC_SWITCH_ENC_PCM_INPUT`
+
+ID of the aptx classic encoder switch parameter.This parameter can be set at run time.
+
+```c
+#define PARAM_ID_APTX_CLASSIC_SWITCH_ENC_PCM_INPUT 0x08001182
+```
+
+### `MODULE_ID_APTX_CLASSIC_ENC`
+
+```c
+#define MODULE_ID_APTX_CLASSIC_ENC 0x0700107E
+```

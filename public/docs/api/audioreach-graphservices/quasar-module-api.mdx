@@ -1,0 +1,297 @@
+---
+title: "quasar_module_api.h"
+---
+
+## Structures
+
+### `dynamics_config_t`
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+</ParamField>
+<ParamField path="comp_enable" type="uint32_t">
+</ParamField>
+<ParamField path="comp_gain" type="float">
+</ParamField>
+<ParamField path="comp_threshold" type="float">
+</ParamField>
+<ParamField path="comp_ratio" type="float">
+</ParamField>
+<ParamField path="os_enable" type="uint32_t">
+</ParamField>
+
+### `reverb_config_t`
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+</ParamField>
+<ParamField path="duration" type="float">
+</ParamField>
+<ParamField path="pulse_period" type="uint32_t">
+</ParamField>
+<ParamField path="scale" type="float">
+</ParamField>
+<ParamField path="predelay" type="uint32_t">
+</ParamField>
+<ParamField path="stereo" type="uint32_t">
+</ParamField>
+<ParamField path="tone_enable" type="uint32_t">
+</ParamField>
+<ParamField path="tone_cutoff" type="uint32_t">
+</ParamField>
+<ParamField path="tone_balance" type="float">
+</ParamField>
+<ParamField path="tone_slope" type="float">
+</ParamField>
+
+### `reflections_config_t`
+
+**Members**
+
+<ParamField path="mode" type="uint32_t">
+</ParamField>
+<ParamField path="room_l" type="float">
+</ParamField>
+<ParamField path="room_w" type="float">
+</ParamField>
+<ParamField path="room_h" type="float">
+</ParamField>
+<ParamField path="use_materials" type="uint32_t">
+</ParamField>
+<ParamField path="abs_front" type="float">
+</ParamField>
+<ParamField path="abs_back" type="float">
+</ParamField>
+<ParamField path="abs_left" type="float">
+</ParamField>
+<ParamField path="abs_right" type="float">
+</ParamField>
+<ParamField path="abs_ceiling" type="float">
+</ParamField>
+<ParamField path="abs_floor" type="float">
+</ParamField>
+<ParamField path="material_front" type="uint32_t">
+</ParamField>
+<ParamField path="material_back" type="uint32_t">
+</ParamField>
+<ParamField path="material_left" type="uint32_t">
+</ParamField>
+<ParamField path="material_right" type="uint32_t">
+</ParamField>
+<ParamField path="material_ceiling" type="uint32_t">
+</ParamField>
+<ParamField path="material_floor" type="uint32_t">
+</ParamField>
+<ParamField path="user_x" type="float">
+</ParamField>
+<ParamField path="user_y" type="float">
+</ParamField>
+<ParamField path="user_height" type="float">
+</ParamField>
+<ParamField path="auto_reverb" type="uint32_t">
+</ParamField>
+
+### `screen_orientation_t`
+
+**Members**
+
+<ParamField path="rotation_mode" type="uint32_t">
+</ParamField>
+<ParamField path="orientation" type="float">
+</ParamField>
+<ParamField path="timestamp" type="int64_t">
+</ParamField>
+
+### `user_position_t`
+
+**Members**
+
+<ParamField path="position" type="float">
+</ParamField>
+
+### `source_metadata_t`
+
+**Members**
+
+<ParamField path="index" type="uint16_t">
+</ParamField>
+<ParamField path="position" type="float">
+</ParamField>
+<ParamField path="type" type="uint32_t">
+</ParamField>
+
+### `n_sources_metadata_t`
+
+**Members**
+
+<ParamField path="n_sources" type="uint32_t">
+</ParamField>
+<ParamField path="source_metadata" type="source_metadata_t">
+</ParamField>
+
+### `output_mode_t`
+
+**Members**
+
+<ParamField path="output_mode" type="uint32_t">
+</ParamField>
+
+### `obj_binauralizer_config_t`
+
+**Members**
+
+<ParamField path="activity_detect" type="uint32_t">
+</ParamField>
+
+### `quasar_module_version_t`
+
+**Members**
+
+<ParamField path="version_major" type="uint32_t">
+</ParamField>
+<ParamField path="version_minor" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `dynamics_config_t`
+
+```c
+typedef struct dynamics_config_t dynamics_config_t
+```
+
+### `reverb_config_t`
+
+```c
+typedef struct reverb_config_t reverb_config_t
+```
+
+### `reflections_config_t`
+
+```c
+typedef struct reflections_config_t reflections_config_t
+```
+
+### `screen_orientation_t`
+
+```c
+typedef struct screen_orientation_t screen_orientation_t
+```
+
+### `user_position_t`
+
+```c
+typedef struct user_position_t user_position_t
+```
+
+### `source_metadata_t`
+
+```c
+typedef struct source_metadata_t source_metadata_t
+```
+
+### `n_sources_metadata_t`
+
+```c
+typedef struct n_sources_metadata_t n_sources_metadata_t
+```
+
+### `output_mode_t`
+
+```c
+typedef struct output_mode_t output_mode_t
+```
+
+### `obj_binauralizer_config_t`
+
+```c
+typedef struct obj_binauralizer_config_t obj_binauralizer_config_t
+```
+
+### `quasar_module_version_t`
+
+```c
+typedef struct quasar_module_version_t quasar_module_version_t
+```
+
+## Macros
+
+### `PARAM_ID_QUASAR_MODULE_DYNAMICS_CONFIG`
+
+```c
+#define PARAM_ID_QUASAR_MODULE_DYNAMICS_CONFIG 0x08001BB5
+```
+
+### `PARAM_ID_QUASAR_MODULE_REVERB_CONFIG`
+
+```c
+#define PARAM_ID_QUASAR_MODULE_REVERB_CONFIG 0x08001BB6
+```
+
+### `PARAM_ID_QUASAR_MODULE_REFLECTIONS_CONFIG`
+
+```c
+#define PARAM_ID_QUASAR_MODULE_REFLECTIONS_CONFIG 0x08001BB7
+```
+
+### `PARAM_ID_QUASAR_MODULE_SCREEN_ORIENTATION`
+
+```c
+#define PARAM_ID_QUASAR_MODULE_SCREEN_ORIENTATION 0x08001BB8
+```
+
+### `PARAM_ID_QUASAR_MODULE_USER_POSITION`
+
+```c
+#define PARAM_ID_QUASAR_MODULE_USER_POSITION 0x08001BB9
+```
+
+### `PARAM_ID_QUASAR_MODULE_N_SOURCES_METADATA`
+
+```c
+#define PARAM_ID_QUASAR_MODULE_N_SOURCES_METADATA 0x08001BBB
+```
+
+### `PARAM_ID_QUASAR_MODULE_RESET`
+
+```c
+#define PARAM_ID_QUASAR_MODULE_RESET 0x08001BBC
+```
+
+### `PARAM_ID_QUASAR_MODULE_OUTPUT_MODE`
+
+```c
+#define PARAM_ID_QUASAR_MODULE_OUTPUT_MODE 0x08001BBD
+```
+
+### `PARAM_ID_QUASAR_MODULE_OBJ_BINAURALIZER_CONFIG`
+
+```c
+#define PARAM_ID_QUASAR_MODULE_OBJ_BINAURALIZER_CONFIG 0x08001BBE
+```
+
+### `PARAM_ID_QUASAR_MODULE_VERSION`
+
+```c
+#define PARAM_ID_QUASAR_MODULE_VERSION 0x08001BBF
+```
+
+### `MODULE_ID_QUASAR`
+
+```c
+#define MODULE_ID_QUASAR 0x07001186
+```
+
+### `VERSION_MAJOR`
+
+```c
+#define VERSION_MAJOR 0x00000004
+```
+
+### `VERSION_MINOR`
+
+```c
+#define VERSION_MINOR 0x00000001
+```

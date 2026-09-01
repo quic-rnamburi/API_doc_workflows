@@ -1,0 +1,234 @@
+---
+title: "vocoder_cmn_api.h"
+description: "This file contains vocoder modules' commmon APIs."
+---
+
+## Structures
+
+### `param_id_vocoder_enable_dtx_mode_t`
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+</ParamField>
+
+### `param_id_vocoder_minmax_rate_param_t`
+
+**Members**
+
+<ParamField path="min_rate" type="uint32_t">
+</ParamField>
+<ParamField path="max_rate" type="uint32_t">
+</ParamField>
+
+### `param_id_vocoder_enc_rate_param_t`
+
+**Members**
+
+<ParamField path="rate" type="uint32_t">
+  The exact interpretation of the value and valid range depends on the type of encoder}
+</ParamField>
+
+### `param_id_vocoder_rate_modulation_param_t`
+
+**Members**
+
+<ParamField path="rate_modulation_param" type="uint32_t">
+</ParamField>
+
+### `param_id_tty_mode_t`
+
+**Members**
+
+<ParamField path="mode" type="uint32_t">
+</ParamField>
+
+### `event_id_vocoder_operating_mode_t`
+
+**Members**
+
+<ParamField path="operating_mode" type="uint32_t">
+</ParamField>
+<ParamField path="client_data" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `vocoder_client_id_t`
+
+```c
+typedef enum vocoder_client_id_t vocoder_client_id_t
+```
+
+### `tty_cdma_vocoder_type_t`
+
+```c
+typedef enum tty_cdma_vocoder_type_t tty_cdma_vocoder_type_t
+```
+
+### `param_id_vocoder_enable_dtx_mode_t`
+
+```c
+typedef struct param_id_vocoder_enable_dtx_mode_t param_id_vocoder_enable_dtx_mode_t
+```
+
+### `param_id_vocoder_minmax_rate_param_t`
+
+```c
+typedef struct param_id_vocoder_minmax_rate_param_t param_id_vocoder_minmax_rate_param_t
+```
+
+### `param_id_vocoder_enc_rate_param_t`
+
+```c
+typedef struct param_id_vocoder_enc_rate_param_t param_id_vocoder_enc_rate_param_t
+```
+
+### `param_id_vocoder_rate_modulation_param_t`
+
+```c
+typedef struct param_id_vocoder_rate_modulation_param_t param_id_vocoder_rate_modulation_param_t
+```
+
+### `param_id_tty_mode_t`
+
+```c
+typedef struct param_id_tty_mode_t param_id_tty_mode_t
+```
+
+### `event_id_vocoder_operating_mode_t`
+
+```c
+typedef struct event_id_vocoder_operating_mode_t event_id_vocoder_operating_mode_t
+```
+
+## Enumerations
+
+### `vocoder_client_id_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_CLIENT` | = 0x0 |  |
+| `VOICE_CLIENT` | = 0x1 |  |
+
+### `tty_cdma_vocoder_type_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `TTY_CDMA_V13K` | = 0 |  |
+| `TTY_CDMA_EVRC` |  |  |
+| `TTY_CDMA_FOURGV` |  |  |
+
+## Macros
+
+### `VOICE_TTY_MODE_OFF`
+
+```c
+#define VOICE_TTY_MODE_OFF 0 /* TTY OFF or disabled */
+```
+
+### `VOICE_TTY_MODE_HCO`
+
+```c
+#define VOICE_TTY_MODE_HCO 1 /* Hearing carry over mode. */
+```
+
+### `VOICE_TTY_MODE_VCO`
+
+```c
+#define VOICE_TTY_MODE_VCO 2 /* Voice carry over mode. */
+```
+
+### `VOICE_TTY_MODE_FULL`
+
+```c
+#define VOICE_TTY_MODE_FULL 3 /* FULL mode. */
+```
+
+### `VOCODER_OPERATING_MODE_NB`
+
+```c
+#define VOCODER_OPERATING_MODE_NB 0 /* Vocoder bandwidth mode is 8 kHz. */
+```
+
+### `VOCODER_OPERATING_MODE_WB`
+
+```c
+#define VOCODER_OPERATING_MODE_WB 1 /* Vocoder bandwidth mode is 16 kHz. */
+```
+
+### `VOCODER_OPERATING_MODE_SWB`
+
+```c
+#define VOCODER_OPERATING_MODE_SWB 2 /* Vocoder bandwidth mode is 32 kHz. */
+```
+
+### `VOCODER_OPERATING_MODE_FB`
+
+```c
+#define VOCODER_OPERATING_MODE_FB 3 /* Vocoder bandwidth mode is 48 kHz. */
+```
+
+### `VOCODER_OPERATING_MODE_NONE`
+
+```c
+#define VOCODER_OPERATING_MODE_NONE 0xffffffff
+```
+
+### `PARAM_ID_VOCODER_ENABLE_DTX_MODE`
+
+```c
+#define PARAM_ID_VOCODER_ENABLE_DTX_MODE 0x08001123
+```
+
+### `PARAM_ID_VOCODER_MINMAX_RATE`
+
+ID of the parameter used to configure the encoder minimum and maximum rates.
+
+```c
+#define PARAM_ID_VOCODER_MINMAX_RATE 0x08001124
+```
+
+### `PARAM_ID_VOCODER_ENC_RATE`
+
+ID of the parameter used to configure the encoding rate.
+
+```c
+#define PARAM_ID_VOCODER_ENC_RATE 0x080011B1
+```
+
+### `PARAM_ID_VOCODER_RATE_MODULATION`
+
+ID of the parameter used to configure the encoding rate for modulation.
+
+```c
+#define PARAM_ID_VOCODER_RATE_MODULATION 0x08001125
+```
+
+### `PARAM_ID_TTY_MODE`
+
+ID of the parameter used to set the TTY mode.
+
+```c
+#define PARAM_ID_TTY_MODE 0x08001127
+```
+
+### `PARAM_ID_VOCODER_RESET`
+
+Parameter to reset voice encoder/decoder.
+
+```c
+#define PARAM_ID_VOCODER_RESET 0x08001128
+```
+
+### `EVENT_ID_VOCODER_OPERATING_MODE`
+
+Event ID that is raised by the vocoder when client registers for operating mode updates with the vocoder.
+
+```c
+#define EVENT_ID_VOCODER_OPERATING_MODE 0x08001197
+```

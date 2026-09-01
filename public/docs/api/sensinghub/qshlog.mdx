@@ -1,0 +1,37 @@
+---
+title: "qshLog.h"
+---
+
+## Functions
+
+### `sns_log_message`
+
+```c
+void sns_log_message(int level, const char *fmt,...)
+```
+
+## Macros
+
+### `sns_logv`
+
+```c
+#define sns_logv sns_log_message(sensors_log::VERBOSE, "%s:%d, " fmt, __FUNCTION__, __LINE__, ##args)
+```
+
+### `sns_loge`
+
+```c
+#define sns_loge sns_log_message(sensors_log::ERROR, "%s:%d, " fmt, __FUNCTION__, __LINE__, ##args)
+```
+
+### `sns_logd`
+
+```c
+#define sns_logd sns_log_message(sensors_log::DEBUG, "%s:%d, " fmt, __FUNCTION__, __LINE__, ##args)
+```
+
+### `sns_logi`
+
+```c
+#define sns_logi sns_log_message(sensors_log::INFO, "%s:%d, " fmt, __FUNCTION__, __LINE__, ##args)
+```

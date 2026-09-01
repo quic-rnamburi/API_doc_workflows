@@ -1,0 +1,56 @@
+---
+title: "tty_cmn_api.h"
+description: "This file contains api exposed to voice service in modem for tty modules."
+---
+
+## Structures
+
+### `param_id_ltetty_char_t`
+
+**Members**
+
+<ParamField path="tty_char" type="uint32_t">
+  In UTF-8 format.}
+</ParamField>
+
+### `event_id_ltetty_char_t`
+
+**Members**
+
+<ParamField path="tty_char" type="uint32_t">
+  In UTF-8 format.}
+</ParamField>
+
+## Type Definitions
+
+### `param_id_ltetty_char_t`
+
+```c
+typedef struct param_id_ltetty_char_t param_id_ltetty_char_t
+```
+
+### `event_id_ltetty_char_t`
+
+```c
+typedef struct event_id_ltetty_char_t event_id_ltetty_char_t
+```
+
+## Macros
+
+### `PARAM_ID_LTETTY_CHAR`
+
+```c
+#define PARAM_ID_LTETTY_CHAR 0x080011A8
+```
+
+### `EVENT_ID_LTETTY_CHAR`
+
+```c
+#define EVENT_ID_LTETTY_CHAR 0x080011A9
+```
+
+### `PARAM_ID_CTM_RESYNC`
+
+```c
+#define PARAM_ID_CTM_RESYNC 0x08001190
+```

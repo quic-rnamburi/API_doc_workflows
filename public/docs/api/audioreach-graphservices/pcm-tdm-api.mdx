@@ -1,0 +1,448 @@
+---
+title: "pcm_tdm_api.h"
+description: "This file contains PCM TDM module APIs."
+---
+
+## Structures
+
+### `param_id_hw_pcm_intf_cfg_t`
+
+**Members**
+
+<ParamField path="lpaif_type" type="uint32_t">
+
+</ParamField>
+<ParamField path="intf_idx" type="uint32_t">
+</ParamField>
+<ParamField path="sync_src" type="uint16_t">
+
+</ParamField>
+<ParamField path="ctrl_data_out_enable" type="uint16_t">
+  to the driver with other masters.
+</ParamField>
+<ParamField path="slot_mask" type="uint32_t">
+</ParamField>
+<ParamField path="frame_setting" type="uint16_t">
+</ParamField>
+<ParamField path="aux_mode" type="uint16_t">
+
+</ParamField>
+
+### `param_id_tdm_intf_cfg_t`
+
+**Members**
+
+<ParamField path="lpaif_type" type="uint32_t">
+
+</ParamField>
+<ParamField path="intf_idx" type="uint32_t">
+</ParamField>
+<ParamField path="sync_src" type="uint16_t">
+
+</ParamField>
+<ParamField path="ctrl_data_out_enable" type="uint16_t">
+  to the driver with other masters.
+</ParamField>
+<ParamField path="slot_mask" type="uint32_t">
+</ParamField>
+<ParamField path="nslots_per_frame" type="uint16_t">
+</ParamField>
+<ParamField path="slot_width" type="uint16_t">
+</ParamField>
+<ParamField path="sync_mode" type="uint16_t">
+</ParamField>
+<ParamField path="ctrl_invert_sync_pulse" type="uint16_t">
+</ParamField>
+<ParamField path="ctrl_sync_data_delay" type="uint16_t">
+  data for synchronization.
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+
+</ParamField>
+
+### `param_id_tdm_lane_cfg_t`
+
+**Members**
+
+<ParamField path="lane_mask" type="uint16_t">
+  1 to ((2^N)-1),
+ where N is the number of physical lanes supported
+ by the hardware interface.
+ Bits 0 to N-1 correspond to lanes 0 to N-1.
+ When a bit is set, the corresponding lane is active.
+ The number of active lanes can be inferred from 
+ the number of bits set in the mask.}
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `param_id_hw_pcm_intf_cfg_t`
+
+```c
+typedef struct param_id_hw_pcm_intf_cfg_t param_id_hw_pcm_intf_cfg_t
+```
+
+### `param_id_tdm_intf_cfg_t`
+
+```c
+typedef struct param_id_tdm_intf_cfg_t param_id_tdm_intf_cfg_t
+```
+
+### `param_id_tdm_lane_cfg_t`
+
+```c
+typedef struct param_id_tdm_lane_cfg_t param_id_tdm_lane_cfg_t
+```
+
+## Macros
+
+### `PORT_ID_HW_PCM_INPUT`
+
+```c
+#define PORT_ID_HW_PCM_INPUT 0x2
+```
+
+### `PORT_ID_HW_PCM_OUTPUT`
+
+```c
+#define PORT_ID_HW_PCM_OUTPUT 0x1
+```
+
+### `PCM_TDM_STACK_SIZE`
+
+```c
+#define PCM_TDM_STACK_SIZE 2048
+```
+
+### `PCM_INTF_TYPE_PRIMARY`
+
+```c
+#define PCM_INTF_TYPE_PRIMARY 0
+```
+
+### `PCM_INTF_TYPE_SECONDARY`
+
+```c
+#define PCM_INTF_TYPE_SECONDARY 1
+```
+
+### `PCM_INTF_TYPE_TERTIARY`
+
+```c
+#define PCM_INTF_TYPE_TERTIARY 2
+```
+
+### `PCM_INTF_TYPE_QUATERNARY`
+
+```c
+#define PCM_INTF_TYPE_QUATERNARY 3
+```
+
+### `PCM_INTF_TYPE_QUINARY`
+
+```c
+#define PCM_INTF_TYPE_QUINARY 4
+```
+
+### `PCM_SYNC_SRC_EXTERNAL`
+
+Enumeration for the auxiliary PCM synchronization signal provided by an external source.
+
+```c
+#define PCM_SYNC_SRC_EXTERNAL 0x0
+```
+
+### `PCM_SYNC_SRC_INTERNAL`
+
+Enumeration for the auxiliary PCM synchronization signal provided by an internal source.
+
+```c
+#define PCM_SYNC_SRC_INTERNAL 0x1
+```
+
+### `PCM_CTRL_DATA_OE_DISABLE`
+
+Enumeration for disabling the PCM/TDM configuration ctrl_data_out_enable parameter.
+
+```c
+#define PCM_CTRL_DATA_OE_DISABLE 0x0
+```
+
+### `PCM_CTRL_DATA_OE_ENABLE`
+
+Enumeration for enabling the PCM/TDM configuration ctrl_data_out_enable parameter.
+
+```c
+#define PCM_CTRL_DATA_OE_ENABLE 0x1
+```
+
+### `PCM_BITS_PER_FRAME_16`
+
+Enumeration for setting the PCM configuration frame to 16.
+
+```c
+#define PCM_BITS_PER_FRAME_16 0x0
+```
+
+### `PCM_BITS_PER_FRAME_32`
+
+Enumeration for setting the PCM configuration frame to 32.
+
+```c
+#define PCM_BITS_PER_FRAME_32 0x1
+```
+
+### `PCM_BITS_PER_FRAME_64`
+
+Enumeration for setting the PCM configuration frame to 64.
+
+```c
+#define PCM_BITS_PER_FRAME_64 0x2
+```
+
+### `PCM_BITS_PER_FRAME_128`
+
+Enumeration for setting the PCM configuration frame to 128.
+
+```c
+#define PCM_BITS_PER_FRAME_128 0x3
+```
+
+### `PCM_BITS_PER_FRAME_256`
+
+Enumeration for setting the PCM configuration frame to 256.
+
+```c
+#define PCM_BITS_PER_FRAME_256 0x4
+```
+
+### `PCM_MODE`
+
+Enumeration for the PCM configuration aux_mode parameter, which configures the auxiliary PCM interface to use short synchronization.
+
+```c
+#define PCM_MODE 0x0
+```
+
+### `AUX_MODE`
+
+Enumeration for the PCM configuration aux_mode parameter, which configures the auxiliary PCM interface to use long synchronization.
+
+```c
+#define AUX_MODE 0x1
+```
+
+### `PARAM_ID_HW_PCM_INTF_CFG`
+
+Param ID to configure PCM interface.
+
+```c
+#define PARAM_ID_HW_PCM_INTF_CFG 0x0800101A
+```
+
+### `MODULE_ID_HW_PCM_SINK`
+
+Module ID for PCM sink module.
+
+```c
+#define MODULE_ID_HW_PCM_SINK 0x0700100C
+```
+
+### `MODULE_ID_HW_PCM_SOURCE`
+
+End of the Module -->
+
+```c
+#define MODULE_ID_HW_PCM_SOURCE 0x0700100D
+```
+
+### `PORT_ID_TDM_INPUT`
+
+End of the Module -->
+
+```c
+#define PORT_ID_TDM_INPUT 0x2
+```
+
+### `PORT_ID_TDM_OUTPUT`
+
+```c
+#define PORT_ID_TDM_OUTPUT 0x1
+```
+
+### `TDM_INTF_TYPE_PRIMARY`
+
+```c
+#define TDM_INTF_TYPE_PRIMARY 0
+```
+
+### `TDM_INTF_TYPE_SECONDARY`
+
+```c
+#define TDM_INTF_TYPE_SECONDARY 1
+```
+
+### `TDM_INTF_TYPE_TERTIARY`
+
+```c
+#define TDM_INTF_TYPE_TERTIARY 2
+```
+
+### `TDM_INTF_TYPE_QUATERNARY`
+
+```c
+#define TDM_INTF_TYPE_QUATERNARY 3
+```
+
+### `TDM_INTF_TYPE_QUINARY`
+
+```c
+#define TDM_INTF_TYPE_QUINARY 4
+```
+
+### `TDM_SYNC_SRC_EXTERNAL`
+
+Enumeration for the auxiliary TDM synchronization signal provided by an external source.
+
+```c
+#define TDM_SYNC_SRC_EXTERNAL 0x0
+```
+
+### `TDM_SYNC_SRC_INTERNAL`
+
+Enumeration for the auxiliary TDM synchronization signal provided by an internal source.
+
+```c
+#define TDM_SYNC_SRC_INTERNAL 0x1
+```
+
+### `TDM_CTRL_DATA_OE_DISABLE`
+
+Enumeration for disabling the TDM configuration ctrl_data_out_enable parameter.
+
+```c
+#define TDM_CTRL_DATA_OE_DISABLE 0x0
+```
+
+### `TDM_CTRL_DATA_OE_ENABLE`
+
+Enumeration for enabling the TDM configuration ctrl_data_out_enable parameter.
+
+```c
+#define TDM_CTRL_DATA_OE_ENABLE 0x1
+```
+
+### `TDM_SHORT_SYNC_BIT_MODE`
+
+Short (one-bit) Synchronization mode.
+
+```c
+#define TDM_SHORT_SYNC_BIT_MODE 0
+```
+
+### `TDM_LONG_SYNC_MODE`
+
+Long Synchronization mode.
+
+```c
+#define TDM_LONG_SYNC_MODE 1
+```
+
+### `TDM_SHORT_SYNC_SLOT_MODE`
+
+Short (one-slot) Synchronization mode.
+
+```c
+#define TDM_SHORT_SYNC_SLOT_MODE 2
+```
+
+### `TDM_SYNC_NORMAL`
+
+Normal synchronization.
+
+```c
+#define TDM_SYNC_NORMAL 0
+```
+
+### `TDM_SYNC_INVERT`
+
+Invert the synchronization.
+
+```c
+#define TDM_SYNC_INVERT 1
+```
+
+### `TDM_DATA_DELAY_0_BCLK_CYCLE`
+
+Zero-bit clock cycle synchronization data delay.
+
+```c
+#define TDM_DATA_DELAY_0_BCLK_CYCLE 0
+```
+
+### `TDM_DATA_DELAY_1_BCLK_CYCLE`
+
+One-bit clock cycle synchronization data delay.
+
+```c
+#define TDM_DATA_DELAY_1_BCLK_CYCLE 1
+```
+
+### `TDM_DATA_DELAY_2_BCLK_CYCLE`
+
+Two-bit clock cycle synchronization data delay.
+
+```c
+#define TDM_DATA_DELAY_2_BCLK_CYCLE 2
+```
+
+### `TDM_MAX_SLOTS_PER_FRAME`
+
+Max number of slots per frame supported by TDM interface.
+
+```c
+#define TDM_MAX_SLOTS_PER_FRAME 32
+```
+
+### `TDM_MAX_CHANNEL_CNT`
+
+max number of channels for tdm interface
+
+```c
+#define TDM_MAX_CHANNEL_CNT 32
+```
+
+### `PARAM_ID_TDM_INTF_CFG`
+
+Param ID to configure TDM interface.
+
+```c
+#define PARAM_ID_TDM_INTF_CFG 0x0800101B
+```
+
+### `PARAM_ID_TDM_LANE_CFG`
+
+Param ID to configure TDM lanes.
+
+```c
+#define PARAM_ID_TDM_LANE_CFG 0x0800106A
+```
+
+### `MODULE_ID_TDM_SINK`
+
+Module ID for TDM sink module.
+
+```c
+#define MODULE_ID_TDM_SINK 0x0700100E
+```
+
+### `MODULE_ID_TDM_SOURCE`
+
+End of the Module -->
+
+```c
+#define MODULE_ID_TDM_SOURCE 0x0700100F
+```

@@ -1,0 +1,73 @@
+---
+title: "rt_proxy_api.h"
+description: "This file contains module published by RT Proxy CAPI intialization."
+---
+
+## Structures
+
+### `param_id_rt_proxy_config_t`
+
+**Members**
+
+<ParamField path="jitter_allowance_in_ms" type="uint32_t">
+  Rang is considered as +/- jitter_allowance_in_ms }
+</ParamField>
+<ParamField path="client_frame_size_in_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="low_watermark_in_ms" type="uint32_t">
+
+</ParamField>
+<ParamField path="high_watermark_in_ms" type="uint32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `param_id_rt_proxy_config_t`
+
+```c
+typedef struct param_id_rt_proxy_config_t param_id_rt_proxy_config_t
+```
+
+## Macros
+
+### `CAPI_RT_PROXY_MAX_INPUT_PORTS`
+
+```c
+#define CAPI_RT_PROXY_MAX_INPUT_PORTS (1)
+```
+
+### `CAPI_RT_PROXY_MAX_OUTPUT_PORTS`
+
+```c
+#define CAPI_RT_PROXY_MAX_OUTPUT_PORTS (1)
+```
+
+### `CAPI_RT_PROXY_MAX_CTRL_PORTS`
+
+```c
+#define CAPI_RT_PROXY_MAX_CTRL_PORTS (1)
+```
+
+### `PARAM_ID_RT_PROXY_CONFIG`
+
+```c
+#define PARAM_ID_RT_PROXY_CONFIG 0x08001157
+```
+
+### `MODULE_ID_RT_PROXY_RX`
+
+Module ID of the Real Time Proxy Module.
+
+```c
+#define MODULE_ID_RT_PROXY_RX 0x07001065
+```
+
+### `MODULE_ID_RT_PROXY_TX`
+
+End of the Module -->
+
+```c
+#define MODULE_ID_RT_PROXY_TX 0x0700106B
+```

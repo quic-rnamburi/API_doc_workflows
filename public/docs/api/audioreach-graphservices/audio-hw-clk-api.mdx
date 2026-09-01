@@ -1,0 +1,1138 @@
+---
+title: "audio_hw_clk_api.h"
+description: "This file contains audio hw clock APIs."
+---
+
+## Structures
+
+### `audio_hw_clk_cfg_req_param_t`
+
+Immediately following this structure is a variable length array of audio_hw_clk_cfg_t or clock ID structure.
+
+**Members**
+
+<ParamField path="num_clock_id" type="uint32_t">
+  Number of clock ID's being configured.
+</ParamField>
+
+### `audio_hw_clk_cfg_t`
+
+**Members**
+
+<ParamField path="clock_id" type="uint32_t">
+  Unique Clock ID of the clock being requested.
+</ParamField>
+<ParamField path="clock_freq" type="uint32_t">
+  Clock frequency in Hz to set.
+</ParamField>
+<ParamField path="clock_attri" type="uint32_t">
+  Divider for two clocks that are coupled, if necessary: divider = A/B, where A is the dividend and B is the divisor.
+</ParamField>
+<ParamField path="clock_root" type="uint32_t">
+  Root clock source.
+</ParamField>
+
+### `audio_hw_clk_rel_cfg_t`
+
+**Members**
+
+<ParamField path="clock_id" type="uint32_t">
+  Unique Clock ID of the clock being released.
+</ParamField>
+
+### `audio_hw_clk_rsp_cfg_t`
+
+Immediately following this structure is a variable length array of audio_hw_clk_status_cfg_t structure.
+
+**Members**
+
+<ParamField path="num_failures" type="uint32_t">
+  Number of failures while requesting for 1 or more clock ID's.
+</ParamField>
+
+### `audio_hw_clk_status_cfg_t`
+
+**Members**
+
+<ParamField path="clock_id" type="uint32_t">
+  Unique Clock ID of the clock which failed to be requested/released.
+</ParamField>
+<ParamField path="status" type="uint32_t">
+  Status representing why clock id request/release failed @ Non-Zero - Failure.
+</ParamField>
+
+## Type Definitions
+
+### `audio_hw_clk_cfg_req_param_t`
+
+```c
+typedef struct audio_hw_clk_cfg_req_param_t audio_hw_clk_cfg_req_param_t
+```
+
+### `audio_hw_clk_cfg_t`
+
+```c
+typedef struct audio_hw_clk_cfg_t audio_hw_clk_cfg_t
+```
+
+### `audio_hw_clk_rel_cfg_t`
+
+```c
+typedef struct audio_hw_clk_rel_cfg_t audio_hw_clk_rel_cfg_t
+```
+
+### `audio_hw_clk_rsp_cfg_t`
+
+```c
+typedef struct audio_hw_clk_rsp_cfg_t audio_hw_clk_rsp_cfg_t
+```
+
+### `audio_hw_clk_status_cfg_t`
+
+```c
+typedef struct audio_hw_clk_status_cfg_t audio_hw_clk_status_cfg_t
+```
+
+## Macros
+
+### `PARAM_ID_RSC_AUDIO_HW_CLK`
+
+Param ID for audio hardware clocks This ID should only be used under PRM module instance Eg: Bit clocks for audio h/w interface like MI2S, PCM, TDM Mclks for audio codec (internal / external) operation.
+
+```c
+#define PARAM_ID_RSC_AUDIO_HW_CLK 0x0800102C
+```
+
+### `CLOCK_ID_MI2S_RANGE_START`
+
+Start of the range of MI2S clock IDs.
+
+```c
+#define CLOCK_ID_MI2S_RANGE_START 0x100
+```
+
+### `CLOCK_ID_PRI_MI2S_IBIT`
+
+Clock ID of the primary MI2S internal bit clock (IBIT).
+
+```c
+#define CLOCK_ID_PRI_MI2S_IBIT 0x100
+```
+
+### `CLOCK_ID_PRI_MI2S_EBIT`
+
+Clock ID of the primary MI2S external bit clock (EBIT).
+
+```c
+#define CLOCK_ID_PRI_MI2S_EBIT 0x101
+```
+
+### `CLOCK_ID_SEC_MI2S_IBIT`
+
+Clock ID of the secondary MI2S IBIT.
+
+```c
+#define CLOCK_ID_SEC_MI2S_IBIT 0x102
+```
+
+### `CLOCK_ID_SEC_MI2S_EBIT`
+
+Clock ID of the secondary MI2S EBIT.
+
+```c
+#define CLOCK_ID_SEC_MI2S_EBIT 0x103
+```
+
+### `CLOCK_ID_TER_MI2S_IBIT`
+
+Clock ID of the tertiary MI2S IBIT.
+
+```c
+#define CLOCK_ID_TER_MI2S_IBIT 0x104
+```
+
+### `CLOCK_ID_TER_MI2S_EBIT`
+
+Clock ID of the tertiary MI2S EBIT.
+
+```c
+#define CLOCK_ID_TER_MI2S_EBIT 0x105
+```
+
+### `CLOCK_ID_QUAD_MI2S_IBIT`
+
+Clock ID of the quaternary MI2S IBIT.
+
+```c
+#define CLOCK_ID_QUAD_MI2S_IBIT 0x106
+```
+
+### `CLOCK_ID_QUAD_MI2S_EBIT`
+
+Clock ID of the quaternary MI2S EBIT.
+
+```c
+#define CLOCK_ID_QUAD_MI2S_EBIT 0x107
+```
+
+### `CLOCK_ID_QUI_MI2S_IBIT`
+
+Clock ID of the quinary MI2S IBIT.
+
+```c
+#define CLOCK_ID_QUI_MI2S_IBIT 0x108
+```
+
+### `CLOCK_ID_QUI_MI2S_EBIT`
+
+Clock ID of the quinary MI2S EBIT.
+
+```c
+#define CLOCK_ID_QUI_MI2S_EBIT 0x109
+```
+
+### `CLOCK_ID_QUI_MI2S_OSR`
+
+Clock ID of the quinary MI2S OSR.
+
+```c
+#define CLOCK_ID_QUI_MI2S_OSR 0x10A
+```
+
+### `CLOCK_ID_SEN_MI2S_IBIT`
+
+Clock ID of the senary MI2S IBIT.
+
+```c
+#define CLOCK_ID_SEN_MI2S_IBIT 0x10B
+```
+
+### `CLOCK_ID_SEN_MI2S_EBIT`
+
+Clock ID of the senary MI2S EBIT.
+
+```c
+#define CLOCK_ID_SEN_MI2S_EBIT 0x10C
+```
+
+### `CLOCK_ID_SEP_MI2S_IBIT`
+
+Clock ID of the septenary MI2S IBIT.
+
+```c
+#define CLOCK_ID_SEP_MI2S_IBIT 0x10D
+```
+
+### `CLOCK_ID_SEP_MI2S_EBIT`
+
+Clock ID of the sepetnary MI2S EBIT.
+
+```c
+#define CLOCK_ID_SEP_MI2S_EBIT 0x10E
+```
+
+### `CLOCK_ID_HS_I2S_IF0_IBIT`
+
+Clock ID of the High speed I2S interface 0 IBIT.
+
+```c
+#define CLOCK_ID_HS_I2S_IF0_IBIT 0x10F
+```
+
+### `CLOCK_ID_HS_I2S_IF0_EBIT`
+
+Clock ID of the high speed I2S interface 0 EBIT.
+
+```c
+#define CLOCK_ID_HS_I2S_IF0_EBIT 0x110
+```
+
+### `CLOCK_ID_HS_I2S_IF1_IBIT`
+
+Clock ID of the High speed interface 1 IBIT.
+
+```c
+#define CLOCK_ID_HS_I2S_IF1_IBIT 0x111
+```
+
+### `CLOCK_ID_HS_I2S_IF1_EBIT`
+
+Clock ID of the high speed interface 1 EBIT.
+
+```c
+#define CLOCK_ID_HS_I2S_IF1_EBIT 0x112
+```
+
+### `CLOCK_ID_HS_I2S_IF2_IBIT`
+
+Clock ID of the High speed interface 2 IBIT.
+
+```c
+#define CLOCK_ID_HS_I2S_IF2_IBIT 0x113
+```
+
+### `CLOCK_ID_HS_I2S_IF2_EBIT`
+
+Clock ID of the high speed interface 2 EBIT.
+
+```c
+#define CLOCK_ID_HS_I2S_IF2_EBIT 0x114
+```
+
+### `CLOCK_ID_HS_I2S_IF3_IBIT`
+
+Clock ID of the High speed interface 3 IBIT.
+
+```c
+#define CLOCK_ID_HS_I2S_IF3_IBIT 0x115
+```
+
+### `CLOCK_ID_HS_I2S_IF3_EBIT`
+
+Clock ID of the high speed interface 3 EBIT.
+
+```c
+#define CLOCK_ID_HS_I2S_IF3_EBIT 0x116
+```
+
+### `CLOCK_ID_HS_I2S_IF4_IBIT`
+
+Clock ID of the High speed interface 4 IBIT.
+
+```c
+#define CLOCK_ID_HS_I2S_IF4_IBIT 0x117
+```
+
+### `CLOCK_ID_HS_I2S_IF4_EBIT`
+
+Clock ID of the high speed interface 4 EBIT.
+
+```c
+#define CLOCK_ID_HS_I2S_IF4_EBIT 0x118
+```
+
+### `CLOCK_ID_MI2S_RANGE_END`
+
+End of the range of MI2S clock IDs.
+
+```c
+#define CLOCK_ID_MI2S_RANGE_END 0x118
+```
+
+### `CLOCK_ID_PCM_RANGE_START`
+
+Start of the range of PCM clock IDs.
+
+```c
+#define CLOCK_ID_PCM_RANGE_START 0x200
+```
+
+### `CLOCK_ID_PRI_PCM_IBIT`
+
+Clock ID of the primary PCM IBIT.
+
+```c
+#define CLOCK_ID_PRI_PCM_IBIT 0x200
+```
+
+### `CLOCK_ID_PRI_PCM_EBIT`
+
+Clock ID of the primary PCM EBIT.
+
+```c
+#define CLOCK_ID_PRI_PCM_EBIT 0x201
+```
+
+### `CLOCK_ID_SEC_PCM_IBIT`
+
+Clock ID of the secondary PCM IBIT.
+
+```c
+#define CLOCK_ID_SEC_PCM_IBIT 0x202
+```
+
+### `CLOCK_ID_SEC_PCM_EBIT`
+
+Clock ID of the secondary PCM EBIT.
+
+```c
+#define CLOCK_ID_SEC_PCM_EBIT 0x203
+```
+
+### `CLOCK_ID_TER_PCM_IBIT`
+
+Clock ID of the tertiary PCM IBIT.
+
+```c
+#define CLOCK_ID_TER_PCM_IBIT 0x204
+```
+
+### `CLOCK_ID_TER_PCM_EBIT`
+
+Clock ID of the tertiary PCM EBIT.
+
+```c
+#define CLOCK_ID_TER_PCM_EBIT 0x205
+```
+
+### `CLOCK_ID_QUAD_PCM_IBIT`
+
+Clock ID of the quaternary PCM IBIT.
+
+```c
+#define CLOCK_ID_QUAD_PCM_IBIT 0x206
+```
+
+### `CLOCK_ID_QUAD_PCM_EBIT`
+
+Clock ID of the quaternary PCM EBIT.
+
+```c
+#define CLOCK_ID_QUAD_PCM_EBIT 0x207
+```
+
+### `CLOCK_ID_QUI_PCM_IBIT`
+
+Clock ID of the quinary PCM IBIT.
+
+```c
+#define CLOCK_ID_QUI_PCM_IBIT 0x208
+```
+
+### `CLOCK_ID_QUI_PCM_EBIT`
+
+Clock ID of the quinary PCM EBIT.
+
+```c
+#define CLOCK_ID_QUI_PCM_EBIT 0x209
+```
+
+### `CLOCK_ID_QUI_PCM_OSR`
+
+Clock ID of the quinary PCM OSR.
+
+```c
+#define CLOCK_ID_QUI_PCM_OSR 0x20A
+```
+
+### `CLOCK_ID_SEN_PCM_IBIT`
+
+Clock ID of the senary PCM IBIT.
+
+```c
+#define CLOCK_ID_SEN_PCM_IBIT 0x20B
+```
+
+### `CLOCK_ID_SEN_PCM_EBIT`
+
+Clock ID of the senary PCM EBIT.
+
+```c
+#define CLOCK_ID_SEN_PCM_EBIT 0x20C
+```
+
+### `CLOCK_ID_SEP_PCM_IBIT`
+
+Clock ID of the septenary PCM IBIT.
+
+```c
+#define CLOCK_ID_SEP_PCM_IBIT 0x20D
+```
+
+### `CLOCK_ID_SEP_PCM_EBIT`
+
+Clock ID of the septenary PCM EBIT.
+
+```c
+#define CLOCK_ID_SEP_PCM_EBIT 0x20E
+```
+
+### `CLOCK_ID_HS_PCM_IF0_IBIT`
+
+Clock ID of the High speed PCM interface 0 IBIT.
+
+```c
+#define CLOCK_ID_HS_PCM_IF0_IBIT 0x20F
+```
+
+### `CLOCK_ID_HS_PCM_IF0_EBIT`
+
+Clock ID of the high speed PCM interface 0 EBIT.
+
+```c
+#define CLOCK_ID_HS_PCM_IF0_EBIT 0x210
+```
+
+### `CLOCK_ID_HS_PCM_IF1_IBIT`
+
+Clock ID of the High speed PCM interface 1 IBIT.
+
+```c
+#define CLOCK_ID_HS_PCM_IF1_IBIT 0x211
+```
+
+### `CLOCK_ID_HS_PCM_IF1_EBIT`
+
+Clock ID of the high speed PCM interface 1 EBIT.
+
+```c
+#define CLOCK_ID_HS_PCM_IF1_EBIT 0x212
+```
+
+### `CLOCK_ID_HS_PCM_IF2_IBIT`
+
+Clock ID of the High speed PCM interface 2 IBIT.
+
+```c
+#define CLOCK_ID_HS_PCM_IF2_IBIT 0x213
+```
+
+### `CLOCK_ID_HS_PCM_IF2_EBIT`
+
+Clock ID of the high speed PCM interface 2 EBIT.
+
+```c
+#define CLOCK_ID_HS_PCM_IF2_EBIT 0x214
+```
+
+### `CLOCK_ID_HS_PCM_IF3_IBIT`
+
+Clock ID of the High speed PCM interface 3 IBIT.
+
+```c
+#define CLOCK_ID_HS_PCM_IF3_IBIT 0x215
+```
+
+### `CLOCK_ID_HS_PCM_IF3_EBIT`
+
+Clock ID of the high speed PCM interface 3 EBIT.
+
+```c
+#define CLOCK_ID_HS_PCM_IF3_EBIT 0x216
+```
+
+### `CLOCK_ID_HS_PCM_IF4_IBIT`
+
+Clock ID of the High speed PCM interface 4 IBIT.
+
+```c
+#define CLOCK_ID_HS_PCM_IF4_IBIT 0x217
+```
+
+### `CLOCK_ID_HS_PCM_IF4_EBIT`
+
+Clock ID of the high speed PCM interface 4 EBIT.
+
+```c
+#define CLOCK_ID_HS_PCM_IF4_EBIT 0x218
+```
+
+### `CLOCK_ID_PCM_RANGE_END`
+
+End of of the range of PCM clock IDs.
+
+```c
+#define CLOCK_ID_PCM_RANGE_END 0x218
+```
+
+### `CLOCK_ID_TDM_RANGE_START`
+
+Start of the TDM clock ID group.
+
+```c
+#define CLOCK_ID_TDM_RANGE_START 0x200
+```
+
+### `CLOCK_ID_PRI_TDM_IBIT`
+
+Clock ID for the primary TDM IBIT.
+
+```c
+#define CLOCK_ID_PRI_TDM_IBIT 0x200
+```
+
+### `CLOCK_ID_PRI_TDM_EBIT`
+
+Clock ID for the primary TDM EBIT.
+
+```c
+#define CLOCK_ID_PRI_TDM_EBIT 0x201
+```
+
+### `CLOCK_ID_SEC_TDM_IBIT`
+
+Clock ID for the secondary TDM IBIT.
+
+```c
+#define CLOCK_ID_SEC_TDM_IBIT 0x202
+```
+
+### `CLOCK_ID_SEC_TDM_EBIT`
+
+Clock ID for the secondary TDM EBIT.
+
+```c
+#define CLOCK_ID_SEC_TDM_EBIT 0x203
+```
+
+### `CLOCK_ID_TER_TDM_IBIT`
+
+Clock ID for the tertiary TDM IBIT.
+
+```c
+#define CLOCK_ID_TER_TDM_IBIT 0x204
+```
+
+### `CLOCK_ID_TER_TDM_EBIT`
+
+Clock ID for the tertiary TDM EBIT.
+
+```c
+#define CLOCK_ID_TER_TDM_EBIT 0x205
+```
+
+### `CLOCK_ID_QUAD_TDM_IBIT`
+
+Clock ID for the quaternary TDM IBIT.
+
+```c
+#define CLOCK_ID_QUAD_TDM_IBIT 0x206
+```
+
+### `CLOCK_ID_QUAD_TDM_EBIT`
+
+Clock ID for the quaternary TDM EBIT.
+
+```c
+#define CLOCK_ID_QUAD_TDM_EBIT 0x207
+```
+
+### `CLOCK_ID_QUI_TDM_IBIT`
+
+Clock ID for the quinary TDM IBIT.
+
+```c
+#define CLOCK_ID_QUI_TDM_IBIT 0x208
+```
+
+### `CLOCK_ID_QUI_TDM_EBIT`
+
+Clock ID for the quinary TDM EBIT.
+
+```c
+#define CLOCK_ID_QUI_TDM_EBIT 0x209
+```
+
+### `CLOCK_ID_QUI_TDM_OSR`
+
+Clock ID for the quinary TDM OSR.
+
+```c
+#define CLOCK_ID_QUI_TDM_OSR 0x20A
+```
+
+### `CLOCK_ID_SEN_TDM_IBIT`
+
+Clock ID for the senary TDM IBIT.
+
+```c
+#define CLOCK_ID_SEN_TDM_IBIT 0x20B
+```
+
+### `CLOCK_ID_SEN_TDM_EBIT`
+
+Clock ID for the senary TDM EBIT.
+
+```c
+#define CLOCK_ID_SEN_TDM_EBIT 0x20C
+```
+
+### `CLOCK_ID_SEP_TDM_IBIT`
+
+Clock ID of the septenary TDM IBIT.
+
+```c
+#define CLOCK_ID_SEP_TDM_IBIT 0x20D
+```
+
+### `CLOCK_ID_SEP_TDM_EBIT`
+
+Clock ID of the septenary TDM EBIT.
+
+```c
+#define CLOCK_ID_SEP_TDM_EBIT 0x20E
+```
+
+### `CLOCK_ID_HS_TDM_IF0_IBIT`
+
+Clock ID of the High speed TDM interface 0 IBIT.
+
+```c
+#define CLOCK_ID_HS_TDM_IF0_IBIT 0x20F
+```
+
+### `CLOCK_ID_HS_TDM_IF0_EBIT`
+
+Clock ID of the high speed TDM interface 0 EBIT.
+
+```c
+#define CLOCK_ID_HS_TDM_IF0_EBIT 0x210
+```
+
+### `CLOCK_ID_HS_TDM_IF1_IBIT`
+
+Clock ID of the High speed TDM interface 1 IBIT.
+
+```c
+#define CLOCK_ID_HS_TDM_IF1_IBIT 0x211
+```
+
+### `CLOCK_ID_HS_TDM_IF1_EBIT`
+
+Clock ID of the high speed TDM interface 1 EBIT.
+
+```c
+#define CLOCK_ID_HS_TDM_IF1_EBIT 0x212
+```
+
+### `CLOCK_ID_HS_TDM_IF2_IBIT`
+
+Clock ID of the High speed TDM interface 2 IBIT.
+
+```c
+#define CLOCK_ID_HS_TDM_IF2_IBIT 0x213
+```
+
+### `CLOCK_ID_HS_TDM_IF2_EBIT`
+
+Clock ID of the high speed TDM interface 2 EBIT.
+
+```c
+#define CLOCK_ID_HS_TDM_IF2_EBIT 0x214
+```
+
+### `CLOCK_ID_HS_TDM_IF3_IBIT`
+
+Clock ID of the High speed TDM interface 3 IBIT.
+
+```c
+#define CLOCK_ID_HS_TDM_IF3_IBIT 0x215
+```
+
+### `CLOCK_ID_HS_TDM_IF3_EBIT`
+
+Clock ID of the high speed TDM interface 3 EBIT.
+
+```c
+#define CLOCK_ID_HS_TDM_IF3_EBIT 0x216
+```
+
+### `CLOCK_ID_HS_TDM_IF4_IBIT`
+
+Clock ID of the High speed TDM interface 4 IBIT.
+
+```c
+#define CLOCK_ID_HS_TDM_IF4_IBIT 0x217
+```
+
+### `CLOCK_ID_HS_TDM_IF4_EBIT`
+
+Clock ID of the high speed TDM interface 4 EBIT.
+
+```c
+#define CLOCK_ID_HS_TDM_IF4_EBIT 0x218
+```
+
+### `CLOCK_ID_TDM_RANGE_END`
+
+End of the TDM clock ID group.
+
+```c
+#define CLOCK_ID_TDM_RANGE_END 0x218
+```
+
+### `CLOCK_ID_MCLK_RANGE_START`
+
+Start of the range of MCLK clock IDs.
+
+```c
+#define CLOCK_ID_MCLK_RANGE_START 0x300
+```
+
+### `CLOCK_ID_MCLK_1`
+
+Clock ID for MCLK 1.
+
+```c
+#define CLOCK_ID_MCLK_1 0x300
+```
+
+### `CLOCK_ID_MCLK_2`
+
+Clock ID for MCLK 2.
+
+```c
+#define CLOCK_ID_MCLK_2 0x301
+```
+
+### `CLOCK_ID_MCLK_3`
+
+Clock ID for MCLK 3.
+
+```c
+#define CLOCK_ID_MCLK_3 0x302
+```
+
+### `CLOCK_ID_MCLK_4`
+
+Clock ID for MCLK 4.
+
+```c
+#define CLOCK_ID_MCLK_4 0x303
+```
+
+### `CLOCK_ID_MCLK_5`
+
+Clock ID for MCLK 5.
+
+```c
+#define CLOCK_ID_MCLK_5 0x304
+```
+
+### `CLOCK_ID_WSA_CORE_MCLK`
+
+Clock ID for MCLK for WSA core.
+
+```c
+#define CLOCK_ID_WSA_CORE_MCLK 0x305
+```
+
+### `CLOCK_ID_WSA_CORE_NPL_MCLK`
+
+Clock ID for NPL MCLK for WSA core.
+
+```c
+#define CLOCK_ID_WSA_CORE_NPL_MCLK 0x306
+```
+
+### `CLOCK_ID_WSA_CORE_2X_MCLK`
+
+Clock ID for 2X WSA MCLK (2X MCLK or NPL MCLK, both are same)
+
+```c
+#define CLOCK_ID_WSA_CORE_2X_MCLK CLOCK_ID_WSA_CORE_NPL_MCLK
+```
+
+### `CLOCK_ID_VA_CORE_MCLK`
+
+Clock ID for MCLK for VA core.
+
+```c
+#define CLOCK_ID_VA_CORE_MCLK 0x307
+```
+
+### `CLOCK_ID_VA_CORE_2X_MCLK`
+
+Clock ID for 2X VA MCLK (2X MCLK)
+
+```c
+#define CLOCK_ID_VA_CORE_2X_MCLK 0x308
+```
+
+### `CLOCK_ID_TX_CORE_MCLK`
+
+Clock ID for MCLK for TX.
+
+```c
+#define CLOCK_ID_TX_CORE_MCLK 0x30C
+```
+
+### `CLOCK_ID_TX_CORE_NPL_MCLK`
+
+Clock ID for NPL MCLK for TX.
+
+```c
+#define CLOCK_ID_TX_CORE_NPL_MCLK 0x30D
+```
+
+### `CLOCK_ID_TX_CORE_2X_MCLK`
+
+Clock ID for TX CORE 2X MCLK (2X MCLK or NPL MCLK, both are same)
+
+```c
+#define CLOCK_ID_TX_CORE_2X_MCLK CLOCK_ID_TX_CORE_NPL_MCLK
+```
+
+### `CLOCK_ID_RX_CORE_MCLK`
+
+Clock ID for MCLK for RX.
+
+```c
+#define CLOCK_ID_RX_CORE_MCLK 0x30E
+```
+
+### `CLOCK_ID_RX_CORE_NPL_MCLK`
+
+Clock ID for NPL MCLK for RX.
+
+```c
+#define CLOCK_ID_RX_CORE_NPL_MCLK 0x30F
+```
+
+### `CLOCK_ID_RX_CORE_2X_MCLK`
+
+Clock ID for RX CORE 2X MCLK (2X MCLK or NPL MCLK, both are same)
+
+```c
+#define CLOCK_ID_RX_CORE_2X_MCLK CLOCK_ID_RX_CORE_NPL_MCLK
+```
+
+### `CLOCK_ID_WSA2_CORE_MCLK`
+
+Clock ID for MCLK for WSA2 core.
+
+```c
+#define CLOCK_ID_WSA2_CORE_MCLK 0x310
+```
+
+### `CLOCK_ID_WSA2_CORE_2X_MCLK`
+
+Clock ID for NPL MCLK for WSA2 core.
+
+```c
+#define CLOCK_ID_WSA2_CORE_2X_MCLK 0x311
+```
+
+### `CLOCK_ID_RX_CORE_TX_MCLK`
+
+Clock ID for RX Core TX MCLK.
+
+```c
+#define CLOCK_ID_RX_CORE_TX_MCLK 0x312
+```
+
+### `CLOCK_ID_RX_CORE_TX_2X_MCLK`
+
+Clock ID for RX CORE TX 2X MCLK.
+
+```c
+#define CLOCK_ID_RX_CORE_TX_2X_MCLK 0x313
+```
+
+### `CLOCK_ID_WSA_CORE_TX_MCLK`
+
+Clock ID for WSA core TX MCLK.
+
+```c
+#define CLOCK_ID_WSA_CORE_TX_MCLK 0x314
+```
+
+### `CLOCK_ID_WSA_CORE_TX_2X_MCLK`
+
+Clock ID for WSA core TX 2X MCLK.
+
+```c
+#define CLOCK_ID_WSA_CORE_TX_2X_MCLK 0x315
+```
+
+### `CLOCK_ID_WSA2_CORE_TX_MCLK`
+
+Clock ID for WSA2 core TX MCLK.
+
+```c
+#define CLOCK_ID_WSA2_CORE_TX_MCLK 0x316
+```
+
+### `CLOCK_ID_WSA2_CORE_TX_2X_MCLK`
+
+Clock ID for WSA2 core TX 2X MCLK.
+
+```c
+#define CLOCK_ID_WSA2_CORE_TX_2X_MCLK 0x317
+```
+
+### `CLOCK_ID_RX_CORE_MCLK2_2X_MCLK`
+
+Clock ID for RX CORE MCLK2 2X MCLK.
+
+```c
+#define CLOCK_ID_RX_CORE_MCLK2_2X_MCLK 0x318
+```
+
+### `CLOCK_ID_MCLK_RANGE_END`
+
+End of the range of MCLK clock IDs.
+
+```c
+#define CLOCK_ID_MCLK_RANGE_END 0x318
+```
+
+### `CLOCK_ID_SPDIF_RANGE_START`
+
+Start of the range of SPDIF clock IDs.
+
+```c
+#define CLOCK_ID_SPDIF_RANGE_START 0x400
+```
+
+### `CLOCK_ID_PRI_SPDIF_OUTPUT_CORE`
+
+Clock ID for the primary SPDIF output core.
+
+```c
+#define CLOCK_ID_PRI_SPDIF_OUTPUT_CORE 0x400
+```
+
+### `CLOCK_ID_SEC_SPDIF_OUTPUT_CORE`
+
+Clock ID for the secondary SPDIF output core.
+
+```c
+#define CLOCK_ID_SEC_SPDIF_OUTPUT_CORE 0x401
+```
+
+### `CLOCK_ID_PRI_SPDIF_INPUT_CORE`
+
+Clock ID for the primary SPDIF input core.
+
+```c
+#define CLOCK_ID_PRI_SPDIF_INPUT_CORE 0x402
+```
+
+### `CLOCK_ID_SEC_SPDIF_INPUT_CORE`
+
+Clock ID for the secondary SPDIF input core.
+
+```c
+#define CLOCK_ID_SEC_SPDIF_INPUT_CORE 0x403
+```
+
+### `CLOCK_ID_PRI_SPDIF_OUTPUT_NPL`
+
+Clock ID for the secondary SPDIF output NPL clk.
+
+```c
+#define CLOCK_ID_PRI_SPDIF_OUTPUT_NPL 0x404
+```
+
+### `CLOCK_ID_SEC_SPDIF_OUTPUT_NPL`
+
+Clock ID for the primary SPDIF output NPL clk.
+
+```c
+#define CLOCK_ID_SEC_SPDIF_OUTPUT_NPL 0x405
+```
+
+### `CLOCK_ID_SPDIF_RANGE_END`
+
+End of the range of SPDIF clock IDs.
+
+```c
+#define CLOCK_ID_SPDIF_RANGE_END 0x405
+```
+
+### `MAX_AUD_HW_CLK_NUM_REQ`
+
+Max number of clock ids that can be requested/released at a command.
+
+```c
+#define MAX_AUD_HW_CLK_NUM_REQ 5
+```
+
+### `CLOCK_ATTRIBUTE_INVALID`
+
+Clock attribute is invalid (reserved for internal use).
+
+```c
+#define CLOCK_ATTRIBUTE_INVALID 0x0
+```
+
+### `CLOCK_ATTRIBUTE_COUPLE_NO`
+
+Clock attribute for no coupled clocks.
+
+```c
+#define CLOCK_ATTRIBUTE_COUPLE_NO 0x1
+```
+
+### `CLOCK_ATTRIBUTE_COUPLE_DIVIDEND`
+
+Clock attribute for the dividend of the coupled clocks.
+
+```c
+#define CLOCK_ATTRIBUTE_COUPLE_DIVIDEND 0x2
+```
+
+### `CLOCK_ATTRIBUTE_COUPLE_DIVISOR`
+
+Clock attribute for the divisor of the coupled clocks.
+
+```c
+#define CLOCK_ATTRIBUTE_COUPLE_DIVISOR 0x3
+```
+
+### `CLOCK_ATTRIBUTE_INVERT_COUPLE_NO`
+
+Clock attribute for the invert-and-no-couple case.
+
+```c
+#define CLOCK_ATTRIBUTE_INVERT_COUPLE_NO 0x4
+```
+
+### `HW_INTF_CLK_ID_DEFAULT`
+
+```c
+#define HW_INTF_CLK_ID_DEFAULT 0x0
+```
+
+### `HW_INTF_CLK_FREQ_DEFAULT`
+
+```c
+#define HW_INTF_CLK_FREQ_DEFAULT 0x0
+```
+
+### `HW_INTF_CLK_ATTRI_DEFAULT`
+
+```c
+#define HW_INTF_CLK_ATTRI_DEFAULT 0x0
+```
+
+### `CLOCK_ROOT_DEFAULT`
+
+Default root clock source.
+
+```c
+#define CLOCK_ROOT_DEFAULT 0x0
+```
+
+### `CLOCK_ROOT_SRC_DEFAULT`
+
+Default clock source.
+
+```c
+#define CLOCK_ROOT_SRC_DEFAULT 0x0
+```
+
+### `CLOCK_ROOT_SRC_XO`
+
+Xo Clock source.
+
+```c
+#define CLOCK_ROOT_SRC_XO 0x1
+```
+
+### `CLOCK_ROOT_SRC_RCO`
+
+RCO Clock source.
+
+```c
+#define CLOCK_ROOT_SRC_RCO 0x2
+```
+
+### `CLOCK_ROOT_SRC_MAX`
+
+maximum clock sources.
+
+```c
+#define CLOCK_ROOT_SRC_MAX CLOCK_ROOT_SRC_RCO + 1
+```

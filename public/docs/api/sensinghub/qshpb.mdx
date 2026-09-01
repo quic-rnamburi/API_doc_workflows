@@ -1,0 +1,37 @@
+---
+title: "qshPb.h"
+---
+
+## Structures
+
+### `qshPb::pb_buffer_arg`
+
+Simple buffer descriptor used by nanopb callbacks.
+
+**Members**
+
+<ParamField path="buf" type="const void *">
+  Pointer to input/output buffer.
+</ParamField>
+<ParamField path="buf_len" type="size_t">
+  Length of buffer in bytes.
+</ParamField>
+
+### `qshPb::decode_context_data`
+
+**Members**
+
+<ParamField path="values" type="float *">
+</ParamField>
+<ParamField path="count" type="size_t">
+</ParamField>
+<ParamField path="size" type="size_t">
+</ParamField>
+
+## Macros
+
+### `PB_DEBUG`
+
+```c
+#define PB_DEBUG 1
+```

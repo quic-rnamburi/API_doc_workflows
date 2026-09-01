@@ -1,0 +1,31 @@
+---
+title: "dtmf_detection_api.h"
+description: "This file contains DTMF Detection Event api."
+---
+
+## Structures
+
+### `dtmf_detect_event_t`
+
+**Members**
+
+<ParamField path="tone_low_freq" type="uint16_t">
+</ParamField>
+<ParamField path="tone_high_freq" type="uint16_t">
+</ParamField>
+
+## Type Definitions
+
+### `dtmf_detect_event_t`
+
+```c
+typedef struct dtmf_detect_event_t dtmf_detect_event_t
+```
+
+## Macros
+
+### `EVENT_ID_DTMF_DETECTION`
+
+```c
+#define EVENT_ID_DTMF_DETECTION 0x0800113B
+```

@@ -1,0 +1,42 @@
+---
+title: "ar_osal_dyn_pd.h"
+description: "Defines APIs to create dynamic PD for the given processor domain."
+---
+
+## Functions
+
+### `ar_osal_dyn_pd_init`
+
+initialize dynamic pd.
+
+```c
+int32_t ar_osal_dyn_pd_init(uint32_t proc_id)
+```
+
+**Parameters**
+
+<ParamField path="proc_id" type="uint32_t">
+  satellite proc_id.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_osal_dyn_pd_deinit`
+
+de-initialize dynamic pd.
+
+```c
+int32_t ar_osal_dyn_pd_deinit(uint32_t proc_id)
+```
+
+**Parameters**
+
+<ParamField path="proc_id" type="uint32_t">
+  satellite proc_id.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure

@@ -1,0 +1,193 @@
+---
+title: "gpr_api.h"
+description: "This file contains GPR APIs."
+---
+
+## Structures
+
+### `gpr_packet_pool_info_v2_t`
+
+**Members**
+
+<ParamField path="heap_index" type="gpr_heap_index_t">
+</ParamField>
+<ParamField path="is_dynamic" type="uint8_t">
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+</ParamField>
+<ParamField path="num_packets" type="uint32_t">
+</ParamField>
+<ParamField path="packet_size" type="uint32_t">
+</ParamField>
+
+### `gpr_cmd_gpr_packet_pool_info_t`
+
+Contains the packet pool information for __gpr_cmd_get_gpr_packet_info().
+
+**Members**
+
+<ParamField path="bytes_per_min_size_packet" type="uint32_t">
+  Minimum size (in bytes) of a GPR packet.
+</ParamField>
+<ParamField path="num_min_size_packets" type="uint32_t">
+  Number of packets of the minimum size allocated at initialization.
+</ParamField>
+<ParamField path="bytes_per_max_size_packet" type="uint32_t">
+  Maximum size (in bytes) of a GPR packet.
+</ParamField>
+<ParamField path="num_max_size_packets" type="uint32_t">
+  Number of packets of the maximum size allocated at initialization.
+</ParamField>
+
+### `gpr_cmd_alloc_ext_t`
+
+Contains the allocated packet information for __gpr_cmd_alloc_ext().
+
+**Members**
+
+<ParamField path="src_domain_id" type="uint8_t">
+  Domain ID of the sender service.
+</ParamField>
+<ParamField path="src_port" type="uint32_t">
+  Registered unique ID of the sender service.
+</ParamField>
+<ParamField path="dst_domain_id" type="uint8_t">
+  Domain ID of the receiver service.
+</ParamField>
+<ParamField path="dst_port" type="uint32_t">
+  Registered unique ID of the receiver service.
+</ParamField>
+<ParamField path="client_data" type="uint8_t">
+  Reserved for use by client.
+</ParamField>
+<ParamField path="token" type="uint32_t">
+  Value attached by the sender to determine when command messages are processed by the receiver after they receive response messages.
+</ParamField>
+<ParamField path="opcode" type="uint32_t">
+  Defines both the action and the payload structure to the receiver.
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Actual number of bytes required for the payload.
+</ParamField>
+<ParamField path="ret_packet" type="gpr_packet_t **">
+  Double pointer to the formatted packet returned by the function.
+</ParamField>
+
+### `gpr_cmd_alloc_ext_v2_t`
+
+Contains the allocated packet information for __gpr_cmd_alloc_ext_v2().
+
+**Members**
+
+<ParamField path="src_domain_id" type="uint8_t">
+  Domain ID of the sender service.
+</ParamField>
+<ParamField path="src_port" type="uint32_t">
+  Registered unique ID of the sender service.
+</ParamField>
+<ParamField path="dst_domain_id" type="uint8_t">
+  Domain ID of the receiver service.
+</ParamField>
+<ParamField path="dst_port" type="uint32_t">
+  Registered unique ID of the receiver service.
+</ParamField>
+<ParamField path="client_data" type="uint8_t">
+  Reserved for use by client.
+</ParamField>
+<ParamField path="token" type="uint32_t">
+  Value attached by the sender to determine when command messages are processed by the receiver after they receive response messages.
+</ParamField>
+<ParamField path="heap_index" type="gpr_heap_index_t">
+  heap index of the packet pool.
+</ParamField>
+<ParamField path="opcode" type="uint32_t">
+  Defines both the action and the payload structure to the receiver.
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Actual number of bytes required for the payload.
+</ParamField>
+<ParamField path="ret_packet" type="gpr_packet_t **">
+  Double pointer to the formatted packet returned by the function.
+</ParamField>
+
+### `gpr_cmd_alloc_send_t`
+
+Contains the allocated packet information for __gpr_cmd_alloc_send().
+
+**Members**
+
+<ParamField path="src_domain_id" type="uint8_t">
+  Domain ID of the sender service.
+</ParamField>
+<ParamField path="src_port" type="uint32_t">
+  Registered unique ID of the sender service.
+</ParamField>
+<ParamField path="dst_domain_id" type="uint8_t">
+  Domain ID of the receiver service.
+</ParamField>
+<ParamField path="dst_port" type="uint32_t">
+  Registered unique ID of the receiver service.
+</ParamField>
+<ParamField path="client_data" type="uint8_t">
+  Reserved for use by the client.
+</ParamField>
+<ParamField path="token" type="uint32_t">
+  Value attached by the sender to determine when command messages have been processed by the receiver after having received response messages.
+</ParamField>
+<ParamField path="opcode" type="uint32_t">
+  Operation code defines both the action and the payload structure to the receiver.
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Actual number of bytes needed for the payload.
+</ParamField>
+<ParamField path="payload" type="void *">
+  Pointer to the payload to send.
+</ParamField>
+
+## Type Definitions
+
+### `gpr_heap_index_t`
+
+```c
+typedef uint8_t gpr_heap_index_t
+```
+
+### `gpr_callback_fn_t`
+
+Prototype of a packet callback function.
+
+```c
+typedef uint32_t(* gpr_callback_fn_t
+```
+
+### `gpr_packet_pool_info_v2_t`
+
+```c
+typedef struct gpr_packet_pool_info_v2_t gpr_packet_pool_info_v2_t
+```
+
+### `gpr_cmd_gpr_packet_pool_info_t`
+
+```c
+typedef struct gpr_cmd_gpr_packet_pool_info_t gpr_cmd_gpr_packet_pool_info_t
+```
+
+### `gpr_cmd_alloc_ext_v2_t`
+
+```c
+typedef struct gpr_cmd_alloc_ext_v2_t gpr_cmd_alloc_ext_v2_t
+```
+
+## Macros
+
+### `GPR_HEAP_INDEX_DEFAULT`
+
+```c
+#define GPR_HEAP_INDEX_DEFAULT 0
+```
+
+### `GPR_HEAP_INDEX_1`
+
+```c
+#define GPR_HEAP_INDEX_1 1
+```

@@ -1,0 +1,956 @@
+---
+title: "acdb.h"
+description: "Contains the public interface definitions for the Audio Calibration Database (ACDB) module."
+---
+
+## Structures
+
+### `_acdb_key_value_t`
+
+Generic response structure.
+
+**Members**
+
+<ParamField path="key" type="uint32_t">
+  Key ID
+</ParamField>
+<ParamField path="value" type="uint32_t">
+</ParamField>
+
+### `_acdb_blob_t`
+
+Maintains buffer context information.
+
+**Members**
+
+<ParamField path="buf_size" type="uint32_t">
+  Buffer size.
+</ParamField>
+<ParamField path="buf" type="void *">
+</ParamField>
+
+### `_acdb_buffer_context_t`
+
+Request structure used to query for AMDB bootup modules, registration, and deregistration data.
+
+**Members**
+
+<ParamField path="size" type="uint32_t">
+</ParamField>
+<ParamField path="bytes_filled" type="uint32_t">
+</ParamField>
+<ParamField path="buf" type="uint8_t *">
+</ParamField>
+
+### `_acdb_amdb_proc_id_t`
+
+Request structure used to query for AMDB bootup modules, registration, and deregistration data.
+
+**Members**
+
+<ParamField path="proc_id" type="uint32_t">
+  The the ID of processor domain that the AMDB modules operate under
+</ParamField>
+
+### `_acdb_amdb_db_handle_t`
+
+A Key Vector with a zero sized array.
+
+**Members**
+
+<ParamField path="acdb_handle" type="acdb_handle_t">
+  The the ID of processor domain that the AMDB modules operate under.
+</ParamField>
+<ParamField path="proc_id" type="uint32_t">
+</ParamField>
+
+### `_acdb_key_vector_t`
+
+A Tag Key Vector with a zero sized array.
+
+**Members**
+
+<ParamField path="num_keys" type="uint32_t">
+  number of keys
+</ParamField>
+<ParamField path="graph_key_vector" type="AcdbKeyValuePair">
+</ParamField>
+
+### `_acdb_tag_key_vector_t`
+
+List of uint32_t with a pointer to an array of uint32_t.
+
+**Members**
+
+<ParamField path="tag_id" type="uint32_t">
+  The module tag identifier
+</ParamField>
+<ParamField path="num_keys" type="uint32_t">
+  Graph key vector.
+</ParamField>
+<ParamField path="graph_key_vector" type="AcdbKeyValuePair">
+</ParamField>
+
+### `_acdb_uint_list_t`
+
+List of uint32_t with a zero sized array.
+
+**Members**
+
+<ParamField path="count" type="uint32_t">
+  number of elemts in the list
+</ParamField>
+<ParamField path="list" type="uint32_t *">
+</ParamField>
+
+### `_acdb_uint_list_zs_t`
+
+**Members**
+
+<ParamField path="count" type="uint32_t">
+  number of elemts in the list
+</ParamField>
+<ParamField path="list" type="uint32_t">
+</ParamField>
+
+### `_acdb_file_t`
+
+**Members**
+
+<ParamField path="fileNameLen" type="uint32_t">
+  Full file path name length
+</ParamField>
+<ParamField path="fileName" type="char">
+</ParamField>
+
+### `_acdb_data_files_t`
+
+**Members**
+
+<ParamField path="num_files" type="uint32_t">
+  Number of ACDB files
+</ParamField>
+<ParamField path="acdbFiles" type="AcdbFile">
+</ParamField>
+
+### `_acdb_database_files_t`
+
+**Members**
+
+<ParamField path="num_files" type="uint32_t">
+  Number of database files
+</ParamField>
+<ParamField path="database_files" type="AcdbFile">
+</ParamField>
+
+### `_acdb_subgraph_t`
+
+**Members**
+
+<ParamField path="sg_id" type="uint32_t">
+  src Subgraph ID
+</ParamField>
+<ParamField path="num_dst_sgids" type="uint32_t">
+  dst subgraph IDs
+</ParamField>
+<ParamField path="dst_sg_ids" type="uint32_t">
+</ParamField>
+
+### `_acdb_graph_key_vector_t`
+
+**Members**
+
+<ParamField path="num_keys" type="uint32_t">
+  number of keys
+</ParamField>
+<ParamField path="graph_key_vector" type="AcdbKeyValuePair *">
+</ParamField>
+
+### `_acdb_get_graph_rsp_t`
+
+**Members**
+
+<ParamField path="num_subgraphs" type="uint32_t">
+  Number of SubGraphs for a given key combination
+</ParamField>
+<ParamField path="size" type="uint32_t">
+  Pointer to array of SubGraphs data for a given key combination.
+</ParamField>
+<ParamField path="subgraphs" type="AcdbSubgraph *">
+</ParamField>
+
+### `_acdb_sgid_graph_key_vector_t`
+
+**Members**
+
+<ParamField path="num_sgid" type="uint32_t">
+  number of SubGraph ID
+</ParamField>
+<ParamField path="sg_ids" type="uint32_t *">
+</ParamField>
+<ParamField path="graph_key_vector" type="AcdbGraphKeyVector">
+  Graph key vector
+</ParamField>
+
+### `_acdb_property_data_t`
+
+**Members**
+
+<ParamField path="prop_id" type="uint32_t">
+  Property ID
+</ParamField>
+<ParamField path="prop_payload_size" type="uint32_t">
+</ParamField>
+<ParamField path="prop_payload" type="char">
+</ParamField>
+
+### `_acdb_sub_graph_property_data_t`
+
+**Members**
+
+<ParamField path="sg_id" type="uint32_t">
+  SubGraph ID
+</ParamField>
+<ParamField path="num_props" type="uint32_t">
+  Array of prop_data of type AcdbPropertyData.
+</ParamField>
+<ParamField path="prop_data" type="char">
+</ParamField>
+
+### `_acdb_driver_property_data_t`
+
+**Members**
+
+<ParamField path="num_sgid" type="uint32_t">
+  number of SubGraph ID
+</ParamField>
+<ParamField path="size" type="uint32_t">
+</ParamField>
+<ParamField path="sub_graph_prop_data" type="AcdbSubGraphPropertyData *">
+</ParamField>
+
+### `_acdb_get_subgraph_data_rsp_t`
+
+**Members**
+
+<ParamField path="driver_prop" type="AcdbDriverPropertyData">
+  Size of container data.
+</ParamField>
+<ParamField path="spf_blob" type="AcdbBlob">
+</ParamField>
+
+### `_acdb_subgraph_list_t`
+
+**Members**
+
+<ParamField path="num_subgraphs" type="uint32_t">
+  Number of SubGraphs for a given key combination
+</ParamField>
+<ParamField path="subgraphs" type="AcdbSubgraph *">
+</ParamField>
+
+### `_acdb_sgid_calkey_vector_t`
+
+**Members**
+
+<ParamField path="num_sg_ids" type="uint32_t">
+  Number of Subgraphs
+</ParamField>
+<ParamField path="sg_ids" type="uint32_t *">
+  Calibration Key vector prior.
+</ParamField>
+<ParamField path="cal_key_vector_prior" type="AcdbGraphKeyVector">
+  Calibration Key vector new.
+</ParamField>
+<ParamField path="cal_key_vector_new" type="AcdbGraphKeyVector">
+</ParamField>
+
+### `_acdb_sgid_persist_data_t`
+
+**Members**
+
+<ParamField path="sg_id" type="uint32_t">
+  Subgraph ID
+</ParamField>
+<ParamField path="persist_data_size" type="uint32_t">
+  persist cal data.
+</ParamField>
+<ParamField path="buf" type="char">
+</ParamField>
+
+### `_acdb_sgid_persist_cal_data_t`
+
+**Members**
+
+<ParamField path="num_sg_ids" type="uint32_t">
+  Number of Subgraphs
+</ParamField>
+<ParamField path="cal_data_size" type="uint32_t">
+  Persist cal data.
+</ParamField>
+<ParamField path="cal_data" type="AcdbSgIdPersistData *">
+</ParamField>
+
+### `_acdb_global_persistent_cal_info_t`
+
+**Members**
+
+<ParamField path="cal_identifier" type="uint32_t">
+  cal identifier
+</ParamField>
+<ParamField path="num_iids" type="uint32_t">
+  iid list
+</ParamField>
+<ParamField path="iids" type="uint32_t">
+</ParamField>
+
+### `_acdb_get_blb_psist_identifier_t`
+
+**Members**
+
+<ParamField path="num_glb_persist_identifiers" type="uint32_t">
+  number of global-persistent cal info entries
+</ParamField>
+<ParamField path="size" type="uint32_t">
+  Size of container data.
+</ParamField>
+<ParamField path="global_persistent_cal_info" type="AcdbGlbPsistCalInfo *">
+</ParamField>
+
+### `_acdb_get_subgraph_glb_persist_cal_data_cmd_type`
+
+**Members**
+
+<ParamField path="cal_Id" type="uint32_t">
+  Cal Identifier\>
+</ParamField>
+
+### `_acdb_driver_data_t`
+
+**Members**
+
+<ParamField path="key_vector" type="AcdbGraphKeyVector">
+  Key Vector associated with the driver data
+</ParamField>
+<ParamField path="module_id" type="uint32_t">
+</ParamField>
+
+### `_acdb_module_tag_t`
+
+**Members**
+
+<ParamField path="tag_id" type="uint32_t">
+  Module tag ID
+</ParamField>
+<ParamField path="tag_key_vector" type="AcdbGraphKeyVector">
+</ParamField>
+
+### `_acdb_sgid_module_tag_t`
+
+**Members**
+
+<ParamField path="num_sg_ids" type="uint32_t">
+  Num of Subgraph IDs
+</ParamField>
+<ParamField path="sg_ids" type="uint32_t *">
+  Module tag.
+</ParamField>
+<ParamField path="module_tag" type="AcdbModuleTag">
+</ParamField>
+
+### `_acdb_get_tagged_modules_req_t`
+
+**Members**
+
+<ParamField path="num_sg_ids" type="uint32_t">
+  Num of Subgraph IDs
+</ParamField>
+<ParamField path="sg_ids" type="uint32_t *">
+  tag ID
+</ParamField>
+<ParamField path="tag_id" type="uint32_t">
+</ParamField>
+
+### `_acdb_module_instance_t`
+
+**Members**
+
+<ParamField path="mid_id" type="uint32_t">
+  Module ID
+</ParamField>
+<ParamField path="mid_iid" type="uint32_t">
+</ParamField>
+
+### `_acdb_get_tagged_modules_t`
+
+**Members**
+
+<ParamField path="num_tagged_mids" type="uint32_t">
+  Number of tagged modules
+</ParamField>
+<ParamField path="tagged_mid_list" type="AcdbModuleInstance *">
+</ParamField>
+
+### `_acdb_get_key_capabilities_t`
+
+**Members**
+
+<ParamField path="cal_key_vector" type="AcdbGraphKeyVector">
+  Number of modules.
+</ParamField>
+<ParamField path="num_modules" type="uint32_t">
+  Pointer to array of Module instances.
+</ParamField>
+<ParamField path="module_Instances" type="AcdbModuleInstance *">
+</ParamField>
+
+### `_acdb_set_cal_data_t`
+
+**Members**
+
+<ParamField path="graph_key_vector" type="AcdbGraphKeyVector">
+  The graph keys that describe the usecase the modules are under
+</ParamField>
+<ParamField path="cal_key_vector" type="AcdbGraphKeyVector">
+  cal blob size
+</ParamField>
+<ParamField path="cal_blob_size" type="uint32_t">
+  cal blob
+</ParamField>
+<ParamField path="cal_blob" type="void *">
+</ParamField>
+
+### `_acdb_sg_proc_id_map_t`
+
+Request structure that contains the list of subgraphs to retrieve processor lists for.
+
+**Members**
+
+<ParamField path="sg_id" type="uint32_t">
+  Subgraph ID
+</ParamField>
+<ParamField path="num_proc_ids" type="uint32_t">
+  Array of Processor IDs.
+</ParamField>
+<ParamField path="proc_ids" type="uint32_t">
+</ParamField>
+
+### `_acdb_get_subgraph_proc_ids_req_t`
+
+Response structure that contains a list of mappings between subgraphs and their associated processors.
+
+**Members**
+
+<ParamField path="num_sg_ids" type="uint32_t">
+  Number of subgraphs
+</ParamField>
+<ParamField path="sg_ids" type="uint32_t *">
+</ParamField>
+
+### `_acdb_get_subgraph_proc_ids_rsp_t`
+
+**Members**
+
+<ParamField path="num_sg_ids" type="uint32_t">
+  Number of subgraphs
+</ParamField>
+<ParamField path="size" type="uint32_t">
+  Array of maps that associate a subgraph to a list of processors.
+</ParamField>
+<ParamField path="sg_proc_ids" type="AcdbSgProcIdsMap *">
+</ParamField>
+
+### `_acdb_cmd_get_tags_from_gkv_req`
+
+Contains a Modules ID and Instance ID.
+
+**Members**
+
+<ParamField path="graph_key_vector" type="AcdbGraphKeyVector *">
+  Graph Key Vector representing the usecase
+</ParamField>
+
+### `_acdb_module`
+
+Contains the mapping beween a Tag and one or more module.
+
+**Members**
+
+<ParamField path="module_id" type="uint32_t">
+  Module ID
+</ParamField>
+<ParamField path="module_iid" type="uint32_t">
+</ParamField>
+
+### `_acdb_tag_module`
+
+Response structure that contains a list of Tag + Module(s) mapping.
+
+**Members**
+
+<ParamField path="tag_id" type="uint32_t">
+  Tag ID associated with the module(s)
+</ParamField>
+<ParamField path="num_modules" type="uint32_t">
+  List of modules associated with this tag.
+</ParamField>
+<ParamField path="modules" type="AcdbModule">
+</ParamField>
+
+### `_acdb_cmd_get_tags_from_gkv_rsp`
+
+**Members**
+
+<ParamField path="num_tags" type="uint32_t">
+  Number of tags found
+</ParamField>
+<ParamField path="list_size" type="uint32_t">
+  List of Tags plus their associated module(s)
+</ParamField>
+<ParamField path="tag_module_list" type="AcdbTagModule *">
+</ParamField>
+
+### `_acdb_key_vector_list_t`
+
+**Members**
+
+<ParamField path="num_key_vectors" type="uint32_t">
+  Number of key vectors in the key vector list
+</ParamField>
+<ParamField path="list_size" type="uint32_t">
+  List of Key Vectors in the format of [#keys, kvPair+,..., #keys, kvPair+].
+</ParamField>
+<ParamField path="key_vector_list" type="AcdbKeyVector *">
+</ParamField>
+
+### `_acdb_tag_key_vector_list_t`
+
+**Members**
+
+<ParamField path="num_key_vectors" type="uint32_t">
+  Number of tag key vectors in the key vector list
+</ParamField>
+<ParamField path="list_size" type="uint32_t">
+  List of Tag Key Vectors in the format of [#keys, kvPair+,..., #keys, kvPair+].
+</ParamField>
+<ParamField path="key_vector_list" type="AcdbTagKeyVector *">
+</ParamField>
+
+### `_acdb_module_param_list`
+
+Request structure for retrieving cal data for modules under a usecase.
+
+**Members**
+
+<ParamField path="instance_id" type="uint32_t">
+  The module instance to get parameter data from
+</ParamField>
+<ParamField path="parameter_list" type="AcdbUintListZS">
+</ParamField>
+
+### `_acdb_get_cal_data_req_t`
+
+**Members**
+
+<ParamField path="graph_key_vector" type="AcdbGraphKeyVector">
+  The graph keys that describe the usecase the modules are under
+</ParamField>
+<ParamField path="cal_key_vector" type="AcdbGraphKeyVector">
+  The number of module instances in the instance_param_list.
+</ParamField>
+<ParamField path="num_module_instance" type="uint32_t">
+  List of module instances plus their parameters to get data for.
+</ParamField>
+<ParamField path="instance_param_list" type="AcdbModuleParamList *">
+</ParamField>
+
+### `_acdb_get_tag_data_req_t`
+
+**Members**
+
+<ParamField path="graph_key_vector" type="AcdbGraphKeyVector">
+  The graph keys that describe the usecase the modules are under
+</ParamField>
+<ParamField path="module_tag" type="AcdbModuleTag">
+  The number of module instances in the instance_param_list.
+</ParamField>
+<ParamField path="num_module_instance" type="uint32_t">
+  List of module instances plus their parameters to get data for.
+</ParamField>
+<ParamField path="instance_param_list" type="AcdbModuleParamList *">
+</ParamField>
+
+### `_acdb_set_tag_data_t`
+
+**Members**
+
+<ParamField path="graph_key_vector" type="AcdbGraphKeyVector">
+  The graph keys that describe the usecase the modules are under
+</ParamField>
+<ParamField path="module_tag" type="AcdbModuleTag">
+  Size of the tag data blob.
+</ParamField>
+<ParamField path="blob_size" type="uint32_t">
+  Pointer to blob containing tag data.
+</ParamField>
+<ParamField path="blob" type="void *">
+</ParamField>
+
+### `_acdb_set_temp_path_req_t`
+
+**Members**
+
+<ParamField path="path_length" type="uint32_t">
+  The length of the path including the null terminating character
+</ParamField>
+<ParamField path="path" type="char_t">
+</ParamField>
+
+### `_acdb_hw_accel_subgraphs_info_req_t`
+
+**Members**
+
+<ParamField path="subgraph_list" type="AcdbUintList">
+  List of Subgraph IDs
+</ParamField>
+
+### `_acdb_hw_accel_subgraph_t`
+
+**Members**
+
+<ParamField path="subgraph_id" type="uint32_t">
+  Subgraph ID
+</ParamField>
+<ParamField path="mem_type" type="AcdbHwAccelMemType">
+</ParamField>
+
+### `_acdb_hw_accel_subgraph_info_rsp_t`
+
+**Members**
+
+<ParamField path="num_subgraphs" type="uint32_t">
+  Number of Subgraphs
+</ParamField>
+<ParamField path="list_size" type="uint32_t">
+  Subgraph IDs.
+</ParamField>
+<ParamField path="subgraph_list" type="AcdbHwAccelSubgraph *">
+</ParamField>
+
+### `_acdb_subgraph_proc_pair_t`
+
+Request structure for retrieving persistent calibration based on processor.
+
+**Members**
+
+<ParamField path="subgraph_id" type="uint32_t">
+  The ID of the subgraph to get calibration for
+</ParamField>
+<ParamField path="proc_id" type="uint32_t">
+</ParamField>
+
+### `_acdb_proc_subgraph_persist_cal_req_t`
+
+**Members**
+
+<ParamField path="num_subgraphs" type="uint32_t">
+  Number of subgraphs
+</ParamField>
+<ParamField path="subgraph_list" type="AcdbSubgraphProcPair *">
+  Calibration Key vector prior.
+</ParamField>
+<ParamField path="cal_key_vector_prior" type="AcdbGraphKeyVector">
+  Calibration Key vector new.
+</ParamField>
+<ParamField path="cal_key_vector_new" type="AcdbGraphKeyVector">
+</ParamField>
+
+### `_acdb_string_t`
+
+**Members**
+
+<ParamField path="length" type="uint32_t">
+  The length of the string including the null terminating character
+</ParamField>
+<ParamField path="string" type="char_t *">
+</ParamField>
+
+### `_acdb_get_proc_tagged_modules_req_t`
+
+Maps tagged modules to a processor domain.
+
+**Members**
+
+<ParamField path="num_sg_ids" type="uint32_t">
+  Number of Subgraphs
+</ParamField>
+<ParamField path="sg_ids" type="uint32_t *">
+  The tag to search for.
+</ParamField>
+<ParamField path="tag_id" type="uint32_t">
+</ParamField>
+
+### `_acdb_proc_tagged_modules_t`
+
+Response struture containing a mapping of tagged modules to processor domain ID.
+
+**Members**
+
+<ParamField path="proc_domain_id" type="uint32_t">
+  Number of tagged modules.
+</ParamField>
+<ParamField path="num_tagged_mids" type="uint32_t">
+  Pointer to array of tagged modules.
+</ParamField>
+<ParamField path="tagged_mid_list" type="AcdbModuleInstance">
+</ParamField>
+
+### `_acdb_get_proc_tagged_modules_rsp_t`
+
+**Members**
+
+<ParamField path="num_procs" type="uint32_t">
+  Number of tagged modules
+</ParamField>
+<ParamField path="list_size" type="uint32_t">
+  A pointer to contiguous block of memory containing tagged module ID and IID ordered by processor domain.
+</ParamField>
+<ParamField path="proc_tagged_module_list" type="AcdbProcTaggedModules *">
+</ParamField>
+
+## Functions
+
+### `acdb_init`
+
+```c
+int32_t acdb_init(AcdbDataFiles *acdb_data_files, AcdbFile *delta_file_path)
+```
+
+### `acdb_flash_init`
+
+```c
+int32_t acdb_flash_init(uint32_t *acdbdata_base_addr)
+```
+
+### `acdb_deinit`
+
+```c
+int32_t acdb_deinit(void)
+```
+
+### `acdbCmdIsPersistenceSupported`
+
+```c
+int32_t acdbCmdIsPersistenceSupported(uint32_t *resp)
+```
+
+### `acdb_add_database`
+
+Extends the database by adding database files (*.acdb and *.qwsp) at runtime.
+
+```c
+int32_t acdb_add_database(AcdbDatabaseFiles *acdb_files, AcdbFile *writable_file_path, acdb_handle_t *acdb_handle)
+```
+
+**Parameters**
+
+<ParamField path="acdb_data_files" type="">
+  A list of database file paths containing *.acdb and *.qwsp
+</ParamField>
+<ParamField path="writable_file_path" type="AcdbFile *">
+  The delta data file path and temp files
+</ParamField>
+<ParamField path="[in/out]" type="">
+  acdb_handle: A handle to the database provided
+</ParamField>
+
+**Returns**
+
+0 on success, non-zero on failure
+
+### `acdb_remove_database`
+
+Shrinks the database by removing all data associated with the given database handle at runtime.
+
+```c
+int32_t acdb_remove_database(const acdb_handle_t *acdb_handle)
+```
+
+**Parameters**
+
+<ParamField path="acdb_handle" type="const acdb_handle_t *">
+  A handle to the database to remove
+</ParamField>
+
+**Returns**
+
+0 on success, non-zero on failure
+
+### `acdb_get_handle`
+
+Retrieves a handle associated with the given acdb file which can be used in APIs to retrieve information from a database.
+
+```c
+int32_t acdb_get_handle(AcdbFile *acdb_file, acdb_handle_t *acdb_handle)
+```
+
+**Parameters**
+
+<ParamField path="acdb_file" type="AcdbFile *">
+  The file to get the handle for
+</ParamField>
+<ParamField path="[in/out]" type="">
+  acdb_handle: The acdb hande for the given file
+</ParamField>
+
+**Returns**
+
+0 on success, non-zero on failure
+
+### `acdb_ioctl`
+
+Main entry function to the ACDB.
+
+This entry function takes any supported ACDB IOCTL and provides the appropriate response.
+
+See the individual command documentation for more details on the expectations of the command.
+
+```c
+int32_t acdb_ioctl(uint32_t cmd_id, const void *cmd_struct, uint32_t cmd_struct_size, void *rsp_struct, uint32_t rsp_struct_size)
+```
+
+**Parameters**
+
+<ParamField path="cmd_id" type="uint32_t">
+  Command ID to execute on the Audio Calibration Database. The cmd and the rsp must match the expected structures for that command. If not, the command fails.
+</ParamField>
+<ParamField path="cmd" type="">
+  Pointer to the command structure.
+</ParamField>
+<ParamField path="cmd_size" type="">
+  Size of the command structure.
+</ParamField>
+<ParamField path="rsp" type="">
+  Pointer to the response structure.
+</ParamField>
+<ParamField path="rsp_size" type="">
+  Size of the response structure.
+</ParamField>
+
+**Returns**
+
+The result of the call as defined by the command.
+
+## Type Definitions
+
+### `acdb_handle_t`
+
+A handle to a database
+
+```c
+typedef void * acdb_handle_t
+```
+
+### `AcdbFile`
+
+```c
+typedef struct _acdb_file_t AcdbFile
+```
+
+### `AcdbDataFiles`
+
+```c
+typedef struct _acdb_data_files_t AcdbDataFiles
+```
+
+### `AcdbDatabaseFiles`
+
+```c
+typedef struct _acdb_database_files_t AcdbDatabaseFiles
+```
+
+## Macros
+
+### `ACDB_SOFTWARE_VERSION_MAJOR`
+
+The ACDB Software Major Version
+
+```c
+#define ACDB_SOFTWARE_VERSION_MAJOR 0x00000001
+```
+
+### `ACDB_SOFTWARE_VERSION_MINOR`
+
+The ACDB Software Revision.
+
+```c
+#define ACDB_SOFTWARE_VERSION_MINOR 0x00000030
+```
+
+### `ACDB_SOFTWARE_VERSION_REVISION`
+
+The ACDB Software CPL Info.
+
+```c
+#define ACDB_SOFTWARE_VERSION_REVISION 0x00000000
+```
+
+### `ACDB_SOFTWARE_VERSION_CPLINFO`
+
+The max character length of a file name string.
+
+```c
+#define ACDB_SOFTWARE_VERSION_CPLINFO 0x00000000
+```
+
+### `MAX_FILENAME_LENGTH`
+
+The max allowed number databases to manage.
+
+```c
+#define MAX_FILENAME_LENGTH 256
+```
+
+### `MAX_ACDB_FILE_COUNT`
+
+The max number of files that can be init'ed/added to the database.
+
+```c
+#define MAX_ACDB_FILE_COUNT 16
+```
+
+### `ACDB_MAX_FILE_ADD_LIMIT`
+
+```c
+#define ACDB_MAX_FILE_ADD_LIMIT 2
+```
+
+### `INF`
+
+```c
+#define INF 4294967295U
+```
+
+### `ACDB_CMD_ID`
+
+```c
+#define ACDB_CMD_ID ((0xACDBUL \\<\\< 16) | (0xFFFFUL & x))
+```
+
+### `ACDB_MEM_CPY`
+
+```c
+#define ACDB_MEM_CPY memcpy((uint8_t *)dst, (uint8_t *)src, src_size)
+```
+
+### `ACDB_MEM_CMP`
+
+```c
+#define ACDB_MEM_CMP memcmp(x,y,len)
+```
+
+### `ACDB_CLEAR_BUFFER`
+
+```c
+#define ACDB_CLEAR_BUFFER memset(&x, 0, sizeof(x))
+```

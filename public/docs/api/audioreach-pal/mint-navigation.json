@@ -1,0 +1,10 @@
+{
+  "group": "audioreach-pal",
+  "pages": [
+    "public/docs/api/audioreach-pal/device",
+    "public/docs/api/audioreach-pal/palapi",
+    "public/docs/api/audioreach-pal/paldefs",
+    "public/docs/api/audioreach-pal/session",
+    "public/docs/api/audioreach-pal/stream"
+  ]
+}

@@ -1,0 +1,90 @@
+---
+title: "gapless_api.h"
+description: "This file contains the Gapless module APIs."
+---
+
+## Structures
+
+### `event_id_gapless_early_eos_event_t`
+
+Payload for EVENT_ID_EARLY_EOS.
+
+**Members**
+
+<ParamField path="src_module_iid" type="uint32_t">
+  Identifier for the MODULE_ID_WR_SHARED_MEM_EP instance of the stream that is about to end.
+</ParamField>
+
+### `param_id_gapless_early_eos_delay_t`
+
+Payload for PARAM_ID_EARLY_EOS_DELAY.
+
+**Members**
+
+<ParamField path="early_eos_delay_ms" type="uint32_t">
+  Duration in milliseconds between the early EOS notification and the EOS notification rendered from the hardware endpoint.
+</ParamField>
+
+## Type Definitions
+
+### `event_id_gapless_early_eos_event_t`
+
+```c
+typedef struct event_id_gapless_early_eos_event_t event_id_gapless_early_eos_event_t
+```
+
+### `param_id_gapless_early_eos_delay_t`
+
+```c
+typedef struct param_id_gapless_early_eos_delay_t param_id_gapless_early_eos_delay_t
+```
+
+## Macros
+
+### `GAPLESS_MAX_INPUT_PORTS`
+
+Maximum number of input ports supported by the Gapless module.
+
+```c
+#define GAPLESS_MAX_INPUT_PORTS 0x2
+```
+
+### `GAPLESS_MAX_OUTPUT_PORTS`
+
+Maximum number of output ports supported by the Gapless module.
+
+```c
+#define GAPLESS_MAX_OUTPUT_PORTS 0x1
+```
+
+### `GAPLESS_STACK_SIZE`
+
+Size of the stack for the Gapless module.
+
+```c
+#define GAPLESS_STACK_SIZE 4096
+```
+
+### `EVENT_ID_EARLY_EOS`
+
+GUID for an early end-of-stream event.
+
+```c
+#define EVENT_ID_EARLY_EOS 0x08001126
+```
+
+### `PARAM_ID_EARLY_EOS_DELAY`
+
+Identifier for the parameter sent to the Gapless module to configure the maximum time the client will take to switch streams.
+
+```c
+#define PARAM_ID_EARLY_EOS_DELAY 0x0800114C
+```
+
+### `MODULE_ID_GAPLESS`
+
+Identifier for the Gapless module, which allows for gapless switching between two input streams.
+
+```c
+#define MODULE_ID_GAPLESS 0x0700104D
+```

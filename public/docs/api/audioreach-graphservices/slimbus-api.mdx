@@ -1,0 +1,77 @@
+---
+title: "slimbus_api.h"
+description: "This file contains slimbus module APIs."
+---
+
+## Structures
+
+### `param_id_slimbus_cfg_t`
+
+**Members**
+
+<ParamField path="slimbus_dev_id" type="uint32_t">
+  This ID is required to handle multiple SLIMbus hardware blocks.}
+</ParamField>
+<ParamField path="shared_channel_mapping" type="uint8_t">
+  Array of shared channel IDs (128 to 255) to which the master port is connected.}
+</ParamField>
+
+## Type Definitions
+
+### `param_id_slimbus_cfg_t`
+
+```c
+typedef struct param_id_slimbus_cfg_t param_id_slimbus_cfg_t
+```
+
+## Macros
+
+### `SLIMBUS_DEVICE_1`
+
+```c
+#define SLIMBUS_DEVICE_1 0x0
+```
+
+### `SLIMBUS_DEVICE_2`
+
+Sets SLIMbus device ID 2.
+
+```c
+#define SLIMBUS_DEVICE_2 0x1
+```
+
+### `SB_MAX_CHAN_CNT`
+
+Enumeration for setting the maximum number of channels per device @newpage.
+
+```c
+#define SB_MAX_CHAN_CNT 8
+```
+
+### `CAPI_SLIMBUS_STACK_SIZE`
+
+```c
+#define CAPI_SLIMBUS_STACK_SIZE 4096
+```
+
+### `PARAM_ID_SLIMBUS_CONFIG`
+
+```c
+#define PARAM_ID_SLIMBUS_CONFIG 0x08001068
+```
+
+### `MODULE_ID_SLIMBUS_SINK`
+
+Module ID for SLIMBUS sink module.
+
+```c
+#define MODULE_ID_SLIMBUS_SINK 0x07001029
+```
+
+### `MODULE_ID_SLIMBUS_SOURCE`
+
+End of the Module -->
+
+```c
+#define MODULE_ID_SLIMBUS_SOURCE 0x0700102A
+```

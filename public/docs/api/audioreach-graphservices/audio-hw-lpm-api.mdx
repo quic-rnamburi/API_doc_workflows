@@ -1,0 +1,87 @@
+---
+title: "audio_hw_lpm_api.h"
+description: "This file contains lpm api for requesting/releasing LPM memory resources for remote client."
+---
+
+## Structures
+
+### `lpm_rsc_request_t`
+
+Struct for response for LPM memory request by HLOS
+
+**Members**
+
+<ParamField path="lpm_type" type="uint32_t">
+  LPM memory type @values #LPAIF_CORE_LPM.
+</ParamField>
+<ParamField path="size_in_bytes" type="uint32_t">
+  Amount of LPM needed in bytes.
+</ParamField>
+
+### `lpm_rsp_rsc_request_t`
+
+Struct for response for LPM memory request response by HLOS
+
+**Members**
+
+<ParamField path="lpm_type" type="uint32_t">
+  LPM memory type @values #LPAIF_CORE_LPM.
+</ParamField>
+<ParamField path="size_in_bytes" type="uint32_t">
+  Amount of LPM allocated in bytes.
+</ParamField>
+<ParamField path="phy_addr_lsw" type="uint32_t">
+  LSW of allocated LPM physical address.
+</ParamField>
+<ParamField path="phy_addr_msw" type="uint32_t">
+  MSW of allocated LPM physical address.
+</ParamField>
+
+### `lpm_rsc_release_t`
+
+Struct for LPM memory release by HLOS
+
+**Members**
+
+<ParamField path="lpm_type" type="uint32_t">
+  LPM memory type @values #LPAIF_CORE_LPM.
+</ParamField>
+<ParamField path="size_in_bytes" type="uint32_t">
+  Amount of LPM to release in bytes.
+</ParamField>
+<ParamField path="phy_addr_lsw" type="uint32_t">
+  LSW of LPM physical address to release.
+</ParamField>
+<ParamField path="phy_addr_msw" type="uint32_t">
+  MSW of LPM physical address to release.
+</ParamField>
+
+## Type Definitions
+
+### `lpm_rsc_request_t`
+
+```c
+typedef struct lpm_rsc_request_t lpm_rsc_request_t
+```
+
+### `lpm_rsp_rsc_request_t`
+
+```c
+typedef struct lpm_rsp_rsc_request_t lpm_rsp_rsc_request_t
+```
+
+### `lpm_rsc_release_t`
+
+```c
+typedef struct lpm_rsc_release_t lpm_rsc_release_t
+```
+
+## Macros
+
+### `PARAM_ID_RSC_LOW_PWR_MEM`
+
+Param ID for lpass core This ID should only be used under PRM module instance.
+
+```c
+#define PARAM_ID_RSC_LOW_PWR_MEM 0x080010CD
+```

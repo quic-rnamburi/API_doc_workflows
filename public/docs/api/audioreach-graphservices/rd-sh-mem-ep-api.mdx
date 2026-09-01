@@ -1,0 +1,41 @@
+---
+title: "rd_sh_mem_ep_api.h"
+description: "This file contains Shared mem module APIs."
+---
+
+## Structures
+
+### `data_cmd_rd_sh_mem_ep_data_buffer_t`
+
+**Members**
+
+<ParamField path="buf_addr_lsw" type="uint32_t">
+  Lower 32 bits of the address of the buffer.
+</ParamField>
+<ParamField path="buf_addr_msw" type="uint32_t">
+  Upper 32 bits of the address of the buffer .
+</ParamField>
+<ParamField path="mem_map_handle" type="uint32_t">
+  Unique identifier for the shared memory address.
+</ParamField>
+<ParamField path="buf_size" type="uint32_t">
+  Number of bytes available for the spf to write.
+</ParamField>
+
+## Type Definitions
+
+### `data_cmd_rd_sh_mem_ep_data_buffer_t`
+
+Structure for DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER.
+
+```c
+typedef struct data_cmd_rd_sh_mem_ep_data_buffer_t data_cmd_rd_sh_mem_ep_data_buffer_t
+```
+
+## Macros
+
+### `DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER`
+
+```c
+#define DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER 0x04001003
+```

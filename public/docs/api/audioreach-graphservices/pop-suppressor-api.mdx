@@ -1,0 +1,78 @@
+---
+title: "pop_suppressor_api.h"
+---
+
+## Structures
+
+### `param_id_pop_suppressor_params_t`
+
+**Members**
+
+<ParamField path="ramp_duration_in_ms" type="uint16_t">
+  @h2mle_dataFormat
+</ParamField>
+<ParamField path="reserved" type="int16_t">
+
+</ParamField>
+
+### `param_id_pop_suppressor_mute_config_t`
+
+**Members**
+
+<ParamField path="mute_enable" type="uint32_t">
+  Specifies whether the Pop_suppressor mute parameter is to be enabled(1) or disabled(0)
+</ParamField>
+
+## Type Definitions
+
+### `param_id_pop_suppressor_params_t`
+
+```c
+typedef struct param_id_pop_suppressor_params_t param_id_pop_suppressor_params_t
+```
+
+### `param_id_pop_suppressor_mute_config_t`
+
+```c
+typedef struct param_id_pop_suppressor_mute_config_t param_id_pop_suppressor_mute_config_t
+```
+
+## Macros
+
+### `PARAM_ID_POP_SUPPRESSOR_CONFIG`
+
+and annoying pops happening due to data discontinuity arising because of the handovers and device switches during a voice call.
+
+```c
+#define PARAM_ID_POP_SUPPRESSOR_CONFIG 0x0800117F
+```
+
+### `PARAM_ID_POP_SUPPRESSOR_MUTE_CONFIG`
+
+```c
+#define PARAM_ID_POP_SUPPRESSOR_MUTE_CONFIG 0x0800134F
+```
+
+### `CAPI_POP_SUPPRESSOR_STACK_SIZE`
+
+```c
+#define CAPI_POP_SUPPRESSOR_STACK_SIZE 1024
+```
+
+### `CAPI_POP_SUPPRESSOR_MAX_IN_PORTS`
+
+```c
+#define CAPI_POP_SUPPRESSOR_MAX_IN_PORTS 1
+```
+
+### `CAPI_POP_SUPPRESSOR_MAX_OUT_PORTS`
+
+```c
+#define CAPI_POP_SUPPRESSOR_MAX_OUT_PORTS 1
+```
+
+### `MODULE_ID_POP_SUPPRESSOR`
+
+```c
+#define MODULE_ID_POP_SUPPRESSOR 0x07001072
+```

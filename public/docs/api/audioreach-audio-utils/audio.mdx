@@ -1,0 +1,1769 @@
+---
+title: "audio.h"
+---
+
+## Structures
+
+### `audio_attributes_t`
+
+**Members**
+
+<ParamField path="content_type" type="audio_content_type_t">
+</ParamField>
+<ParamField path="usage" type="audio_usage_t">
+</ParamField>
+<ParamField path="source" type="audio_source_t">
+</ParamField>
+<ParamField path="flags" type="audio_flags_mask_t">
+</ParamField>
+<ParamField path="tags" type="char">
+</ParamField>
+
+### `audio_offload_info_t`
+
+**Members**
+
+<ParamField path="version" type="uint16_t">
+</ParamField>
+<ParamField path="size" type="uint16_t">
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+</ParamField>
+<ParamField path="channel_mask" type="audio_channel_mask_t">
+</ParamField>
+<ParamField path="format" type="audio_format_t">
+</ParamField>
+<ParamField path="stream_type" type="audio_stream_type_t">
+</ParamField>
+<ParamField path="bit_rate" type="uint32_t">
+</ParamField>
+<ParamField path="duration_us" type="int64_t">
+</ParamField>
+<ParamField path="has_video" type="bool">
+</ParamField>
+<ParamField path="is_streaming" type="bool">
+</ParamField>
+<ParamField path="bit_width" type="uint32_t">
+</ParamField>
+<ParamField path="offload_buffer_size" type="uint32_t">
+</ParamField>
+<ParamField path="usage" type="audio_usage_t">
+</ParamField>
+
+### `audio_sbc_encoder_config`
+
+**Members**
+
+<ParamField path="subband" type="uint32_t">
+</ParamField>
+<ParamField path="blk_len" type="uint32_t">
+</ParamField>
+<ParamField path="sampling_rate" type="uint16_t">
+</ParamField>
+<ParamField path="channels" type="uint8_t">
+</ParamField>
+<ParamField path="alloc" type="uint8_t">
+</ParamField>
+<ParamField path="min_bitpool" type="uint8_t">
+</ParamField>
+<ParamField path="max_bitpool" type="uint8_t">
+</ParamField>
+<ParamField path="bitrate" type="uint32_t">
+</ParamField>
+<ParamField path="bits_per_sample" type="uint32_t">
+</ParamField>
+
+### `audio_aptx_default_config`
+
+**Members**
+
+<ParamField path="sampling_rate" type="uint16_t">
+</ParamField>
+<ParamField path="channels" type="uint8_t">
+</ParamField>
+<ParamField path="bitrate" type="uint32_t">
+</ParamField>
+<ParamField path="bits_per_sample" type="uint32_t">
+</ParamField>
+
+### `audio_aptx_ad_config`
+
+**Members**
+
+<ParamField path="sampling_rate" type="uint8_t">
+</ParamField>
+<ParamField path="channel_mode" type="uint8_t">
+</ParamField>
+<ParamField path="mtu" type="uint16_t">
+</ParamField>
+<ParamField path="min_sink_buffering_LL" type="uint8_t">
+</ParamField>
+<ParamField path="max_sink_buffering_LL" type="uint8_t">
+</ParamField>
+<ParamField path="min_sink_buffering_HQ" type="uint8_t">
+</ParamField>
+<ParamField path="max_sink_buffering_HQ" type="uint8_t">
+</ParamField>
+<ParamField path="min_sink_buffering_TWS" type="uint8_t">
+</ParamField>
+<ParamField path="max_sink_buffering_TWS" type="uint8_t">
+</ParamField>
+<ParamField path="TTP_LL_low" type="uint8_t">
+</ParamField>
+<ParamField path="TTP_LL_high" type="uint8_t">
+</ParamField>
+<ParamField path="TTP_HQ_low" type="uint8_t">
+</ParamField>
+<ParamField path="TTP_HQ_high" type="uint8_t">
+</ParamField>
+<ParamField path="TTP_TWS_low" type="uint8_t">
+</ParamField>
+<ParamField path="TTP_TWS_high" type="uint8_t">
+</ParamField>
+<ParamField path="bits_per_sample" type="uint32_t">
+</ParamField>
+<ParamField path="aptx_mode" type="uint16_t">
+</ParamField>
+
+### `audio_aptx_dual_mono_config`
+
+**Members**
+
+<ParamField path="sampling_rate" type="uint16_t">
+</ParamField>
+<ParamField path="channels" type="uint8_t">
+</ParamField>
+<ParamField path="bitrate" type="uint32_t">
+</ParamField>
+<ParamField path="sync_mode" type="uint8_t">
+</ParamField>
+<ParamField path="bits_per_sample" type="uint32_t">
+</ParamField>
+
+### `audio_aac_encoder_config`
+
+**Members**
+
+<ParamField path="enc_mode" type="uint32_t">
+</ParamField>
+<ParamField path="format_flag" type="uint16_t">
+</ParamField>
+<ParamField path="channels" type="uint16_t">
+</ParamField>
+<ParamField path="sampling_rate" type="uint32_t">
+</ParamField>
+<ParamField path="bitrate" type="uint32_t">
+</ParamField>
+<ParamField path="bits_per_sample" type="uint32_t">
+</ParamField>
+
+### `audio_config`
+
+**Members**
+
+<ParamField path="sample_rate" type="uint32_t">
+</ParamField>
+<ParamField path="channel_mask" type="audio_channel_mask_t">
+</ParamField>
+<ParamField path="format" type="audio_format_t">
+</ParamField>
+<ParamField path="offload_info" type="audio_offload_info_t">
+</ParamField>
+<ParamField path="frame_count" type="size_t">
+</ParamField>
+
+### `audio_config_base`
+
+**Members**
+
+<ParamField path="sample_rate" type="uint32_t">
+</ParamField>
+<ParamField path="channel_mask" type="audio_channel_mask_t">
+</ParamField>
+<ParamField path="format" type="audio_format_t">
+</ParamField>
+
+### `audio_gain`
+
+**Members**
+
+<ParamField path="mode" type="audio_gain_mode_t">
+</ParamField>
+<ParamField path="channel_mask" type="audio_channel_mask_t">
+</ParamField>
+<ParamField path="min_value" type="int">
+</ParamField>
+<ParamField path="max_value" type="int">
+</ParamField>
+<ParamField path="default_value" type="int">
+</ParamField>
+<ParamField path="step_value" type="unsigned int">
+</ParamField>
+<ParamField path="min_ramp_ms" type="unsigned int">
+</ParamField>
+<ParamField path="max_ramp_ms" type="unsigned int">
+</ParamField>
+
+### `audio_gain_config`
+
+**Members**
+
+<ParamField path="index" type="int">
+</ParamField>
+<ParamField path="mode" type="audio_gain_mode_t">
+</ParamField>
+<ParamField path="channel_mask" type="audio_channel_mask_t">
+</ParamField>
+<ParamField path="values" type="int">
+</ParamField>
+<ParamField path="ramp_duration_ms" type="unsigned int">
+</ParamField>
+
+### `audio_port_config_device_ext`
+
+**Members**
+
+<ParamField path="hw_module" type="audio_module_handle_t">
+</ParamField>
+<ParamField path="type" type="audio_devices_t">
+</ParamField>
+<ParamField path="address" type="char">
+</ParamField>
+
+### `audio_port_config_mix_ext`
+
+**Members**
+
+<ParamField path="hw_module" type="audio_module_handle_t">
+</ParamField>
+<ParamField path="handle" type="audio_io_handle_t">
+</ParamField>
+<ParamField path="stream" type="audio_stream_type_t">
+</ParamField>
+<ParamField path="source" type="audio_source_t">
+</ParamField>
+<ParamField path="usecase" type="union audio_port_config_mix_ext">
+</ParamField>
+
+### `audio_port_config_session_ext`
+
+**Members**
+
+<ParamField path="session" type="audio_session_t">
+</ParamField>
+
+### `audio_port_config`
+
+**Members**
+
+<ParamField path="id" type="audio_port_handle_t">
+</ParamField>
+<ParamField path="role" type="audio_port_role_t">
+</ParamField>
+<ParamField path="type" type="audio_port_type_t">
+</ParamField>
+<ParamField path="config_mask" type="unsigned int">
+</ParamField>
+<ParamField path="sample_rate" type="unsigned int">
+</ParamField>
+<ParamField path="channel_mask" type="audio_channel_mask_t">
+</ParamField>
+<ParamField path="format" type="audio_format_t">
+</ParamField>
+<ParamField path="gain" type="struct audio_gain_config">
+</ParamField>
+<ParamField path="device" type="struct audio_port_config_device_ext">
+</ParamField>
+<ParamField path="mix" type="struct audio_port_config_mix_ext">
+</ParamField>
+<ParamField path="session" type="struct audio_port_config_session_ext">
+</ParamField>
+<ParamField path="ext" type="union audio_port_config">
+</ParamField>
+
+### `audio_port_device_ext`
+
+**Members**
+
+<ParamField path="hw_module" type="audio_module_handle_t">
+</ParamField>
+<ParamField path="type" type="audio_devices_t">
+</ParamField>
+<ParamField path="address" type="char">
+</ParamField>
+
+### `audio_port_mix_ext`
+
+**Members**
+
+<ParamField path="hw_module" type="audio_module_handle_t">
+</ParamField>
+<ParamField path="handle" type="audio_io_handle_t">
+</ParamField>
+<ParamField path="latency_class" type="audio_mix_latency_class_t">
+</ParamField>
+
+### `audio_port_session_ext`
+
+**Members**
+
+<ParamField path="session" type="audio_session_t">
+</ParamField>
+
+### `audio_port`
+
+**Members**
+
+<ParamField path="id" type="audio_port_handle_t">
+</ParamField>
+<ParamField path="role" type="audio_port_role_t">
+</ParamField>
+<ParamField path="type" type="audio_port_type_t">
+</ParamField>
+<ParamField path="name" type="char">
+</ParamField>
+<ParamField path="num_sample_rates" type="unsigned int">
+</ParamField>
+<ParamField path="sample_rates" type="unsigned int">
+</ParamField>
+<ParamField path="num_channel_masks" type="unsigned int">
+</ParamField>
+<ParamField path="channel_masks" type="audio_channel_mask_t">
+</ParamField>
+<ParamField path="num_formats" type="unsigned int">
+</ParamField>
+<ParamField path="formats" type="audio_format_t">
+</ParamField>
+<ParamField path="num_gains" type="unsigned int">
+</ParamField>
+<ParamField path="gains" type="struct audio_gain">
+</ParamField>
+<ParamField path="active_config" type="struct audio_port_config">
+</ParamField>
+<ParamField path="device" type="struct audio_port_device_ext">
+</ParamField>
+<ParamField path="mix" type="struct audio_port_mix_ext">
+</ParamField>
+<ParamField path="session" type="struct audio_port_session_ext">
+</ParamField>
+<ParamField path="ext" type="union audio_port">
+</ParamField>
+
+### `audio_patch`
+
+**Members**
+
+<ParamField path="id" type="audio_patch_handle_t">
+</ParamField>
+<ParamField path="num_sources" type="unsigned int">
+</ParamField>
+<ParamField path="sources" type="struct audio_port_config">
+</ParamField>
+<ParamField path="num_sinks" type="unsigned int">
+</ParamField>
+<ParamField path="sinks" type="struct audio_port_config">
+</ParamField>
+
+### `audio_mmap_buffer_info`
+
+Mmap buffer descriptor returned by audio_stream->create_mmap_buffer().
+
+**Members**
+
+<ParamField path="shared_memory_address" type="void *">
+  base address of mmap memory buffer.
+</ParamField>
+<ParamField path="shared_memory_fd" type="int32_t">
+  FD for mmap memory buffer.
+</ParamField>
+<ParamField path="buffer_size_frames" type="int32_t">
+  total buffer size in frames
+</ParamField>
+<ParamField path="burst_size_frames" type="int32_t">
+  transfer size granularity in frames
+</ParamField>
+
+### `audio_mmap_position`
+
+Mmap buffer read/write position returned by audio_stream->get_mmap_position().
+
+**Members**
+
+<ParamField path="time_nanoseconds" type="int64_t">
+  timestamp in ns, CLOCK_MONOTONIC
+</ParamField>
+<ParamField path="position_frames" type="int32_t">
+  increasing 32 bit frame count reset when stream->stop() is called
+</ParamField>
+
+### `audio_microphone_coordinate`
+
+**Members**
+
+<ParamField path="x" type="float">
+</ParamField>
+<ParamField path="y" type="float">
+</ParamField>
+<ParamField path="z" type="float">
+</ParamField>
+
+### `audio_microphone_characteristic_t`
+
+**Members**
+
+<ParamField path="device_id" type="char">
+</ParamField>
+<ParamField path="id" type="audio_port_handle_t">
+</ParamField>
+<ParamField path="device" type="audio_devices_t">
+</ParamField>
+<ParamField path="address" type="char">
+</ParamField>
+<ParamField path="channel_mapping" type="audio_microphone_channel_mapping_t">
+</ParamField>
+<ParamField path="location" type="audio_microphone_location_t">
+</ParamField>
+<ParamField path="group" type="audio_microphone_group_t">
+</ParamField>
+<ParamField path="index_in_the_group" type="unsigned int">
+</ParamField>
+<ParamField path="sensitivity" type="float">
+</ParamField>
+<ParamField path="max_spl" type="float">
+</ParamField>
+<ParamField path="min_spl" type="float">
+</ParamField>
+<ParamField path="directionality" type="audio_microphone_directionality_t">
+</ParamField>
+<ParamField path="num_frequency_responses" type="unsigned int">
+</ParamField>
+<ParamField path="frequency_responses" type="float">
+</ParamField>
+<ParamField path="geometric_location" type="struct audio_microphone_coordinate">
+</ParamField>
+<ParamField path="orientation" type="struct audio_microphone_coordinate">
+</ParamField>
+
+## Functions
+
+### `audio_unique_id_get_use`
+
+```c
+audio_unique_id_use_t audio_unique_id_get_use(audio_unique_id_t id)
+```
+
+### `audio_channel_mask_get_bits`
+
+```c
+uint32_t audio_channel_mask_get_bits(audio_channel_mask_t channel)
+```
+
+### `audio_channel_mask_get_representation`
+
+```c
+audio_channel_representation_t audio_channel_mask_get_representation(audio_channel_mask_t channel)
+```
+
+### `audio_channel_mask_is_valid`
+
+```c
+bool audio_channel_mask_is_valid(audio_channel_mask_t channel)
+```
+
+### `audio_channel_mask_from_representation_and_bits`
+
+```c
+audio_channel_mask_t audio_channel_mask_from_representation_and_bits(audio_channel_representation_t representation, uint32_t bits)
+```
+
+### `audio_is_output_device`
+
+```c
+bool audio_is_output_device(audio_devices_t device)
+```
+
+### `audio_is_input_device`
+
+```c
+bool audio_is_input_device(audio_devices_t device)
+```
+
+### `audio_is_output_devices`
+
+```c
+bool audio_is_output_devices(audio_devices_t device)
+```
+
+### `audio_is_a2dp_in_device`
+
+```c
+bool audio_is_a2dp_in_device(audio_devices_t device)
+```
+
+### `audio_is_a2dp_out_device`
+
+```c
+bool audio_is_a2dp_out_device(audio_devices_t device)
+```
+
+### `audio_is_a2dp_device`
+
+```c
+bool audio_is_a2dp_device(audio_devices_t device)
+```
+
+### `audio_is_bluetooth_sco_device`
+
+```c
+bool audio_is_bluetooth_sco_device(audio_devices_t device)
+```
+
+### `audio_is_usb_out_device`
+
+```c
+bool audio_is_usb_out_device(audio_devices_t device)
+```
+
+### `audio_is_usb_in_device`
+
+```c
+bool audio_is_usb_in_device(audio_devices_t device)
+```
+
+### `audio_is_usb_device`
+
+```c
+bool audio_is_usb_device(audio_devices_t device)
+```
+
+### `audio_is_remote_submix_device`
+
+```c
+bool audio_is_remote_submix_device(audio_devices_t device)
+```
+
+### `audio_is_input_channel`
+
+```c
+bool audio_is_input_channel(audio_channel_mask_t channel)
+```
+
+### `audio_is_output_channel`
+
+```c
+bool audio_is_output_channel(audio_channel_mask_t channel)
+```
+
+### `audio_channel_count_from_in_mask`
+
+```c
+uint32_t audio_channel_count_from_in_mask(audio_channel_mask_t channel)
+```
+
+### `audio_channel_count_from_out_mask`
+
+```c
+uint32_t audio_channel_count_from_out_mask(audio_channel_mask_t channel)
+```
+
+### `audio_channel_mask_for_index_assignment_from_count`
+
+```c
+audio_channel_mask_t audio_channel_mask_for_index_assignment_from_count(uint32_t channel_count)
+```
+
+### `audio_channel_out_mask_from_count`
+
+```c
+audio_channel_mask_t audio_channel_out_mask_from_count(uint32_t channel_count)
+```
+
+### `audio_channel_in_mask_from_count`
+
+```c
+audio_channel_mask_t audio_channel_in_mask_from_count(uint32_t channel_count)
+```
+
+### `audio_is_valid_format`
+
+```c
+bool audio_is_valid_format(audio_format_t format)
+```
+
+### `audio_get_main_format`
+
+Extract the primary format, eg.
+
+PCM, AC3, etc.
+
+```c
+audio_format_t audio_get_main_format(audio_format_t format)
+```
+
+### `audio_is_linear_pcm`
+
+Is the data plain PCM samples that can be scaled and mixed?
+
+```c
+bool audio_is_linear_pcm(audio_format_t format)
+```
+
+### `audio_has_proportional_frames`
+
+For this format, is the number of PCM audio frames directly proportional to the number of data bytes?
+
+In other words, is the format transported as PCM audio samples, but not necessarily scalable or mixable. This returns true for real PCM, but also for AUDIO_FORMAT_IEC61937, which is transported as 16 bit PCM audio, but where the encoded data cannot be mixed or scaled.
+
+```c
+bool audio_has_proportional_frames(audio_format_t format)
+```
+
+### `audio_bytes_per_sample`
+
+```c
+size_t audio_bytes_per_sample(audio_format_t format)
+```
+
+### `audio_device_address_to_parameter`
+
+```c
+char * audio_device_address_to_parameter(audio_devices_t device, const char *address)
+```
+
+### `audio_device_is_digital`
+
+```c
+bool audio_device_is_digital(audio_devices_t device)
+```
+
+## Type Definitions
+
+### `audio_io_handle_t`
+
+```c
+typedef int audio_io_handle_t
+```
+
+### `audio_flags_mask_t`
+
+```c
+typedef uint32_t audio_flags_mask_t
+```
+
+### `audio_unique_id_t`
+
+```c
+typedef int audio_unique_id_t
+```
+
+### `audio_channel_mask_t`
+
+```c
+typedef uint32_t audio_channel_mask_t
+```
+
+### `audio_devices_t`
+
+```c
+typedef uint32_t audio_devices_t
+```
+
+### `audio_aptx_encoder_config`
+
+```c
+typedef audio_aptx_default_config audio_aptx_encoder_config
+```
+
+### `audio_config_t`
+
+```c
+typedef struct audio_config audio_config_t
+```
+
+### `audio_config_base_t`
+
+```c
+typedef struct audio_config_base audio_config_base_t
+```
+
+### `audio_gain_mode_t`
+
+```c
+typedef uint32_t audio_gain_mode_t
+```
+
+### `audio_port_handle_t`
+
+```c
+typedef int audio_port_handle_t
+```
+
+### `audio_hw_sync_t`
+
+```c
+typedef uint32_t audio_hw_sync_t
+```
+
+### `audio_microphone_group_t`
+
+```c
+typedef int audio_microphone_group_t
+```
+
+## Enumerations
+
+### `audio_stream_type_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_STREAM_DEFAULT` | = -1 |  |
+| `AUDIO_STREAM_MIN` | = 0 |  |
+| `AUDIO_STREAM_VOICE_CALL` | = 0 |  |
+| `AUDIO_STREAM_SYSTEM` | = 1 |  |
+| `AUDIO_STREAM_RING` | = 2 |  |
+| `AUDIO_STREAM_MUSIC` | = 3 |  |
+| `AUDIO_STREAM_ALARM` | = 4 |  |
+| `AUDIO_STREAM_NOTIFICATION` | = 5 |  |
+| `AUDIO_STREAM_BLUETOOTH_SCO` | = 6 |  |
+| `AUDIO_STREAM_ENFORCED_AUDIBLE` | = 7 |  |
+| `AUDIO_STREAM_DTMF` | = 8 |  |
+| `AUDIO_STREAM_TTS` | = 9 |  |
+| `AUDIO_STREAM_ACCESSIBILITY` | = 10 |  |
+| `AUDIO_STREAM_REROUTING` | = 11 |  |
+| `AUDIO_STREAM_PATCH` | = 12 |  |
+| `AUDIO_STREAM_PUBLIC_CNT` | = AUDIO_STREAM_TTS + 1 |  |
+| `AUDIO_STREAM_FOR_POLICY_CNT` | = AUDIO_STREAM_PATCH |  |
+| `AUDIO_STREAM_CNT` | = AUDIO_STREAM_PATCH + 1 |  |
+
+### `audio_content_type_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_CONTENT_TYPE_UNKNOWN` | = 0 |  |
+| `AUDIO_CONTENT_TYPE_SPEECH` | = 1 |  |
+| `AUDIO_CONTENT_TYPE_MUSIC` | = 2 |  |
+| `AUDIO_CONTENT_TYPE_MOVIE` | = 3 |  |
+| `AUDIO_CONTENT_TYPE_SONIFICATION` | = 4 |  |
+| `AUDIO_CONTENT_TYPE_CNT` |  |  |
+| `AUDIO_CONTENT_TYPE_MAX` | = AUDIO_CONTENT_TYPE_CNT - 1 |  |
+
+### `audio_usage_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_USAGE_UNKNOWN` | = 0 |  |
+| `AUDIO_USAGE_MEDIA` | = 1 |  |
+| `AUDIO_USAGE_VOICE_COMMUNICATION` | = 2 |  |
+| `AUDIO_USAGE_VOICE_COMMUNICATION_SIGNALLING` | = 3 |  |
+| `AUDIO_USAGE_ALARM` | = 4 |  |
+| `AUDIO_USAGE_NOTIFICATION` | = 5 |  |
+| `AUDIO_USAGE_NOTIFICATION_TELEPHONY_RINGTONE` | = 6 |  |
+| `AUDIO_USAGE_NOTIFICATION_COMMUNICATION_REQUEST` | = 7 |  |
+| `AUDIO_USAGE_NOTIFICATION_COMMUNICATION_INSTANT` | = 8 |  |
+| `AUDIO_USAGE_NOTIFICATION_COMMUNICATION_DELAYED` | = 9 |  |
+| `AUDIO_USAGE_NOTIFICATION_EVENT` | = 10 |  |
+| `AUDIO_USAGE_ASSISTANCE_ACCESSIBILITY` | = 11 |  |
+| `AUDIO_USAGE_ASSISTANCE_NAVIGATION_GUIDANCE` | = 12 |  |
+| `AUDIO_USAGE_ASSISTANCE_SONIFICATION` | = 13 |  |
+| `AUDIO_USAGE_GAME` | = 14 |  |
+| `AUDIO_USAGE_VIRTUAL_SOURCE` | = 15 |  |
+| `AUDIO_USAGE_CNT` |  |  |
+| `AUDIO_USAGE_MAX` | = AUDIO_USAGE_CNT - 1 |  |
+
+### ``
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_FLAG_AUDIBILITY_ENFORCED` | = 0x1 |  |
+| `AUDIO_FLAG_SECURE` | = 0x2 |  |
+| `AUDIO_FLAG_SCO` | = 0x4 |  |
+| `AUDIO_FLAG_BEACON` | = 0x8 |  |
+| `AUDIO_FLAG_HW_AV_SYNC` | = 0x10 |  |
+| `AUDIO_FLAG_HW_HOTWORD` | = 0x20 |  |
+| `AUDIO_FLAG_BYPASS_INTERRUPTION_POLICY` | = 0x40 |  |
+| `AUDIO_FLAG_BYPASS_MUTE` | = 0x80 |  |
+| `AUDIO_FLAG_LOW_LATENCY` | = 0x100 |  |
+
+### `audio_source_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_SOURCE_DEFAULT` | = 0 |  |
+| `AUDIO_SOURCE_MIC` | = 1 |  |
+| `AUDIO_SOURCE_VOICE_UPLINK` | = 2 |  |
+| `AUDIO_SOURCE_VOICE_DOWNLINK` | = 3 |  |
+| `AUDIO_SOURCE_VOICE_CALL` | = 4 |  |
+| `AUDIO_SOURCE_CAMCORDER` | = 5 |  |
+| `AUDIO_SOURCE_VOICE_RECOGNITION` | = 6 |  |
+| `AUDIO_SOURCE_VOICE_COMMUNICATION` | = 7 |  |
+| `AUDIO_SOURCE_REMOTE_SUBMIX` | = 8 |  |
+| `AUDIO_SOURCE_UNPROCESSED` | = 9 |  |
+| `AUDIO_SOURCE_CNT` |  |  |
+| `AUDIO_SOURCE_MAX` | = AUDIO_SOURCE_CNT - 1 |  |
+| `AUDIO_SOURCE_FM_TUNER` | = 1998 |  |
+| `AUDIO_SOURCE_HOTWORD` | = 1999 |  |
+
+### `audio_session_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_SESSION_OUTPUT_STAGE` | = -1 |  |
+| `AUDIO_SESSION_OUTPUT_MIX` | = 0 |  |
+| `AUDIO_SESSION_ALLOCATE` | = 0 |  |
+| `AUDIO_SESSION_NONE` | = 0 |  |
+
+### `audio_unique_id_use_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_UNIQUE_ID_USE_UNSPECIFIED` | = 0 |  |
+| `AUDIO_UNIQUE_ID_USE_SESSION` | = 1 |  |
+| `AUDIO_UNIQUE_ID_USE_MODULE` | = 2 |  |
+| `AUDIO_UNIQUE_ID_USE_EFFECT` | = 3 |  |
+| `AUDIO_UNIQUE_ID_USE_PATCH` | = 4 |  |
+| `AUDIO_UNIQUE_ID_USE_OUTPUT` | = 5 |  |
+| `AUDIO_UNIQUE_ID_USE_INPUT` | = 6 |  |
+| `AUDIO_UNIQUE_ID_USE_MAX` | = 8 |  |
+| `AUDIO_UNIQUE_ID_USE_MASK` | = AUDIO_UNIQUE_ID_USE_MAX - 1 |  |
+
+### `audio_format_pcm_sub_fmt_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_FORMAT_PCM_SUB_16_BIT` | = 0x1 |  |
+| `AUDIO_FORMAT_PCM_SUB_8_BIT` | = 0x2 |  |
+| `AUDIO_FORMAT_PCM_SUB_32_BIT` | = 0x3 |  |
+| `AUDIO_FORMAT_PCM_SUB_8_24_BIT` | = 0x4 |  |
+| `AUDIO_FORMAT_PCM_SUB_FLOAT` | = 0x5 |  |
+| `AUDIO_FORMAT_PCM_SUB_24_BIT_PACKED` | = 0x6 |  |
+
+### `audio_format_mp3_sub_fmt_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_FORMAT_MP3_SUB_NONE` | = 0x0 |  |
+
+### `audio_format_amr_sub_fmt_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_FORMAT_AMR_SUB_NONE` | = 0x0 |  |
+
+### `audio_format_aac_sub_fmt_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_FORMAT_AAC_SUB_MAIN` | = 0x1 |  |
+| `AUDIO_FORMAT_AAC_SUB_LC` | = 0x2 |  |
+| `AUDIO_FORMAT_AAC_SUB_SSR` | = 0x4 |  |
+| `AUDIO_FORMAT_AAC_SUB_LTP` | = 0x8 |  |
+| `AUDIO_FORMAT_AAC_SUB_HE_V1` | = 0x10 |  |
+| `AUDIO_FORMAT_AAC_SUB_SCALABLE` | = 0x20 |  |
+| `AUDIO_FORMAT_AAC_SUB_ERLC` | = 0x40 |  |
+| `AUDIO_FORMAT_AAC_SUB_LD` | = 0x80 |  |
+| `AUDIO_FORMAT_AAC_SUB_HE_V2` | = 0x100 |  |
+| `AUDIO_FORMAT_AAC_SUB_ELD` | = 0x200 |  |
+
+### `audio_format_vorbis_sub_fmt_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_FORMAT_VORBIS_SUB_NONE` | = 0x0 |  |
+
+### `audio_format_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_FORMAT_INVALID` | = 0xFFFFFFFFUL |  |
+| `AUDIO_FORMAT_DEFAULT` | = 0 |  |
+| `AUDIO_FORMAT_PCM` | = 0x00000000UL |  |
+| `AUDIO_FORMAT_MP3` | = 0x01000000UL |  |
+| `AUDIO_FORMAT_AMR_NB` | = 0x02000000UL |  |
+| `AUDIO_FORMAT_AMR_WB` | = 0x03000000UL |  |
+| `AUDIO_FORMAT_AAC` | = 0x04000000UL |  |
+| `AUDIO_FORMAT_HE_AAC_V1` | = 0x05000000UL |  |
+| `AUDIO_FORMAT_HE_AAC_V2` | = 0x06000000UL |  |
+| `AUDIO_FORMAT_VORBIS` | = 0x07000000UL |  |
+| `AUDIO_FORMAT_OPUS` | = 0x08000000UL |  |
+| `AUDIO_FORMAT_AC3` | = 0x09000000UL |  |
+| `AUDIO_FORMAT_E_AC3` | = 0x0A000000UL |  |
+| `AUDIO_FORMAT_DTS` | = 0x0B000000UL |  |
+| `AUDIO_FORMAT_DTS_HD` | = 0x0C000000UL |  |
+| `AUDIO_FORMAT_IEC61937` | = 0x0D000000UL |  |
+| `AUDIO_FORMAT_DOLBY_TRUEHD` | = 0x0E000000UL |  |
+| `AUDIO_FORMAT_EVRC` | = 0x10000000UL |  |
+| `AUDIO_FORMAT_EVRCB` | = 0x11000000UL |  |
+| `AUDIO_FORMAT_EVRCWB` | = 0x12000000UL |  |
+| `AUDIO_FORMAT_EVRCNW` | = 0x13000000UL |  |
+| `AUDIO_FORMAT_AAC_ADIF` | = 0x14000000UL |  |
+| `AUDIO_FORMAT_WMA` | = 0x15000000UL |  |
+| `AUDIO_FORMAT_WMA_PRO` | = 0x16000000UL |  |
+| `AUDIO_FORMAT_AMR_WB_PLUS` | = 0x17000000UL |  |
+| `AUDIO_FORMAT_MP2` | = 0x18000000UL |  |
+| `AUDIO_FORMAT_QCELP` | = 0x19000000UL |  |
+| `AUDIO_FORMAT_DSD` | = 0x1A000000UL |  |
+| `AUDIO_FORMAT_FLAC` | = 0x1B000000UL |  |
+| `AUDIO_FORMAT_ALAC` | = 0x1C000000UL |  |
+| `AUDIO_FORMAT_APE` | = 0x1D000000UL |  |
+| `AUDIO_FORMAT_AAC_ADTS` | = 0x1E000000UL |  |
+| `AUDIO_FORMAT_SBC` | = 0x1F000000UL |  |
+| `AUDIO_FORMAT_APTX` | = 0x20000000UL |  |
+| `AUDIO_FORMAT_APTX_HD` | = 0x21000000UL |  |
+| `AUDIO_FORMAT_APTX_ADAPTIVE` | = 0x25000000UL |  |
+| `AUDIO_FORMAT_MAT` | = 0x30000000UL |  |
+| `AUDIO_FORMAT_AAC_LATM` | = 0x80000000UL |  |
+| `AUDIO_FORMAT_MAIN_MASK` | = 0xFF000000UL |  |
+| `AUDIO_FORMAT_SUB_MASK` | = 0x00FFFFFFUL |  |
+| `AUDIO_FORMAT_PCM_16_BIT` | = (AUDIO_FORMAT_PCM |
+                                        AUDIO_FORMAT_PCM_SUB_16_BIT) |  |
+| `AUDIO_FORMAT_PCM_8_BIT` | = (AUDIO_FORMAT_PCM |
+                                        AUDIO_FORMAT_PCM_SUB_8_BIT) |  |
+| `AUDIO_FORMAT_PCM_32_BIT` | = (AUDIO_FORMAT_PCM |
+                                        AUDIO_FORMAT_PCM_SUB_32_BIT) |  |
+| `AUDIO_FORMAT_PCM_8_24_BIT` | = (AUDIO_FORMAT_PCM |
+                                        AUDIO_FORMAT_PCM_SUB_8_24_BIT) |  |
+| `AUDIO_FORMAT_PCM_FLOAT` | = (AUDIO_FORMAT_PCM |
+                                        AUDIO_FORMAT_PCM_SUB_FLOAT) |  |
+| `AUDIO_FORMAT_PCM_24_BIT_PACKED` | = (AUDIO_FORMAT_PCM |
+                                        AUDIO_FORMAT_PCM_SUB_24_BIT_PACKED) |  |
+| `AUDIO_FORMAT_AAC_MAIN` | = (AUDIO_FORMAT_AAC |
+                                        AUDIO_FORMAT_AAC_SUB_MAIN) |  |
+| `AUDIO_FORMAT_AAC_LC` | = (AUDIO_FORMAT_AAC |
+                                        AUDIO_FORMAT_AAC_SUB_LC) |  |
+| `AUDIO_FORMAT_AAC_SSR` | = (AUDIO_FORMAT_AAC |
+                                        AUDIO_FORMAT_AAC_SUB_SSR) |  |
+| `AUDIO_FORMAT_AAC_LTP` | = (AUDIO_FORMAT_AAC |
+                                        AUDIO_FORMAT_AAC_SUB_LTP) |  |
+| `AUDIO_FORMAT_AAC_HE_V1` | = (AUDIO_FORMAT_AAC |
+                                        AUDIO_FORMAT_AAC_SUB_HE_V1) |  |
+| `AUDIO_FORMAT_AAC_SCALABLE` | = (AUDIO_FORMAT_AAC |
+                                        AUDIO_FORMAT_AAC_SUB_SCALABLE) |  |
+| `AUDIO_FORMAT_AAC_ERLC` | = (AUDIO_FORMAT_AAC |
+                                        AUDIO_FORMAT_AAC_SUB_ERLC) |  |
+| `AUDIO_FORMAT_AAC_LD` | = (AUDIO_FORMAT_AAC |
+                                        AUDIO_FORMAT_AAC_SUB_LD) |  |
+| `AUDIO_FORMAT_AAC_HE_V2` | = (AUDIO_FORMAT_AAC |
+                                        AUDIO_FORMAT_AAC_SUB_HE_V2) |  |
+| `AUDIO_FORMAT_AAC_ELD` | = (AUDIO_FORMAT_AAC |
+                                        AUDIO_FORMAT_AAC_SUB_ELD) |  |
+| `AUDIO_FORMAT_AAC_ADTS_MAIN` | = (AUDIO_FORMAT_AAC_ADTS |
+                                        AUDIO_FORMAT_AAC_SUB_MAIN) |  |
+| `AUDIO_FORMAT_AAC_ADTS_LC` | = (AUDIO_FORMAT_AAC_ADTS |
+                                        AUDIO_FORMAT_AAC_SUB_LC) |  |
+| `AUDIO_FORMAT_AAC_ADTS_SSR` | = (AUDIO_FORMAT_AAC_ADTS |
+                                        AUDIO_FORMAT_AAC_SUB_SSR) |  |
+| `AUDIO_FORMAT_AAC_ADTS_LTP` | = (AUDIO_FORMAT_AAC_ADTS |
+                                        AUDIO_FORMAT_AAC_SUB_LTP) |  |
+| `AUDIO_FORMAT_AAC_ADTS_HE_V1` | = (AUDIO_FORMAT_AAC_ADTS |
+                                        AUDIO_FORMAT_AAC_SUB_HE_V1) |  |
+| `AUDIO_FORMAT_AAC_ADTS_SCALABLE` | = (AUDIO_FORMAT_AAC_ADTS |
+                                        AUDIO_FORMAT_AAC_SUB_SCALABLE) |  |
+| `AUDIO_FORMAT_AAC_ADTS_ERLC` | = (AUDIO_FORMAT_AAC_ADTS |
+                                        AUDIO_FORMAT_AAC_SUB_ERLC) |  |
+| `AUDIO_FORMAT_AAC_ADTS_LD` | = (AUDIO_FORMAT_AAC_ADTS |
+                                        AUDIO_FORMAT_AAC_SUB_LD) |  |
+| `AUDIO_FORMAT_AAC_ADTS_HE_V2` | = (AUDIO_FORMAT_AAC_ADTS |
+                                        AUDIO_FORMAT_AAC_SUB_HE_V2) |  |
+| `AUDIO_FORMAT_AAC_ADTS_ELD` | = (AUDIO_FORMAT_AAC_ADTS |
+                                        AUDIO_FORMAT_AAC_SUB_ELD) |  |
+| `AUDIO_FORMAT_AAC_LATM_LC` | = (AUDIO_FORMAT_AAC_LATM |
+                                        AUDIO_FORMAT_AAC_SUB_LC) |  |
+| `AUDIO_FORMAT_AAC_LATM_HE_V1` | = (AUDIO_FORMAT_AAC_LATM |
+                                        AUDIO_FORMAT_AAC_SUB_HE_V1) |  |
+| `AUDIO_FORMAT_AAC_LATM_HE_V2` | = (AUDIO_FORMAT_AAC_LATM |
+                                        AUDIO_FORMAT_AAC_SUB_HE_V2) |  |
+
+### ``
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_CHANNEL_NONE` | = 0x0 |  |
+| `AUDIO_CHANNEL_INVALID` | = 0xC0000000 |  |
+| `AUDIO_CHANNEL_OUT_FRONT_LEFT` | = 0x1 |  |
+| `AUDIO_CHANNEL_OUT_FRONT_RIGHT` | = 0x2 |  |
+| `AUDIO_CHANNEL_OUT_FRONT_CENTER` | = 0x4 |  |
+| `AUDIO_CHANNEL_OUT_LOW_FREQUENCY` | = 0x8 |  |
+| `AUDIO_CHANNEL_OUT_BACK_LEFT` | = 0x10 |  |
+| `AUDIO_CHANNEL_OUT_BACK_RIGHT` | = 0x20 |  |
+| `AUDIO_CHANNEL_OUT_FRONT_LEFT_OF_CENTER` | = 0x40 |  |
+| `AUDIO_CHANNEL_OUT_FRONT_RIGHT_OF_CENTER` | = 0x80 |  |
+| `AUDIO_CHANNEL_OUT_BACK_CENTER` | = 0x100 |  |
+| `AUDIO_CHANNEL_OUT_SIDE_LEFT` | = 0x200 |  |
+| `AUDIO_CHANNEL_OUT_SIDE_RIGHT` | = 0x400 |  |
+| `AUDIO_CHANNEL_OUT_TOP_CENTER` | = 0x800 |  |
+| `AUDIO_CHANNEL_OUT_TOP_FRONT_LEFT` | = 0x1000 |  |
+| `AUDIO_CHANNEL_OUT_TOP_FRONT_CENTER` | = 0x2000 |  |
+| `AUDIO_CHANNEL_OUT_TOP_FRONT_RIGHT` | = 0x4000 |  |
+| `AUDIO_CHANNEL_OUT_TOP_BACK_LEFT` | = 0x8000 |  |
+| `AUDIO_CHANNEL_OUT_TOP_BACK_CENTER` | = 0x10000 |  |
+| `AUDIO_CHANNEL_OUT_TOP_BACK_RIGHT` | = 0x20000 |  |
+| `AUDIO_CHANNEL_OUT_TOP_SIDE_LEFT` | = 0x40000u |  |
+| `AUDIO_CHANNEL_OUT_TOP_SIDE_RIGHT` | = 0x80000u |  |
+| `AUDIO_CHANNEL_OUT_WIDE_LEFT` | = 0x100000u |  |
+| `AUDIO_CHANNEL_OUT_WIDE_RIGHT` | = 0x200000u |  |
+| `AUDIO_CHANNEL_OUT_BACK_LEFT_OF_CENTER` | = 0x400000u |  |
+| `AUDIO_CHANNEL_OUT_BACK_RIGHT_OF_CENTER` | = 0x800000u |  |
+| `AUDIO_CHANNEL_OUT_MONO` | = AUDIO_CHANNEL_OUT_FRONT_LEFT |  |
+| `AUDIO_CHANNEL_OUT_STEREO` | = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT) |  |
+| `AUDIO_CHANNEL_OUT_2POINT1` | = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT |
+                                  AUDIO_CHANNEL_OUT_FRONT_CENTER) |  |
+| `AUDIO_CHANNEL_OUT_QUAD` | = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT |
+                                  AUDIO_CHANNEL_OUT_BACK_LEFT |
+                                  AUDIO_CHANNEL_OUT_BACK_RIGHT) |  |
+| `AUDIO_CHANNEL_OUT_QUAD_BACK` | = AUDIO_CHANNEL_OUT_QUAD |  |
+| `AUDIO_CHANNEL_OUT_QUAD_SIDE` | = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT |
+                                  AUDIO_CHANNEL_OUT_SIDE_LEFT |
+                                  AUDIO_CHANNEL_OUT_SIDE_RIGHT) |  |
+| `AUDIO_CHANNEL_OUT_SURROUND` | = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT |
+                                  AUDIO_CHANNEL_OUT_FRONT_CENTER |
+                                  AUDIO_CHANNEL_OUT_BACK_CENTER) |  |
+| `AUDIO_CHANNEL_OUT_PENTA` | =    (AUDIO_CHANNEL_OUT_QUAD |
+                                  AUDIO_CHANNEL_OUT_FRONT_CENTER) |  |
+| `AUDIO_CHANNEL_OUT_5POINT1` | = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT |
+                                  AUDIO_CHANNEL_OUT_FRONT_CENTER |
+                                  AUDIO_CHANNEL_OUT_LOW_FREQUENCY |
+                                  AUDIO_CHANNEL_OUT_BACK_LEFT |
+                                  AUDIO_CHANNEL_OUT_BACK_RIGHT) |  |
+| `AUDIO_CHANNEL_OUT_5POINT1_BACK` | = AUDIO_CHANNEL_OUT_5POINT1 |  |
+| `AUDIO_CHANNEL_OUT_5POINT1_SIDE` | = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT |
+                                  AUDIO_CHANNEL_OUT_FRONT_CENTER |
+                                  AUDIO_CHANNEL_OUT_LOW_FREQUENCY |
+                                  AUDIO_CHANNEL_OUT_SIDE_LEFT |
+                                  AUDIO_CHANNEL_OUT_SIDE_RIGHT) |  |
+| `AUDIO_CHANNEL_OUT_5POINT1POINT2` | = (AUDIO_CHANNEL_OUT_5POINT1 |
+                                       AUDIO_CHANNEL_OUT_TOP_SIDE_LEFT |
+                                       AUDIO_CHANNEL_OUT_TOP_SIDE_RIGHT) |  |
+| `AUDIO_CHANNEL_OUT_6POINT1` | = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT |
+                                  AUDIO_CHANNEL_OUT_FRONT_CENTER |
+                                  AUDIO_CHANNEL_OUT_LOW_FREQUENCY |
+                                  AUDIO_CHANNEL_OUT_BACK_LEFT |
+                                  AUDIO_CHANNEL_OUT_BACK_RIGHT |
+                                  AUDIO_CHANNEL_OUT_BACK_CENTER) |  |
+| `AUDIO_CHANNEL_OUT_7POINT1` | = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT |
+                                  AUDIO_CHANNEL_OUT_FRONT_CENTER |
+                                  AUDIO_CHANNEL_OUT_LOW_FREQUENCY |
+                                  AUDIO_CHANNEL_OUT_BACK_LEFT |
+                                  AUDIO_CHANNEL_OUT_BACK_RIGHT |
+                                  AUDIO_CHANNEL_OUT_SIDE_LEFT |
+                                  AUDIO_CHANNEL_OUT_SIDE_RIGHT) |  |
+| `AUDIO_CHANNEL_OUT_7POINT1POINT2` | = (AUDIO_CHANNEL_OUT_7POINT1 |
+                                  AUDIO_CHANNEL_OUT_TOP_SIDE_LEFT |
+                                  AUDIO_CHANNEL_OUT_TOP_SIDE_RIGHT) |  |
+| `AUDIO_CHANNEL_OUT_7POINT1POINT4` | = (AUDIO_CHANNEL_OUT_7POINT1 |
+                                  AUDIO_CHANNEL_OUT_TOP_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_TOP_FRONT_RIGHT |
+                                  AUDIO_CHANNEL_OUT_TOP_BACK_LEFT |
+                                  AUDIO_CHANNEL_OUT_TOP_BACK_RIGHT) |  |
+| `AUDIO_CHANNEL_OUT_9POINT1POINT6` | = (AUDIO_CHANNEL_OUT_7POINT1POINT4 |
+                                  AUDIO_CHANNEL_OUT_WIDE_LEFT |
+                                  AUDIO_CHANNEL_OUT_WIDE_RIGHT |
+                                  AUDIO_CHANNEL_OUT_TOP_SIDE_LEFT |
+                                  AUDIO_CHANNEL_OUT_TOP_SIDE_RIGHT) |  |
+| `AUDIO_CHANNEL_OUT_9POINT1POINT6PLUS2` | = (AUDIO_CHANNEL_OUT_9POINT1POINT6 |
+                                  AUDIO_CHANNEL_OUT_FRONT_LEFT_OF_CENTER |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT_OF_CENTER) |  |
+| `AUDIO_CHANNEL_OUT_9POINT1POINT6PLUS4` | = (AUDIO_CHANNEL_OUT_9POINT1POINT6 |
+                                  AUDIO_CHANNEL_OUT_FRONT_LEFT_OF_CENTER |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT_OF_CENTER |
+                                  AUDIO_CHANNEL_OUT_BACK_LEFT_OF_CENTER |
+                                  AUDIO_CHANNEL_OUT_BACK_RIGHT_OF_CENTER) |  |
+| `AUDIO_CHANNEL_OUT_ALL` | = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT |
+                                  AUDIO_CHANNEL_OUT_FRONT_CENTER |
+                                  AUDIO_CHANNEL_OUT_LOW_FREQUENCY |
+                                  AUDIO_CHANNEL_OUT_BACK_LEFT |
+                                  AUDIO_CHANNEL_OUT_BACK_RIGHT |
+                                  AUDIO_CHANNEL_OUT_FRONT_LEFT_OF_CENTER |
+                                  AUDIO_CHANNEL_OUT_FRONT_RIGHT_OF_CENTER |
+                                  AUDIO_CHANNEL_OUT_BACK_CENTER|
+                                  AUDIO_CHANNEL_OUT_SIDE_LEFT|
+                                  AUDIO_CHANNEL_OUT_SIDE_RIGHT|
+                                  AUDIO_CHANNEL_OUT_TOP_CENTER|
+                                  AUDIO_CHANNEL_OUT_TOP_FRONT_LEFT|
+                                  AUDIO_CHANNEL_OUT_TOP_FRONT_CENTER|
+                                  AUDIO_CHANNEL_OUT_TOP_FRONT_RIGHT|
+                                  AUDIO_CHANNEL_OUT_TOP_BACK_LEFT|
+                                  AUDIO_CHANNEL_OUT_TOP_BACK_CENTER|
+                                  AUDIO_CHANNEL_OUT_TOP_BACK_RIGHT|
+                                  AUDIO_CHANNEL_OUT_TOP_SIDE_LEFT|
+                                  AUDIO_CHANNEL_OUT_TOP_SIDE_RIGHT|
+                                  AUDIO_CHANNEL_OUT_WIDE_LEFT|
+                                  AUDIO_CHANNEL_OUT_WIDE_RIGHT|
+                                  AUDIO_CHANNEL_OUT_BACK_LEFT_OF_CENTER|
+                                  AUDIO_CHANNEL_OUT_BACK_RIGHT_OF_CENTER) |  |
+| `AUDIO_CHANNEL_IN_LEFT` | = 0x4 |  |
+| `AUDIO_CHANNEL_IN_RIGHT` | = 0x8 |  |
+| `AUDIO_CHANNEL_IN_FRONT` | = 0x10 |  |
+| `AUDIO_CHANNEL_IN_BACK` | = 0x20 |  |
+| `AUDIO_CHANNEL_IN_LEFT_PROCESSED` | = 0x40 |  |
+| `AUDIO_CHANNEL_IN_RIGHT_PROCESSED` | = 0x80 |  |
+| `AUDIO_CHANNEL_IN_FRONT_PROCESSED` | = 0x100 |  |
+| `AUDIO_CHANNEL_IN_BACK_PROCESSED` | = 0x200 |  |
+| `AUDIO_CHANNEL_IN_PRESSURE` | = 0x400 |  |
+| `AUDIO_CHANNEL_IN_X_AXIS` | = 0x800 |  |
+| `AUDIO_CHANNEL_IN_Y_AXIS` | = 0x1000 |  |
+| `AUDIO_CHANNEL_IN_Z_AXIS` | = 0x2000 |  |
+| `AUDIO_CHANNEL_IN_VOICE_UPLINK` | = 0x4000 |  |
+| `AUDIO_CHANNEL_IN_VOICE_DNLINK` | = 0x8000 |  |
+| `AUDIO_CHANNEL_IN_MONO` | = AUDIO_CHANNEL_IN_FRONT |  |
+| `AUDIO_CHANNEL_IN_STEREO` | = (AUDIO_CHANNEL_IN_LEFT | AUDIO_CHANNEL_IN_RIGHT) |  |
+| `AUDIO_CHANNEL_IN_FRONT_BACK` | = (AUDIO_CHANNEL_IN_FRONT | AUDIO_CHANNEL_IN_BACK) |  |
+| `AUDIO_CHANNEL_IN_5POINT1` | = (AUDIO_CHANNEL_IN_LEFT |
+                               AUDIO_CHANNEL_IN_RIGHT |
+                               AUDIO_CHANNEL_IN_FRONT |
+                               AUDIO_CHANNEL_IN_BACK |
+                               AUDIO_CHANNEL_IN_LEFT_PROCESSED |
+                               AUDIO_CHANNEL_IN_RIGHT_PROCESSED) |  |
+| `AUDIO_CHANNEL_IN_6` | = 252u |  |
+| `AUDIO_CHANNEL_IN_VOICE_UPLINK_MONO` | = (AUDIO_CHANNEL_IN_VOICE_UPLINK | AUDIO_CHANNEL_IN_MONO) |  |
+| `AUDIO_CHANNEL_IN_VOICE_DNLINK_MONO` | = (AUDIO_CHANNEL_IN_VOICE_DNLINK | AUDIO_CHANNEL_IN_MONO) |  |
+| `AUDIO_CHANNEL_IN_VOICE_CALL_MONO` | = (AUDIO_CHANNEL_IN_VOICE_UPLINK_MONO | AUDIO_CHANNEL_IN_VOICE_DNLINK_MONO) |  |
+| `AUDIO_CHANNEL_IN_ALL` | = (AUDIO_CHANNEL_IN_LEFT |
+                               AUDIO_CHANNEL_IN_RIGHT |
+                               AUDIO_CHANNEL_IN_FRONT |
+                               AUDIO_CHANNEL_IN_BACK|
+                               AUDIO_CHANNEL_IN_LEFT_PROCESSED |
+                               AUDIO_CHANNEL_IN_RIGHT_PROCESSED |
+                               AUDIO_CHANNEL_IN_FRONT_PROCESSED |
+                               AUDIO_CHANNEL_IN_BACK_PROCESSED|
+                               AUDIO_CHANNEL_IN_PRESSURE |
+                               AUDIO_CHANNEL_IN_X_AXIS |
+                               AUDIO_CHANNEL_IN_Y_AXIS |
+                               AUDIO_CHANNEL_IN_Z_AXIS |
+                               AUDIO_CHANNEL_IN_VOICE_UPLINK |
+                               AUDIO_CHANNEL_IN_VOICE_DNLINK) |  |
+
+### `audio_channel_representation_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_CHANNEL_REPRESENTATION_POSITION` | = 0 |  |
+| `AUDIO_CHANNEL_REPRESENTATION_INDEX` | = 2 |  |
+
+### ``
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_CHANNEL_INDEX_HDR` | = AUDIO_CHANNEL_REPRESENTATION_INDEX \\<\\< AUDIO_CHANNEL_COUNT_MAX |  |
+| `AUDIO_CHANNEL_INDEX_MASK_1` | =  AUDIO_CHANNEL_INDEX_HDR \| ((1 \\<\\< 1) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_2` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 2) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_3` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 3) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_4` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 4) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_5` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 5) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_6` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 6) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_7` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 7) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_8` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 8) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_9` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 9) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_10` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 10) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_11` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 11) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_12` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 12) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_13` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 13) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_14` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 14) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_15` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 15) - 1) |  |
+| `AUDIO_CHANNEL_INDEX_MASK_16` | =  AUDIO_CHANNEL_INDEX_HDR | ((1 \\<\\< 16) - 1) |  |
+
+### ``
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_INTERLEAVE_LEFT` | = 0 |  |
+| `AUDIO_INTERLEAVE_RIGHT` | = 1 |  |
+
+### `audio_mode_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_MODE_INVALID` | = -2 |  |
+| `AUDIO_MODE_CURRENT` | = -1 |  |
+| `AUDIO_MODE_NORMAL` | = 0 |  |
+| `AUDIO_MODE_RINGTONE` | = 1 |  |
+| `AUDIO_MODE_IN_CALL` | = 2 |  |
+| `AUDIO_MODE_IN_COMMUNICATION` | = 3 |  |
+| `AUDIO_MODE_CNT` |  |  |
+| `AUDIO_MODE_MAX` | = AUDIO_MODE_CNT - 1 |  |
+
+### `audio_in_acoustics_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_IN_ACOUSTICS_NONE` | = 0 |  |
+| `AUDIO_IN_ACOUSTICS_AGC_ENABLE` | = 0x0001 |  |
+| `AUDIO_IN_ACOUSTICS_AGC_DISABLE` | = 0 |  |
+| `AUDIO_IN_ACOUSTICS_NS_ENABLE` | = 0x0002 |  |
+| `AUDIO_IN_ACOUSTICS_NS_DISABLE` | = 0 |  |
+| `AUDIO_IN_ACOUSTICS_TX_IIR_ENABLE` | = 0x0004 |  |
+| `AUDIO_IN_ACOUSTICS_TX_DISABLE` | = 0 |  |
+
+### ``
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_DEVICE_NONE` | = 0x0 |  |
+| `AUDIO_DEVICE_BIT_IN` | = 0x80000000 |  |
+| `AUDIO_DEVICE_BIT_DEFAULT` | = 0x40000000 |  |
+| `AUDIO_DEVICE_OUT_EARPIECE` | = 0x1 |  |
+| `AUDIO_DEVICE_OUT_SPEAKER` | = 0x2 |  |
+| `AUDIO_DEVICE_OUT_WIRED_HEADSET` | = 0x4 |  |
+| `AUDIO_DEVICE_OUT_WIRED_HEADPHONE` | = 0x8 |  |
+| `AUDIO_DEVICE_OUT_BLUETOOTH_SCO` | = 0x10 |  |
+| `AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET` | = 0x20 |  |
+| `AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT` | = 0x40 |  |
+| `AUDIO_DEVICE_OUT_BLUETOOTH_A2DP` | = 0x80 |  |
+| `AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES` | = 0x100 |  |
+| `AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER` | = 0x200 |  |
+| `AUDIO_DEVICE_OUT_AUX_DIGITAL` | = 0x400 |  |
+| `AUDIO_DEVICE_OUT_HDMI` | = AUDIO_DEVICE_OUT_AUX_DIGITAL |  |
+| `AUDIO_DEVICE_OUT_ANLG_DOCK_HEADSET` | = 0x800 |  |
+| `AUDIO_DEVICE_OUT_DGTL_DOCK_HEADSET` | = 0x1000 |  |
+| `AUDIO_DEVICE_OUT_USB_ACCESSORY` | = 0x2000 |  |
+| `AUDIO_DEVICE_OUT_USB_DEVICE` | = 0x4000 |  |
+| `AUDIO_DEVICE_OUT_REMOTE_SUBMIX` | = 0x8000 |  |
+| `AUDIO_DEVICE_OUT_TELEPHONY_TX` | = 0x10000 |  |
+| `AUDIO_DEVICE_OUT_LINE` | = 0x20000 |  |
+| `AUDIO_DEVICE_OUT_HDMI_ARC` | = 0x40000 |  |
+| `AUDIO_DEVICE_OUT_SPDIF` | = 0x80000 |  |
+| `AUDIO_DEVICE_OUT_FM` | = 0x100000 |  |
+| `AUDIO_DEVICE_OUT_AUX_LINE` | = 0x200000 |  |
+| `AUDIO_DEVICE_OUT_SPEAKER_SAFE` | = 0x400000 |  |
+| `AUDIO_DEVICE_OUT_IP` | = 0x800000 |  |
+| `AUDIO_DEVICE_OUT_BUS` | = 0x1000000 |  |
+| `AUDIO_DEVICE_OUT_PROXY` | = 0x2000000 |  |
+| `AUDIO_DEVICE_OUT_USB_HEADSET` | = 0x4000000 |  |
+| `AUDIO_DEVICE_OUT_ECHO_CANCELLER` | = 0x10000000 |  |
+| `AUDIO_DEVICE_OUT_DEFAULT` | = AUDIO_DEVICE_BIT_DEFAULT |  |
+| `AUDIO_DEVICE_OUT_ALL` | = (AUDIO_DEVICE_OUT_EARPIECE |
+                                 AUDIO_DEVICE_OUT_SPEAKER |
+                                 AUDIO_DEVICE_OUT_WIRED_HEADSET |
+                                 AUDIO_DEVICE_OUT_WIRED_HEADPHONE |
+                                 AUDIO_DEVICE_OUT_BLUETOOTH_SCO |
+                                 AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET |
+                                 AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT |
+                                 AUDIO_DEVICE_OUT_BLUETOOTH_A2DP |
+                                 AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES |
+                                 AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER |
+                                 AUDIO_DEVICE_OUT_HDMI |
+                                 AUDIO_DEVICE_OUT_ANLG_DOCK_HEADSET |
+                                 AUDIO_DEVICE_OUT_DGTL_DOCK_HEADSET |
+                                 AUDIO_DEVICE_OUT_USB_ACCESSORY |
+                                 AUDIO_DEVICE_OUT_USB_DEVICE |
+                                 AUDIO_DEVICE_OUT_USB_HEADSET |
+                                 AUDIO_DEVICE_OUT_ECHO_CANCELLER |
+                                 AUDIO_DEVICE_OUT_REMOTE_SUBMIX |
+                                 AUDIO_DEVICE_OUT_TELEPHONY_TX |
+                                 AUDIO_DEVICE_OUT_LINE |
+                                 AUDIO_DEVICE_OUT_HDMI_ARC |
+                                 AUDIO_DEVICE_OUT_SPDIF |
+                                 AUDIO_DEVICE_OUT_FM |
+                                 AUDIO_DEVICE_OUT_AUX_LINE |
+                                 AUDIO_DEVICE_OUT_SPEAKER_SAFE |
+                                 AUDIO_DEVICE_OUT_IP |
+                                 AUDIO_DEVICE_OUT_BUS |
+                                 AUDIO_DEVICE_OUT_PROXY |
+                                 AUDIO_DEVICE_OUT_DEFAULT) |  |
+| `AUDIO_DEVICE_OUT_ALL_A2DP` | = (AUDIO_DEVICE_OUT_BLUETOOTH_A2DP |
+                                 AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES |
+                                 AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER) |  |
+| `AUDIO_DEVICE_OUT_ALL_SCO` | = (AUDIO_DEVICE_OUT_BLUETOOTH_SCO |
+                                 AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET |
+                                 AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT) |  |
+| `AUDIO_DEVICE_OUT_ALL_USB` | = (AUDIO_DEVICE_OUT_USB_ACCESSORY |
+                                 AUDIO_DEVICE_OUT_USB_DEVICE |
+                                 AUDIO_DEVICE_OUT_USB_HEADSET) |  |
+| `AUDIO_DEVICE_IN_COMMUNICATION` | = AUDIO_DEVICE_BIT_IN | 0x1 |  |
+| `AUDIO_DEVICE_IN_AMBIENT` | = AUDIO_DEVICE_BIT_IN | 0x2 |  |
+| `AUDIO_DEVICE_IN_BUILTIN_MIC` | = AUDIO_DEVICE_BIT_IN | 0x4 |  |
+| `AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET` | = AUDIO_DEVICE_BIT_IN | 0x8 |  |
+| `AUDIO_DEVICE_IN_WIRED_HEADSET` | = AUDIO_DEVICE_BIT_IN | 0x10 |  |
+| `AUDIO_DEVICE_IN_AUX_DIGITAL` | = AUDIO_DEVICE_BIT_IN | 0x20 |  |
+| `AUDIO_DEVICE_IN_HDMI` | = AUDIO_DEVICE_IN_AUX_DIGITAL |  |
+| `AUDIO_DEVICE_IN_VOICE_CALL` | = AUDIO_DEVICE_BIT_IN | 0x40 |  |
+| `AUDIO_DEVICE_IN_TELEPHONY_RX` | = AUDIO_DEVICE_IN_VOICE_CALL |  |
+| `AUDIO_DEVICE_IN_BACK_MIC` | = AUDIO_DEVICE_BIT_IN | 0x80 |  |
+| `AUDIO_DEVICE_IN_REMOTE_SUBMIX` | = AUDIO_DEVICE_BIT_IN | 0x100 |  |
+| `AUDIO_DEVICE_IN_ANLG_DOCK_HEADSET` | = AUDIO_DEVICE_BIT_IN | 0x200 |  |
+| `AUDIO_DEVICE_IN_DGTL_DOCK_HEADSET` | = AUDIO_DEVICE_BIT_IN | 0x400 |  |
+| `AUDIO_DEVICE_IN_USB_ACCESSORY` | = AUDIO_DEVICE_BIT_IN | 0x800 |  |
+| `AUDIO_DEVICE_IN_USB_DEVICE` | = AUDIO_DEVICE_BIT_IN | 0x1000 |  |
+| `AUDIO_DEVICE_IN_FM_TUNER` | = AUDIO_DEVICE_BIT_IN | 0x2000 |  |
+| `AUDIO_DEVICE_IN_TV_TUNER` | = AUDIO_DEVICE_BIT_IN | 0x4000 |  |
+| `AUDIO_DEVICE_IN_LINE` | = AUDIO_DEVICE_BIT_IN | 0x8000 |  |
+| `AUDIO_DEVICE_IN_SPDIF` | = AUDIO_DEVICE_BIT_IN | 0x10000 |  |
+| `AUDIO_DEVICE_IN_BLUETOOTH_A2DP` | = AUDIO_DEVICE_BIT_IN | 0x20000 |  |
+| `AUDIO_DEVICE_IN_LOOPBACK` | = AUDIO_DEVICE_BIT_IN | 0x40000 |  |
+| `AUDIO_DEVICE_IN_IP` | = AUDIO_DEVICE_BIT_IN | 0x80000 |  |
+| `AUDIO_DEVICE_IN_BUS` | = AUDIO_DEVICE_BIT_IN | 0x100000 |  |
+| `AUDIO_DEVICE_IN_PROXY` | = AUDIO_DEVICE_BIT_IN | 0x1000000 |  |
+| `AUDIO_DEVICE_IN_USB_HEADSET` | = AUDIO_DEVICE_BIT_IN | 0x2000000 |  |
+| `AUDIO_DEVICE_IN_HDMI_ARC` | = AUDIO_DEVICE_BIT_IN | 0x8000000 |  |
+| `AUDIO_DEVICE_IN_BLUETOOTH_BLE` | = AUDIO_DEVICE_BIT_IN | 0x4000000 |  |
+| `AUDIO_DEVICE_IN_DEFAULT` | = AUDIO_DEVICE_BIT_IN | AUDIO_DEVICE_BIT_DEFAULT |  |
+| `AUDIO_DEVICE_IN_ALL` | = (AUDIO_DEVICE_IN_COMMUNICATION |
+                               AUDIO_DEVICE_IN_AMBIENT |
+                               AUDIO_DEVICE_IN_BUILTIN_MIC |
+                               AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET |
+                               AUDIO_DEVICE_IN_WIRED_HEADSET |
+                               AUDIO_DEVICE_IN_HDMI |
+                               AUDIO_DEVICE_IN_TELEPHONY_RX |
+                               AUDIO_DEVICE_IN_BACK_MIC |
+                               AUDIO_DEVICE_IN_REMOTE_SUBMIX |
+                               AUDIO_DEVICE_IN_ANLG_DOCK_HEADSET |
+                               AUDIO_DEVICE_IN_DGTL_DOCK_HEADSET |
+                               AUDIO_DEVICE_IN_USB_ACCESSORY |
+                               AUDIO_DEVICE_IN_USB_DEVICE |
+                               AUDIO_DEVICE_IN_USB_HEADSET |
+                               AUDIO_DEVICE_IN_FM_TUNER |
+                               AUDIO_DEVICE_IN_TV_TUNER |
+                               AUDIO_DEVICE_IN_LINE |
+                               AUDIO_DEVICE_IN_SPDIF |
+                               AUDIO_DEVICE_IN_BLUETOOTH_A2DP |
+                               AUDIO_DEVICE_IN_LOOPBACK |
+                               AUDIO_DEVICE_IN_PROXY |
+                               AUDIO_DEVICE_IN_IP |
+                               AUDIO_DEVICE_IN_BUS |
+                               AUDIO_DEVICE_IN_HDMI_ARC |
+                               AUDIO_DEVICE_IN_DEFAULT) |  |
+| `AUDIO_DEVICE_IN_ALL_SCO` | = AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET |  |
+| `AUDIO_DEVICE_IN_ALL_USB` | = (AUDIO_DEVICE_IN_USB_ACCESSORY |
+                                AUDIO_DEVICE_IN_USB_DEVICE |
+                                AUDIO_DEVICE_IN_USB_HEADSET) |  |
+
+### `audio_output_flags_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_OUTPUT_FLAG_NONE` | = 0x0 |  |
+| `AUDIO_OUTPUT_FLAG_DIRECT` | = 0x1 |  |
+| `AUDIO_OUTPUT_FLAG_PRIMARY` | = 0x2 |  |
+| `AUDIO_OUTPUT_FLAG_FAST` | = 0x4 |  |
+| `AUDIO_OUTPUT_FLAG_DEEP_BUFFER` | = 0x8 |  |
+| `AUDIO_OUTPUT_FLAG_COMPRESS_OFFLOAD` | = 0x10 |  |
+| `AUDIO_OUTPUT_FLAG_NON_BLOCKING` | = 0x20 |  |
+| `AUDIO_OUTPUT_FLAG_HW_AV_SYNC` | = 0x40 |  |
+| `AUDIO_OUTPUT_FLAG_TTS` | = 0x80 |  |
+| `AUDIO_OUTPUT_FLAG_RAW` | = 0x100 |  |
+| `AUDIO_OUTPUT_FLAG_SYNC` | = 0x200 |  |
+| `AUDIO_OUTPUT_FLAG_IEC958_NONAUDIO` | = 0x400 |  |
+| `AUDIO_OUTPUT_FLAG_VOIP_RX` | = 0x800 |  |
+| `AUDIO_OUTPUT_FLAG_COMPRESS_PASSTHROUGH` | = 0x1000 |  |
+| `AUDIO_OUTPUT_FLAG_DIRECT_PCM` | = 0x2000 |  |
+| `AUDIO_OUTPUT_FLAG_MMAP_NOIRQ` | = 16384 |  |
+| `AUDIO_OUTPUT_FLAG_INTERACTIVE` | = 0x4000000 |  |
+| `AUDIO_OUTPUT_FLAG_MAIN` | = 0x8000000 |  |
+| `AUDIO_OUTPUT_FLAG_ASSOCIATED` | = 0x10000000 |  |
+| `AUDIO_OUTPUT_FLAG_TIMESTAMP` | = 0x20000000 |  |
+| `AUDIO_OUTPUT_FLAG_BD` | = 0x40000000 |  |
+
+### `audio_input_flags_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_INPUT_FLAG_NONE` | = 0x0 |  |
+| `AUDIO_INPUT_FLAG_FAST` | = 0x1 |  |
+| `AUDIO_INPUT_FLAG_HW_HOTWORD` | = 0x2 |  |
+| `AUDIO_INPUT_FLAG_RAW` | = 0x4 |  |
+| `AUDIO_INPUT_FLAG_MMAP_NOIRQ` | = 16 |  |
+| `AUDIO_INPUT_FLAG_SYNC` | = 0x8 |  |
+
+### `audio_module_handle_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_MODULE_HANDLE_NONE` | = 0 |  |
+
+### `audio_port_role_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_PORT_ROLE_NONE` |  |  |
+| `AUDIO_PORT_ROLE_SOURCE` |  |  |
+| `AUDIO_PORT_ROLE_SINK` |  |  |
+
+### `audio_port_type_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_PORT_TYPE_NONE` |  |  |
+| `AUDIO_PORT_TYPE_DEVICE` |  |  |
+| `AUDIO_PORT_TYPE_MIX` |  |  |
+| `AUDIO_PORT_TYPE_SESSION` |  |  |
+
+### `audio_mix_latency_class_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_LATENCY_LOW` |  |  |
+| `AUDIO_LATENCY_NORMAL` |  |  |
+
+### `audio_patch_handle_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_PATCH_HANDLE_NONE` | = 0 |  |
+
+### `audio_microphone_directionality_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_MICROPHONE_DIRECTIONALITY_UNKNOWN` | = 0 |  |
+| `AUDIO_MICROPHONE_DIRECTIONALITY_OMNI` | = 1 |  |
+| `AUDIO_MICROPHONE_DIRECTIONALITY_BI_DIRECTIONAL` | = 2 |  |
+| `AUDIO_MICROPHONE_DIRECTIONALITY_CARDIOID` | = 3 |  |
+| `AUDIO_MICROPHONE_DIRECTIONALITY_HYPER_CARDIOID` | = 4 |  |
+| `AUDIO_MICROPHONE_DIRECTIONALITY_SUPER_CARDIOID` | = 5 |  |
+| `AUDIO_MICROPHONE_DIRECTIONALITY_CNT` | = 6 |  |
+
+### `audio_microphone_location_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_MICROPHONE_LOCATION_UNKNOWN` | = 0 |  |
+| `AUDIO_MICROPHONE_LOCATION_MAINBODY` | = 1 |  |
+| `AUDIO_MICROPHONE_LOCATION_MAINBODY_MOVABLE` | = 2 |  |
+| `AUDIO_MICROPHONE_LOCATION_PERIPHERAL` | = 3 |  |
+| `AUDIO_MICROPHONE_LOCATION_CNT` | = 4 |  |
+
+### `audio_latency_mode_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_LATENCY_MODE_FREE` | = 0 |  |
+| `AUDIO_LATENCY_MODE_LOW` | = 1 |  |
+
+### `audio_microphone_channel_mapping_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AUDIO_MICROPHONE_CHANNEL_MAPPING_UNUSED` | = 0 |  |
+| `AUDIO_MICROPHONE_CHANNEL_MAPPING_DIRECT` | = 1 |  |
+| `AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED` | = 2 |  |
+| `AUDIO_MICROPHONE_CHANNEL_MAPPING_CNT` | = 3 |  |
+
+## Macros
+
+### `popcount`
+
+```c
+#define popcount __builtin_popcount(device)
+```
+
+### `FCC_2`
+
+```c
+#define FCC_2 2
+```
+
+### `FCC_8`
+
+```c
+#define FCC_8 8
+```
+
+### `AUDIO_REMOTE_SUBMIX_DEVICE_ADDRESS`
+
+```c
+#define AUDIO_REMOTE_SUBMIX_DEVICE_ADDRESS "0"
+```
+
+### `AUDIO_IO_HANDLE_NONE`
+
+```c
+#define AUDIO_IO_HANDLE_NONE 0
+```
+
+### `AUDIO_PARAMETER_RECONFIG_A2DP`
+
+```c
+#define AUDIO_PARAMETER_RECONFIG_A2DP "reconfigA2dp"
+```
+
+### `AUDIO_PARAMETER_A2DP_RECONFIG_SUPPORTED`
+
+```c
+#define AUDIO_PARAMETER_A2DP_RECONFIG_SUPPORTED "isReconfigA2dpSupported"
+```
+
+### `AUDIO_ATTRIBUTES_TAGS_MAX_SIZE`
+
+```c
+#define AUDIO_ATTRIBUTES_TAGS_MAX_SIZE 256
+```
+
+### `AUDIO_UNIQUE_ID_ALLOCATE`
+
+```c
+#define AUDIO_UNIQUE_ID_ALLOCATE AUDIO_SESSION_ALLOCATE
+```
+
+### `AUDIO_CHANNEL_COUNT_MAX`
+
+```c
+#define AUDIO_CHANNEL_COUNT_MAX 30
+```
+
+### `AUDIO_CHANNEL_REPRESENTATION_LOG2`
+
+```c
+#define AUDIO_CHANNEL_REPRESENTATION_LOG2 2
+```
+
+### `AUDIO_MAKE_OFFLOAD_INFO_VERSION`
+
+```c
+#define AUDIO_MAKE_OFFLOAD_INFO_VERSION ((((maj) & 0xff) \\<\\< 8) | ((min) & 0xff))
+```
+
+### `AUDIO_OFFLOAD_INFO_VERSION_0_1`
+
+```c
+#define AUDIO_OFFLOAD_INFO_VERSION_0_1 AUDIO_MAKE_OFFLOAD_INFO_VERSION(0, 1)
+```
+
+### `AUDIO_OFFLOAD_INFO_VERSION_CURRENT`
+
+```c
+#define AUDIO_OFFLOAD_INFO_VERSION_CURRENT AUDIO_OFFLOAD_INFO_VERSION_0_1
+```
+
+### `AUDIO_GAIN_MODE_JOINT`
+
+```c
+#define AUDIO_GAIN_MODE_JOINT 0x1 /* supports joint channel gain control */
+```
+
+### `AUDIO_GAIN_MODE_CHANNELS`
+
+```c
+#define AUDIO_GAIN_MODE_CHANNELS 0x2 /* supports separate channel gain control */
+```
+
+### `AUDIO_GAIN_MODE_RAMP`
+
+```c
+#define AUDIO_GAIN_MODE_RAMP 0x4 /* supports gain ramps */
+```
+
+### `AUDIO_PORT_HANDLE_NONE`
+
+```c
+#define AUDIO_PORT_HANDLE_NONE 0
+```
+
+### `AUDIO_PORT_MAX_NAME_LEN`
+
+```c
+#define AUDIO_PORT_MAX_NAME_LEN 128
+```
+
+### `AUDIO_DEVICE_MAX_ADDRESS_LEN`
+
+```c
+#define AUDIO_DEVICE_MAX_ADDRESS_LEN 32
+```
+
+### `AUDIO_PORT_CONFIG_SAMPLE_RATE`
+
+```c
+#define AUDIO_PORT_CONFIG_SAMPLE_RATE 0x1
+```
+
+### `AUDIO_PORT_CONFIG_CHANNEL_MASK`
+
+```c
+#define AUDIO_PORT_CONFIG_CHANNEL_MASK 0x2
+```
+
+### `AUDIO_PORT_CONFIG_FORMAT`
+
+```c
+#define AUDIO_PORT_CONFIG_FORMAT 0x4
+```
+
+### `AUDIO_PORT_CONFIG_GAIN`
+
+```c
+#define AUDIO_PORT_CONFIG_GAIN 0x8
+```
+
+### `AUDIO_PORT_CONFIG_ALL`
+
+```c
+#define AUDIO_PORT_CONFIG_ALL (AUDIO_PORT_CONFIG_SAMPLE_RATE | \
+                               AUDIO_PORT_CONFIG_CHANNEL_MASK | \
+                               AUDIO_PORT_CONFIG_FORMAT | \
+                               AUDIO_PORT_CONFIG_GAIN)
+```
+
+### `AUDIO_PORT_MAX_SAMPLING_RATES`
+
+```c
+#define AUDIO_PORT_MAX_SAMPLING_RATES 16
+```
+
+### `AUDIO_PORT_MAX_CHANNEL_MASKS`
+
+```c
+#define AUDIO_PORT_MAX_CHANNEL_MASKS 16
+```
+
+### `AUDIO_PORT_MAX_FORMATS`
+
+```c
+#define AUDIO_PORT_MAX_FORMATS 16
+```
+
+### `AUDIO_PORT_MAX_GAINS`
+
+```c
+#define AUDIO_PORT_MAX_GAINS 16
+```
+
+### `AUDIO_PATCH_PORTS_MAX`
+
+```c
+#define AUDIO_PATCH_PORTS_MAX 16
+```
+
+### `AUDIO_HW_SYNC_INVALID`
+
+```c
+#define AUDIO_HW_SYNC_INVALID 0
+```
+
+### `AUDIO_MICROPHONE_ID_MAX_LEN`
+
+```c
+#define AUDIO_MICROPHONE_ID_MAX_LEN 32
+```
+
+### `AUDIO_MICROPHONE_MAX_FREQUENCY_RESPONSES`
+
+```c
+#define AUDIO_MICROPHONE_MAX_FREQUENCY_RESPONSES 256
+```
+
+### `AUDIO_MICROPHONE_MAX_COUNT`
+
+```c
+#define AUDIO_MICROPHONE_MAX_COUNT 32
+```
+
+### `AUDIO_MICROPHONE_SPL_UNKNOWN`
+
+```c
+#define AUDIO_MICROPHONE_SPL_UNKNOWN -FLT_MAX
+```
+
+### `AUDIO_MICROPHONE_SENSITIVITY_UNKNOWN`
+
+```c
+#define AUDIO_MICROPHONE_SENSITIVITY_UNKNOWN -FLT_MAX
+```
+
+### `AUDIO_MICROPHONE_COORDINATE_UNKNOWN`
+
+```c
+#define AUDIO_MICROPHONE_COORDINATE_UNKNOWN -FLT_MAX
+```
+
+### `AUDIO_BOTTOM_MICROPHONE_ADDRESS`
+
+```c
+#define AUDIO_BOTTOM_MICROPHONE_ADDRESS "bottom"
+```
+
+### `AUDIO_BACK_MICROPHONE_ADDRESS`
+
+```c
+#define AUDIO_BACK_MICROPHONE_ADDRESS "back"
+```
+
+## Variables
+
+### `AUDIO_INFO_INITIALIZER`
+
+```c
+const audio_offload_info_t AUDIO_INFO_INITIALIZER
+```
+
+### `AUDIO_CONFIG_INITIALIZER`
+
+```c
+const audio_config_t AUDIO_CONFIG_INITIALIZER
+```
+
+### `AUDIO_CONFIG_BASE_INITIALIZER`
+
+```c
+const audio_config_base_t AUDIO_CONFIG_BASE_INITIALIZER
+```

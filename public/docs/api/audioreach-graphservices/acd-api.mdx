@@ -1,0 +1,241 @@
+---
+title: "acd_api.h"
+---
+
+## Structures
+
+### `param_id_acd_static_cfg_t`
+
+**Members**
+
+<ParamField path="env_process_required" type="uint32_t">
+</ParamField>
+<ParamField path="event_process_required" type="uint32_t">
+</ParamField>
+<ParamField path="ambience_process_required" type="uint32_t">
+</ParamField>
+<ParamField path="ambience_class_bitmask" type="uint32_t">
+</ParamField>
+<ParamField path="num_noise_smoothing_frames" type="uint32_t">
+</ParamField>
+
+### `param_id_acd_ambience_dynamic_cfg_t`
+
+**Members**
+
+<ParamField path="speech_hangover_num_frames" type="uint16_t">
+</ParamField>
+<ParamField path="music_hangover_num_frames" type="uint16_t">
+</ParamField>
+<ParamField path="max_conf_frames_speech" type="uint32_t">
+</ParamField>
+<ParamField path="min_conf_frames_speech" type="uint32_t">
+</ParamField>
+<ParamField path="max_conf_frames_music" type="uint32_t">
+</ParamField>
+<ParamField path="min_conf_frames_music" type="uint32_t">
+</ParamField>
+
+### `acd_key_info_t`
+
+**Members**
+
+<ParamField path="key_id" type="uint32_t">
+  @description  @rangeEnum  @default
+</ParamField>
+<ParamField path="key_payload_size" type="uint32_t">
+  @description
+</ParamField>
+
+### `event_id_acd_detection_cfg_t`
+
+**Members**
+
+<ParamField path="num_keys" type="uint32_t">
+  @description
+</ParamField>
+
+### `acd_context_specific_generic_reg_info_t`
+
+@description
+
+**Members**
+
+<ParamField path="context_id" type="uint32_t">
+  @description  @rangeList  @default
+</ParamField>
+<ParamField path="confidence_threshold" type="uint32_t">
+  @description  @range  @default
+</ParamField>
+<ParamField path="step_size" type="uint32_t">
+  @description  @range  @default
+</ParamField>
+
+### `acd_generic_key_id_reg_cfg_t`
+
+**Members**
+
+<ParamField path="num_contexts" type="uint32_t">
+  @description
+</ParamField>
+
+### `event_id_acd_detection_event_t`
+
+**Members**
+
+<ParamField path="event_timestamp_lsw" type="uint32_t">
+  @description  @range
+</ParamField>
+<ParamField path="event_timestamp_msw" type="uint32_t">
+  @description  @range
+</ParamField>
+<ParamField path="num_keys" type="uint32_t">
+  @description  @rangeEnum  @default
+</ParamField>
+
+### `acd_context_specific_generic_event_t`
+
+**Members**
+
+<ParamField path="context_id" type="uint32_t">
+  @description  @rangeList  @default
+</ParamField>
+<ParamField path="event_type" type="uint32_t">
+  @description  @rangeList
+</ParamField>
+<ParamField path="confidence_score" type="uint32_t">
+  @description  @range
+</ParamField>
+<ParamField path="detection_timestamp_lsw" type="uint32_t">
+  @description  @range
+</ParamField>
+<ParamField path="detection_timestamp_msw" type="uint32_t">
+  @description  @range
+</ParamField>
+
+### `acd_generic_key_id_event_t`
+
+**Members**
+
+<ParamField path="num_contexts" type="uint32_t">
+  @description
+</ParamField>
+
+## Type Definitions
+
+### `param_id_acd_static_cfg_t`
+
+```c
+typedef struct param_id_acd_static_cfg_t param_id_acd_static_cfg_t
+```
+
+### `param_id_acd_ambience_dynamic_cfg_t`
+
+```c
+typedef struct param_id_acd_ambience_dynamic_cfg_t param_id_acd_ambience_dynamic_cfg_t
+```
+
+### `acd_event_cfg_key_id_t`
+
+```c
+typedef enum acd_event_cfg_key_id_t acd_event_cfg_key_id_t
+```
+
+### `acd_key_info_t`
+
+```c
+typedef struct acd_key_info_t acd_key_info_t
+```
+
+### `event_id_acd_detection_cfg_t`
+
+```c
+typedef struct event_id_acd_detection_cfg_t event_id_acd_detection_cfg_t
+```
+
+### `acd_context_specific_generic_reg_info_t`
+
+```c
+typedef struct acd_context_specific_generic_reg_info_t acd_context_specific_generic_reg_info_t
+```
+
+### `acd_generic_key_id_reg_cfg_t`
+
+```c
+typedef struct acd_generic_key_id_reg_cfg_t acd_generic_key_id_reg_cfg_t
+```
+
+### `event_id_acd_detection_event_t`
+
+```c
+typedef struct event_id_acd_detection_event_t event_id_acd_detection_event_t
+```
+
+### `acd_context_specific_generic_event_t`
+
+```c
+typedef struct acd_context_specific_generic_event_t acd_context_specific_generic_event_t
+```
+
+### `acd_generic_key_id_event_t`
+
+```c
+typedef struct acd_generic_key_id_event_t acd_generic_key_id_event_t
+```
+
+## Enumerations
+
+### `acd_event_cfg_key_id_t`
+
+@parameter  @description  @toolPolicy
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `ACD_KEY_ID_GENERIC_INFO` | = 0 | reg: acd_generic_key_id_reg_cfg_t; event: acd_generic_key_id_event_t |
+| `ACD_MAX_KEYS_SUPPORTED` |  | Maxium supported value for acd_event_cfg_key_id_t. |
+
+## Macros
+
+### `CAPI_ACD_MAX_PORTS`
+
+```c
+#define CAPI_ACD_MAX_PORTS 1
+```
+
+### `CAPI_ACD_MAX_DETECTION_EVENT_CLIENTS`
+
+```c
+#define CAPI_ACD_MAX_DETECTION_EVENT_CLIENTS 4
+```
+
+### `CAPI_ACD_STACK_SIZE`
+
+```c
+#define CAPI_ACD_STACK_SIZE 8192
+```
+
+### `MODULE_ID_ACD`
+
+```c
+#define MODULE_ID_ACD 0x070010CC
+```
+
+### `PARAM_ID_ACD_STATIC_CFG`
+
+```c
+#define PARAM_ID_ACD_STATIC_CFG 0x0800133B
+```
+
+### `PARAM_ID_ACD_AMBIENCE_DYNAMIC_CFG`
+
+```c
+#define PARAM_ID_ACD_AMBIENCE_DYNAMIC_CFG 0x0800133C
+```
+
+### `EVENT_ID_ACD_DETECTION_EVENT`
+
+```c
+#define EVENT_ID_ACD_DETECTION_EVENT 0x0800133D
+```

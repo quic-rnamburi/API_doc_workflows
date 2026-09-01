@@ -1,0 +1,222 @@
+---
+title: "aac_decoder_api.h"
+---
+
+## Structures
+
+### `param_id_aac_sbr_ps_flag_t`
+
+**Members**
+
+<ParamField path="sbr_ps_flag" type="uint32_t">
+  Changes are applied to the next decoded frame}
+</ParamField>
+
+### `param_id_aac_dual_mono_mapping_t`
+
+**Members**
+
+<ParamField path="left_channel_sce" type="uint16_t">
+</ParamField>
+<ParamField path="right_channel_sce" type="uint16_t">
+</ParamField>
+
+### `param_id_aac_sbr_signalling_t`
+
+**Members**
+
+<ParamField path="extension_aot" type="uint32_t">
+  If this value is set as AAC_EXTENSION_AOT_LC, all remaining fields are ignored and the decoder operates in implicit signaling mode.}
+</ParamField>
+<ParamField path="extension_sampling_rate" type="uint32_t">
+</ParamField>
+<ParamField path="sbr_present" type="uint32_t">
+
+</ParamField>
+<ParamField path="ps_present" type="uint32_t">
+
+</ParamField>
+
+### `param_id_aac_stereo_mix_coeff_selection_t`
+
+**Members**
+
+<ParamField path="aac_stereo_mix_coeff_flag" type="uint32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `param_id_aac_sbr_ps_flag_t`
+
+```c
+typedef struct param_id_aac_sbr_ps_flag_t param_id_aac_sbr_ps_flag_t
+```
+
+### `aac_dual_mono_mapping_param_t`
+
+```c
+typedef struct aac_dual_mono_mapping_param_t aac_dual_mono_mapping_param_t
+```
+
+### `param_id_aac_sbr_signalling_t`
+
+```c
+typedef struct param_id_aac_sbr_signalling_t param_id_aac_sbr_signalling_t
+```
+
+### `param_id_aac_stereo_mix_coeff_selection_t`
+
+```c
+typedef struct param_id_aac_stereo_mix_coeff_selection_t param_id_aac_stereo_mix_coeff_selection_t
+```
+
+## Macros
+
+### `AAC_DEC_DATA_INPUT_PORT`
+
+```c
+#define AAC_DEC_DATA_INPUT_PORT 0x2
+```
+
+### `AAC_DEC_DATA_OUTPUT_PORT`
+
+```c
+#define AAC_DEC_DATA_OUTPUT_PORT 0x1
+```
+
+### `AAC_DEC_DATA_MAX_INPUT_PORTS`
+
+```c
+#define AAC_DEC_DATA_MAX_INPUT_PORTS 0x1
+```
+
+### `AAC_DEC_DATA_MAX_OUTPUT_PORTS`
+
+```c
+#define AAC_DEC_DATA_MAX_OUTPUT_PORTS 0x1
+```
+
+### `AAC_DEC_MODULE_STACK_SIZE`
+
+```c
+#define AAC_DEC_MODULE_STACK_SIZE 4096
+```
+
+### `AAC_SBR_OFF_PS_OFF`
+
+Flag to turn off both SBR and PS processing, if they are present in the bit stream.
+
+```c
+#define AAC_SBR_OFF_PS_OFF (2)
+```
+
+### `AAC_SBR_ON_PS_OFF`
+
+Flag to turn on SBR but turn off PS processing,if they are present in the bit stream.
+
+```c
+#define AAC_SBR_ON_PS_OFF (1)
+```
+
+### `AAC_SBR_ON_PS_ON`
+
+Flag to turn on both SBR and PS processing, if they are present in the bit stream (default behavior)
+
+```c
+#define AAC_SBR_ON_PS_ON (0)
+```
+
+### `AAC_DUAL_MONO_MAP_SCE_1`
+
+First single channel element in a dual mono bit stream.
+
+```c
+#define AAC_DUAL_MONO_MAP_SCE_1 (1)
+```
+
+### `AAC_DUAL_MONO_MAP_SCE_2`
+
+Second single channel element in a dual mono bit stream.
+
+```c
+#define AAC_DUAL_MONO_MAP_SCE_2 (2)
+```
+
+### `AAC_EXTENSION_AOT_LC`
+
+AAC extension audio object type is Low Complexity (LC)
+
+```c
+#define AAC_EXTENSION_AOT_LC 2
+```
+
+### `AAC_EXTENSION_AOT_SBR`
+
+AAC extension audio object type is SBR.
+
+```c
+#define AAC_EXTENSION_AOT_SBR 5
+```
+
+### `AAC_EXTENSION_AOT_PS`
+
+AAC extension audio object type is PS.
+
+```c
+#define AAC_EXTENSION_AOT_PS 29
+```
+
+### `AAC_STEREO_MIX_COEFF_ISO`
+
+Use AAC stereo mix coefficients defined in ISO/IEC.
+
+```c
+#define AAC_STEREO_MIX_COEFF_ISO (0)
+```
+
+### `AAC_STEREO_MIX_COEFF_ARIB`
+
+Use AAC stereo mix coefficients defined in ARIB.
+
+```c
+#define AAC_STEREO_MIX_COEFF_ARIB (1)
+```
+
+### `PARAM_ID_AAC_SBR_PS_FLAG`
+
+Parameter ID of the AAC decoder SBR/PS Enable flag.
+
+```c
+#define PARAM_ID_AAC_SBR_PS_FLAG 0x08001054
+```
+
+### `PARAM_ID_AAC_DUAL_MONO_MAPPING`
+
+ID of parameter for configuring AAC decoder dual mono mapping.
+
+```c
+#define PARAM_ID_AAC_DUAL_MONO_MAPPING 0x08001055
+```
+
+### `PARAM_ID_AAC_SBR_SIGNALLING`
+
+ID of parameter for configuring AAC decoder SBR signalling.
+
+```c
+#define PARAM_ID_AAC_SBR_SIGNALLING 0x08001056
+```
+
+### `PARAM_ID_AAC_STEREO_MIX_COEFF_SELECTION_FLAG`
+
+ID of the AAC decoder Stereo Mixing parameter.
+
+```c
+#define PARAM_ID_AAC_STEREO_MIX_COEFF_SELECTION_FLAG 0x08001057
+```
+
+### `MODULE_ID_AAC_DEC`
+
+```c
+#define MODULE_ID_AAC_DEC 0x0700101F
+```

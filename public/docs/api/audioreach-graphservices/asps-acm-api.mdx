@@ -1,0 +1,203 @@
+---
+title: "asps_acm_api.h"
+---
+
+## Structures
+
+### `event_id_asps_sensor_register_request_t`
+
+Payload of the EVENT_ID_ASPS_SENSOR_REGISTER_REQUEST data structure.
+
+**Members**
+
+<ParamField path="see_sensor_iid" type="uint32_t">
+  Unique identifier for the audio sensor instance in SEE framework.
+</ParamField>
+<ParamField path="usecase_id" type="uint32_t">
+  Indicates the usecase which a given sensor instance is trying to register.
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Size of the "usecase_id" specific payload if any.
+</ParamField>
+<ParamField path="payload" type="uint32_t">
+  Points to "usecase_id" specific paylod if any.
+</ParamField>
+
+### `param_id_asps_sensor_register_ack_t`
+
+Payload of the PARAM_ID_ASPS_SENSOR_REGISTER_ACK data structure.
+
+**Members**
+
+<ParamField path="see_sensor_iid" type="uint32_t">
+  Sensor instance iid which was passed as part of the ASPS event.
+</ParamField>
+<ParamField path="usecase_id" type="uint32_t">
+  Indicates the usecase which a given sensor instance is trying to register.
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Size of the usecase_id specific ACK payload following this structure.
+</ParamField>
+<ParamField path="payload" type="uint32_t">
+  Points to "usecase_id" specific paylod if any.
+</ParamField>
+
+### `event_id_asps_sensor_deregister_request_t`
+
+Payload of the EVENT_ID_ASPS_SENSOR_DEREGISTER_REQUEST data structure.
+
+**Members**
+
+<ParamField path="see_sensor_iid" type="uint32_t">
+  Unique identifier for the audio sensor instance in SEE framework.
+</ParamField>
+<ParamField path="usecase_id" type="uint32_t">
+  Module event ID for which sensor instance wants to de-register from.
+</ParamField>
+
+### `event_id_asps_get_supported_context_ids_t`
+
+Payload of the EVENT_ID_ASPS_GET_SUPPORTED_CONTEXT_IDS data structure.
+
+**Members**
+
+<ParamField path="see_sensor_iid" type="uint32_t">
+  Unique identifier for the audio sensor instance in SEE framework thats requesting for the list of supported context ids.
+</ParamField>
+
+### `param_id_asps_supported_context_ids_t`
+
+Payload of the PARAM_ID_ASPS_SUPPORTED_CONTEXT_IDS data structure.
+
+**Members**
+
+<ParamField path="see_sensor_iid" type="uint32_t">
+  Unique identifier for the audio sensor instance in SEE framework that requested for the list of supported context ids.
+</ParamField>
+<ParamField path="num_supported_contexts" type="uint32_t">
+  Number of supported context ids.
+</ParamField>
+<ParamField path="supported_context_ids" type="uint32_t">
+  Variable length array of supported context ids.
+</ParamField>
+
+### `param_id_asps_basic_ack_t`
+
+Payload of the PARAM_ID_ASPS_BASIC_ACK data structure.
+
+**Members**
+
+<ParamField path="error_code" type="uint32_t">
+  Audio reach error code.
+</ParamField>
+<ParamField path="asps_event_id" type="uint32_t">
+  ASPS event ID to which this response is being returned.
+</ParamField>
+<ParamField path="see_sensor_iid" type="uint32_t">
+  Sensor instance iid which was passed as part of the ASPS event.
+</ParamField>
+<ParamField path="usecase_id" type="uint32_t">
+  Usecase ID for which the response is being returned.
+</ParamField>
+
+## Type Definitions
+
+### `event_id_asps_sensor_register_request_t`
+
+```c
+typedef struct event_id_asps_sensor_register_request_t event_id_asps_sensor_register_request_t
+```
+
+### `param_id_asps_sensor_register_ack_t`
+
+```c
+typedef struct param_id_asps_sensor_register_ack_t param_id_asps_sensor_register_ack_t
+```
+
+### `event_id_asps_sensor_deregister_request_t`
+
+```c
+typedef struct event_id_asps_sensor_deregister_request_t event_id_asps_sensor_deregister_request_t
+```
+
+### `event_id_asps_get_supported_context_ids_t`
+
+```c
+typedef struct event_id_asps_get_supported_context_ids_t event_id_asps_get_supported_context_ids_t
+```
+
+### `param_id_asps_supported_context_ids_t`
+
+```c
+typedef struct param_id_asps_supported_context_ids_t param_id_asps_supported_context_ids_t
+```
+
+### `param_id_asps_basic_ack_t`
+
+```c
+typedef struct param_id_asps_basic_ack_t param_id_asps_basic_ack_t
+```
+
+## Macros
+
+### `ASPS_MODULE_INSTANCE_ID`
+
+```c
+#define ASPS_MODULE_INSTANCE_ID 0x00000007
+```
+
+### `EVENT_ID_ASPS_SENSOR_REGISTER_REQUEST`
+
+Event raised by ASPS to setup a given usecase for a given sensor instance.
+
+```c
+#define EVENT_ID_ASPS_SENSOR_REGISTER_REQUEST 0x080012EB
+```
+
+### `PARAM_ID_ASPS_SENSOR_REGISTER_ACK`
+
+This parameter is set as an ACK to the event EVENT_ID_ASPS_SENSOR_REGISTER_REQUEST.
+
+```c
+#define PARAM_ID_ASPS_SENSOR_REGISTER_ACK 0x080012ED
+```
+
+### `EVENT_ID_ASPS_SENSOR_DEREGISTER_REQUEST`
+
+De-registers request event ID.
+
+```c
+#define EVENT_ID_ASPS_SENSOR_DEREGISTER_REQUEST 0x080012EC
+```
+
+### `EVENT_ID_ASPS_GET_SUPPORTED_CONTEXT_IDS`
+
+Event raised by ASPS to get list of supported instance IDS.
+
+```c
+#define EVENT_ID_ASPS_GET_SUPPORTED_CONTEXT_IDS 0x08001302
+```
+
+### `PARAM_ID_ASPS_SUPPORTED_CONTEXT_IDS`
+
+Set param to inform list of supported context ids to ASPS.
+
+```c
+#define PARAM_ID_ASPS_SUPPORTED_CONTEXT_IDS 0x08001303
+```
+
+### `EVENT_ID_ASPS_CLOSE_ALL`
+
+Event raised by ASPS to close all the sessions corresponding to earlier register requests.
+
+```c
+#define EVENT_ID_ASPS_CLOSE_ALL 0x0800133E
+```
+
+### `PARAM_ID_ASPS_BASIC_ACK`
+
+Sets the error code corresponding to the request event raised by ASPS.
+
+```c
+#define PARAM_ID_ASPS_BASIC_ACK 0x08001304
+```

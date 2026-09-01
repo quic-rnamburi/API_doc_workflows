@@ -1,0 +1,209 @@
+---
+title: "ar_osal_heap.h"
+description: "Defines public APIs for heap memory allocation."
+---
+
+## Structures
+
+### `ar_heap_info_t`
+
+Heap memory info structure.
+
+**Members**
+
+<ParamField path="align_bytes" type="ar_heap_align_bytes">
+</ParamField>
+<ParamField path="pool_type" type="ar_heap_pool_type">
+  heap memory byte alignment required.
+</ParamField>
+<ParamField path="heap_id" type="ar_heap_id">
+  pool type to allocate heap memory.
+</ParamField>
+<ParamField path="tag" type="uint32_t">
+  head id to allocate heap memory.
+</ParamField>
+
+## Functions
+
+### `ar_heap_init`
+
+ar_heap_init initialize heap memory interface.
+
+```c
+int32_t ar_heap_init(void)
+```
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_heap_deinit`
+
+ar_heap_deinit.
+
+```c
+int32_t ar_heap_deinit(void)
+```
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+### `ar_heap_malloc`
+
+Allocates heap memory.
+
+```c
+void * ar_heap_malloc(size_t bytes, par_heap_info heap_info)
+```
+
+**Parameters**
+
+<ParamField path="bytes" type="size_t">
+  number of bytes to allocate heap memory.
+</ParamField>
+<ParamField path="heap_info" type="par_heap_info">
+  pointer of type: ar_heap_info.
+</ParamField>
+
+**Returns**
+
+Nonzero  Success: pointer to the allocated heap memory NULL  Failure
+
+### `ar_heap_calloc`
+
+Allocates heap memory and initialize with 0.
+
+```c
+void * ar_heap_calloc(size_t bytes, par_heap_info heap_info)
+```
+
+**Parameters**
+
+<ParamField path="bytes" type="size_t">
+  number of bytes to allocate heap memory.
+</ParamField>
+<ParamField path="heap_info" type="par_heap_info">
+  pointer of type: ar_heap_info.
+</ParamField>
+
+**Returns**
+
+Nonzero  Success: pointer to the allocated heap memory NULL  Failure
+
+### `ar_heap_free`
+
+Frees heap memory.
+
+```c
+void ar_heap_free(void *heap_ptr, par_heap_info heap_info)
+```
+
+**Parameters**
+
+<ParamField path="heap_ptr" type="void *">
+  pointer to heap memory obtained from ar_heap_alloc().
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure
+
+## Type Definitions
+
+### `ar_heap_align_bytes`
+
+enum for heap memory byte alignments
+
+```c
+typedef enum _ar_heap_align_bytes ar_heap_align_bytes
+```
+
+### `ar_heap_id`
+
+enum for heap memory ids
+
+```c
+typedef enum _ar_heap_id ar_heap_id
+```
+
+### `ar_heap_pool_type`
+
+enum for heap memory types
+
+```c
+typedef enum _ar_heap_pool_type ar_heap_pool_type
+```
+
+### `ar_heap_info`
+
+Heap memory info structure.
+
+```c
+typedef struct ar_heap_info_t ar_heap_info
+```
+
+### `par_heap_info`
+
+```c
+typedef struct ar_heap_info_t * par_heap_info
+```
+
+## Enumerations
+
+### `_ar_heap_align_bytes`
+
+enum for heap memory byte alignments
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_HEAP_ALIGN_DEFAULT` | = 0 |  |
+| `AR_HEAP_ALIGN_4_BYTES` | = 1 | default alignment |
+| `AR_HEAP_ALIGN_8_BYTES` | = 2 | 4-byte boundary |
+| `AR_HEAP_ALIGN_16_BYTES` | = 3 | 8-byte boundary |
+
+### `_ar_heap_id`
+
+enum for heap memory ids
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_HEAP_ID_DEFAULT` | = 0 |  |
+| `AR_HEAP_ID_1` | = 1 | default heap id |
+| `AR_HEAP_ID_2` | = 2 | custom heap id 1 |
+| `AR_HEAP_ID_3` | = 3 | custom heap id 2 |
+| `AR_HEAP_ID_4` | = 4 | custom heap id 3 |
+| `AR_HEAP_ID_5` | = 5 | custom heap id 4 |
+| `AR_HEAP_ID_6` | = 6 | custom heap id 5 |
+| `AR_HEAP_ID_7` | = 7 | custom heap id 6 |
+| `AR_HEAP_ID_8` | = 8 | custom heap id 7 |
+| `AR_HEAP_ID_9` | = 9 | custom heap id 8 |
+| `AR_HEAP_ID_10` | = 10 | custom heap id 9 |
+| `AR_HEAP_ID_11` | = 11 | custom heap id 10 |
+
+### `_ar_heap_pool_type`
+
+enum for heap memory types
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AR_HEAP_POOL_DEFAULT` | = 0 | default pool type, as supported by each platform. |
+| `AR_HEAP_POOL_NON_PAGED_EXECUTE` | = 1 | allocated memory is nonpaged and executable that is, instruction execution is enabled in this memory. |
+| `AR_HEAP_POOL_NON_PAGED_NX` | = 2 | allocated memory is nonpaged and instruction execution is disabled. |
+| `AR_HEAP_POOL_PAGED` | = 4 | allocated memory is pageable. |
+
+## Macros
+
+### `AR_HEAP_TAG_DEFAULT`
+
+default heap memory tag ASCII characters: 'LASO'->'OSAL'
+
+```c
+#define AR_HEAP_TAG_DEFAULT (0x4c41534f)
+```

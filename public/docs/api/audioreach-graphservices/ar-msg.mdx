@@ -1,0 +1,176 @@
+---
+title: "ar_msg.h"
+description: "This file contains a utility for generating diagnostic messages."
+---
+
+## Macros
+
+### `ar_log_debugmsg_enable`
+
+Enable (1) or disable (0) the debug messagef.
+
+```c
+#define ar_log_debugmsg_enable 1
+```
+
+### `DBG_LOW_PRIO`
+
+Low priority debug message.
+
+```c
+#define DBG_LOW_PRIO AR_LOW_PRIO
+```
+
+### `DBG_MED_PRIO`
+
+Medium priority debug message.
+
+```c
+#define DBG_MED_PRIO AR_MED_PRIO
+```
+
+### `DBG_HIGH_PRIO`
+
+High priority debug message.
+
+```c
+#define DBG_HIGH_PRIO AR_HIGH_PRIO
+```
+
+### `DBG_ERROR_PRIO`
+
+Error priority debug message.
+
+```c
+#define DBG_ERROR_PRIO AR_ERROR_PRIO
+```
+
+### `DBG_FATAL_PRIO`
+
+Fatal priority debug message.
+
+```c
+#define DBG_FATAL_PRIO AR_FATAL_PRIO
+```
+
+### `MSG_LEGACY_ERROR`
+
+```c
+#define MSG_LEGACY_ERROR DBG_ERROR_PRIO
+```
+
+### `MSG_LEGACY_HIGH`
+
+```c
+#define MSG_LEGACY_HIGH DBG_HIGH_PRIO
+```
+
+### `MSG_LEGACY_MED`
+
+```c
+#define MSG_LEGACY_MED DBG_MED_PRIO
+```
+
+### `MSG_LEGACY_LOW`
+
+```c
+#define MSG_LEGACY_LOW DBG_LOW_PRIO
+```
+
+### `AR_MSG_ISLAND`
+
+```c
+#define AR_MSG_ISLAND AR_MSG
+```
+
+### `MSG`
+
+```c
+#define MSG AR_MSG_LOG
+```
+
+### `MSG_1`
+
+```c
+#define MSG_1 AR_MSG_LOG
+```
+
+### `MSG_2`
+
+```c
+#define MSG_2 AR_MSG_LOG
+```
+
+### `MSG_3`
+
+```c
+#define MSG_3 AR_MSG_LOG
+```
+
+### `MSG_4`
+
+```c
+#define MSG_4 AR_MSG_LOG
+```
+
+### `MSG_5`
+
+```c
+#define MSG_5 AR_MSG_LOG
+```
+
+### `MSG_6`
+
+```c
+#define MSG_6 AR_MSG_LOG
+```
+
+### `MSG_7`
+
+```c
+#define MSG_7 AR_MSG_LOG
+```
+
+### `MSG_8`
+
+```c
+#define MSG_8 AR_MSG_LOG
+```
+
+### `MSG_9`
+
+```c
+#define MSG_9 AR_MSG_LOG
+```
+
+### `MSG_FATAL`
+
+```c
+#define MSG_FATAL AR_MSG_LOG
+```
+
+### `AR_MSG_TAG`
+
+```c
+#define AR_MSG_TAG ( NULL )
+```
+
+### `AR_MSG_LOG`
+
+```c
+#define AR_MSG_LOG do  \
+      } \
+   } while(0)
+```
+
+### `AR_MSG_DFLT_MSG_SSID`
+
+```c
+#define AR_MSG_DFLT_MSG_SSID MSG_SSID_QDSP6
+```
+
+### `AR_MSG`
+
+```c
+#define AR_MSG AR_MSG_LOG( AR_MSG_DFLT_MSG_SSID, xx_ss_mask, xx_fmt, ##__VA_ARGS__ )
+```

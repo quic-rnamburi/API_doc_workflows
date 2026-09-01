@@ -1,0 +1,142 @@
+---
+title: "ar_osal_string.h"
+description: "Defines public APIs for string operations."
+---
+
+## Functions
+
+### `ar_strlen`
+
+ar_strlen Get the length of the string.
+
+```c
+size_t ar_strlen(const char_t *str, size_t size)
+```
+
+**Parameters**
+
+<ParamField path="str" type="const char_t *">
+  NULL terminated string buffer pointer.
+</ParamField>
+<ParamField path="size" type="size_t">
+  String buffer size in bytes.
+</ParamField>
+
+**Returns**
+
+Number of characters in the string, not including the terminating null character. If there is no null terminator in the buffer, provided string buffer size is returned to indicate the error.
+
+### `ar_strcpy`
+
+ar_strcpy Copies character from source to destination string.
+
+```c
+int32_t ar_strcpy(char_t *str_dest, size_t str_dest_size, const char_t *str_src, size_t cpy_size)
+```
+
+**Parameters**
+
+<ParamField path="[in_out]" type="">
+  str_dest: Destination string buffer.
+</ParamField>
+<ParamField path="str_dest_size" type="size_t">
+  Size in characters.
+</ParamField>
+<ParamField path="str_src" type="const char_t *">
+  Source string to copy from.
+</ParamField>
+<ParamField path="cpy_size" type="size_t">
+  Size in characters to copy from source string.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure note: Always null terminator is appended to the destination and string truncation will occur if destination size is smaller or equal to characters copy size.
+
+### `ar_strcmp`
+
+ar_strcmp Compare characters in two given strings.
+
+```c
+int32_t ar_strcmp(const char_t *str1, const char_t *str2, size_t num)
+```
+
+**Parameters**
+
+<ParamField path="str1" type="const char_t *">
+  Null terminated string 1
+</ParamField>
+<ParamField path="str2" type="const char_t *">
+  Null terminated string 2
+</ParamField>
+<ParamField path="num" type="size_t">
+  number of characters to compare.
+</ParamField>
+
+**Returns**
+
+\< 0 str1 \< str2 0 str1 == str2 0 str1 > str2
+
+### `ar_strcat`
+
+ar_strcat Append character from source to destination string.
+
+```c
+int32_t ar_strcat(char_t *str_dest, size_t str_dest_size, const char_t *str_src, size_t apnd_size)
+```
+
+**Parameters**
+
+<ParamField path="[in_out]" type="">
+  str_dest: Destination string buffer.
+</ParamField>
+<ParamField path="str_dest_size" type="size_t">
+  Size in characters.
+</ParamField>
+<ParamField path="str_src" type="const char_t *">
+  Source string to copy from.
+</ParamField>
+<ParamField path="apnd_size" type="size_t">
+  Size in characters to append from source string.
+</ParamField>
+
+**Returns**
+
+0  Success Nonzero  Failure note: Always null terminator is appended to the destination after concatenation and string truncation will occur if destination size is smaller or equal to source.
+
+### `ar_strstr`
+
+ar_strstr Search string in string.
+
+```c
+char_t * ar_strstr(const char_t *str, const char_t *str_search)
+```
+
+**Parameters**
+
+<ParamField path="str" type="const char_t *">
+  Null terminated string
+</ParamField>
+<ParamField path="str_search" type="const char_t *">
+  Null terminated string to search for.
+</ParamField>
+
+**Returns**
+
+Pointer to the first occurrence of str_search in str. NULL- if not found.
+
+## Macros
+
+### `ar_sprintf`
+
+ar_sprintf Write formated data to a string.
+
+```c
+#define ar_sprintf snprintf(str_dest, str_dest_size, format, __VA_ARGS__)
+```
+
+### `ar_sscanf`
+
+```c
+#define ar_sscanf sscanf(str_src, format, __VA_ARGS__)
+```

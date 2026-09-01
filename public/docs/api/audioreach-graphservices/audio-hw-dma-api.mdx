@@ -1,0 +1,43 @@
+---
+title: "audio_hw_dma_api.h"
+description: "This file contains dma api."
+---
+
+## Structures
+
+### `dma_rsc_t`
+
+Struct for DMA channel memory request/release/request response by HLOS.
+
+**Members**
+
+<ParamField path="dma_type" type="uint32_t">
+  DMA channel type @values #LPAIF_CORE_DMA.
+</ParamField>
+<ParamField path="num_dma_channels" type="uint32_t">
+  Number of DMA channels @values >= 0.
+</ParamField>
+
+## Type Definitions
+
+### `dma_rsc_t`
+
+```c
+typedef struct dma_rsc_t dma_rsc_t
+```
+
+## Macros
+
+### `PARAM_ID_RSC_DMA_READ_CHANNEL`
+
+Param ID for dma This ID should only be used under PRM module instance.
+
+```c
+#define PARAM_ID_RSC_DMA_READ_CHANNEL 0x080010CE
+```
+
+### `PARAM_ID_RSC_DMA_WRITE_CHANNEL`
+
+```c
+#define PARAM_ID_RSC_DMA_WRITE_CHANNEL 0x080010CF
+```

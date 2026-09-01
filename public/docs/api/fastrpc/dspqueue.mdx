@@ -1,0 +1,70 @@
+---
+title: "dspqueue.h"
+description: "Asynchronous DSP Packet Queue API."
+---
+
+## Structures
+
+### `dspqueue_buffer`
+
+Buffer reference in a packet.
+
+**Members**
+
+<ParamField path="fd" type="uint32_t">
+  Buffer file descriptor.
+</ParamField>
+<ParamField path="size" type="uint32_t">
+  Buffer size in bytes.
+</ParamField>
+<ParamField path="offset" type="uint32_t">
+  Offset within the buffer in bytes as allocated and mapped.
+</ParamField>
+<ParamField path="flags" type="uint32_t">
+  Buffer flags, see enum dspqueue_buffer_flags.
+</ParamField>
+<ParamField path="ptr" type="void *">
+  Buffer virtual address; NULL if not mapped in the local context.
+</ParamField>
+<ParamField path="address" type="uint64_t">
+</ParamField>
+<ParamField path="" type="union dspqueue_buffer">
+</ParamField>
+
+### `dspqueue_create_req`
+
+**Members**
+
+<ParamField path="ctx" type="uint64_t">
+</ParamField>
+<ParamField path="flags" type="uint64_t">
+</ParamField>
+<ParamField path="req_queue_size" type="uint32_t">
+</ParamField>
+<ParamField path="resp_queue_size" type="uint32_t">
+</ParamField>
+<ParamField path="priority" type="uint32_t">
+</ParamField>
+<ParamField path="packet_callback" type="dspqueue_callback_t">
+</ParamField>
+<ParamField path="error_callback" type="dspqueue_callback_t">
+</ParamField>
+<ParamField path="callback_context" type="void *">
+</ParamField>
+<ParamField path="queue" type="dspqueue_t">
+</ParamField>
+<ParamField path="ids" type="uint64_t *">
+</ParamField>
+<ParamField path="num_ids" type="uint32_t">
+</ParamField>
+
+### `dspqueue_request_payload`
+
+**Members**
+
+<ParamField path="id" type="dspqueue_request_req_id">
+</ParamField>
+<ParamField path="create" type="dspqueue_create_req">
+</ParamField>
+<ParamField path="" type="union dspqueue_request_payload">
+</ParamField>

@@ -1,0 +1,61 @@
+---
+title: "cop_packetizer_v0_api.h"
+---
+
+## Structures
+
+### `param_id_cop_pack_enable_scrambling_t`
+
+**Members**
+
+<ParamField path="enable_scrambler" type="uint32_t">
+  ->1 = enable scrambler , 0 = disable scrambler}
+</ParamField>
+
+## Type Definitions
+
+### `param_id_cop_pack_enable_scrambling_t`
+
+```c
+typedef struct param_id_cop_pack_enable_scrambling_t param_id_cop_pack_enable_scrambling_t
+```
+
+## Macros
+
+### `COP_PACK_V0_STACK_SIZE`
+
+```c
+#define COP_PACK_V0_STACK_SIZE 6144
+```
+
+### `PORT_ID_COP_PACK_V0_INPUT`
+
+```c
+#define PORT_ID_COP_PACK_V0_INPUT 0x2
+```
+
+### `PORT_ID_COP_PACK_V0_OUTPUT`
+
+```c
+#define PORT_ID_COP_PACK_V0_OUTPUT 0x1
+```
+
+### `COP_PACKETIZER_FEEDBACK_IN`
+
+```c
+#define COP_PACKETIZER_FEEDBACK_IN AR_NON_GUID(0xC0000001)
+```
+
+### `PARAM_ID_COP_PACKETIZER_ENABLE_SCRAMBLING`
+
+```c
+#define PARAM_ID_COP_PACKETIZER_ENABLE_SCRAMBLING 0x0800134D
+```
+
+### `MODULE_ID_COP_PACKETIZER_V0`
+
+Module ID for CoP Packetizer module.
+
+```c
+#define MODULE_ID_COP_PACKETIZER_V0 0x0700106D
+```

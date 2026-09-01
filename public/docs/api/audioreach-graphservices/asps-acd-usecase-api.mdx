@@ -1,0 +1,56 @@
+---
+title: "asps_acd_usecase_api.h"
+---
+
+## Structures
+
+### `asps_acd_usecase_register_payload_t`
+
+ACD usecase(ASPS_USECASE_ID_ACD) specific payload.
+
+**Members**
+
+<ParamField path="num_contexts" type="uint32_t">
+  Number of context ids.
+</ParamField>
+<ParamField path="context_ids" type="uint32_t">
+  Variable length array of context ids.
+</ParamField>
+
+### `asps_acd_usecase_register_ack_payload_t`
+
+ACD usecase (ASPS_USECASE_ID_ACD) specific ACK Payload structure.
+
+**Members**
+
+<ParamField path="module_instance_id" type="uint32_t">
+  Module instance ID of which is configured with the following contexts ids.
+</ParamField>
+<ParamField path="num_contexts" type="uint32_t">
+  Number of context ids.
+</ParamField>
+<ParamField path="context_ids" type="uint32_t">
+  Variable length array of context ids.
+</ParamField>
+
+## Type Definitions
+
+### `asps_acd_usecase_register_payload_t`
+
+```c
+typedef struct asps_acd_usecase_register_payload_t asps_acd_usecase_register_payload_t
+```
+
+### `asps_acd_usecase_register_ack_payload_t`
+
+```c
+typedef struct asps_acd_usecase_register_ack_payload_t asps_acd_usecase_register_ack_payload_t
+```
+
+## Macros
+
+### `ASPS_USECASE_ID_ACD`
+
+```c
+#define ASPS_USECASE_ID_ACD 0x0B001004
+```

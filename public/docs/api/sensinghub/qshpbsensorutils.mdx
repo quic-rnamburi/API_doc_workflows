@@ -1,0 +1,55 @@
+---
+title: "qshPbSensorUtils.h"
+---
+
+## Structures
+
+### `qshPb::suid_list`
+
+Output context passed to the decode_suids() nanopb callback.
+
+**Members**
+
+<ParamField path="suids" type="std::vector\< suid > *">
+  Destination vector for decoded SUIDs.
+</ParamField>
+<ParamField path="datatype" type="std::string *">
+  Destination for the sensor datatype string.
+</ParamField>
+
+### `qshPb::attribute`
+
+Holds a single decoded sns_std_attr_value_data value.
+
+**Members**
+
+<ParamField path="has_subtype" type="bool">
+  True if the value is a nested subtype.
+</ParamField>
+<ParamField path="subtype" type="std::vector\< float >">
+  Decoded float subtype values.
+</ParamField>
+<ParamField path="has_str" type="bool">
+  True if the value is a string.
+</ParamField>
+<ParamField path="str" type="std::string">
+  Decoded string value.
+</ParamField>
+<ParamField path="has_flt" type="bool">
+  True if the value is a float.
+</ParamField>
+<ParamField path="flt" type="float">
+  Decoded float value.
+</ParamField>
+<ParamField path="has_sint" type="bool">
+  True if the value is a signed integer.
+</ParamField>
+<ParamField path="sint" type="int64_t">
+  Decoded signed integer value.
+</ParamField>
+<ParamField path="has_boolean" type="bool">
+  True if the value is a boolean.
+</ParamField>
+<ParamField path="boolean" type="bool">
+  Decoded boolean value.
+</ParamField>

@@ -1,0 +1,167 @@
+---
+title: "module_cmn_api.h"
+description: "this file contains common module definitions"
+---
+
+## Structures
+
+### `param_id_module_enable_t`
+
+Payload of the PARAM_ID_MODULE_ENABLE parameter, which is used for any audio processing module.
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+  Specifies whether the module is to be enabled or disabled.
+</ParamField>
+
+### `lib_version_t`
+
+**Members**
+
+<ParamField path="lib_version_low" type="uint32_t">
+</ParamField>
+<ParamField path="lib_version_high" type="uint32_t">
+</ParamField>
+
+### `param_id_module_frame_size_cfg_t`
+
+**Members**
+
+<ParamField path="frame_size_type" type="uint32_t">
+</ParamField>
+<ParamField path="frame_size_value" type="uint32_t">
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+</ParamField>
+
+### `param_id_module_data_interleaving_t`
+
+**Members**
+
+<ParamField path="data_interleaving" type="uint32_t">
+  configures the data interleaving supported by the Module.
+</ParamField>
+
+### `mla_enable_t`
+
+**Members**
+
+<ParamField path="mla_enable" type="uint32_t">
+</ParamField>
+
+### `mla_model_config_t`
+
+**Members**
+
+<ParamField path="mla_ftrt_ratio" type="uint32_t">
+</ParamField>
+<ParamField path="reserved_1" type="int32_t">
+
+</ParamField>
+<ParamField path="reserved_2" type="int32_t">
+
+</ParamField>
+<ParamField path="reserved_3" type="int32_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `param_id_module_enable_t`
+
+```c
+typedef struct param_id_module_enable_t param_id_module_enable_t
+```
+
+### `lib_version_t`
+
+```c
+typedef struct lib_version_t lib_version_t
+```
+
+### `param_id_module_data_interleaving_t`
+
+```c
+typedef struct param_id_module_data_interleaving_t param_id_module_data_interleaving_t
+```
+
+### `param_id_module_frame_size_cfg_t`
+
+```c
+typedef struct param_id_module_frame_size_cfg_t param_id_module_frame_size_cfg_t
+```
+
+### `mla_enable_t`
+
+```c
+typedef struct mla_enable_t mla_enable_t
+```
+
+### `mla_model_config_t`
+
+```c
+typedef struct mla_model_config_t mla_model_config_t
+```
+
+## Macros
+
+### `MODULE_CMN_MAX_CHANNEL_TYPE`
+
+```c
+#define MODULE_CMN_MAX_CHANNEL_TYPE 128
+```
+
+### `MODULE_CMN_MAX_CHANNEL`
+
+```c
+#define MODULE_CMN_MAX_CHANNEL 32
+```
+
+### `PARAM_ID_LIB_VERSION`
+
+```c
+#define PARAM_ID_LIB_VERSION 0x00010937
+```
+
+### `FRAME_SIZE_TYPE_NATIVE`
+
+```c
+#define FRAME_SIZE_TYPE_NATIVE 0
+```
+
+### `FRAME_SIZE_TYPE_US`
+
+```c
+#define FRAME_SIZE_TYPE_US 1
+```
+
+### `FRAME_SIZE_TYPE_SAMPLES_PER_CHANNEL`
+
+```c
+#define FRAME_SIZE_TYPE_SAMPLES_PER_CHANNEL 2
+```
+
+### `PARAM_ID_MODULE_FRAME_SIZE_CFG`
+
+```c
+#define PARAM_ID_MODULE_FRAME_SIZE_CFG 0x08001252
+```
+
+### `PARAM_ID_DATA_INTERLEAVING`
+
+```c
+#define PARAM_ID_DATA_INTERLEAVING 0x08001A91
+```
+
+### `PARAM_ID_MLA_ENABLE`
+
+```c
+#define PARAM_ID_MLA_ENABLE 0x080011DF
+```
+
+### `PARAM_ID_MLA_MODEL_CONFIG`
+
+```c
+#define PARAM_ID_MLA_MODEL_CONFIG 0x08001A57
+```

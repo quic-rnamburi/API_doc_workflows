@@ -1,0 +1,211 @@
+---
+title: "vad_api.h"
+description: "This file contains CAPI VAD module APIs."
+---
+
+## Structures
+
+### `param_id_vad_static_cfg_t`
+
+**Members**
+
+<ParamField path="num_channel_processing" type="int32_t">
+</ParamField>
+<ParamField path="conf_change" type="int32_t">
+</ParamField>
+<ParamField path="mic_gain" type="int16_t">
+</ParamField>
+<ParamField path="reserved" type="int16_t">
+</ParamField>
+
+### `param_id_vad_context_ml_model_config_t`
+
+**Members**
+
+<ParamField path="model_align" type="uint32_t">
+</ParamField>
+<ParamField path="model_offset" type="uint32_t">
+</ParamField>
+<ParamField path="model_size" type="uint32_t">
+</ParamField>
+<ParamField path="model" type="uint8_t">
+</ParamField>
+
+### `capi_vad_context_threshold_struct_t`
+
+**Members**
+
+<ParamField path="context_id" type="uint32_t">
+  Context_id is indepedent of mode_bit and usecase designer has to tune this based on model which is being set from application}
+</ParamField>
+<ParamField path="threshold" type="uint32_t">
+</ParamField>
+
+### `param_id_vad_context_threshold_t`
+
+**Members**
+
+<ParamField path="num_contexts" type="uint32_t">
+</ParamField>
+
+### `param_id_vad_speech_dynamic_config_t`
+
+**Members**
+
+<ParamField path="len_hangover_speech" type="uint32_t">
+</ParamField>
+<ParamField path="max_conf_frames_speech" type="uint32_t">
+</ParamField>
+<ParamField path="min_conf_frames_speech" type="uint32_t">
+</ParamField>
+
+### `param_id_vad_enable_speech_reset_t`
+
+**Members**
+
+<ParamField path="enable_reset" type="int32_t">
+</ParamField>
+
+### `param_id_vad_speech_reset_period_t`
+
+**Members**
+
+<ParamField path="speech_reset_period_in_ms" type="int32_t">
+</ParamField>
+
+### `param_id_vad_pre_roll_duration_t`
+
+**Members**
+
+<ParamField path="pre_roll_history_buffer_size_in_ms" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `param_id_vad_static_cfg_t`
+
+```c
+typedef struct param_id_vad_static_cfg_t param_id_vad_static_cfg_t
+```
+
+### `param_id_vad_context_ml_model_config_t`
+
+```c
+typedef struct param_id_vad_context_ml_model_config_t param_id_vad_context_ml_model_config_t
+```
+
+### `capi_vad_context_threshold_struct_t`
+
+```c
+typedef struct capi_vad_context_threshold_struct_t capi_vad_context_threshold_struct_t
+```
+
+### `param_id_vad_context_threshold_t`
+
+```c
+typedef struct param_id_vad_context_threshold_t param_id_vad_context_threshold_t
+```
+
+### `param_id_vad_speech_dynamic_config_t`
+
+```c
+typedef struct param_id_vad_speech_dynamic_config_t param_id_vad_speech_dynamic_config_t
+```
+
+### `param_id_vad_enable_speech_reset_t`
+
+```c
+typedef struct param_id_vad_enable_speech_reset_t param_id_vad_enable_speech_reset_t
+```
+
+### `param_id_vad_speech_reset_period_t`
+
+```c
+typedef struct param_id_vad_speech_reset_period_t param_id_vad_speech_reset_period_t
+```
+
+### `param_id_vad_pre_roll_duration_t`
+
+```c
+typedef struct param_id_vad_pre_roll_duration_t param_id_vad_pre_roll_duration_t
+```
+
+## Macros
+
+### `PARAM_ID_VAD_STATIC_CFG`
+
+```c
+#define PARAM_ID_VAD_STATIC_CFG 0x08001BE2
+```
+
+### `PARAM_ID_VAD_CONTEXT_ML_MODEL_CONFIG`
+
+```c
+#define PARAM_ID_VAD_CONTEXT_ML_MODEL_CONFIG 0x08001BEA
+```
+
+### `PARAM_ID_VAD_CONTEXT_THRESHOLD`
+
+```c
+#define PARAM_ID_VAD_CONTEXT_THRESHOLD 0x08001BE3
+```
+
+### `PARAM_ID_VAD_SPEECH_DYNAMIC_CONFIG`
+
+```c
+#define PARAM_ID_VAD_SPEECH_DYNAMIC_CONFIG 0x08001BE4
+```
+
+### `PARAM_ID_VAD_ENABLE_SPEECH_RESET`
+
+```c
+#define PARAM_ID_VAD_ENABLE_SPEECH_RESET 0x08001BE5
+```
+
+### `PARAM_ID_VAD_SPEECH_RESET_PERIOD`
+
+```c
+#define PARAM_ID_VAD_SPEECH_RESET_PERIOD 0x08001BE6
+```
+
+### `PARAM_ID_VAD_PRE_ROLL_DURATION`
+
+```c
+#define PARAM_ID_VAD_PRE_ROLL_DURATION 0x08001BE7
+```
+
+### `VAD_RELEASE_VERSION_MSB`
+
+```c
+#define VAD_RELEASE_VERSION_MSB AR_NON_GUID(0x01000100)
+```
+
+### `VAD_RELEASE_VERSION_LSB`
+
+```c
+#define VAD_RELEASE_VERSION_LSB AR_NON_GUID(0x00000000)
+```
+
+### `CAPI_VAD_MAX_INPUT_PORTS`
+
+```c
+#define CAPI_VAD_MAX_INPUT_PORTS 1
+```
+
+### `CAPI_VAD_MAX_OUTPUT_PORTS`
+
+```c
+#define CAPI_VAD_MAX_OUTPUT_PORTS 0
+```
+
+### `CAPI_VAD_STACK_SIZE_REQUIREMENT`
+
+```c
+#define CAPI_VAD_STACK_SIZE_REQUIREMENT 8192
+```
+
+### `MODULE_ID_VAD`
+
+```c
+#define MODULE_ID_VAD 0x07001188
+```

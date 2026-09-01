@@ -1,0 +1,46 @@
+---
+title: "ipc_dl_api.h"
+description: "This file contains IPC APIs."
+---
+
+## Structures
+
+### `gpr_to_ipc_vtbl_t`
+
+Table of callback functions exposed by the GPR to the IPC data link layers.
+
+**Members**
+
+<ParamField path="receive" type="uint32_t(*">
+  Prototype of the receive() callback function for the GPR.
+</ParamField>
+<ParamField path="send_done" type="uint32_t(*">
+  Prototype of the send_done() callback function for the GPR.
+</ParamField>
+
+### `ipc_to_gpr_vtbl_t`
+
+Table of functions exposed by data link layers to the GPR.
+
+**Members**
+
+<ParamField path="send" type="uint32_t(*">
+  Prototype of the send() function for a data link layer.
+</ParamField>
+<ParamField path="receive_done" type="uint32_t(*">
+  Prototype of the receive_done() function for a data link layer.
+</ParamField>
+
+## Type Definitions
+
+### `gpr_to_ipc_vtbl_t`
+
+```c
+typedef struct gpr_to_ipc_vtbl_t gpr_to_ipc_vtbl_t
+```
+
+### `ipc_to_gpr_vtbl_t`
+
+```c
+typedef struct ipc_to_gpr_vtbl_t ipc_to_gpr_vtbl_t
+```

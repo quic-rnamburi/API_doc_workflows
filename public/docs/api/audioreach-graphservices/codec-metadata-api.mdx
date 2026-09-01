@@ -1,0 +1,138 @@
+---
+title: "codec_metadata_api.h"
+description: "This file contains codec related metadata IDs."
+---
+
+## Structures
+
+### `module_cmn_md_encoder_per_frame_info_t`
+
+**Members**
+
+<ParamField path="frame_size" type="uint32_t">
+  Size of each frame in bytes (E.g.
+</ParamField>
+<ParamField path="timestamp_lsw" type="uint32_t">
+  Lower 32 bits of the 64-bit session time in microseconds of the first sample in the frame.
+</ParamField>
+<ParamField path="timestamp_msw" type="uint32_t">
+  Upper 32 bits of the 64-bit session time in microseconds of the first sample in the frame.
+</ParamField>
+<ParamField path="flags" type="uint32_t">
+  Frame flags.
+</ParamField>
+
+### `module_cmn_md_buffer_start_t`
+
+**Members**
+
+<ParamField path="buffer_index_lsw" type="uint32_t">
+</ParamField>
+<ParamField path="buffer_index_msw" type="uint32_t">
+  Specifies the lower 32 bits of the 64-bit unique buffer index
+</ParamField>
+
+### `module_cmn_md_buffer_end_t`
+
+**Members**
+
+<ParamField path="buffer_index_lsw" type="uint32_t">
+</ParamField>
+<ParamField path="buffer_index_msw" type="uint32_t">
+  Specifies the lower 32 bits of the 64-bit unique buffer index
+</ParamField>
+<ParamField path="flags" type="uint32_t">
+  Specifies the higher 32 bits of the 64-bit unique buffer index
+</ParamField>
+
+## Type Definitions
+
+### `module_cmn_md_encoder_per_frame_info_t`
+
+```c
+typedef struct module_cmn_md_encoder_per_frame_info_t module_cmn_md_encoder_per_frame_info_t
+```
+
+### `module_cmn_md_buffer_start_t`
+
+```c
+typedef struct module_cmn_md_buffer_start_t module_cmn_md_buffer_start_t
+```
+
+### `module_cmn_md_buffer_end_t`
+
+```c
+typedef struct module_cmn_md_buffer_end_t module_cmn_md_buffer_end_t
+```
+
+## Macros
+
+### `MODULE_CMN_MD_ID_ENCODER_FRAME_INFO`
+
+```c
+#define MODULE_CMN_MD_ID_ENCODER_FRAME_INFO 0x0A001052
+```
+
+### `MODULE_CMN_MD_ID_BUFFER_START`
+
+Metadata ID for Codec.2.0 requirement.
+
+```c
+#define MODULE_CMN_MD_ID_BUFFER_START 0x0A001053
+```
+
+### `MODULE_CMN_MD_ID_BUFFER_END`
+
+Metadata ID to specify the end of the buffer.
+
+```c
+#define MODULE_CMN_MD_ID_BUFFER_END 0x0A001054
+```
+
+### `MD_END_PAYLOAD_FLAGS_BIT_MASK_ERROR_RESULT`
+
+Definition of metadata error status/result flag bitmask.
+
+```c
+#define MD_END_PAYLOAD_FLAGS_BIT_MASK_ERROR_RESULT AR_NON_GUID(0x00000001)
+```
+
+### `MD_END_PAYLOAD_FLAGS_SHIFT_ERROR_RESULT`
+
+Definition of metadata error status/result flag shift value.
+
+```c
+#define MD_END_PAYLOAD_FLAGS_SHIFT_ERROR_RESULT 0
+```
+
+### `MD_END_PAYLOAD_FLAGS_BIT_MASK_ERROR_RECOVERY_DONE`
+
+Definition of metadata error recovery done flag bitmask.
+
+```c
+#define MD_END_PAYLOAD_FLAGS_BIT_MASK_ERROR_RECOVERY_DONE AR_NON_GUID(0x00000002)
+```
+
+### `MD_END_PAYLOAD_FLAGS_SHIFT_ERROR_RECOVERY_DONE`
+
+Definition of metadata error status/result flag shift value.
+
+```c
+#define MD_END_PAYLOAD_FLAGS_SHIFT_ERROR_RECOVERY_DONE 1
+```
+
+### `MD_END_RESULT_FAILED`
+
+Definition of metadata error result value.
+
+```c
+#define MD_END_RESULT_FAILED 1
+```
+
+### `MD_END_RESULT_ERROR_RECOVERY_DONE`
+
+Definition of metadata error result value.
+
+```c
+#define MD_END_RESULT_ERROR_RECOVERY_DONE 1
+```

@@ -1,0 +1,100 @@
+---
+title: "ar_osal_sys_id.h"
+description: "Defines Supported Sub-System IDs."
+---
+
+## Macros
+
+### `AR_SUB_SYS_ID_INVALID`
+
+Invalid sub system.
+
+```c
+#define AR_SUB_SYS_ID_INVALID 0
+```
+
+### `AR_MODEM_DSP`
+
+Used for MODEM DSP sub system.
+
+```c
+#define AR_MODEM_DSP 1
+```
+
+### `AR_AUDIO_DSP`
+
+Used for ADSP sub system.
+
+```c
+#define AR_AUDIO_DSP 2
+```
+
+### `AR_APSS`
+
+Used for AP sub system.
+
+```c
+#define AR_APSS 3
+```
+
+### `AR_SENSOR_DSP`
+
+Used for SENSOR DSP sub system.
+
+```c
+#define AR_SENSOR_DSP 4
+```
+
+### `AR_COMPUTE_DSP`
+
+Used for COMPUTE DSP sub system.
+
+```c
+#define AR_COMPUTE_DSP 5
+```
+
+### `AR_CC_DSP`
+
+Used for Companion chip DSP (CC_DSP) sub system.
+
+```c
+#define AR_CC_DSP 6
+```
+
+### `AR_APSS2`
+
+Used for APSS2 sub system.
+
+```c
+#define AR_APSS2 0xC
+```
+
+### `AR_SUB_SYS_ID_FIRST`
+
+First sub system ID.
+
+```c
+#define AR_SUB_SYS_ID_FIRST AR_MODEM_DSP
+```
+
+### `AR_SUB_SYS_ID_LAST`
+
+Last sub system ID.
+
+```c
+#define AR_SUB_SYS_ID_LAST AR_APSS2
+```
+
+### `AR_SUB_SYS_IDS_MASK`
+
+Bit masks representing the subsystem IDs.
+
+```c
+#define AR_SUB_SYS_IDS_MASK 0x83F
+```
+
+### `AR_DEFAULT_DSP`
+
+```c
+#define AR_DEFAULT_DSP AR_AUDIO_DSP
+```

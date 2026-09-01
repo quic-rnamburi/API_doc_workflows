@@ -1,0 +1,1542 @@
+---
+title: "media_fmt_api_ext.h"
+---
+
+## Structures
+
+### `payload_media_fmt_aac_t`
+
+**Members**
+
+<ParamField path="aac_fmt_flag" type="uint16_t">
+
+</ParamField>
+<ParamField path="audio_obj_type" type="uint16_t">
+
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+
+</ParamField>
+<ParamField path="total_size_of_PCE_bits" type="uint16_t">
+  If this field is greater than 0, the PCE information follows this structure. Additional bits might be required for 32-bit alignment.}
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+  This field must be equal to the sample rate of the AAC-LC decoder output.
+For MP4 or 3GP containers, this sample rate is indicated by the samplingFrequencyIndex field in the AudioSpecificConfig element.
+For ADTS format, this sample rate is indicated by the samplingFrequencyIndex in the ADTS fixed header.
+For ADIF format, this sample rate is indicated by the samplingFrequencyIndex in the program_config_element present in the ADIF header.}
+</ParamField>
+
+### `aac_enc_cfg_t`
+
+**Members**
+
+<ParamField path="enc_mode" type="uint16_t">
+</ParamField>
+<ParamField path="aac_fmt_flag" type="uint16_t">
+</ParamField>
+
+### `payload_media_fmt_alac_t`
+
+**Members**
+
+<ParamField path="frame_length" type="uint32_t">
+  The encoder frames per packet can be explicitly set, but for maximum compatibility, use the default encoder setting of 4096.}
+</ParamField>
+<ParamField path="compatible_version" type="uint8_t">
+
+</ParamField>
+<ParamField path="bit_depth" type="uint8_t">
+
+</ParamField>
+<ParamField path="pb" type="uint8_t">
+  (Currently not used.)}
+</ParamField>
+<ParamField path="mb" type="uint8_t">
+  (Currently not used.)}
+</ParamField>
+<ParamField path="kb" type="uint8_t">
+  (Currently not used.)}
+</ParamField>
+<ParamField path="num_channels" type="uint8_t">
+
+</ParamField>
+<ParamField path="max_run" type="uint16_t">
+</ParamField>
+<ParamField path="max_frame_bytes" type="uint32_t">
+
+</ParamField>
+<ParamField path="avg_bit_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="channel_layout_tag" type="uint32_t">
+  Constants are extracted when channel layout information is present}
+</ParamField>
+
+### `payload_media_fmt_ape_t`
+
+**Members**
+
+<ParamField path="version" type="uint16_t">
+
+</ParamField>
+<ParamField path="compression_level" type="uint16_t">
+  The nBlocksPerFrame parameter value is based on the compression level.}
+</ParamField>
+<ParamField path="format_flags" type="uint32_t">
+
+</ParamField>
+<ParamField path="blocks_per_frame" type="uint32_t">
+
+</ParamField>
+<ParamField path="final_frame_blocks" type="uint32_t">
+</ParamField>
+<ParamField path="total_frames" type="uint32_t">
+
+</ParamField>
+<ParamField path="bit_width" type="uint16_t">
+
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="is_seek_table_present" type="uint32_t">
+  This flag is not part of the APE header.}
+</ParamField>
+
+### `payload_media_fmt_flac_t`
+
+**Members**
+
+<ParamField path="num_channels" type="uint16_t">
+
+</ParamField>
+<ParamField path="sample_size" type="uint16_t">
+</ParamField>
+<ParamField path="min_blk_size" type="uint16_t">
+  It must be lessthan or equal to max_blk_size.}
+</ParamField>
+<ParamField path="max_blk_size" type="uint16_t">
+  If the minimum block size equals the maximum block size, a fixed block size stream is implied}
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+</ParamField>
+<ParamField path="min_frame_size" type="uint32_t">
+  This should be greater than 0}
+</ParamField>
+<ParamField path="max_frame_size" type="uint32_t">
+  This should be greater than 0}
+</ParamField>
+
+### `payload_media_fmt_vorbis_t`
+
+**Members**
+
+<ParamField path="bit_stream_fmt" type="uint32_t">
+
+</ParamField>
+
+### `payload_media_fmt_wmapro_t`
+
+**Members**
+
+<ParamField path="fmt_tag" type="uint16_t">
+
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="avg_bytes_per_sec" type="uint32_t">
+</ParamField>
+<ParamField path="blk_align" type="uint16_t">
+  WMA Pro files have a payload of one block per bit stream packet.}
+</ParamField>
+<ParamField path="bits_per_sample" type="uint16_t">
+
+</ParamField>
+<ParamField path="channel_mask" type="uint32_t">
+
+</ParamField>
+<ParamField path="enc_options" type="uint16_t">
+
+</ParamField>
+<ParamField path="advanced_enc_option" type="uint16_t">
+  This field is ignored.}
+</ParamField>
+<ParamField path="advanced_enc_options2" type="uint32_t">
+  This field is ignored.}
+</ParamField>
+
+### `payload_media_fmt_wmastd_t`
+
+**Members**
+
+<ParamField path="fmt_tag" type="uint16_t">
+
+</ParamField>
+<ParamField path="num_channels" type="uint16_t">
+
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+
+</ParamField>
+<ParamField path="avg_bytes_per_sec" type="uint32_t">
+</ParamField>
+<ParamField path="blk_align" type="uint16_t">
+  All WMA files with a maximum packet size of 13376 are supported.}
+</ParamField>
+<ParamField path="bits_per_sample" type="uint16_t">
+</ParamField>
+<ParamField path="channel_mask" type="uint32_t">
+
+</ParamField>
+<ParamField path="enc_options" type="uint16_t">
+
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+
+</ParamField>
+
+### `sbc_enc_cfg_t`
+
+**Members**
+
+<ParamField path="num_subbands" type="uint32_t">
+</ParamField>
+<ParamField path="blk_len" type="uint32_t">
+</ParamField>
+<ParamField path="channel_mode" type="int32_t">
+  -Native mode indicates that encoding must be performed with the number
+                  of channels at the input.
+
+                -If postprocessing outputs one-channel data, Mono mode is used. If
+                  postprocessing outputs two-channel data, Stereo mode is used.
+
+                -The number of channels must not change during encoding. }
+</ParamField>
+<ParamField path="alloc_method" type="uint32_t">
+
+</ParamField>
+
+### `payload_media_fmt_amrwbplus_t`
+
+**Members**
+
+<ParamField path="amr_frame_fmt" type="uint32_t">
+</ParamField>
+
+### `amrnb_enc_cfg_t`
+
+**Members**
+
+<ParamField path="enc_mode" type="uint16_t">
+
+</ParamField>
+<ParamField path="dtx_mode" type="uint16_t">
+</ParamField>
+
+### `payload_media_fmt_eamr_t`
+
+**Members**
+
+<ParamField path="media_format_id" type="uint32_t">
+</ParamField>
+
+### `evrc_enc_cfg_t`
+
+**Members**
+
+<ParamField path="max_rate" type="uint16_t">
+
+</ParamField>
+<ParamField path="min_rate" type="uint16_t">
+
+</ParamField>
+<ParamField path="rate_mod_cmd" type="uint16_t">
+  If bit 1=1, the maximum number of consecutive full rate frames is limited with numbers supplied in bits 2 to 10. If bit 1=0, the minimum number of non-full rate frames in between two full rate frames is forced to the number supplied in bits 2 to 10 In both cases of bit 1, if necessary, half rate is used to substitute full rate. Bits 15 to 10 are reserved and must all be set to 0.}
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+
+</ParamField>
+
+### `payload_media_fmt_g711_t`
+
+**Members**
+
+<ParamField path="sample_rate" type="uint32_t">
+</ParamField>
+
+### `ldac_enc_cfg_t`
+
+**Members**
+
+<ParamField path="channel_mode" type="uint32_t">
+  The number of channels must not change during encoding }
+</ParamField>
+
+### `v13k_enc_cfg_t`
+
+**Members**
+
+<ParamField path="max_rate" type="uint16_t">
+
+</ParamField>
+<ParamField path="min_rate" type="uint16_t">
+
+</ParamField>
+<ParamField path="reduced_rate_cmd" type="uint16_t">
+</ParamField>
+<ParamField path="rate_mod_cmd" type="uint16_t">
+  If bit 1=1, the maximum number of consecutive full rate frames is limited with numbers supplied in bits 2 to 10. If bit 1=0, the minimum number of non-full rate frames in between two full rate frames is forced to the number supplied in bits 2 to 10 In both cases of bit 1, if necessary, half rate is used to substitute full rate. Bits 15 to 10 are reserved and must all be set to 0.}
+</ParamField>
+
+### `amrwb_enc_cfg_t`
+
+**Members**
+
+<ParamField path="enc_mode" type="uint16_t">
+
+</ParamField>
+<ParamField path="dtx_mode" type="uint16_t">
+</ParamField>
+
+### `celt_enc_cfg_t`
+
+**Members**
+
+<ParamField path="frame_size" type="uint16_t">
+
+</ParamField>
+<ParamField path="complexity" type="uint16_t">
+  Currently, this parameter is used to enable or disable the pitch analysis. In the future, it can be scaled to add more levels of complexity.
+value less than 2 - Disable pitch analysis
+Value > 2 - Enable pitch analysis}
+</ParamField>
+<ParamField path="prediction_mode" type="uint16_t">
+  This parameter is used to choose between the level of interframe predictions allowed while encoding.
+0  Independent frames
+1  Short-term interframe prediction allowed
+2  Long-term prediction allowed}
+</ParamField>
+<ParamField path="vbr_flag" type="uint16_t">
+  Currently, this parameter is disabled. In the future, it can be enabled if use cases require it.}
+</ParamField>
+
+### `evrcb_enc_cfg_t`
+
+**Members**
+
+<ParamField path="max_rate" type="uint16_t">
+
+</ParamField>
+<ParamField path="min_rate" type="uint16_t">
+
+</ParamField>
+<ParamField path="dtx_mode" type="uint16_t">
+</ParamField>
+<ParamField path="reduced_rate_level" type="uint16_t">
+</ParamField>
+
+### `evrcwb_enc_cfg_t`
+
+**Members**
+
+<ParamField path="max_rate" type="uint16_t">
+
+</ParamField>
+<ParamField path="min_rate" type="uint16_t">
+
+</ParamField>
+<ParamField path="dtx_enable" type="uint16_t">
+</ParamField>
+<ParamField path="reduced_rate_level" type="uint16_t">
+
+</ParamField>
+
+### `evs_enc_cfg_t`
+
+**Members**
+
+<ParamField path="bit_rate" type="uint32_t">
+</ParamField>
+<ParamField path="bandwidth" type="uint32_t">
+</ParamField>
+
+### `payload_media_fmt_opus_t`
+
+**Members**
+
+<ParamField path="bitstream_format" type="uint16_t">
+
+</ParamField>
+<ParamField path="payload_type" type="uint16_t">
+
+</ParamField>
+<ParamField path="version" type="uint8_t">
+
+</ParamField>
+<ParamField path="num_channels" type="uint8_t">
+
+</ParamField>
+<ParamField path="pre_skip" type="uint16_t">
+
+</ParamField>
+<ParamField path="sample_rate" type="uint32_t">
+</ParamField>
+<ParamField path="output_gain" type="uint16_t">
+
+</ParamField>
+<ParamField path="mapping_family" type="uint8_t">
+</ParamField>
+<ParamField path="stream_count" type="uint8_t">
+</ParamField>
+<ParamField path="coupled_count" type="uint8_t">
+</ParamField>
+<ParamField path="channel_map" type="uint8_t">
+  This member is valid only if mapping_family is not 0}
+</ParamField>
+<ParamField path="reserved" type="uint8_t">
+
+</ParamField>
+
+## Type Definitions
+
+### `payload_media_fmt_aac_t`
+
+AOT=17 is the ER AAC-LC format, which currently is not supported.
+
+```c
+typedef struct payload_media_fmt_aac_t payload_media_fmt_aac_t
+```
+
+### `aac_enc_cfg_t`
+
+```c
+typedef struct aac_enc_cfg_t aac_enc_cfg_t
+```
+
+### `payload_media_fmt_alac_t`
+
+```c
+typedef struct payload_media_fmt_alac_t payload_media_fmt_alac_t
+```
+
+### `payload_media_fmt_ape_t`
+
+```c
+typedef struct payload_media_fmt_ape_t payload_media_fmt_ape_t
+```
+
+### `payload_media_fmt_flac_t`
+
+```c
+typedef struct payload_media_fmt_flac_t payload_media_fmt_flac_t
+```
+
+### `payload_media_fmt_vorbis_t`
+
+```c
+typedef struct payload_media_fmt_vorbis_t payload_media_fmt_vorbis_t
+```
+
+### `payload_media_fmt_wmapro_t`
+
+```c
+typedef struct payload_media_fmt_wmapro_t payload_media_fmt_wmapro_t
+```
+
+### `payload_media_fmt_wmastd_t`
+
+```c
+typedef struct payload_media_fmt_wmastd_t payload_media_fmt_wmastd_t
+```
+
+### `sbc_enc_cfg_t`
+
+```c
+typedef struct sbc_enc_cfg_t sbc_enc_cfg_t
+```
+
+### `payload_media_fmt_amrwbplus_t`
+
+Media format ID for the AMR-WB Plus format block.
+
+```c
+typedef struct payload_media_fmt_amrwbplus_t payload_media_fmt_amrwbplus_t
+```
+
+### `amrnb_enc_cfg_t`
+
+```c
+typedef struct amrnb_enc_cfg_t amrnb_enc_cfg_t
+```
+
+### `payload_media_fmt_eamr_t`
+
+```c
+typedef struct payload_media_fmt_eamr_t payload_media_fmt_eamr_t
+```
+
+### `evrc_enc_cfg_t`
+
+```c
+typedef struct evrc_enc_cfg_t evrc_enc_cfg_t
+```
+
+### `payload_media_fmt_g711_t`
+
+```c
+typedef struct payload_media_fmt_g711_t payload_media_fmt_g711_t
+```
+
+### `ldac_enc_cfg_t`
+
+```c
+typedef struct ldac_enc_cfg_t ldac_enc_cfg_t
+```
+
+### `v13k_enc_cfg_t`
+
+```c
+typedef struct v13k_enc_cfg_t v13k_enc_cfg_t
+```
+
+### `amrwb_enc_cfg_t`
+
+```c
+typedef struct amrwb_enc_cfg_t amrwb_enc_cfg_t
+```
+
+### `celt_enc_cfg_t`
+
+```c
+typedef struct celt_enc_cfg_t celt_enc_cfg_t
+```
+
+### `evrcwb_enc_cfg_t`
+
+```c
+typedef struct evrcwb_enc_cfg_t evrcwb_enc_cfg_t
+```
+
+### `evs_enc_cfg_t`
+
+```c
+typedef struct evs_enc_cfg_t evs_enc_cfg_t
+```
+
+### `payload_media_fmt_opus_t`
+
+```c
+typedef struct payload_media_fmt_opus_t payload_media_fmt_opus_t
+```
+
+## Macros
+
+### `VOCODER_INVALID_RATE`
+
+```c
+#define VOCODER_INVALID_RATE 0
+```
+
+### `VOCODER_ONE_EIGHTH_RATE`
+
+Enumeration for 1/8 vocoder rate.
+
+```c
+#define VOCODER_ONE_EIGHTH_RATE 1
+```
+
+### `VOCODER_QUARTER_RATE`
+
+Enumeration for 1/4 vocoder rate.
+
+```c
+#define VOCODER_QUARTER_RATE 2
+```
+
+### `VOCODER_HALF_RATE`
+
+Enumeration for 1/2 vocoder rate.
+
+```c
+#define VOCODER_HALF_RATE 3
+```
+
+### `VOCODER_FULL_RATE`
+
+Enumeration for full vocoder rate.
+
+```c
+#define VOCODER_FULL_RATE 4
+```
+
+### `MEDIA_FMT_ID_AAC`
+
+Media format ID for AAC, which identifies both MPEG2 and MPEG4 AAC formats.
+
+```c
+#define MEDIA_FMT_ID_AAC 0x09001001
+```
+
+### `AAC_FORMAT_FLAG_ADTS`
+
+Enumeration for the audio data transport stream AAC format.
+
+```c
+#define AAC_FORMAT_FLAG_ADTS 0
+```
+
+### `AAC_FORMAT_FLAG_LOAS`
+
+Enumeration for the low overhead audio stream AAC format.
+
+```c
+#define AAC_FORMAT_FLAG_LOAS 1
+```
+
+### `AAC_FORMAT_FLAG_ADIF`
+
+Enumeration for the audio data interchange format AAC format.
+
+```c
+#define AAC_FORMAT_FLAG_ADIF 2
+```
+
+### `AAC_FORMAT_FLAG_RAW`
+
+Enumeration for the raw AAC format.
+
+```c
+#define AAC_FORMAT_FLAG_RAW 3
+```
+
+### `AAC_FORMAT_FLAG_LATM`
+
+Enumeration for the low overhead audio transport multiplex AAC format.
+
+```c
+#define AAC_FORMAT_FLAG_LATM 4
+```
+
+### `AAC_AOT_LC`
+
+Enumeration for the AAC low complexity audio object type:
+
+```c
+#define AAC_AOT_LC 2
+```
+
+### `AAC_AOT_SBR`
+
+Enumeration for the AAC spectral band replication AOT:
+
+```c
+#define AAC_AOT_SBR 5
+```
+
+### `AAC_AOT_PS`
+
+Enumeration for the AAC parametric stereo AOT:
+
+```c
+#define AAC_AOT_PS 29
+```
+
+### `AAC_AOT_BSAC`
+
+Enumeration for the bit-sliced arithmetic coding AOT:
+
+```c
+#define AAC_AOT_BSAC 22
+```
+
+### `MEDIA_FMT_ID_AC3`
+
+Media format ID for AC3 streams.
+
+```c
+#define MEDIA_FMT_ID_AC3 0x09001018
+```
+
+### `MEDIA_FMT_ID_EAC3`
+
+Media format ID for EAC3 streams.
+
+```c
+#define MEDIA_FMT_ID_EAC3 0x09001017
+```
+
+### `MEDIA_FMT_ID_DTS`
+
+```c
+#define MEDIA_FMT_ID_DTS 0x09001016
+```
+
+### `MEDIA_FMT_ID_ATRAC`
+
+```c
+#define MEDIA_FMT_ID_ATRAC 0x09001012
+```
+
+### `MEDIA_FMT_ID_DTHD`
+
+```c
+#define MEDIA_FMT_ID_DTHD 0x09001014
+```
+
+### `MEDIA_FMT_ID_MAT`
+
+```c
+#define MEDIA_FMT_ID_MAT 0x09001015
+```
+
+### `MEDIA_FMT_ID_ALAC`
+
+Media format ID for ALAC streams.
+
+```c
+#define MEDIA_FMT_ID_ALAC 0x09001002
+```
+
+### `MEDIA_FMT_ID_APE`
+
+Media format ID for APE streams.
+
+```c
+#define MEDIA_FMT_ID_APE 0x09001003
+```
+
+### `MEDIA_FMT_ID_FLAC`
+
+Media format ID for FLAC streams.
+
+```c
+#define MEDIA_FMT_ID_FLAC 0x09001004
+```
+
+### `MEDIA_FMT_ID_VORBIS`
+
+Media format ID for Vorbis streams.
+
+```c
+#define MEDIA_FMT_ID_VORBIS 0x09001005
+```
+
+### `MEDIA_FMT_ID_WMAPRO`
+
+Media format ID for the WMAPRO streams.
+
+```c
+#define MEDIA_FMT_ID_WMAPRO 0x09001006
+```
+
+### `MEDIA_FMT_ID_WMASTD`
+
+Media format ID for the WMASTD streams.
+
+```c
+#define MEDIA_FMT_ID_WMASTD 0x09001007
+```
+
+### `MEDIA_FMT_ID_SBC`
+
+Media format ID for the SBC.
+
+```c
+#define MEDIA_FMT_ID_SBC 0x09001008
+```
+
+### `MEDIA_FMT_SBC_CHANNEL_MODE_MONO`
+
+Enumeration for SBC channel Mono mode.
+
+```c
+#define MEDIA_FMT_SBC_CHANNEL_MODE_MONO 1
+```
+
+### `MEDIA_FMT_SBC_CHANNEL_MODE_STEREO`
+
+Enumeration for SBC channel Stereo mode.
+
+```c
+#define MEDIA_FMT_SBC_CHANNEL_MODE_STEREO 2
+```
+
+### `MEDIA_FMT_SBC_CHANNEL_MODE_DUAL_MONO`
+
+Enumeration for SBC channel Dual Mono mode.
+
+```c
+#define MEDIA_FMT_SBC_CHANNEL_MODE_DUAL_MONO 8
+```
+
+### `MEDIA_FMT_SBC_CHANNEL_MODE_JOINT_STEREO`
+
+Enumeration for SBC channel Joint Stereo mode.
+
+```c
+#define MEDIA_FMT_SBC_CHANNEL_MODE_JOINT_STEREO 9
+```
+
+### `MEDIA_FMT_SBC_ALLOCATION_METHOD_LOUDNESS`
+
+Enumeration for SBC bit allocation method = loudness.
+
+```c
+#define MEDIA_FMT_SBC_ALLOCATION_METHOD_LOUDNESS 0
+```
+
+### `MEDIA_FMT_SBC_ALLOCATION_METHOD_SNR`
+
+Enumeration for SBC bit allocation method = SNR.
+
+```c
+#define MEDIA_FMT_SBC_ALLOCATION_METHOD_SNR 1
+```
+
+### `MEDIA_FMT_ID_MP3`
+
+Media format ID for MP3 streams.
+
+```c
+#define MEDIA_FMT_ID_MP3 0x09001009
+```
+
+### `MEDIA_FMT_ID_MP2`
+
+Media format ID for MP2.
+
+```c
+#define MEDIA_FMT_ID_MP2 0x09001029
+```
+
+### `MEDIA_FMT_ID_AMRWBPLUS`
+
+Media format ID for the amrwbplus streams.
+
+```c
+#define MEDIA_FMT_ID_AMRWBPLUS 0x0900100A
+```
+
+### `MEDIA_FMT_ID_EAMR`
+
+Media format ID for AMRNB streams.
+
+```c
+#define MEDIA_FMT_ID_EAMR 0x0900100B
+```
+
+### `MEDIA_FMT_ID_AMRNB_IF2`
+
+```c
+#define MEDIA_FMT_ID_AMRNB_IF2 0x0900100C
+```
+
+### `MEDIA_FMT_ID_AMRNB_MODEM`
+
+```c
+#define MEDIA_FMT_ID_AMRNB_MODEM 0x0900100D
+```
+
+### `MEDIA_FMT_ID_AMRNB_FS`
+
+```c
+#define MEDIA_FMT_ID_AMRNB_FS 0x0900100E
+```
+
+### `AMRNB_FS_ENCODE_MODE_MR475`
+
+Enumeration for 4.75 kbps AMR-NB Encoding mode.
+
+```c
+#define AMRNB_FS_ENCODE_MODE_MR475 0
+```
+
+### `AMRNB_FS_ENCODE_MODE_MR515`
+
+Enumeration for 5.15 kbps AMR-NB Encoding mode.
+
+```c
+#define AMRNB_FS_ENCODE_MODE_MR515 1
+```
+
+### `AMRNB_FS_ENCODE_MODE_MMR59`
+
+Enumeration for 5.90 kbps AMR-NB Encoding mode.
+
+```c
+#define AMRNB_FS_ENCODE_MODE_MMR59 2
+```
+
+### `AMRNB_FS_ENCODE_MODE_MMR67`
+
+Enumeration for 6.70 kbps AMR-NB Encoding mode.
+
+```c
+#define AMRNB_FS_ENCODE_MODE_MMR67 3
+```
+
+### `AMRNB_FS_ENCODE_MODE_MMR74`
+
+Enumeration for 7.40 kbps AMR-NB Encoding mode.
+
+```c
+#define AMRNB_FS_ENCODE_MODE_MMR74 4
+```
+
+### `AMRNB_FS_ENCODE_MODE_MMR795`
+
+Enumeration for 7.95 kbps AMR-NB Encoding mode.
+
+```c
+#define AMRNB_FS_ENCODE_MODE_MMR795 5
+```
+
+### `AMRNB_FS_ENCODE_MODE_MMR102`
+
+Enumeration for 10.20 kbps AMR-NB Encoding mode.
+
+```c
+#define AMRNB_FS_ENCODE_MODE_MMR102 6
+```
+
+### `AMRNB_FS_ENCODE_MODE_MMR122`
+
+Enumeration for 12.20 kbps AMR-NB Encoding mode.
+
+```c
+#define AMRNB_FS_ENCODE_MODE_MMR122 7
+```
+
+### `AMRNB_FS_DTX_MODE_OFF`
+
+Enumeration for disabling AMR-NB DTX mode.
+
+```c
+#define AMRNB_FS_DTX_MODE_OFF 0
+```
+
+### `AMRNB_FS_DTX_MODE_VAD1`
+
+Enumeration for enabling AMR-NB DTX mode VAD1.
+
+```c
+#define AMRNB_FS_DTX_MODE_VAD1 1
+```
+
+### `AMRNB_FS_DTX_MODE_VAD2`
+
+Enumeration for enabling AMR-NB DTX mode VAD2.
+
+```c
+#define AMRNB_FS_DTX_MODE_VAD2 2
+```
+
+### `AMRNB_FS_DTX_MODE_AUTO`
+
+Enumeration for enabling AMR-NB automatic DTX mode.
+
+```c
+#define AMRNB_FS_DTX_MODE_AUTO 3
+```
+
+### `MEDIA_FMT_ID_EVRC`
+
+Media format ID for EVRC streams.
+
+```c
+#define MEDIA_FMT_ID_EVRC 0x0900100F
+```
+
+### `MEDIA_FMT_ID_EVRC_FS`
+
+```c
+#define MEDIA_FMT_ID_EVRC_FS 0x09001024
+```
+
+### `MEDIA_FMT_ID_HR`
+
+Media format ID for HR streams.
+
+```c
+#define MEDIA_FMT_ID_HR 0x09001019
+```
+
+### `MEDIA_FMT_ID_FR`
+
+Media format ID for FR streams.
+
+```c
+#define MEDIA_FMT_ID_FR 0x0900101B
+```
+
+### `MEDIA_FMT_ID_FR_FS`
+
+```c
+#define MEDIA_FMT_ID_FR_FS 0x0900101C
+```
+
+### `MEDIA_FMT_ID_EFR`
+
+Media format ID for EFR streams.
+
+```c
+#define MEDIA_FMT_ID_EFR 0x0900101A
+```
+
+### `MEDIA_FMT_ID_G711_ALAW`
+
+Media format ID for G711 streams.
+
+```c
+#define MEDIA_FMT_ID_G711_ALAW 0x09001032
+```
+
+### `MEDIA_FMT_ID_G711_MLAW`
+
+```c
+#define MEDIA_FMT_ID_G711_MLAW 0x09001033
+```
+
+### `MEDIA_FMT_ID_G711_ALAW_V2`
+
+```c
+#define MEDIA_FMT_ID_G711_ALAW_V2 0x09001034
+```
+
+### `MEDIA_FMT_ID_G711_MLAW_V2`
+
+```c
+#define MEDIA_FMT_ID_G711_MLAW_V2 0x09001035
+```
+
+### `MEDIA_FMT_ID_G711_ALAW_FS`
+
+```c
+#define MEDIA_FMT_ID_G711_ALAW_FS 0x09001036
+```
+
+### `MEDIA_FMT_ID_G711_MLAW_FS`
+
+```c
+#define MEDIA_FMT_ID_G711_MLAW_FS 0x09001037
+```
+
+### `MEDIA_FMT_ID_G722`
+
+Media format ID for G722 streams.
+
+```c
+#define MEDIA_FMT_ID_G722 
+```
+
+### `MEDIA_FMT_ID_G729AB`
+
+Media format ID for G729AB streams.
+
+```c
+#define MEDIA_FMT_ID_G729AB 0x09001010
+```
+
+### `MEDIA_FMT_ID_LDAC`
+
+Media format ID for LDAC streams.
+
+```c
+#define MEDIA_FMT_ID_LDAC 0x0900101D
+```
+
+### `LDAC_CHANNEL_MODE_STEREO`
+
+Enumeration for Stereo mode on the LDAC channel.
+
+```c
+#define LDAC_CHANNEL_MODE_STEREO 1
+```
+
+### `LDAC_CHANNEL_MODE_DUAL_CHANNEL`
+
+Enumeration for Dual Channel mode on the LDAC channel.
+
+```c
+#define LDAC_CHANNEL_MODE_DUAL_CHANNEL 2
+```
+
+### `LDAC_CHANNEL_MODE_MONO`
+
+Enumeration for Mono mode on the LDAC channel.
+
+```c
+#define LDAC_CHANNEL_MODE_MONO 4
+```
+
+### `MEDIA_FMT_ID_V13K`
+
+```c
+#define MEDIA_FMT_ID_V13K 0x09001025
+```
+
+### `MEDIA_FMT_ID_V13K_FS`
+
+```c
+#define MEDIA_FMT_ID_V13K_FS 0x09001026
+```
+
+### `V13K_FS_ENCODE_MODE_MR1440`
+
+Enumeration for 14.4 kbps V13K Encoding mode.
+
+```c
+#define V13K_FS_ENCODE_MODE_MR1440 0
+```
+
+### `V13K_FS_ENCODE_MODE_MR1220`
+
+Enumeration for 12.2 kbps V13K Encoding mode.
+
+```c
+#define V13K_FS_ENCODE_MODE_MR1220 1
+```
+
+### `V13K_FS_ENCODE_MODE_MR1120`
+
+Enumeration for 11.2 kbps V13K Encoding mode.
+
+```c
+#define V13K_FS_ENCODE_MODE_MR1120 2
+```
+
+### `V13K_FS_ENCODE_MODE_MR90`
+
+Enumeration for 9.0 kbps V13K Encoding mode.
+
+```c
+#define V13K_FS_ENCODE_MODE_MR90 3
+```
+
+### `V13K_FS_ENCODE_MODE_MR720`
+
+Enumeration for 7.2 kbps V13K Encoding mode.
+
+```c
+#define V13K_FS_ENCODE_MODE_MR720 4
+```
+
+### `MEDIA_FMT_ID_AMRWB`
+
+Media format ID for AMRWB streams.
+
+```c
+#define MEDIA_FMT_ID_AMRWB 0x09001027
+```
+
+### `MEDIA_FMT_ID_AMRWB_FS`
+
+```c
+#define MEDIA_FMT_ID_AMRWB_FS 0x09001028
+```
+
+### `AMRWB_FS_ENCODE_MODE_MR66`
+
+Enumeration for 6.60 kbps AMR-WB Encoding mode.
+
+```c
+#define AMRWB_FS_ENCODE_MODE_MR66 0
+```
+
+### `AMRWB_FS_ENCODE_MODE_MR885`
+
+Enumeration for 8.85 kbps AMR-WB Encoding mode.
+
+```c
+#define AMRWB_FS_ENCODE_MODE_MR885 1
+```
+
+### `AMRWB_FS_ENCODE_MODE_MR1265`
+
+Enumeration for 12.65 kbps AMR-WB Encoding mode.
+
+```c
+#define AMRWB_FS_ENCODE_MODE_MR1265 2
+```
+
+### `AMRWB_FS_ENCODE_MODE_MR1425`
+
+Enumeration for 14.25 kbps AMR-WB Encoding mode.
+
+```c
+#define AMRWB_FS_ENCODE_MODE_MR1425 3
+```
+
+### `AMRWB_FS_ENCODE_MODE_MR1585`
+
+Enumeration for 15.85 kbps AMR-WB Encoding mode.
+
+```c
+#define AMRWB_FS_ENCODE_MODE_MR1585 4
+```
+
+### `AMRWB_FS_ENCODE_MODE_MR1825`
+
+Enumeration for 18.25 kbps AMR-WB Encoding mode.
+
+```c
+#define AMRWB_FS_ENCODE_MODE_MR1825 5
+```
+
+### `AMRWB_FS_ENCODE_MODE_MR1985`
+
+Enumeration for 19.85 kbps AMR-WB Encoding mode.
+
+```c
+#define AMRWB_FS_ENCODE_MODE_MR1985 6
+```
+
+### `AMRWB_FS_ENCODE_MODE_MR2305`
+
+Enumeration for 23.05 kbps AMR-WB Encoding mode.
+
+```c
+#define AMRWB_FS_ENCODE_MODE_MR2305 7
+```
+
+### `AMRWB_FS_ENCODE_MODE_MR2385`
+
+Enumeration for 23.85 kbps AMR-WB Encoding mode.
+
+```c
+#define AMRWB_FS_ENCODE_MODE_MR2385 8
+```
+
+### `MEDIA_FMT_ID_CELT`
+
+Media format ID for the CELT.
+
+```c
+#define MEDIA_FMT_ID_CELT 0x0900102A
+```
+
+### `MEDIA_FMT_ID_EVRCB_FS`
+
+Media format ID for FOURGV streams.
+
+```c
+#define MEDIA_FMT_ID_EVRCB_FS 0x0900102B
+```
+
+### `MEDIA_FMT_ID_EVRCWB_FS`
+
+```c
+#define MEDIA_FMT_ID_EVRCWB_FS 0x0900102C
+```
+
+### `MEDIA_FMT_ID_4GV_NB_MODEM`
+
+```c
+#define MEDIA_FMT_ID_4GV_NB_MODEM 0x0900102D
+```
+
+### `MEDIA_FMT_ID_4GV_WB_MODEM`
+
+```c
+#define MEDIA_FMT_ID_4GV_WB_MODEM 0x0900102E
+```
+
+### `MEDIA_FMT_ID_4GV_NW_MODEM`
+
+```c
+#define MEDIA_FMT_ID_4GV_NW_MODEM 0x0900102F
+```
+
+### `MEDIA_FMT_ID_4GV_NW`
+
+```c
+#define MEDIA_FMT_ID_4GV_NW 0x09001030
+```
+
+### `MEDIA_FMT_ID_EVRC_NW_2K`
+
+```c
+#define MEDIA_FMT_ID_EVRC_NW_2K 0x09001031
+```
+
+### `EVRCB_FS_ENCODE_MODE_MR930`
+
+Enumeration for 9.3 kbps EVRC-B Encoding mode.
+
+```c
+#define EVRCB_FS_ENCODE_MODE_MR930 0
+```
+
+### `EVRCB_FS_ENCODE_MODE_MR850`
+
+Enumeration for 8.5 kbps EVRC-B Encoding mode.
+
+```c
+#define EVRCB_FS_ENCODE_MODE_MR850 1
+```
+
+### `EVRCB_FS_ENCODE_MODE_MR750`
+
+Enumeration for 7.5 kbps EVRC-B Encoding mode.
+
+```c
+#define EVRCB_FS_ENCODE_MODE_MR750 2
+```
+
+### `EVRCB_FS_ENCODE_MODE_MR700`
+
+Enumeration for 7.0 kbps EVRC-B Encoding mode.
+
+```c
+#define EVRCB_FS_ENCODE_MODE_MR700 3
+```
+
+### `EVRCB_FS_ENCODE_MODE_MR660`
+
+Enumeration for 6.6 kbps EVRC-B Encoding mode.
+
+```c
+#define EVRCB_FS_ENCODE_MODE_MR660 4
+```
+
+### `EVRCB_FS_ENCODE_MODE_MR620`
+
+Enumeration for 6.2 kbps EVRC-B Encoding mode.
+
+```c
+#define EVRCB_FS_ENCODE_MODE_MR620 5
+```
+
+### `EVRCB_FS_ENCODE_MODE_MR580`
+
+Enumeration for 5.8 kbps EVRC-B Encoding mode.
+
+```c
+#define EVRCB_FS_ENCODE_MODE_MR580 6
+```
+
+### `EVRCB_FS_ENCODE_MODE_MR480`
+
+Enumeration for 4.8 kbps EVRC-B Encoding mode.
+
+```c
+#define EVRCB_FS_ENCODE_MODE_MR480 7
+```
+
+### `EVRCWB_FS_ENCODE_MODE_MR850`
+
+Enumeration for 8.5 kbps EVRC-WB Encoding mode.
+
+```c
+#define EVRCWB_FS_ENCODE_MODE_MR850 0
+```
+
+### `EVRCWB_FS_ENCODE_MODE_MR930`
+
+Enumeration for 9.3 kbps EVRC-WB Encoding mode.
+
+```c
+#define EVRCWB_FS_ENCODE_MODE_MR930 4
+```
+
+### `EVRCWB_FS_ENCODE_MODE_MR480`
+
+Enumeration for 4.8 kbps EVRC-WB Encoding mode.
+
+```c
+#define EVRCWB_FS_ENCODE_MODE_MR480 7
+```
+
+### `MEDIA_FMT_ID_EVS`
+
+Media format ID for EVRC streams.
+
+```c
+#define MEDIA_FMT_ID_EVS 0x09001023
+```
+
+### `EVS_CODEC_MODE_0660`
+
+Enumeration for 06.60 kbps, AMR-WB IO (WB).
+
+```c
+#define EVS_CODEC_MODE_0660 0
+```
+
+### `EVS_CODEC_MODE_0885`
+
+Enumeration for 08.85 kbps, AMR-WB IO (WB).
+
+```c
+#define EVS_CODEC_MODE_0885 1
+```
+
+### `EVS_CODEC_MODE_1265`
+
+Enumeration for 12.65 kbps, AMR-WB IO (WB).
+
+```c
+#define EVS_CODEC_MODE_1265 2
+```
+
+### `EVS_CODEC_MODE_1425`
+
+Enumeration for 14.25 kbps, AMR-WB IO (WB).
+
+```c
+#define EVS_CODEC_MODE_1425 3
+```
+
+### `EVS_CODEC_MODE_1585`
+
+Enumeration for 15.85 kbps, AMR-WB IO (WB).
+
+```c
+#define EVS_CODEC_MODE_1585 4
+```
+
+### `EVS_CODEC_MODE_1825`
+
+Enumeration for 18.25 kbps, AMR-WB IO (WB).
+
+```c
+#define EVS_CODEC_MODE_1825 5
+```
+
+### `EVS_CODEC_MODE_1985`
+
+Enumeration for 19.85 kbps, AMR-WB IO (WB).
+
+```c
+#define EVS_CODEC_MODE_1985 6
+```
+
+### `EVS_CODEC_MODE_2305`
+
+Enumeration for 23.05 kbps, AMR-WB IO (WB).
+
+```c
+#define EVS_CODEC_MODE_2305 7
+```
+
+### `EVS_CODEC_MODE_2385`
+
+Enumeration for 23.85 kbps, AMR-WB IO (WB).
+
+```c
+#define EVS_CODEC_MODE_2385 8
+```
+
+### `EVS_CODEC_MODE_0590`
+
+Enumeration for 05.90 kbps, EVS (NB, WB).
+
+```c
+#define EVS_CODEC_MODE_0590 9
+```
+
+### `EVS_CODEC_MODE_0720`
+
+Enumeration for 07.20 kbps, EVS (NB, WB).
+
+```c
+#define EVS_CODEC_MODE_0720 10
+```
+
+### `EVS_CODEC_MODE_0800`
+
+Enumeration for 08.00 kbps, EVS (NB, WB).
+
+```c
+#define EVS_CODEC_MODE_0800 11
+```
+
+### `EVS_CODEC_MODE_0960`
+
+Enumeration for 09.60 kbps, EVS (NB, WB, SWB).
+
+```c
+#define EVS_CODEC_MODE_0960 12
+```
+
+### `EVS_CODEC_MODE_1320`
+
+Enumeration for 13.20 kbps, EVS (NB, WB, SWB).
+
+```c
+#define EVS_CODEC_MODE_1320 13
+```
+
+### `EVS_CODEC_MODE_1640`
+
+Enumeration for 16.40 kbps, EVS (NB, WB, SWB, FB).
+
+```c
+#define EVS_CODEC_MODE_1640 14
+```
+
+### `EVS_CODEC_MODE_2440`
+
+Enumeration for 24.40 kbps, EVS (NB, WB, SWB, FB)
+
+```c
+#define EVS_CODEC_MODE_2440 15
+```
+
+### `EVS_CODEC_MODE_3200`
+
+Enumeration for 32.00 kbps, EVS (WB, SWB, FB).
+
+```c
+#define EVS_CODEC_MODE_3200 16
+```
+
+### `EVS_CODEC_MODE_4800`
+
+Enumeration for 48.00 kbps, EVS (WB, SWB, FB).
+
+```c
+#define EVS_CODEC_MODE_4800 17
+```
+
+### `EVS_CODEC_MODE_6400`
+
+Enumeration for 64.00 kbps, EVS (WB, SWB, FB).
+
+```c
+#define EVS_CODEC_MODE_6400 18
+```
+
+### `EVS_CODEC_MODE_9600`
+
+Enumeration for 96.00 kbps, EVS (WB, SWB, FB).
+
+```c
+#define EVS_CODEC_MODE_9600 19
+```
+
+### `EVS_CODEC_MODE_12800`
+
+Enumeration for 128.00 kbps, EVS (WB, SWB, FB).
+
+```c
+#define EVS_CODEC_MODE_12800 20
+```
+
+### `MEDIA_FMT_ID_OPUS`
+
+Media format ID for OPUS streams.
+
+```c
+#define MEDIA_FMT_ID_OPUS 0x09001039
+```

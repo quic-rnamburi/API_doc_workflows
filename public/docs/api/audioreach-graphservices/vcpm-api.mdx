@@ -1,0 +1,1000 @@
+---
+title: "vcpm_api.h"
+description: "This file contains Voice Call Proxy Manager Commands and Data Structures."
+---
+
+## Structures
+
+### `vcpm_param_id_tty_mode_t`
+
+Payload for VCPM_PARAM_ID_TTY_MODE.
+
+**Members**
+
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for TTY mode.
+</ParamField>
+<ParamField path="mode" type="uint32_t">
+  TTY mode to be set.
+</ParamField>
+
+### `vcpm_param_voice_config_payload_t`
+
+Payload for VCPM_PARAM_ID_VOICE_CONFIG.
+
+**Members**
+
+<ParamField path="num_sub_graphs" type="uint32_t">
+  Number of vcpm_cfg_subgraph_properties_t structures and payloads that immediately follow this structure.
+</ParamField>
+
+### `vcpm_cfg_subgraph_properties_t`
+
+Payload for VCPM_PARAM_ID_VOICE_CONFIG.
+
+**Members**
+
+<ParamField path="sub_graph_id" type="uint32_t">
+  Identifier for the subgraph for which the information is provided.
+</ParamField>
+<ParamField path="num_vcpm_properties" type="uint32_t">
+  Number of vcpm_property_config_struct_t structures that follow this structure.
+</ParamField>
+
+### `vcpm_property_config_struct_t`
+
+Payload for VCPM_PARAM_ID_VOICE_CONFIG.
+
+**Members**
+
+<ParamField path="property_id" type="uint32_t">
+  Identifier for the VCPM property.
+</ParamField>
+<ParamField path="property_size" type="uint32_t">
+  Size of the property payload that immediately follows this structure.
+</ParamField>
+
+### `vcpm_property_id_tag_info_payload_t`
+
+Payload for VCPM_PROPERTY_ID_TAG_INFO.
+
+**Members**
+
+<ParamField path="num_tag_info" type="uint32_t">
+  Number of vcpm_tag_miid_info_t structures that immediately follow this structure.
+</ParamField>
+
+### `vcpm_tag_miid_info_t`
+
+Payload for VCPM_PROPERTY_ID_TAG_INFO.
+
+**Members**
+
+<ParamField path="tag_id" type="uint32_t">
+  Identifier for the tag that the VCPM publishes.
+</ParamField>
+<ParamField path="module_iid" type="uint32_t">
+  Identifier for the module instance that corresponds to the tag ID.
+</ParamField>
+
+### `vcpm_param_cal_table_payload_t`
+
+Payload for VCPM_PARAM_ID_CAL_TABLE.
+
+**Members**
+
+<ParamField path="num_sub_graphs" type="uint32_t">
+  Number of voice subgraphs for which calibration tables are provided.
+</ParamField>
+
+### `vcpm_sgid_cal_table_t`
+
+Payload for VCPM_PARAM_ID_CAL_TABLE.
+
+**Members**
+
+<ParamField path="sub_graph_id" type="uint32_t">
+  Subgraph identifier for the calibration table that follows this structure.
+</ParamField>
+<ParamField path="cal_table_size" type="uint32_t">
+  Size of the calibration table that follows this structure.
+</ParamField>
+
+### `vcpm_param_cal_keys_payload_t`
+
+Payload for VCPM_PARAM_ID_CAL_KEYS.
+
+**Members**
+
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for the calibration key.
+</ParamField>
+<ParamField path="num_ckv_pairs" type="uint32_t">
+  Number of vcpm_ckv_pair_t structures that immediately follow this structure.
+</ParamField>
+
+### `vcpm_ckv_pair_t`
+
+Payload for VCPM_PARAM_ID_CAL_KEYS and VCPM_PARAM_ID_ACTIVE_CAL_KEYS.
+
+**Members**
+
+<ParamField path="cal_key_id" type="uint32_t">
+  Unique identifier for the calibration key.
+</ParamField>
+<ParamField path="value" type="uint32_t">
+  Values of the following calibration keys from the modem processor.
+</ParamField>
+
+### `vcpm_param_active_cal_keys_payload_t`
+
+Payload for VCPM_PARAM_ID_ACTIVE_CAL_KEYS.
+
+**Members**
+
+<ParamField path="sg_id" type="uint32_t">
+  Unique identifier for the subgraph for which the parameter payload is provided.
+</ParamField>
+<ParamField path="num_max_ckv_pairs" type="uint32_t">
+  Maximum number of ckv_pairs of the given subgraph ID.
+</ParamField>
+<ParamField path="num_ckv_pairs" type="uint32_t">
+  Number of vcpm_ckv_pair_t structures that immediately follow this structure.
+</ParamField>
+
+### `vcpm_param_num_vol_steps_payload_t`
+
+Payload for VCPM_PARAM_ID_NUM_VOL_STEPS.
+
+**Members**
+
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for the volume step.
+</ParamField>
+<ParamField path="num_vol_steps" type="uint32_t">
+  Total number of volume steps for the VSID session.
+</ParamField>
+
+### `vcpm_param_clk_ctrl_payload_t`
+
+Payload for VCPM_PARAM_ID_CLK_CTRL.
+
+**Members**
+
+<ParamField path="kpps_scale_factor" type="uint32_t">
+  Scale factor to apply to the aggregated kpps of the subgraph.
+</ParamField>
+<ParamField path="bus_bw_scale_factor" type="uint32_t">
+  Scale factor to apply to the aggregated bus bandwidth of the subgraph.
+</ParamField>
+
+### `vcpm_event_graph_open_payload_t`
+
+Payload for VCPM_EVENT_ID_GRAPH_OPEN.
+
+**Members**
+
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for the voice call graph.
+</ParamField>
+<ParamField path="num_tag_info" type="uint32_t">
+  Number of vcpm_vs_tag_miid_info_t structures that immediately follow this structure.
+</ParamField>
+
+### `vcpm_vs_tag_miid_info_t`
+
+Payload for VCPM_EVENT_ID_GRAPH_OPEN.
+
+**Members**
+
+<ParamField path="sg_id" type="uint32_t">
+  ID for the sub-graph that corresponds to the module instance ID.
+</ParamField>
+<ParamField path="tag_id" type="uint32_t">
+  Tag IDs published by the VCPM.
+</ParamField>
+<ParamField path="module_iid" type="uint32_t">
+  ID for the module instance that corresponds to the tag ID.
+</ParamField>
+
+### `vcpm_event_graph_close_payload_t`
+
+Payload for VCPM_EVENT_ID_GRAPH_CLOSE.
+
+**Members**
+
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for the voice call graph.
+</ParamField>
+
+### `vcpm_param_timing_params_t`
+
+Payload for VCPM_PARAM_ID_TIMING_PARAMS.
+
+**Members**
+
+<ParamField path="vfr_mode" type="uint32_t">
+  Frame synchronization mode for the vocoder.
+</ParamField>
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for the vocoder.
+</ParamField>
+<ParamField path="tx_delivery_offset_us" type="uint32_t">
+  Offset (in microseconds) from the VFR to deliver a Tx vocoder packet.
+</ParamField>
+<ParamField path="rx_start_offset_us" type="uint32_t">
+  Offset (in microseconds) from the VFR to indicate the deadline to receive an Rx vocoder packet.
+</ParamField>
+<ParamField path="vfr_cycle_us" type="uint32_t">
+  VFR cycle duration for the voice call.
+</ParamField>
+
+### `vcpm_param_timing_references_t`
+
+Payload for VCPM_PARAM_ID_TIMING_REFERENCES.
+
+**Members**
+
+<ParamField path="vfr_mode" type="uint32_t">
+  Frame synchronization mode for the vocoder.
+</ParamField>
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for the encoder.
+</ParamField>
+<ParamField path="tx_ref_timstamp_us" type="uint64_t">
+  Time reference (in microseconds) used to align the encoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.
+</ParamField>
+<ParamField path="rx_ref_timstamp_us" type="uint64_t">
+  Time reference(in microseconds) used to align the decoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.
+</ParamField>
+<ParamField path="vfr_cycle_us" type="uint32_t">
+  VFR cycle duration for the voice call.
+</ParamField>
+
+### `vcpm_param_timing_references_v2_t`
+
+Payload for VCPM_PARAM_ID_TIMING_REFERENCES_V2.
+
+**Members**
+
+<ParamField path="vfr_mode" type="uint32_t">
+  Frame synchronization mode for the vocoder.
+</ParamField>
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier 2 for the vocoder.
+</ParamField>
+<ParamField path="tx_ref_timstamp_us" type="uint64_t">
+  Time reference (in microseconds) used to align the encoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.
+</ParamField>
+<ParamField path="rx_ref_timstamp_us" type="uint64_t">
+  Time reference(in microseconds) used to align the decoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.
+</ParamField>
+<ParamField path="is_frame_type_event_enabled" type="uint32_t">
+  Enables the event-driven mailbox packet exchange mode in the Tx path for NO_DATA packets.
+</ParamField>
+<ParamField path="frame_type_ref_timestamp_us" type="uint64_t">
+  Client's time reference for receiving the frame type of an uplink packet (absolute time in microseconds).
+</ParamField>
+<ParamField path="enc_packet_ready_margin_us" type="uint32_t">
+  Minimum allowed delay margin between the timestamp of the encoder packet being ready and read_ref_timestamp_us.
+</ParamField>
+<ParamField path="vfr_cycle_us" type="uint32_t">
+  Duration of the VFR cycle for the voice call.
+</ParamField>
+
+### `vcpm_param_vsid_payload_t`
+
+Payload for VCPM_PARAM_ID_VSID.
+
+**Members**
+
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for the graph.
+</ParamField>
+
+### `vcpm_param_id_mailbox_memory_config_t`
+
+Payload for VCPM_PARAM_ID_MAILBOX_MEMORY_CONFIG.
+
+**Members**
+
+<ParamField path="mailbox_mem_address_adsp_lsw" type="uint32_t">
+  Lower 32 bits of the IO virtual address (understandable to the aDSP) of the mailbox memory.
+</ParamField>
+<ParamField path="mailbox_mem_address_adsp_msw" type="uint32_t">
+  Upper 32 bits of the IO virtual address (understandable to aDSP) of the mailbox memory.
+</ParamField>
+<ParamField path="mailbox_mem_address_pcie_lsw" type="uint32_t">
+  Lower 32 bits of the IO virtual address (understandable to the PCIe) of the mailbox memory.
+</ParamField>
+<ParamField path="mailbox_mem_address_pcie_msw" type="uint32_t">
+  Upper 32 bits of the IO virtual address (understandable to the PCIe) of the mailbox memory.
+</ParamField>
+<ParamField path="mem_size" type="uint32_t">
+  Size (in bytes) of the mailbox memory carved out from the APQ DDR.
+</ParamField>
+
+### `vcpm_param_id_tx_dev_pp_channel_info_t`
+
+Payload for VCPM_PARAM_ID_TX_DEV_PP_CHANNEL_INFO.
+
+**Members**
+
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for the channel.
+</ParamField>
+<ParamField path="num_channels" type="uint32_t">
+  Number of channels processed by the Tx voice processor sub-graph.
+</ParamField>
+
+### `vcpm_param_id_voc_pkt_loopback_delay_t`
+
+Payload structure for the VCPM_PARAM_ID_VOC_PKT_LOOPBACK_DELAY.
+
+**Members**
+
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for the vocoder packet loopback.
+</ParamField>
+<ParamField path="delay_ms" type="uint32_t">
+  Vocoder packet loopback delay in milliseconds.
+</ParamField>
+
+## Type Definitions
+
+### `vcpm_param_id_tty_mode_t`
+
+```c
+typedef struct vcpm_param_id_tty_mode_t vcpm_param_id_tty_mode_t
+```
+
+### `vcpm_param_voice_config_payload_t`
+
+```c
+typedef struct vcpm_param_voice_config_payload_t vcpm_param_voice_config_payload_t
+```
+
+### `vcpm_cfg_subgraph_properties_t`
+
+```c
+typedef struct vcpm_cfg_subgraph_properties_t vcpm_cfg_subgraph_properties_t
+```
+
+### `vcpm_property_config_struct_t`
+
+```c
+typedef struct vcpm_property_config_struct_t vcpm_property_config_struct_t
+```
+
+### `vcpm_property_id_tag_info_payload_t`
+
+```c
+typedef struct vcpm_property_id_tag_info_payload_t vcpm_property_id_tag_info_payload_t
+```
+
+### `vcpm_tag_miid_info_t`
+
+```c
+typedef struct vcpm_tag_miid_info_t vcpm_tag_miid_info_t
+```
+
+### `vcpm_param_cal_table_payload_t`
+
+```c
+typedef struct vcpm_param_cal_table_payload_t vcpm_param_cal_table_payload_t
+```
+
+### `vcpm_sgid_cal_table_t`
+
+```c
+typedef struct vcpm_sgid_cal_table_t vcpm_sgid_cal_table_t
+```
+
+### `vcpm_param_cal_keys_payload_t`
+
+```c
+typedef struct vcpm_param_cal_keys_payload_t vcpm_param_cal_keys_payload_t
+```
+
+### `vcpm_ckv_pair_t`
+
+```c
+typedef struct vcpm_ckv_pair_t vcpm_ckv_pair_t
+```
+
+### `vcpm_param_active_cal_keys_payload_t`
+
+```c
+typedef struct vcpm_param_active_cal_keys_payload_t vcpm_param_active_cal_keys_payload_t
+```
+
+### `vcpm_param_num_vol_steps_payload_t`
+
+```c
+typedef struct vcpm_param_num_vol_steps_payload_t vcpm_param_num_vol_steps_payload_t
+```
+
+### `vcpm_param_clk_ctrl_payload_t`
+
+```c
+typedef struct vcpm_param_clk_ctrl_payload_t vcpm_param_clk_ctrl_payload_t
+```
+
+### `vcpm_event_graph_open_payload_t`
+
+```c
+typedef struct vcpm_event_graph_open_payload_t vcpm_event_graph_open_payload_t
+```
+
+### `vcpm_vs_tag_miid_info_t`
+
+```c
+typedef struct vcpm_vs_tag_miid_info_t vcpm_vs_tag_miid_info_t
+```
+
+### `vcpm_event_graph_close_payload_t`
+
+```c
+typedef struct vcpm_event_graph_close_payload_t vcpm_event_graph_close_payload_t
+```
+
+### `vcpm_param_timing_params_t`
+
+```c
+typedef struct vcpm_param_timing_params_t vcpm_param_timing_params_t
+```
+
+### `vcpm_param_timing_references_t`
+
+```c
+typedef struct vcpm_param_timing_references_t vcpm_param_timing_references_t
+```
+
+### `vcpm_param_timing_references_v2_t`
+
+```c
+typedef struct vcpm_param_timing_references_v2_t vcpm_param_timing_references_v2_t
+```
+
+### `vcpm_param_vsid_payload_t`
+
+```c
+typedef struct vcpm_param_vsid_payload_t vcpm_param_vsid_payload_t
+```
+
+### `vcpm_param_id_mailbox_memory_config_t`
+
+```c
+typedef struct vcpm_param_id_mailbox_memory_config_t vcpm_param_id_mailbox_memory_config_t
+```
+
+### `vcpm_param_id_tx_dev_pp_channel_info_t`
+
+```c
+typedef struct vcpm_param_id_tx_dev_pp_channel_info_t vcpm_param_id_tx_dev_pp_channel_info_t
+```
+
+### `vcpm_param_id_voc_pkt_loopback_delay_t`
+
+```c
+typedef struct vcpm_param_id_voc_pkt_loopback_delay_t vcpm_param_id_voc_pkt_loopback_delay_t
+```
+
+## Enumerations
+
+### `platforms_spf`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `PLATFORM_SPF` | = 0xFFFFFFFE |  |
+
+### `vcpm_key_ids`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `voice_vocoder_class` | = VCPM_CAL_KEY_ID_VOCODER_CLASS |  |
+| `voice_sample_rate` | = VCPM_CAL_KEY_ID_SAMPLING_RATE |  |
+| `voice_vol_level` | = VCPM_CAL_KEY_ID_VOLUME_LEVEL |  |
+| `voice_bandwidth_extension` | = VCPM_CAL_KEY_ID_BWE |  |
+| `voice_network` | = VCPM_CAL_KEY_ID_NETWORK |  |
+| `voice_vol_boost` | = VCPM_CAL_KEY_ID_VOL_BOOST |  |
+
+### `vcpm_key_vocoder_class`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `voc_cal_key_amr` | = VCPM_CAL_KEY_VOCODER_CLASS_AMR |  |
+| `voc_cal_key_evrc` | = VCPM_CAL_KEY_VOCODER_CLASS_EVRC |  |
+| `voc_cal_key_evs` | = VCPM_CAL_KEY_VOCODER_CLASS_EVS |  |
+
+### `vcpm_key_sample_rate`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `SR_NB` | = 0x1F40 |  |
+| `SR_WB` | = 0x3E80 |  |
+| `SR_SWB` | = 0x7D00 |  |
+| `SR_FB` | = 0xBB80 |  |
+
+### `vcpm_key_volume_level`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `vol_level_0` | = 0x00000000 |  |
+| `vol_level_1` | = 0x00000001 |  |
+| `vol_level_2` | = 0x00000002 |  |
+| `vol_level_3` | = 0x00000003 |  |
+| `vol_level_4` | = 0x00000004 |  |
+| `vol_level_5` | = 0x00000005 |  |
+
+### `vcpm_key_bandwidth_extension`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `enable` | = 0x00000001 |  |
+| `disable` | = 0 |  |
+
+### `vcpm_key_vocoder_network`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `voc_cal_key_cdma` | = VCPM_CAL_KEY_NETWORK_CDMA |  |
+| `voc_cal_key_gsm` | = VCPM_CAL_KEY_NETWORK_GSM |  |
+| `voc_cal_key_wcdma` | = VCPM_CAL_KEY_NETWORK_WCDMA |  |
+| `voc_cal_key_lte` | = VCPM_CAL_KEY_NETWORK_LTE |  |
+| `voc_cal_key_TDSCDMA` | = VCPM_CAL_KEY_NETWORK_TDSCDMA |  |
+
+### `vcpm_key_vol_boost`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `vol_boost_enable` | = 0x00000001 |  |
+| `vol_boost_disable` | = 0 |  |
+
+### `vcpm_cal_Keys`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `ck_vocoder_class` | = voice_vocoder_class |  |
+| `ck_sampling_rate` | = voice_sample_rate |  |
+| `ck_volume_level` | = voice_vol_level |  |
+| `ck_WV2` | = voice_bandwidth_extension |  |
+| `ck_voice_network` | = voice_network |  |
+| `ck_vol_boost` | = voice_vol_boost |  |
+
+### `vcpm_graph_tag_Keys`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `voice_mod_tag_id_encoder` | = VOICE_MOD_TAG_ID_ENCODER |  |
+| `voice_mod_tag_id_tx_mailbox` | = VOICE_MOD_TAG_ID_TX_MAILBOX |  |
+| `voice_mod_tag_id_tx_stream_hpcm` | = VOICE_MOD_TAG_ID_TX_STREAM_HPCM |  |
+| `voice_mod_tag_id_tx_smart_sync` | = VOICE_MOD_TAG_ID_TX_SMART_SYNC |  |
+| `voice_mod_tag_id_decoder` | = VOICE_MOD_TAG_ID_DECODER |  |
+| `voice_mod_tag_id_rx_mailbox` | = VOICE_MOD_TAG_ID_RX_MAILBOX |  |
+| `voice_mod_tag_id_rx_stream_hpcm` | = VOICE_MOD_TAG_ID_RX_STREAM_HPCM |  |
+| `voice_mod_tag_id_1x_rx_tty` | = VOICE_MOD_TAG_ID_1XTTY_RX |  |
+| `voice_mod_tag_id_ctm_rx_tty` | = VOICE_MOD_TAG_ID_CTMTTY_RX |  |
+| `voice_mod_tag_id_ctm_tx_tty` | = VOICE_MOD_TAG_ID_CTMTTY_TX |  |
+| `voice_mod_tag_id_lte_rx_tty` | = VOICE_MOD_TAG_ID_LTETTY_RX |  |
+| `voice_mod_tag_id_lte_tx_tty` | = VOICE_MOD_TAG_ID_LTETTY_TX |  |
+
+## Macros
+
+### `VCPM_MODULE_INSTANCE_ID`
+
+Instance identifier for the VCPM static module.
+
+```c
+#define VCPM_MODULE_INSTANCE_ID ( 0x00000004 )
+```
+
+### `VOICE_SERVICES_MODULE_INSTANCE_ID`
+
+```c
+#define VOICE_SERVICES_MODULE_INSTANCE_ID ( 0x00000005 )
+```
+
+### `VOICE_TTY_MODE_OFF`
+
+TTY is Off or disabled.
+
+```c
+#define VOICE_TTY_MODE_OFF 0
+```
+
+### `VOICE_TTY_MODE_HCO`
+
+Hearing Carry Over mode.
+
+```c
+#define VOICE_TTY_MODE_HCO 1
+```
+
+### `VOICE_TTY_MODE_VCO`
+
+Voice Carry Over mode.
+
+```c
+#define VOICE_TTY_MODE_VCO 2
+```
+
+### `VOICE_TTY_MODE_FULL`
+
+HCO mode plus VCO mode.
+
+```c
+#define VOICE_TTY_MODE_FULL 3
+```
+
+### `VCPM_PARAM_ID_TTY_MODE`
+
+Identifier for the parameter that sets the TTY mode of operation.
+
+```c
+#define VCPM_PARAM_ID_TTY_MODE 0x080011E4
+```
+
+### `VCPM_PARAM_ID_VOICE_CONFIG`
+
+Identifier for the parameter that contains instance IDs of specific modules in a stream subgraph that is part of a voice call use case graph (applications processor).
+
+```c
+#define VCPM_PARAM_ID_VOICE_CONFIG 0x08001162
+```
+
+### `VCPM_PROPERTY_ID_TAG_INFO`
+
+Identifier for the property that contains instance IDs of modules in different subgraphs that are part of a voice call use case graph (applications processor).
+
+```c
+#define VCPM_PROPERTY_ID_TAG_INFO 0x080011B2
+```
+
+### `VOICE_MOD_TAG_ID_ENCODER`
+
+Tag ID for the voice encoder.
+
+```c
+#define VOICE_MOD_TAG_ID_ENCODER 0x08001177
+```
+
+### `VOICE_MOD_TAG_ID_TX_MAILBOX`
+
+Tag ID for a mailbox in the Tx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_TX_MAILBOX 0x08001178
+```
+
+### `VOICE_MOD_TAG_ID_TX_STREAM_HPCM`
+
+Tag ID for Host PCM in the Tx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_TX_STREAM_HPCM 0x08001179
+```
+
+### `VOICE_MOD_TAG_ID_DECODER`
+
+Tag ID for the voice decoder.
+
+```c
+#define VOICE_MOD_TAG_ID_DECODER 0x0800117B
+```
+
+### `VOICE_MOD_TAG_ID_RX_MAILBOX`
+
+Tag ID for a mailbox in the Rx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_RX_MAILBOX 0x0800117C
+```
+
+### `VOICE_MOD_TAG_ID_RX_STREAM_HPCM`
+
+Tag ID for HPCM in the Rx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_RX_STREAM_HPCM 0x0800117D
+```
+
+### `VOICE_MOD_TAG_ID_RX_TRM`
+
+Tag ID for the Timed Renderer module in the Rx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_RX_TRM 0x080011AC
+```
+
+### `VOICE_MOD_TAG_ID_TX_SMART_SYNC`
+
+Tag ID for smart synchronization in the Tx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_TX_SMART_SYNC 0x080011AD
+```
+
+### `VOICE_MOD_TAG_ID_LTETTY_TX`
+
+Tag ID for LTE TTY in the Tx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_LTETTY_TX 0x0800117A
+```
+
+### `VOICE_MOD_TAG_ID_CTMTTY_TX`
+
+Tag ID for cellular text modem TTY in the Tx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_CTMTTY_TX 0x080011E1
+```
+
+### `VOICE_MOD_TAG_ID_LTETTY_RX`
+
+Tag ID for LTE TTY in the Rx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_LTETTY_RX 0x0800117E
+```
+
+### `VOICE_MOD_TAG_ID_CTMTTY_RX`
+
+Tag ID for cellular text modem TTY in the Rx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_CTMTTY_RX 0x080011E2
+```
+
+### `VOICE_MOD_TAG_ID_1XTTY_RX`
+
+Tag ID for 1x TTY in the Rx stream.
+
+```c
+#define VOICE_MOD_TAG_ID_1XTTY_RX 0x080011E3
+```
+
+### `VCPM_PARAM_ID_CAL_TABLE`
+
+Identifier for the parameter that registers calibration tables per subgraph (from the applications processor).
+
+```c
+#define VCPM_PARAM_ID_CAL_TABLE 0x08001163
+```
+
+### `VCPM_CAL_KEY_ID_VOCODER_CLASS`
+
+Identifier for the calibration key that identifes the vocoder class (from the applications processor and modem).
+
+```c
+#define VCPM_CAL_KEY_ID_VOCODER_CLASS 0x08001164
+```
+
+### `VCPM_CAL_KEY_ID_SAMPLING_RATE`
+
+Calibration key that identifies the sampling rate.
+
+```c
+#define VCPM_CAL_KEY_ID_SAMPLING_RATE 0x08001165
+```
+
+### `VCPM_CAL_KEY_ID_VOLUME_LEVEL`
+
+Calibration key that identifies the volume level.
+
+```c
+#define VCPM_CAL_KEY_ID_VOLUME_LEVEL 0x08001166
+```
+
+### `VCPM_CAL_KEY_ID_BWE`
+
+Calibration key that identifies the bandwidth extension mode.
+
+```c
+#define VCPM_CAL_KEY_ID_BWE 0x08001167
+```
+
+### `VCPM_CAL_KEY_ID_NETWORK`
+
+Identifier for the calibration key that identifes the network.
+
+```c
+#define VCPM_CAL_KEY_ID_NETWORK 0x080011B5
+```
+
+### `VCPM_CAL_KEY_ID_VOL_BOOST`
+
+Calibration key that identifies the Volume boost mode.
+
+```c
+#define VCPM_CAL_KEY_ID_VOL_BOOST 0x080011B6
+```
+
+### `VCPM_CAL_KEY_VOCODER_CLASS_AMR`
+
+Calibration key that represents all the vocoders covered in the AMR class for VCPM_CAL_KEY_ID_VOCODER_CLASS.
+
+```c
+#define VCPM_CAL_KEY_VOCODER_CLASS_AMR 0x08001168
+```
+
+### `VCPM_CAL_KEY_VOCODER_CLASS_EVRC`
+
+Calibration key that represents all the vocoders covered in the EVRC class for VCPM_CAL_KEY_ID_VOCODER_CLASS.
+
+```c
+#define VCPM_CAL_KEY_VOCODER_CLASS_EVRC 0x08001169
+```
+
+### `VCPM_CAL_KEY_VOCODER_CLASS_EVS`
+
+Calibration key that represents all the vocoders covered in the EVS class VCPM_CAL_KEY_ID_VOCODER_CLASS.
+
+```c
+#define VCPM_CAL_KEY_VOCODER_CLASS_EVS 0x0800116A
+```
+
+### `VCPM_CAL_KEY_NETWORK_CDMA`
+
+Calibration key that represents the CDMA network for VCPM_CAL_KEY_ID_NETWORK.
+
+```c
+#define VCPM_CAL_KEY_NETWORK_CDMA 0x080011B7
+```
+
+### `VCPM_CAL_KEY_NETWORK_GSM`
+
+Calibration key that represents the GSM network for VCPM_CAL_KEY_ID_NETWORK.
+
+```c
+#define VCPM_CAL_KEY_NETWORK_GSM 0x080011B8
+```
+
+### `VCPM_CAL_KEY_NETWORK_WCDMA`
+
+Calibration key that represents the WCDMA network for VCPM_CAL_KEY_ID_NETWORK.
+
+```c
+#define VCPM_CAL_KEY_NETWORK_WCDMA 0x080011B9
+```
+
+### `VCPM_CAL_KEY_NETWORK_LTE`
+
+Calibration key that represents the LTE network for VCPM_CAL_KEY_ID_NETWORK.
+
+```c
+#define VCPM_CAL_KEY_NETWORK_LTE 0x080011BA
+```
+
+### `VCPM_CAL_KEY_NETWORK_TDSCDMA`
+
+Calibration key that represents the TD-SCDMA network for VCPM_CAL_KEY_ID_NETWORK.
+
+```c
+#define VCPM_CAL_KEY_NETWORK_TDSCDMA 0x080011BB
+```
+
+### `VCPM_PARAM_ID_CAL_KEYS`
+
+Identifier for the parameter that sets calibration keys from both the applications processor and modem to the VCPM.
+
+```c
+#define VCPM_PARAM_ID_CAL_KEYS 0x0800116B
+```
+
+### `VCPM_PARAM_ID_ACTIVE_CAL_KEYS`
+
+Identifier for the parameter the applications processor uses to query active calibration keys for each voice call subgraph.
+
+```c
+#define VCPM_PARAM_ID_ACTIVE_CAL_KEYS 0x080011C1
+```
+
+### `VCPM_PARAM_ID_NUM_VOL_STEPS`
+
+Identifier for the parameter that sets the number of volume steps from the applications processor to the VCPM.
+
+```c
+#define VCPM_PARAM_ID_NUM_VOL_STEPS 0x0800116C
+```
+
+### `VCPM_PARAM_ID_CLK_CTRL`
+
+Identifier for the parameter that sets the clock control parameters.
+
+```c
+#define VCPM_PARAM_ID_CLK_CTRL 0x080011AE
+```
+
+### `VCPM_EVENT_ID_GRAPH_OPEN`
+
+ID for the event that indicates a voice call graph is opened.
+
+```c
+#define VCPM_EVENT_ID_GRAPH_OPEN 0x080011AF
+```
+
+### `VCPM_EVENT_ID_GRAPH_CLOSE`
+
+Identifier for the event that indicates a voice call graph is closed.
+
+```c
+#define VCPM_EVENT_ID_GRAPH_CLOSE 0x080011B0
+```
+
+### `VCPM_PARAM_ID_TIMING_PARAMS`
+
+Identifier for the parameter that sets timing parameters from the modem to the VCPM.
+
+```c
+#define VCPM_PARAM_ID_TIMING_PARAMS 0x0800116E
+```
+
+### `VCPM_PARAM_ID_TIMING_REFERENCES`
+
+Identifier for the parameter that sets timing references from the modem to the VCPM.
+
+```c
+#define VCPM_PARAM_ID_TIMING_REFERENCES 0x080010A5
+```
+
+### `VCPM_PARAM_ID_TIMING_REFERENCES_V2`
+
+Identifier for the parameter that sets version 2 of the timing references from the modem to the VCPM.
+
+```c
+#define VCPM_PARAM_ID_TIMING_REFERENCES_V2 0x08001256
+```
+
+### `VCPM_PARAM_ID_VSID`
+
+Identifier for the parameter that sets the Voice System ID from the applications processor to the VCPM.
+
+```c
+#define VCPM_PARAM_ID_VSID 0x080011BC
+```
+
+### `VCPM_PARAM_ID_MAILBOX_MEMORY_CONFIG`
+
+Parameter identifier for configuring memory on the modem that is shared with mailbox Tx and Rx modules present on the aDSP for vocoder packet exchange.
+
+```c
+#define VCPM_PARAM_ID_MAILBOX_MEMORY_CONFIG 0x080011E7
+```
+
+### `VCPM_PARAM_ID_TX_DEV_PP_CHANNEL_INFO`
+
+Parameter ID the VCPM exposes to the HLOS to set the Tx channel information processed by the Tx sub-graph.
+
+```c
+#define VCPM_PARAM_ID_TX_DEV_PP_CHANNEL_INFO 0x08001310
+```
+
+### `VCPM_PARAM_ID_VOC_PKT_LOOPBACK_DELAY`
+
+Identifier for the parameter that sets up the vocoder packet loopback delay.
+
+```c
+#define VCPM_PARAM_ID_VOC_PKT_LOOPBACK_DELAY 0x08001311
+```

@@ -1,0 +1,317 @@
+---
+title: "nmt_module_calibration_api.h"
+---
+
+## Structures
+
+### `nmt_version_t`
+
+**Members**
+
+<ParamField path="lib_version_low" type="uint32_t">
+</ParamField>
+<ParamField path="lib_version_high" type="uint32_t">
+</ParamField>
+
+### `param_id_nmt_config_t`
+
+**Members**
+
+<ParamField path="input_language_code" type="uint32_t">
+</ParamField>
+<ParamField path="output_language_code" type="uint32_t">
+
+</ParamField>
+
+### `param_id_nmt_output_config_t`
+
+**Members**
+
+<ParamField path="output_mode" type="uint32_t">
+</ParamField>
+<ParamField path="out_buf_size" type="uint32_t">
+  NON_BUFFERED - Output of each NMT algo process is immediately sent to client. BUFFERED - Output of each NMT algo process is buffered and sent to client intermittently.}
+</ParamField>
+<ParamField path="num_bufs" type="uint32_t">
+  }  // NMT engine controlled default if not configured
+</ParamField>
+
+### `nmt_output_status_t`
+
+**Members**
+
+<ParamField path="status" type="uint32_t">
+</ParamField>
+<ParamField path="is_final" type="uint32_t">
+</ParamField>
+<ParamField path="segment_start_time_us_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_start_time_us_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_end_time_us_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_end_time_us_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="output_text_size" type="uint32_t">
+</ParamField>
+<ParamField path="output_text" type="uint8_t">
+</ParamField>
+
+### `nmt_input_status_t`
+
+**Members**
+
+<ParamField path="status" type="uint32_t">
+</ParamField>
+<ParamField path="is_final" type="uint32_t">
+</ParamField>
+<ParamField path="segment_start_time_us_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_start_time_us_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_end_time_us_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_end_time_us_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="input_text_size" type="uint32_t">
+</ParamField>
+<ParamField path="input_text" type="uint8_t">
+</ParamField>
+
+### `nmt_io_status_t`
+
+**Members**
+
+<ParamField path="status" type="uint32_t">
+</ParamField>
+<ParamField path="is_final" type="uint32_t">
+</ParamField>
+<ParamField path="segment_start_time_us_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_start_time_us_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_end_time_us_lsw" type="uint32_t">
+
+</ParamField>
+<ParamField path="segment_end_time_us_msw" type="uint32_t">
+
+</ParamField>
+<ParamField path="output_text_size" type="uint32_t">
+</ParamField>
+<ParamField path="output_text" type="uint8_t">
+</ParamField>
+<ParamField path="input_text_size" type="uint32_t">
+</ParamField>
+<ParamField path="input_text" type="uint8_t">
+</ParamField>
+
+### `param_id_nmt_output_t`
+
+**Members**
+
+<ParamField path="token" type="uint32_t">
+  This can be used by clients to query the corresponding payload. If not configured or invalid, Payload corresponds to output buffers in sequential order as produced by NMT engine.Dummy token (0x7F7F7F7F) is reserved for FORCE_OUTPUT scenario where output buffer doesn’t have valid content but must raise event to client.}
+</ParamField>
+<ParamField path="num_outputs" type="uint32_t">
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Following this field is the payload of this size. Payload is variable array of type nmt_io_status_t . Size '0' indicates this is an event generated without any valid input/output, for example : in response to a force output param set by client. }
+</ParamField>
+
+### `param_id_nmt_force_output_t`
+
+**Members**
+
+<ParamField path="force_output" type="uint32_t">
+</ParamField>
+
+### `event_id_nmt_reg_cfg_t`
+
+@parameter  @description  @toolPolicy
+
+**Members**
+
+<ParamField path="event_payload_type" type="uint32_t">
+  INBAND - NMT event has the payload inband in the event. OPTIMAL - NMT event can be INBAND or QUERY based, flag in event payload indicates the mode.}
+</ParamField>
+<ParamField path="event_text_type" type="uint32_t">
+  IN - event payload contains input text only. INOUT - event payload contains combined input and output text.}
+</ParamField>
+
+### `event_id_nmt_event_t`
+
+**Members**
+
+<ParamField path="event_payload_type" type="uint32_t">
+  Default mode is Query. QUERY = Client will query via getparam upon receiving this event, using the output_token provided as part of this payload. Inband = NMT output payload follows inband after the payload_size field }
+</ParamField>
+<ParamField path="event_text_type" type="uint32_t">
+  Default type is OUT. OUT - event payload contains output text only. IN - event payload contains input text only. INOUT - event payload contains combined input and output text.}
+</ParamField>
+<ParamField path="token" type="uint32_t">
+  This can be used by clients to query the payload param in 'QUERY' mode. Dummy token (0x7F7F7F7F) is reserved for FORCE_OUTPUT scenario where output buffer doesn’t have valid content but must raise event to client.}
+</ParamField>
+<ParamField path="num_outputs" type="uint32_t">
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Following this field is the payload of this size. Payload is variable array of type nmt_io_status_t . Size '0' indicates this is an event generated without any valid output, for example : in response to a force output param set by client. }
+</ParamField>
+
+### `nmt_model_param_t`
+
+**Members**
+
+<ParamField path="model_align" type="uint32_t">
+</ParamField>
+<ParamField path="model_offset" type="uint32_t">
+</ParamField>
+<ParamField path="model_size" type="uint32_t">
+</ParamField>
+<ParamField path="model" type="uint8_t">
+</ParamField>
+
+## Type Definitions
+
+### `nmt_version_t`
+
+```c
+typedef struct nmt_version_t nmt_version_t
+```
+
+### `param_id_nmt_config_t`
+
+```c
+typedef struct param_id_nmt_config_t param_id_nmt_config_t
+```
+
+### `param_id_nmt_output_config_t`
+
+```c
+typedef struct param_id_nmt_output_config_t param_id_nmt_output_config_t
+```
+
+### `nmt_output_status_t`
+
+```c
+typedef struct nmt_output_status_t nmt_output_status_t
+```
+
+### `nmt_input_status_t`
+
+```c
+typedef struct nmt_input_status_t nmt_input_status_t
+```
+
+### `nmt_io_status_t`
+
+```c
+typedef struct nmt_io_status_t nmt_io_status_t
+```
+
+### `param_id_nmt_output_t`
+
+```c
+typedef struct param_id_nmt_output_t param_id_nmt_output_t
+```
+
+### `param_id_nmt_force_output_t`
+
+```c
+typedef struct param_id_nmt_force_output_t param_id_nmt_force_output_t
+```
+
+### `event_id_nmt_reg_cfg_t`
+
+```c
+typedef struct event_id_nmt_reg_cfg_t event_id_nmt_reg_cfg_t
+```
+
+### `event_id_nmt_event_t`
+
+```c
+typedef struct event_id_nmt_event_t event_id_nmt_event_t
+```
+
+### `nmt_model_param_t`
+
+```c
+typedef struct nmt_model_param_t nmt_model_param_t
+```
+
+## Macros
+
+### `NMT_NPU_RELEASE_VERSION_MAJOR`
+
+```c
+#define NMT_NPU_RELEASE_VERSION_MAJOR 0x00000001
+```
+
+### `NMT_NPU_RELEASE_VERSION_MINOR`
+
+```c
+#define NMT_NPU_RELEASE_VERSION_MINOR 0x00000000
+```
+
+### `PARAM_ID_NMT_VERSION`
+
+```c
+#define PARAM_ID_NMT_VERSION 0x08001B2C
+```
+
+### `PARAM_ID_NMT_CONFIG`
+
+```c
+#define PARAM_ID_NMT_CONFIG 0x08001B2B
+```
+
+### `PARAM_ID_NMT_OUTPUT_CONFIG`
+
+```c
+#define PARAM_ID_NMT_OUTPUT_CONFIG 0x08001B80
+```
+
+### `MAX_TRANSCRIPTION_CHAR_SIZE`
+
+```c
+#define MAX_TRANSCRIPTION_CHAR_SIZE 1024
+```
+
+### `PARAM_ID_NMT_OUTPUT`
+
+```c
+#define PARAM_ID_NMT_OUTPUT 0x08001B81
+```
+
+### `PARAM_ID_NMT_FORCE_OUTPUT`
+
+```c
+#define PARAM_ID_NMT_FORCE_OUTPUT 0x08001B2E
+```
+
+### `EVENT_ID_NMT_STATUS`
+
+```c
+#define EVENT_ID_NMT_STATUS 0x08001B82
+```
+
+### `PARAM_ID_NMT_MODEL`
+
+```c
+#define PARAM_ID_NMT_MODEL 0x08001B2D
+```
+
+### `MODULE_ID_NMT`
+
+```c
+#define MODULE_ID_NMT 0x0702C002
+```

@@ -1,0 +1,895 @@
+---
+title: "PalApi.h"
+---
+
+## Functions
+
+### `pal_get_version`
+
+Get PAL version in the form of Major and Minor number seperated by period.
+
+```c
+const char * pal_get_version()
+```
+
+**Returns**
+
+the version string in the form of Major and Minor e.g '1.0'
+
+### `pal_init`
+
+Initialize PAL.
+
+Increases ref count.
+
+```c
+int32_t pal_init()
+```
+
+**Returns**
+
+0 on success, error code on failure.
+
+### `pal_deinit`
+
+De-Initialize PAL.
+
+Decreases the ref count.
+
+```c
+void pal_deinit()
+```
+
+### `pal_stream_open`
+
+Open the stream with specified configuration.
+
+```c
+int32_t pal_stream_open(struct pal_stream_attributes *attributes, uint32_t no_of_devices, struct pal_device *devices, uint32_t no_of_modifiers, struct modifier_kv *modifiers, pal_stream_callback cb, uint64_t cookie, pal_stream_handle_t **stream_handle)
+```
+
+**Parameters**
+
+<ParamField path="attributes" type="struct pal_stream_attributes *">
+  - Valid stream attributes obtained from pal_stream_open
+</ParamField>
+<ParamField path="no_of_devices" type="uint32_t">
+  - no of audio devices that the stream should be initially started with.
+</ParamField>
+<ParamField path="pal_device" type="">
+  - an array of pal_devices. The size of the array is based on the no_of_devices specified by the client. If pal_media_config in pal_device is specified as NULL, PAL uses the default device configuration or appropriate configuration based on the usecases running. Clients can query the device configuration by using pal_get_device().
+</ParamField>
+<ParamField path="no_of_modifiers" type="uint32_t">
+  - no of modifiers.
+</ParamField>
+<ParamField path="modifiers" type="struct modifier_kv *">
+  - an array of modifiers. Modifiers are used to add additional key-value pairs. e.g to identify the topology of usecase from default set.
+</ParamField>
+<ParamField path="cb" type="pal_stream_callback">
+  - callback function associated with stream. Any event will notified through this callback function.
+</ParamField>
+<ParamField path="cookie" type="uint64_t">
+  - client data associated with the stream. This cookie will be returned back in the callback function.
+</ParamField>
+<ParamField path="stream_handle" type="pal_stream_handle_t **">
+  - Updated with valid stream handle if the operation is successful.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_close`
+
+Close the stream.
+
+```c
+int32_t pal_stream_close(pal_stream_handle_t *stream_handle)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_start`
+
+Register for specific event on a given stream.
+
+Events will be notified via the callback function registered in pal_stream_open cmd.
+
+```c
+int32_t pal_stream_start(pal_stream_handle_t *stream_handle)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="event_id" type="">
+  - Valid event id that the client would like notificaiton.
+</ParamField>
+<ParamField path="event_data" type="">
+  - Event configuration data.
+</ParamField>
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_stop`
+
+Stop the stream.
+
+Stream must be in started/paused state before stoping.
+
+```c
+int32_t pal_stream_stop(pal_stream_handle_t *stream_handle)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_pause`
+
+Pause the stream.
+
+Stream must be in started state before resuming.
+
+```c
+int32_t pal_stream_pause(pal_stream_handle_t *stream_handle)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_resume`
+
+Resume the stream.
+
+Stream must be in paused state before resuming.
+
+```c
+int32_t pal_stream_resume(pal_stream_handle_t *stream_handle)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_flush`
+
+Flush accumlated data from the stream.
+
+Stream must be in paused state before flushing.
+
+```c
+int32_t pal_stream_flush(pal_stream_handle_t *stream_handle)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_drain`
+
+Drain audio data buffered by the driver/hardware has been played depending on the drain type specified.
+
+If stream is opened with AUDIO_STREAM_FLAG_NON_BLOCKING and callback function is set in pal_open_stream(), drain complete notificaiton will be sent via the callback function otherwise will block until drain is completed.
+
+Drain will return immediately on stop() and flush() call.
+
+```c
+int32_t pal_stream_drain(pal_stream_handle_t *stream_handle, pal_drain_type_t type)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="type" type="pal_drain_type_t">
+  - drain type, DRAIN or DRAIN_PARTIAL.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_suspend`
+
+Suspend graph and stop processing data from the stream.
+
+Stream must be in started state before suspending.
+
+```c
+int32_t pal_stream_suspend(pal_stream_handle_t *stream_handle)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_get_buffer_size`
+
+Get audio buffer size based on the direction of the stream.
+
+```c
+int32_t pal_stream_get_buffer_size(pal_stream_handle_t *stream_handle, size_t *in_buffer, size_t *out_buffer)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open.
+</ParamField>
+<ParamField path="in_buffer" type="size_t *">
+  - filled if stream was opened with PAL_AUDIO_INPUT direction.
+</ParamField>
+<ParamField path="out_buffer" type="size_t *">
+  - filled if stream was opened with PAL_AUDIO_OUTPUT direction.
+</ParamField>
+<ParamField path="in" type="">
+  buffer and out_buffer - filled if stream was opened with PAL_AUDIO_OUTPUT|PAL_AUDIO_INPUT direction.
+</ParamField>
+
+**Returns**
+
+- 0 on success, error code otherwise.
+
+### `pal_stream_set_buffer_size`
+
+Set audio buffer size based on the direction of the stream.
+
+This overwrites the default buffer size configured for certain stream types.
+
+```c
+int32_t pal_stream_set_buffer_size(pal_stream_handle_t *stream_handle, pal_buffer_config_t *in_buff_cfg, pal_buffer_config_t *out_buff_cfg)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open.
+</ParamField>
+<ParamField path="in_buff_cfg" type="pal_buffer_config_t *">
+  - input buffers configuratoin when stream is opened with PAL_AUDIO_INPUT or PAL_AUDIO_INPUT_OUTPUT direction.
+</ParamField>
+<ParamField path="output_buff_count" type="">
+  - output buffers configuratoin when stream is opened with PAL_AUDIO_OUTPUT or PAL_AUDIO_INPUT_OUTPUT direction.
+</ParamField>
+
+**Returns**
+
+- 0 on success, error code otherwise.
+
+### `pal_stream_read`
+
+Read audio buffer captured from in the audio stream.
+
+an error code. Capture timestamps will be populated if session was opened with timetamp flag.
+
+```c
+ssize_t pal_stream_read(pal_stream_handle_t *stream_handle, struct pal_buffer *buf)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="buf" type="struct pal_buffer *">
+  - pointer to pal_buffer containing audio samples and metadata.
+</ParamField>
+
+**Returns**
+
+- number of bytes read or error code on failure
+
+### `pal_stream_write`
+
+Write audio buffer of a stream for rendering.If at least one frame was written successfully prior to the error, PAL will return number of bytes returned.
+
+Timestamp is honored if the stream was opened with timestamp flag otherwise it is ignored.
+
+If the stream was opened with non-blocking mode, the write() will operate in non-blocking mode. PAL will write only the number of bytes that currently fit in the driver/hardware buffer. If the callback function is set during pal_stream_open, the callback function will be called when more space is available in the driver/hardware buffer.
+
+```c
+ssize_t pal_stream_write(pal_stream_handle_t *stream_handle, struct pal_buffer *buf)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="buf" type="struct pal_buffer *">
+  - pointer to pal_buffer containing audio samples and metadata.
+</ParamField>
+
+**Returns**
+
+number of bytes written or error code.
+
+### `pal_stream_get_device`
+
+get current device on stream.
+
+```c
+int32_t pal_stream_get_device(pal_stream_handle_t *stream_handle, uint32_t no_of_devices, struct pal_device *devices)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="no_of_devices" type="uint32_t">
+  - no of audio devices allocated 
+ for below pal_device array.
+</ParamField>
+<ParamField path="pal_device" type="">
+  - Pointer to an array of pal_device. The size of the array is sent via the above no_of_devices param.
+</ParamField>
+
+**Returns**
+
+number of devices on success, error code otherwise.
+
+### `pal_stream_set_device`
+
+set new device on stream.
+
+This api will disable the existing device and set the new device. If the new device is a combo device and includes previously set device, it will retain the old device to avoid setting the same device again unless device configuration chagnes.
+
+```c
+int32_t pal_stream_set_device(pal_stream_handle_t *stream_handle, uint32_t no_of_devices, struct pal_device *devices)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="no_of_devices" type="uint32_t">
+  - no of audio devices that the stream should be initially started with.
+</ParamField>
+<ParamField path="pal_device" type="">
+  - an array of pal_device. The size of the array is based on the no_of_devices specified by the client.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_get_param`
+
+Get audio parameters specific to a stream.
+
+```c
+int32_t pal_stream_get_param(pal_stream_handle_t *stream_handle, uint32_t param_id, pal_param_payload **param_payload)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="param_id" type="uint32_t">
+  - param id whose parameters are retrieved.
+</ParamField>
+<ParamField path="param_payload" type="pal_param_payload **">
+  - param data applicable to the param_id
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_set_param`
+
+Set audio parameters specific to a stream.
+
+```c
+int32_t pal_stream_set_param(pal_stream_handle_t *stream_handle, uint32_t param_id, pal_param_payload *param_payload)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="param_id" type="uint32_t">
+  - param id whose parameters are to be set.
+</ParamField>
+<ParamField path="param_payload" type="pal_param_payload *">
+  - param data applicable to the param_id
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_get_volume`
+
+Get audio volume specific to a stream.
+
+```c
+int32_t pal_stream_get_volume(pal_stream_handle_t *stream_handle, struct pal_volume_data *volume)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="volume" type="struct pal_volume_data *">
+  - volume data to be set on a stream.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_set_volume`
+
+Set audio volume specific to a stream.
+
+```c
+int32_t pal_stream_set_volume(pal_stream_handle_t *stream_handle, struct pal_volume_data *volume)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="volume" type="struct pal_volume_data *">
+  - volume data to be retrieved from the stream.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_get_mute`
+
+Get current audio audio mute state to a stream.
+
+```c
+int32_t pal_stream_get_mute(pal_stream_handle_t *stream_handle, bool *state)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="mute" type="">
+  - mute state to be retrieved from the stream.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_set_mute`
+
+Set mute specific to a stream.
+
+```c
+int32_t pal_stream_set_mute(pal_stream_handle_t *stream, bool state)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="mute" type="">
+  - mute state to be set to the stream.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_get_mic_mute`
+
+Get microphone mute state.
+
+```c
+int32_t pal_get_mic_mute(bool *state)
+```
+
+**Parameters**
+
+<ParamField path="mute" type="">
+  - global mic mute flag to be retrieved.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_set_mic_mute`
+
+Set global mic mute state.
+
+```c
+int32_t pal_set_mic_mute(bool state)
+```
+
+**Parameters**
+
+<ParamField path="mute" type="">
+  - global mic mute state
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_get_timestamp`
+
+Get time stamp.
+
+```c
+int32_t pal_get_timestamp(pal_stream_handle_t *stream_handle, struct pal_session_time *stime)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="stime" type="struct pal_session_time *">
+  - time stamp data to be retrieved from the stream.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_add_remove_effect`
+
+Add remove effects for Voip TX path.
+
+```c
+int32_t pal_add_remove_effect(pal_stream_handle_t *stream_handle, pal_audio_effect_t effect, bool enable)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="effect" type="pal_audio_effect_t">
+  - effect to be enabled or disable
+</ParamField>
+<ParamField path="enable" type="bool">
+  - enable/disable
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_set_param`
+
+Set pal parameters.
+
+```c
+int32_t pal_set_param(uint32_t param_id, void *param_payload, size_t payload_size)
+```
+
+**Parameters**
+
+<ParamField path="param_id" type="uint32_t">
+  - param id whose parameters are to be set.
+</ParamField>
+<ParamField path="param_payload" type="void *">
+  - param data applicable to the param_id
+</ParamField>
+<ParamField path="payload_size" type="size_t">
+  - size of payload
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_get_param`
+
+Get pal parameters.
+
+```c
+int32_t pal_get_param(uint32_t param_id, void **param_payload, size_t *payload_size, void *query)
+```
+
+**Parameters**
+
+<ParamField path="param_id" type="uint32_t">
+  - param id whose parameters are retrieved.
+</ParamField>
+<ParamField path="param_payload" type="void **">
+  - param data applicable to the param_id
+</ParamField>
+<ParamField path="payload_size" type="size_t *">
+  - size of payload
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_create_mmap_buffer`
+
+Set audio volume specific to a stream.
+
+```c
+int32_t pal_stream_create_mmap_buffer(pal_stream_handle_t *stream_handle, int32_t min_size_frames, struct pal_mmap_buffer *info)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="min_size_frames" type="int32_t">
+  - minimum frame size required.
+</ParamField>
+<ParamField path="info" type="struct pal_mmap_buffer *">
+  - map buffer descriptor returned by stream.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_get_mmap_position`
+
+Set audio volume specific to a stream.
+
+```c
+int32_t pal_stream_get_mmap_position(pal_stream_handle_t *stream_handle, struct pal_mmap_position *position)
+```
+
+**Parameters**
+
+<ParamField path="stream_handle" type="pal_stream_handle_t *">
+  - Valid stream handle obtained from pal_stream_open
+</ParamField>
+<ParamField path="position" type="struct pal_mmap_position *">
+  - Mmap buffer read/write position returned.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_register_global_callback`
+
+Register global callback to pal.
+
+This can be used to inform client about any information needed even before stream is created.
+
+```c
+int32_t pal_register_global_callback(pal_global_callback cb, uint64_t cookie)
+```
+
+**Parameters**
+
+<ParamField path="cb" type="pal_global_callback">
+  - Valid callback.
+</ParamField>
+<ParamField path="cookie" type="uint64_t">
+  - client data. This cookie will be returned back in the callback function.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_cshm_alloc`
+
+Request for shared memory allocation.
+
+```c
+int32_t pal_cshm_alloc(uint32_t size, pal_cshm_info_t *memInfo)
+```
+
+**Parameters**
+
+<ParamField path="size" type="uint32_t">
+  - Size of the shared memeory required
+</ParamField>
+<ParamField path="pal_cshm_info_t" type="">
+  - Info regarding the allocated shared memory
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_cshm_dealloc`
+
+Request for deallocate the shared memory allocated via pal_cshm_alloc.
+
+```c
+int32_t pal_cshm_dealloc(pal_cshm_id_t memID)
+```
+
+**Parameters**
+
+<ParamField path="mem_id" type="">
+  - mem_id of the shared memory block to be deallocated
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_set_custom_param`
+
+Stream set parameters for generic/custom param.
+
+```c
+int32_t pal_stream_set_custom_param(pal_stream_handle_t *handle, char param_str[PAL_CUSTOM_PARAM_MAX_STRING_LENGTH], void *param_payload, size_t payload_size)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="pal_stream_handle_t *">
+  - stream handle to which the param is set/get.
+</ParamField>
+<ParamField path="param_str" type="char">
+  - param str that mention the type of setparam.
+</ParamField>
+<ParamField path="[in/out]" type="">
+  param_payload - param data applicable to the param_str
+</ParamField>
+<ParamField path="payload_size" type="size_t">
+  - size of payload passed in
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_stream_get_custom_param`
+
+Stream set parameters for generic/custom param.
+
+```c
+int32_t pal_stream_get_custom_param(pal_stream_handle_t *handle, char param_str[PAL_CUSTOM_PARAM_MAX_STRING_LENGTH], void *param_payload, size_t *payload_size)
+```
+
+**Parameters**
+
+<ParamField path="handle" type="pal_stream_handle_t *">
+  - stream handle to which the param is set/get.
+</ParamField>
+<ParamField path="param_str" type="char">
+  - param str that mention the type of getparam.
+</ParamField>
+<ParamField path="[in/out]" type="">
+  param_payload - param data applicable to the param_str
+</ParamField>
+<ParamField path="[in/out]" type="">
+  payload_size - as input max size of the allocated/memory passed by the client. If it is not enough to copy the get_param payload - a error is returned with the size set to the expected size of the memory to be passed. If the memory is more/enough - api will return actual size copied for the response as a ouput.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_set_custom_param`
+
+Stream get parameters for generic/custom param.
+
+```c
+int32_t pal_set_custom_param(custom_payload_uc_info_t *uc_info, char param_str[PAL_CUSTOM_PARAM_MAX_STRING_LENGTH], void *param_payload, size_t payload_size)
+```
+
+**Parameters**
+
+<ParamField path="param_str" type="char">
+  - param str that mention the type of getparam.
+</ParamField>
+<ParamField path="[in/out]" type="">
+  param_payload - param data applicable to the param_str
+</ParamField>
+<ParamField path="payload_size" type="size_t">
+  - size of the payload passed by the client.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_register_for_events`
+
+registers a callback function to get notification for audio events.
+
+```c
+int32_t pal_register_for_events(pal_audio_event_callback cb_event)
+```
+
+**Parameters**
+
+<ParamField path="cb_event" type="pal_audio_event_callback">
+  - Callback function to be called
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise
+
+### `pal_get_custom_param`
+
+Get pal parameters for generic/custom param.
+
+```c
+int32_t pal_get_custom_param(custom_payload_uc_info_t *uc_info, char param_str[PAL_CUSTOM_PARAM_MAX_STRING_LENGTH], void *param_payload, size_t *payload_size)
+```
+
+**Parameters**
+
+<ParamField path="uc_info" type="custom_payload_uc_info_t *">
+  - info of the usecase to which custom/param need to get/set.
+</ParamField>
+<ParamField path="param_str" type="char">
+  - param str that mention the type of getparam.
+</ParamField>
+<ParamField path="[in/out]" type="">
+  param_payload - param data applicable to the param_str
+</ParamField>
+<ParamField path="[in/out]" type="">
+  payload_size - as input max size of the allocated/memory passed by the client. If it is not enough to copy the get_param payload - a error is returned with the size set to the expected size of the memory to be passed. If the memory is more/enough - api will return actual size copied for the response as a ouput.
+</ParamField>
+
+**Returns**
+
+0 on success, error code otherwise

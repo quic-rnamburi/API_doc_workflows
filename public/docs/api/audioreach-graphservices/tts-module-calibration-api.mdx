@@ -1,0 +1,179 @@
+---
+title: "tts_module_calibration_api.h"
+---
+
+## Structures
+
+### `tts_version_t`
+
+**Members**
+
+<ParamField path="lib_version_low" type="uint32_t">
+</ParamField>
+<ParamField path="lib_version_high" type="uint32_t">
+</ParamField>
+
+### `param_id_tts_config_t`
+
+**Members**
+
+<ParamField path="language_code" type="uint32_t">
+</ParamField>
+<ParamField path="speech_format" type="uint32_t">
+
+</ParamField>
+<ParamField path="reserved" type="uint32_t">
+
+</ParamField>
+
+### `param_id_tts_speech_config_t`
+
+**Members**
+
+<ParamField path="speaker_rate_q4" type="uint32_t">
+</ParamField>
+<ParamField path="pitch" type="int32_t">
+
+</ParamField>
+<ParamField path="reserved" type="uint32_t">
+</ParamField>
+
+### `param_id_tts_force_stop_t`
+
+**Members**
+
+<ParamField path="force_stop" type="uint32_t">
+</ParamField>
+
+### `param_id_tts_gain_config_t`
+
+**Members**
+
+<ParamField path="gain" type="int32_t">
+</ParamField>
+<ParamField path="reserved" type="uint32_t">
+</ParamField>
+
+### `tts_model_param_t`
+
+**Members**
+
+<ParamField path="model_align" type="uint32_t">
+</ParamField>
+<ParamField path="model_offset" type="uint32_t">
+</ParamField>
+<ParamField path="model_size" type="uint32_t">
+</ParamField>
+<ParamField path="model" type="uint8_t">
+</ParamField>
+
+## Type Definitions
+
+### `tts_version_t`
+
+```c
+typedef struct tts_version_t tts_version_t
+```
+
+### `TTS_SPEECH_FORMAT_t`
+
+```c
+typedef enum TTS_SPEECH_FORMAT_t TTS_SPEECH_FORMAT_t
+```
+
+### `param_id_tts_config_t`
+
+```c
+typedef struct param_id_tts_config_t param_id_tts_config_t
+```
+
+### `param_id_tts_speech_config_t`
+
+```c
+typedef struct param_id_tts_speech_config_t param_id_tts_speech_config_t
+```
+
+### `param_id_tts_force_stop_t`
+
+```c
+typedef struct param_id_tts_force_stop_t param_id_tts_force_stop_t
+```
+
+### `param_id_tts_gain_config_t`
+
+```c
+typedef struct param_id_tts_gain_config_t param_id_tts_gain_config_t
+```
+
+### `tts_model_param_t`
+
+```c
+typedef struct tts_model_param_t tts_model_param_t
+```
+
+## Enumerations
+
+### `TTS_SPEECH_FORMAT_t`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `SPEECH_FORMAT_PCM` | =0 |  |
+| `SPEECH_FORMAT_END` |  |  |
+
+## Macros
+
+### `TTS_RELEASE_VERSION_MAJOR`
+
+```c
+#define TTS_RELEASE_VERSION_MAJOR 0x00000001
+```
+
+### `TTS_RELEASE_VERSION_MINOR`
+
+```c
+#define TTS_RELEASE_VERSION_MINOR 0x00000000
+```
+
+### `PARAM_ID_TTS_VERSION`
+
+```c
+#define PARAM_ID_TTS_VERSION 0x08001B28
+```
+
+### `PARAM_ID_TTS_CONFIG`
+
+```c
+#define PARAM_ID_TTS_CONFIG 0x08001B25
+```
+
+### `PARAM_ID_TTS_SPEECH_CONFIG`
+
+```c
+#define PARAM_ID_TTS_SPEECH_CONFIG 0x08001B26
+```
+
+### `PARAM_ID_TTS_FORCE_STOP`
+
+```c
+#define PARAM_ID_TTS_FORCE_STOP 0x08001B2A
+```
+
+### `PARAM_ID_TTS_GAIN_CONFIG`
+
+```c
+#define PARAM_ID_TTS_GAIN_CONFIG 0x08001B27
+```
+
+### `PARAM_ID_TTS_MODEL`
+
+```c
+#define PARAM_ID_TTS_MODEL 0x08001B29
+```
+
+### `MODULE_ID_TTS`
+
+```c
+#define MODULE_ID_TTS 0x0702C001
+```
