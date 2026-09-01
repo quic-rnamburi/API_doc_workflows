@@ -66,47 +66,68 @@ $(document).ready(function(){initNavTree('group__ar__spf__mod__encdec__mods.html
   <div class="headertitle"><div class="title">Ar_spf_mod_encdec_mods</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>These APIs are used by all encoder and decoders, including the PCM Decoder and PCM Encoder modules.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__placeholder__real__module__id__t.html">param_id_placeholder_real_module_id_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga9edd3f1072ef937f941b667a5586fe8d" title="Identifier for the parameter used to set the real module ID for the placeholder modules.">PARAM_ID_REAL_MODULE_ID</a> parameter.  <a href="structparam__id__placeholder__real__module__id__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__pcm__output__format__cfg__t.html">param_id_pcm_output_format_cfg_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga34871051b7a5a9ab18964aa299101d1f" title="Identifier for the parameter that configures the PCM output format of the PCM encoder,...">PARAM_ID_PCM_OUTPUT_FORMAT_CFG</a> parameter.  <a href="structparam__id__pcm__output__format__cfg__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__enc__bitrate__param__t.html">param_id_enc_bitrate_param_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#gaa1bc2af7bf33b4ef55375894056a93ec" title="Identifier for the parameter that sets the bit rate on the Encoder module.">PARAM_ID_ENC_BITRATE</a> parameter.  <a href="structparam__id__enc__bitrate__param__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__enc__frame__size__control__t.html">param_id_enc_frame_size_control_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#gadf8bbe5543b02ebe67429ed5541e1d42" title="Identifier for the parameter that configures the frame control (AAC encoder frame size) on the Encode...">PARAM_ID_ENC_FRAME_SIZE_CONTROL</a> parameter.  <a href="structparam__id__enc__frame__size__control__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__remove__initial__silence__t.html">param_id_remove_initial_silence_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#gae03cd6655ea232f08867983fde8276c5" title="Identifier for the parameter that is sent to a decoder to remove initial silence (zeros) introduced b...">PARAM_ID_REMOVE_INITIAL_SILENCE</a> parameter.  <a href="structparam__id__remove__initial__silence__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__remove__trailing__silence__t.html">param_id_remove_trailing_silence_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#gaaee4e95f8aa4fd1ee17827e5424102ac" title="Identifier for the parameter that is sent to a decoder to remove trailing silence (zeros) introduced ...">PARAM_ID_REMOVE_TRAILING_SILENCE</a> parameter.  <a href="structparam__id__remove__trailing__silence__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__module__enable__t.html">param_id_module_enable_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga935c9b3c3a0ee0ca33abdb324d71c788" title="Identifier for the Enable parameter used by any audio processing module.">PARAM_ID_MODULE_ENABLE</a> parameter, which is used for any audio processing module.  <a href="structparam__id__module__enable__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ga9edd3f1072ef937f941b667a5586fe8d" id="r_ga9edd3f1072ef937f941b667a5586fe8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga9edd3f1072ef937f941b667a5586fe8d">PARAM_ID_REAL_MODULE_ID</a>&#160;&#160;&#160;0x0800100B</td></tr>
+<tr class="memdesc:ga9edd3f1072ef937f941b667a5586fe8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the parameter used to set the real module ID for the placeholder modules.  <br /></td></tr>
 <tr class="separator:ga9edd3f1072ef937f941b667a5586fe8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7f4c2f493bdb3b9a369db98ba6adb576" id="r_ga7f4c2f493bdb3b9a369db98ba6adb576"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga7f4c2f493bdb3b9a369db98ba6adb576">PARAM_ID_RESET_PLACEHOLDER_MODULE</a>&#160;&#160;&#160;0x08001173</td></tr>
+<tr class="memdesc:ga7f4c2f493bdb3b9a369db98ba6adb576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the parameter used by <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga22c22a61d9e5ca9d661a9b210f170994" title="Identifier for the Placeholder Encoder module, which alleviates the need to create a graph for every ...">MODULE_ID_PLACEHOLDER_ENCODER</a> and <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga8f2ad9d85ca3778529de33c47d5fddec" title="Identifier for the Placeholder Decoder module, which alleviates the need to create a graph for every ...">MODULE_ID_PLACEHOLDER_DECODER</a> to reset the placeholder module.  <br /></td></tr>
 <tr class="separator:ga7f4c2f493bdb3b9a369db98ba6adb576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga22c22a61d9e5ca9d661a9b210f170994" id="r_ga22c22a61d9e5ca9d661a9b210f170994"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga22c22a61d9e5ca9d661a9b210f170994">MODULE_ID_PLACEHOLDER_ENCODER</a>&#160;&#160;&#160;0x07001008</td></tr>
+<tr class="memdesc:ga22c22a61d9e5ca9d661a9b210f170994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the Placeholder Encoder module, which alleviates the need to create a graph for every encoder where a placeholder module is used.  <br /></td></tr>
 <tr class="separator:ga22c22a61d9e5ca9d661a9b210f170994"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8f2ad9d85ca3778529de33c47d5fddec" id="r_ga8f2ad9d85ca3778529de33c47d5fddec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga8f2ad9d85ca3778529de33c47d5fddec">MODULE_ID_PLACEHOLDER_DECODER</a>&#160;&#160;&#160;0x07001009</td></tr>
+<tr class="memdesc:ga8f2ad9d85ca3778529de33c47d5fddec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the Placeholder Decoder module, which alleviates the need to create a graph for every decoder where a placeholder module is used.  <br /></td></tr>
 <tr class="separator:ga8f2ad9d85ca3778529de33c47d5fddec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga34871051b7a5a9ab18964aa299101d1f" id="r_ga34871051b7a5a9ab18964aa299101d1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga34871051b7a5a9ab18964aa299101d1f">PARAM_ID_PCM_OUTPUT_FORMAT_CFG</a>&#160;&#160;&#160;0x08001008</td></tr>
+<tr class="memdesc:ga34871051b7a5a9ab18964aa299101d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the parameter that configures the PCM output format of the PCM encoder, PCM decoder, or PCM converter.  <br /></td></tr>
 <tr class="separator:ga34871051b7a5a9ab18964aa299101d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae1236634b39249a25190e6c25c374c9a" id="r_gae1236634b39249a25190e6c25c374c9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#gae1236634b39249a25190e6c25c374c9a">MAX_NUM_CHANNELS_V2</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memdesc:gae1236634b39249a25190e6c25c374c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga34871051b7a5a9ab18964aa299101d1f" title="Identifier for the parameter that configures the PCM output format of the PCM encoder,...">PARAM_ID_PCM_OUTPUT_FORMAT_CFG</a> when fmt_id = <a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d" title="Identifier for the media format used to identify a PCM stream.">MEDIA_FMT_ID_PCM</a> and data_format = <a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732" title="Enumeration for the fixed-point data format.">DATA_FORMAT_FIXED_POINT</a> or <a class="el" href="media__fmt__api__basic_8h.html#a82034351c520daf6b9c8a651ec6e1177">DATA_FORMAT_FLOATING_POINT</a>.  <br /></td></tr>
 <tr class="separator:gae1236634b39249a25190e6c25c374c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa1bc2af7bf33b4ef55375894056a93ec" id="r_gaa1bc2af7bf33b4ef55375894056a93ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#gaa1bc2af7bf33b4ef55375894056a93ec">PARAM_ID_ENC_BITRATE</a>&#160;&#160;&#160;0x08001052</td></tr>
+<tr class="memdesc:gaa1bc2af7bf33b4ef55375894056a93ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the parameter that sets the bit rate on the Encoder module.  <br /></td></tr>
 <tr class="separator:gaa1bc2af7bf33b4ef55375894056a93ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadf8bbe5543b02ebe67429ed5541e1d42" id="r_gadf8bbe5543b02ebe67429ed5541e1d42"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#gadf8bbe5543b02ebe67429ed5541e1d42">PARAM_ID_ENC_FRAME_SIZE_CONTROL</a>&#160;&#160;&#160;0x08001053</td></tr>
+<tr class="memdesc:gadf8bbe5543b02ebe67429ed5541e1d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the parameter that configures the frame control (AAC encoder frame size) on the Encoder module.  <br /></td></tr>
 <tr class="separator:gadf8bbe5543b02ebe67429ed5541e1d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae03cd6655ea232f08867983fde8276c5" id="r_gae03cd6655ea232f08867983fde8276c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#gae03cd6655ea232f08867983fde8276c5">PARAM_ID_REMOVE_INITIAL_SILENCE</a>&#160;&#160;&#160;0x0800114B</td></tr>
+<tr class="memdesc:gae03cd6655ea232f08867983fde8276c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the parameter that is sent to a decoder to remove initial silence (zeros) introduced by the decoder.  <br /></td></tr>
 <tr class="separator:gae03cd6655ea232f08867983fde8276c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaaee4e95f8aa4fd1ee17827e5424102ac" id="r_gaaee4e95f8aa4fd1ee17827e5424102ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#gaaee4e95f8aa4fd1ee17827e5424102ac">PARAM_ID_REMOVE_TRAILING_SILENCE</a>&#160;&#160;&#160;0x0800115D</td></tr>
+<tr class="memdesc:gaaee4e95f8aa4fd1ee17827e5424102ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the parameter that is sent to a decoder to remove trailing silence (zeros) introduced by the decoder.  <br /></td></tr>
 <tr class="separator:gaaee4e95f8aa4fd1ee17827e5424102ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga935c9b3c3a0ee0ca33abdb324d71c788" id="r_ga935c9b3c3a0ee0ca33abdb324d71c788"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga935c9b3c3a0ee0ca33abdb324d71c788">PARAM_ID_MODULE_ENABLE</a>&#160;&#160;&#160;0x08001026</td></tr>
+<tr class="memdesc:ga935c9b3c3a0ee0ca33abdb324d71c788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the Enable parameter used by any audio processing module.  <br /></td></tr>
 <tr class="separator:ga935c9b3c3a0ee0ca33abdb324d71c788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -123,7 +144,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga34871051b7a5a9ab18964aa299101d1f">PARAM_ID_PCM_OUTPUT_FORMAT_CFG</a> when fmt_id = <a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d">MEDIA_FMT_ID_PCM</a> and data_format = <a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732">DATA_FORMAT_FIXED_POINT</a> or <a class="el" href="media__fmt__api__basic_8h.html#a82034351c520daf6b9c8a651ec6e1177">DATA_FORMAT_FLOATING_POINT</a>. </p>
+
+<p>Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga34871051b7a5a9ab18964aa299101d1f" title="Identifier for the parameter that configures the PCM output format of the PCM encoder,...">PARAM_ID_PCM_OUTPUT_FORMAT_CFG</a> when fmt_id = <a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d" title="Identifier for the media format used to identify a PCM stream.">MEDIA_FMT_ID_PCM</a> and data_format = <a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732" title="Enumeration for the fixed-point data format.">DATA_FORMAT_FIXED_POINT</a> or <a class="el" href="media__fmt__api__basic_8h.html#a82034351c520daf6b9c8a651ec6e1177">DATA_FORMAT_FLOATING_POINT</a>. </p>
 
 </div>
 </div>
@@ -138,19 +160,20 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the Placeholder Decoder module, which alleviates the need to create a graph for every decoder where a placeholder module is used.</p>
+
+<p>Identifier for the Placeholder Decoder module, which alleviates the need to create a graph for every decoder where a placeholder module is used. </p>
 <p>The graph definition contains the placeholder module ID. It is replaced by the real decoder module before the graph is started (if enabled).</p>
 <p>@subhead4{Supported parameter IDs}</p><ul>
-<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga9edd3f1072ef937f941b667a5586fe8d">PARAM_ID_REAL_MODULE_ID</a> &ndash; Used to replace the placeholder module with the real module. @lstsep<ul>
+<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga9edd3f1072ef937f941b667a5586fe8d" title="Identifier for the parameter used to set the real module ID for the placeholder modules.">PARAM_ID_REAL_MODULE_ID</a> &ndash; Used to replace the placeholder module with the real module. @lstsep<ul>
 <li>The placeholder module can be replaced only once. @lstsp2</li>
 <li>When a Set parameter is issued to the real module before PARAM_ID_REAL_MODULE_ID is set, the Set parameter is cached. @lstsp1</li>
 </ul>
 </li>
-<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga7f4c2f493bdb3b9a369db98ba6adb576">PARAM_ID_RESET_PLACEHOLDER_MODULE</a> &ndash; used to set a new real module ID. @lstsp1</li>
-<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga935c9b3c3a0ee0ca33abdb324d71c788">PARAM_ID_MODULE_ENABLE</a> &ndash; used to enable or disable the module. When disabled, module is bypassed.</li>
+<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga7f4c2f493bdb3b9a369db98ba6adb576" title="Identifier for the parameter used by MODULE_ID_PLACEHOLDER_ENCODER and MODULE_ID_PLACEHOLDER_DECODER ...">PARAM_ID_RESET_PLACEHOLDER_MODULE</a> &ndash; used to set a new real module ID. @lstsp1</li>
+<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga935c9b3c3a0ee0ca33abdb324d71c788" title="Identifier for the Enable parameter used by any audio processing module.">PARAM_ID_MODULE_ENABLE</a> &ndash; used to enable or disable the module. When disabled, module is bypassed.</li>
 </ul>
 <p>@subhead4{Supported data format}</p><ul>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a2c39ae7cdca806499e091bc190a86b95">DATA_FORMAT_RAW_COMPRESSED</a></li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a2c39ae7cdca806499e091bc190a86b95" title="Data format is a Raw compressed stream.">DATA_FORMAT_RAW_COMPRESSED</a></li>
 </ul>
 <p>@subhead4{Supported media formats}</p><ul>
 <li>Formats that the decoder modules support. @newpage </li>
@@ -169,16 +192,17 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the Placeholder Encoder module, which alleviates the need to create a graph for every encoder where a placeholder module is used.</p>
+
+<p>Identifier for the Placeholder Encoder module, which alleviates the need to create a graph for every encoder where a placeholder module is used. </p>
 <p>The graph definition contains the placeholder module ID. It is replaced by the real encoder module before the graph is started (if enabled).</p>
 <p>@subhead4{Supported parameter IDs}</p><ul>
-<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga9edd3f1072ef937f941b667a5586fe8d">PARAM_ID_REAL_MODULE_ID</a> &ndash; Used to replace the placeholder module with the real module. @lstsep<ul>
+<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga9edd3f1072ef937f941b667a5586fe8d" title="Identifier for the parameter used to set the real module ID for the placeholder modules.">PARAM_ID_REAL_MODULE_ID</a> &ndash; Used to replace the placeholder module with the real module. @lstsep<ul>
 <li>The placeholder module can be replaced only once. @lstsp2</li>
 <li>When a Set parameter is issued to the real module before PARAM_ID_REAL_MODULE_ID is set, the Set parameter is cached. @lstsp1</li>
 </ul>
 </li>
-<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga7f4c2f493bdb3b9a369db98ba6adb576">PARAM_ID_RESET_PLACEHOLDER_MODULE</a> &ndash; Used to set a new real module ID. @lstsp1</li>
-<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga935c9b3c3a0ee0ca33abdb324d71c788">PARAM_ID_MODULE_ENABLE</a> &ndash; Used to enable or disable the module. When disabled, the module is bypassed.</li>
+<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga7f4c2f493bdb3b9a369db98ba6adb576" title="Identifier for the parameter used by MODULE_ID_PLACEHOLDER_ENCODER and MODULE_ID_PLACEHOLDER_DECODER ...">PARAM_ID_RESET_PLACEHOLDER_MODULE</a> &ndash; Used to set a new real module ID. @lstsp1</li>
+<li><a class="el" href="group__ar__spf__mod__encdec__mods.html#ga935c9b3c3a0ee0ca33abdb324d71c788" title="Identifier for the Enable parameter used by any audio processing module.">PARAM_ID_MODULE_ENABLE</a> &ndash; Used to enable or disable the module. When disabled, the module is bypassed.</li>
 </ul>
 <p>@subhead4{Supported media formats}</p><ul>
 <li>Formats that the encoder modules support. </li>
@@ -197,8 +221,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the parameter that sets the bit rate on the Encoder module.</p>
-<p>@msgpayload <a class="el" href="structparam__id__enc__bitrate__param__t.html">param_id_enc_bitrate_param_t</a> </p>
+
+<p>Identifier for the parameter that sets the bit rate on the Encoder module. </p>
+<p>@msgpayload <a class="el" href="structparam__id__enc__bitrate__param__t.html" title="Payload of the PARAM_ID_ENC_BITRATE parameter.">param_id_enc_bitrate_param_t</a> </p>
 
 </div>
 </div>
@@ -213,8 +238,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the parameter that configures the frame control (AAC encoder frame size) on the Encoder module.</p>
-<p>@msgpayload <a class="el" href="structparam__id__enc__frame__size__control__t.html">param_id_enc_frame_size_control_t</a> </p>
+
+<p>Identifier for the parameter that configures the frame control (AAC encoder frame size) on the Encoder module. </p>
+<p>@msgpayload <a class="el" href="structparam__id__enc__frame__size__control__t.html" title="Payload of the PARAM_ID_ENC_FRAME_SIZE_CONTROL parameter.">param_id_enc_frame_size_control_t</a> </p>
 
 </div>
 </div>
@@ -229,9 +255,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the Enable parameter used by any audio processing module.</p>
+
+<p>Identifier for the Enable parameter used by any audio processing module. </p>
 <p>This generic/common parameter is used to configure or determine the state of any audio processing module.</p>
-<p>@msgpayload <a class="el" href="structparam__id__module__enable__t.html">param_id_module_enable_t</a> @newpage </p>
+<p>@msgpayload <a class="el" href="structparam__id__module__enable__t.html" title="Payload of the PARAM_ID_MODULE_ENABLE parameter, which is used for any audio processing module.">param_id_module_enable_t</a> @newpage </p>
 
 </div>
 </div>
@@ -246,7 +273,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the parameter that configures the PCM output format of the PCM encoder, PCM decoder, or PCM converter.</p>
+
+<p>Identifier for the parameter that configures the PCM output format of the PCM encoder, PCM decoder, or PCM converter. </p>
 <p>Following are example scenarios that require this parameter:</p><ul>
 <li>PCM decoder upstream of the PCM converter:<ul>
 <li>The parameter must be set on both the decoder and converter.</li>
@@ -263,16 +291,16 @@ Macros</h2></td></tr>
 <p>Following is the overall structure:</p>
 <div class="fragment"><div class="line"><a class="code hl_struct" href="structparam__id__pcm__output__format__cfg__t.html">param_id_pcm_output_format_cfg_t</a> pcfg;</div>
 <div class="line">uint8_t payload[payload_size]</div>
-<div class="ttc" id="astructparam__id__pcm__output__format__cfg__t_html"><div class="ttname"><a href="structparam__id__pcm__output__format__cfg__t.html">param_id_pcm_output_format_cfg_t</a></div><div class="ttdef"><b>Definition</b> common_enc_dec_api.h:251</div></div>
+<div class="ttc" id="astructparam__id__pcm__output__format__cfg__t_html"><div class="ttname"><a href="structparam__id__pcm__output__format__cfg__t.html">param_id_pcm_output_format_cfg_t</a></div><div class="ttdoc">Payload of the PARAM_ID_PCM_OUTPUT_FORMAT_CFG parameter.</div><div class="ttdef"><b>Definition</b> common_enc_dec_api.h:251</div></div>
 </div><!-- fragment --><p> @vertspace{6}</p>
-<p>Following is the overall structure when fmt_id = <a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d">MEDIA_FMT_ID_PCM</a> and data_format = <a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732">DATA_FORMAT_FIXED_POINT</a>:</p>
+<p>Following is the overall structure when fmt_id = <a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d" title="Identifier for the media format used to identify a PCM stream.">MEDIA_FMT_ID_PCM</a> and data_format = <a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732" title="Enumeration for the fixed-point data format.">DATA_FORMAT_FIXED_POINT</a>:</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <a class="code hl_struct" href="structpayload__pcm__output__format__cfg__t.html">payload_pcm_output_format_cfg_t</a> cfg;</div>
 <div class="line">   uint8_t channel_mapping[num_channels];</div>
 <div class="line">   uint8_t 32bit_padding[if_any];</div>
 <div class="line">}</div>
 <div class="ttc" id="astructpayload__pcm__output__format__cfg__t_html"><div class="ttname"><a href="structpayload__pcm__output__format__cfg__t.html">payload_pcm_output_format_cfg_t</a></div><div class="ttdef"><b>Definition</b> common_enc_dec_api.h:335</div></div>
-</div><!-- fragment --><p>@msgpayload <a class="el" href="structparam__id__pcm__output__format__cfg__t.html">param_id_pcm_output_format_cfg_t</a> <br  />
+</div><!-- fragment --><p>@msgpayload <a class="el" href="structparam__id__pcm__output__format__cfg__t.html" title="Payload of the PARAM_ID_PCM_OUTPUT_FORMAT_CFG parameter.">param_id_pcm_output_format_cfg_t</a> <br  />
 @indent{12pt} <a class="el" href="structpayload__pcm__output__format__cfg__t.html">payload_pcm_output_format_cfg_t</a> </p><dl class="section user"><dt></dt><dd>If configuration of <a class="el" href="structpayload__pcm__output__format__cfg__t.html">payload_pcm_output_format_cfg_t</a> is inconsistent, the result is an error. Examples:<ul>
 <li>If the bit width is 16, the Q format cannot be 27. @lstsp1</li>
 <li>If the bit width, bits per sample, alignment, and Q format are related. Thus, if one is native, the others must also be native. If one is unset, the others must be unset. @newpage </li>
@@ -292,8 +320,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the parameter used to set the real module ID for the placeholder modules.</p>
-<p>@msgpayload <a class="el" href="structparam__id__placeholder__real__module__id__t.html">param_id_placeholder_real_module_id_t</a> </p>
+
+<p>Identifier for the parameter used to set the real module ID for the placeholder modules. </p>
+<p>@msgpayload <a class="el" href="structparam__id__placeholder__real__module__id__t.html" title="Payload of the PARAM_ID_REAL_MODULE_ID parameter.">param_id_placeholder_real_module_id_t</a> </p>
 
 </div>
 </div>
@@ -308,11 +337,12 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the parameter that is sent to a decoder to remove initial silence (zeros) introduced by the decoder.</p>
+
+<p>Identifier for the parameter that is sent to a decoder to remove initial silence (zeros) introduced by the decoder. </p>
 <p>The parameter must be sent before the first data buffer is received by the decoder. Otherwise, no initial zeros are removed.</p>
 <p>If the parameter is sent multiple times before the decoder receives the first data buffer, only the most recent value is considered.</p>
 <p>The amount of initial silence is expected to be smaller than one frame. If the amount is larger than one frame, the entire first frame is dropped, but the rest of the initial zeros remain.</p>
-<p>@msgpayload <a class="el" href="structparam__id__remove__initial__silence__t.html">param_id_remove_initial_silence_t</a> </p>
+<p>@msgpayload <a class="el" href="structparam__id__remove__initial__silence__t.html" title="Payload of the PARAM_ID_REMOVE_INITIAL_SILENCE parameter.">param_id_remove_initial_silence_t</a> </p>
 
 </div>
 </div>
@@ -327,11 +357,12 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the parameter that is sent to a decoder to remove trailing silence (zeros) introduced by the decoder.</p>
+
+<p>Identifier for the parameter that is sent to a decoder to remove trailing silence (zeros) introduced by the decoder. </p>
 <p>The parameter must be sent before the last data buffer is received by the decoder. Otherwise, no trailing zeros will be removed.</p>
 <p>If this parameter is sent multiple times before the last data buffer is received by the decoder, only the most recent value is considered.</p>
 <p>The amount of trailing silence is expected to be smaller than one frame. If the amount is larger than one frame, the entire last frame will be dropped, but the rest of the trailing zeros will remain.</p>
-<p>@msgpayload <a class="el" href="structparam__id__remove__trailing__silence__t.html">param_id_remove_trailing_silence_t</a> </p>
+<p>@msgpayload <a class="el" href="structparam__id__remove__trailing__silence__t.html" title="Payload of the PARAM_ID_REMOVE_TRAILING_SILENCE parameter.">param_id_remove_trailing_silence_t</a> </p>
 
 </div>
 </div>
@@ -346,8 +377,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the parameter used by <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga22c22a61d9e5ca9d661a9b210f170994">MODULE_ID_PLACEHOLDER_ENCODER</a> and <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga8f2ad9d85ca3778529de33c47d5fddec">MODULE_ID_PLACEHOLDER_DECODER</a> to reset the placeholder module.</p>
-<p>After setting the real module ID to the placeholder using <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga9edd3f1072ef937f941b667a5586fe8d">PARAM_ID_REAL_MODULE_ID</a>, the module is no longer a placeholder. Any Set or Get command goes directly to the CAPI.</p>
+
+<p>Identifier for the parameter used by <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga22c22a61d9e5ca9d661a9b210f170994" title="Identifier for the Placeholder Encoder module, which alleviates the need to create a graph for every ...">MODULE_ID_PLACEHOLDER_ENCODER</a> and <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga8f2ad9d85ca3778529de33c47d5fddec" title="Identifier for the Placeholder Decoder module, which alleviates the need to create a graph for every ...">MODULE_ID_PLACEHOLDER_DECODER</a> to reset the placeholder module. </p>
+<p>After setting the real module ID to the placeholder using <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga9edd3f1072ef937f941b667a5586fe8d" title="Identifier for the parameter used to set the real module ID for the placeholder modules.">PARAM_ID_REAL_MODULE_ID</a>, the module is no longer a placeholder. Any Set or Get command goes directly to the CAPI.</p>
 <p>The reset involves destroying the current real module ID. After resetting, the PARAM_ID_REAL_MODULE_ID can be sent again. After reset, the module regains its placeholder state. @newpage </p>
 
 </div>

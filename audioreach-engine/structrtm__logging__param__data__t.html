@@ -66,17 +66,28 @@ $(document).ready(function(){initNavTree('structrtm__logging__param__data__t.htm
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_description { Common structure used for RTM logging of all monitoring parameters} @h2xmlp_toolPolicy {RTM} @h2xmlp_readOnly {true}  
+ <a href="structrtm__logging__param__data__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/rtm_logging_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a8c6e2923fa19696ead189835694bbe64" id="r_a8c6e2923fa19696ead189835694bbe64"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrtm__logging__param__data__t.html#a8c6e2923fa19696ead189835694bbe64">module_instance_id</a></td></tr>
+<tr class="memdesc:a8c6e2923fa19696ead189835694bbe64"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {instance ID of the module that logs the RTM data} @h2xmle_default {0x0} @h2xmle_range {0..4294967295} <br  />
+  <br /></td></tr>
 <tr class="separator:a8c6e2923fa19696ead189835694bbe64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a668bbd25089c512da031abb89e1ad48e" id="r_a668bbd25089c512da031abb89e1ad48e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrtm__logging__param__data__t.html#a668bbd25089c512da031abb89e1ad48e">param_id</a></td></tr>
+<tr class="memdesc:a668bbd25089c512da031abb89e1ad48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {param ID of the parameter that is being logged} @h2xmle_default {0x0} @h2xmle_range {0..4294967295} <br  />
+  <br /></td></tr>
 <tr class="separator:a668bbd25089c512da031abb89e1ad48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedac847c781b0517c4a3f493301dd070" id="r_aedac847c781b0517c4a3f493301dd070"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrtm__logging__param__data__t.html#aedac847c781b0517c4a3f493301dd070">param_size</a></td></tr>
+<tr class="memdesc:aedac847c781b0517c4a3f493301dd070"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {size of the param data which is followed by this structure} @h2xmle_default {0x0} @h2xmle_range {0..65536} <br  />
+  <br /></td></tr>
 <tr class="separator:aedac847c781b0517c4a3f493301dd070"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fc49c10cc7b167914f66efd4154c444" id="r_a1fc49c10cc7b167914f66efd4154c444"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrtm__logging__param__data__t.html#a1fc49c10cc7b167914f66efd4154c444">reserved</a></td></tr>
+<tr class="memdesc:a1fc49c10cc7b167914f66efd4154c444"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {reserved parameter} @h2xmle_default {0x0} @h2xmle_range {0..65536} <br  />
+  <br /></td></tr>
 <tr class="separator:a1fc49c10cc7b167914f66efd4154c444"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -93,6 +104,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {instance ID of the module that logs the RTM data} @h2xmle_default {0x0} @h2xmle_range {0..4294967295} <br  />
  </p>
 
@@ -109,6 +121,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {param ID of the parameter that is being logged} @h2xmle_default {0x0} @h2xmle_range {0..4294967295} <br  />
  </p>
 
@@ -125,6 +138,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {size of the param data which is followed by this structure} @h2xmle_default {0x0} @h2xmle_range {0..65536} <br  />
  </p>
 
@@ -141,6 +155,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {reserved parameter} @h2xmle_default {0x0} @h2xmle_range {0..65536} <br  />
  </p>
 

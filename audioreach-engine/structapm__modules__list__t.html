@@ -66,20 +66,27 @@ $(document).ready(function(){initNavTree('structapm__modules__list__t.html','');
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="apm__module__api_8h.html#abe330255d12b060dc32ece2c875c7573" title="Identifier for the parameter that configures the modules list for a given combination of sub-graph an...">APM_PARAM_ID_MODULES_LIST</a>.  
+ <a href="structapm__modules__list__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_module_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a823286edfec950a2b1ad495747095ebd" id="r_a823286edfec950a2b1ad495747095ebd"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__modules__list__t.html#a823286edfec950a2b1ad495747095ebd">sub_graph_id</a></td></tr>
+<tr class="memdesc:a823286edfec950a2b1ad495747095ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the sub-graph ID being configured.  <br /></td></tr>
 <tr class="separator:a823286edfec950a2b1ad495747095ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a244552f968ea0b583dff5876f7235325" id="r_a244552f968ea0b583dff5876f7235325"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__modules__list__t.html#a244552f968ea0b583dff5876f7235325">container_id</a></td></tr>
+<tr class="memdesc:a244552f968ea0b583dff5876f7235325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the container being configured.  <br /></td></tr>
 <tr class="separator:a244552f968ea0b583dff5876f7235325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb51e1e978afe97601ed61abf4c32f44" id="r_afb51e1e978afe97601ed61abf4c32f44"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__modules__list__t.html#afb51e1e978afe97601ed61abf4c32f44">num_modules</a></td></tr>
+<tr class="memdesc:afb51e1e978afe97601ed61abf4c32f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of modules being configured.  <br /></td></tr>
 <tr class="separator:afb51e1e978afe97601ed61abf4c32f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="apm__module__api_8h.html#abe330255d12b060dc32ece2c875c7573">APM_PARAM_ID_MODULES_LIST</a>. This structure contains information for configuring sub-graphs and containers.</p>
-<p>Immediately following this structure is a variable length array of the modules (<a class="el" href="structapm__module__cfg__t.html">apm_module_cfg_t</a>). </p>
+<div class="textblock"><p>Payload for <a class="el" href="apm__module__api_8h.html#abe330255d12b060dc32ece2c875c7573" title="Identifier for the parameter that configures the modules list for a given combination of sub-graph an...">APM_PARAM_ID_MODULES_LIST</a>. </p>
+<p>This structure contains information for configuring sub-graphs and containers.</p>
+<p>Immediately following this structure is a variable length array of the modules (<a class="el" href="structapm__module__cfg__t.html" title="Payload for APM_PARAM_ID_MODULES_LIST.">apm_module_cfg_t</a>). </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a244552f968ea0b583dff5876f7235325" name="a244552f968ea0b583dff5876f7235325"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a244552f968ea0b583dff5876f7235325">&#9670;&#160;</a></span>container_id</h2>
@@ -92,6 +99,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique identifier for the container being configured. </p>
 
 </div>
@@ -107,7 +115,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of modules being configured. @newpagetable </p>
+
+<p>Number of modules being configured. </p>
+<p>@newpagetable </p>
 
 </div>
 </div>
@@ -122,6 +132,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique identifier for the sub-graph ID being configured. </p>
 
 </div>

@@ -71,10 +71,13 @@ $(document).ready(function(){initNavTree('structdls__buf__hdr__t.html',''); init
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aa71a58e497eea2246a6b53ef96c59d64" id="r_aa71a58e497eea2246a6b53ef96c59d64"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__buf__hdr__t.html#aa71a58e497eea2246a6b53ef96c59d64">buf_size</a></td></tr>
+<tr class="memdesc:aa71a58e497eea2246a6b53ef96c59d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">It indicates the size of the data logged into the buffer.  <br /></td></tr>
 <tr class="separator:aa71a58e497eea2246a6b53ef96c59d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1dd3ca2ab3cc9a449d219783b38b724" id="r_ad1dd3ca2ab3cc9a449d219783b38b724"><td class="memItemLeft" align="right" valign="top"><a class="el" href="dls__api_8h.html#a3e07f0f291d74d7ef5ce5834d57386de">dls_buf_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__buf__hdr__t.html#ad1dd3ca2ab3cc9a449d219783b38b724">buf_state</a></td></tr>
+<tr class="memdesc:ad1dd3ca2ab3cc9a449d219783b38b724"><td class="mdescLeft">&#160;</td><td class="mdescRight">It indicates the current state of a data logging buffer.  <br /></td></tr>
 <tr class="separator:ad1dd3ca2ab3cc9a449d219783b38b724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a985d206aa0a59aaaf06491ecdfd8b5c0" id="r_a985d206aa0a59aaaf06491ecdfd8b5c0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__buf__hdr__t.html#a985d206aa0a59aaaf06491ecdfd8b5c0">buf_in_use</a></td></tr>
+<tr class="memdesc:a985d206aa0a59aaaf06491ecdfd8b5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">It indicates the available buffer space in percentage.  <br /></td></tr>
 <tr class="separator:a985d206aa0a59aaaf06491ecdfd8b5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
@@ -89,7 +92,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>It indicates the available buffer space in percentage. This varies between 0 and 100. This is used at the client end and when the available buffer size goes below a threshold limit [decided by the client] client may take decision to reconfigure the buffer information. </p>
+
+<p>It indicates the available buffer space in percentage. </p>
+<p>This varies between 0 and 100. This is used at the client end and when the available buffer size goes below a threshold limit [decided by the client] client may take decision to reconfigure the buffer information. </p>
 
 </div>
 </div>
@@ -104,7 +109,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>It indicates the size of the data logged into the buffer. This will be used at the client side to read buf_size number of bytes from the buffer </p>
+
+<p>It indicates the size of the data logged into the buffer. </p>
+<p>This will be used at the client side to read buf_size number of bytes from the buffer </p>
 
 </div>
 </div>
@@ -119,7 +126,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>It indicates the current state of a data logging buffer. This will be used in server to update/know the buffer state. This is useful to find the available buffer. The buffer state is not required at the client side but the client needs to skip this data to read the actual logged buffer. </p>
+
+<p>It indicates the current state of a data logging buffer. </p>
+<p>This will be used in server to update/know the buffer state. This is useful to find the available buffer. The buffer state is not required at the client side but the client needs to skip this data to read the actual logged buffer. </p>
 
 </div>
 </div>

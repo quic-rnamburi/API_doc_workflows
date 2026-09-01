@@ -66,19 +66,26 @@ $(document).ready(function(){initNavTree('structparam__id__detection__engine__mu
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_MULTI_MODEL_BUFFERING_CONFIG", PARAM_ID_DETECTION_ENGINE_MULTI_MODEL_BUFFERING_CONFIG} @h2xmlp_description { Set the buffering requirements for the PDK module.  
+ <a href="structparam__id__detection__engine__multi__model__buffering__config__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/detection_cmn_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:abc843ad6749603c31277c0d5e8158698" id="r_abc843ad6749603c31277c0d5e8158698"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__multi__model__buffering__config__t.html#abc843ad6749603c31277c0d5e8158698">model_id</a></td></tr>
+<tr class="memdesc:abc843ad6749603c31277c0d5e8158698"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Model id of the model for which buffering config is being done The Model has to be registered before sending this set param} @h2xmle_policy {Basic} @h2xmle_range {0..0xFFFFFFFE} @h2xmle_default {0}  <br /></td></tr>
 <tr class="separator:abc843ad6749603c31277c0d5e8158698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac35b3bb279b2f2f68362c5cf6756a990" id="r_ac35b3bb279b2f2f68362c5cf6756a990"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__multi__model__buffering__config__t.html#ac35b3bb279b2f2f68362c5cf6756a990">hist_buffer_duration_msec</a></td></tr>
+<tr class="memdesc:ac35b3bb279b2f2f68362c5cf6756a990"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Duration (in milliseconds) of the history buffer that holds both the data before keyword detection and the keyword.  <br /></td></tr>
 <tr class="separator:ac35b3bb279b2f2f68362c5cf6756a990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a437d2b970e82946dd701bdb725dbc624" id="r_a437d2b970e82946dd701bdb725dbc624"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__multi__model__buffering__config__t.html#a437d2b970e82946dd701bdb725dbc624">pre_roll_duration_msec</a></td></tr>
+<tr class="memdesc:a437d2b970e82946dd701bdb725dbc624"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Amount of data before a keyword start (in milliseconds).  <br /></td></tr>
 <tr class="separator:a437d2b970e82946dd701bdb725dbc624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_MULTI_MODEL_BUFFERING_CONFIG", PARAM_ID_DETECTION_ENGINE_MULTI_MODEL_BUFFERING_CONFIG} @h2xmlp_description { Set the buffering requirements for the PDK module. Based on this requirements, PDK resizes the Audio Dam buffers via IMCL.} @h2xmlp_toolPolicy {Calibration} </p>
+<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_MULTI_MODEL_BUFFERING_CONFIG", PARAM_ID_DETECTION_ENGINE_MULTI_MODEL_BUFFERING_CONFIG} @h2xmlp_description { Set the buffering requirements for the PDK module. </p>
+<p>Based on this requirements, PDK resizes the Audio Dam buffers via IMCL.} @h2xmlp_toolPolicy {Calibration} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ac35b3bb279b2f2f68362c5cf6756a990" name="ac35b3bb279b2f2f68362c5cf6756a990"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac35b3bb279b2f2f68362c5cf6756a990">&#9670;&#160;</a></span>hist_buffer_duration_msec</h2>
@@ -91,7 +98,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Duration (in milliseconds) of the history buffer that holds both the data before keyword detection and the keyword. The duration is limited by the memory available in the system.} @h2xmle_policy {Basic} @h2xmle_default {0} </p>
+
+<p>@h2xmle_description {Duration (in milliseconds) of the history buffer that holds both the data before keyword detection and the keyword. </p>
+<p>The duration is limited by the memory available in the system.} @h2xmle_policy {Basic} @h2xmle_default {0} </p>
 
 </div>
 </div>
@@ -106,6 +115,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Model id of the model for which buffering config is being done The Model has to be registered before sending this set param} @h2xmle_policy {Basic} @h2xmle_range {0..0xFFFFFFFE} @h2xmle_default {0} </p>
 
 </div>
@@ -121,7 +131,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Amount of data before a keyword start (in milliseconds).} @h2xmle_policy {Basic} @h2xmle_default {0} </p>
+
+<p>@h2xmle_description {Amount of data before a keyword start (in milliseconds). </p>
+<p>} @h2xmle_policy {Basic} @h2xmle_default {0} </p>
 
 </div>
 </div>

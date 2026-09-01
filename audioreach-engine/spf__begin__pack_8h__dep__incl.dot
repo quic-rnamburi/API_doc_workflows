@@ -28,7 +28,7 @@ digraph "fwk/api/ar_utils/spf_begin_pack.h"
   Node1 -> Node12 [id="edge11_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="fwk/api/modules/codec\l_metadata_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$codec__metadata__api_8h.html",tooltip="This file contains codec related metadata IDs."];
   Node12 -> Node13 [id="edge12_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="fwk/api/modules/metadata\l_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$metadata__api_8h.html",tooltip="This file contains metadata IDs. Definitions are not supposed to be here. definitions will be in modu..."];
+  Node13 [id="Node000013",label="fwk/api/modules/metadata\l_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$metadata__api_8h.html",tooltip="This file contains metadata IDs."];
   Node1 -> Node14 [id="edge13_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="fwk/api/modules/common\l_enc_dec_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$common__enc__dec__api_8h.html",tooltip="This file contains media format IDs and definitions."];
   Node14 -> Node15 [id="edge14_Node000014_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -73,12 +73,12 @@ digraph "fwk/api/ar_utils/spf_begin_pack.h"
   Node1 -> Node25 [id="edge40_Node000001_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node17 [id="edge41_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node28 [id="edge42_Node000001_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node28 [id="Node000028",label="fwk/api/vcpm/vcpm_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$vcpm__api_8h.html",tooltip=" "];
+  Node28 [id="Node000028",label="fwk/api/vcpm/vcpm_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$vcpm__api_8h.html",tooltip="\\brie"];
   Node1 -> Node29 [id="edge43_Node000001_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node29 [id="Node000029",label="fwk/api/vcpm/vcpm_config\l_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$vcpm__config__api_8h.html",tooltip="This file contains declarations of the VCPM config API."];
   Node29 -> Node28 [id="edge44_Node000029_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node30 [id="edge45_Node000001_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node30 [id="Node000030",label="fwk/api/vcpm/vcpm_tst\l_fwk_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$vcpm__tst__fwk__api_8h.html",tooltip=" "];
   Node1 -> Node31 [id="edge46_Node000001_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="fwk/spf/dls/api/dls\l_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$dls__api_8h.html",tooltip="This file contains Data Logging Service command/param/event ID's and public data structures...."];
+  Node31 [id="Node000031",label="fwk/spf/dls/api/dls\l_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$dls__api_8h.html",tooltip="This file contains Data Logging Service command/param/event ID's and public data structures."];
 }

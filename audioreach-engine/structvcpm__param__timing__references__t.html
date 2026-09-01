@@ -66,23 +66,31 @@ $(document).ready(function(){initNavTree('structvcpm__param__timing__references_
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#a990f49ca426a621647e74912a8d64b26" title="Identifier for the parameter that sets timing references from the modem to the VCPM.">VCPM_PARAM_ID_TIMING_REFERENCES</a>.  
+ <a href="structvcpm__param__timing__references__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ac65acc2274de9f52e7a2b581b157b4f3" id="r_ac65acc2274de9f52e7a2b581b157b4f3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__t.html#ac65acc2274de9f52e7a2b581b157b4f3">vfr_mode</a></td></tr>
+<tr class="memdesc:ac65acc2274de9f52e7a2b581b157b4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame synchronization mode for the vocoder.  <br /></td></tr>
 <tr class="separator:ac65acc2274de9f52e7a2b581b157b4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63d081a9f1fd6c8595019cf1a927b912" id="r_a63d081a9f1fd6c8595019cf1a927b912"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__t.html#a63d081a9f1fd6c8595019cf1a927b912">vsid</a></td></tr>
+<tr class="memdesc:a63d081a9f1fd6c8595019cf1a927b912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voice System identifier for the encoder.  <br /></td></tr>
 <tr class="separator:a63d081a9f1fd6c8595019cf1a927b912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a176791e046f81c63cdc6167e14a2a46d" id="r_a176791e046f81c63cdc6167e14a2a46d"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__t.html#a176791e046f81c63cdc6167e14a2a46d">tx_ref_timstamp_us</a></td></tr>
+<tr class="memdesc:a176791e046f81c63cdc6167e14a2a46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time reference (in microseconds) used to align the encoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.  <br /></td></tr>
 <tr class="separator:a176791e046f81c63cdc6167e14a2a46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fc41eaae517e7f704135d640e84e645" id="r_a7fc41eaae517e7f704135d640e84e645"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__t.html#a7fc41eaae517e7f704135d640e84e645">rx_ref_timstamp_us</a></td></tr>
+<tr class="memdesc:a7fc41eaae517e7f704135d640e84e645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time reference(in microseconds) used to align the decoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.  <br /></td></tr>
 <tr class="separator:a7fc41eaae517e7f704135d640e84e645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7821ad352c8b7ef76a88d19cdb91fe7d" id="r_a7821ad352c8b7ef76a88d19cdb91fe7d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__t.html#a7821ad352c8b7ef76a88d19cdb91fe7d">vfr_cycle_us</a></td></tr>
+<tr class="memdesc:a7821ad352c8b7ef76a88d19cdb91fe7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">VFR cycle duration for the voice call.  <br /></td></tr>
 <tr class="separator:a7821ad352c8b7ef76a88d19cdb91fe7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a990f49ca426a621647e74912a8d64b26">VCPM_PARAM_ID_TIMING_REFERENCES</a>. </p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a990f49ca426a621647e74912a8d64b26" title="Identifier for the parameter that sets timing references from the modem to the VCPM.">VCPM_PARAM_ID_TIMING_REFERENCES</a>. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a7fc41eaae517e7f704135d640e84e645" name="a7fc41eaae517e7f704135d640e84e645"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7fc41eaae517e7f704135d640e84e645">&#9670;&#160;</a></span>rx_ref_timstamp_us</h2>
@@ -95,7 +103,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Time reference(in microseconds) used to align the decoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.</p>
+
+<p>Time reference(in microseconds) used to align the decoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation. </p>
 <p>Use the QTimer as the clock source for interpreting the timestamp. </p>
 
 </div>
@@ -111,7 +120,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Time reference (in microseconds) used to align the encoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.</p>
+
+<p>Time reference (in microseconds) used to align the encoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation. </p>
 <p>Use the QTimer as the clock source for interpreting the timestamp. </p>
 
 </div>
@@ -127,6 +137,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>VFR cycle duration for the voice call. </p>
 
 </div>
@@ -142,6 +153,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Frame synchronization mode for the vocoder. </p>
 
 </div>
@@ -157,6 +169,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Voice System identifier for the encoder. </p>
 
 </div>

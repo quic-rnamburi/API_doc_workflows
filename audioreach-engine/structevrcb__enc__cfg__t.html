@@ -66,17 +66,24 @@ $(document).ready(function(){initNavTree('structevrcb__enc__cfg__t.html',''); in
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct @h2xmlp_description {Payload for configuring the EVRC-B encoder module} @h2xmlp_toolPolicy {Calibration}  
+ <a href="structevrcb__enc__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/media_fmt_api_ext.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:add45f3c32fd3ad7cbaa69eae528ebbc7" id="r_add45f3c32fd3ad7cbaa69eae528ebbc7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevrcb__enc__cfg__t.html#add45f3c32fd3ad7cbaa69eae528ebbc7">max_rate</a></td></tr>
+<tr class="memdesc:add45f3c32fd3ad7cbaa69eae528ebbc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Maximum allowed encoder frame rate.  <br /></td></tr>
 <tr class="separator:add45f3c32fd3ad7cbaa69eae528ebbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5af3e8bf3cf46f7eba074d38a8d1d2dc" id="r_a5af3e8bf3cf46f7eba074d38a8d1d2dc"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevrcb__enc__cfg__t.html#a5af3e8bf3cf46f7eba074d38a8d1d2dc">min_rate</a></td></tr>
+<tr class="memdesc:a5af3e8bf3cf46f7eba074d38a8d1d2dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Minimum allowed encoder frame rate.  <br /></td></tr>
 <tr class="separator:a5af3e8bf3cf46f7eba074d38a8d1d2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25b7a0872f03bea9a4d736f2f121a7a7" id="r_a25b7a0872f03bea9a4d736f2f121a7a7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevrcb__enc__cfg__t.html#a25b7a0872f03bea9a4d736f2f121a7a7">dtx_mode</a></td></tr>
+<tr class="memdesc:a25b7a0872f03bea9a4d736f2f121a7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Specifies whether DTX mode is enabled} @h2xmle_default {0} @h2xmle_rangeList {"Enable"=1, "Disable"=0} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a25b7a0872f03bea9a4d736f2f121a7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37b46d66ec35087e8a86b72d77d7ddf2" id="r_a37b46d66ec35087e8a86b72d77d7ddf2"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevrcb__enc__cfg__t.html#a37b46d66ec35087e8a86b72d77d7ddf2">reduced_rate_level</a></td></tr>
+<tr class="memdesc:a37b46d66ec35087e8a86b72d77d7ddf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Reduced rate level for the average encoding rate} @h2xmle_default {EVRCB_FS_ENCODE_MODE_MR480} @h2xmle_rangeList {"EVRCB_FS_ENCODE_MODE_MR930"=0, "EVRCB_FS_ENCODE_MODE_MR850"=1, "EVRCB_FS_ENCODE_MODE_MR750"=2, "EVRCB_FS_ENCODE_MODE_MR700"=3, "EVRCB_FS_ENCODE_MODE_MR660"=4, "EVRCB_FS_ENCODE_MODE_MR620"=5, "EVRCB_FS_ENCODE_MODE_MR580"=6, "EVRCB_FS_ENCODE_MODE_MR480"=7} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a37b46d66ec35087e8a86b72d77d7ddf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -93,6 +100,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Specifies whether DTX mode is enabled} @h2xmle_default {0} @h2xmle_rangeList {"Enable"=1, "Disable"=0} @h2xmle_policy {Basic} </p>
 
 </div>
@@ -108,7 +116,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Maximum allowed encoder frame rate.} @h2xmle_default {EVRCB_FS_ENCODE_MODE_MR930} @h2xmle_rangeList {"EVRCB_FS_ENCODE_MODE_MR930"=0, "EVRCB_FS_ENCODE_MODE_MR850"=1, "EVRCB_FS_ENCODE_MODE_MR750"=2, "EVRCB_FS_ENCODE_MODE_MR700"=3, "EVRCB_FS_ENCODE_MODE_MR660"=4, "EVRCB_FS_ENCODE_MODE_MR620"=5, "EVRCB_FS_ENCODE_MODE_MR580"=6, "EVRCB_FS_ENCODE_MODE_MR480"=7} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Maximum allowed encoder frame rate. </p>
+<p>} @h2xmle_default {EVRCB_FS_ENCODE_MODE_MR930} @h2xmle_rangeList {"EVRCB_FS_ENCODE_MODE_MR930"=0, "EVRCB_FS_ENCODE_MODE_MR850"=1, "EVRCB_FS_ENCODE_MODE_MR750"=2, "EVRCB_FS_ENCODE_MODE_MR700"=3, "EVRCB_FS_ENCODE_MODE_MR660"=4, "EVRCB_FS_ENCODE_MODE_MR620"=5, "EVRCB_FS_ENCODE_MODE_MR580"=6, "EVRCB_FS_ENCODE_MODE_MR480"=7} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -123,7 +133,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Minimum allowed encoder frame rate.} @h2xmle_default {EVRCB_FS_ENCODE_MODE_MR480} @h2xmle_rangeList {"EVRCB_FS_ENCODE_MODE_MR930"=0, "EVRCB_FS_ENCODE_MODE_MR850"=1, "EVRCB_FS_ENCODE_MODE_MR750"=2, "EVRCB_FS_ENCODE_MODE_MR700"=3, "EVRCB_FS_ENCODE_MODE_MR660"=4, "EVRCB_FS_ENCODE_MODE_MR620"=5, "EVRCB_FS_ENCODE_MODE_MR580"=6, "EVRCB_FS_ENCODE_MODE_MR480"=7} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Minimum allowed encoder frame rate. </p>
+<p>} @h2xmle_default {EVRCB_FS_ENCODE_MODE_MR480} @h2xmle_rangeList {"EVRCB_FS_ENCODE_MODE_MR930"=0, "EVRCB_FS_ENCODE_MODE_MR850"=1, "EVRCB_FS_ENCODE_MODE_MR750"=2, "EVRCB_FS_ENCODE_MODE_MR700"=3, "EVRCB_FS_ENCODE_MODE_MR660"=4, "EVRCB_FS_ENCODE_MODE_MR620"=5, "EVRCB_FS_ENCODE_MODE_MR580"=6, "EVRCB_FS_ENCODE_MODE_MR480"=7} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -138,6 +150,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Reduced rate level for the average encoding rate} @h2xmle_default {EVRCB_FS_ENCODE_MODE_MR480} @h2xmle_rangeList {"EVRCB_FS_ENCODE_MODE_MR930"=0, "EVRCB_FS_ENCODE_MODE_MR850"=1, "EVRCB_FS_ENCODE_MODE_MR750"=2, "EVRCB_FS_ENCODE_MODE_MR700"=3, "EVRCB_FS_ENCODE_MODE_MR660"=4, "EVRCB_FS_ENCODE_MODE_MR620"=5, "EVRCB_FS_ENCODE_MODE_MR580"=6, "EVRCB_FS_ENCODE_MODE_MR480"=7} @h2xmle_policy {Basic} </p>
 
 </div>

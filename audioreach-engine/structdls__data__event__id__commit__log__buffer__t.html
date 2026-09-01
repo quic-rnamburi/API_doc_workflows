@@ -66,6 +66,9 @@ $(document).ready(function(){initNavTree('structdls__data__event__id__commit__lo
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="dls__api_8h.html#a1092cb6eda4ceec453c8d7dbb296a740" title="Used to return the logged buffer.">DLS_DATA_CMD_BUFFER_RETURN</a>.  
+ <a href="structdls__data__event__id__commit__log__buffer__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/spf/dls/api/dls_api.h&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for dls_data_event_id_commit_log_buffer_t:</div>
@@ -76,12 +79,14 @@ Collaboration diagram for dls_data_event_id_commit_log_buffer_t:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ad5e1b57806e29e6b61f17695c8790864" id="r_ad5e1b57806e29e6b61f17695c8790864"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__data__event__id__commit__log__buffer__t.html#ad5e1b57806e29e6b61f17695c8790864">num_bufs</a></td></tr>
+<tr class="memdesc:ad5e1b57806e29e6b61f17695c8790864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of logged buffers that are committed.  <br /></td></tr>
 <tr class="separator:ad5e1b57806e29e6b61f17695c8790864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc8e1101934196970535ea2ac9266711" id="r_acc8e1101934196970535ea2ac9266711"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdls__buf__start__addr__t.html">dls_buf_start_addr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__data__event__id__commit__log__buffer__t.html#acc8e1101934196970535ea2ac9266711">buf_start_addr</a> [0]</td></tr>
+<tr class="memdesc:acc8e1101934196970535ea2ac9266711"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a flexible array member and it contains the following: lower 32-bits of the 64-bit buffer starting addresses upper 32-bits of the 64-bit buffer starting addresses.  <br /></td></tr>
 <tr class="separator:acc8e1101934196970535ea2ac9266711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="dls__api_8h.html#a1092cb6eda4ceec453c8d7dbb296a740">DLS_DATA_CMD_BUFFER_RETURN</a></p>
+<div class="textblock"><p>Payload for <a class="el" href="dls__api_8h.html#a1092cb6eda4ceec453c8d7dbb296a740" title="Used to return the logged buffer.">DLS_DATA_CMD_BUFFER_RETURN</a>. </p>
 <p>Consists the lower 32-bits and upper 32-bits of the logged buffer starting address. This address will be read by the client to parse the header and to work with the logged data. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="acc8e1101934196970535ea2ac9266711" name="acc8e1101934196970535ea2ac9266711"></a>
@@ -95,7 +100,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This is a flexible array member and it contains the following: lower 32-bits of the 64-bit buffer starting addresses upper 32-bits of the 64-bit buffer starting addresses </p>
+
+<p>This is a flexible array member and it contains the following: lower 32-bits of the 64-bit buffer starting addresses upper 32-bits of the 64-bit buffer starting addresses. </p>
 
 </div>
 </div>
@@ -110,6 +116,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Total number of logged buffers that are committed. </p>
 
 </div>

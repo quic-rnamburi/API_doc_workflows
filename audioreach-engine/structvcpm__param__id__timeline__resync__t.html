@@ -66,33 +66,46 @@ $(document).ready(function(){initNavTree('structvcpm__param__id__timeline__resyn
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#ad49ca7e4c846359ff04992ca0021f7cc" title="Identifier for the parameter that sets timeline resync parameters from the modem to the VCPM.">VCPM_PARAM_ID_TIMELINE_RESYNC</a>.  
+ <a href="structvcpm__param__id__timeline__resync__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a5efcfe67ec4360b0c44b398c1a20cf20" id="r_a5efcfe67ec4360b0c44b398c1a20cf20"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__timeline__resync__t.html#a5efcfe67ec4360b0c44b398c1a20cf20">resync_type</a></td></tr>
+<tr class="memdesc:a5efcfe67ec4360b0c44b398c1a20cf20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of resync that is being performed.  <br /></td></tr>
 <tr class="separator:a5efcfe67ec4360b0c44b398c1a20cf20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10b39b42ce8591f5aa673a6b0f3319ce" id="r_a10b39b42ce8591f5aa673a6b0f3319ce"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__timeline__resync__t.html#a10b39b42ce8591f5aa673a6b0f3319ce">network_id</a></td></tr>
+<tr class="memdesc:a10b39b42ce8591f5aa673a6b0f3319ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Network ID.  <br /></td></tr>
 <tr class="separator:a10b39b42ce8591f5aa673a6b0f3319ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9046647512dab84c1371d0e68ee62b4b" id="r_a9046647512dab84c1371d0e68ee62b4b"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__timeline__resync__t.html#a9046647512dab84c1371d0e68ee62b4b">tx_ref_timestamp_us</a></td></tr>
+<tr class="memdesc:a9046647512dab84c1371d0e68ee62b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client's encoder packet exchange time reference (absolute time in microseconds).  <br /></td></tr>
 <tr class="separator:a9046647512dab84c1371d0e68ee62b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac55147391ab47c03c8a69ee0009e3290" id="r_ac55147391ab47c03c8a69ee0009e3290"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__timeline__resync__t.html#ac55147391ab47c03c8a69ee0009e3290">rx_ref_timestamp_us</a></td></tr>
+<tr class="memdesc:ac55147391ab47c03c8a69ee0009e3290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client's decoder packet exchange time reference (absolute time in microseconds).  <br /></td></tr>
 <tr class="separator:ac55147391ab47c03c8a69ee0009e3290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacba71b63a892dfd7b241cbf79831764" id="r_aacba71b63a892dfd7b241cbf79831764"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__timeline__resync__t.html#aacba71b63a892dfd7b241cbf79831764">frame_type_ref_timestamp_us</a></td></tr>
+<tr class="memdesc:aacba71b63a892dfd7b241cbf79831764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client's time reference to receive the frame type of uplink packet ( absolute time in microseconds).  <br /></td></tr>
 <tr class="separator:aacba71b63a892dfd7b241cbf79831764"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbdff66914daba502361e728947dabb0" id="r_acbdff66914daba502361e728947dabb0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__timeline__resync__t.html#acbdff66914daba502361e728947dabb0">is_frame_type_event_enabled</a></td></tr>
+<tr class="memdesc:acbdff66914daba502361e728947dabb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the event driven mailbox packet exchange mode in Tx path for NO_DATA packets.  <br /></td></tr>
 <tr class="separator:acbdff66914daba502361e728947dabb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b7b02d47eb59db04a97d7485b5b9830" id="r_a0b7b02d47eb59db04a97d7485b5b9830"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__timeline__resync__t.html#a0b7b02d47eb59db04a97d7485b5b9830">vsid</a></td></tr>
+<tr class="memdesc:a0b7b02d47eb59db04a97d7485b5b9830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voice System ID as defined @80-NF774-2,80-NA610-2.  <br /></td></tr>
 <tr class="separator:a0b7b02d47eb59db04a97d7485b5b9830"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98d547ffd6c8d2b4c0f0f28d24f38a49" id="r_a98d547ffd6c8d2b4c0f0f28d24f38a49"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__timeline__resync__t.html#a98d547ffd6c8d2b4c0f0f28d24f38a49">vfr_mode</a></td></tr>
+<tr class="memdesc:a98d547ffd6c8d2b4c0f0f28d24f38a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vocoder frame synchronization mode.  <br /></td></tr>
 <tr class="separator:a98d547ffd6c8d2b4c0f0f28d24f38a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1fc3a8afdf8781bd90a67e19e69dd75" id="r_ac1fc3a8afdf8781bd90a67e19e69dd75"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__timeline__resync__t.html#ac1fc3a8afdf8781bd90a67e19e69dd75">vfr_cycle_us</a></td></tr>
+<tr class="memdesc:ac1fc3a8afdf8781bd90a67e19e69dd75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vocoder frame reference duration in microseconds.  <br /></td></tr>
 <tr class="separator:ac1fc3a8afdf8781bd90a67e19e69dd75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a280c28a6c7cd6a78de20790a6b77ee08" id="r_a280c28a6c7cd6a78de20790a6b77ee08"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__timeline__resync__t.html#a280c28a6c7cd6a78de20790a6b77ee08">enc_packet_ready_margin_us</a></td></tr>
+<tr class="memdesc:a280c28a6c7cd6a78de20790a6b77ee08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum allowed delay margin between the timestamp of encoder packet being ready and read_ref_timestamp_us.  <br /></td></tr>
 <tr class="separator:a280c28a6c7cd6a78de20790a6b77ee08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#ad49ca7e4c846359ff04992ca0021f7cc">VCPM_PARAM_ID_TIMELINE_RESYNC</a>. </p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#ad49ca7e4c846359ff04992ca0021f7cc" title="Identifier for the parameter that sets timeline resync parameters from the modem to the VCPM.">VCPM_PARAM_ID_TIMELINE_RESYNC</a>. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a280c28a6c7cd6a78de20790a6b77ee08" name="a280c28a6c7cd6a78de20790a6b77ee08"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a280c28a6c7cd6a78de20790a6b77ee08">&#9670;&#160;</a></span>enc_packet_ready_margin_us</h2>
@@ -105,7 +118,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Minimum allowed delay margin between the timestamp of encoder packet being ready and read_ref_timestamp_us.</p>
+
+<p>Minimum allowed delay margin between the timestamp of encoder packet being ready and read_ref_timestamp_us. </p>
 <p>Encoder packet would be ready and available in the mailbox buffer atleast enc_packet_ready_margin_us ahead of read_ref_timestamp_us. Value is specified in microseconds. Default value is 0us. </p>
 
 </div>
@@ -121,7 +135,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Client's time reference to receive the frame type of uplink packet ( absolute time in microseconds).</p>
+
+<p>Client's time reference to receive the frame type of uplink packet ( absolute time in microseconds). </p>
 <p>Indication of NO_DATA frame for the next CDRx cycle should be sent prior to this reference.</p>
 <p>The clock source to be used for interpreting the timestamp is product-specific. Currently, the QTimer is used as the timing reference for all products.</p>
 <p>frame_type_ref_timestamp_us, read_ref_timestamp_us and enc_packet_ready_margin_us will be used together to determine the uplink packet delivery timeline for speech packets.</p>
@@ -141,6 +156,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enables the event driven mailbox packet exchange mode in Tx path for NO_DATA packets. </p>
 
 </div>
@@ -156,6 +172,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Network ID. </p>
 
 </div>
@@ -171,7 +188,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Type of resync that is being performed. Supported Values: VCPM_RESYNC_TX VCPM_RESYNC_RX VCPM_RESYNC_TX_RX </p>
+
+<p>Type of resync that is being performed. </p>
+<p>Supported Values: VCPM_RESYNC_TX VCPM_RESYNC_RX VCPM_RESYNC_TX_RX </p>
 
 </div>
 </div>
@@ -186,7 +205,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Client's decoder packet exchange time reference (absolute time in microseconds).</p>
+
+<p>Client's decoder packet exchange time reference (absolute time in microseconds). </p>
 <p>The time reference is used to align the encoder's timeline to the client's timeline.</p>
 <p>The clock source to be used for interpreting the timestamp is product-specific. Currently, the QTimer is used as the timing reference for all products. </p>
 
@@ -203,7 +223,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Client's encoder packet exchange time reference (absolute time in microseconds).</p>
+
+<p>Client's encoder packet exchange time reference (absolute time in microseconds). </p>
 <p>The time reference is used to align the encoder's timeline to the client's timeline.</p>
 <p>The clock source to be used for interpreting the timestamp is product-specific. Currently, the QTimer is used as the timing reference for all products. </p>
 
@@ -220,7 +241,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Vocoder frame reference duration in microseconds. This is not expected to change during runtime reconfig.</p>
+
+<p>Vocoder frame reference duration in microseconds. </p>
+<p>This is not expected to change during runtime reconfig.</p>
 <p>@values N*20, where N is an integer. </p>
 
 </div>
@@ -236,7 +259,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Vocoder frame synchronization mode.</p>
+
+<p>Vocoder frame synchronization mode. </p>
 <p>@values</p><ul>
 <li>0: SOFT_VFR - VFR sourced by vfr_cycle_duration_ms software interupt.</li>
 <li>1: HARD_VFR - VFR sourced by hardware interupt. This is not expected to change during runtime reconfig. </li>
@@ -255,7 +279,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Voice System ID as defined @80-NF774-2,80-NA610-2.} </p>
+
+<p>Voice System ID as defined @80-NF774-2,80-NA610-2. </p>
+<p>} </p>
 
 </div>
 </div>

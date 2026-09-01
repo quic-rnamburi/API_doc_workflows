@@ -66,21 +66,29 @@ $(document).ready(function(){initNavTree('structmodule__cmn__md__encoder__per__f
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="codec__metadata__api_8h.html#af085f0acfc7d304f764d02781a9b9ab1" title="Metadata ID for encoder frame information.">MODULE_CMN_MD_ID_ENCODER_FRAME_INFO</a>.  
+ <a href="structmodule__cmn__md__encoder__per__frame__info__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/codec_metadata_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:af513b6dd3b4b8d231e9cf20f6d50aca6" id="r_af513b6dd3b4b8d231e9cf20f6d50aca6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmodule__cmn__md__encoder__per__frame__info__t.html#af513b6dd3b4b8d231e9cf20f6d50aca6">frame_size</a></td></tr>
+<tr class="memdesc:af513b6dd3b4b8d231e9cf20f6d50aca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of each frame in bytes (for example, an encoded frame size).  <br /></td></tr>
 <tr class="separator:af513b6dd3b4b8d231e9cf20f6d50aca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41773ab6364927b55eb676f974db24d3" id="r_a41773ab6364927b55eb676f974db24d3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmodule__cmn__md__encoder__per__frame__info__t.html#a41773ab6364927b55eb676f974db24d3">timestamp_lsw</a></td></tr>
+<tr class="memdesc:a41773ab6364927b55eb676f974db24d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower 32 bits of the 64-bit session time (microseconds) of the first sample in the frame.  <br /></td></tr>
 <tr class="separator:a41773ab6364927b55eb676f974db24d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92173e9f35a9a300143d235a4bb6271a" id="r_a92173e9f35a9a300143d235a4bb6271a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmodule__cmn__md__encoder__per__frame__info__t.html#a92173e9f35a9a300143d235a4bb6271a">timestamp_msw</a></td></tr>
+<tr class="memdesc:a92173e9f35a9a300143d235a4bb6271a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper 32 bits of the 64-bit session time (microseconds) of the first sample in the frame.  <br /></td></tr>
 <tr class="separator:a92173e9f35a9a300143d235a4bb6271a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8d6197fbf2cb2fbf436e93a2dc4947f" id="r_ad8d6197fbf2cb2fbf436e93a2dc4947f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmodule__cmn__md__encoder__per__frame__info__t.html#ad8d6197fbf2cb2fbf436e93a2dc4947f">flags</a></td></tr>
+<tr class="memdesc:ad8d6197fbf2cb2fbf436e93a2dc4947f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame flags.  <br /></td></tr>
 <tr class="separator:ad8d6197fbf2cb2fbf436e93a2dc4947f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="codec__metadata__api_8h.html#af085f0acfc7d304f764d02781a9b9ab1">MODULE_CMN_MD_ID_ENCODER_FRAME_INFO</a>. This structure contains metadata for the encoder frame information to be put in the read metadata buffer. </p>
+<div class="textblock"><p>Payload for <a class="el" href="codec__metadata__api_8h.html#af085f0acfc7d304f764d02781a9b9ab1" title="Metadata ID for encoder frame information.">MODULE_CMN_MD_ID_ENCODER_FRAME_INFO</a>. </p>
+<p>This structure contains metadata for the encoder frame information to be put in the read metadata buffer. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ad8d6197fbf2cb2fbf436e93a2dc4947f" name="ad8d6197fbf2cb2fbf436e93a2dc4947f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8d6197fbf2cb2fbf436e93a2dc4947f">&#9670;&#160;</a></span>flags</h2>
@@ -93,7 +101,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Frame flags.</p>
+
+<p>Frame flags. </p>
 <p>@valuesbul{for bit 31}</p><ul>
 <li>1 &ndash; Timestamp is valid</li>
 <li>0 &ndash; Timestamp is not valid</li>
@@ -114,7 +123,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Size of each frame in bytes (for example, an encoded frame size).</p>
+
+<p>Size of each frame in bytes (for example, an encoded frame size). </p>
 <p>@values &gt; 0 </p>
 
 </div>
@@ -130,6 +140,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Lower 32 bits of the 64-bit session time (microseconds) of the first sample in the frame. </p>
 
 </div>
@@ -145,6 +156,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Upper 32 bits of the 64-bit session time (microseconds) of the first sample in the frame. </p>
 
 </div>

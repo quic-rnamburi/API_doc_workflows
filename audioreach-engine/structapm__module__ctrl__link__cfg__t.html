@@ -66,23 +66,32 @@ $(document).ready(function(){initNavTree('structapm__module__ctrl__link__cfg__t.
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="apm__module__api_8h.html#a9056384b2a13245637a71fb38cf8e1f7" title="Identifier for the parameter that configures the list of control links across module control ports.">APM_PARAM_ID_MODULE_CTRL_LINK_CFG</a>.  
+ <a href="structapm__module__ctrl__link__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_module_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:abd89bcbbd0415d89b71cc548ea02b463" id="r_abd89bcbbd0415d89b71cc548ea02b463"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__ctrl__link__cfg__t.html#abd89bcbbd0415d89b71cc548ea02b463">peer_1_mod_iid</a></td></tr>
+<tr class="memdesc:abd89bcbbd0415d89b71cc548ea02b463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance identifier for the first peer module.  <br /></td></tr>
 <tr class="separator:abd89bcbbd0415d89b71cc548ea02b463"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a738946ed9bf4003beb0b8a83003e60ae" id="r_a738946ed9bf4003beb0b8a83003e60ae"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__ctrl__link__cfg__t.html#a738946ed9bf4003beb0b8a83003e60ae">peer_1_mod_ctrl_port_id</a></td></tr>
+<tr class="memdesc:a738946ed9bf4003beb0b8a83003e60ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control port identifier for the first peer module.  <br /></td></tr>
 <tr class="separator:a738946ed9bf4003beb0b8a83003e60ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a837fdfd29f1cf542a2d2c4eaf69c4b34" id="r_a837fdfd29f1cf542a2d2c4eaf69c4b34"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__ctrl__link__cfg__t.html#a837fdfd29f1cf542a2d2c4eaf69c4b34">peer_2_mod_iid</a></td></tr>
+<tr class="memdesc:a837fdfd29f1cf542a2d2c4eaf69c4b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance identifier for the second peer module.  <br /></td></tr>
 <tr class="separator:a837fdfd29f1cf542a2d2c4eaf69c4b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2aa035eb30cb9efca25358dc896883a3" id="r_a2aa035eb30cb9efca25358dc896883a3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__ctrl__link__cfg__t.html#a2aa035eb30cb9efca25358dc896883a3">peer_2_mod_ctrl_port_id</a></td></tr>
+<tr class="memdesc:a2aa035eb30cb9efca25358dc896883a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control port identifier for the second peer module.  <br /></td></tr>
 <tr class="separator:a2aa035eb30cb9efca25358dc896883a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0f14fac5c6e47a73fbfb1d977c62dda" id="r_af0f14fac5c6e47a73fbfb1d977c62dda"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__ctrl__link__cfg__t.html#af0f14fac5c6e47a73fbfb1d977c62dda">num_props</a></td></tr>
+<tr class="memdesc:af0f14fac5c6e47a73fbfb1d977c62dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of link properties (default = 0).  <br /></td></tr>
 <tr class="separator:af0f14fac5c6e47a73fbfb1d977c62dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="apm__module__api_8h.html#a9056384b2a13245637a71fb38cf8e1f7">APM_PARAM_ID_MODULE_CTRL_LINK_CFG</a>. This structure contains configuration parameters.</p>
+<div class="textblock"><p>Payload for <a class="el" href="apm__module__api_8h.html#a9056384b2a13245637a71fb38cf8e1f7" title="Identifier for the parameter that configures the list of control links across module control ports.">APM_PARAM_ID_MODULE_CTRL_LINK_CFG</a>. </p>
+<p>This structure contains configuration parameters.</p>
 <p>Immediately following this structure is a variable length array of structure objects that correspond to each module control link property. The length of the array is determined by number of control link properties being configured. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="af0f14fac5c6e47a73fbfb1d977c62dda" name="af0f14fac5c6e47a73fbfb1d977c62dda"></a>
@@ -96,6 +105,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Number of link properties (default = 0). </p>
 
 </div>
@@ -111,6 +121,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Control port identifier for the first peer module. </p>
 
 </div>
@@ -126,6 +137,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Instance identifier for the first peer module. </p>
 
 </div>
@@ -141,6 +153,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Control port identifier for the second peer module. </p>
 
 </div>
@@ -156,6 +169,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Instance identifier for the second peer module. </p>
 
 </div>

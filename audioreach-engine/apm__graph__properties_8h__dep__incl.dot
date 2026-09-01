@@ -40,5 +40,5 @@ digraph "fwk/api/apm/apm_graph_properties.h"
   Node1 -> Node17 [id="edge18_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="fwk/api/vcpm/vcpm_config\l_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$vcpm__config__api_8h.html",tooltip="This file contains declarations of the VCPM config API."];
   Node17 -> Node18 [id="edge19_Node000017_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="fwk/api/vcpm/vcpm_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$vcpm__api_8h.html",tooltip=" "];
+  Node18 [id="Node000018",label="fwk/api/vcpm/vcpm_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$vcpm__api_8h.html",tooltip="\\brie"];
 }

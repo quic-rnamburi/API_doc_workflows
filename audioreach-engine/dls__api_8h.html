@@ -69,7 +69,7 @@ $(document).ready(function(){initNavTree('dls__api_8h.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 
-<p>This file contains Data Logging Service command/param/event ID's and public data structures. This file should be used only when the DIAG service is not supported.  
+<p>This file contains Data Logging Service command/param/event ID's and public data structures.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="spf__begin__pack_8h.html">spf_begin_pack.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="spf__end__pack_8h.html">spf_end_pack.h</a>&quot;</code><br />
@@ -82,14 +82,18 @@ Include dependency graph for dls_api.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__config__buffer__t.html">dls_param_id_config_buffer_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for #DLS_CMD_CONFIG_BUFFER.  <a href="structdls__param__id__config__buffer__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__enable__disable__log__code__t.html">dls_param_id_enable_disable_log_code_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for <a class="el" href="dls__api_8h.html#a5cbf66cda47e5ace7682b75993d34a0e" title="Used to configure the log code to start/stop the data logging.">DLS_PARAM_ID_ENABLE_DISABLE_LOG_CODE</a>.  <a href="structdls__param__id__enable__disable__log__code__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__buf__start__addr__t.html">dls_buf_start_addr_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__data__event__id__commit__log__buffer__t.html">dls_data_event_id_commit_log_buffer_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for <a class="el" href="dls__api_8h.html#a1092cb6eda4ceec453c8d7dbb296a740" title="Used to return the logged buffer.">DLS_DATA_CMD_BUFFER_RETURN</a>.  <a href="structdls__data__event__id__commit__log__buffer__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__data__cmd__buffer__return__t.html">dls_data_cmd_buffer_return_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for <a class="el" href="dls__api_8h.html#a1092cb6eda4ceec453c8d7dbb296a740" title="Used to return the logged buffer.">DLS_DATA_CMD_BUFFER_RETURN</a>.  <a href="structdls__data__cmd__buffer__return__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__buf__hdr__t.html">dls_buf_hdr_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,14 +101,19 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a57e900ee933e91921f70bda43fcf4540" id="r_a57e900ee933e91921f70bda43fcf4540"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dls__api_8h.html#a57e900ee933e91921f70bda43fcf4540">DLS_MODULE_INSTANCE_ID</a>&#160;&#160;&#160;0x0000000A</td></tr>
+<tr class="memdesc:a57e900ee933e91921f70bda43fcf4540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for an instance of the Audio Logging Server module.  <br /></td></tr>
 <tr class="separator:a57e900ee933e91921f70bda43fcf4540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bb968ef655d1900a50d577c6dcc6152" id="r_a3bb968ef655d1900a50d577c6dcc6152"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dls__api_8h.html#a3bb968ef655d1900a50d577c6dcc6152">DLS_PARAM_ID_CONFIG_BUFFER</a>&#160;&#160;&#160;0x08001A83</td></tr>
+<tr class="memdesc:a3bb968ef655d1900a50d577c6dcc6152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to configure the data logging service buffer information.  <br /></td></tr>
 <tr class="separator:a3bb968ef655d1900a50d577c6dcc6152"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cbf66cda47e5ace7682b75993d34a0e" id="r_a5cbf66cda47e5ace7682b75993d34a0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dls__api_8h.html#a5cbf66cda47e5ace7682b75993d34a0e">DLS_PARAM_ID_ENABLE_DISABLE_LOG_CODE</a>&#160;&#160;&#160;0x08001A84</td></tr>
+<tr class="memdesc:a5cbf66cda47e5ace7682b75993d34a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to configure the log code to start/stop the data logging.  <br /></td></tr>
 <tr class="separator:a5cbf66cda47e5ace7682b75993d34a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af14b55569709440c4192e5cc947c6807" id="r_af14b55569709440c4192e5cc947c6807"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dls__api_8h.html#af14b55569709440c4192e5cc947c6807">DLS_DATA_EVENT_ID_COMMIT_LOG_BUFFER</a>&#160;&#160;&#160;0x06001006</td></tr>
+<tr class="memdesc:af14b55569709440c4192e5cc947c6807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to let the client know that a buffer of data is logged and is ready to be read at client side.  <br /></td></tr>
 <tr class="separator:af14b55569709440c4192e5cc947c6807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1092cb6eda4ceec453c8d7dbb296a740" id="r_a1092cb6eda4ceec453c8d7dbb296a740"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dls__api_8h.html#a1092cb6eda4ceec453c8d7dbb296a740">DLS_DATA_CMD_BUFFER_RETURN</a>&#160;&#160;&#160;0x0400100D</td></tr>
+<tr class="memdesc:a1092cb6eda4ceec453c8d7dbb296a740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to return the logged buffer.  <br /></td></tr>
 <tr class="separator:a1092cb6eda4ceec453c8d7dbb296a740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -129,10 +138,12 @@ Enumerations</h2></td></tr>
 , <a class="el" href="dls__api_8h.html#a3e07f0f291d74d7ef5ce5834d57386dea67bbad5bb47758cb1b8938f9b5dc0586">DLS_BUF_ACQUIRED</a>
 , <a class="el" href="dls__api_8h.html#a3e07f0f291d74d7ef5ce5834d57386deae3e665c149f38277bbdb4add461ca889">DLS_BUF_READY</a>
  }</td></tr>
+<tr class="memdesc:a3e07f0f291d74d7ef5ce5834d57386de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to identify the state of the buffer.  <a href="dls__api_8h.html#a3e07f0f291d74d7ef5ce5834d57386de">More...</a><br /></td></tr>
 <tr class="separator:a3e07f0f291d74d7ef5ce5834d57386de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file contains Data Logging Service command/param/event ID's and public data structures. This file should be used only when the DIAG service is not supported. </p>
+<div class="textblock"><p>This file contains Data Logging Service command/param/event ID's and public data structures. </p>
+<p>This file should be used only when the DIAG service is not supported.</p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) Qualcomm Innovation Center, Inc. All Rights Reserved. SPDX-License-Identifier: BSD-3-Clause-Clear </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a1092cb6eda4ceec453c8d7dbb296a740" name="a1092cb6eda4ceec453c8d7dbb296a740"></a>
@@ -146,8 +157,10 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Used to return the logged buffer. This data command will be issued by the client, after reading the logged buffer [after finishing the process of DLS_DATA_CMD_BUFFER_RETURN data event]. After receiving this command, the DLS server will clean the buffer and make it available for the next data logging.</p>
-<p>@msgpayload <a class="el" href="structdls__data__cmd__buffer__return__t.html">dls_data_cmd_buffer_return_t</a> @newpage </p>
+
+<p>Used to return the logged buffer. </p>
+<p>This data command will be issued by the client, after reading the logged buffer [after finishing the process of DLS_DATA_CMD_BUFFER_RETURN data event]. After receiving this command, the DLS server will clean the buffer and make it available for the next data logging.</p>
+<p>@msgpayload <a class="el" href="structdls__data__cmd__buffer__return__t.html" title="Payload for DLS_DATA_CMD_BUFFER_RETURN.">dls_data_cmd_buffer_return_t</a> @newpage </p>
 
 </div>
 </div>
@@ -162,8 +175,10 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Used to let the client know that a buffer of data is logged and is ready to be read at client side. This data event will be raised by the DLS to notify the client.</p>
-<p>@msgpayload <a class="el" href="structdls__data__event__id__commit__log__buffer__t.html">dls_data_event_id_commit_log_buffer_t</a> @newpage </p>
+
+<p>Used to let the client know that a buffer of data is logged and is ready to be read at client side. </p>
+<p>This data event will be raised by the DLS to notify the client.</p>
+<p>@msgpayload <a class="el" href="structdls__data__event__id__commit__log__buffer__t.html" title="Payload for DLS_DATA_CMD_BUFFER_RETURN.">dls_data_event_id_commit_log_buffer_t</a> @newpage </p>
 
 </div>
 </div>
@@ -178,6 +193,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Identifier for an instance of the Audio Logging Server module. </p>
 
 </div>
@@ -193,8 +209,10 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Used to configure the data logging service buffer information. DLS client will allocate the memory and sends this command to the DLS to configure the buffer information, like, buffer address, size, etc. This will be the first command from DLS client to the server. is_cfg field shall be set to 1, to configure the buffer information in the beginning of the data logging process. At the end of the process this flag shall be set to 0, to deconfigure [zeroing out all the fields] the buffer information.</p>
-<p>@msgpayload <a class="el" href="structdls__param__id__config__buffer__t.html">dls_param_id_config_buffer_t</a> @newpage </p>
+
+<p>Used to configure the data logging service buffer information. </p>
+<p>DLS client will allocate the memory and sends this command to the DLS to configure the buffer information, like, buffer address, size, etc. This will be the first command from DLS client to the server. is_cfg field shall be set to 1, to configure the buffer information in the beginning of the data logging process. At the end of the process this flag shall be set to 0, to deconfigure [zeroing out all the fields] the buffer information.</p>
+<p>@msgpayload <a class="el" href="structdls__param__id__config__buffer__t.html" title="Payload for #DLS_CMD_CONFIG_BUFFER.">dls_param_id_config_buffer_t</a> @newpage </p>
 
 </div>
 </div>
@@ -209,8 +227,10 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Used to configure the log code to start/stop the data logging. This command will be issued by the DLS client to enable/disable logging the data on a specific log code. This log code will be used to prepare the buffer header when the buffer is committed.</p>
-<p>@msgpayload <a class="el" href="structdls__param__id__enable__disable__log__code__t.html">dls_param_id_enable_disable_log_code_t</a> @newpage </p>
+
+<p>Used to configure the log code to start/stop the data logging. </p>
+<p>This command will be issued by the DLS client to enable/disable logging the data on a specific log code. This log code will be used to prepare the buffer header when the buffer is committed.</p>
+<p>@msgpayload <a class="el" href="structdls__param__id__enable__disable__log__code__t.html" title="Payload for DLS_PARAM_ID_ENABLE_DISABLE_LOG_CODE.">dls_param_id_enable_disable_log_code_t</a> @newpage </p>
 
 </div>
 </div>
@@ -311,7 +331,9 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Used to identify the state of the buffer. When the buffer is first created implicit state would be DLS_BUF_AVAILABLE. When DLS Server requests for an available buffer [via posal data logging], the state will be updated to DLS_BUF_ACQUIRED. When the data written to buffer, the state will be updated to DLS_BUF_READY. Once the DLS client read the buffer, the buffer shall be reset using DLS_DATA_CMD_BUFFER_RETURN command and the server will update the buffer state to DLS_BUF_AVAILABLE. </p>
+
+<p>Used to identify the state of the buffer. </p>
+<p>When the buffer is first created implicit state would be DLS_BUF_AVAILABLE. When DLS Server requests for an available buffer [via posal data logging], the state will be updated to DLS_BUF_ACQUIRED. When the data written to buffer, the state will be updated to DLS_BUF_READY. Once the DLS client read the buffer, the buffer shall be reset using DLS_DATA_CMD_BUFFER_RETURN command and the server will update the buffer state to DLS_BUF_AVAILABLE. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3e07f0f291d74d7ef5ce5834d57386dea73fce2a985d6963aa663e7cd4eaaaa82" name="a3e07f0f291d74d7ef5ce5834d57386dea73fce2a985d6963aa663e7cd4eaaaa82"></a>DLS_BUF_UNAVAILABLE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3e07f0f291d74d7ef5ce5834d57386dea7d8be76c78aa3fa7126663cbfcfccb2f" name="a3e07f0f291d74d7ef5ce5834d57386dea7d8be76c78aa3fa7126663cbfcfccb2f"></a>DLS_BUF_AVAILABLE&#160;</td><td class="fielddoc"></td></tr>

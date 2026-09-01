@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structparam__id__detection__engine__bu
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG", PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG} @h2xmlp_description { Set the buffering requirements for the detection module.  
+ <a href="structparam__id__detection__engine__buffering__config__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/detection_cmn_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a73dd343e74b434fdf73610ad8e5dd982" id="r_a73dd343e74b434fdf73610ad8e5dd982"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__buffering__config__t.html#a73dd343e74b434fdf73610ad8e5dd982">hist_buffer_duration_msec</a></td></tr>
+<tr class="memdesc:a73dd343e74b434fdf73610ad8e5dd982"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Duration (in milliseconds) of the history buffer that holds the keyword.  <br /></td></tr>
 <tr class="separator:a73dd343e74b434fdf73610ad8e5dd982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62bbb065798d6c9a541b2e98f907230f" id="r_a62bbb065798d6c9a541b2e98f907230f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__buffering__config__t.html#a62bbb065798d6c9a541b2e98f907230f">pre_roll_duration_msec</a></td></tr>
+<tr class="memdesc:a62bbb065798d6c9a541b2e98f907230f"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Amount of data before a keyword start (in milliseconds).  <br /></td></tr>
 <tr class="separator:a62bbb065798d6c9a541b2e98f907230f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG", PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG} @h2xmlp_description { Set the buffering requirements for the detection module. Based on this requirements, detection module resizes the Audio Dam buffers via IMCL.} @h2xmlp_toolPolicy {Calibration} </p>
+<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG", PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG} @h2xmlp_description { Set the buffering requirements for the detection module. </p>
+<p>Based on this requirements, detection module resizes the Audio Dam buffers via IMCL.} @h2xmlp_toolPolicy {Calibration} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a73dd343e74b434fdf73610ad8e5dd982" name="a73dd343e74b434fdf73610ad8e5dd982"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73dd343e74b434fdf73610ad8e5dd982">&#9670;&#160;</a></span>hist_buffer_duration_msec</h2>
@@ -89,7 +95,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Duration (in milliseconds) of the history buffer that holds the keyword. The duration is limited by the memory available in the system.} @h2xmle_policy {Basic} @h2xmle_default {0} </p>
+
+<p>@h2xmle_description {Duration (in milliseconds) of the history buffer that holds the keyword. </p>
+<p>The duration is limited by the memory available in the system.} @h2xmle_policy {Basic} @h2xmle_default {0} </p>
 
 </div>
 </div>
@@ -104,7 +112,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Amount of data before a keyword start (in milliseconds).} @h2xmle_policy {Basic} @h2xmle_default {0} </p>
+
+<p>@h2xmle_description {Amount of data before a keyword start (in milliseconds). </p>
+<p>} @h2xmle_policy {Basic} @h2xmle_default {0} </p>
 
 </div>
 </div>

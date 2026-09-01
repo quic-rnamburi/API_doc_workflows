@@ -66,19 +66,26 @@ $(document).ready(function(){initNavTree('structvcpm__vs__tag__miid__info__t.htm
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#a229f34cdb8bca5af019d987eb18f6ce8" title="ID for the event that indicates a voice call graph is opened.">VCPM_EVENT_ID_GRAPH_OPEN</a>.  
+ <a href="structvcpm__vs__tag__miid__info__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a0a9310455b928c9c675cacf34ac7a744" id="r_a0a9310455b928c9c675cacf34ac7a744"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__vs__tag__miid__info__t.html#a0a9310455b928c9c675cacf34ac7a744">sg_id</a></td></tr>
+<tr class="memdesc:a0a9310455b928c9c675cacf34ac7a744"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID for the sub-graph that corresponds to the module instance ID.  <br /></td></tr>
 <tr class="separator:a0a9310455b928c9c675cacf34ac7a744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b234665d8c08be766254de088fc0933" id="r_a7b234665d8c08be766254de088fc0933"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__vs__tag__miid__info__t.html#a7b234665d8c08be766254de088fc0933">tag_id</a></td></tr>
+<tr class="memdesc:a7b234665d8c08be766254de088fc0933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag IDs published by the VCPM.  <br /></td></tr>
 <tr class="separator:a7b234665d8c08be766254de088fc0933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca643c323f3338ca8d50a8aca7a6b837" id="r_aca643c323f3338ca8d50a8aca7a6b837"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__vs__tag__miid__info__t.html#aca643c323f3338ca8d50a8aca7a6b837">module_iid</a></td></tr>
+<tr class="memdesc:aca643c323f3338ca8d50a8aca7a6b837"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID for the module instance that corresponds to the tag ID.  <br /></td></tr>
 <tr class="separator:aca643c323f3338ca8d50a8aca7a6b837"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a229f34cdb8bca5af019d987eb18f6ce8">VCPM_EVENT_ID_GRAPH_OPEN</a>. This structure contains tag and MIID mapping information for each subgraph. The information is sent to the Voice System. </p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a229f34cdb8bca5af019d987eb18f6ce8" title="ID for the event that indicates a voice call graph is opened.">VCPM_EVENT_ID_GRAPH_OPEN</a>. </p>
+<p>This structure contains tag and MIID mapping information for each subgraph. The information is sent to the Voice System. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="aca643c323f3338ca8d50a8aca7a6b837" name="aca643c323f3338ca8d50a8aca7a6b837"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca643c323f3338ca8d50a8aca7a6b837">&#9670;&#160;</a></span>module_iid</h2>
@@ -91,6 +98,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>ID for the module instance that corresponds to the tag ID. </p>
 
 </div>
@@ -106,6 +114,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>ID for the sub-graph that corresponds to the module instance ID. </p>
 
 </div>
@@ -121,21 +130,22 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Tag IDs published by the VCPM.</p>
+
+<p>Tag IDs published by the VCPM. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="vcpm__api_8h.html#ad26a9fd2e532063b60d6c7af745dcd83">VOICE_MOD_TAG_ID_ENCODER</a></li>
-<li><a class="el" href="vcpm__api_8h.html#acfb3b9995f5d2807fd4803cfb84603d0">VOICE_MOD_TAG_ID_TX_MAILBOX</a></li>
-<li><a class="el" href="vcpm__api_8h.html#acf80fd41f55bf5ad0d19e82602ba0e87">VOICE_MOD_TAG_ID_TX_STREAM_HPCM</a></li>
-<li><a class="el" href="vcpm__api_8h.html#aa85870e2598d18f154fcc515049f1f8c">VOICE_MOD_TAG_ID_DECODER</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a592ac8a7cd7695ebfd603568f3e824bc">VOICE_MOD_TAG_ID_RX_MAILBOX</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a0588e522d341b1c9721ce9e626ad019d">VOICE_MOD_TAG_ID_RX_STREAM_HPCM</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a14538a95fd97e2fea28986830cbfa712">VOICE_MOD_TAG_ID_CTMTTY_TX</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a40109692f5d331cb65ced6da13637ed6">VOICE_MOD_TAG_ID_LTETTY_TX</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a351f911a3a934363fd003d2fc44520d0">VOICE_MOD_TAG_ID_CTMTTY_RX</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a045031a8e8db24f8c08d792920e30c1b">VOICE_MOD_TAG_ID_LTETTY_RX</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a1086b573570d90b17f2db33812cb9555">VOICE_MOD_TAG_ID_1XTTY_RX</a></li>
-<li><a class="el" href="vcpm__api_8h.html#ae7ff06b9c87c8a27bd0a71b0fb9f9544">VOICE_MOD_TAG_ID_RX_TRM</a></li>
-<li><a class="el" href="vcpm__api_8h.html#acdfe7b2a256c5568d043ec595e5dc65c">VOICE_MOD_TAG_ID_TX_SMART_SYNC</a> @tablebulletend </li>
+<li><a class="el" href="vcpm__api_8h.html#ad26a9fd2e532063b60d6c7af745dcd83" title="Tag ID for the voice encoder.">VOICE_MOD_TAG_ID_ENCODER</a></li>
+<li><a class="el" href="vcpm__api_8h.html#acfb3b9995f5d2807fd4803cfb84603d0" title="Tag ID for a mailbox in the Tx stream.">VOICE_MOD_TAG_ID_TX_MAILBOX</a></li>
+<li><a class="el" href="vcpm__api_8h.html#acf80fd41f55bf5ad0d19e82602ba0e87" title="Tag ID for Host PCM in the Tx stream.">VOICE_MOD_TAG_ID_TX_STREAM_HPCM</a></li>
+<li><a class="el" href="vcpm__api_8h.html#aa85870e2598d18f154fcc515049f1f8c" title="Tag ID for the voice decoder.">VOICE_MOD_TAG_ID_DECODER</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a592ac8a7cd7695ebfd603568f3e824bc" title="Tag ID for a mailbox in the Rx stream.">VOICE_MOD_TAG_ID_RX_MAILBOX</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a0588e522d341b1c9721ce9e626ad019d" title="Tag ID for HPCM in the Rx stream.">VOICE_MOD_TAG_ID_RX_STREAM_HPCM</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a14538a95fd97e2fea28986830cbfa712" title="Tag ID for cellular text modem TTY in the Tx stream.">VOICE_MOD_TAG_ID_CTMTTY_TX</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a40109692f5d331cb65ced6da13637ed6" title="Tag ID for LTE TTY in the Tx stream.">VOICE_MOD_TAG_ID_LTETTY_TX</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a351f911a3a934363fd003d2fc44520d0" title="Tag ID for cellular text modem TTY in the Rx stream.">VOICE_MOD_TAG_ID_CTMTTY_RX</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a045031a8e8db24f8c08d792920e30c1b" title="Tag ID for LTE TTY in the Rx stream.">VOICE_MOD_TAG_ID_LTETTY_RX</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a1086b573570d90b17f2db33812cb9555" title="Tag ID for 1x TTY in the Rx stream.">VOICE_MOD_TAG_ID_1XTTY_RX</a></li>
+<li><a class="el" href="vcpm__api_8h.html#ae7ff06b9c87c8a27bd0a71b0fb9f9544" title="Tag ID for the Timed Renderer module in the Rx stream.">VOICE_MOD_TAG_ID_RX_TRM</a></li>
+<li><a class="el" href="vcpm__api_8h.html#acdfe7b2a256c5568d043ec595e5dc65c" title="Tag ID for smart synchronization in the Tx stream.">VOICE_MOD_TAG_ID_TX_SMART_SYNC</a> @tablebulletend </li>
 </ul>
 
 </div>

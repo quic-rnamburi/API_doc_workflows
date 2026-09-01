@@ -66,29 +66,40 @@ $(document).ready(function(){initNavTree('structvcpm__param__timing__references_
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#a91ca45fa988a0dd3eeb562fa19a76c13" title="Identifier for the parameter that sets version 2 of the timing references from the modem to the VCPM.">VCPM_PARAM_ID_TIMING_REFERENCES_V2</a>.  
+ <a href="structvcpm__param__timing__references__v2__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ae9d222f62277e9e5364a1b9f9e3785f2" id="r_ae9d222f62277e9e5364a1b9f9e3785f2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__v2__t.html#ae9d222f62277e9e5364a1b9f9e3785f2">vfr_mode</a></td></tr>
+<tr class="memdesc:ae9d222f62277e9e5364a1b9f9e3785f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame synchronization mode for the vocoder.  <br /></td></tr>
 <tr class="separator:ae9d222f62277e9e5364a1b9f9e3785f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e6e8333343b7ae70c156e1507355cc3" id="r_a4e6e8333343b7ae70c156e1507355cc3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__v2__t.html#a4e6e8333343b7ae70c156e1507355cc3">vsid</a></td></tr>
+<tr class="memdesc:a4e6e8333343b7ae70c156e1507355cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voice System identifier 2 for the vocoder.  <br /></td></tr>
 <tr class="separator:a4e6e8333343b7ae70c156e1507355cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2020eed95acab982348d39c72ec1732a" id="r_a2020eed95acab982348d39c72ec1732a"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__v2__t.html#a2020eed95acab982348d39c72ec1732a">tx_ref_timstamp_us</a></td></tr>
+<tr class="memdesc:a2020eed95acab982348d39c72ec1732a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time reference (in microseconds) used to align the encoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.  <br /></td></tr>
 <tr class="separator:a2020eed95acab982348d39c72ec1732a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1759400f5934e11d6f6753c913b64f4" id="r_ac1759400f5934e11d6f6753c913b64f4"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__v2__t.html#ac1759400f5934e11d6f6753c913b64f4">rx_ref_timstamp_us</a></td></tr>
+<tr class="memdesc:ac1759400f5934e11d6f6753c913b64f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time reference(in microseconds) used to align the decoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.  <br /></td></tr>
 <tr class="separator:ac1759400f5934e11d6f6753c913b64f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecf9567cf4e0ad40838d3a6db7d01bca" id="r_aecf9567cf4e0ad40838d3a6db7d01bca"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__v2__t.html#aecf9567cf4e0ad40838d3a6db7d01bca">is_frame_type_event_enabled</a></td></tr>
+<tr class="memdesc:aecf9567cf4e0ad40838d3a6db7d01bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the event-driven mailbox packet exchange mode in the Tx path for NO_DATA packets.  <br /></td></tr>
 <tr class="separator:aecf9567cf4e0ad40838d3a6db7d01bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bc0f586882837fa2c7cd10c064082d8" id="r_a5bc0f586882837fa2c7cd10c064082d8"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__v2__t.html#a5bc0f586882837fa2c7cd10c064082d8">frame_type_ref_timestamp_us</a></td></tr>
+<tr class="memdesc:a5bc0f586882837fa2c7cd10c064082d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client's time reference for receiving the frame type of an uplink packet (absolute time in microseconds).  <br /></td></tr>
 <tr class="separator:a5bc0f586882837fa2c7cd10c064082d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac32643598df144411a85f37c9f5efe1f" id="r_ac32643598df144411a85f37c9f5efe1f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__v2__t.html#ac32643598df144411a85f37c9f5efe1f">enc_packet_ready_margin_us</a></td></tr>
+<tr class="memdesc:ac32643598df144411a85f37c9f5efe1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum allowed delay margin between the timestamp of the encoder packet being ready and read_ref_timestamp_us.  <br /></td></tr>
 <tr class="separator:ac32643598df144411a85f37c9f5efe1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a004767c61da33c8617dfbcfeab1bc755" id="r_a004767c61da33c8617dfbcfeab1bc755"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__references__v2__t.html#a004767c61da33c8617dfbcfeab1bc755">vfr_cycle_us</a></td></tr>
+<tr class="memdesc:a004767c61da33c8617dfbcfeab1bc755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration of the VFR cycle for the voice call.  <br /></td></tr>
 <tr class="separator:a004767c61da33c8617dfbcfeab1bc755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a91ca45fa988a0dd3eeb562fa19a76c13">VCPM_PARAM_ID_TIMING_REFERENCES_V2</a>. </p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a91ca45fa988a0dd3eeb562fa19a76c13" title="Identifier for the parameter that sets version 2 of the timing references from the modem to the VCPM.">VCPM_PARAM_ID_TIMING_REFERENCES_V2</a>. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ac32643598df144411a85f37c9f5efe1f" name="ac32643598df144411a85f37c9f5efe1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac32643598df144411a85f37c9f5efe1f">&#9670;&#160;</a></span>enc_packet_ready_margin_us</h2>
@@ -101,7 +112,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Minimum allowed delay margin between the timestamp of the encoder packet being ready and read_ref_timestamp_us.</p>
+
+<p>Minimum allowed delay margin between the timestamp of the encoder packet being ready and read_ref_timestamp_us. </p>
 <p>The encoder packet is ready and available in the mailbox buffer at least enc_packet_ready_margin_us ahead of read_ref_timestamp_us.</p>
 <p>The value is specified in microseconds. </p>
 
@@ -118,7 +130,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Client's time reference for receiving the frame type of an uplink packet (absolute time in microseconds).</p>
+
+<p>Client's time reference for receiving the frame type of an uplink packet (absolute time in microseconds). </p>
 <p>An indication of a NO_DATA frame for the next CDRx cycle must be sent before this reference.</p>
 <p>The clock source to use for interpreting the timestamp is product-specific. Currently, the QTimer is used as the timing reference for all products.</p>
 <p>The frame_type_ref_timestamp_us, read_ref_timestamp_us, and enc_packet_ready_margin_us fields are used together to determine the uplink packet delivery timeline for speech packets:</p>
@@ -139,6 +152,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enables the event-driven mailbox packet exchange mode in the Tx path for NO_DATA packets. </p>
 
 </div>
@@ -154,7 +168,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Time reference(in microseconds) used to align the decoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.</p>
+
+<p>Time reference(in microseconds) used to align the decoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation. </p>
 <p>Use the QTimer as the clock source for interpreting the timestamp. </p>
 
 </div>
@@ -170,7 +185,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Time reference (in microseconds) used to align the encoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation.</p>
+
+<p>Time reference (in microseconds) used to align the encoder's timeline to the client's timeline at the beginning of the vocoder's packet exchange operation. </p>
 <p>Use the QTimer as the clock source for interpreting the timestamp. </p>
 
 </div>
@@ -186,6 +202,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Duration of the VFR cycle for the voice call. </p>
 
 </div>
@@ -201,6 +218,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Frame synchronization mode for the vocoder. </p>
 
 </div>
@@ -216,6 +234,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Voice System identifier 2 for the vocoder. </p>
 
 </div>

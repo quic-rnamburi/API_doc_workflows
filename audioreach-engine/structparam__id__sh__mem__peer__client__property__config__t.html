@@ -66,15 +66,20 @@ $(document).ready(function(){initNavTree('structparam__id__sh__mem__peer__client
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_parameter {"PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG", PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG} @h2xmlp_description {Parameter for setting the up/downstream (basically client) state configuration information to the WR/RD_EP module in the SPF graph.  
+ <a href="structparam__id__sh__mem__peer__client__property__config__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/module_cmn_shmem_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a408ad93d896671c2842242f2541c138b" id="r_a408ad93d896671c2842242f2541c138b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__sh__mem__peer__client__property__config__t.html#a408ad93d896671c2842242f2541c138b">num_properties</a></td></tr>
+<tr class="memdesc:a408ad93d896671c2842242f2541c138b"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {determines the number of client state properties following this payload.  <br /></td></tr>
 <tr class="separator:a408ad93d896671c2842242f2541c138b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG", PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG} @h2xmlp_description {Parameter for setting the up/downstream (basically client) state configuration information to the WR/RD_EP module in the SPF graph.<br  />
+<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG", PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG} @h2xmlp_description {Parameter for setting the up/downstream (basically client) state configuration information to the WR/RD_EP module in the SPF graph. </p>
+<p><br  />
  This would help the SPF Clients to set the relevant attributes to the SPF SH_MEM modules and adjust the data processing characteristics in the SPF. <br  />
  For example, if the Client for RD_SH_MEM_EP module operates in real-time, configuring this payload with appropriate attributes would help to increase the processing priority of this use case. <br  />
  } @h2xmlp_toolPolicy {Calibration} </p>
@@ -90,7 +95,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {determines the number of client state properties following this payload.} @h2xmle_range {0..0x7FFFFFFF} @h2xmle_default {0} @h2xmle_policy {advanced} </p>
+
+<p>@h2xmle_description {determines the number of client state properties following this payload. </p>
+<p>} @h2xmle_range {0..0x7FFFFFFF} @h2xmle_default {0} @h2xmle_policy {advanced} </p>
 
 </div>
 </div>

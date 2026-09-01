@@ -66,29 +66,42 @@ $(document).ready(function(){initNavTree('structpayload__media__fmt__ape__t.html
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct @h2xmlp_description {Payload of the APE decoder format block parameters in the MEDIA_FMT_ID_APE media format} @h2xmlp_toolPolicy {Calibration}  
+ <a href="structpayload__media__fmt__ape__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/media_fmt_api_ext.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a53ab9591798c455da376b49651762055" id="r_a53ab9591798c455da376b49651762055"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__ape__t.html#a53ab9591798c455da376b49651762055">version</a></td></tr>
+<tr class="memdesc:a53ab9591798c455da376b49651762055"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Specifies the compatible version.  <br /></td></tr>
 <tr class="separator:a53ab9591798c455da376b49651762055"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab21e2b69ea2df587f5c24b223c40e23f" id="r_ab21e2b69ea2df587f5c24b223c40e23f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__ape__t.html#ab21e2b69ea2df587f5c24b223c40e23f">compression_level</a></td></tr>
+<tr class="memdesc:ab21e2b69ea2df587f5c24b223c40e23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Compression level present in the encoded packet.  <br /></td></tr>
 <tr class="separator:ab21e2b69ea2df587f5c24b223c40e23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6de37e121ec14c81a9c89d70970fb4a5" id="r_a6de37e121ec14c81a9c89d70970fb4a5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__ape__t.html#a6de37e121ec14c81a9c89d70970fb4a5">format_flags</a></td></tr>
+<tr class="memdesc:a6de37e121ec14c81a9c89d70970fb4a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Reserved for future use.  <br /></td></tr>
 <tr class="separator:a6de37e121ec14c81a9c89d70970fb4a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abab49230f54474c4ce31adca7cd476ad" id="r_abab49230f54474c4ce31adca7cd476ad"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__ape__t.html#abab49230f54474c4ce31adca7cd476ad">blocks_per_frame</a></td></tr>
+<tr class="memdesc:abab49230f54474c4ce31adca7cd476ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of audio blocks (channel samples) in one frame present in the encoded packet header.  <br /></td></tr>
 <tr class="separator:abab49230f54474c4ce31adca7cd476ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a116dc353abd460311c5b13c0d139d3ee" id="r_a116dc353abd460311c5b13c0d139d3ee"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__ape__t.html#a116dc353abd460311c5b13c0d139d3ee">final_frame_blocks</a></td></tr>
+<tr class="memdesc:a116dc353abd460311c5b13c0d139d3ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of audio blocks (channel samples) in the final frame present in the encoded packet header} @h2xmle_rangeList {"Any value present in the APE header" = 0} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a116dc353abd460311c5b13c0d139d3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc8e08d31909c7c62c808fbcec63b67b" id="r_abc8e08d31909c7c62c808fbcec63b67b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__ape__t.html#abc8e08d31909c7c62c808fbcec63b67b">total_frames</a></td></tr>
+<tr class="memdesc:abc8e08d31909c7c62c808fbcec63b67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Total number of frames.  <br /></td></tr>
 <tr class="separator:abc8e08d31909c7c62c808fbcec63b67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1147572ef579464f6e1428eb7a978656" id="r_a1147572ef579464f6e1428eb7a978656"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__ape__t.html#a1147572ef579464f6e1428eb7a978656">bit_width</a></td></tr>
+<tr class="memdesc:a1147572ef579464f6e1428eb7a978656"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Bit width of the source PCM data.  <br /></td></tr>
 <tr class="separator:a1147572ef579464f6e1428eb7a978656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acedc352d9b79937015e51d61ce02c9ff" id="r_acedc352d9b79937015e51d61ce02c9ff"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__ape__t.html#acedc352d9b79937015e51d61ce02c9ff">num_channels</a></td></tr>
+<tr class="memdesc:acedc352d9b79937015e51d61ce02c9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of channels for decoding} @h2xmle_rangeList {"Mono" = 1,"Stereo"= 2,INVALID_VALUE=0} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:acedc352d9b79937015e51d61ce02c9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a712c11f8310d1a8b4c405a684c99a8a7" id="r_a712c11f8310d1a8b4c405a684c99a8a7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__ape__t.html#a712c11f8310d1a8b4c405a684c99a8a7">sample_rate</a></td></tr>
+<tr class="memdesc:a712c11f8310d1a8b4c405a684c99a8a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of samples per second.  <br /></td></tr>
 <tr class="separator:a712c11f8310d1a8b4c405a684c99a8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1928b26ac8a08ee7c26c089214e0956" id="r_aa1928b26ac8a08ee7c26c089214e0956"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__ape__t.html#aa1928b26ac8a08ee7c26c089214e0956">is_seek_table_present</a></td></tr>
+<tr class="memdesc:aa1928b26ac8a08ee7c26c089214e0956"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Flag used to indicate the presence of the seek table.  <br /></td></tr>
 <tr class="separator:aa1928b26ac8a08ee7c26c089214e0956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -105,7 +118,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Bit width of the source PCM data.} @h2xmle_default {16} @h2xmle_rangeList {"16" = 16,"24" = 24} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Bit width of the source PCM data. </p>
+<p>} @h2xmle_default {16} @h2xmle_rangeList {"16" = 16,"24" = 24} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -120,7 +135,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Number of audio blocks (channel samples) in one frame present in the encoded packet header.} @h2xmle_rangeList {"Any value present in the APE header" = 0} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Number of audio blocks (channel samples) in one frame present in the encoded packet header. </p>
+<p>} @h2xmle_rangeList {"Any value present in the APE header" = 0} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -135,7 +152,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Compression level present in the encoded packet. The nBlocksPerFrame parameter value is based on the compression level.} @h2xmle_rangeList {"COMPRESSION_LEVEL_FAST" = 1000, "COMPRESSION_LEVEL_NORMAL" = 2000, "COMPRESSION_LEVEL_HIGH" = 3000, "COMPRESSION_LEVEL_EXTRA_HIGH" = 4000, "COMPRESSION_LEVEL_INSANE" = 5000, INVALID_VALUE=0} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Compression level present in the encoded packet. </p>
+<p>The nBlocksPerFrame parameter value is based on the compression level.} @h2xmle_rangeList {"COMPRESSION_LEVEL_FAST" = 1000, "COMPRESSION_LEVEL_NORMAL" = 2000, "COMPRESSION_LEVEL_HIGH" = 3000, "COMPRESSION_LEVEL_EXTRA_HIGH" = 4000, "COMPRESSION_LEVEL_INSANE" = 5000, INVALID_VALUE=0} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -150,6 +169,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Number of audio blocks (channel samples) in the final frame present in the encoded packet header} @h2xmle_rangeList {"Any value present in the APE header" = 0} @h2xmle_policy {Basic} </p>
 
 </div>
@@ -165,7 +185,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Reserved for future use.} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Reserved for future use. </p>
+<p>} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -180,7 +202,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Flag used to indicate the presence of the seek table. This flag is not part of the APE header.} @h2xmle_rangeList {"Not present" = 0, "Present" = 1} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Flag used to indicate the presence of the seek table. </p>
+<p>This flag is not part of the APE header.} @h2xmle_rangeList {"Not present" = 0, "Present" = 1} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -195,6 +219,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Number of channels for decoding} @h2xmle_rangeList {"Mono" = 1,"Stereo"= 2,INVALID_VALUE=0} @h2xmle_policy {Basic} </p>
 
 </div>
@@ -210,7 +235,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Number of samples per second.} @h2xmle_rangeList {INVALID_VALUE=0, "8000"=8000, "11025"=11025, "12000"=12000, "16000"=16000, "22050"=22050, "24000"=24000, "32000"=32000, "44100"=44100, "48000"=48000, "64000"=64000, "88200"=88200, "96000"=96000, "128000"=128000, "176400"=176400, "192000"=192000} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Number of samples per second. </p>
+<p>} @h2xmle_rangeList {INVALID_VALUE=0, "8000"=8000, "11025"=11025, "12000"=12000, "16000"=16000, "22050"=22050, "24000"=24000, "32000"=32000, "44100"=44100, "48000"=48000, "64000"=64000, "88200"=88200, "96000"=96000, "128000"=128000, "176400"=176400, "192000"=192000} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -225,7 +252,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Total number of frames.} @h2xmle_rangeList {"Any value present in the APE header" = 0} @h2xmle_policy {Basic} <br  />
+
+<p>@h2xmle_description {Total number of frames. </p>
+<p>} @h2xmle_rangeList {"Any value present in the APE header" = 0} @h2xmle_policy {Basic} <br  />
  </p>
 
 </div>
@@ -241,7 +270,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Specifies the compatible version.} @h2xmle_rangeList {"0" = 0} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Specifies the compatible version. </p>
+<p>} @h2xmle_rangeList {"0" = 0} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>

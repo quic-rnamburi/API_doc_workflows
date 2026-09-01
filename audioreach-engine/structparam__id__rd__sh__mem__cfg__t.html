@@ -66,17 +66,22 @@ $(document).ready(function(){initNavTree('structparam__id__rd__sh__mem__cfg__t.h
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="rd__sh__mem__ep__api_8h.html#a7ab9acfe4e0278842439fc0755284645" title="Identifier of the parameter that configures the MODULE_ID_RD_SHARED_MEM_EP module.">PARAM_ID_RD_SH_MEM_CFG</a>.  
+ <a href="structparam__id__rd__sh__mem__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/rd_sh_mem_ep_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a253b791fee5eef62dbff25f4a946d2aa" id="r_a253b791fee5eef62dbff25f4a946d2aa"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__rd__sh__mem__cfg__t.html#a253b791fee5eef62dbff25f4a946d2aa">num_frames_per_buffer</a></td></tr>
+<tr class="memdesc:a253b791fee5eef62dbff25f4a946d2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of frames per buffer that must be populated in the read buffers.  <br /></td></tr>
 <tr class="separator:a253b791fee5eef62dbff25f4a946d2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f1a0d1fd5e4dfb31efde3f6c1a9d64a" id="r_a6f1a0d1fd5e4dfb31efde3f6c1a9d64a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__rd__sh__mem__cfg__t.html#a6f1a0d1fd5e4dfb31efde3f6c1a9d64a">metadata_control_flags</a></td></tr>
+<tr class="memdesc:a6f1a0d1fd5e4dfb31efde3f6c1a9d64a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the control flags for the metadata for the module.  <br /></td></tr>
 <tr class="separator:a6f1a0d1fd5e4dfb31efde3f6c1a9d64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="rd__sh__mem__ep__api_8h.html#a7ab9acfe4e0278842439fc0755284645">PARAM_ID_RD_SH_MEM_CFG</a>. </p>
+<div class="textblock"><p>Payload for <a class="el" href="rd__sh__mem__ep__api_8h.html#a7ab9acfe4e0278842439fc0755284645" title="Identifier of the parameter that configures the MODULE_ID_RD_SHARED_MEM_EP module.">PARAM_ID_RD_SH_MEM_CFG</a>. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a6f1a0d1fd5e4dfb31efde3f6c1a9d64a" name="a6f1a0d1fd5e4dfb31efde3f6c1a9d64a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f1a0d1fd5e4dfb31efde3f6c1a9d64a">&#9670;&#160;</a></span>metadata_control_flags</h2>
@@ -89,6 +94,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Specifies the control flags for the metadata for the module. </p>
 
 </div>
@@ -104,8 +110,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of frames per buffer that must be populated in the read buffers.</p>
-<p>It is considered an error if even one frame cannot be filled. If this value is 0, as many frames as possible are to be filled (see <a class="el" href="rd__sh__mem__ep__api_8h.html#a0a0f12c1fac1c547fb77546f3b6b9898">RD_SH_MEM_NUM_FRAMES_IN_BUF_AS_MUCH_AS_POSSIBLE</a>).</p>
+
+<p>Number of frames per buffer that must be populated in the read buffers. </p>
+<p>It is considered an error if even one frame cannot be filled. If this value is 0, as many frames as possible are to be filled (see <a class="el" href="rd__sh__mem__ep__api_8h.html#a0a0f12c1fac1c547fb77546f3b6b9898" title="Special value of param_id_rd_sh_mem_cfg_t::num_frames_per_buffer to indicate that as many buffers as ...">RD_SH_MEM_NUM_FRAMES_IN_BUF_AS_MUCH_AS_POSSIBLE</a>).</p>
 <p>Only an integral number of frames can be filled in every buffer. </p>
 
 </div>

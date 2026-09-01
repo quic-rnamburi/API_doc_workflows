@@ -66,15 +66,19 @@ $(document).ready(function(){initNavTree('structvcpm__param__cal__table__payload
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#a6711162e1bcfb2786d659ec6276bdf8e" title="Identifier for the parameter that registers calibration tables per subgraph (from the applications pr...">VCPM_PARAM_ID_CAL_TABLE</a>.  
+ <a href="structvcpm__param__cal__table__payload__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a4413deaaebe8a5090a6927eb3189f878" id="r_a4413deaaebe8a5090a6927eb3189f878"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__cal__table__payload__t.html#a4413deaaebe8a5090a6927eb3189f878">num_sub_graphs</a></td></tr>
+<tr class="memdesc:a4413deaaebe8a5090a6927eb3189f878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of voice subgraphs for which calibration tables are provided.  <br /></td></tr>
 <tr class="separator:a4413deaaebe8a5090a6927eb3189f878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a6711162e1bcfb2786d659ec6276bdf8e">VCPM_PARAM_ID_CAL_TABLE</a>.</p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a6711162e1bcfb2786d659ec6276bdf8e" title="Identifier for the parameter that registers calibration tables per subgraph (from the applications pr...">VCPM_PARAM_ID_CAL_TABLE</a>. </p>
 <p>Immediately following this structure is an array of structures of type vcpm_sgid_cal_table_t. The array length is equal to num_sub_graphs. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a4413deaaebe8a5090a6927eb3189f878" name="a4413deaaebe8a5090a6927eb3189f878"></a>
@@ -88,6 +92,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Number of voice subgraphs for which calibration tables are provided. </p>
 
 </div>

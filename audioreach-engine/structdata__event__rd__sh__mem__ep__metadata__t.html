@@ -66,21 +66,30 @@ $(document).ready(function(){initNavTree('structdata__event__rd__sh__mem__ep__me
 </div><!--header-->
 <div class="contents">
 
+<p>Payload of the metadata that can be put in the data read buffer.  
+ <a href="structdata__event__rd__sh__mem__ep__metadata__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/rd_sh_mem_ep_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a0972faafb59b1996fd7457f5842e5875" id="r_a0972faafb59b1996fd7457f5842e5875"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__event__rd__sh__mem__ep__metadata__t.html#a0972faafb59b1996fd7457f5842e5875">offset</a></td></tr>
+<tr class="memdesc:a0972faafb59b1996fd7457f5842e5875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset from the buffer address in data_cmd_rsp_rd_sh_mem_ep_data_buffer_done_v2_t to the frame associated with the metadata.  <br /></td></tr>
 <tr class="separator:a0972faafb59b1996fd7457f5842e5875"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb1e57dd193b8021c665683dd263e131" id="r_adb1e57dd193b8021c665683dd263e131"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__event__rd__sh__mem__ep__metadata__t.html#adb1e57dd193b8021c665683dd263e131">frame_size</a></td></tr>
+<tr class="memdesc:adb1e57dd193b8021c665683dd263e131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of each frame in bytes (for example, the encoded frame size).  <br /></td></tr>
 <tr class="separator:adb1e57dd193b8021c665683dd263e131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf73b02a78010db9d5c86d938ce5ae15" id="r_acf73b02a78010db9d5c86d938ce5ae15"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__event__rd__sh__mem__ep__metadata__t.html#acf73b02a78010db9d5c86d938ce5ae15">pcm_length</a></td></tr>
+<tr class="memdesc:acf73b02a78010db9d5c86d938ce5ae15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of PCM samples per channel that corresponding to each frame_size (for example, the number of PCM samples per channel used for encoding a frame).  <br /></td></tr>
 <tr class="separator:acf73b02a78010db9d5c86d938ce5ae15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb12c19da0427a49cdeeb01a1af38a1d" id="r_aeb12c19da0427a49cdeeb01a1af38a1d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__event__rd__sh__mem__ep__metadata__t.html#aeb12c19da0427a49cdeeb01a1af38a1d">timestamp_lsw</a></td></tr>
+<tr class="memdesc:aeb12c19da0427a49cdeeb01a1af38a1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower 32 bits of the 64-bit session time of the first sample in the frame (in microseconds).  <br /></td></tr>
 <tr class="separator:aeb12c19da0427a49cdeeb01a1af38a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fdfdf76e2f0bfaeb9d4ae2b6eb089e8" id="r_a2fdfdf76e2f0bfaeb9d4ae2b6eb089e8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__event__rd__sh__mem__ep__metadata__t.html#a2fdfdf76e2f0bfaeb9d4ae2b6eb089e8">timestamp_msw</a></td></tr>
+<tr class="memdesc:a2fdfdf76e2f0bfaeb9d4ae2b6eb089e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper 32 bits of the 64-bit session time of the first sample in the frame (in microseconds).  <br /></td></tr>
 <tr class="separator:a2fdfdf76e2f0bfaeb9d4ae2b6eb089e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae478858dfcfc5d5b6ca9994629411b37" id="r_ae478858dfcfc5d5b6ca9994629411b37"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__event__rd__sh__mem__ep__metadata__t.html#ae478858dfcfc5d5b6ca9994629411b37">flags</a></td></tr>
+<tr class="memdesc:ae478858dfcfc5d5b6ca9994629411b37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame flags.  <br /></td></tr>
 <tr class="separator:ae478858dfcfc5d5b6ca9994629411b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -97,12 +106,13 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Frame flags.</p>
+
+<p>Frame flags. </p>
 <p>@valuesbul{for bit 31}</p><ul>
 <li>1 &ndash; Timestamp is valid</li>
 <li>0 &ndash; Timestamp is not valid</li>
 </ul>
-<p>To set this bit, use <a class="el" href="rd__sh__mem__ep__api_8h.html#a1fca050b39604dd0dfb3764a23afbc14">RD_SH_MEM_EP_BIT_MASK_TIMESTAMP_VALID_FLAG</a> and <a class="el" href="rd__sh__mem__ep__api_8h.html#ae7a8648465ad3c7c3047226ba3d5c54c">RD_SH_MEM_EP_SHIFT_TIMESTAMP_VALID_FLAG</a></p>
+<p>To set this bit, use <a class="el" href="rd__sh__mem__ep__api_8h.html#a1fca050b39604dd0dfb3764a23afbc14" title="Bitmask for the timestamp validity information.">RD_SH_MEM_EP_BIT_MASK_TIMESTAMP_VALID_FLAG</a> and <a class="el" href="rd__sh__mem__ep__api_8h.html#ae7a8648465ad3c7c3047226ba3d5c54c" title="Shift value for the timestamp validity information.">RD_SH_MEM_EP_SHIFT_TIMESTAMP_VALID_FLAG</a></p>
 <p>All other bits are reserved; the SPF sets them to 0. </p>
 
 </div>
@@ -118,6 +128,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Size of each frame in bytes (for example, the encoded frame size). </p>
 
 </div>
@@ -133,6 +144,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Offset from the buffer address in data_cmd_rsp_rd_sh_mem_ep_data_buffer_done_v2_t to the frame associated with the metadata. </p>
 
 </div>
@@ -148,7 +160,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of PCM samples per channel that corresponding to each frame_size (for example, the number of PCM samples per channel used for encoding a frame).</p>
+
+<p>Number of PCM samples per channel that corresponding to each frame_size (for example, the number of PCM samples per channel used for encoding a frame). </p>
 <p>This field is always set to 0 because no use case requires it. </p>
 
 </div>
@@ -164,6 +177,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Lower 32 bits of the 64-bit session time of the first sample in the frame (in microseconds). </p>
 
 </div>
@@ -179,6 +193,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Upper 32 bits of the 64-bit session time of the first sample in the frame (in microseconds). </p>
 
 </div>

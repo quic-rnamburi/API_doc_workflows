@@ -66,21 +66,28 @@ $(document).ready(function(){initNavTree('structapm__module__param__data__t.html
 </div><!--header-->
 <div class="contents">
 
+<p>Contains the module parameter data.  
+ <a href="structapm__module__param__data__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a3217aac3a2bdd2dbcc531ff36ab5c087" id="r_a3217aac3a2bdd2dbcc531ff36ab5c087"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__param__data__t.html#a3217aac3a2bdd2dbcc531ff36ab5c087">module_instance_id</a></td></tr>
+<tr class="memdesc:a3217aac3a2bdd2dbcc531ff36ab5c087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the instance of the APM module.  <br /></td></tr>
 <tr class="separator:a3217aac3a2bdd2dbcc531ff36ab5c087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae00ecf5938b63562a216f67a2c92d22a" id="r_ae00ecf5938b63562a216f67a2c92d22a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__param__data__t.html#ae00ecf5938b63562a216f67a2c92d22a">param_id</a></td></tr>
+<tr class="memdesc:ae00ecf5938b63562a216f67a2c92d22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the parameter.  <br /></td></tr>
 <tr class="separator:ae00ecf5938b63562a216f67a2c92d22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48296a274575a01f282ce122408ea53b" id="r_a48296a274575a01f282ce122408ea53b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__param__data__t.html#a48296a274575a01f282ce122408ea53b">param_size</a></td></tr>
+<tr class="memdesc:a48296a274575a01f282ce122408ea53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the parameter data based on the module_instance_id/param_id combination.  <br /></td></tr>
 <tr class="separator:a48296a274575a01f282ce122408ea53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a389b58889bdba6d01da016f840c24feb" id="r_a389b58889bdba6d01da016f840c24feb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__param__data__t.html#a389b58889bdba6d01da016f840c24feb">error_code</a></td></tr>
+<tr class="memdesc:a389b58889bdba6d01da016f840c24feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error code populated by the entity that is hosting the module.  <br /></td></tr>
 <tr class="separator:a389b58889bdba6d01da016f840c24feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains the module parameter data.</p>
+<div class="textblock"><p>Contains the module parameter data. </p>
 <p>Immediately following this structure are param_size bytes of calibration data. The structure and size depend on the module_instance_id/param_id combination. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a389b58889bdba6d01da016f840c24feb" name="a389b58889bdba6d01da016f840c24feb"></a>
@@ -94,7 +101,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Error code populated by the entity that is hosting the module.</p>
+
+<p>Error code populated by the entity that is hosting the module. </p>
 <p>This field is applicable only for the out-of-band command mode. </p>
 
 </div>
@@ -110,6 +118,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique identifier for the instance of the APM module. </p>
 
 </div>
@@ -125,6 +134,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique identifier for the parameter. </p>
 
 </div>
@@ -140,7 +150,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Size of the parameter data based on the module_instance_id/param_id combination.</p>
+
+<p>Size of the parameter data based on the module_instance_id/param_id combination. </p>
 <p>@values &gt; 0 bytes, in multiples of at least 4 bytes </p>
 
 </div>

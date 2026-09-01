@@ -66,17 +66,22 @@ $(document).ready(function(){initNavTree('structapm__sub__graph__cfg__t.html',''
 </div><!--header-->
 <div class="contents">
 
+<p>Sub-graph configuration payload for <a class="el" href="apm__sub__graph__api_8h.html#ac458a815aafe81625f618636908891c0" title="Identifier for the parameter that configures the sub-graph properties.">APM_PARAM_ID_SUB_GRAPH_CONFIG</a>.  
+ <a href="structapm__sub__graph__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_sub_graph_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a714efa9fe9e704e8cc5b30caf7237d6e" id="r_a714efa9fe9e704e8cc5b30caf7237d6e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__sub__graph__cfg__t.html#a714efa9fe9e704e8cc5b30caf7237d6e">sub_graph_id</a></td></tr>
+<tr class="memdesc:a714efa9fe9e704e8cc5b30caf7237d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the sub-graph.  <br /></td></tr>
 <tr class="separator:a714efa9fe9e704e8cc5b30caf7237d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7d14014507bb1ec736fbb59f83726c8" id="r_af7d14014507bb1ec736fbb59f83726c8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__sub__graph__cfg__t.html#af7d14014507bb1ec736fbb59f83726c8">num_sub_graph_prop</a></td></tr>
+<tr class="memdesc:af7d14014507bb1ec736fbb59f83726c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of properties being configured for this sub-graph (default&#160;=&#160;0).  <br /></td></tr>
 <tr class="separator:af7d14014507bb1ec736fbb59f83726c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Sub-graph configuration payload for <a class="el" href="apm__sub__graph__api_8h.html#ac458a815aafe81625f618636908891c0">APM_PARAM_ID_SUB_GRAPH_CONFIG</a>.</p>
+<div class="textblock"><p>Sub-graph configuration payload for <a class="el" href="apm__sub__graph__api_8h.html#ac458a815aafe81625f618636908891c0" title="Identifier for the parameter that configures the sub-graph properties.">APM_PARAM_ID_SUB_GRAPH_CONFIG</a>. </p>
 <p>Immediately following this structure is a variable length array of sub-graph property structures. The length of the array is determined by the number of properties being configured. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="af7d14014507bb1ec736fbb59f83726c8" name="af7d14014507bb1ec736fbb59f83726c8"></a>
@@ -90,7 +95,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of properties being configured for this sub-graph (default&#160;=&#160;0). @newpagetable </p>
+
+<p>Number of properties being configured for this sub-graph (default&#160;=&#160;0). </p>
+<p>@newpagetable </p>
 
 </div>
 </div>
@@ -105,6 +112,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique identifier for the sub-graph. </p>
 
 </div>

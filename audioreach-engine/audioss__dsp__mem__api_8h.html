@@ -91,8 +91,10 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a4035ed07474ee86788ea208d2bdc1649" id="r_a4035ed07474ee86788ea208d2bdc1649"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="audioss__dsp__mem__api_8h.html#a4035ed07474ee86788ea208d2bdc1649">PARAM_ID_RSC_AUDIOSS_DSP_MEM</a>&#160;&#160;&#160;0x0800151E</td></tr>
+<tr class="memdesc:a4035ed07474ee86788ea208d2bdc1649"><td class="mdescLeft">&#160;</td><td class="mdescRight">This param is used to allocate or free the DSP memory.  <br /></td></tr>
 <tr class="separator:a4035ed07474ee86788ea208d2bdc1649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad462374b9285b44e974b6c5472a5a932" id="r_ad462374b9285b44e974b6c5472a5a932"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="audioss__dsp__mem__api_8h.html#ad462374b9285b44e974b6c5472a5a932">AUDIOSS_DRAM_MEMORY</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ad462374b9285b44e974b6c5472a5a932"><td class="mdescLeft">&#160;</td><td class="mdescRight">The macro AUDIOSS_DRAM_MEMORY can be used to mention the type of memory that is to be allocated or freed.  <br /></td></tr>
 <tr class="separator:ad462374b9285b44e974b6c5472a5a932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -119,7 +121,9 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The macro AUDIOSS_DRAM_MEMORY can be used to mention the type of memory that is to be allocated or freed. Currently only DRAM type is supported. </p>
+
+<p>The macro AUDIOSS_DRAM_MEMORY can be used to mention the type of memory that is to be allocated or freed. </p>
+<p>Currently only DRAM type is supported. </p>
 
 </div>
 </div>
@@ -134,7 +138,9 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This param is used to allocate or free the DSP memory. The client can request for memory from the DSP and once the memory allocation is done client can read/write to that memory section. Client can free the memory using the same parameter. This can be considered as a remote malloc by client. </p>
+
+<p>This param is used to allocate or free the DSP memory. </p>
+<p>The client can request for memory from the DSP and once the memory allocation is done client can read/write to that memory section. Client can free the memory using the same parameter. This can be considered as a remote malloc by client. </p>
 
 </div>
 </div>

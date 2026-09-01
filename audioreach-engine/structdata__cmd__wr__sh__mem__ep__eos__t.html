@@ -66,15 +66,19 @@ $(document).ready(function(){initNavTree('structdata__cmd__wr__sh__mem__ep__eos_
 </div><!--header-->
 <div class="contents">
 
+<p>Payload of the <a class="el" href="wr__sh__mem__ep__api_8h.html#a1ee7b400b855245ea6de0b9d65718ea0" title="Communicates an EoS marker, which indicates that the last buffer in a stream was delivered.">DATA_CMD_WR_SH_MEM_EP_EOS</a> command.  
+ <a href="structdata__cmd__wr__sh__mem__ep__eos__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/wr_sh_mem_ep_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a24ac16328ecac873971682a14fba4d38" id="r_a24ac16328ecac873971682a14fba4d38"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__wr__sh__mem__ep__eos__t.html#a24ac16328ecac873971682a14fba4d38">policy</a></td></tr>
+<tr class="memdesc:a24ac16328ecac873971682a14fba4d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Policy used to raise <a class="el" href="wr__sh__mem__ep__api_8h.html#aec9743d79b743a5ee3fbff5ab35b6a58" title="Indicates that DATA_CMD_WR_SH_MEM_EP_EOS has been received by the final endpoint.">DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED</a>.  <br /></td></tr>
 <tr class="separator:a24ac16328ecac873971682a14fba4d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload of the <a class="el" href="wr__sh__mem__ep__api_8h.html#a1ee7b400b855245ea6de0b9d65718ea0">DATA_CMD_WR_SH_MEM_EP_EOS</a> command. </p>
+<div class="textblock"><p>Payload of the <a class="el" href="wr__sh__mem__ep__api_8h.html#a1ee7b400b855245ea6de0b9d65718ea0" title="Communicates an EoS marker, which indicates that the last buffer in a stream was delivered.">DATA_CMD_WR_SH_MEM_EP_EOS</a> command. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a24ac16328ecac873971682a14fba4d38" name="a24ac16328ecac873971682a14fba4d38"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24ac16328ecac873971682a14fba4d38">&#9670;&#160;</a></span>policy</h2>
@@ -87,10 +91,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Policy used to raise <a class="el" href="wr__sh__mem__ep__api_8h.html#aec9743d79b743a5ee3fbff5ab35b6a58">DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED</a>.</p>
+
+<p>Policy used to raise <a class="el" href="wr__sh__mem__ep__api_8h.html#aec9743d79b743a5ee3fbff5ab35b6a58" title="Indicates that DATA_CMD_WR_SH_MEM_EP_EOS has been received by the final endpoint.">DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED</a>. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="wr__sh__mem__ep__api_8h.html#ac9acfcf55fa4ceaf633c836bbdb3fbcc">WR_SH_MEM_EP_EOS_POLICY_LAST</a></li>
-<li><a class="el" href="wr__sh__mem__ep__api_8h.html#a90199e75d8fe87d2affd74f92155a722">WR_SH_MEM_EP_EOS_POLICY_EACH</a> @tablebulletend </li>
+<li><a class="el" href="wr__sh__mem__ep__api_8h.html#ac9acfcf55fa4ceaf633c836bbdb3fbcc" title="EoS policy whereby the last final endpoint raises DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED,...">WR_SH_MEM_EP_EOS_POLICY_LAST</a></li>
+<li><a class="el" href="wr__sh__mem__ep__api_8h.html#a90199e75d8fe87d2affd74f92155a722" title="EoS policy whereby each final endpoint raises DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED,...">WR_SH_MEM_EP_EOS_POLICY_EACH</a> @tablebulletend </li>
 </ul>
 
 </div>

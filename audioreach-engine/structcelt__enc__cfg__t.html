@@ -66,17 +66,24 @@ $(document).ready(function(){initNavTree('structcelt__enc__cfg__t.html',''); ini
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct @h2xmlp_description {Payload for configuring the CELT encoder module}  
+ <a href="structcelt__enc__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/media_fmt_api_ext.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a8d3f07b827aa68518547594af66eccbe" id="r_a8d3f07b827aa68518547594af66eccbe"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcelt__enc__cfg__t.html#a8d3f07b827aa68518547594af66eccbe">frame_size</a></td></tr>
+<tr class="memdesc:a8d3f07b827aa68518547594af66eccbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Frame size used for encoding.  <br /></td></tr>
 <tr class="separator:a8d3f07b827aa68518547594af66eccbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62cf2371651cd368e3261145e339bcdf" id="r_a62cf2371651cd368e3261145e339bcdf"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcelt__enc__cfg__t.html#a62cf2371651cd368e3261145e339bcdf">complexity</a></td></tr>
+<tr class="memdesc:a62cf2371651cd368e3261145e339bcdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Complexity of the algorithm.  <br /></td></tr>
 <tr class="separator:a62cf2371651cd368e3261145e339bcdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade1696a8e4ea39dee6b56633305b399b" id="r_ade1696a8e4ea39dee6b56633305b399b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcelt__enc__cfg__t.html#ade1696a8e4ea39dee6b56633305b399b">prediction_mode</a></td></tr>
+<tr class="memdesc:ade1696a8e4ea39dee6b56633305b399b"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Switch variable for the prediction feature.  <br /></td></tr>
 <tr class="separator:ade1696a8e4ea39dee6b56633305b399b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58e977f0babdac41c9241afb35c1743d" id="r_a58e977f0babdac41c9241afb35c1743d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcelt__enc__cfg__t.html#a58e977f0babdac41c9241afb35c1743d">vbr_flag</a></td></tr>
+<tr class="memdesc:a58e977f0babdac41c9241afb35c1743d"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Variable bit rate flag.  <br /></td></tr>
 <tr class="separator:a58e977f0babdac41c9241afb35c1743d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -93,7 +100,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Complexity of the algorithm.</p><ul>
+
+<p>@h2xmle_description {Complexity of the algorithm. </p>
+<ul>
 <li>Currently, this parameter is used to enable or disable the pitch analysis. In the future, it can be scaled to add more levels of complexity.</li>
 <li>value less than 2 - Disable pitch analysis</li>
 <li>Value &gt; 2 - Enable pitch analysis} @h2xmle_default {3} @h2xmle_range {0..10} @h2xmle_policy {Basic} </li>
@@ -112,7 +121,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Frame size used for encoding.} @h2xmle_default {256} @h2xmle_rangeList {"64" = 64, "128" = 128, "256" = 256, "512" = 512} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Frame size used for encoding. </p>
+<p>} @h2xmle_default {256} @h2xmle_rangeList {"64" = 64, "128" = 128, "256" = 256, "512" = 512} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -127,7 +138,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Switch variable for the prediction feature.</p><ul>
+
+<p>@h2xmle_description {Switch variable for the prediction feature. </p>
+<ul>
 <li>This parameter is used to choose between the level of interframe predictions allowed while encoding.<ul>
 <li>0 &ndash; Independent frames</li>
 <li>1 &ndash; Short-term interframe prediction allowed</li>
@@ -149,7 +162,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Variable bit rate flag. Currently, this parameter is disabled. In the future, it can be enabled if use cases require it.} @h2xmle_default {0} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Variable bit rate flag. </p>
+<p>Currently, this parameter is disabled. In the future, it can be enabled if use cases require it.} @h2xmle_default {0} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>

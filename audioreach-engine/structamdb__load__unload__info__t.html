@@ -66,19 +66,26 @@ $(document).ready(function(){initNavTree('structamdb__load__unload__info__t.html
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="amdb__api_8h.html#a0f62ad5b437bfeac5267b5966233513b" title="Loads one or more modules if they were successfully registered with the AMDB.">AMDB_CMD_LOAD_MODULES</a>, <a class="el" href="amdb__api_8h.html#a43ee7a41252edaa66bf72ec193c95c7a" title="Sent in response to an AMDB_CMD_LOAD_MODULES command.">AMDB_CMD_RSP_LOAD_MODULES</a>, and <a class="el" href="amdb__api_8h.html#a73059bd6dc4de4f17ccea155a5474399" title="Unloads a module that was loaded via the AMDB_CMD_LOAD_MODULES command.">AMDB_CMD_UNLOAD_MODULES</a>.  
+ <a href="structamdb__load__unload__info__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/amdb_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a295f162a1dfc5680019a71385dbaeabf" id="r_a295f162a1dfc5680019a71385dbaeabf"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__load__unload__info__t.html#a295f162a1dfc5680019a71385dbaeabf">module_id</a></td></tr>
+<tr class="memdesc:a295f162a1dfc5680019a71385dbaeabf"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID for the module.  <br /></td></tr>
 <tr class="separator:a295f162a1dfc5680019a71385dbaeabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad09b284be2711f4125e7bbf4c95b77a1" id="r_ad09b284be2711f4125e7bbf4c95b77a1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__load__unload__info__t.html#ad09b284be2711f4125e7bbf4c95b77a1">handle_lsw</a></td></tr>
+<tr class="memdesc:ad09b284be2711f4125e7bbf4c95b77a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower 32 bits of the 64-bit handle to the module.  <br /></td></tr>
 <tr class="separator:ad09b284be2711f4125e7bbf4c95b77a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf3009864d07f5457dc3108f139e5c6e" id="r_abf3009864d07f5457dc3108f139e5c6e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__load__unload__info__t.html#abf3009864d07f5457dc3108f139e5c6e">handle_msw</a></td></tr>
+<tr class="memdesc:abf3009864d07f5457dc3108f139e5c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper 32 bits of the 64-bit handle to the module.  <br /></td></tr>
 <tr class="separator:abf3009864d07f5457dc3108f139e5c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="amdb__api_8h.html#a0f62ad5b437bfeac5267b5966233513b">AMDB_CMD_LOAD_MODULES</a>, <a class="el" href="amdb__api_8h.html#a43ee7a41252edaa66bf72ec193c95c7a">AMDB_CMD_RSP_LOAD_MODULES</a>, and <a class="el" href="amdb__api_8h.html#a73059bd6dc4de4f17ccea155a5474399">AMDB_CMD_UNLOAD_MODULES</a>. This structure contains module-specific information for loading and unloading modules. </p>
+<div class="textblock"><p>Payload for <a class="el" href="amdb__api_8h.html#a0f62ad5b437bfeac5267b5966233513b" title="Loads one or more modules if they were successfully registered with the AMDB.">AMDB_CMD_LOAD_MODULES</a>, <a class="el" href="amdb__api_8h.html#a43ee7a41252edaa66bf72ec193c95c7a" title="Sent in response to an AMDB_CMD_LOAD_MODULES command.">AMDB_CMD_RSP_LOAD_MODULES</a>, and <a class="el" href="amdb__api_8h.html#a73059bd6dc4de4f17ccea155a5474399" title="Unloads a module that was loaded via the AMDB_CMD_LOAD_MODULES command.">AMDB_CMD_UNLOAD_MODULES</a>. </p>
+<p>This structure contains module-specific information for loading and unloading modules. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ad09b284be2711f4125e7bbf4c95b77a1" name="ad09b284be2711f4125e7bbf4c95b77a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad09b284be2711f4125e7bbf4c95b77a1">&#9670;&#160;</a></span>handle_lsw</h2>
@@ -91,6 +98,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Lower 32 bits of the 64-bit handle to the module. </p>
 
 </div>
@@ -106,6 +114,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Upper 32 bits of the 64-bit handle to the module. </p>
 
 </div>
@@ -121,6 +130,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>ID for the module. </p>
 
 </div>

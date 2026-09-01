@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structdetection__timestamp__info__t.ht
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT}  
+ <a href="structdetection__timestamp__info__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/detection_cmn_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a898ed969cbdb36a82cb542a372b79699" id="r_a898ed969cbdb36a82cb542a372b79699"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetection__timestamp__info__t.html#a898ed969cbdb36a82cb542a372b79699">detection_timestamp_lsw</a></td></tr>
+<tr class="memdesc:a898ed969cbdb36a82cb542a372b79699"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Lower 32 bits of the 64-bit detection timestamp.  <br /></td></tr>
 <tr class="separator:a898ed969cbdb36a82cb542a372b79699"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af015f306c9a36b953e20b1fadd03d3db" id="r_af015f306c9a36b953e20b1fadd03d3db"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetection__timestamp__info__t.html#af015f306c9a36b953e20b1fadd03d3db">detection_timestamp_msw</a></td></tr>
+<tr class="memdesc:af015f306c9a36b953e20b1fadd03d3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Upper 32 bits of the 64-bit detection timestamp (in milliseconds).  <br /></td></tr>
 <tr class="separator:af015f306c9a36b953e20b1fadd03d3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT} &lt;@h2xmlp_description { Payload contains timestamp of the detection event. Used when keyword index information is expected in a generic detection engine event. To get the information, the mode field in PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG must be set accordingly} </p>
+<div class="textblock"><p>@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT} </p>
+<p>&lt;@h2xmlp_description { Payload contains timestamp of the detection event. Used when keyword index information is expected in a generic detection engine event. To get the information, the mode field in PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG must be set accordingly} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a898ed969cbdb36a82cb542a372b79699" name="a898ed969cbdb36a82cb542a372b79699"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a898ed969cbdb36a82cb542a372b79699">&#9670;&#160;</a></span>detection_timestamp_lsw</h2>
@@ -89,7 +95,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Lower 32 bits of the 64-bit detection timestamp. (in milliseconds).} @h2xmle_range {0..4294967295} @h2xmle_default {0} </p>
+
+<p>@h2xmle_description {Lower 32 bits of the 64-bit detection timestamp. </p>
+<p>(in milliseconds).} @h2xmle_range {0..4294967295} @h2xmle_default {0} </p>
 
 </div>
 </div>
@@ -104,7 +112,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Upper 32 bits of the 64-bit detection timestamp (in milliseconds).} @h2xmle_range {0..4294967295} @h2xmle_default {0} </p>
+
+<p>@h2xmle_description {Upper 32 bits of the 64-bit detection timestamp (in milliseconds). </p>
+<p>} @h2xmle_range {0..4294967295} @h2xmle_default {0} </p>
 
 </div>
 </div>

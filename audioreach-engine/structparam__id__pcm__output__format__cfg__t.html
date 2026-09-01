@@ -66,19 +66,25 @@ $(document).ready(function(){initNavTree('structparam__id__pcm__output__format__
 </div><!--header-->
 <div class="contents">
 
+<p>Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga34871051b7a5a9ab18964aa299101d1f" title="Identifier for the parameter that configures the PCM output format of the PCM encoder,...">PARAM_ID_PCM_OUTPUT_FORMAT_CFG</a> parameter.  
+ <a href="structparam__id__pcm__output__format__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/common_enc_dec_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a0aeb1f272a6b24bfd411dfb3a8204e54" id="r_a0aeb1f272a6b24bfd411dfb3a8204e54"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__pcm__output__format__cfg__t.html#a0aeb1f272a6b24bfd411dfb3a8204e54">data_format</a></td></tr>
+<tr class="memdesc:a0aeb1f272a6b24bfd411dfb3a8204e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format of the PCM output data.  <br /></td></tr>
 <tr class="separator:a0aeb1f272a6b24bfd411dfb3a8204e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4620f68d88b595b682151ad9c1696d9" id="r_ae4620f68d88b595b682151ad9c1696d9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__pcm__output__format__cfg__t.html#ae4620f68d88b595b682151ad9c1696d9">fmt_id</a></td></tr>
+<tr class="memdesc:ae4620f68d88b595b682151ad9c1696d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the data stream format.  <br /></td></tr>
 <tr class="separator:ae4620f68d88b595b682151ad9c1696d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24528819249c47b4bb71e6e0aa01ef48" id="r_a24528819249c47b4bb71e6e0aa01ef48"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__pcm__output__format__cfg__t.html#a24528819249c47b4bb71e6e0aa01ef48">payload_size</a></td></tr>
+<tr class="memdesc:a24528819249c47b4bb71e6e0aa01ef48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the payload that immediately follows this structure.  <br /></td></tr>
 <tr class="separator:a24528819249c47b4bb71e6e0aa01ef48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga34871051b7a5a9ab18964aa299101d1f">PARAM_ID_PCM_OUTPUT_FORMAT_CFG</a> parameter. </p>
+<div class="textblock"><p>Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#ga34871051b7a5a9ab18964aa299101d1f" title="Identifier for the parameter that configures the PCM output format of the PCM encoder,...">PARAM_ID_PCM_OUTPUT_FORMAT_CFG</a> parameter. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a0aeb1f272a6b24bfd411dfb3a8204e54" name="a0aeb1f272a6b24bfd411dfb3a8204e54"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0aeb1f272a6b24bfd411dfb3a8204e54">&#9670;&#160;</a></span>data_format</h2>
@@ -91,10 +97,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Format of the PCM output data.</p>
+
+<p>Format of the PCM output data. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0">INVALID_VALUE</a> (Default)</li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732">DATA_FORMAT_FIXED_POINT</a></li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0" title="Enumeration for an invalid value.">INVALID_VALUE</a> (Default)</li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732" title="Enumeration for the fixed-point data format.">DATA_FORMAT_FIXED_POINT</a></li>
 <li><a class="el" href="media__fmt__api__basic_8h.html#a82034351c520daf6b9c8a651ec6e1177">DATA_FORMAT_FLOATING_POINT</a> @tablebulletend </li>
 </ul>
 
@@ -111,10 +118,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the data stream format.</p>
+
+<p>Identifier for the data stream format. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0">INVALID_VALUE</a></li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d">MEDIA_FMT_ID_PCM</a> @tablebulletend </li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0" title="Enumeration for an invalid value.">INVALID_VALUE</a></li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d" title="Identifier for the media format used to identify a PCM stream.">MEDIA_FMT_ID_PCM</a> @tablebulletend </li>
 </ul>
 
 </div>
@@ -130,7 +138,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Size of the payload that immediately follows this structure.</p>
+
+<p>Size of the payload that immediately follows this structure. </p>
 <p>The payload size does not include bytes added for 32-bit alignment. </p>
 
 </div>

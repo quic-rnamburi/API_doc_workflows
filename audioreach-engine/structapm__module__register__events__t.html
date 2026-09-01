@@ -66,25 +66,35 @@ $(document).ready(function(){initNavTree('structapm__module__register__events__t
 </div><!--header-->
 <div class="contents">
 
+<p>Contains the register events data.  
+ <a href="structapm__module__register__events__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a890ce7021dd0ddf63012e09fbead98b8" id="r_a890ce7021dd0ddf63012e09fbead98b8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__register__events__t.html#a890ce7021dd0ddf63012e09fbead98b8">module_instance_id</a></td></tr>
+<tr class="memdesc:a890ce7021dd0ddf63012e09fbead98b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the instance of the module.  <br /></td></tr>
 <tr class="separator:a890ce7021dd0ddf63012e09fbead98b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8c5521bdaa036ffad155e04eff43282" id="r_ad8c5521bdaa036ffad155e04eff43282"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__register__events__t.html#ad8c5521bdaa036ffad155e04eff43282">event_id</a></td></tr>
+<tr class="memdesc:ad8c5521bdaa036ffad155e04eff43282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique event identifier for the module.  <br /></td></tr>
 <tr class="separator:ad8c5521bdaa036ffad155e04eff43282"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73d8aa04c946d559b7980b1e20442f59" id="r_a73d8aa04c946d559b7980b1e20442f59"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__register__events__t.html#a73d8aa04c946d559b7980b1e20442f59">is_register</a></td></tr>
+<tr class="memdesc:a73d8aa04c946d559b7980b1e20442f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies whether the event is registered.  <br /></td></tr>
 <tr class="separator:a73d8aa04c946d559b7980b1e20442f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0106103c92fa3f657dab8c5f496ff714" id="r_a0106103c92fa3f657dab8c5f496ff714"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__register__events__t.html#a0106103c92fa3f657dab8c5f496ff714">error_code</a></td></tr>
+<tr class="memdesc:a0106103c92fa3f657dab8c5f496ff714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error code populated by the entity that is hosting the module.  <br /></td></tr>
 <tr class="separator:a0106103c92fa3f657dab8c5f496ff714"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c16e658715b4eddd9763a92e86d4833" id="r_a7c16e658715b4eddd9763a92e86d4833"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__register__events__t.html#a7c16e658715b4eddd9763a92e86d4833">event_config_payload_size</a></td></tr>
+<tr class="memdesc:a7c16e658715b4eddd9763a92e86d4833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the event configuration data based on the module_instance_id/event_id combination.  <br /></td></tr>
 <tr class="separator:a7c16e658715b4eddd9763a92e86d4833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e41c0d4d34f33e3e0b8d15931b281a9" id="r_a1e41c0d4d34f33e3e0b8d15931b281a9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__register__events__t.html#a1e41c0d4d34f33e3e0b8d15931b281a9">reserved</a></td></tr>
+<tr class="memdesc:a1e41c0d4d34f33e3e0b8d15931b281a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field must be set to 0.  <br /></td></tr>
 <tr class="separator:a1e41c0d4d34f33e3e0b8d15931b281a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains the register events data. This structure is preceded by <a class="el" href="structapm__cmd__header__t.html">apm_cmd_header_t</a>. </p>
+<div class="textblock"><p>Contains the register events data. </p>
+<p>This structure is preceded by <a class="el" href="structapm__cmd__header__t.html" title="Common payload header structure used by the following commands:">apm_cmd_header_t</a>. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a0106103c92fa3f657dab8c5f496ff714" name="a0106103c92fa3f657dab8c5f496ff714"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0106103c92fa3f657dab8c5f496ff714">&#9670;&#160;</a></span>error_code</h2>
@@ -97,7 +107,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Error code populated by the entity that is hosting the module.</p>
+
+<p>Error code populated by the entity that is hosting the module. </p>
 <p>This field is applicable only for the out-of-band command mode. </p>
 
 </div>
@@ -113,7 +124,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Size of the event configuration data based on the module_instance_id/event_id combination.</p>
+
+<p>Size of the event configuration data based on the module_instance_id/event_id combination. </p>
 <p>@values &gt; 0 bytes, in multiples of at least 4 bytes </p>
 
 </div>
@@ -129,6 +141,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique event identifier for the module. </p>
 
 </div>
@@ -144,7 +157,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specifies whether the event is registered.</p>
+
+<p>Specifies whether the event is registered. </p>
 <p>@valuesbul</p><ul>
 <li>1 &ndash; Register the event</li>
 <li>0 &ndash; De-register the event @tablebulletend </li>
@@ -163,6 +177,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique identifier for the instance of the module. </p>
 
 </div>
@@ -178,6 +193,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>This field must be set to 0. </p>
 
 </div>

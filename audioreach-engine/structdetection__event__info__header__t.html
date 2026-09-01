@@ -71,8 +71,10 @@ $(document).ready(function(){initNavTree('structdetection__event__info__header__
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:af1c5383fe2ff1b432e8203448fc98be8" id="r_af1c5383fe2ff1b432e8203448fc98be8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698">detection_engine_event_key_id_info_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetection__event__info__header__t.html#af1c5383fe2ff1b432e8203448fc98be8">key_id</a></td></tr>
+<tr class="memdesc:af1c5383fe2ff1b432e8203448fc98be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Different key_ids @values.  <br /></td></tr>
 <tr class="separator:af1c5383fe2ff1b432e8203448fc98be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cac40a0661be7fc13bb5a64d2906f75" id="r_a3cac40a0661be7fc13bb5a64d2906f75"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetection__event__info__header__t.html#a3cac40a0661be7fc13bb5a64d2906f75">payload_size</a></td></tr>
+<tr class="memdesc:a3cac40a0661be7fc13bb5a64d2906f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of a specific key payload.  <br /></td></tr>
 <tr class="separator:a3cac40a0661be7fc13bb5a64d2906f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
@@ -87,14 +89,16 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Different key_ids @values</p><ul>
-<li><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a3fa49c8d744a7e2d6e0d7e8d95b2647f">KEY_ID_CONFIDENCE_LEVELS_INFO</a></li>
-<li><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698ae8c456268d9acbef0cc4f7c90d76aa9b">KEY_ID_KWD_POSITION_INFO</a></li>
-<li><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a4c68487deab43c6e834677d0e1d76fae">KEY_ID_TIMESTAMP_INFO</a></li>
-<li><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698ad9f16111eb9a638058e5cf248c3ce337">KEY_ID_FTRT_DATA_INFO</a></li>
-<li><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a8877accc985fe2a16cbd62dcb8677849">KEY_ID_BEST_CH_IDX_INFO</a></li>
+
+<p>Different key_ids @values. </p>
+<ul>
+<li><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a3fa49c8d744a7e2d6e0d7e8d95b2647f" title="Confidence levels detected per sound model.">KEY_ID_CONFIDENCE_LEVELS_INFO</a></li>
+<li><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698ae8c456268d9acbef0cc4f7c90d76aa9b" title="Keyword start and end timestamps.">KEY_ID_KWD_POSITION_INFO</a></li>
+<li><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a4c68487deab43c6e834677d0e1d76fae" title="Detetion timestamp info.">KEY_ID_TIMESTAMP_INFO</a></li>
+<li><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698ad9f16111eb9a638058e5cf248c3ce337" title="FTRT Data length in the circular buffer.">KEY_ID_FTRT_DATA_INFO</a></li>
+<li><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a8877accc985fe2a16cbd62dcb8677849" title="Best Ch Idx detected by the algorithm">KEY_ID_BEST_CH_IDX_INFO</a></li>
 </ul>
-<p><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a370c3e9f6c16d926d34e83091a3bfa92">KEY_ID_VOICE_UI_MULTI_MODEL_RESULT_INFO</a> @tablebulletend </p>
+<p><a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a370c3e9f6c16d926d34e83091a3bfa92" title="Multi Model Detection Engine result info.">KEY_ID_VOICE_UI_MULTI_MODEL_RESULT_INFO</a> @tablebulletend </p>
 
 </div>
 </div>
@@ -109,7 +113,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Size of a specific key payload.</p>
+
+<p>Size of a specific key payload. </p>
 <p>@values 0..0xFFFFFFFF (Default is 0) </p>
 
 </div>

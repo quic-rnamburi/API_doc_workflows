@@ -66,17 +66,22 @@ $(document).ready(function(){initNavTree('structvcpm__param__clk__ctrl__payload_
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#aa8768f097db5094e642dc0abc61d92ad" title="Identifier for the parameter that sets the clock control parameters.">VCPM_PARAM_ID_CLK_CTRL</a>.  
+ <a href="structvcpm__param__clk__ctrl__payload__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a5950a963c3ee3ebf2aa99446b10f06ed" id="r_a5950a963c3ee3ebf2aa99446b10f06ed"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__clk__ctrl__payload__t.html#a5950a963c3ee3ebf2aa99446b10f06ed">kpps_scale_factor</a></td></tr>
+<tr class="memdesc:a5950a963c3ee3ebf2aa99446b10f06ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale factor to apply to the aggregated kpps of the subgraph.  <br /></td></tr>
 <tr class="separator:a5950a963c3ee3ebf2aa99446b10f06ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1462c2cca137a150e058488dc3fb93c" id="r_ad1462c2cca137a150e058488dc3fb93c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__clk__ctrl__payload__t.html#ad1462c2cca137a150e058488dc3fb93c">bus_bw_scale_factor</a></td></tr>
+<tr class="memdesc:ad1462c2cca137a150e058488dc3fb93c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale factor to apply to the aggregated bus bandwidth of the subgraph.  <br /></td></tr>
 <tr class="separator:ad1462c2cca137a150e058488dc3fb93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#aa8768f097db5094e642dc0abc61d92ad">VCPM_PARAM_ID_CLK_CTRL</a>. </p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#aa8768f097db5094e642dc0abc61d92ad" title="Identifier for the parameter that sets the clock control parameters.">VCPM_PARAM_ID_CLK_CTRL</a>. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ad1462c2cca137a150e058488dc3fb93c" name="ad1462c2cca137a150e058488dc3fb93c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1462c2cca137a150e058488dc3fb93c">&#9670;&#160;</a></span>bus_bw_scale_factor</h2>
@@ -89,7 +94,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Scale factor to apply to the aggregated bus bandwidth of the subgraph. BW SF is defined as follows: 0: Don't care &ndash; applies the default scale factor 1-50: final bus bw = 10 * bus_bw_scale_factor * initial bus bw So, a scale factor of 10 translates to unity bus bw scaling. A scale factor of 50 translates to bus bw scaling of 5x. </p>
+
+<p>Scale factor to apply to the aggregated bus bandwidth of the subgraph. </p>
+<p>BW SF is defined as follows: 0: Don't care &ndash; applies the default scale factor 1-50: final bus bw = 10 * bus_bw_scale_factor * initial bus bw So, a scale factor of 10 translates to unity bus bw scaling. A scale factor of 50 translates to bus bw scaling of 5x. </p>
 
 </div>
 </div>
@@ -104,7 +111,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Scale factor to apply to the aggregated kpps of the subgraph. KPPS SF is defined as follows: 0: Don't care &ndash; applies the default scale factor 1-50: final kpps = 10 * kpps_scale_factor * initial kpps So, a scale factor of 10 translates to unity kpps scaling. A scale factor of 50 translates to kpps scaling of 5x. </p>
+
+<p>Scale factor to apply to the aggregated kpps of the subgraph. </p>
+<p>KPPS SF is defined as follows: 0: Don't care &ndash; applies the default scale factor 1-50: final kpps = 10 * kpps_scale_factor * initial kpps So, a scale factor of 10 translates to unity kpps scaling. A scale factor of 50 translates to kpps scaling of 5x. </p>
 
 </div>
 </div>

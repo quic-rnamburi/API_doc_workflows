@@ -66,26 +66,33 @@ $(document).ready(function(){initNavTree('structmetadata__header__t.html',''); i
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for Metadata.  
+ <a href="structmetadata__header__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/metadata_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ae30cdf795fb27ef5250932a7cf591890" id="r_ae30cdf795fb27ef5250932a7cf591890"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__header__t.html#ae30cdf795fb27ef5250932a7cf591890">metadata_id</a></td></tr>
+<tr class="memdesc:ae30cdf795fb27ef5250932a7cf591890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globally Unique ID of the metadata.  <br /></td></tr>
 <tr class="separator:ae30cdf795fb27ef5250932a7cf591890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab94e3b003a74c7360923b08bb583f193" id="r_ab94e3b003a74c7360923b08bb583f193"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__header__t.html#ab94e3b003a74c7360923b08bb583f193">flags</a></td></tr>
+<tr class="memdesc:ab94e3b003a74c7360923b08bb583f193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the control flags for the metadata.  <br /></td></tr>
 <tr class="separator:ab94e3b003a74c7360923b08bb583f193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84f32546417c187cb8ec583b91065b62" id="r_a84f32546417c187cb8ec583b91065b62"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__header__t.html#a84f32546417c187cb8ec583b91065b62">offset</a></td></tr>
+<tr class="memdesc:a84f32546417c187cb8ec583b91065b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start offset in the data buffer from which metadata is applicable.  <br /></td></tr>
 <tr class="separator:a84f32546417c187cb8ec583b91065b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9363edd68361f757e17072909045d66" id="r_ad9363edd68361f757e17072909045d66"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__header__t.html#ad9363edd68361f757e17072909045d66">token_lsw</a></td></tr>
 <tr class="separator:ad9363edd68361f757e17072909045d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfc85eb72d88716f1506b3adb614ab48" id="r_adfc85eb72d88716f1506b3adb614ab48"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__header__t.html#adfc85eb72d88716f1506b3adb614ab48">token_msw</a></td></tr>
 <tr class="separator:adfc85eb72d88716f1506b3adb614ab48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a805db5a6e878210054e50d49b50bf56b" id="r_a805db5a6e878210054e50d49b50bf56b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__header__t.html#a805db5a6e878210054e50d49b50bf56b">payload_size</a></td></tr>
+<tr class="memdesc:a805db5a6e878210054e50d49b50bf56b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total size of the payload in bytes for the specified metadata ID.  <br /></td></tr>
 <tr class="separator:a805db5a6e878210054e50d49b50bf56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for Metadata</p>
-<p>struct complete_metadata_api_header_t { <a class="el" href="structmetadata__header__t.html">metadata_header_t</a> base; //aligned to 4 bytes uint8_t payload[payload_size]; uint8_t alignment[payload_size % 4]; // alignment bytes for 4 byte alignment. metadata_header_extn_t base_extn[0]; // optional extension header payload aligned to 4 bytes, used in MDF only for now // BIT 6 should be set to indicate the presence of this payload. // The present definition of extension is published for internal usage within and // is locally defined for MDF offload interfaces. (\offload_metatdata_api.h) } </p>
+<div class="textblock"><p>Payload for Metadata. </p>
+<p>struct complete_metadata_api_header_t { <a class="el" href="structmetadata__header__t.html" title="Payload for Metadata.">metadata_header_t</a> base; //aligned to 4 bytes uint8_t payload[payload_size]; uint8_t alignment[payload_size % 4]; // alignment bytes for 4 byte alignment. metadata_header_extn_t base_extn[0]; // optional extension header payload aligned to 4 bytes, used in MDF only for now // BIT 6 should be set to indicate the presence of this payload. // The present definition of extension is published for internal usage within and // is locally defined for MDF offload interfaces. (\offload_metatdata_api.h) } </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ab94e3b003a74c7360923b08bb583f193" name="ab94e3b003a74c7360923b08bb583f193"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab94e3b003a74c7360923b08bb583f193">&#9670;&#160;</a></span>flags</h2>
@@ -98,7 +105,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specifies the control flags for the metadata.</p>
+
+<p>Specifies the control flags for the metadata. </p>
 <p>BIT_0 : specifies if the metadata was from the external client or meant to be rendered to external client.</p>
 <p>@values{for bit 0}</p><ul>
 <li>0 &ndash; MD_HEADER_FLAGS_CLIENT_EXTERNAL (from/to external client (HLOS))</li>
@@ -150,6 +158,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Globally Unique ID of the metadata. </p>
 
 </div>
@@ -165,7 +174,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Start offset in the data buffer from which metadata is applicable.</p>
+
+<p>Start offset in the data buffer from which metadata is applicable. </p>
 <p>For cases where offset is a valid value, the following criteria apply for specifying the offset. </p><pre class="fragment">For raw compressed, offset is in bytes.
 For PCM &amp; packetized, offset in samples (per channel).
     For interleaved data (most packetized format are also interleaved),
@@ -189,7 +199,8 @@ For PCM &amp; packetized, offset in samples (per channel).
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Total size of the payload in bytes for the specified metadata ID </p>
+
+<p>Total size of the payload in bytes for the specified metadata ID. </p>
 
 </div>
 </div>

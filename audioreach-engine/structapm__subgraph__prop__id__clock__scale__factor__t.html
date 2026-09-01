@@ -66,17 +66,25 @@ $(document).ready(function(){initNavTree('structapm__subgraph__prop__id__clock__
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_property {"Clock Scale Factor", APM_SUBGRAPH_PROP_ID_CLOCK_SCALE_FACTOR} @h2xmlp_description {Sub-graph property ID Clock Scale factor} @h2xmlp_isVoice {false}  
+ <a href="structapm__subgraph__prop__id__clock__scale__factor__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_sub_graph_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:af1235e6a4fadc319690ac50b3d82a02b" id="r_af1235e6a4fadc319690ac50b3d82a02b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__subgraph__prop__id__clock__scale__factor__t.html#af1235e6a4fadc319690ac50b3d82a02b">enable_duty_cycling</a></td></tr>
+<tr class="memdesc:af1235e6a4fadc319690ac50b3d82a02b"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_rangeList {"Supports Duty Cycling" = 1, "Does Not support Duty Cycling" = 0} @h2xmle_default {0} @h2xmle_description{Duty Cycling Mode}  <br /></td></tr>
 <tr class="separator:af1235e6a4fadc319690ac50b3d82a02b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17f993c97c8b917097bca0676b7653dc" id="r_a17f993c97c8b917097bca0676b7653dc"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__subgraph__prop__id__clock__scale__factor__t.html#a17f993c97c8b917097bca0676b7653dc">duty_cycling_clock_scale_factor_q4</a></td></tr>
+<tr class="memdesc:a17f993c97c8b917097bca0676b7653dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_range {0x0000..0xFFFF} @h2xmle_default {0x10} @h2xmle_description {Duty Cycling Clock Scale Factor, to be modified only if enable flag is set<br  />
+ i.e.  <br /></td></tr>
 <tr class="separator:a17f993c97c8b917097bca0676b7653dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a813ea4a99f40640f2f017529195be20a" id="r_a813ea4a99f40640f2f017529195be20a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__subgraph__prop__id__clock__scale__factor__t.html#a813ea4a99f40640f2f017529195be20a">clock_scale_factor_q4</a></td></tr>
+<tr class="memdesc:a813ea4a99f40640f2f017529195be20a"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_range {0x0000..0xFFFF} @h2xmle_default {0x10} @h2xmle_description {clock scale factors to be set only for non duty cycling subgraphs.  <br /></td></tr>
 <tr class="separator:a813ea4a99f40640f2f017529195be20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89f8b3a951ac91e77355768b2e56e3bd" id="r_a89f8b3a951ac91e77355768b2e56e3bd"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__subgraph__prop__id__clock__scale__factor__t.html#a89f8b3a951ac91e77355768b2e56e3bd">reserved</a></td></tr>
+<tr class="memdesc:a89f8b3a951ac91e77355768b2e56e3bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for alignment; must be set to 0.  <br /></td></tr>
 <tr class="separator:a89f8b3a951ac91e77355768b2e56e3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -93,7 +101,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_range {0x0000..0xFFFF} @h2xmle_default {0x10} @h2xmle_description {clock scale factors to be set only for non duty cycling subgraphs. <br  />
+
+<p>@h2xmle_range {0x0000..0xFFFF} @h2xmle_default {0x10} @h2xmle_description {clock scale factors to be set only for non duty cycling subgraphs. </p>
+<p><br  />
  However, if client sets it for duty cycling subgraphs as well, then final clock scaling factor is product of the two factors} </p>
 
 </div>
@@ -109,8 +119,10 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_range {0x0000..0xFFFF} @h2xmle_default {0x10} @h2xmle_description {Duty Cycling Clock Scale Factor, to be modified only if enable flag is set<br  />
- i.e. only for Duty Cycling Subgraphs.<br  />
+ i.e. </p>
+<p>only for Duty Cycling Subgraphs.<br  />
  clock scale factor of 2.5 means clock has to be bumped up by 2.5 times.<br  />
  So, duty cycling is 1/2.5=0.4 or 40 percent.<br  />
  100 ms data can thus be accumulated in 40 ms before going into island.<br  />
@@ -136,6 +148,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_rangeList {"Supports Duty Cycling" = 1, "Does Not support Duty Cycling" = 0} @h2xmle_default {0} @h2xmle_description{Duty Cycling Mode} </p>
 
 </div>
@@ -151,6 +164,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Used for alignment; must be set to 0. </p>
 
 </div>

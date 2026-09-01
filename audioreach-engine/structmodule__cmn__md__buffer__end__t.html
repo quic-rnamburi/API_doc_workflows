@@ -66,19 +66,26 @@ $(document).ready(function(){initNavTree('structmodule__cmn__md__buffer__end__t.
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="codec__metadata__api_8h.html#aeb7f8315e533980b8342656ad239cf8f" title="Identifier for the metadata that specifies the end of the buffer.">MODULE_CMN_MD_ID_BUFFER_END</a>.  
+ <a href="structmodule__cmn__md__buffer__end__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/codec_metadata_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ae340717e9bd252380f069b5e6be3808e" id="r_ae340717e9bd252380f069b5e6be3808e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmodule__cmn__md__buffer__end__t.html#ae340717e9bd252380f069b5e6be3808e">buffer_index_lsw</a></td></tr>
+<tr class="memdesc:ae340717e9bd252380f069b5e6be3808e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower 32 bits of the 64-bit unique buffer index.  <br /></td></tr>
 <tr class="separator:ae340717e9bd252380f069b5e6be3808e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a897972785e0f38104c8e98bd9fc4c5a2" id="r_a897972785e0f38104c8e98bd9fc4c5a2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmodule__cmn__md__buffer__end__t.html#a897972785e0f38104c8e98bd9fc4c5a2">buffer_index_msw</a></td></tr>
+<tr class="memdesc:a897972785e0f38104c8e98bd9fc4c5a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper 32 bits of the 64-bit unique buffer index.  <br /></td></tr>
 <tr class="separator:a897972785e0f38104c8e98bd9fc4c5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06b9fd34b586d518ee6f831662de88c1" id="r_a06b9fd34b586d518ee6f831662de88c1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmodule__cmn__md__buffer__end__t.html#a06b9fd34b586d518ee6f831662de88c1">flags</a></td></tr>
+<tr class="memdesc:a06b9fd34b586d518ee6f831662de88c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies related information to or from the client.  <br /></td></tr>
 <tr class="separator:a06b9fd34b586d518ee6f831662de88c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="codec__metadata__api_8h.html#aeb7f8315e533980b8342656ad239cf8f">MODULE_CMN_MD_ID_BUFFER_END</a>. This structure contains metadata to specify the end of the buffer. </p>
+<div class="textblock"><p>Payload for <a class="el" href="codec__metadata__api_8h.html#aeb7f8315e533980b8342656ad239cf8f" title="Identifier for the metadata that specifies the end of the buffer.">MODULE_CMN_MD_ID_BUFFER_END</a>. </p>
+<p>This structure contains metadata to specify the end of the buffer. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ae340717e9bd252380f069b5e6be3808e" name="ae340717e9bd252380f069b5e6be3808e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae340717e9bd252380f069b5e6be3808e">&#9670;&#160;</a></span>buffer_index_lsw</h2>
@@ -91,6 +98,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Lower 32 bits of the 64-bit unique buffer index. </p>
 
 </div>
@@ -106,6 +114,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Upper 32 bits of the 64-bit unique buffer index. </p>
 
 </div>
@@ -121,7 +130,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specifies related information to or from the client.</p>
+
+<p>Specifies related information to or from the client. </p>
 <p>Bit 0 specifies whether any frame in the buffer has an error: @vertspace{-4}</p><ul>
 <li>0 &ndash; No error</li>
 <li>1 &ndash; At least one frame in the buffer has an error</li>

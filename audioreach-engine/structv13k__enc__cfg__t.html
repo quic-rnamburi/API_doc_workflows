@@ -66,17 +66,24 @@ $(document).ready(function(){initNavTree('structv13k__enc__cfg__t.html',''); ini
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct @h2xmlp_description {Payload for configuring the V13K encoder module} @h2xmlp_toolPolicy {Calibration}  
+ <a href="structv13k__enc__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/media_fmt_api_ext.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:af469bd33d030f7be4b5737df5409f650" id="r_af469bd33d030f7be4b5737df5409f650"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structv13k__enc__cfg__t.html#af469bd33d030f7be4b5737df5409f650">max_rate</a></td></tr>
+<tr class="memdesc:af469bd33d030f7be4b5737df5409f650"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Maximum allowed encoder frame rate.  <br /></td></tr>
 <tr class="separator:af469bd33d030f7be4b5737df5409f650"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70bf5290259d4426d4471c560accd1f4" id="r_a70bf5290259d4426d4471c560accd1f4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structv13k__enc__cfg__t.html#a70bf5290259d4426d4471c560accd1f4">min_rate</a></td></tr>
+<tr class="memdesc:a70bf5290259d4426d4471c560accd1f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Minimum allowed encoder frame rate.  <br /></td></tr>
 <tr class="separator:a70bf5290259d4426d4471c560accd1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01d42506831bccced47089aeebed260d" id="r_a01d42506831bccced47089aeebed260d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structv13k__enc__cfg__t.html#a01d42506831bccced47089aeebed260d">reduced_rate_cmd</a></td></tr>
+<tr class="memdesc:a01d42506831bccced47089aeebed260d"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Reduced rate command, used to change the average bit-rate of the vocoder} @h2xmle_rangeList {"V13K_FS_ENCODE_MODE_MR1440"=0, "V13K_FS_ENCODE_MODE_MR1220"=1, "V13K_FS_ENCODE_MODE_MR1120"=2, "V13K_FS_ENCODE_MODE_MR90"=3, "V13K_FS_ENCODE_MODE_MR720"=4} @h2xmle_default {V13K_FS_ENCODE_MODE_MR1440} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a01d42506831bccced47089aeebed260d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae81dd58cba49f8a6b31620e3659e52e7" id="r_ae81dd58cba49f8a6b31620e3659e52e7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structv13k__enc__cfg__t.html#ae81dd58cba49f8a6b31620e3659e52e7">rate_mod_cmd</a></td></tr>
+<tr class="memdesc:ae81dd58cba49f8a6b31620e3659e52e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Rate modulation command If bit 0=1, rate control is enabled.  <br /></td></tr>
 <tr class="separator:ae81dd58cba49f8a6b31620e3659e52e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -93,7 +100,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Maximum allowed encoder frame rate.} @h2xmle_default {VOCODER_FULL_RATE} @h2xmle_rangeList {"VOCODER_ONE_EIGHTH_RATE"=1, "VOCODER_ONE_FOURTH_RATE"=2, "VOCODER_HALF_RATE"=3, "VOCODER_FULL_RATE"=4, "VOCODER_INVALID_RATE"=0} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Maximum allowed encoder frame rate. </p>
+<p>} @h2xmle_default {VOCODER_FULL_RATE} @h2xmle_rangeList {"VOCODER_ONE_EIGHTH_RATE"=1, "VOCODER_ONE_FOURTH_RATE"=2, "VOCODER_HALF_RATE"=3, "VOCODER_FULL_RATE"=4, "VOCODER_INVALID_RATE"=0} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -108,7 +117,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Minimum allowed encoder frame rate.} @h2xmle_default {VOCODER_ONE_EIGHTH_RATE} @h2xmle_rangeList {"VOCODER_ONE_EIGHTH_RATE"=1, "VOCODER_ONE_FOURTH_RATE"=2, "VOCODER_HALF_RATE"=3, "VOCODER_FULL_RATE"=4, "VOCODER_INVALID_RATE"=0} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Minimum allowed encoder frame rate. </p>
+<p>} @h2xmle_default {VOCODER_ONE_EIGHTH_RATE} @h2xmle_rangeList {"VOCODER_ONE_EIGHTH_RATE"=1, "VOCODER_ONE_FOURTH_RATE"=2, "VOCODER_HALF_RATE"=3, "VOCODER_FULL_RATE"=4, "VOCODER_INVALID_RATE"=0} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -123,7 +134,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Rate modulation command If bit 0=1, rate control is enabled. If bit 1=1, the maximum number of consecutive full rate frames is limited with numbers supplied in bits 2 to 10. If bit 1=0, the minimum number of non-full rate frames in between two full rate frames is forced to the number supplied in bits 2 to 10 In both cases of bit 1, if necessary, half rate is used to substitute full rate. Bits 15 to 10 are reserved and must all be set to 0.} @h2xmle_default {0} @h2xmle_range {0..0x03FF} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Rate modulation command If bit 0=1, rate control is enabled. </p>
+<p>If bit 1=1, the maximum number of consecutive full rate frames is limited with numbers supplied in bits 2 to 10. If bit 1=0, the minimum number of non-full rate frames in between two full rate frames is forced to the number supplied in bits 2 to 10 In both cases of bit 1, if necessary, half rate is used to substitute full rate. Bits 15 to 10 are reserved and must all be set to 0.} @h2xmle_default {0} @h2xmle_range {0..0x03FF} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -138,6 +151,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Reduced rate command, used to change the average bit-rate of the vocoder} @h2xmle_rangeList {"V13K_FS_ENCODE_MODE_MR1440"=0, "V13K_FS_ENCODE_MODE_MR1220"=1, "V13K_FS_ENCODE_MODE_MR1120"=2, "V13K_FS_ENCODE_MODE_MR90"=3, "V13K_FS_ENCODE_MODE_MR720"=4} @h2xmle_default {V13K_FS_ENCODE_MODE_MR1440} @h2xmle_policy {Basic} </p>
 
 </div>

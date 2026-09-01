@@ -66,17 +66,22 @@ $(document).ready(function(){initNavTree('structvcpm__param__cal__keys__payload_
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#a807a4c714a7479abd8c910e8d70b20e4" title="Identifier for the parameter that sets calibration keys from both the applications processor and mode...">VCPM_PARAM_ID_CAL_KEYS</a>.  
+ <a href="structvcpm__param__cal__keys__payload__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a0607493b00992f0a97fa2312e1e40588" id="r_a0607493b00992f0a97fa2312e1e40588"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__cal__keys__payload__t.html#a0607493b00992f0a97fa2312e1e40588">vsid</a></td></tr>
+<tr class="memdesc:a0607493b00992f0a97fa2312e1e40588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voice System identifier for the calibration key.  <br /></td></tr>
 <tr class="separator:a0607493b00992f0a97fa2312e1e40588"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf6f1d3dfd9b15d3de537135f4ce085a" id="r_aaf6f1d3dfd9b15d3de537135f4ce085a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__cal__keys__payload__t.html#aaf6f1d3dfd9b15d3de537135f4ce085a">num_ckv_pairs</a></td></tr>
+<tr class="memdesc:aaf6f1d3dfd9b15d3de537135f4ce085a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of vcpm_ckv_pair_t structures that immediately follow this structure.  <br /></td></tr>
 <tr class="separator:aaf6f1d3dfd9b15d3de537135f4ce085a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a807a4c714a7479abd8c910e8d70b20e4">VCPM_PARAM_ID_CAL_KEYS</a>.</p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a807a4c714a7479abd8c910e8d70b20e4" title="Identifier for the parameter that sets calibration keys from both the applications processor and mode...">VCPM_PARAM_ID_CAL_KEYS</a>. </p>
 <p>Immediately following this structure is an array of structures of type vcpm_ckv_pair_t. The array length is equal to num_sub_graphs. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="aaf6f1d3dfd9b15d3de537135f4ce085a" name="aaf6f1d3dfd9b15d3de537135f4ce085a"></a>
@@ -90,6 +95,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Number of vcpm_ckv_pair_t structures that immediately follow this structure. </p>
 
 </div>
@@ -105,6 +111,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Voice System identifier for the calibration key. </p>
 
 </div>

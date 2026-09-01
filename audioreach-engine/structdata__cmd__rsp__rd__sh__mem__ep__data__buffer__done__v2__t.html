@@ -66,41 +66,58 @@ $(document).ready(function(){initNavTree('structdata__cmd__rsp__rd__sh__mem__ep_
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="rd__sh__mem__ep__api_8h.html#a3d20ce8721ba90441ec88eb7bc0b5b47" title="Sent by the SPF in response to DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2 when the referenced buffer is fil...">DATA_CMD_RSP_RD_SH_MEM_EP_DATA_BUFFER_DONE_V2</a>.  
+ <a href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/rd_sh_mem_ep_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a0b98fc3b6afa8f3c552affd313ab0d67" id="r_a0b98fc3b6afa8f3c552affd313ab0d67"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#a0b98fc3b6afa8f3c552affd313ab0d67">data_status</a></td></tr>
+<tr class="memdesc:a0b98fc3b6afa8f3c552affd313ab0d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status message for data buffer (error code).  <br /></td></tr>
 <tr class="separator:a0b98fc3b6afa8f3c552affd313ab0d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2c80246cf4010726d9befd78be90421" id="r_ab2c80246cf4010726d9befd78be90421"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#ab2c80246cf4010726d9befd78be90421">data_buf_addr_lsw</a></td></tr>
+<tr class="memdesc:ab2c80246cf4010726d9befd78be90421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower 32 bits of the address of the data buffer being returned.  <br /></td></tr>
 <tr class="separator:ab2c80246cf4010726d9befd78be90421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a334b3443f96930db82ee939116b3c9af" id="r_a334b3443f96930db82ee939116b3c9af"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#a334b3443f96930db82ee939116b3c9af">data_buf_addr_msw</a></td></tr>
+<tr class="memdesc:a334b3443f96930db82ee939116b3c9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper 32 bits of the data address of the buffer being returned.  <br /></td></tr>
 <tr class="separator:a334b3443f96930db82ee939116b3c9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2e12406f327f0e8f7b117a1a7431556" id="r_ad2e12406f327f0e8f7b117a1a7431556"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#ad2e12406f327f0e8f7b117a1a7431556">data_mem_map_handle</a></td></tr>
+<tr class="memdesc:ad2e12406f327f0e8f7b117a1a7431556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the shared memory address that corresponds to the data buffer.  <br /></td></tr>
 <tr class="separator:ad2e12406f327f0e8f7b117a1a7431556"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afddd1e22004f8cb3e43a210d16c29bc8" id="r_afddd1e22004f8cb3e43a210d16c29bc8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#afddd1e22004f8cb3e43a210d16c29bc8">data_size</a></td></tr>
+<tr class="memdesc:afddd1e22004f8cb3e43a210d16c29bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total size of the data frames in bytes.  <br /></td></tr>
 <tr class="separator:afddd1e22004f8cb3e43a210d16c29bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6078fe83c9b92efba1325431e36c9286" id="r_a6078fe83c9b92efba1325431e36c9286"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#a6078fe83c9b92efba1325431e36c9286">timestamp_lsw</a></td></tr>
+<tr class="memdesc:a6078fe83c9b92efba1325431e36c9286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower 32 bits of the 64-bit session time in microseconds of the first sample in the data buffer.  <br /></td></tr>
 <tr class="separator:a6078fe83c9b92efba1325431e36c9286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfeb66c746c343c9b4f2d25f2feb0186" id="r_abfeb66c746c343c9b4f2d25f2feb0186"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#abfeb66c746c343c9b4f2d25f2feb0186">timestamp_msw</a></td></tr>
+<tr class="memdesc:abfeb66c746c343c9b4f2d25f2feb0186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper 32 bits of the 64-bit session time in microseconds of the first sample in the data buffer.  <br /></td></tr>
 <tr class="separator:abfeb66c746c343c9b4f2d25f2feb0186"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb38cd6b4dc268ce2f4ae2e7b5e717ad" id="r_adb38cd6b4dc268ce2f4ae2e7b5e717ad"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#adb38cd6b4dc268ce2f4ae2e7b5e717ad">flags</a></td></tr>
+<tr class="memdesc:adb38cd6b4dc268ce2f4ae2e7b5e717ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit field of flags.  <br /></td></tr>
 <tr class="separator:adb38cd6b4dc268ce2f4ae2e7b5e717ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5185e60f9e6c10929ff6064a32f351b7" id="r_a5185e60f9e6c10929ff6064a32f351b7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#a5185e60f9e6c10929ff6064a32f351b7">num_frames</a></td></tr>
+<tr class="memdesc:a5185e60f9e6c10929ff6064a32f351b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of data frames in the data buffer.  <br /></td></tr>
 <tr class="separator:a5185e60f9e6c10929ff6064a32f351b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a797d6afb75e8e420731b63ef8faa753e" id="r_a797d6afb75e8e420731b63ef8faa753e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#a797d6afb75e8e420731b63ef8faa753e">md_status</a></td></tr>
+<tr class="memdesc:a797d6afb75e8e420731b63ef8faa753e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status message for metadata buffer(error code).  <br /></td></tr>
 <tr class="separator:a797d6afb75e8e420731b63ef8faa753e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e0ce6c301273b30182d9c32306c3e17" id="r_a5e0ce6c301273b30182d9c32306c3e17"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#a5e0ce6c301273b30182d9c32306c3e17">md_buf_addr_lsw</a></td></tr>
+<tr class="memdesc:a5e0ce6c301273b30182d9c32306c3e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower 32 bits of the address of the metadata buffer being returned.  <br /></td></tr>
 <tr class="separator:a5e0ce6c301273b30182d9c32306c3e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8158320db5d52094b55c28c004e4c005" id="r_a8158320db5d52094b55c28c004e4c005"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#a8158320db5d52094b55c28c004e4c005">md_buf_addr_msw</a></td></tr>
+<tr class="memdesc:a8158320db5d52094b55c28c004e4c005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper 32 bits of the data address of the metadata buffer being returned.  <br /></td></tr>
 <tr class="separator:a8158320db5d52094b55c28c004e4c005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad04ef35f5df95ab8e70f562b46a5b55e" id="r_ad04ef35f5df95ab8e70f562b46a5b55e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#ad04ef35f5df95ab8e70f562b46a5b55e">md_mem_map_handle</a></td></tr>
+<tr class="memdesc:ad04ef35f5df95ab8e70f562b46a5b55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the shared memory address that corresponds to the metadata buffer.  <br /></td></tr>
 <tr class="separator:ad04ef35f5df95ab8e70f562b46a5b55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbc8cb87f7c8cd67b0d3c91c769d9c06" id="r_abbc8cb87f7c8cd67b0d3c91c769d9c06"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#abbc8cb87f7c8cd67b0d3c91c769d9c06">md_size</a></td></tr>
+<tr class="memdesc:abbc8cb87f7c8cd67b0d3c91c769d9c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total size of the metadata frames in bytes.  <br /></td></tr>
 <tr class="separator:abbc8cb87f7c8cd67b0d3c91c769d9c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="rd__sh__mem__ep__api_8h.html#a3d20ce8721ba90441ec88eb7bc0b5b47">DATA_CMD_RSP_RD_SH_MEM_EP_DATA_BUFFER_DONE_V2</a>. </p>
+<div class="textblock"><p>Payload for <a class="el" href="rd__sh__mem__ep__api_8h.html#a3d20ce8721ba90441ec88eb7bc0b5b47" title="Sent by the SPF in response to DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2 when the referenced buffer is fil...">DATA_CMD_RSP_RD_SH_MEM_EP_DATA_BUFFER_DONE_V2</a>. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ab2c80246cf4010726d9befd78be90421" name="ab2c80246cf4010726d9befd78be90421"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2c80246cf4010726d9befd78be90421">&#9670;&#160;</a></span>data_buf_addr_lsw</h2>
@@ -113,6 +130,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Lower 32 bits of the address of the data buffer being returned. </p>
 
 </div>
@@ -128,8 +146,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Upper 32 bits of the data address of the buffer being returned.</p>
-<p>The valid, mapped, 64-bit address is the same address that the client provides in <a class="el" href="rd__sh__mem__ep__api_8h.html#ab2d02af3e127c181d208edbf851eab8d">DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2</a>. </p>
+
+<p>Upper 32 bits of the data address of the buffer being returned. </p>
+<p>The valid, mapped, 64-bit address is the same address that the client provides in <a class="el" href="rd__sh__mem__ep__api_8h.html#ab2d02af3e127c181d208edbf851eab8d" title="Sends an empty buffer to the MODULE_ID_RD_SHARED_MEM_EP module.">DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2</a>. </p>
 
 </div>
 </div>
@@ -144,7 +163,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Unique identifier for the shared memory address that corresponds to the data buffer.</p>
+
+<p>Unique identifier for the shared memory address that corresponds to the data buffer. </p>
 <p>The SPF returns this handle through APM_CMD_RSP_SHARED_MEM_MAP_REGIONS (see the &gt;AudioReach SPF CAPI API Reference (80-VN500-6)). </p>
 
 </div>
@@ -160,6 +180,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Total size of the data frames in bytes. </p>
 
 </div>
@@ -175,7 +196,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Status message for data buffer (error code).</p>
+
+<p>Status message for data buffer (error code). </p>
 <p>@values See the AudioReach SPF Generic Packet Router API Reference(80-VN500-10) </p>
 
 </div>
@@ -191,12 +213,13 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Bit field of flags.</p>
+
+<p>Bit field of flags. </p>
 <p>@valuesbul{for bit 31}</p><ul>
 <li>1 &ndash; Timestamp is valid</li>
 <li>0 &ndash; Timestamp is invalid</li>
 </ul>
-<p>To set this bit, use <a class="el" href="rd__sh__mem__ep__api_8h.html#a1fca050b39604dd0dfb3764a23afbc14">RD_SH_MEM_EP_BIT_MASK_TIMESTAMP_VALID_FLAG</a> and <a class="el" href="rd__sh__mem__ep__api_8h.html#ae7a8648465ad3c7c3047226ba3d5c54c">RD_SH_MEM_EP_SHIFT_TIMESTAMP_VALID_FLAG</a>.</p>
+<p>To set this bit, use <a class="el" href="rd__sh__mem__ep__api_8h.html#a1fca050b39604dd0dfb3764a23afbc14" title="Bitmask for the timestamp validity information.">RD_SH_MEM_EP_BIT_MASK_TIMESTAMP_VALID_FLAG</a> and <a class="el" href="rd__sh__mem__ep__api_8h.html#ae7a8648465ad3c7c3047226ba3d5c54c" title="Shift value for the timestamp validity information.">RD_SH_MEM_EP_SHIFT_TIMESTAMP_VALID_FLAG</a>.</p>
 <p>All other bits are reserved; the SPF sets them to 0. </p>
 
 </div>
@@ -212,6 +235,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Lower 32 bits of the address of the metadata buffer being returned. </p>
 
 </div>
@@ -227,8 +251,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Upper 32 bits of the data address of the metadata buffer being returned.</p>
-<p>The valid, mapped, 64-bit address is the same address that the client provides in <a class="el" href="rd__sh__mem__ep__api_8h.html#ab2d02af3e127c181d208edbf851eab8d">DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2</a>. </p>
+
+<p>Upper 32 bits of the data address of the metadata buffer being returned. </p>
+<p>The valid, mapped, 64-bit address is the same address that the client provides in <a class="el" href="rd__sh__mem__ep__api_8h.html#ab2d02af3e127c181d208edbf851eab8d" title="Sends an empty buffer to the MODULE_ID_RD_SHARED_MEM_EP module.">DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2</a>. </p>
 
 </div>
 </div>
@@ -243,7 +268,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Unique identifier for the shared memory address that corresponds to the metadata buffer.</p>
+
+<p>Unique identifier for the shared memory address that corresponds to the metadata buffer. </p>
 <p>The SPF returns this handle through APM_CMD_RSP_SHARED_MEM_MAP_REGIONS (see the AudioReach SPF CAPI API Reference (80-VN500-6)). </p>
 
 </div>
@@ -259,6 +285,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Total size of the metadata frames in bytes. </p>
 
 </div>
@@ -274,7 +301,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Status message for metadata buffer(error code).</p>
+
+<p>Status message for metadata buffer(error code). </p>
 <p>@values See the AudioReach SPF Generic Packet Router API Reference (80-VN500-10) </p>
 
 </div>
@@ -290,6 +318,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Number of data frames in the data buffer. </p>
 
 </div>
@@ -305,6 +334,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Lower 32 bits of the 64-bit session time in microseconds of the first sample in the data buffer. </p>
 
 </div>
@@ -320,7 +350,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Upper 32 bits of the 64-bit session time in microseconds of the first sample in the data buffer.</p>
+
+<p>Upper 32 bits of the 64-bit session time in microseconds of the first sample in the data buffer. </p>
 <p>The 64-bit timestamp must be interpreted as a signed number. The source of the timestamp depends on the source that is feeding data to this module. </p>
 
 </div>

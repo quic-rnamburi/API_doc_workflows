@@ -66,15 +66,19 @@ $(document).ready(function(){initNavTree('structapm__cmd__rsp__get__cfg__t.html'
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="apm__api_8h.html#a18159f9f158e8a502a5f2683934f79e1" title="Payload for APM_CMD_RSP_GET_CFG.">APM_CMD_DB_DEFAULT_SET_CFG</a>.  
+ <a href="structapm__cmd__rsp__get__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:af7a271c80111b9d2b4fc94265a230147" id="r_af7a271c80111b9d2b4fc94265a230147"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__cmd__rsp__get__cfg__t.html#af7a271c80111b9d2b4fc94265a230147">status</a></td></tr>
+<tr class="memdesc:af7a271c80111b9d2b4fc94265a230147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the status of the APM_CMD_GET_CFG command.  <br /></td></tr>
 <tr class="separator:af7a271c80111b9d2b4fc94265a230147"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="apm__api_8h.html#a18159f9f158e8a502a5f2683934f79e1">APM_CMD_DB_DEFAULT_SET_CFG</a>.</p>
+<div class="textblock"><p>Payload for <a class="el" href="apm__api_8h.html#a18159f9f158e8a502a5f2683934f79e1" title="Payload for APM_CMD_RSP_GET_CFG.">APM_CMD_DB_DEFAULT_SET_CFG</a>. </p>
 <p>In a multi-client scenario, different clients can override the default/tools calibration/configuration, causing undesired outputs. To avoid this, subgraphs should be marked as calibrated to prevent redundant recalibration. The APM_CMD_DB_DEFAULT_SET_CFG is used for new configurations in multi-client scenarios. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="af7a271c80111b9d2b4fc94265a230147" name="af7a271c80111b9d2b4fc94265a230147"></a>
@@ -88,7 +92,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates the status of the APM_CMD_GET_CFG command.</p>
+
+<p>Indicates the status of the APM_CMD_GET_CFG command. </p>
 <p>@valuesbul</p><ul>
 <li>AR_EOK &ndash; All the parameter IDs being queried return success codes.</li>
 <li>AR_EFAILED &ndash; At least one parameter ID results in a failure error code.</li>

@@ -66,33 +66,49 @@ $(document).ready(function(){initNavTree('structpayload__media__fmt__opus__t.htm
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct @h2xmlp_description {Payload of the OPUS decoder format block structure parameters in the MEDIA_FMT_ID_OPUS media format..<br  />
+ } @h2xmlp_toolPolicy {Calibration}  
+ <a href="structpayload__media__fmt__opus__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/media_fmt_api_ext.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aec726d8f249a1574c9c0371ee8a1f7f7" id="r_aec726d8f249a1574c9c0371ee8a1f7f7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#aec726d8f249a1574c9c0371ee8a1f7f7">bitstream_format</a></td></tr>
+<tr class="memdesc:aec726d8f249a1574c9c0371ee8a1f7f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {OggOpus container format or raw fmt with 4bytes len appended.  <br /></td></tr>
 <tr class="separator:aec726d8f249a1574c9c0371ee8a1f7f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7700de258abcd207a9add8817c030319" id="r_a7700de258abcd207a9add8817c030319"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#a7700de258abcd207a9add8817c030319">payload_type</a></td></tr>
+<tr class="memdesc:a7700de258abcd207a9add8817c030319"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {payload_type indicates if unset config data is available in OGG 0th page, if set, following elements of this structure are valid.  <br /></td></tr>
 <tr class="separator:a7700de258abcd207a9add8817c030319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4540b24174eb6798af2a2f869284f066" id="r_a4540b24174eb6798af2a2f869284f066"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#a4540b24174eb6798af2a2f869284f066">version</a></td></tr>
+<tr class="memdesc:a4540b24174eb6798af2a2f869284f066"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Specifies the compatible version.  <br /></td></tr>
 <tr class="separator:a4540b24174eb6798af2a2f869284f066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fd79d6601dafd8f492e42004c11c2fc" id="r_a7fd79d6601dafd8f492e42004c11c2fc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#a7fd79d6601dafd8f492e42004c11c2fc">num_channels</a></td></tr>
+<tr class="memdesc:a7fd79d6601dafd8f492e42004c11c2fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of channels present in the Opus stream.  <br /></td></tr>
 <tr class="separator:a7fd79d6601dafd8f492e42004c11c2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76fd93169ebc1c49460d9fb42d50b4d6" id="r_a76fd93169ebc1c49460d9fb42d50b4d6"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#a76fd93169ebc1c49460d9fb42d50b4d6">pre_skip</a></td></tr>
+<tr class="memdesc:a76fd93169ebc1c49460d9fb42d50b4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of Samples at 48kHz to discard from decoder output when starting playback.  <br /></td></tr>
 <tr class="separator:a76fd93169ebc1c49460d9fb42d50b4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f647b6af190b7ea0b6fbff8d4de4d0d" id="r_a9f647b6af190b7ea0b6fbff8d4de4d0d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#a9f647b6af190b7ea0b6fbff8d4de4d0d">sample_rate</a></td></tr>
+<tr class="memdesc:a9f647b6af190b7ea0b6fbff8d4de4d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Supported sampling rates} @h2xmle_default {0} @h2xmle_rangeList {INVALID_VALUE=0,0,8000, 12000, 16000, 24000, 48000} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a9f647b6af190b7ea0b6fbff8d4de4d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bb2570ba8df6d2c293b843709597bf2" id="r_a9bb2570ba8df6d2c293b843709597bf2"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#a9bb2570ba8df6d2c293b843709597bf2">output_gain</a></td></tr>
+<tr class="memdesc:a9bb2570ba8df6d2c293b843709597bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {The gain applied when decoding, to acheive desired playback volume in Q7.8 format.  <br /></td></tr>
 <tr class="separator:a9bb2570ba8df6d2c293b843709597bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c0b51b74a939d759d22986e95c8eed8" id="r_a1c0b51b74a939d759d22986e95c8eed8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#a1c0b51b74a939d759d22986e95c8eed8">mapping_family</a></td></tr>
+<tr class="memdesc:a1c0b51b74a939d759d22986e95c8eed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Mapping family defines the order and meaning of channels} @h2xmle_default {0} @h2xmle_rangeList {"0" = 0, "1" = 1, "255" = 255} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a1c0b51b74a939d759d22986e95c8eed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b847c4f1f46cfa71aea4b2f3b485d38" id="r_a6b847c4f1f46cfa71aea4b2f3b485d38"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#a6b847c4f1f46cfa71aea4b2f3b485d38">stream_count</a></td></tr>
+<tr class="memdesc:a6b847c4f1f46cfa71aea4b2f3b485d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of streams present in Opus Stream This member is valid only if mapping_family is not 0} @h2xmle_default {0x1} @h2xmle_range {1...0xFF} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a6b847c4f1f46cfa71aea4b2f3b485d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac50e7c11eee75c22cf33fbd23d534bbe" id="r_ac50e7c11eee75c22cf33fbd23d534bbe"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#ac50e7c11eee75c22cf33fbd23d534bbe">coupled_count</a></td></tr>
+<tr class="memdesc:ac50e7c11eee75c22cf33fbd23d534bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of streams which needs to be configured as Stereo This member is valid only if mapping_family is not 0} @h2xmle_default {0x0} @h2xmle_range {0...0xFF} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:ac50e7c11eee75c22cf33fbd23d534bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f94bf5dcd50859211f36c7e27784548" id="r_a9f94bf5dcd50859211f36c7e27784548"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#a9f94bf5dcd50859211f36c7e27784548">channel_map</a> [8]</td></tr>
+<tr class="memdesc:a9f94bf5dcd50859211f36c7e27784548"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {This contains one octet per output channel, it tells which decoded channel is to be used for each speaker location This member is valid only if mapping_family is not 0} @h2xmle_default {0x0} @h2xmle_range {0...0xFF} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a9f94bf5dcd50859211f36c7e27784548"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad91d2c7c3b3613a17ac749dda2f13bd9" id="r_ad91d2c7c3b3613a17ac749dda2f13bd9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__opus__t.html#ad91d2c7c3b3613a17ac749dda2f13bd9">reserved</a> [3]</td></tr>
+<tr class="memdesc:ad91d2c7c3b3613a17ac749dda2f13bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Clients must set this field to 0.  <br /></td></tr>
 <tr class="separator:ad91d2c7c3b3613a17ac749dda2f13bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -110,7 +126,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {OggOpus container format or raw fmt with 4bytes len appended.} @h2xmle_default {1} @h2xmle_range {0...1} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {OggOpus container format or raw fmt with 4bytes len appended. </p>
+<p>} @h2xmle_default {1} @h2xmle_range {0...1} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -125,6 +143,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {This contains one octet per output channel, it tells which decoded channel is to be used for each speaker location This member is valid only if mapping_family is not 0} @h2xmle_default {0x0} @h2xmle_range {0...0xFF} @h2xmle_policy {Basic} </p>
 
 </div>
@@ -140,6 +159,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Number of streams which needs to be configured as Stereo This member is valid only if mapping_family is not 0} @h2xmle_default {0x0} @h2xmle_range {0...0xFF} @h2xmle_policy {Basic} </p>
 
 </div>
@@ -155,6 +175,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Mapping family defines the order and meaning of channels} @h2xmle_default {0} @h2xmle_rangeList {"0" = 0, "1" = 1, "255" = 255} @h2xmle_policy {Basic} </p>
 
 </div>
@@ -170,7 +191,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Number of channels present in the Opus stream.} @h2xmle_default {1} @h2xmle_rangeList {"Mono"=1, "Stereo"=2, "LinearSurround"=3, "Quadraphonic"=4, "5dot0Surround"=5, "5dot1Surround"=6, "6dot1Surround"=7, "7dot1Surround"=8} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Number of channels present in the Opus stream. </p>
+<p>} @h2xmle_default {1} @h2xmle_rangeList {"Mono"=1, "Stereo"=2, "LinearSurround"=3, "Quadraphonic"=4, "5dot0Surround"=5, "5dot1Surround"=6, "6dot1Surround"=7, "7dot1Surround"=8} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -185,7 +208,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {The gain applied when decoding, to acheive desired playback volume in Q7.8 format.} @h2xmle_default {0x100} @h2xmle_rangeList {0...0xFF} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {The gain applied when decoding, to acheive desired playback volume in Q7.8 format. </p>
+<p>} @h2xmle_default {0x100} @h2xmle_rangeList {0...0xFF} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -200,7 +225,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {payload_type indicates if unset config data is available in OGG 0th page, if set, following elements of this structure are valid.} @h2xmle_default {1} @h2xmle_range {0...1} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {payload_type indicates if unset config data is available in OGG 0th page, if set, following elements of this structure are valid. </p>
+<p>} @h2xmle_default {1} @h2xmle_range {0...1} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -215,7 +242,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Number of Samples at 48kHz to discard from decoder output when starting playback.} @h2xmle_default {0} @h2xmle_range {0...0xFFFF} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Number of Samples at 48kHz to discard from decoder output when starting playback. </p>
+<p>} @h2xmle_default {0} @h2xmle_range {0...0xFFFF} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -230,7 +259,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Clients must set this field to 0.} @h2xmle_rangeList {"0"=0} @h2xmle_visibility {hide} </p>
+
+<p>@h2xmle_description {Clients must set this field to 0. </p>
+<p>} @h2xmle_rangeList {"0"=0} @h2xmle_visibility {hide} </p>
 
 </div>
 </div>
@@ -245,6 +276,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Supported sampling rates} @h2xmle_default {0} @h2xmle_rangeList {INVALID_VALUE=0,0,8000, 12000, 16000, 24000, 48000} @h2xmle_policy {Basic} </p>
 
 </div>
@@ -260,6 +292,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Number of streams present in Opus Stream This member is valid only if mapping_family is not 0} @h2xmle_default {0x1} @h2xmle_range {1...0xFF} @h2xmle_policy {Basic} </p>
 
 </div>
@@ -275,7 +308,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Specifies the compatible version.} @h2xmle_default {1} @h2xmle_rangeList {"1" = 1} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Specifies the compatible version. </p>
+<p>} @h2xmle_default {1} @h2xmle_rangeList {"1" = 1} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>

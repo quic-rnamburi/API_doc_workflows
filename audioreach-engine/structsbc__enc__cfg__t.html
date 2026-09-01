@@ -66,17 +66,24 @@ $(document).ready(function(){initNavTree('structsbc__enc__cfg__t.html',''); init
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct @h2xmlp_description {Payload for configuring the SBC encoder module}  
+ <a href="structsbc__enc__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/media_fmt_api_ext.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a277df5d9d6a47685965bececd6d0bebe" id="r_a277df5d9d6a47685965bececd6d0bebe"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsbc__enc__cfg__t.html#a277df5d9d6a47685965bececd6d0bebe">num_subbands</a></td></tr>
+<tr class="memdesc:a277df5d9d6a47685965bececd6d0bebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of subbands} @h2xmle_default {4} @h2xmle_rangeList { "4" = 4, "8" = 8} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a277df5d9d6a47685965bececd6d0bebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66394759b44d5d3141d4ac2d33ef3baa" id="r_a66394759b44d5d3141d4ac2d33ef3baa"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsbc__enc__cfg__t.html#a66394759b44d5d3141d4ac2d33ef3baa">blk_len</a></td></tr>
+<tr class="memdesc:a66394759b44d5d3141d4ac2d33ef3baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Size of the encoded block in samples} @h2xmle_default {4} @h2xmle_rangeList { "4" = 4, "8" = 8, "12" = 12, "16" = 16} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a66394759b44d5d3141d4ac2d33ef3baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab34b031d1f11efcd9b91068ff50c20c6" id="r_ab34b031d1f11efcd9b91068ff50c20c6"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsbc__enc__cfg__t.html#ab34b031d1f11efcd9b91068ff50c20c6">channel_mode</a></td></tr>
+<tr class="memdesc:ab34b031d1f11efcd9b91068ff50c20c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Mode used to allocate bits between channels.  <br /></td></tr>
 <tr class="separator:ab34b031d1f11efcd9b91068ff50c20c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22f8343a11053920b16bb38623d4fbf8" id="r_a22f8343a11053920b16bb38623d4fbf8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsbc__enc__cfg__t.html#a22f8343a11053920b16bb38623d4fbf8">alloc_method</a></td></tr>
+<tr class="memdesc:a22f8343a11053920b16bb38623d4fbf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Encoder bit allocation method.  <br /></td></tr>
 <tr class="separator:a22f8343a11053920b16bb38623d4fbf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -93,7 +100,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Encoder bit allocation method.} @h2xmle_default {0} @h2xmle_rangeList { "MEDIA_FMT_SBC_ALLOCATION_METHOD_LOUDNESS"=0, "MEDIA_FMT_SBC_ALLOCATION_METHOD_SNR"=1} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Encoder bit allocation method. </p>
+<p>} @h2xmle_default {0} @h2xmle_rangeList { "MEDIA_FMT_SBC_ALLOCATION_METHOD_LOUDNESS"=0, "MEDIA_FMT_SBC_ALLOCATION_METHOD_SNR"=1} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -108,6 +117,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Size of the encoded block in samples} @h2xmle_default {4} @h2xmle_rangeList { "4" = 4, "8" = 8, "12" = 12, "16" = 16} @h2xmle_policy {Basic} </p>
 
 </div>
@@ -123,7 +133,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Mode used to allocate bits between channels. </p><pre class="fragment">                -Native mode indicates that encoding must be performed with the number
+
+<p>@h2xmle_description {Mode used to allocate bits between channels. </p>
+<pre class="fragment">                -Native mode indicates that encoding must be performed with the number
                   of channels at the input.
 
                 -If postprocessing outputs one-channel data, Mono mode is used. If
@@ -145,6 +157,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Number of subbands} @h2xmle_default {4} @h2xmle_rangeList { "4" = 4, "8" = 8} @h2xmle_policy {Basic} </p>
 
 </div>

@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structapm__container__cfg__t.html','')
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="apm__container__api_8h.html#a86b82cba379739da133b792411d281b2" title="Identifier for the parameter that configures the container properties.">APM_PARAM_ID_CONTAINER_CONFIG</a>.  
+ <a href="structapm__container__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_container_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a499f556377cd7aa9af06ffb0d261dbd0" id="r_a499f556377cd7aa9af06ffb0d261dbd0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__container__cfg__t.html#a499f556377cd7aa9af06ffb0d261dbd0">container_id</a></td></tr>
+<tr class="memdesc:a499f556377cd7aa9af06ffb0d261dbd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the container.  <br /></td></tr>
 <tr class="separator:a499f556377cd7aa9af06ffb0d261dbd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a089f6617e97d71f74ad8340d63f8a9bd" id="r_a089f6617e97d71f74ad8340d63f8a9bd"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__container__cfg__t.html#a089f6617e97d71f74ad8340d63f8a9bd">num_prop</a></td></tr>
+<tr class="memdesc:a089f6617e97d71f74ad8340d63f8a9bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of properties for this sub-graph.  <br /></td></tr>
 <tr class="separator:a089f6617e97d71f74ad8340d63f8a9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="apm__container__api_8h.html#a86b82cba379739da133b792411d281b2">APM_PARAM_ID_CONTAINER_CONFIG</a>. This structure contains container configuration parameters.</p>
+<div class="textblock"><p>Payload for <a class="el" href="apm__container__api_8h.html#a86b82cba379739da133b792411d281b2" title="Identifier for the parameter that configures the container properties.">APM_PARAM_ID_CONTAINER_CONFIG</a>. </p>
+<p>This structure contains container configuration parameters.</p>
 <p>Immediately following this structure is a variable length array of container property structures. The length of the array is determined by the number of properties being configured. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a499f556377cd7aa9af06ffb0d261dbd0" name="a499f556377cd7aa9af06ffb0d261dbd0"></a>
@@ -90,6 +96,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique identifier for the container. </p>
 
 </div>
@@ -105,6 +112,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Number of properties for this sub-graph. </p>
 
 </div>

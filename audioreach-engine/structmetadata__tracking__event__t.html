@@ -66,27 +66,36 @@ $(document).ready(function(){initNavTree('structmetadata__tracking__event__t.htm
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for Metadata tracking event.  
+ <a href="structmetadata__tracking__event__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/metadata_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a15590e8be978a5ae843488fdcc4229cc" id="r_a15590e8be978a5ae843488fdcc4229cc"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__tracking__event__t.html#a15590e8be978a5ae843488fdcc4229cc">metadata_id</a></td></tr>
+<tr class="memdesc:a15590e8be978a5ae843488fdcc4229cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globally Unique ID of the metadata.  <br /></td></tr>
 <tr class="separator:a15590e8be978a5ae843488fdcc4229cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac90372f7d4b9557729f1ae2862c27feb" id="r_ac90372f7d4b9557729f1ae2862c27feb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__tracking__event__t.html#ac90372f7d4b9557729f1ae2862c27feb">source_module_instance</a></td></tr>
+<tr class="memdesc:ac90372f7d4b9557729f1ae2862c27feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the source module of the metadata.  <br /></td></tr>
 <tr class="separator:ac90372f7d4b9557729f1ae2862c27feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1da419a5ed31544b1beabbb8e4dc497" id="r_ad1da419a5ed31544b1beabbb8e4dc497"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__tracking__event__t.html#ad1da419a5ed31544b1beabbb8e4dc497">module_instance_id</a></td></tr>
+<tr class="memdesc:ad1da419a5ed31544b1beabbb8e4dc497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the module instance ID of the module which is raising the event when MD is consumed/dropped.  <br /></td></tr>
 <tr class="separator:ad1da419a5ed31544b1beabbb8e4dc497"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76fa33b4911c209c51d1f04907c5a7a3" id="r_a76fa33b4911c209c51d1f04907c5a7a3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__tracking__event__t.html#a76fa33b4911c209c51d1f04907c5a7a3">flags</a></td></tr>
+<tr class="memdesc:a76fa33b4911c209c51d1f04907c5a7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the control flags for the metadata event.  <br /></td></tr>
 <tr class="separator:a76fa33b4911c209c51d1f04907c5a7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4de7b2ac5c37db1e56816db120be85d" id="r_ad4de7b2ac5c37db1e56816db120be85d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__tracking__event__t.html#ad4de7b2ac5c37db1e56816db120be85d">token_lsw</a></td></tr>
 <tr class="separator:ad4de7b2ac5c37db1e56816db120be85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addced8fa658c2f52dc39be55e245c7e5" id="r_addced8fa658c2f52dc39be55e245c7e5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__tracking__event__t.html#addced8fa658c2f52dc39be55e245c7e5">token_msw</a></td></tr>
+<tr class="memdesc:addced8fa658c2f52dc39be55e245c7e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Specifies the LSW of the unique token.  <br /></td></tr>
 <tr class="separator:addced8fa658c2f52dc39be55e245c7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc3ee0b9fbb9f6ffde4e547213287b2c" id="r_afc3ee0b9fbb9f6ffde4e547213287b2c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmetadata__tracking__event__t.html#afc3ee0b9fbb9f6ffde4e547213287b2c">status</a></td></tr>
+<tr class="memdesc:afc3ee0b9fbb9f6ffde4e547213287b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Specifies the MSW of the unique token.  <br /></td></tr>
 <tr class="separator:afc3ee0b9fbb9f6ffde4e547213287b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for Metadata tracking event </p>
+<div class="textblock"><p>Payload for Metadata tracking event. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a76fa33b4911c209c51d1f04907c5a7a3" name="a76fa33b4911c209c51d1f04907c5a7a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a76fa33b4911c209c51d1f04907c5a7a3">&#9670;&#160;</a></span>flags</h2>
@@ -99,7 +108,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specifies the control flags for the metadata event.</p>
+
+<p>Specifies the control flags for the metadata event. </p>
 <p>BIT_0 : specifies if this event corresponds to the last instance of metadata in the in SPF. @values{for bit 0}</p><ul>
 <li>0 &ndash; FALSE (not last instance)</li>
 <li>1 &ndash; TRUE ( yes, its last instance)</li>
@@ -124,6 +134,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Globally Unique ID of the metadata. </p>
 
 </div>
@@ -139,7 +150,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specifies the module instance ID of the module which is raising the event when MD is consumed/dropped. Invalid (0) when the status is set as dropped. </p>
+
+<p>Specifies the module instance ID of the module which is raising the event when MD is consumed/dropped. </p>
+<p>Invalid (0) when the status is set as dropped. </p>
 
 </div>
 </div>
@@ -154,7 +167,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specifies the source module of the metadata.</p>
+
+<p>Specifies the source module of the metadata. </p>
 <p>Client Metadata: For metadata from the client, this is basically derived from the source port ID in the data command from client. Module metadata to client: If the metadata is generated by a module in SPF, then this would be the module instance ID of the module. </p>
 
 </div>
@@ -170,7 +184,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>&lt; Specifies the MSW of the unique token. Specifies the status information for the metadata.</p>
+
+<p>&lt; Specifies the MSW of the unique token. </p>
+<p>Specifies the status information for the metadata.</p>
 <p>BIT_0 : Specifies if the metadata is consumed or dropped. @values{for bit 0}</p><ul>
 <li>0 &ndash; MD_TRACKING_STATUS_IS_CONSUMED; MD is consumed</li>
 <li>1 &ndash; MD_TRACKING_STATUS_IS_DROPPED; MD is dropped</li>
@@ -204,7 +220,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>&lt; Specifies the LSW of the unique token.</p>
+
+<p>&lt; Specifies the LSW of the unique token. </p>
 <p>Client Metadata: For Metadata from the client, this is specified in the medata API header and the same value would be used here. Module metadata to client: If the metadata is generated by a module in SPF, the module would need to specify the token. It can be configured to the module by the client, if the MD needs to be trackable. * </p>
 
 </div>

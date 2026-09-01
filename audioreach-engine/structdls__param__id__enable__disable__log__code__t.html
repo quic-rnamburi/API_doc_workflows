@@ -66,19 +66,25 @@ $(document).ready(function(){initNavTree('structdls__param__id__enable__disable_
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="dls__api_8h.html#a5cbf66cda47e5ace7682b75993d34a0e" title="Used to configure the log code to start/stop the data logging.">DLS_PARAM_ID_ENABLE_DISABLE_LOG_CODE</a>.  
+ <a href="structdls__param__id__enable__disable__log__code__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/spf/dls/api/dls_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:acbf3a903cbb6b01a45d0cf17c1820865" id="r_acbf3a903cbb6b01a45d0cf17c1820865"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__enable__disable__log__code__t.html#acbf3a903cbb6b01a45d0cf17c1820865">is_enabled</a></td></tr>
+<tr class="memdesc:acbf3a903cbb6b01a45d0cf17c1820865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to indicate the log code is requested to be enabled or disabled.  <br /></td></tr>
 <tr class="separator:acbf3a903cbb6b01a45d0cf17c1820865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3016d263ba707bf4c6fc2470970032b4" id="r_a3016d263ba707bf4c6fc2470970032b4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__enable__disable__log__code__t.html#a3016d263ba707bf4c6fc2470970032b4">num_log_codes</a></td></tr>
+<tr class="memdesc:a3016d263ba707bf4c6fc2470970032b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of log codes to enable/disable.  <br /></td></tr>
 <tr class="separator:a3016d263ba707bf4c6fc2470970032b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a950d4c18173bde7e11a42ab89185f774" id="r_a950d4c18173bde7e11a42ab89185f774"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__enable__disable__log__code__t.html#a950d4c18173bde7e11a42ab89185f774">log_codes</a> [0]</td></tr>
+<tr class="memdesc:a950d4c18173bde7e11a42ab89185f774"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a Flexible Array Member to list the log codes to be enabled/disabled.  <br /></td></tr>
 <tr class="separator:a950d4c18173bde7e11a42ab89185f774"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="dls__api_8h.html#a5cbf66cda47e5ace7682b75993d34a0e">DLS_PARAM_ID_ENABLE_DISABLE_LOG_CODE</a>.</p>
+<div class="textblock"><p>Payload for <a class="el" href="dls__api_8h.html#a5cbf66cda47e5ace7682b75993d34a0e" title="Used to configure the log code to start/stop the data logging.">DLS_PARAM_ID_ENABLE_DISABLE_LOG_CODE</a>. </p>
 <p>Consists the 32-bit log_code to start/stop the data logging and a flag to to enable/disable the log code. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="acbf3a903cbb6b01a45d0cf17c1820865" name="acbf3a903cbb6b01a45d0cf17c1820865"></a>
@@ -92,7 +98,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Flag to indicate the log code is requested to be enabled or disabled. 1 - Enable log code 0 - Disable log code This field is an input configuration parameter. </p>
+
+<p>Flag to indicate the log code is requested to be enabled or disabled. </p>
+<p>1 - Enable log code 0 - Disable log code This field is an input configuration parameter. </p>
 
 </div>
 </div>
@@ -107,7 +115,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This is a Flexible Array Member to list the log codes to be enabled/disabled. This field is an input configuration parameter. </p>
+
+<p>This is a Flexible Array Member to list the log codes to be enabled/disabled. </p>
+<p>This field is an input configuration parameter. </p>
 
 </div>
 </div>
@@ -122,7 +132,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of log codes to enable/disable. This field is an input configuration parameter. </p>
+
+<p>Number of log codes to enable/disable. </p>
+<p>This field is an input configuration parameter. </p>
 
 </div>
 </div>

@@ -71,10 +71,13 @@ $(document).ready(function(){initNavTree('structdls__buf__start__addr__t.html','
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a0f5d78a48e70665686e3e4534793acc4" id="r_a0f5d78a48e70665686e3e4534793acc4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__buf__start__addr__t.html#a0f5d78a48e70665686e3e4534793acc4">buf_addr_lsw</a></td></tr>
+<tr class="memdesc:a0f5d78a48e70665686e3e4534793acc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field contains the lower 32-bits of the 64-bit buffer starting address.  <br /></td></tr>
 <tr class="separator:a0f5d78a48e70665686e3e4534793acc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dc793be4f8ccffe601b878fdae74344" id="r_a3dc793be4f8ccffe601b878fdae74344"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__buf__start__addr__t.html#a3dc793be4f8ccffe601b878fdae74344">buf_addr_msw</a></td></tr>
+<tr class="memdesc:a3dc793be4f8ccffe601b878fdae74344"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field contains the upper 32-bits of the 64-bit buffer starting address.  <br /></td></tr>
 <tr class="separator:a3dc793be4f8ccffe601b878fdae74344"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a634b7b03614ef09dae8243c2804a0d64" id="r_a634b7b03614ef09dae8243c2804a0d64"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__buf__start__addr__t.html#a634b7b03614ef09dae8243c2804a0d64">mem_map_handle</a></td></tr>
+<tr class="memdesc:a634b7b03614ef09dae8243c2804a0d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for a shared memory address.  <br /></td></tr>
 <tr class="separator:a634b7b03614ef09dae8243c2804a0d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
@@ -89,6 +92,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>This field contains the lower 32-bits of the 64-bit buffer starting address. </p>
 
 </div>
@@ -104,6 +108,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>This field contains the upper 32-bits of the 64-bit buffer starting address. </p>
 
 </div>
@@ -119,7 +124,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Unique identifier for a shared memory address.</p>
+
+<p>Unique identifier for a shared memory address. </p>
 <p>@values</p><ul>
 <li>NULL &ndash; buffer address is the physical memory address and it doesn't need mapping.</li>
 <li>Non-NULL &ndash; when buffer starting address is a mapped address. </li>

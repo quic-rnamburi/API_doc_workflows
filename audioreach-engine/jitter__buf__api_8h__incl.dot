@@ -39,7 +39,7 @@ digraph "fwk/api/modules/jitter_buf_api.h"
   Node4 -> Node11 [id="edge21_Node000004_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node4 -> Node12 [id="edge22_Node000004_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node13 [id="edge23_Node000001_Node000013",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="imcl_fwk_intent_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$imcl__fwk__intent__api_8h.html",tooltip="This file contains all the public intent names. The intent related structs are defined in internal he..."];
+  Node13 [id="Node000013",label="imcl_fwk_intent_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$imcl__fwk__intent__api_8h.html",tooltip="This file contains all the public intent names."];
   Node13 -> Node2 [id="edge24_Node000013_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node9 [id="edge25_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node11 [id="edge26_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];

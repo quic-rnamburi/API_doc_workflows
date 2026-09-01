@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structapm__module__event__t.html','');
 </div><!--header-->
 <div class="contents">
 
+<p>Contains the module event data.  
+ <a href="structapm__module__event__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a08635c832159da960712578fc41257b0" id="r_a08635c832159da960712578fc41257b0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__event__t.html#a08635c832159da960712578fc41257b0">event_id</a></td></tr>
+<tr class="memdesc:a08635c832159da960712578fc41257b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique event identifier for the module.  <br /></td></tr>
 <tr class="separator:a08635c832159da960712578fc41257b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f19e79f97751c091b995928e687204d" id="r_a1f19e79f97751c091b995928e687204d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__event__t.html#a1f19e79f97751c091b995928e687204d">event_payload_size</a></td></tr>
+<tr class="memdesc:a1f19e79f97751c091b995928e687204d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the event data based on the module_instance_id/event_id combination.  <br /></td></tr>
 <tr class="separator:a1f19e79f97751c091b995928e687204d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains the module event data. This structure is preceded by <a class="el" href="structapm__cmd__header__t.html">apm_cmd_header_t</a> and followed by the event payload. </p>
+<div class="textblock"><p>Contains the module event data. </p>
+<p>This structure is preceded by <a class="el" href="structapm__cmd__header__t.html" title="Common payload header structure used by the following commands:">apm_cmd_header_t</a> and followed by the event payload. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a08635c832159da960712578fc41257b0" name="a08635c832159da960712578fc41257b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a08635c832159da960712578fc41257b0">&#9670;&#160;</a></span>event_id</h2>
@@ -89,6 +95,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique event identifier for the module. </p>
 
 </div>
@@ -104,7 +111,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Size of the event data based on the module_instance_id/event_id combination.</p>
+
+<p>Size of the event data based on the module_instance_id/event_id combination. </p>
 <p>@values &gt; 0 bytes, in multiples of at least 4 bytes. </p>
 
 </div>

@@ -66,17 +66,24 @@ $(document).ready(function(){initNavTree('structapm__cmd__global__shared__mem__m
 </div><!--header-->
 <div class="contents">
 
+<p>Immediately following this structure are num_regions of <a class="el" href="structapm__shared__map__region__payload__t.html">apm_shared_map_region_payload_t</a>.  
+ <a href="structapm__cmd__global__shared__mem__map__regions__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_memmap_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aa5c6850698f6dd4c8d7a81bf8d60c3e3" id="r_aa5c6850698f6dd4c8d7a81bf8d60c3e3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__cmd__global__shared__mem__map__regions__t.html#aa5c6850698f6dd4c8d7a81bf8d60c3e3">shmem_id</a></td></tr>
+<tr class="memdesc:aa5c6850698f6dd4c8d7a81bf8d60c3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unique ID assigned by the client for these memory regions.  <br /></td></tr>
 <tr class="separator:aa5c6850698f6dd4c8d7a81bf8d60c3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83db23cf77ed3dd0267eca5edf2bdb49" id="r_a83db23cf77ed3dd0267eca5edf2bdb49"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__cmd__global__shared__mem__map__regions__t.html#a83db23cf77ed3dd0267eca5edf2bdb49">mem_pool_id</a></td></tr>
+<tr class="memdesc:a83db23cf77ed3dd0267eca5edf2bdb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of memory on which this memory region is mapped.  <br /></td></tr>
 <tr class="separator:a83db23cf77ed3dd0267eca5edf2bdb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af389ff1e6c9a05570395bf26e76564d6" id="r_af389ff1e6c9a05570395bf26e76564d6"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__cmd__global__shared__mem__map__regions__t.html#af389ff1e6c9a05570395bf26e76564d6">num_regions</a></td></tr>
+<tr class="memdesc:af389ff1e6c9a05570395bf26e76564d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of physical regions to map.  <br /></td></tr>
 <tr class="separator:af389ff1e6c9a05570395bf26e76564d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2eed9ca9c81ed2c91d0c0462b5ced74" id="r_ad2eed9ca9c81ed2c91d0c0462b5ced74"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__cmd__global__shared__mem__map__regions__t.html#ad2eed9ca9c81ed2c91d0c0462b5ced74">property_flag</a></td></tr>
+<tr class="memdesc:ad2eed9ca9c81ed2c91d0c0462b5ced74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures one common property for all regions in the payload.  <br /></td></tr>
 <tr class="separator:ad2eed9ca9c81ed2c91d0c0462b5ced74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -93,9 +100,10 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Type of memory on which this memory region is mapped.</p>
+
+<p>Type of memory on which this memory region is mapped. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="group__spf__apm__memory__map.html#ga7846b0dfea25cda3e68b13903d026bf3">APM_MEMORY_MAP_SHMEM8_4K_POOL</a></li>
+<li><a class="el" href="group__spf__apm__memory__map.html#ga7846b0dfea25cda3e68b13903d026bf3" title="Identifier for the shared memory 8_4K pool.">APM_MEMORY_MAP_SHMEM8_4K_POOL</a></li>
 <li>Other values are reserved</li>
 </ul>
 <p>The memory ID implicitly defines the characteristics of the memory. Characteristics can include alignment type, permissions, and so on.</p>
@@ -114,7 +122,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of physical regions to map. Immediately following this structure are num_regions of <a class="el" href="structapm__shared__map__region__payload__t.html">apm_shared_map_region_payload_t</a>.</p>
+
+<p>Number of physical regions to map. </p>
+<p>Immediately following this structure are num_regions of <a class="el" href="structapm__shared__map__region__payload__t.html">apm_shared_map_region_payload_t</a>.</p>
 <p>@values &gt; 0</p>
 <p>If the is_offset_mode bit in the property_flag is set, num_regions can only be set to 1. </p>
 
@@ -131,7 +141,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Configures one common property for all regions in the payload. No two regions in the same command can have different properties.</p>
+
+<p>Configures one common property for all regions in the payload. </p>
+<p>No two regions in the same command can have different properties.</p>
 <p>@values 0x00000000 through 0x00000003</p>
 <p>@contcell @subhead{Bit 0 &ndash; IsVirtual flag}</p>
 <p>Indicates physical or virtual mapping:</p><ul>
@@ -148,9 +160,9 @@ Data Fields</h2></td></tr>
 <p>@subhead{Bit 2 &ndash; is_offset_mode flag}</p>
 <p>Indicates whether the memory will be subsequently referred to with offsets:</p><ul>
 <li>0 &ndash; Subsequent commands using this mapped regions will use physical or virtual addresses.<br  />
-@vertspace{2} For example, buf_addr_lsw and buf_addr_msw in apm_cmd_loan_global_shared_mem_t or <a class="el" href="structar__spf__msg__global__sh__mem__t.html">ar_spf_msg_global_sh_mem_t</a> will be physical or virtual addresses.</li>
+@vertspace{2} For example, buf_addr_lsw and buf_addr_msw in apm_cmd_loan_global_shared_mem_t or <a class="el" href="structar__spf__msg__global__sh__mem__t.html" title="Payload for AR_SPF_MSG_GLOBAL_SH_MEM.">ar_spf_msg_global_sh_mem_t</a> will be physical or virtual addresses.</li>
 <li>1 &ndash; Subsequent commands using this mapped regions will use offsets.<br  />
-@vertspace{2} For example, buf_addr_lsw and buf_addr_msw in apm_cmd_loan_global_shared_mem_t or <a class="el" href="structar__spf__msg__global__sh__mem__t.html">ar_spf_msg_global_sh_mem_t</a> will be offsets. The offset is from the base address, which is defined as the address given by <a class="el" href="structapm__shared__map__region__payload__t.html">apm_shared_map_region_payload_t</a>.</li>
+@vertspace{2} For example, buf_addr_lsw and buf_addr_msw in apm_cmd_loan_global_shared_mem_t or <a class="el" href="structar__spf__msg__global__sh__mem__t.html" title="Payload for AR_SPF_MSG_GLOBAL_SH_MEM.">ar_spf_msg_global_sh_mem_t</a> will be offsets. The offset is from the base address, which is defined as the address given by <a class="el" href="structapm__shared__map__region__payload__t.html">apm_shared_map_region_payload_t</a>.</li>
 </ul>
 <p>@subhead{Bits 31 to 3}</p>
 <p>Reserved and must be set to 0. </p>
@@ -168,7 +180,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A unique ID assigned by the client for these memory regions. All subsequent commands <a class="el" href="ar__spf__cmd__api_8h.html#a3e1f52a3ed655502b53e60698ea73b0e">AR_SPF_MSG_GLOBAL_SH_MEM</a> will use this unique ID to refer these shared memory regions. </p>
+
+<p>A unique ID assigned by the client for these memory regions. </p>
+<p>All subsequent commands <a class="el" href="ar__spf__cmd__api_8h.html#a3e1f52a3ed655502b53e60698ea73b0e" title="This command carries an OOB payload from global shared memory (APM_CMD_GLOBAL_SHARED_MEM_MAP_REGIONS)...">AR_SPF_MSG_GLOBAL_SH_MEM</a> will use this unique ID to refer these shared memory regions. </p>
 
 </div>
 </div>

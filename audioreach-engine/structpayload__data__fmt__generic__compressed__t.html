@@ -66,19 +66,25 @@ $(document).ready(function(){initNavTree('structpayload__data__fmt__generic__com
 </div><!--header-->
 <div class="contents">
 
+<p>Payload structure used when <a class="el" href="structmedia__format__t.html#abce16eeccd90b1ba29b88ff44345c8bf" title="Format of the data.">media_format_t::data_format</a> = <a class="el" href="media__fmt__api__basic_8h.html#af5a244aaaa842b2ea6bcfbb5a0de2b3f" title="Data format is a generic compressed stream.">DATA_FORMAT_GENERIC_COMPRESSED</a>.  
+ <a href="structpayload__data__fmt__generic__compressed__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/media_fmt_api_basic.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a5a59a5969cf91438f42baf8392706a52" id="r_a5a59a5969cf91438f42baf8392706a52"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__data__fmt__generic__compressed__t.html#a5a59a5969cf91438f42baf8392706a52">sample_rate</a></td></tr>
+<tr class="memdesc:a5a59a5969cf91438f42baf8392706a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of samples per second in the audio stream.  <br /></td></tr>
 <tr class="separator:a5a59a5969cf91438f42baf8392706a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec28b17b53652af6492924801d63a8a7" id="r_aec28b17b53652af6492924801d63a8a7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__data__fmt__generic__compressed__t.html#aec28b17b53652af6492924801d63a8a7">bits_per_sample</a></td></tr>
+<tr class="memdesc:aec28b17b53652af6492924801d63a8a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bits required to store one sample.  <br /></td></tr>
 <tr class="separator:aec28b17b53652af6492924801d63a8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42f29e17936f1837de33452fe24e21e7" id="r_a42f29e17936f1837de33452fe24e21e7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__data__fmt__generic__compressed__t.html#a42f29e17936f1837de33452fe24e21e7">num_channels</a></td></tr>
+<tr class="memdesc:a42f29e17936f1837de33452fe24e21e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of channels.  <br /></td></tr>
 <tr class="separator:a42f29e17936f1837de33452fe24e21e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload structure used when <a class="el" href="structmedia__format__t.html#abce16eeccd90b1ba29b88ff44345c8bf">media_format_t::data_format</a> = <a class="el" href="media__fmt__api__basic_8h.html#af5a244aaaa842b2ea6bcfbb5a0de2b3f">DATA_FORMAT_GENERIC_COMPRESSED</a>.</p>
+<div class="textblock"><p>Payload structure used when <a class="el" href="structmedia__format__t.html#abce16eeccd90b1ba29b88ff44345c8bf" title="Format of the data.">media_format_t::data_format</a> = <a class="el" href="media__fmt__api__basic_8h.html#af5a244aaaa842b2ea6bcfbb5a0de2b3f" title="Data format is a generic compressed stream.">DATA_FORMAT_GENERIC_COMPRESSED</a>. </p>
 <p>This structure contains media format information that is independent of the payload for the generic compressed media_fmt_id. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="aec28b17b53652af6492924801d63a8a7" name="aec28b17b53652af6492924801d63a8a7"></a>
@@ -92,11 +98,12 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of bits required to store one sample.</p>
+
+<p>Number of bits required to store one sample. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0">INVALID_VALUE</a> (Default)</li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#acf077d36785410ec572df134581e8263">BITS_PER_SAMPLE_16</a></li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a3fd1ae02505b1d8487f90b47d74d5256">BITS_PER_SAMPLE_32</a> @tablebulletend </li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0" title="Enumeration for an invalid value.">INVALID_VALUE</a> (Default)</li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#acf077d36785410ec572df134581e8263" title="Sixteen bits per sample (= sample word size).">BITS_PER_SAMPLE_16</a></li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a3fd1ae02505b1d8487f90b47d74d5256" title="Thirty-two bits per sample (= sample word size).">BITS_PER_SAMPLE_32</a> @tablebulletend </li>
 </ul>
 
 </div>
@@ -112,7 +119,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of channels.</p>
+
+<p>Number of channels. </p>
 <p>@values 0 through 32 (Default = 0) </p>
 
 </div>
@@ -128,7 +136,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of samples per second in the audio stream.</p>
+
+<p>Number of samples per second in the audio stream. </p>
 <p>@values 0 to 384 kHz </p>
 
 </div>

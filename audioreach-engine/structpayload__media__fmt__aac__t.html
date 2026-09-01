@@ -66,23 +66,32 @@ $(document).ready(function(){initNavTree('structpayload__media__fmt__aac__t.html
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct @h2xmlp_description {Payload of the AAC decoder format block parameters in the MEDIA_FMT_ID_AAC media format.  
+ <a href="structpayload__media__fmt__aac__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/media_fmt_api_ext.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aa7a8991388de008a563881cec62e752b" id="r_aa7a8991388de008a563881cec62e752b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__aac__t.html#aa7a8991388de008a563881cec62e752b">aac_fmt_flag</a></td></tr>
+<tr class="memdesc:aa7a8991388de008a563881cec62e752b"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Bit stream format option.  <br /></td></tr>
 <tr class="separator:aa7a8991388de008a563881cec62e752b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1cac60a4ae5c33f00ebe2dc926af58b" id="r_ac1cac60a4ae5c33f00ebe2dc926af58b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__aac__t.html#ac1cac60a4ae5c33f00ebe2dc926af58b">audio_obj_type</a></td></tr>
+<tr class="memdesc:ac1cac60a4ae5c33f00ebe2dc926af58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Audio Object Type (AOT) present in the AAC stream.  <br /></td></tr>
 <tr class="separator:ac1cac60a4ae5c33f00ebe2dc926af58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27cbfe29f824e72add9b6cd2dcd96a6d" id="r_a27cbfe29f824e72add9b6cd2dcd96a6d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__aac__t.html#a27cbfe29f824e72add9b6cd2dcd96a6d">num_channels</a></td></tr>
+<tr class="memdesc:a27cbfe29f824e72add9b6cd2dcd96a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of channels present in the AAC stream.  <br /></td></tr>
 <tr class="separator:a27cbfe29f824e72add9b6cd2dcd96a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa7a5c02cdda3a6c1397210f4575d111" id="r_aaa7a5c02cdda3a6c1397210f4575d111"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__aac__t.html#aaa7a5c02cdda3a6c1397210f4575d111">total_size_of_PCE_bits</a></td></tr>
+<tr class="memdesc:aaa7a5c02cdda3a6c1397210f4575d111"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {For RAW formats and if channel_config=0 (PCE), the client can send the bit stream containing PCE immediately following this structure (in band) If this field is set to 0, the PCE information is assumed to be available in the audio bit stream and not in band.  <br /></td></tr>
 <tr class="separator:aaa7a5c02cdda3a6c1397210f4575d111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dba683f71b22eecd0d7b71f7bcdf4d5" id="r_a7dba683f71b22eecd0d7b71f7bcdf4d5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__aac__t.html#a7dba683f71b22eecd0d7b71f7bcdf4d5">sample_rate</a></td></tr>
+<tr class="memdesc:a7dba683f71b22eecd0d7b71f7bcdf4d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of samples per second.  <br /></td></tr>
 <tr class="separator:a7dba683f71b22eecd0d7b71f7bcdf4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_subStruct @h2xmlp_description {Payload of the AAC decoder format block parameters in the MEDIA_FMT_ID_AAC media format. If the total size of PCE &gt; 0 bits, the PCE information follows the structure. In this case, the client must pad the additional bits for 32-bit alignment} @h2xmlp_toolPolicy {Calibration} </p>
+<div class="textblock"><p>@h2xmlp_subStruct @h2xmlp_description {Payload of the AAC decoder format block parameters in the MEDIA_FMT_ID_AAC media format. </p>
+<p>If the total size of PCE &gt; 0 bits, the PCE information follows the structure. In this case, the client must pad the additional bits for 32-bit alignment} @h2xmlp_toolPolicy {Calibration} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="aa7a8991388de008a563881cec62e752b" name="aa7a8991388de008a563881cec62e752b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7a8991388de008a563881cec62e752b">&#9670;&#160;</a></span>aac_fmt_flag</h2>
@@ -95,7 +104,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Bit stream format option.} @h2xmle_rangeList {"AAC_FORMAT_FLAG_ADTS"=0, "AAC_FORMAT_FLAG_LOAS"=1, "AAC_FORMAT_FLAG_ADIF"=2, "AAC_FORMAT_FLAG_RAW"=3, "AAC_FORMAT_FLAG_LATM"=4} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Bit stream format option. </p>
+<p>} @h2xmle_rangeList {"AAC_FORMAT_FLAG_ADTS"=0, "AAC_FORMAT_FLAG_LOAS"=1, "AAC_FORMAT_FLAG_ADIF"=2, "AAC_FORMAT_FLAG_RAW"=3, "AAC_FORMAT_FLAG_LATM"=4} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -110,7 +121,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Audio Object Type (AOT) present in the AAC stream.} @h2xmle_default {AAC_AOT_LC} @h2xmle_rangeList {"AAC_AOT_LC"=2, "AAC_AOT_SBR"=5, "AAC_AOT_BSAC"=22, "AAC_AOT_PS"=29} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Audio Object Type (AOT) present in the AAC stream. </p>
+<p>} @h2xmle_default {AAC_AOT_LC} @h2xmle_rangeList {"AAC_AOT_LC"=2, "AAC_AOT_SBR"=5, "AAC_AOT_BSAC"=22, "AAC_AOT_PS"=29} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -125,7 +138,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Number of channels present in the AAC stream.} @h2xmle_rangeList {"PCE"=0, "Mono"=1, "Stereo"=2, "5.1 content"=6} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Number of channels present in the AAC stream. </p>
+<p>} @h2xmle_rangeList {"PCE"=0, "Mono"=1, "Stereo"=2, "5.1 content"=6} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -140,7 +155,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Number of samples per second. This field must be equal to the sample rate of the AAC-LC decoder output.</p><ul>
+
+<p>@h2xmle_description {Number of samples per second. </p>
+<p>This field must be equal to the sample rate of the AAC-LC decoder output.</p><ul>
 <li>For MP4 or 3GP containers, this sample rate is indicated by the samplingFrequencyIndex field in the AudioSpecificConfig element.</li>
 <li>For ADTS format, this sample rate is indicated by the samplingFrequencyIndex in the ADTS fixed header.</li>
 <li>For ADIF format, this sample rate is indicated by the samplingFrequencyIndex in the program_config_element present in the ADIF header.} @h2xmle_default {0} @h2xmle_rangeList {INVALID_VALUE=0, 8000, 11025, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 64000, 88200, 96000} @h2xmle_policy {Basic} </li>
@@ -159,7 +176,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {For RAW formats and if channel_config=0 (PCE), the client can send the bit stream containing PCE immediately following this structure (in band) If this field is set to 0, the PCE information is assumed to be available in the audio bit stream and not in band. If this field is greater than 0, the PCE information follows this structure. Additional bits might be required for 32-bit alignment.} @h2xmle_range {0...0xFFFF} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {For RAW formats and if channel_config=0 (PCE), the client can send the bit stream containing PCE immediately following this structure (in band) If this field is set to 0, the PCE information is assumed to be available in the audio bit stream and not in band. </p>
+<p>If this field is greater than 0, the PCE information follows this structure. Additional bits might be required for 32-bit alignment.} @h2xmle_range {0...0xFFFF} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>

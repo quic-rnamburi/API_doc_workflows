@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structvcpm__sgid__cal__table__t.html',
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#a6711162e1bcfb2786d659ec6276bdf8e" title="Identifier for the parameter that registers calibration tables per subgraph (from the applications pr...">VCPM_PARAM_ID_CAL_TABLE</a>.  
+ <a href="structvcpm__sgid__cal__table__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a37b03dda9f0f4257c427418479260a6a" id="r_a37b03dda9f0f4257c427418479260a6a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__sgid__cal__table__t.html#a37b03dda9f0f4257c427418479260a6a">sub_graph_id</a></td></tr>
+<tr class="memdesc:a37b03dda9f0f4257c427418479260a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subgraph identifier for the calibration table that follows this structure.  <br /></td></tr>
 <tr class="separator:a37b03dda9f0f4257c427418479260a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae192cb9a392c16530d61fdd73528bb5c" id="r_ae192cb9a392c16530d61fdd73528bb5c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__sgid__cal__table__t.html#ae192cb9a392c16530d61fdd73528bb5c">cal_table_size</a></td></tr>
+<tr class="memdesc:ae192cb9a392c16530d61fdd73528bb5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the calibration table that follows this structure.  <br /></td></tr>
 <tr class="separator:ae192cb9a392c16530d61fdd73528bb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a6711162e1bcfb2786d659ec6276bdf8e">VCPM_PARAM_ID_CAL_TABLE</a>. This structure contains calibration objects.</p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a6711162e1bcfb2786d659ec6276bdf8e" title="Identifier for the parameter that registers calibration tables per subgraph (from the applications pr...">VCPM_PARAM_ID_CAL_TABLE</a>. </p>
+<p>This structure contains calibration objects.</p>
 <p>Immediately following this structure is the calibration table of size cal_table_size. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ae192cb9a392c16530d61fdd73528bb5c" name="ae192cb9a392c16530d61fdd73528bb5c"></a>
@@ -90,6 +96,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Size of the calibration table that follows this structure. </p>
 
 </div>
@@ -105,6 +112,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Subgraph identifier for the calibration table that follows this structure. </p>
 
 </div>

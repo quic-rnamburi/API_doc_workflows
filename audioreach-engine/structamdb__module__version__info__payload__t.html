@@ -76,16 +76,22 @@ Collaboration diagram for amdb_module_version_info_payload_t:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a4feb43fd4c3d70a142d0aeb949cf9e70" id="r_a4feb43fd4c3d70a142d0aeb949cf9e70"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__version__info__payload__t.html#a4feb43fd4c3d70a142d0aeb949cf9e70">module_id</a></td></tr>
+<tr class="memdesc:a4feb43fd4c3d70a142d0aeb949cf9e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requested module id, to be filled in by the client.  <br /></td></tr>
 <tr class="separator:a4feb43fd4c3d70a142d0aeb949cf9e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae406bd3bef694e26be14d1419f46ea8b" id="r_ae406bd3bef694e26be14d1419f46ea8b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__version__info__payload__t.html#ae406bd3bef694e26be14d1419f46ea8b">error_code</a></td></tr>
+<tr class="memdesc:ae406bd3bef694e26be14d1419f46ea8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether an error has occurred loading the module.  <br /></td></tr>
 <tr class="separator:ae406bd3bef694e26be14d1419f46ea8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a613aa917fd0b4c5eedc5249680267d16" id="r_a613aa917fd0b4c5eedc5249680267d16"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__version__info__payload__t.html#a613aa917fd0b4c5eedc5249680267d16">is_present</a></td></tr>
+<tr class="memdesc:a613aa917fd0b4c5eedc5249680267d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 if and only if the module is present and not stubbed in the AMDB.  <br /></td></tr>
 <tr class="separator:a613aa917fd0b4c5eedc5249680267d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad88a172348716a0367e840a882607ef3" id="r_ad88a172348716a0367e840a882607ef3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__version__info__payload__t.html#ad88a172348716a0367e840a882607ef3">module_version_major</a></td></tr>
+<tr class="memdesc:ad88a172348716a0367e840a882607ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Major version of the requested module.  <br /></td></tr>
 <tr class="separator:ad88a172348716a0367e840a882607ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bb63e7df3dcfa96d07d336f221d4d27" id="r_a0bb63e7df3dcfa96d07d336f221d4d27"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__version__info__payload__t.html#a0bb63e7df3dcfa96d07d336f221d4d27">module_version_minor</a></td></tr>
+<tr class="memdesc:a0bb63e7df3dcfa96d07d336f221d4d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minor version of the requested module.  <br /></td></tr>
 <tr class="separator:a0bb63e7df3dcfa96d07d336f221d4d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d153fc807dacff1c2adc565717a0fee" id="r_a0d153fc807dacff1c2adc565717a0fee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamdb__module__build__ts__info__t.html">amdb_module_build_ts_info_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__version__info__payload__t.html#a0d153fc807dacff1c2adc565717a0fee">build_ts</a></td></tr>
+<tr class="memdesc:a0d153fc807dacff1c2adc565717a0fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the time at which the build for the given module was created.  <br /></td></tr>
 <tr class="separator:a0d153fc807dacff1c2adc565717a0fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
@@ -100,6 +106,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Indicates the time at which the build for the given module was created. </p>
 
 </div>
@@ -115,7 +122,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates whether an error has occurred loading the module</p>
+
+<p>Indicates whether an error has occurred loading the module. </p>
 <p>@valuesbul</p><ul>
 <li><a class="el" href="amdb__api_8h.html#a757ae23a08e7d63b48f1f2bc1256b8ea">AMDB_MODULE_INFO_OK</a></li>
 <li><a class="el" href="amdb__api_8h.html#a22b15c8bceaa66f1d54413c10c5b6cb9">AMDB_MODULE_INFO_ERR_FILE_NOT_FOUND</a></li>
@@ -137,6 +145,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>1 if and only if the module is present and not stubbed in the AMDB. </p>
 
 </div>
@@ -152,6 +161,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Requested module id, to be filled in by the client. </p>
 
 </div>
@@ -167,7 +177,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Major version of the requested module. 0 indicates unknown version </p>
+
+<p>Major version of the requested module. </p>
+<p>0 indicates unknown version </p>
 
 </div>
 </div>
@@ -182,7 +194,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Minor version of the requested module. 0 indicates unknown version </p>
+
+<p>Minor version of the requested module. </p>
+<p>0 indicates unknown version </p>
 
 </div>
 </div>

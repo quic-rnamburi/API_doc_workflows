@@ -66,29 +66,36 @@ $(document).ready(function(){initNavTree('structmedia__format__t.html',''); init
 </div><!--header-->
 <div class="contents">
 
+<p>Payload structure used by the following opcodes:  
+ <a href="structmedia__format__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/media_fmt_api_basic.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:abce16eeccd90b1ba29b88ff44345c8bf" id="r_abce16eeccd90b1ba29b88ff44345c8bf"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmedia__format__t.html#abce16eeccd90b1ba29b88ff44345c8bf">data_format</a></td></tr>
+<tr class="memdesc:abce16eeccd90b1ba29b88ff44345c8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format of the data.  <br /></td></tr>
 <tr class="separator:abce16eeccd90b1ba29b88ff44345c8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfa8690658f7265679ef8cab50ac81be" id="r_acfa8690658f7265679ef8cab50ac81be"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmedia__format__t.html#acfa8690658f7265679ef8cab50ac81be">fmt_id</a></td></tr>
+<tr class="memdesc:acfa8690658f7265679ef8cab50ac81be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Media format ID of the data stream.  <br /></td></tr>
 <tr class="separator:acfa8690658f7265679ef8cab50ac81be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9dbeb8c33db2e354134a0d7bd99884f" id="r_af9dbeb8c33db2e354134a0d7bd99884f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmedia__format__t.html#af9dbeb8c33db2e354134a0d7bd99884f">payload_size</a></td></tr>
+<tr class="memdesc:af9dbeb8c33db2e354134a0d7bd99884f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the payload that immediately follows this structure.  <br /></td></tr>
 <tr class="separator:af9dbeb8c33db2e354134a0d7bd99884f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload structure used by the following opcodes:</p><ul>
-<li><a class="el" href="media__fmt__api__basic_8h.html#ab3fb22010aa4f389b03f1b00d204cb79">PARAM_ID_MEDIA_FORMAT</a></li>
-<li><a class="el" href="wr__sh__mem__ep__api_8h.html#aac323961ecc57bff08962587d9372212">DATA_CMD_WR_SH_MEM_EP_MEDIA_FORMAT</a></li>
-<li><a class="el" href="rd__sh__mem__ep__api_8h.html#a9808a5342a671b9ea6ac6edaf473ae8f">DATA_EVENT_ID_RD_SH_MEM_EP_MEDIA_FORMAT</a></li>
+<div class="textblock"><p>Payload structure used by the following opcodes: </p>
+<ul>
+<li><a class="el" href="media__fmt__api__basic_8h.html#ab3fb22010aa4f389b03f1b00d204cb79" title="Identifier for the parameter used to set the media format on any Shared Memory Endpoint module.">PARAM_ID_MEDIA_FORMAT</a></li>
+<li><a class="el" href="wr__sh__mem__ep__api_8h.html#aac323961ecc57bff08962587d9372212" title="Indicates an update to the media format, which applies to future buffers written to this stream.">DATA_CMD_WR_SH_MEM_EP_MEDIA_FORMAT</a></li>
+<li><a class="el" href="rd__sh__mem__ep__api_8h.html#a9808a5342a671b9ea6ac6edaf473ae8f" title="Media format sent from MODULE_ID_RD_SHARED_MEM_EP to the client.">DATA_EVENT_ID_RD_SH_MEM_EP_MEDIA_FORMAT</a></li>
 </ul>
 <p>Immediately following this structure is a payload_size number of bytes that represent the actual media format block.</p>
 <p>Following is the overall payload structure:</p>
 <div class="fragment"><div class="line"><a class="code hl_struct" href="structmedia__format__t.html">media_format_t</a> mf;</div>
 <div class="line">uint8_t payload[<a class="code hl_variable" href="structmedia__format__t.html#af9dbeb8c33db2e354134a0d7bd99884f">payload_size</a>];</div>
-<div class="ttc" id="astructmedia__format__t_html"><div class="ttname"><a href="structmedia__format__t.html">media_format_t</a></div><div class="ttdef"><b>Definition</b> media_fmt_api_basic.h:846</div></div>
-<div class="ttc" id="astructmedia__format__t_html_af9dbeb8c33db2e354134a0d7bd99884f"><div class="ttname"><a href="structmedia__format__t.html#af9dbeb8c33db2e354134a0d7bd99884f">media_format_t::payload_size</a></div><div class="ttdeci">uint32_t payload_size</div><div class="ttdef"><b>Definition</b> media_fmt_api_basic.h:883</div></div>
+<div class="ttc" id="astructmedia__format__t_html"><div class="ttname"><a href="structmedia__format__t.html">media_format_t</a></div><div class="ttdoc">Payload structure used by the following opcodes:</div><div class="ttdef"><b>Definition</b> media_fmt_api_basic.h:846</div></div>
+<div class="ttc" id="astructmedia__format__t_html_af9dbeb8c33db2e354134a0d7bd99884f"><div class="ttname"><a href="structmedia__format__t.html#af9dbeb8c33db2e354134a0d7bd99884f">media_format_t::payload_size</a></div><div class="ttdeci">uint32_t payload_size</div><div class="ttdoc">Size of the payload that immediately follows this structure.</div><div class="ttdef"><b>Definition</b> media_fmt_api_basic.h:883</div></div>
 </div><!-- fragment --><p> @vertspace{6} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="abce16eeccd90b1ba29b88ff44345c8bf" name="abce16eeccd90b1ba29b88ff44345c8bf"></a>
@@ -102,15 +109,16 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Format of the data.</p>
+
+<p>Format of the data. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0">INVALID_VALUE</a> (Default)</li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732">DATA_FORMAT_FIXED_POINT</a></li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#ad997c9f56e0aca9419bad7273253dd08">DATA_FORMAT_IEC61937_PACKETIZED</a></li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a654e4a20f0f87457021e04117eb40db5">DATA_FORMAT_IEC60958_PACKETIZED</a></li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#aecebf7ddc2915f740960eb857689be60">DATA_FORMAT_DSD_OVER_PCM</a></li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#af5a244aaaa842b2ea6bcfbb5a0de2b3f">DATA_FORMAT_GENERIC_COMPRESSED</a></li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a2c39ae7cdca806499e091bc190a86b95">DATA_FORMAT_RAW_COMPRESSED</a> @tablebulletend </li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0" title="Enumeration for an invalid value.">INVALID_VALUE</a> (Default)</li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732" title="Enumeration for the fixed-point data format.">DATA_FORMAT_FIXED_POINT</a></li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#ad997c9f56e0aca9419bad7273253dd08" title="Data format is an IEC 61937 packetized stream.">DATA_FORMAT_IEC61937_PACKETIZED</a></li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a654e4a20f0f87457021e04117eb40db5" title="Data format is IEC 60958 packetized stream for PCM only.">DATA_FORMAT_IEC60958_PACKETIZED</a></li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#aecebf7ddc2915f740960eb857689be60" title="Data format is a DSD-over-PCM stream.">DATA_FORMAT_DSD_OVER_PCM</a></li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#af5a244aaaa842b2ea6bcfbb5a0de2b3f" title="Data format is a generic compressed stream.">DATA_FORMAT_GENERIC_COMPRESSED</a></li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a2c39ae7cdca806499e091bc190a86b95" title="Data format is a Raw compressed stream.">DATA_FORMAT_RAW_COMPRESSED</a> @tablebulletend </li>
 </ul>
 
 </div>
@@ -126,10 +134,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Media format ID of the data stream.</p>
+
+<p>Media format ID of the data stream. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0">INVALID_VALUE</a> (Default)</li>
-<li><a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d">MEDIA_FMT_ID_PCM</a> @tablebulletend </li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0" title="Enumeration for an invalid value.">INVALID_VALUE</a> (Default)</li>
+<li><a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d" title="Identifier for the media format used to identify a PCM stream.">MEDIA_FMT_ID_PCM</a> @tablebulletend </li>
 </ul>
 
 </div>
@@ -145,7 +154,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Size of the payload that immediately follows this structure.</p>
+
+<p>Size of the payload that immediately follows this structure. </p>
 <p>This size does not include bytes added for 32-bit alignment. </p>
 
 </div>

@@ -46,7 +46,7 @@ digraph "fwk/api/ar_utils/ar_defs.h"
   Node5 -> Node19 [id="edge22_Node000005_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="fwk/api/vcpm/vcpm_config\l_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$vcpm__config__api_8h.html",tooltip="This file contains declarations of the VCPM config API."];
   Node19 -> Node20 [id="edge23_Node000019_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="fwk/api/vcpm/vcpm_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$vcpm__api_8h.html",tooltip=" "];
+  Node20 [id="Node000020",label="fwk/api/vcpm/vcpm_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$vcpm__api_8h.html",tooltip="\\brie"];
   Node1 -> Node21 [id="edge24_Node000001_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node21 [id="Node000021",label="fwk/api/apm/apm_memmap\l_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$apm__memmap__api_8h.html",tooltip="This file contains the structure definitions for the memory map commands."];
   Node1 -> Node6 [id="edge25_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -64,12 +64,12 @@ digraph "fwk/api/ar_utils/ar_defs.h"
   Node1 -> Node27 [id="edge32_Node000001_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node27 [id="Node000027",label="fwk/api/modules/codec\l_metadata_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$codec__metadata__api_8h.html",tooltip="This file contains codec related metadata IDs."];
   Node27 -> Node28 [id="edge33_Node000027_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node28 [id="Node000028",label="fwk/api/modules/metadata\l_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$metadata__api_8h.html",tooltip="This file contains metadata IDs. Definitions are not supposed to be here. definitions will be in modu..."];
+  Node28 [id="Node000028",label="fwk/api/modules/metadata\l_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$metadata__api_8h.html",tooltip="This file contains metadata IDs."];
   Node1 -> Node13 [id="edge34_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node29 [id="edge35_Node000001_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node29 [id="Node000029",label="fwk/api/modules/dtmf\l_detection_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$dtmf__detection__api_8h.html",tooltip="This file contains DTMF Detection Event api."];
   Node1 -> Node30 [id="edge36_Node000001_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node30 [id="Node000030",label="fwk/api/modules/imcl\l_fwk_intent_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$imcl__fwk__intent__api_8h.html",tooltip="This file contains all the public intent names. The intent related structs are defined in internal he..."];
+  Node30 [id="Node000030",label="fwk/api/modules/imcl\l_fwk_intent_api.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$imcl__fwk__intent__api_8h.html",tooltip="This file contains all the public intent names."];
   Node30 -> Node13 [id="edge37_Node000030_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node30 -> Node15 [id="edge38_Node000030_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node15 [id="edge39_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];

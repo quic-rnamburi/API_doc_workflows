@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structsh__mem__peer__client__property_
 </div><!--header-->
 <div class="contents">
 
+<p>Payload definition of the shared memory client property configuration.  
+ <a href="structsh__mem__peer__client__property__payload__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/module_cmn_shmem_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ab9273ee45cbcf07d69a1ac130ae00db4" id="r_ab9273ee45cbcf07d69a1ac130ae00db4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsh__mem__peer__client__property__payload__t.html#ab9273ee45cbcf07d69a1ac130ae00db4">property_type</a></td></tr>
+<tr class="memdesc:ab9273ee45cbcf07d69a1ac130ae00db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {specifies the property type} @h2xmle_default {PROPERTY_TYPE_IS_INVALID} @h2xmle_rangeList {"PROPERTY_TYPE_IS_INVALID" = PROPERTY_TYPE_IS_INVALID, "PROPERTY_TYPE_IS_UPSTREAM_REALTIME" = PROPERTY_TYPE_IS_UPSTREAM_REALTIME, "PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME" = PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME} @h2xmle_policy {advanced}  <br /></td></tr>
 <tr class="separator:ab9273ee45cbcf07d69a1ac130ae00db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7b3a16abb8c1fed1ce2d20fbf0e608c" id="r_ac7b3a16abb8c1fed1ce2d20fbf0e608c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsh__mem__peer__client__property__payload__t.html#ac7b3a16abb8c1fed1ce2d20fbf0e608c">property_value</a></td></tr>
+<tr class="memdesc:ac7b3a16abb8c1fed1ce2d20fbf0e608c"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {specifies the property value.  <br /></td></tr>
 <tr class="separator:ac7b3a16abb8c1fed1ce2d20fbf0e608c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload definition of the shared memory client property configuration @h2xmlp_subStruct </p>
+<div class="textblock"><p>Payload definition of the shared memory client property configuration. </p>
+<p>@h2xmlp_subStruct </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ab9273ee45cbcf07d69a1ac130ae00db4" name="ab9273ee45cbcf07d69a1ac130ae00db4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9273ee45cbcf07d69a1ac130ae00db4">&#9670;&#160;</a></span>property_type</h2>
@@ -89,6 +95,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {specifies the property type} @h2xmle_default {PROPERTY_TYPE_IS_INVALID} @h2xmle_rangeList {"PROPERTY_TYPE_IS_INVALID" = PROPERTY_TYPE_IS_INVALID, "PROPERTY_TYPE_IS_UPSTREAM_REALTIME" = PROPERTY_TYPE_IS_UPSTREAM_REALTIME, "PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME" = PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME} @h2xmle_policy {advanced} </p>
 
 </div>
@@ -104,7 +111,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {specifies the property value. The Property values are dependent on property type. The following details should help to configure appropriately Property type Support Values PROPERTY_TYPE_IS_UPSTREAM_REALTIME IS_FTRT, IS_RT PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME IS_FTRT, IS_RT } @h2xmle_default {PROPERTY_VALUE_IS_FTRT} @h2xmle_rangeList {"IS_FTRT" = PROPERTY_VALUE_IS_FTRT, "IS_RT" = PROPERTY_VALUE_IS_RT} @h2xmle_policy {advanced} </p>
+
+<p>@h2xmle_description {specifies the property value. </p>
+<p>The Property values are dependent on property type. The following details should help to configure appropriately Property type Support Values PROPERTY_TYPE_IS_UPSTREAM_REALTIME IS_FTRT, IS_RT PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME IS_FTRT, IS_RT } @h2xmle_default {PROPERTY_VALUE_IS_FTRT} @h2xmle_rangeList {"IS_FTRT" = PROPERTY_VALUE_IS_FTRT, "IS_RT" = PROPERTY_VALUE_IS_RT} @h2xmle_policy {advanced} </p>
 
 </div>
 </div>

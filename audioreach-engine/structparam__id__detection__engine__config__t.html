@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structparam__id__detection__engine__co
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_CONFIG", PARAM_ID_DETECTION_ENGINE_CONFIG} @h2xmlp_description {Configures the Detection Engine module.  
+ <a href="structparam__id__detection__engine__config__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/detection_cmn_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a74db9d572fbd5972393df4375df84b5e" id="r_a74db9d572fbd5972393df4375df84b5e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__config__t.html#a74db9d572fbd5972393df4375df84b5e">mode</a></td></tr>
+<tr class="memdesc:a74db9d572fbd5972393df4375df84b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Flags that configure the Detection Engine module to run in different modes.  <br /></td></tr>
 <tr class="separator:a74db9d572fbd5972393df4375df84b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2718bf722a7a39e930e37c704982d29" id="r_ab2718bf722a7a39e930e37c704982d29"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__config__t.html#ab2718bf722a7a39e930e37c704982d29">custom_payload_size</a></td></tr>
+<tr class="memdesc:ab2718bf722a7a39e930e37c704982d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Size of of additional custom configuration sent to the Detection Engine module.  <br /></td></tr>
 <tr class="separator:ab2718bf722a7a39e930e37c704982d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_CONFIG", PARAM_ID_DETECTION_ENGINE_CONFIG} @h2xmlp_description {Configures the Detection Engine module.} @h2xmlp_toolPolicy {Calibration} </p>
+<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_CONFIG", PARAM_ID_DETECTION_ENGINE_CONFIG} @h2xmlp_description {Configures the Detection Engine module. </p>
+<p>} @h2xmlp_toolPolicy {Calibration} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ab2718bf722a7a39e930e37c704982d29" name="ab2718bf722a7a39e930e37c704982d29"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2718bf722a7a39e930e37c704982d29">&#9670;&#160;</a></span>custom_payload_size</h2>
@@ -89,7 +95,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Size of of additional custom configuration sent to the Detection Engine module. <br  />
+
+<p>@h2xmle_description {Size of of additional custom configuration sent to the Detection Engine module. </p>
+<p><br  />
  <br  />
  If custom_payload_size is not 4-byte aligned, the caller must fill padding bytes to ensure that the entire calibration is 4-byte aligned. <br  />
  <br  />
@@ -108,7 +116,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Flags that configure the Detection Engine module to run in different modes.}</p>
+
+<p>@h2xmle_description {Flags that configure the Detection Engine module to run in different modes. </p>
+<p>}</p>
 <p>@h2xmle_bitField {0x00000001} @h2xmle_bitName {detectionMode} @h2xmle_description {Keyword/Pattern Detection mode.} @h2xmle_rangeList {Disabled=0;Enabled=1} @h2xmle_bitFieldEnd</p>
 <p>@h2xmle_bitField {0x00000002} @h2xmle_bitName {verificationMode} @h2xmle_description {User Verification mode.} @h2xmle_rangeList {Disabled=0;Enabled=1} @h2xmle_bitFieldEnd</p>
 <p>@h2xmle_bitField {0x00000004} @h2xmle_bitName {eventMode} @h2xmle_description {Detection events are sent to the HLOS.} @h2xmle_rangeList {Success=0;Always=1} @h2xmle_bitFieldEnd</p>

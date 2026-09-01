@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structamdb__module__reg__info__t.html'
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="amdb__api_8h.html#a16a550b6d2dac5638344ef417135ae00" title="Registers a module with the AMDB to enable the module for dynamic loading.">AMDB_CMD_REGISTER_MODULES</a>.  
+ <a href="structamdb__module__reg__info__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/amdb_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a3251d15b102e7ab1cd0be19b04b25546" id="r_a3251d15b102e7ab1cd0be19b04b25546"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__reg__info__t.html#a3251d15b102e7ab1cd0be19b04b25546">interface_type</a></td></tr>
+<tr class="memdesc:a3251d15b102e7ab1cd0be19b04b25546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the module interface.  <br /></td></tr>
 <tr class="separator:a3251d15b102e7ab1cd0be19b04b25546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b2cb58ffc6eb2d6869b0a5eeb786d05" id="r_a9b2cb58ffc6eb2d6869b0a5eeb786d05"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__reg__info__t.html#a9b2cb58ffc6eb2d6869b0a5eeb786d05">interface_version</a></td></tr>
+<tr class="memdesc:a9b2cb58ffc6eb2d6869b0a5eeb786d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version of the module interface.  <br /></td></tr>
 <tr class="separator:a9b2cb58ffc6eb2d6869b0a5eeb786d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="amdb__api_8h.html#a16a550b6d2dac5638344ef417135ae00">AMDB_CMD_REGISTER_MODULES</a>. This structure contains module-specific registration.</p>
+<div class="textblock"><p>Payload for <a class="el" href="amdb__api_8h.html#a16a550b6d2dac5638344ef417135ae00" title="Registers a module with the AMDB to enable the module for dynamic loading.">AMDB_CMD_REGISTER_MODULES</a>. </p>
+<p>This structure contains module-specific registration.</p>
 <p>When interface_type = CAPI and interface_version = 3, immediately following this structure is amdb_capi_module_reg_info_t. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a3251d15b102e7ab1cd0be19b04b25546" name="a3251d15b102e7ab1cd0be19b04b25546"></a>
@@ -90,8 +96,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Type of the module interface.</p>
-<p>@values <a class="el" href="amdb__api_8h.html#a2091cab51c00c297c3ef62f046b0a40d">AMDB_INTERFACE_TYPE_CAPI</a> </p>
+
+<p>Type of the module interface. </p>
+<p>@values <a class="el" href="amdb__api_8h.html#a2091cab51c00c297c3ef62f046b0a40d" title="Interface type is the Common Audio Processor Interface.">AMDB_INTERFACE_TYPE_CAPI</a> </p>
 
 </div>
 </div>
@@ -106,8 +113,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Version of the module interface.</p>
-<p>@values <a class="el" href="amdb__api_8h.html#a6e9de37cba62cb01406e079862df3a69">AMDB_INTERFACE_VERSION_CAPI_V3</a> </p>
+
+<p>Version of the module interface. </p>
+<p>@values <a class="el" href="amdb__api_8h.html#a6e9de37cba62cb01406e079862df3a69" title="Interface version is the Common Audio Processor Interface version 3.">AMDB_INTERFACE_VERSION_CAPI_V3</a> </p>
 
 </div>
 </div>

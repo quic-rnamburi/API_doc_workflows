@@ -93,8 +93,10 @@ Macros</h2></td></tr>
 <tr class="memitem:ad2ac966048c1767346e283e6eb06b443" id="r_ad2ac966048c1767346e283e6eb06b443"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apm__proxy__graph__mgmt__api_8h.html#ad2ac966048c1767346e283e6eb06b443">APM_PROXY_GRAPH_MGMT_MODULE_INSTANCE_ID</a>&#160;&#160;&#160;0x00000008</td></tr>
 <tr class="separator:ad2ac966048c1767346e283e6eb06b443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d76651f7f36fe2adff954695528f2b1" id="r_a7d76651f7f36fe2adff954695528f2b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apm__proxy__graph__mgmt__api_8h.html#a7d76651f7f36fe2adff954695528f2b1">APM_PROXY_GRAPH_MGMT_CMD_USECASE_REGISTRATION</a>&#160;&#160;&#160;0x0100105F</td></tr>
+<tr class="memdesc:a7d76651f7f36fe2adff954695528f2b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The command is used to register the usecase with the APM Proxy graph mgmt service.  <br /></td></tr>
 <tr class="separator:a7d76651f7f36fe2adff954695528f2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8998332b4a52069eef13a6b29388cc36" id="r_a8998332b4a52069eef13a6b29388cc36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apm__proxy__graph__mgmt__api_8h.html#a8998332b4a52069eef13a6b29388cc36">APM_PROXY_GRAPH_MGMT_CMD_ENABLE_DISABLE_CONTROL</a>&#160;&#160;&#160;0x01001060</td></tr>
+<tr class="memdesc:a8998332b4a52069eef13a6b29388cc36"><td class="mdescLeft">&#160;</td><td class="mdescRight">The command is used to enable or disable the graph mgmt control for LPAI based client.  <br /></td></tr>
 <tr class="separator:a8998332b4a52069eef13a6b29388cc36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -119,8 +121,10 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The command is used to enable or disable the graph mgmt control for LPAI based client. -If control is disabled then the LPAI based client can not control the sub graph state. -If control is enabled then the LPAI based client can control the sub graph state. -HLOS enables the control during the HLOS sleep period and graphs has to be managed within LPAI. -HLOS disables the control during concurrency where HLOS is active.</p>
-<p>@Payload struct for APM_PROXY_GRAPH_MGMT_CMD_ENABLE_DISABLE_CONTROL <a class="el" href="structapm__cmd__header__t.html">apm_cmd_header_t</a> (only inband payload supported) <a class="el" href="structapm__proxy__graph__mgmt__cmd__enable__disable__control__t.html">apm_proxy_graph_mgmt_cmd_enable_disable_control_t</a></p>
+
+<p>The command is used to enable or disable the graph mgmt control for LPAI based client. </p>
+<p>-If control is disabled then the LPAI based client can not control the sub graph state. -If control is enabled then the LPAI based client can control the sub graph state. -HLOS enables the control during the HLOS sleep period and graphs has to be managed within LPAI. -HLOS disables the control during concurrency where HLOS is active.</p>
+<p>@Payload struct for APM_PROXY_GRAPH_MGMT_CMD_ENABLE_DISABLE_CONTROL <a class="el" href="structapm__cmd__header__t.html" title="Common payload header structure used by the following commands:">apm_cmd_header_t</a> (only inband payload supported) <a class="el" href="structapm__proxy__graph__mgmt__cmd__enable__disable__control__t.html">apm_proxy_graph_mgmt_cmd_enable_disable_control_t</a></p>
 <dl class="section return"><dt>Returns</dt><dd>GPR_IBASIC_RSP_RESULT (see @xhyperref{80VN50010,80-VN500-10}). </dd></dl>
 
 </div>
@@ -136,9 +140,11 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The command is used to register the usecase with the APM Proxy graph mgmt service. The usecase is identified by the list sub-graph IDs which will be controlled by an unique LPAI based client.</p>
-<p>@Payload struct for APM_PROXY_GRAPH_MGMT_CMD_USECASE_REGISTRATION <a class="el" href="structapm__cmd__header__t.html">apm_cmd_header_t</a> (only inband payload supported) <a class="el" href="structapm__proxy__graph__mgmt__cmd__usecase__registration__t.html">apm_proxy_graph_mgmt_cmd_usecase_registration_t</a> (usecase id) <a class="el" href="structapm__param__id__sub__graph__list__t.html">apm_param_id_sub_graph_list_t</a> (Contains the number ofsub-graph IDs.) <br  />
- <a class="el" href="structapm__sub__graph__id__t.html">apm_sub_graph_id_t</a> (Array of sub-graph IDs.)</p>
+
+<p>The command is used to register the usecase with the APM Proxy graph mgmt service. </p>
+<p>The usecase is identified by the list sub-graph IDs which will be controlled by an unique LPAI based client.</p>
+<p>@Payload struct for APM_PROXY_GRAPH_MGMT_CMD_USECASE_REGISTRATION <a class="el" href="structapm__cmd__header__t.html" title="Common payload header structure used by the following commands:">apm_cmd_header_t</a> (only inband payload supported) <a class="el" href="structapm__proxy__graph__mgmt__cmd__usecase__registration__t.html">apm_proxy_graph_mgmt_cmd_usecase_registration_t</a> (usecase id) <a class="el" href="structapm__param__id__sub__graph__list__t.html" title="Payload for APM_PARAM_ID_SUB_GRAPH_LIST.">apm_param_id_sub_graph_list_t</a> (Contains the number ofsub-graph IDs.) <br  />
+ <a class="el" href="structapm__sub__graph__id__t.html" title="Sub-graph payload for APM_PARAM_ID_SUB_GRAPH_LIST.">apm_sub_graph_id_t</a> (Array of sub-graph IDs.)</p>
 <dl class="section return"><dt>Returns</dt><dd>GPR_IBASIC_RSP_RESULT (see @xhyperref{80VN50010,80-VN500-10}). </dd></dl>
 
 </div>

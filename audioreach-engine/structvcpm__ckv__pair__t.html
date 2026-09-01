@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structvcpm__ckv__pair__t.html',''); in
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#a807a4c714a7479abd8c910e8d70b20e4" title="Identifier for the parameter that sets calibration keys from both the applications processor and mode...">VCPM_PARAM_ID_CAL_KEYS</a> and <a class="el" href="vcpm__api_8h.html#a5d87655341894ebc03cc0b9d86e1adc0" title="Identifier for the parameter the applications processor uses to query active calibration keys for eac...">VCPM_PARAM_ID_ACTIVE_CAL_KEYS</a>.  
+ <a href="structvcpm__ckv__pair__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a046e6c654d17bf9f8517b981a3d42aa1" id="r_a046e6c654d17bf9f8517b981a3d42aa1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__ckv__pair__t.html#a046e6c654d17bf9f8517b981a3d42aa1">cal_key_id</a></td></tr>
+<tr class="memdesc:a046e6c654d17bf9f8517b981a3d42aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the calibration key.  <br /></td></tr>
 <tr class="separator:a046e6c654d17bf9f8517b981a3d42aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3266e3630d8a690295dc3fa1cdd730b" id="r_ae3266e3630d8a690295dc3fa1cdd730b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__ckv__pair__t.html#ae3266e3630d8a690295dc3fa1cdd730b">value</a></td></tr>
+<tr class="memdesc:ae3266e3630d8a690295dc3fa1cdd730b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Values of the following calibration keys from the modem processor.  <br /></td></tr>
 <tr class="separator:ae3266e3630d8a690295dc3fa1cdd730b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a807a4c714a7479abd8c910e8d70b20e4">VCPM_PARAM_ID_CAL_KEYS</a> and <a class="el" href="vcpm__api_8h.html#a5d87655341894ebc03cc0b9d86e1adc0">VCPM_PARAM_ID_ACTIVE_CAL_KEYS</a>. This structure contains the calibration key and value pair objects. </p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a807a4c714a7479abd8c910e8d70b20e4" title="Identifier for the parameter that sets calibration keys from both the applications processor and mode...">VCPM_PARAM_ID_CAL_KEYS</a> and <a class="el" href="vcpm__api_8h.html#a5d87655341894ebc03cc0b9d86e1adc0" title="Identifier for the parameter the applications processor uses to query active calibration keys for eac...">VCPM_PARAM_ID_ACTIVE_CAL_KEYS</a>. </p>
+<p>This structure contains the calibration key and value pair objects. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a046e6c654d17bf9f8517b981a3d42aa1" name="a046e6c654d17bf9f8517b981a3d42aa1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a046e6c654d17bf9f8517b981a3d42aa1">&#9670;&#160;</a></span>cal_key_id</h2>
@@ -89,16 +95,17 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Unique identifier for the calibration key.</p>
+
+<p>Unique identifier for the calibration key. </p>
 <p>@valuesbul{from modem processor}</p><ul>
-<li><a class="el" href="vcpm__api_8h.html#a9bf716fa3622b3508d310c3366a6dd86">VCPM_CAL_KEY_ID_VOCODER_CLASS</a></li>
-<li><a class="el" href="vcpm__api_8h.html#ab30cfdcc17380df6ffa6e047d9ee548c">VCPM_CAL_KEY_ID_SAMPLING_RATE</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a0e7b3e8805bbc97e9debc03cf57afb5a">VCPM_CAL_KEY_ID_NETWORK</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a9bf716fa3622b3508d310c3366a6dd86" title="Identifier for the calibration key that identifes the vocoder class (from the applications processor ...">VCPM_CAL_KEY_ID_VOCODER_CLASS</a></li>
+<li><a class="el" href="vcpm__api_8h.html#ab30cfdcc17380df6ffa6e047d9ee548c" title="Calibration key that identifies the sampling rate.">VCPM_CAL_KEY_ID_SAMPLING_RATE</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a0e7b3e8805bbc97e9debc03cf57afb5a" title="Identifier for the calibration key that identifes the network.">VCPM_CAL_KEY_ID_NETWORK</a></li>
 </ul>
 <p>@valuesbul{from applications processor}</p><ul>
-<li><a class="el" href="vcpm__api_8h.html#abe51740a0d8b2082716a474c27302416">VCPM_CAL_KEY_ID_VOLUME_LEVEL</a></li>
-<li><a class="el" href="vcpm__api_8h.html#aee13401dbb5fd2d3df8f456af4fc4215">VCPM_CAL_KEY_ID_BWE</a></li>
-<li><a class="el" href="vcpm__api_8h.html#ad9cd6ae3c318373ce2055d235fcb71ed">VCPM_CAL_KEY_ID_VOL_BOOST</a> @tablebulletend </li>
+<li><a class="el" href="vcpm__api_8h.html#abe51740a0d8b2082716a474c27302416" title="Calibration key that identifies the volume level.">VCPM_CAL_KEY_ID_VOLUME_LEVEL</a></li>
+<li><a class="el" href="vcpm__api_8h.html#aee13401dbb5fd2d3df8f456af4fc4215" title="Calibration key that identifies the bandwidth extension mode.">VCPM_CAL_KEY_ID_BWE</a></li>
+<li><a class="el" href="vcpm__api_8h.html#ad9cd6ae3c318373ce2055d235fcb71ed" title="Calibration key that identifies the Volume boost mode.">VCPM_CAL_KEY_ID_VOL_BOOST</a> @tablebulletend </li>
 </ul>
 
 </div>
@@ -114,18 +121,19 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Values of the following calibration keys from the modem processor.</p>
+
+<p>Values of the following calibration keys from the modem processor. </p>
 <p>@valuesbul{for VCPM_CAL_KEY_ID_VOCODER_CLASS}</p><ul>
-<li><a class="el" href="vcpm__api_8h.html#a8e80fd52bcf5a7a2cdb4ec3ba3f89788">VCPM_CAL_KEY_VOCODER_CLASS_AMR</a></li>
-<li><a class="el" href="vcpm__api_8h.html#af32495ddeda4a1adc683d8c2e9685d14">VCPM_CAL_KEY_VOCODER_CLASS_EVRC</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a72f2a609f6d6e36bf6684386d146df43">VCPM_CAL_KEY_VOCODER_CLASS_EVS</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a8e80fd52bcf5a7a2cdb4ec3ba3f89788" title="Calibration key that represents all the vocoders covered in the AMR class for VCPM_CAL_KEY_ID_VOCODER...">VCPM_CAL_KEY_VOCODER_CLASS_AMR</a></li>
+<li><a class="el" href="vcpm__api_8h.html#af32495ddeda4a1adc683d8c2e9685d14" title="Calibration key that represents all the vocoders covered in the EVRC class for VCPM_CAL_KEY_ID_VOCODE...">VCPM_CAL_KEY_VOCODER_CLASS_EVRC</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a72f2a609f6d6e36bf6684386d146df43" title="Calibration key that represents all the vocoders covered in the EVS class VCPM_CAL_KEY_ID_VOCODER_CLA...">VCPM_CAL_KEY_VOCODER_CLASS_EVS</a></li>
 </ul>
 <p>@valuesbul{for VCPM_CAL_KEY_ID_NETWORK}</p><ul>
-<li><a class="el" href="vcpm__api_8h.html#a86afbada9ea0e4f2bda9fd6176389e92">VCPM_CAL_KEY_NETWORK_CDMA</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a38c0ee3ad9b2e7ff3be68daadf59ee38">VCPM_CAL_KEY_NETWORK_GSM</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a2cf537f28d858057896c756d54375d4d">VCPM_CAL_KEY_NETWORK_WCDMA</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a75d79e0d2e25fe1a3ffa24d723256d03">VCPM_CAL_KEY_NETWORK_LTE</a></li>
-<li><a class="el" href="vcpm__api_8h.html#a17f6f533d3cb1e84310562615483ec33">VCPM_CAL_KEY_NETWORK_TDSCDMA</a> @tablebulletend @newpagetable </li>
+<li><a class="el" href="vcpm__api_8h.html#a86afbada9ea0e4f2bda9fd6176389e92" title="Calibration key that represents the CDMA network for VCPM_CAL_KEY_ID_NETWORK.">VCPM_CAL_KEY_NETWORK_CDMA</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a38c0ee3ad9b2e7ff3be68daadf59ee38" title="Calibration key that represents the GSM network for VCPM_CAL_KEY_ID_NETWORK.">VCPM_CAL_KEY_NETWORK_GSM</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a2cf537f28d858057896c756d54375d4d" title="Calibration key that represents the WCDMA network for VCPM_CAL_KEY_ID_NETWORK.">VCPM_CAL_KEY_NETWORK_WCDMA</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a75d79e0d2e25fe1a3ffa24d723256d03" title="Calibration key that represents the LTE network for VCPM_CAL_KEY_ID_NETWORK.">VCPM_CAL_KEY_NETWORK_LTE</a></li>
+<li><a class="el" href="vcpm__api_8h.html#a17f6f533d3cb1e84310562615483ec33" title="Calibration key that represents the TD-SCDMA network for VCPM_CAL_KEY_ID_NETWORK.">VCPM_CAL_KEY_NETWORK_TDSCDMA</a> @tablebulletend @newpagetable </li>
 </ul>
 
 </div>

@@ -84,59 +84,84 @@ Include dependency graph for rd_sh_mem_ep_api.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__event__rd__sh__mem__ep__metadata__t.html">data_event_rd_sh_mem_ep_metadata_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of the metadata that can be put in the data read buffer.  <a href="structdata__event__rd__sh__mem__ep__metadata__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rd__sh__mem__ep__data__buffer__v2__t.html">data_cmd_rd_sh_mem_ep_data_buffer_v2_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for <a class="el" href="rd__sh__mem__ep__api_8h.html#ab2d02af3e127c181d208edbf851eab8d" title="Sends an empty buffer to the MODULE_ID_RD_SHARED_MEM_EP module.">DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2</a>.  <a href="structdata__cmd__rd__sh__mem__ep__data__buffer__v2__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html">data_cmd_rsp_rd_sh_mem_ep_data_buffer_done_v2_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for <a class="el" href="rd__sh__mem__ep__api_8h.html#a3d20ce8721ba90441ec88eb7bc0b5b47" title="Sent by the SPF in response to DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2 when the referenced buffer is fil...">DATA_CMD_RSP_RD_SH_MEM_EP_DATA_BUFFER_DONE_V2</a>.  <a href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__event__rd__sh__mem__ep__eos__t.html">data_event_rd_sh_mem_ep_eos_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for <a class="el" href="rd__sh__mem__ep__api_8h.html#a8df0651cb27bac454a45ca1c14381907" title="EOS event sent from MODULE_ID_RD_SHARED_MEM_EP to the client.">DATA_EVENT_ID_RD_SH_MEM_EP_EOS</a>.  <a href="structdata__event__rd__sh__mem__ep__eos__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevent__id__rd__sh__mem__ep__timestamp__disc__detection__t.html">event_id_rd_sh_mem_ep_timestamp_disc_detection_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__rd__sh__mem__cfg__t.html">param_id_rd_sh_mem_cfg_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for <a class="el" href="rd__sh__mem__ep__api_8h.html#a7ab9acfe4e0278842439fc0755284645" title="Identifier of the parameter that configures the MODULE_ID_RD_SHARED_MEM_EP module.">PARAM_ID_RD_SH_MEM_CFG</a>.  <a href="structparam__id__rd__sh__mem__cfg__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a1fca050b39604dd0dfb3764a23afbc14" id="r_a1fca050b39604dd0dfb3764a23afbc14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a1fca050b39604dd0dfb3764a23afbc14">RD_SH_MEM_EP_BIT_MASK_TIMESTAMP_VALID_FLAG</a>&#160;&#160;&#160;<a class="el" href="ar__guids_8h.html#aaa7908439e242de22eafd8651a538fe3">AR_NON_GUID</a>(0x80000000)</td></tr>
+<tr class="memdesc:a1fca050b39604dd0dfb3764a23afbc14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for the timestamp validity information.  <br /></td></tr>
 <tr class="separator:a1fca050b39604dd0dfb3764a23afbc14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7a8648465ad3c7c3047226ba3d5c54c" id="r_ae7a8648465ad3c7c3047226ba3d5c54c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#ae7a8648465ad3c7c3047226ba3d5c54c">RD_SH_MEM_EP_SHIFT_TIMESTAMP_VALID_FLAG</a>&#160;&#160;&#160;31</td></tr>
+<tr class="memdesc:ae7a8648465ad3c7c3047226ba3d5c54c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the timestamp validity information.  <br /></td></tr>
 <tr class="separator:ae7a8648465ad3c7c3047226ba3d5c54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea535531f305d49fc6915a08cf4b893d" id="r_aea535531f305d49fc6915a08cf4b893d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#aea535531f305d49fc6915a08cf4b893d">RD_SH_MEM_EP_BIT_MASK_FRAME_METADATA_FLAG</a>&#160;&#160;&#160;<a class="el" href="ar__guids_8h.html#aaa7908439e242de22eafd8651a538fe3">AR_NON_GUID</a>(0x60000000)</td></tr>
+<tr class="memdesc:aea535531f305d49fc6915a08cf4b893d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for the frame metadata.  <br /></td></tr>
 <tr class="separator:aea535531f305d49fc6915a08cf4b893d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1f23fd783511ab2e095509ce1a1db3f" id="r_ab1f23fd783511ab2e095509ce1a1db3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#ab1f23fd783511ab2e095509ce1a1db3f">RD_SH_MEM_EP_SHIFT_FRAME_METADATA_FLAG</a>&#160;&#160;&#160;29</td></tr>
+<tr class="memdesc:ab1f23fd783511ab2e095509ce1a1db3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the frame metadata.  <br /></td></tr>
 <tr class="separator:ab1f23fd783511ab2e095509ce1a1db3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2d02af3e127c181d208edbf851eab8d" id="r_ab2d02af3e127c181d208edbf851eab8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#ab2d02af3e127c181d208edbf851eab8d">DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2</a>&#160;&#160;&#160;0x0400100B</td></tr>
+<tr class="memdesc:ab2d02af3e127c181d208edbf851eab8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an empty buffer to the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> module.  <br /></td></tr>
 <tr class="separator:ab2d02af3e127c181d208edbf851eab8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d20ce8721ba90441ec88eb7bc0b5b47" id="r_a3d20ce8721ba90441ec88eb7bc0b5b47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a3d20ce8721ba90441ec88eb7bc0b5b47">DATA_CMD_RSP_RD_SH_MEM_EP_DATA_BUFFER_DONE_V2</a>&#160;&#160;&#160;0x05001005</td></tr>
+<tr class="memdesc:a3d20ce8721ba90441ec88eb7bc0b5b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sent by the SPF in response to <a class="el" href="rd__sh__mem__ep__api_8h.html#ab2d02af3e127c181d208edbf851eab8d" title="Sends an empty buffer to the MODULE_ID_RD_SHARED_MEM_EP module.">DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2</a> when the referenced buffer is filled and is available to the client for reading.  <br /></td></tr>
 <tr class="separator:a3d20ce8721ba90441ec88eb7bc0b5b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9808a5342a671b9ea6ac6edaf473ae8f" id="r_a9808a5342a671b9ea6ac6edaf473ae8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a9808a5342a671b9ea6ac6edaf473ae8f">DATA_EVENT_ID_RD_SH_MEM_EP_MEDIA_FORMAT</a>&#160;&#160;&#160;0x06001000</td></tr>
+<tr class="memdesc:a9808a5342a671b9ea6ac6edaf473ae8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Media format sent from <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> to the client.  <br /></td></tr>
 <tr class="separator:a9808a5342a671b9ea6ac6edaf473ae8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8df0651cb27bac454a45ca1c14381907" id="r_a8df0651cb27bac454a45ca1c14381907"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a8df0651cb27bac454a45ca1c14381907">DATA_EVENT_ID_RD_SH_MEM_EP_EOS</a>&#160;&#160;&#160;0x06001001</td></tr>
+<tr class="memdesc:a8df0651cb27bac454a45ca1c14381907"><td class="mdescLeft">&#160;</td><td class="mdescRight">EOS event sent from <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> to the client.  <br /></td></tr>
 <tr class="separator:a8df0651cb27bac454a45ca1c14381907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b096f1e39f8cd149857330252fee9f3" id="r_a0b096f1e39f8cd149857330252fee9f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a0b096f1e39f8cd149857330252fee9f3">EVENT_ID_RD_SH_MEM_EP_TIMESTAMP_DISC_DETECTION</a>&#160;&#160;&#160;0x08001A98</td></tr>
+<tr class="memdesc:a0b096f1e39f8cd149857330252fee9f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestamp Discontinuity event sent from <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> to the client.  <br /></td></tr>
 <tr class="separator:a0b096f1e39f8cd149857330252fee9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0a1736a9335e040208970b744b23a43" id="r_aa0a1736a9335e040208970b744b23a43"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#aa0a1736a9335e040208970b744b23a43">RD_SH_MEM_EP_BIT_MASK_TIMESTAMP_DISC_DURATION_VALID_FLAG</a>&#160;&#160;&#160;<a class="el" href="ar__guids_8h.html#aaa7908439e242de22eafd8651a538fe3">AR_NON_GUID</a>(0x80000000)</td></tr>
+<tr class="memdesc:aa0a1736a9335e040208970b744b23a43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for the timestamp discontinuity duration validity information.  <br /></td></tr>
 <tr class="separator:aa0a1736a9335e040208970b744b23a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3f1bd26e92459a76a49dd37475dc12d" id="r_aa3f1bd26e92459a76a49dd37475dc12d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#aa3f1bd26e92459a76a49dd37475dc12d">RD_SH_MEM_EP_SHIFT_TIMESTAMP_DISC_DURATION_VALID_FLAG</a>&#160;&#160;&#160;31</td></tr>
+<tr class="memdesc:aa3f1bd26e92459a76a49dd37475dc12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift Value for the timestamp discontinuity duration validity information.  <br /></td></tr>
 <tr class="separator:aa3f1bd26e92459a76a49dd37475dc12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c5c52cbd134fedc0967efced69eb952" id="r_a5c5c52cbd134fedc0967efced69eb952"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a5c5c52cbd134fedc0967efced69eb952">PORT_ID_RD_SHARED_MEM_EP_INPUT</a>&#160;&#160;&#160;0x2</td></tr>
+<tr class="memdesc:a5c5c52cbd134fedc0967efced69eb952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the input port of the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> module.  <br /></td></tr>
 <tr class="separator:a5c5c52cbd134fedc0967efced69eb952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa173a7f988a92404740df9586058f27d" id="r_aa173a7f988a92404740df9586058f27d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#aa173a7f988a92404740df9586058f27d">PORT_ID_RD_SHARED_MEM_EP_OUTPUT</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="memdesc:aa173a7f988a92404740df9586058f27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the output port of the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> module.  <br /></td></tr>
 <tr class="separator:aa173a7f988a92404740df9586058f27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c3ed0040ecc2b1fbefcb31e4e505a78" id="r_a2c3ed0040ecc2b1fbefcb31e4e505a78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78">MODULE_ID_RD_SHARED_MEM_EP</a>&#160;&#160;&#160;0x07001001</td></tr>
+<tr class="memdesc:a2c3ed0040ecc2b1fbefcb31e4e505a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host through a packet exchange mechanism.  <br /></td></tr>
 <tr class="separator:a2c3ed0040ecc2b1fbefcb31e4e505a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a0f12c1fac1c547fb77546f3b6b9898" id="r_a0a0f12c1fac1c547fb77546f3b6b9898"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a0a0f12c1fac1c547fb77546f3b6b9898">RD_SH_MEM_NUM_FRAMES_IN_BUF_AS_MUCH_AS_POSSIBLE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a0a0f12c1fac1c547fb77546f3b6b9898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special value of <a class="el" href="structparam__id__rd__sh__mem__cfg__t.html#a253b791fee5eef62dbff25f4a946d2aa" title="Number of frames per buffer that must be populated in the read buffers.">param_id_rd_sh_mem_cfg_t::num_frames_per_buffer</a> to indicate that as many buffers as possible must be filled.  <br /></td></tr>
 <tr class="separator:a0a0f12c1fac1c547fb77546f3b6b9898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ab9acfe4e0278842439fc0755284645" id="r_a7ab9acfe4e0278842439fc0755284645"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a7ab9acfe4e0278842439fc0755284645">PARAM_ID_RD_SH_MEM_CFG</a>&#160;&#160;&#160;0x08001007</td></tr>
+<tr class="memdesc:a7ab9acfe4e0278842439fc0755284645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier of the parameter that configures the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> module.  <br /></td></tr>
 <tr class="separator:a7ab9acfe4e0278842439fc0755284645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1811ea8d807b06ff4ce571e532f8813e" id="r_a1811ea8d807b06ff4ce571e532f8813e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a1811ea8d807b06ff4ce571e532f8813e">RD_EP_CFG_MD_CNTRL_FLAGS_BIT_MASK_ENABLE_ENCODER_FRAME_MD</a>&#160;&#160;&#160;<a class="el" href="ar__guids_8h.html#aaa7908439e242de22eafd8651a538fe3">AR_NON_GUID</a>(0x00000001)</td></tr>
+<tr class="memdesc:a1811ea8d807b06ff4ce571e532f8813e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask that indicates whether encoder frame metadata is enabled.  <br /></td></tr>
 <tr class="separator:a1811ea8d807b06ff4ce571e532f8813e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53bb09acf995537191f20a01862f91c3" id="r_a53bb09acf995537191f20a01862f91c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a53bb09acf995537191f20a01862f91c3">RD_EP_CFG_MD_CNTRL_FLAGS_SHIFT_ENABLE_ENCODER_FRAME_MD</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a53bb09acf995537191f20a01862f91c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for encoder frame metadata.  <br /></td></tr>
 <tr class="separator:a53bb09acf995537191f20a01862f91c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56f9cc1d18199114bbbd21409bbfe8a2" id="r_a56f9cc1d18199114bbbd21409bbfe8a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#a56f9cc1d18199114bbbd21409bbfe8a2">RD_EP_CFG_MD_CNTRL_FLAGS_BIT_MASK_ENABLE_MEDIA_FORMAT_MD</a>&#160;&#160;&#160;<a class="el" href="ar__guids_8h.html#aaa7908439e242de22eafd8651a538fe3">AR_NON_GUID</a>(0x00000002)</td></tr>
+<tr class="memdesc:a56f9cc1d18199114bbbd21409bbfe8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask that indicates whether media format metadata is enabled.  <br /></td></tr>
 <tr class="separator:a56f9cc1d18199114bbbd21409bbfe8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad918d006ba1e35fbf85544d8bd41a527" id="r_ad918d006ba1e35fbf85544d8bd41a527"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rd__sh__mem__ep__api_8h.html#ad918d006ba1e35fbf85544d8bd41a527">RD_EP_CFG_MD_CNTRL_FLAGS_SHIFT_ENABLE_MEDIA_FORMAT_MD</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ad918d006ba1e35fbf85544d8bd41a527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for media format metadata.  <br /></td></tr>
 <tr class="separator:ad918d006ba1e35fbf85544d8bd41a527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -169,10 +194,12 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sends an empty buffer to the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78">MODULE_ID_RD_SHARED_MEM_EP</a> module. The module writes data and metadata to this buffer, and the client reads it.</p>
+
+<p>Sends an empty buffer to the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> module. </p>
+<p>The module writes data and metadata to this buffer, and the client reads it.</p>
 <p>This command can be used to read PCM data, Raw compressed data, and packetized streams.</p>
-<p>Once the buffer is filled, the SPF returns <a class="el" href="rd__sh__mem__ep__api_8h.html#a3d20ce8721ba90441ec88eb7bc0b5b47">DATA_CMD_RSP_RD_SH_MEM_EP_DATA_BUFFER_DONE_V2</a>.</p>
-<p>@msgpayload <a class="el" href="structdata__cmd__rd__sh__mem__ep__data__buffer__v2__t.html">data_cmd_rd_sh_mem_ep_data_buffer_v2_t</a> </p>
+<p>Once the buffer is filled, the SPF returns <a class="el" href="rd__sh__mem__ep__api_8h.html#a3d20ce8721ba90441ec88eb7bc0b5b47" title="Sent by the SPF in response to DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2 when the referenced buffer is fil...">DATA_CMD_RSP_RD_SH_MEM_EP_DATA_BUFFER_DONE_V2</a>.</p>
+<p>@msgpayload <a class="el" href="structdata__cmd__rd__sh__mem__ep__data__buffer__v2__t.html" title="Payload for DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2.">data_cmd_rd_sh_mem_ep_data_buffer_v2_t</a> </p>
 
 </div>
 </div>
@@ -187,8 +214,9 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sent by the SPF in response to <a class="el" href="rd__sh__mem__ep__api_8h.html#ab2d02af3e127c181d208edbf851eab8d">DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2</a> when the referenced buffer is filled and is available to the client for reading.</p>
-<p>@msgpayload <a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html">data_cmd_rsp_rd_sh_mem_ep_data_buffer_done_v2_t</a> </p>
+
+<p>Sent by the SPF in response to <a class="el" href="rd__sh__mem__ep__api_8h.html#ab2d02af3e127c181d208edbf851eab8d" title="Sends an empty buffer to the MODULE_ID_RD_SHARED_MEM_EP module.">DATA_CMD_RD_SH_MEM_EP_DATA_BUFFER_V2</a> when the referenced buffer is filled and is available to the client for reading. </p>
+<p>@msgpayload <a class="el" href="structdata__cmd__rsp__rd__sh__mem__ep__data__buffer__done__v2__t.html" title="Payload for DATA_CMD_RSP_RD_SH_MEM_EP_DATA_BUFFER_DONE_V2.">data_cmd_rsp_rd_sh_mem_ep_data_buffer_done_v2_t</a> </p>
 
 </div>
 </div>
@@ -203,9 +231,10 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>EOS event sent from <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78">MODULE_ID_RD_SHARED_MEM_EP</a> to the client.</p>
+
+<p>EOS event sent from <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> to the client. </p>
 <p>This event serves as a discontinuity marker and must be registered with APM_CMD_REGISTER_MODULE_EVENTS (see the AudioReach SPF API Reference (80-VN500-5)).</p>
-<p>@msgpayload <a class="el" href="structdata__event__rd__sh__mem__ep__eos__t.html">data_event_rd_sh_mem_ep_eos_t</a> </p>
+<p>@msgpayload <a class="el" href="structdata__event__rd__sh__mem__ep__eos__t.html" title="Payload for DATA_EVENT_ID_RD_SH_MEM_EP_EOS.">data_event_rd_sh_mem_ep_eos_t</a> </p>
 
 </div>
 </div>
@@ -220,9 +249,10 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Media format sent from <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78">MODULE_ID_RD_SHARED_MEM_EP</a> to the client.</p>
+
+<p>Media format sent from <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> to the client. </p>
 <p>This event must be registered with APM_CMD_REGISTER_MODULE_EVENTS (see the AudioReach SPF API Reference (80-VN500-5)).</p>
-<p>@msgpayload <a class="el" href="structmedia__format__t.html">media_format_t</a> </p>
+<p>@msgpayload <a class="el" href="structmedia__format__t.html" title="Payload structure used by the following opcodes:">media_format_t</a> </p>
 
 </div>
 </div>
@@ -237,7 +267,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Timestamp Discontinuity event sent from <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78">MODULE_ID_RD_SHARED_MEM_EP</a> to the client.</p>
+
+<p>Timestamp Discontinuity event sent from <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> to the client. </p>
 <p>This event serves as a timestamp discontinuity notification and must be registered with APM_CMD_REGISTER_MODULE_EVENTS (see the AudioReach SPF API Reference (80-VN500-5)).</p>
 <p>This will be received as payload of the event APM_EVENT_MODULE_TO_CLIENT.</p>
 <p>@msgpayload <a class="el" href="structevent__id__rd__sh__mem__ep__timestamp__disc__detection__t.html">event_id_rd_sh_mem_ep_timestamp_disc_detection_t</a> </p>
@@ -255,7 +286,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host through a packet exchange mechanism.</p>
+
+<p>Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host through a packet exchange mechanism. </p>
 <p>For a regular use case, this module has only one static input port with ID 2.</p>
 <p>For MDF use cases where the module is automatically inserted by the QACT\tm Platform, this module supports one static output port with ID 1 and one static input port with ID 2.</p>
 <p>This module supports any input media format. </p>
@@ -273,8 +305,9 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier of the parameter that configures the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78">MODULE_ID_RD_SHARED_MEM_EP</a> module.</p>
-<p>@msgpayload <a class="el" href="structparam__id__rd__sh__mem__cfg__t.html">param_id_rd_sh_mem_cfg_t</a> </p>
+
+<p>Identifier of the parameter that configures the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> module. </p>
+<p>@msgpayload <a class="el" href="structparam__id__rd__sh__mem__cfg__t.html" title="Payload for PARAM_ID_RD_SH_MEM_CFG.">param_id_rd_sh_mem_cfg_t</a> </p>
 
 </div>
 </div>
@@ -289,7 +322,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the input port of the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78">MODULE_ID_RD_SHARED_MEM_EP</a> module. </p>
+
+<p>Identifier for the input port of the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> module. </p>
 
 </div>
 </div>
@@ -304,7 +338,9 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the output port of the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78">MODULE_ID_RD_SHARED_MEM_EP</a> module. This port is connected only in offload (MDF) use cases. </p>
+
+<p>Identifier for the output port of the <a class="el" href="rd__sh__mem__ep__api_8h.html#a2c3ed0040ecc2b1fbefcb31e4e505a78" title="Identifier for the Read Shared Memory Endpoint module, which reads data from the SPF into the host th...">MODULE_ID_RD_SHARED_MEM_EP</a> module. </p>
+<p>This port is connected only in offload (MDF) use cases. </p>
 
 </div>
 </div>
@@ -319,6 +355,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Bitmask that indicates whether encoder frame metadata is enabled. </p>
 
 </div>
@@ -334,6 +371,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Bitmask that indicates whether media format metadata is enabled. </p>
 
 </div>
@@ -349,6 +387,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Shift value for encoder frame metadata. </p>
 
 </div>
@@ -364,6 +403,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Shift value for media format metadata. </p>
 
 </div>
@@ -379,6 +419,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Bitmask for the frame metadata. </p>
 
 </div>
@@ -394,6 +435,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Bitmask for the timestamp discontinuity duration validity information. </p>
 
 </div>
@@ -409,6 +451,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Bitmask for the timestamp validity information. </p>
 
 </div>
@@ -424,6 +467,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Shift value for the frame metadata. </p>
 
 </div>
@@ -439,6 +483,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Shift Value for the timestamp discontinuity duration validity information. </p>
 
 </div>
@@ -454,6 +499,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Shift value for the timestamp validity information. </p>
 
 </div>
@@ -469,7 +515,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Special value of <a class="el" href="structparam__id__rd__sh__mem__cfg__t.html#a253b791fee5eef62dbff25f4a946d2aa">param_id_rd_sh_mem_cfg_t::num_frames_per_buffer</a> to indicate that as many buffers as possible must be filled. </p>
+
+<p>Special value of <a class="el" href="structparam__id__rd__sh__mem__cfg__t.html#a253b791fee5eef62dbff25f4a946d2aa" title="Number of frames per buffer that must be populated in the read buffers.">param_id_rd_sh_mem_cfg_t::num_frames_per_buffer</a> to indicate that as many buffers as possible must be filled. </p>
 
 </div>
 </div>

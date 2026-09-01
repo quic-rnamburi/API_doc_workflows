@@ -66,15 +66,20 @@ $(document).ready(function(){initNavTree('structparam__id__jitter__buf__input__b
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_parameter {"PARAM_ID_JITTER_BUF_INPUT_BUFFER_MODE", PARAM_ID_JITTER_BUF_INPUT_BUFFER_MODE} @h2xmlp_description { This param ID is used to configure the input buffering mode.  
+ <a href="structparam__id__jitter__buf__input__buffer__mode__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/jitter_buf_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a5042ca29937d239a73d22e41c5b9c0e4" id="r_a5042ca29937d239a73d22e41c5b9c0e4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__jitter__buf__input__buffer__mode__t.html#a5042ca29937d239a73d22e41c5b9c0e4">input_buffer_mode</a></td></tr>
+<tr class="memdesc:a5042ca29937d239a73d22e41c5b9c0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter to configure if module should buffer the input as long as input is available, this is recommended for real time input or module should try to buffer the input when output is requested, this is recommended for non-real time input and real time output.  <br /></td></tr>
 <tr class="separator:a5042ca29937d239a73d22e41c5b9c0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_JITTER_BUF_INPUT_BUFFER_MODE", PARAM_ID_JITTER_BUF_INPUT_BUFFER_MODE} @h2xmlp_description { This param ID is used to configure the input buffering mode. } @h2xmlp_toolPolicy {CALIBRATION}</p>
+<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_JITTER_BUF_INPUT_BUFFER_MODE", PARAM_ID_JITTER_BUF_INPUT_BUFFER_MODE} @h2xmlp_description { This param ID is used to configure the input buffering mode. </p>
+<p>} @h2xmlp_toolPolicy {CALIBRATION}</p>
 <p>Configure the input buffering mode. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a5042ca29937d239a73d22e41c5b9c0e4" name="a5042ca29937d239a73d22e41c5b9c0e4"></a>
@@ -88,7 +93,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Parameter to configure if module should buffer the input as long as input is available, this is recommended for real time input or module should try to buffer the input when output is requested, this is recommended for non-real time input and real time output. Drift reporting is disabled for <a class="el" href="jitter__buf__api_8h.html#a9f06c794463398e278d1c700a0f707c7">JBM_BUFFER_INPUT_AT_INPUT_TRIGGER</a>. @h2xmle_description { parameter to configure if module should buffer the input as long as input is available, this is recommended for real time input or module should try to buffer the input when output is requested, this is recommended for non-real time input and real time output. Drift reporting is disabled for <a class="el" href="jitter__buf__api_8h.html#a9f06c794463398e278d1c700a0f707c7">JBM_BUFFER_INPUT_AT_INPUT_TRIGGER</a>. } @h2xmle_default {JBM_BUFFER_INPUT_AT_OUTPUT_TRIGGER} @h2xmle_rangeList {"buffer_at_input_trigger" = JBM_BUFFER_INPUT_AT_INPUT_TRIGGER, "buffer_at_output_trigger" = JBM_BUFFER_INPUT_AT_OUTPUT_TRIGGER} </p>
+
+<p>Parameter to configure if module should buffer the input as long as input is available, this is recommended for real time input or module should try to buffer the input when output is requested, this is recommended for non-real time input and real time output. </p>
+<p>Drift reporting is disabled for <a class="el" href="jitter__buf__api_8h.html#a9f06c794463398e278d1c700a0f707c7" title="Constants for PARAM_ID_JITTER_BUF_INPUT_BUFFER_MODE.">JBM_BUFFER_INPUT_AT_INPUT_TRIGGER</a>. @h2xmle_description { parameter to configure if module should buffer the input as long as input is available, this is recommended for real time input or module should try to buffer the input when output is requested, this is recommended for non-real time input and real time output. Drift reporting is disabled for <a class="el" href="jitter__buf__api_8h.html#a9f06c794463398e278d1c700a0f707c7" title="Constants for PARAM_ID_JITTER_BUF_INPUT_BUFFER_MODE.">JBM_BUFFER_INPUT_AT_INPUT_TRIGGER</a>. } @h2xmle_default {JBM_BUFFER_INPUT_AT_OUTPUT_TRIGGER} @h2xmle_rangeList {"buffer_at_input_trigger" = JBM_BUFFER_INPUT_AT_INPUT_TRIGGER, "buffer_at_output_trigger" = JBM_BUFFER_INPUT_AT_OUTPUT_TRIGGER} </p>
 
 </div>
 </div>

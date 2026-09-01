@@ -66,17 +66,22 @@ $(document).ready(function(){initNavTree('structparam__id__enc__frame__size__con
 </div><!--header-->
 <div class="contents">
 
+<p>Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#gadf8bbe5543b02ebe67429ed5541e1d42" title="Identifier for the parameter that configures the frame control (AAC encoder frame size) on the Encode...">PARAM_ID_ENC_FRAME_SIZE_CONTROL</a> parameter.  
+ <a href="structparam__id__enc__frame__size__control__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/common_enc_dec_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a8106c76b9db6b5d6d6779884f654821b" id="r_a8106c76b9db6b5d6d6779884f654821b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__enc__frame__size__control__t.html#a8106c76b9db6b5d6d6779884f654821b">frame_size_control_type</a></td></tr>
+<tr class="memdesc:a8106c76b9db6b5d6d6779884f654821b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of frame size control.  <br /></td></tr>
 <tr class="separator:a8106c76b9db6b5d6d6779884f654821b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a931cb5c932d77de75120c0301b24cded" id="r_a931cb5c932d77de75120c0301b24cded"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__enc__frame__size__control__t.html#a931cb5c932d77de75120c0301b24cded">frame_size_control_value</a></td></tr>
+<tr class="memdesc:a931cb5c932d77de75120c0301b24cded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value of the frame size control.  <br /></td></tr>
 <tr class="separator:a931cb5c932d77de75120c0301b24cded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#gadf8bbe5543b02ebe67429ed5541e1d42">PARAM_ID_ENC_FRAME_SIZE_CONTROL</a> parameter. </p>
+<div class="textblock"><p>Payload of the <a class="el" href="group__ar__spf__mod__encdec__mods.html#gadf8bbe5543b02ebe67429ed5541e1d42" title="Identifier for the parameter that configures the frame control (AAC encoder frame size) on the Encode...">PARAM_ID_ENC_FRAME_SIZE_CONTROL</a> parameter. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a8106c76b9db6b5d6d6779884f654821b" name="a8106c76b9db6b5d6d6779884f654821b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8106c76b9db6b5d6d6779884f654821b">&#9670;&#160;</a></span>frame_size_control_type</h2>
@@ -89,7 +94,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Type of frame size control.</p>
+
+<p>Type of frame size control. </p>
 <p>@valuesbul</p><ul>
 <li>0 &ndash; MTU_SIZE</li>
 <li>1 &ndash; PEAK_BIT_RATE</li>
@@ -109,7 +115,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Value of the frame size control.</p>
+
+<p>Value of the frame size control. </p>
 <p>@tblsubhdbul{MTU_SIZE}</p><ul>
 <li>MTU size in bytes per the connected Bluetooth sink device.</li>
 <li>The MTU size is expected to be@ge the frame size.</li>

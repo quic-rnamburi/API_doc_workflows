@@ -66,17 +66,22 @@ $(document).ready(function(){initNavTree('structvcpm__param__opcode__list__t.htm
 </div><!--header-->
 <div class="contents">
 
+<p>List of opcodes.  
+ <a href="structvcpm__param__opcode__list__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aa5a4f0ca18e3057977c16cc5de7b8f10" id="r_aa5a4f0ca18e3057977c16cc5de7b8f10"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__opcode__list__t.html#aa5a4f0ca18e3057977c16cc5de7b8f10">opcode</a></td></tr>
+<tr class="memdesc:aa5a4f0ca18e3057977c16cc5de7b8f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">opcode being queried This is an input param.  <br /></td></tr>
 <tr class="separator:aa5a4f0ca18e3057977c16cc5de7b8f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae42424a940504129f1a324bd4c97eede" id="r_ae42424a940504129f1a324bd4c97eede"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__opcode__list__t.html#ae42424a940504129f1a324bd4c97eede">is_supported</a></td></tr>
+<tr class="memdesc:ae42424a940504129f1a324bd4c97eede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Field indicating if the opcode is supported.  <br /></td></tr>
 <tr class="separator:ae42424a940504129f1a324bd4c97eede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>List of opcodes</p>
+<div class="textblock"><p>List of opcodes. </p>
 <p>The client uses APM_CMD_GET_CFG command to query for the version info. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ae42424a940504129f1a324bd4c97eede" name="ae42424a940504129f1a324bd4c97eede"></a>
@@ -90,7 +95,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Field indicating if the opcode is supported. This is an output param. @values:</p><ul>
+
+<p>Field indicating if the opcode is supported. </p>
+<p>This is an output param. @values:</p><ul>
 <li>0x0 - unsupported 0x1 &ndash;Supported </li>
 </ul>
 
@@ -107,7 +114,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>opcode being queried This is an input param. @values:</p><ul>
+
+<p>opcode being queried This is an input param. </p>
+<p>@values:</p><ul>
 <li>0x0 to 0xFFFFFFFF </li>
 </ul>
 

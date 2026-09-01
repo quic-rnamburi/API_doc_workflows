@@ -66,23 +66,31 @@ $(document).ready(function(){initNavTree('structvcpm__param__timing__params__t.h
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#a81375d858b113b6fa867bb10344e0446" title="Identifier for the parameter that sets timing parameters from the modem to the VCPM.">VCPM_PARAM_ID_TIMING_PARAMS</a>.  
+ <a href="structvcpm__param__timing__params__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ab91bab532f2ba0f06c757d0b0d0677f1" id="r_ab91bab532f2ba0f06c757d0b0d0677f1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__params__t.html#ab91bab532f2ba0f06c757d0b0d0677f1">vfr_mode</a></td></tr>
+<tr class="memdesc:ab91bab532f2ba0f06c757d0b0d0677f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame synchronization mode for the vocoder.  <br /></td></tr>
 <tr class="separator:ab91bab532f2ba0f06c757d0b0d0677f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaad405271c7945fb2735e91d7ccc6e6e" id="r_aaad405271c7945fb2735e91d7ccc6e6e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__params__t.html#aaad405271c7945fb2735e91d7ccc6e6e">vsid</a></td></tr>
+<tr class="memdesc:aaad405271c7945fb2735e91d7ccc6e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voice System identifier for the vocoder.  <br /></td></tr>
 <tr class="separator:aaad405271c7945fb2735e91d7ccc6e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9c750e673b7279a6ff4c93686a67e89" id="r_ac9c750e673b7279a6ff4c93686a67e89"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__params__t.html#ac9c750e673b7279a6ff4c93686a67e89">tx_delivery_offset_us</a></td></tr>
+<tr class="memdesc:ac9c750e673b7279a6ff4c93686a67e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset (in microseconds) from the VFR to deliver a Tx vocoder packet.  <br /></td></tr>
 <tr class="separator:ac9c750e673b7279a6ff4c93686a67e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7367d9d85b8462291aeb367e5f5c7f7" id="r_aa7367d9d85b8462291aeb367e5f5c7f7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__params__t.html#aa7367d9d85b8462291aeb367e5f5c7f7">rx_start_offset_us</a></td></tr>
+<tr class="memdesc:aa7367d9d85b8462291aeb367e5f5c7f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset (in microseconds) from the VFR to indicate the deadline to receive an Rx vocoder packet.  <br /></td></tr>
 <tr class="separator:aa7367d9d85b8462291aeb367e5f5c7f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44c6c2e6c4c7aadc4ffc7f386d522a2b" id="r_a44c6c2e6c4c7aadc4ffc7f386d522a2b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__timing__params__t.html#a44c6c2e6c4c7aadc4ffc7f386d522a2b">vfr_cycle_us</a></td></tr>
+<tr class="memdesc:a44c6c2e6c4c7aadc4ffc7f386d522a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">VFR cycle duration for the voice call.  <br /></td></tr>
 <tr class="separator:a44c6c2e6c4c7aadc4ffc7f386d522a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a81375d858b113b6fa867bb10344e0446">VCPM_PARAM_ID_TIMING_PARAMS</a>. </p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a81375d858b113b6fa867bb10344e0446" title="Identifier for the parameter that sets timing parameters from the modem to the VCPM.">VCPM_PARAM_ID_TIMING_PARAMS</a>. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="aa7367d9d85b8462291aeb367e5f5c7f7" name="aa7367d9d85b8462291aeb367e5f5c7f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7367d9d85b8462291aeb367e5f5c7f7">&#9670;&#160;</a></span>rx_start_offset_us</h2>
@@ -95,6 +103,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Offset (in microseconds) from the VFR to indicate the deadline to receive an Rx vocoder packet. </p>
 
 </div>
@@ -110,6 +119,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Offset (in microseconds) from the VFR to deliver a Tx vocoder packet. </p>
 
 </div>
@@ -125,7 +135,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>VFR cycle duration for the voice call. @newpagetable </p>
+
+<p>VFR cycle duration for the voice call. </p>
+<p>@newpagetable </p>
 
 </div>
 </div>
@@ -140,6 +152,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Frame synchronization mode for the vocoder. </p>
 
 </div>
@@ -155,6 +168,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Voice System identifier for the vocoder. </p>
 
 </div>

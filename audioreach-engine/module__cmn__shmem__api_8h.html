@@ -87,23 +87,31 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsh__mem__peer__client__property__payload__t.html">sh_mem_peer_client_property_payload_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload definition of the shared memory client property configuration.  <a href="structsh__mem__peer__client__property__payload__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__sh__mem__peer__client__property__config__t.html">param_id_sh_mem_peer_client_property_config_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmlp_parameter {"PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG", PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG} @h2xmlp_description {Parameter for setting the up/downstream (basically client) state configuration information to the WR/RD_EP module in the SPF graph.  <a href="structparam__id__sh__mem__peer__client__property__config__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a12ca6025bee40e6fed1c7b64a664b37c" id="r_a12ca6025bee40e6fed1c7b64a664b37c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="module__cmn__shmem__api_8h.html#a12ca6025bee40e6fed1c7b64a664b37c">PROPERTY_TYPE_IS_INVALID</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a12ca6025bee40e6fed1c7b64a664b37c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration Value to configure the client state property type as INVALID.  <br /></td></tr>
 <tr class="separator:a12ca6025bee40e6fed1c7b64a664b37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e8cd5de441afb1a7ebf51e08816b6b7" id="r_a5e8cd5de441afb1a7ebf51e08816b6b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="module__cmn__shmem__api_8h.html#a5e8cd5de441afb1a7ebf51e08816b6b7">PROPERTY_TYPE_IS_UPSTREAM_REALTIME</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a5e8cd5de441afb1a7ebf51e08816b6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration Value to configure the client state property type as Upstream Realtime.  <br /></td></tr>
 <tr class="separator:a5e8cd5de441afb1a7ebf51e08816b6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e6d6ad73e294687a2807b85e0ebfb02" id="r_a5e6d6ad73e294687a2807b85e0ebfb02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="module__cmn__shmem__api_8h.html#a5e6d6ad73e294687a2807b85e0ebfb02">PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:a5e6d6ad73e294687a2807b85e0ebfb02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration Value to configure the client state property type as downstream Realtime.  <br /></td></tr>
 <tr class="separator:a5e6d6ad73e294687a2807b85e0ebfb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab53246dc018b211713a7ae397c4de12d" id="r_ab53246dc018b211713a7ae397c4de12d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="module__cmn__shmem__api_8h.html#ab53246dc018b211713a7ae397c4de12d">PROPERTY_VALUE_IS_FTRT</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ab53246dc018b211713a7ae397c4de12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the client state configuration value as faster than real time (FTRT) This configuration value is only applicable for following property type PROPERTY_TYPE_IS_UPSTREAM_REALTIME PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME.  <br /></td></tr>
 <tr class="separator:ab53246dc018b211713a7ae397c4de12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11f6183646c9c21e7da345e7d2a75fce" id="r_a11f6183646c9c21e7da345e7d2a75fce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="module__cmn__shmem__api_8h.html#a11f6183646c9c21e7da345e7d2a75fce">PROPERTY_VALUE_IS_RT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a11f6183646c9c21e7da345e7d2a75fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the client state configuration Value as Real time (RT) This configuration value is only applicable for following property type PROPERTY_TYPE_IS_UPSTREAM_REALTIME PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME.  <br /></td></tr>
 <tr class="separator:a11f6183646c9c21e7da345e7d2a75fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa84b31cb7f1ad321f7e5aedfc1fd668c" id="r_aa84b31cb7f1ad321f7e5aedfc1fd668c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="module__cmn__shmem__api_8h.html#aa84b31cb7f1ad321f7e5aedfc1fd668c">PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG</a>&#160;&#160;&#160;0x08001A6F</td></tr>
+<tr class="memdesc:aa84b31cb7f1ad321f7e5aedfc1fd668c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration parameter ID for setting the up/downstream (basically client) state configuration information to the WR/RD_EP module in the SPF graph.  <br /></td></tr>
 <tr class="separator:aa84b31cb7f1ad321f7e5aedfc1fd668c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -125,6 +133,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Configuration parameter ID for setting the up/downstream (basically client) state configuration information to the WR/RD_EP module in the SPF graph. </p>
 
 </div>
@@ -140,7 +149,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Configuration Value to configure the client state property type as downstream Realtime </p>
+
+<p>Configuration Value to configure the client state property type as downstream Realtime. </p>
 
 </div>
 </div>
@@ -155,7 +165,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Configuration Value to configure the client state property type as INVALID </p>
+
+<p>Configuration Value to configure the client state property type as INVALID. </p>
 
 </div>
 </div>
@@ -170,7 +181,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Configuration Value to configure the client state property type as Upstream Realtime </p>
+
+<p>Configuration Value to configure the client state property type as Upstream Realtime. </p>
 
 </div>
 </div>
@@ -185,7 +197,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines the client state configuration value as faster than real time (FTRT) This configuration value is only applicable for following property type PROPERTY_TYPE_IS_UPSTREAM_REALTIME PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME </p>
+
+<p>Defines the client state configuration value as faster than real time (FTRT) This configuration value is only applicable for following property type PROPERTY_TYPE_IS_UPSTREAM_REALTIME PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME. </p>
 
 </div>
 </div>
@@ -200,7 +213,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines the client state configuration Value as Real time (RT) This configuration value is only applicable for following property type PROPERTY_TYPE_IS_UPSTREAM_REALTIME PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME </p>
+
+<p>Defines the client state configuration Value as Real time (RT) This configuration value is only applicable for following property type PROPERTY_TYPE_IS_UPSTREAM_REALTIME PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME. </p>
 
 </div>
 </div>

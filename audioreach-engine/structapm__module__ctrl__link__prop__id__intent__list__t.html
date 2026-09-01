@@ -66,17 +66,22 @@ $(document).ready(function(){initNavTree('structapm__module__ctrl__link__prop__i
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="apm__module__api_8h.html#ac3a8a35b046ddeb38d91c2a5175c4ce7" title="Property identifier for control link intent information.">APM_MODULE_PROP_ID_CTRL_LINK_INTENT_LIST</a>.  
+ <a href="structapm__module__ctrl__link__prop__id__intent__list__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_module_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ac1449691aa250b7a84d6a96bd4d4946d" id="r_ac1449691aa250b7a84d6a96bd4d4946d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__ctrl__link__prop__id__intent__list__t.html#ac1449691aa250b7a84d6a96bd4d4946d">num_intents</a></td></tr>
+<tr class="memdesc:ac1449691aa250b7a84d6a96bd4d4946d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of intents in the array (default = 0).  <br /></td></tr>
 <tr class="separator:ac1449691aa250b7a84d6a96bd4d4946d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f0a89d26285d6a7c7b1b02a0d5b3a37" id="r_a0f0a89d26285d6a7c7b1b02a0d5b3a37"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__ctrl__link__prop__id__intent__list__t.html#a0f0a89d26285d6a7c7b1b02a0d5b3a37">intent_id_list</a> [0]</td></tr>
+<tr class="memdesc:a0f0a89d26285d6a7c7b1b02a0d5b3a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of intent IDs associated with a control link.  <br /></td></tr>
 <tr class="separator:a0f0a89d26285d6a7c7b1b02a0d5b3a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="apm__module__api_8h.html#ac3a8a35b046ddeb38d91c2a5175c4ce7">APM_MODULE_PROP_ID_CTRL_LINK_INTENT_LIST</a>.</p>
+<div class="textblock"><p>Payload for <a class="el" href="apm__module__api_8h.html#ac3a8a35b046ddeb38d91c2a5175c4ce7" title="Property identifier for control link intent information.">APM_MODULE_PROP_ID_CTRL_LINK_INTENT_LIST</a>. </p>
 <p>Immediately following this structure is a variable length array of intent IDs for each control link. The length of the array is determined by the number of control link intents. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a0f0a89d26285d6a7c7b1b02a0d5b3a37" name="a0f0a89d26285d6a7c7b1b02a0d5b3a37"></a>
@@ -90,6 +95,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Array of intent IDs associated with a control link. </p>
 
 </div>
@@ -105,6 +111,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Number of intents in the array (default = 0). </p>
 
 </div>

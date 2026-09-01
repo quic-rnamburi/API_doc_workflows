@@ -66,17 +66,22 @@ $(document).ready(function(){initNavTree('structapm__module__param__shared__data
 </div><!--header-->
 <div class="contents">
 
+<p>Contains the shared persistent module parameter data.  
+ <a href="structapm__module__param__shared__data__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ac80c08d833db7d6f3c4f53b9f353f0b6" id="r_ac80c08d833db7d6f3c4f53b9f353f0b6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__param__shared__data__t.html#ac80c08d833db7d6f3c4f53b9f353f0b6">param_id</a></td></tr>
+<tr class="memdesc:ac80c08d833db7d6f3c4f53b9f353f0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the parameter.  <br /></td></tr>
 <tr class="separator:ac80c08d833db7d6f3c4f53b9f353f0b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96949195b9d886f7d5d9fd5109342a8a" id="r_a96949195b9d886f7d5d9fd5109342a8a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__param__shared__data__t.html#a96949195b9d886f7d5d9fd5109342a8a">param_size</a></td></tr>
+<tr class="memdesc:a96949195b9d886f7d5d9fd5109342a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the parameter data based on the module_instance_id/param_id combination.  <br /></td></tr>
 <tr class="separator:a96949195b9d886f7d5d9fd5109342a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains the shared persistent module parameter data.</p>
+<div class="textblock"><p>Contains the shared persistent module parameter data. </p>
 <p>Immediately following this structure are param_size bytes of calibration data. The structure and size depend on the param_id. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ac80c08d833db7d6f3c4f53b9f353f0b6" name="ac80c08d833db7d6f3c4f53b9f353f0b6"></a>
@@ -90,6 +95,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique identifier for the parameter. </p>
 
 </div>
@@ -105,7 +111,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Size of the parameter data based on the module_instance_id/param_id combination.</p>
+
+<p>Size of the parameter data based on the module_instance_id/param_id combination. </p>
 <p>@values &gt; 0 bytes, in multiples of at least 4 bytes @newpagetable </p>
 
 </div>

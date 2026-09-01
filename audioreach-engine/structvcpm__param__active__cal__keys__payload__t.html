@@ -66,19 +66,25 @@ $(document).ready(function(){initNavTree('structvcpm__param__active__cal__keys__
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#a5d87655341894ebc03cc0b9d86e1adc0" title="Identifier for the parameter the applications processor uses to query active calibration keys for eac...">VCPM_PARAM_ID_ACTIVE_CAL_KEYS</a>.  
+ <a href="structvcpm__param__active__cal__keys__payload__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aa6648b5648427adebac8b64b018a1afa" id="r_aa6648b5648427adebac8b64b018a1afa"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__active__cal__keys__payload__t.html#aa6648b5648427adebac8b64b018a1afa">sg_id</a></td></tr>
+<tr class="memdesc:aa6648b5648427adebac8b64b018a1afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the subgraph for which the parameter payload is provided.  <br /></td></tr>
 <tr class="separator:aa6648b5648427adebac8b64b018a1afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a818482109d29caad552c4b16bc3d787d" id="r_a818482109d29caad552c4b16bc3d787d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__active__cal__keys__payload__t.html#a818482109d29caad552c4b16bc3d787d">num_max_ckv_pairs</a></td></tr>
+<tr class="memdesc:a818482109d29caad552c4b16bc3d787d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of ckv_pairs of the given subgraph ID.  <br /></td></tr>
 <tr class="separator:a818482109d29caad552c4b16bc3d787d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00c59118477016334190876cdefd2ec6" id="r_a00c59118477016334190876cdefd2ec6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__active__cal__keys__payload__t.html#a00c59118477016334190876cdefd2ec6">num_ckv_pairs</a></td></tr>
+<tr class="memdesc:a00c59118477016334190876cdefd2ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of vcpm_ckv_pair_t structures that immediately follow this structure.  <br /></td></tr>
 <tr class="separator:a00c59118477016334190876cdefd2ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a5d87655341894ebc03cc0b9d86e1adc0">VCPM_PARAM_ID_ACTIVE_CAL_KEYS</a>.</p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a5d87655341894ebc03cc0b9d86e1adc0" title="Identifier for the parameter the applications processor uses to query active calibration keys for eac...">VCPM_PARAM_ID_ACTIVE_CAL_KEYS</a>. </p>
 <p>Immediately following this structure is an array of structures of type vcpm_ckv_pair_t. The array length is equal to num_ckv_pairs. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a00c59118477016334190876cdefd2ec6" name="a00c59118477016334190876cdefd2ec6"></a>
@@ -92,6 +98,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Number of vcpm_ckv_pair_t structures that immediately follow this structure. </p>
 
 </div>
@@ -107,8 +114,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Maximum number of ckv_pairs of the given subgraph ID.</p>
-<p>The client fills this value when <a class="el" href="apm__api_8h.html#ab78d8d45508902169e3595408b37f80d">APM_CMD_GET_CFG</a> is called for this parameter ID. </p>
+
+<p>Maximum number of ckv_pairs of the given subgraph ID. </p>
+<p>The client fills this value when <a class="el" href="apm__api_8h.html#ab78d8d45508902169e3595408b37f80d" title="Used for querying one or more configuration/calibration parameter IDs that correspond to any module i...">APM_CMD_GET_CFG</a> is called for this parameter ID. </p>
 
 </div>
 </div>
@@ -123,6 +131,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Unique identifier for the subgraph for which the parameter payload is provided. </p>
 
 </div>

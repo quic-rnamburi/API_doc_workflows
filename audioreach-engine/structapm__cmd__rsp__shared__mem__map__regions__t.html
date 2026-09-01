@@ -71,6 +71,7 @@ $(document).ready(function(){initNavTree('structapm__cmd__rsp__shared__mem__map_
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a9db335d0a3d344a5f5f490c3ad7b2b14" id="r_a9db335d0a3d344a5f5f490c3ad7b2b14"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__cmd__rsp__shared__mem__map__regions__t.html#a9db335d0a3d344a5f5f490c3ad7b2b14">mem_map_handle</a></td></tr>
+<tr class="memdesc:a9db335d0a3d344a5f5f490c3ad7b2b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the shared memory address.  <br /></td></tr>
 <tr class="separator:a9db335d0a3d344a5f5f490c3ad7b2b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
@@ -85,7 +86,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Unique identifier for the shared memory address. The APM returns this handle through <a class="el" href="group__spf__apm__memory__map.html#ga7370e3f6989b7a0ef864007e15886fc2">APM_CMD_SHARED_MEM_MAP_REGIONS</a>.</p>
+
+<p>Unique identifier for the shared memory address. </p>
+<p>The APM returns this handle through <a class="el" href="group__spf__apm__memory__map.html#ga7370e3f6989b7a0ef864007e15886fc2" title="Commands the APM to map multiple shared memory regions.">APM_CMD_SHARED_MEM_MAP_REGIONS</a>.</p>
 <p>@values Any 32-bit value</p>
 <p>The APM uses this handle to retrieve the shared memory attributes. This handle can be an abstract representation of the shared memory regions that are being mapped. </p>
 

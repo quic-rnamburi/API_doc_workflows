@@ -71,10 +71,13 @@ $(document).ready(function(){initNavTree('structevent__id__rd__sh__mem__ep__time
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a038648f5e570323f7880f222602fecb7" id="r_a038648f5e570323f7880f222602fecb7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevent__id__rd__sh__mem__ep__timestamp__disc__detection__t.html#a038648f5e570323f7880f222602fecb7">flags</a></td></tr>
+<tr class="memdesc:a038648f5e570323f7880f222602fecb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame flags.  <br /></td></tr>
 <tr class="separator:a038648f5e570323f7880f222602fecb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dedabd06c44b33b2779e489cd2a29d2" id="r_a8dedabd06c44b33b2779e489cd2a29d2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevent__id__rd__sh__mem__ep__timestamp__disc__detection__t.html#a8dedabd06c44b33b2779e489cd2a29d2">timestamp_disc_duration_us_msw</a></td></tr>
+<tr class="memdesc:a8dedabd06c44b33b2779e489cd2a29d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">MSW of difference in timestamp detected that led to the discontinuity in microseconds.  <br /></td></tr>
 <tr class="separator:a8dedabd06c44b33b2779e489cd2a29d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab551ba44f7f2d84933ca04915f9805b4" id="r_ab551ba44f7f2d84933ca04915f9805b4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevent__id__rd__sh__mem__ep__timestamp__disc__detection__t.html#ab551ba44f7f2d84933ca04915f9805b4">timestamp_disc_duration_us_lsw</a></td></tr>
+<tr class="memdesc:ab551ba44f7f2d84933ca04915f9805b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">LSW of difference in timestamp detected that led to the discontinuity in microseconds.  <br /></td></tr>
 <tr class="separator:ab551ba44f7f2d84933ca04915f9805b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
@@ -89,12 +92,13 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Frame flags.</p>
+
+<p>Frame flags. </p>
 <p>@valuesbul{for bit 31}</p><ul>
 <li>1 &ndash; Timestamp is valid</li>
 <li>0 &ndash; Timestamp is not valid</li>
 </ul>
-<p>To set this bit, use <a class="el" href="rd__sh__mem__ep__api_8h.html#aa0a1736a9335e040208970b744b23a43">RD_SH_MEM_EP_BIT_MASK_TIMESTAMP_DISC_DURATION_VALID_FLAG</a> and <a class="el" href="rd__sh__mem__ep__api_8h.html#aa3f1bd26e92459a76a49dd37475dc12d">RD_SH_MEM_EP_SHIFT_TIMESTAMP_DISC_DURATION_VALID_FLAG</a></p>
+<p>To set this bit, use <a class="el" href="rd__sh__mem__ep__api_8h.html#aa0a1736a9335e040208970b744b23a43" title="Bitmask for the timestamp discontinuity duration validity information.">RD_SH_MEM_EP_BIT_MASK_TIMESTAMP_DISC_DURATION_VALID_FLAG</a> and <a class="el" href="rd__sh__mem__ep__api_8h.html#aa3f1bd26e92459a76a49dd37475dc12d" title="Shift Value for the timestamp discontinuity duration validity information.">RD_SH_MEM_EP_SHIFT_TIMESTAMP_DISC_DURATION_VALID_FLAG</a></p>
 <p>All other bits are reserved; the SPF sets them to 0. </p>
 
 </div>
@@ -110,7 +114,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>LSW of difference in timestamp detected that led to the discontinuity in microseconds. <br  />
+
+<p>LSW of difference in timestamp detected that led to the discontinuity in microseconds. </p>
+<p><br  />
  </p>
 
 </div>
@@ -126,7 +132,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>MSW of difference in timestamp detected that led to the discontinuity in microseconds. <br  />
+
+<p>MSW of difference in timestamp detected that led to the discontinuity in microseconds. </p>
+<p><br  />
  </p>
 
 </div>

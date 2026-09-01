@@ -66,6 +66,9 @@ $(document).ready(function(){initNavTree('structdls__data__cmd__buffer__return__
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="dls__api_8h.html#a1092cb6eda4ceec453c8d7dbb296a740" title="Used to return the logged buffer.">DLS_DATA_CMD_BUFFER_RETURN</a>.  
+ <a href="structdls__data__cmd__buffer__return__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/spf/dls/api/dls_api.h&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for dls_data_cmd_buffer_return_t:</div>
@@ -76,12 +79,14 @@ Collaboration diagram for dls_data_cmd_buffer_return_t:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a0b71637bc023a7627b5d3e93cbc12e45" id="r_a0b71637bc023a7627b5d3e93cbc12e45"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__data__cmd__buffer__return__t.html#a0b71637bc023a7627b5d3e93cbc12e45">num_bufs</a></td></tr>
+<tr class="memdesc:a0b71637bc023a7627b5d3e93cbc12e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of buffers that need to be returned.  <br /></td></tr>
 <tr class="separator:a0b71637bc023a7627b5d3e93cbc12e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a201f30b8a1601b17fb2510cfb3577924" id="r_a201f30b8a1601b17fb2510cfb3577924"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdls__buf__start__addr__t.html">dls_buf_start_addr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__data__cmd__buffer__return__t.html#a201f30b8a1601b17fb2510cfb3577924">buf_start_addr</a> [0]</td></tr>
+<tr class="memdesc:a201f30b8a1601b17fb2510cfb3577924"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field contains the 64-bit buffer starting addresses.  <br /></td></tr>
 <tr class="separator:a201f30b8a1601b17fb2510cfb3577924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="dls__api_8h.html#a1092cb6eda4ceec453c8d7dbb296a740">DLS_DATA_CMD_BUFFER_RETURN</a></p>
+<div class="textblock"><p>Payload for <a class="el" href="dls__api_8h.html#a1092cb6eda4ceec453c8d7dbb296a740" title="Used to return the logged buffer.">DLS_DATA_CMD_BUFFER_RETURN</a>. </p>
 <p>Consists the lower 32-bits and upper 32-bits of the buffer starting address to clear the buffer and to make it available for next data logging. It also includes a flag to indicate to clean the entire buffer. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a201f30b8a1601b17fb2510cfb3577924" name="a201f30b8a1601b17fb2510cfb3577924"></a>
@@ -95,7 +100,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This field contains the 64-bit buffer starting addresses </p>
+
+<p>This field contains the 64-bit buffer starting addresses. </p>
 
 </div>
 </div>
@@ -110,6 +116,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Total number of buffers that need to be returned. </p>
 
 </div>

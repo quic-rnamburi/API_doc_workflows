@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structconfidence__level__info__t.html'
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct  
+ <a href="structconfidence__level__info__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/detection_cmn_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a46f073de9a0723dce2020d39416f4ad2" id="r_a46f073de9a0723dce2020d39416f4ad2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconfidence__level__info__t.html#a46f073de9a0723dce2020d39416f4ad2">number_of_confidence_values</a></td></tr>
+<tr class="memdesc:a46f073de9a0723dce2020d39416f4ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Sum of all keyword models plus the active user models.  <br /></td></tr>
 <tr class="separator:a46f073de9a0723dce2020d39416f4ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8508e76d14cdc615a9e0312af9fda37c" id="r_a8508e76d14cdc615a9e0312af9fda37c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconfidence__level__info__t.html#a8508e76d14cdc615a9e0312af9fda37c">confidence_levels</a> [<a class="el" href="detection__cmn__api_8h.html#a6b3728da19bd454c4b4853b6a5d02530">DETECTION_ENGINE_MAX_REGISTERED_MODELS</a>]</td></tr>
+<tr class="memdesc:a8508e76d14cdc615a9e0312af9fda37c"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Array of confidence levels for each keyword and active user pair.  <br /></td></tr>
 <tr class="separator:a8508e76d14cdc615a9e0312af9fda37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_subStruct @h2xmlp_description {Information about confidence levels. Used when confidence level information is expected in a generic detection engine event. To get the information, the mode field in PARAM_ID_DETECTION_ENGINE_EVENT_MODE must be set accordingly.} </p>
+<div class="textblock"><p>@h2xmlp_subStruct </p>
+<p>@h2xmlp_description {Information about confidence levels. Used when confidence level information is expected in a generic detection engine event. To get the information, the mode field in PARAM_ID_DETECTION_ENGINE_EVENT_MODE must be set accordingly.} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a8508e76d14cdc615a9e0312af9fda37c" name="a8508e76d14cdc615a9e0312af9fda37c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8508e76d14cdc615a9e0312af9fda37c">&#9670;&#160;</a></span>confidence_levels</h2>
@@ -89,7 +95,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Array of confidence levels for each keyword and active user pair. <br  />
+
+<p>@h2xmle_description {Array of confidence levels for each keyword and active user pair. </p>
+<p><br  />
  <br  />
  This array is of size DETECTION_ENGINE_MAX_REGISTERED_MODELS. Each element is 1 byte long. <br  />
  <br  />
@@ -108,7 +116,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Sum of all keyword models plus the active user models.} @h2xmle_range {1..20} @h2xmle_default {1} </p>
+
+<p>@h2xmle_description {Sum of all keyword models plus the active user models. </p>
+<p>} @h2xmle_range {1..20} @h2xmle_default {1} </p>
 
 </div>
 </div>

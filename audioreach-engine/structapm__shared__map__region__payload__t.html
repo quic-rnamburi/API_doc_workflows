@@ -71,10 +71,13 @@ $(document).ready(function(){initNavTree('structapm__shared__map__region__payloa
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ac520b7f89751affd101712ba92484f14" id="r_ac520b7f89751affd101712ba92484f14"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__shared__map__region__payload__t.html#ac520b7f89751affd101712ba92484f14">shm_addr_lsw</a></td></tr>
+<tr class="memdesc:ac520b7f89751affd101712ba92484f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower 32 bits of the shared memory address of the memory region to map.  <br /></td></tr>
 <tr class="separator:ac520b7f89751affd101712ba92484f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44fd8f033261469b8ce2c3de5fd4338b" id="r_a44fd8f033261469b8ce2c3de5fd4338b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__shared__map__region__payload__t.html#a44fd8f033261469b8ce2c3de5fd4338b">shm_addr_msw</a></td></tr>
+<tr class="memdesc:a44fd8f033261469b8ce2c3de5fd4338b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper 32 bits of the shared memory address of the memory region to map.  <br /></td></tr>
 <tr class="separator:a44fd8f033261469b8ce2c3de5fd4338b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79d7ace23a7ac16a9966c449b309efbf" id="r_a79d7ace23a7ac16a9966c449b309efbf"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__shared__map__region__payload__t.html#a79d7ace23a7ac16a9966c449b309efbf">mem_size_bytes</a></td></tr>
+<tr class="memdesc:a79d7ace23a7ac16a9966c449b309efbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes in the region.  <br /></td></tr>
 <tr class="separator:a79d7ace23a7ac16a9966c449b309efbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
@@ -89,7 +92,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of bytes in the region.</p>
+
+<p>Number of bytes in the region. </p>
 <p>@values Multiples of 4 KB</p>
 <p>The APM always maps the regions as virtual contiguous memory, but the memory size must be in multiples of 4 KB to avoid gaps in the virtually contiguous mapped memory. </p>
 
@@ -106,7 +110,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Lower 32 bits of the shared memory address of the memory region to map. This word must be contiguous memory, and it must be 4&#160;KB aligned.</p>
+
+<p>Lower 32 bits of the shared memory address of the memory region to map. </p>
+<p>This word must be contiguous memory, and it must be 4&#160;KB aligned.</p>
 <p>@values Non-zero 32-bit value </p>
 
 </div>
@@ -122,7 +128,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Upper 32 bits of the shared memory address of the memory region to map. This word must be contiguous memory, and it must be 4&#160;KB aligned.</p>
+
+<p>Upper 32 bits of the shared memory address of the memory region to map. </p>
+<p>This word must be contiguous memory, and it must be 4&#160;KB aligned.</p>
 <p>@valuesbul</p><ul>
 <li>For a 32-bit shared memory address, this field must be set to 0.</li>
 <li>For a 36-bit address, bits 31 to 4 must be set to 0.</li>

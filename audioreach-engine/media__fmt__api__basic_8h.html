@@ -93,127 +93,186 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__data__fmt__iec__packetized__t.html">payload_data_fmt_iec_packetized_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__data__fmt__generic__compressed__t.html">payload_data_fmt_generic_compressed_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload structure used when <a class="el" href="structmedia__format__t.html#abce16eeccd90b1ba29b88ff44345c8bf" title="Format of the data.">media_format_t::data_format</a> = <a class="el" href="media__fmt__api__basic_8h.html#af5a244aaaa842b2ea6bcfbb5a0de2b3f" title="Data format is a generic compressed stream.">DATA_FORMAT_GENERIC_COMPRESSED</a>.  <a href="structpayload__data__fmt__generic__compressed__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__pcm__t.html">payload_media_fmt_pcm_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of <a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d" title="Identifier for the media format used to identify a PCM stream.">MEDIA_FMT_ID_PCM</a> when <a class="el" href="structmedia__format__t.html#acfa8690658f7265679ef8cab50ac81be" title="Media format ID of the data stream.">media_format_t::fmt_id</a> = <a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d" title="Identifier for the media format used to identify a PCM stream.">MEDIA_FMT_ID_PCM</a> and data_format = <a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732" title="Enumeration for the fixed-point data format.">DATA_FORMAT_FIXED_POINT</a>.  <a href="structpayload__media__fmt__pcm__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmedia__format__t.html">media_format_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload structure used by the following opcodes:  <a href="structmedia__format__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__encoder__output__config__t.html">param_id_encoder_output_config_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload of the <a class="el" href="media__fmt__api__basic_8h.html#a05dbcc040f2d76cb8c24f2d66e33003c" title="Identifier for the parameter that configures the encoder.">PARAM_ID_ENCODER_OUTPUT_CONFIG</a> parameter.  <a href="structparam__id__encoder__output__config__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:aa84a29002ab81c719c0d07bb446296e0" id="r_aa84a29002ab81c719c0d07bb446296e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#aa84a29002ab81c719c0d07bb446296e0">INFINITE</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="memdesc:aa84a29002ab81c719c0d07bb446296e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for infinity.  <br /></td></tr>
 <tr class="separator:aa84a29002ab81c719c0d07bb446296e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35a8a571b374cc7adae7fe767b8f39f0" id="r_a35a8a571b374cc7adae7fe767b8f39f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a35a8a571b374cc7adae7fe767b8f39f0">INVALID_VALUE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a35a8a571b374cc7adae7fe767b8f39f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for an invalid value.  <br /></td></tr>
 <tr class="separator:a35a8a571b374cc7adae7fe767b8f39f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf077d36785410ec572df134581e8263" id="r_acf077d36785410ec572df134581e8263"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#acf077d36785410ec572df134581e8263">BITS_PER_SAMPLE_16</a>&#160;&#160;&#160;16</td></tr>
+<tr class="memdesc:acf077d36785410ec572df134581e8263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sixteen bits per sample (= sample word size).  <br /></td></tr>
 <tr class="separator:acf077d36785410ec572df134581e8263"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc373b9e2193cd529478e8b4da75595e" id="r_acc373b9e2193cd529478e8b4da75595e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#acc373b9e2193cd529478e8b4da75595e">BITS_PER_SAMPLE_24</a>&#160;&#160;&#160;24</td></tr>
+<tr class="memdesc:acc373b9e2193cd529478e8b4da75595e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Twenty-four bits per sample (= sample word size).  <br /></td></tr>
 <tr class="separator:acc373b9e2193cd529478e8b4da75595e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fd1ae02505b1d8487f90b47d74d5256" id="r_a3fd1ae02505b1d8487f90b47d74d5256"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a3fd1ae02505b1d8487f90b47d74d5256">BITS_PER_SAMPLE_32</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memdesc:a3fd1ae02505b1d8487f90b47d74d5256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thirty-two bits per sample (= sample word size).  <br /></td></tr>
 <tr class="separator:a3fd1ae02505b1d8487f90b47d74d5256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17252219bbdd8335cf35ae48508f15bc" id="r_a17252219bbdd8335cf35ae48508f15bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a17252219bbdd8335cf35ae48508f15bc">BITS_PER_SAMPLE_64</a>&#160;&#160;&#160;64</td></tr>
+<tr class="memdesc:a17252219bbdd8335cf35ae48508f15bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sixty-four bits per sample (= sample word size).  <br /></td></tr>
 <tr class="separator:a17252219bbdd8335cf35ae48508f15bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad343530c2b4cdd64eb88cc1038dc9b6" id="r_aad343530c2b4cdd64eb88cc1038dc9b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#aad343530c2b4cdd64eb88cc1038dc9b6">BYTES_PER_SAMPLE_TWO</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:aad343530c2b4cdd64eb88cc1038dc9b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Two bytes per sample.  <br /></td></tr>
 <tr class="separator:aad343530c2b4cdd64eb88cc1038dc9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b1e39f757891f3d27560fb57d8eca9b" id="r_a9b1e39f757891f3d27560fb57d8eca9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a9b1e39f757891f3d27560fb57d8eca9b">BYTES_PER_SAMPLE_THREE</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a9b1e39f757891f3d27560fb57d8eca9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Three bytes per sample.  <br /></td></tr>
 <tr class="separator:a9b1e39f757891f3d27560fb57d8eca9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a799e5593a95adfbef9fbe8033d1620ac" id="r_a799e5593a95adfbef9fbe8033d1620ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a799e5593a95adfbef9fbe8033d1620ac">BYTES_PER_SAMPLE_FOUR</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:a799e5593a95adfbef9fbe8033d1620ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Four bytes per sample.  <br /></td></tr>
 <tr class="separator:a799e5593a95adfbef9fbe8033d1620ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1c87e7ed2cd2c222920669dccdab0ac" id="r_ad1c87e7ed2cd2c222920669dccdab0ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#ad1c87e7ed2cd2c222920669dccdab0ac">BIT_WIDTH_16</a>&#160;&#160;&#160;16</td></tr>
+<tr class="memdesc:ad1c87e7ed2cd2c222920669dccdab0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample has a bit width of 16 (the actual width of the sample in a word).  <br /></td></tr>
 <tr class="separator:ad1c87e7ed2cd2c222920669dccdab0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a246d2ec63948ff5028ed0b107c174414" id="r_a246d2ec63948ff5028ed0b107c174414"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a246d2ec63948ff5028ed0b107c174414">BIT_WIDTH_24</a>&#160;&#160;&#160;24</td></tr>
+<tr class="memdesc:a246d2ec63948ff5028ed0b107c174414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample has a bit width of 24 (the actual width of the sample in a word).  <br /></td></tr>
 <tr class="separator:a246d2ec63948ff5028ed0b107c174414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a775cbf2cadb8063efba3a13a4e4780c1" id="r_a775cbf2cadb8063efba3a13a4e4780c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a775cbf2cadb8063efba3a13a4e4780c1">BIT_WIDTH_32</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memdesc:a775cbf2cadb8063efba3a13a4e4780c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample has a bit width of 32 (the actual width of the sample in a word).  <br /></td></tr>
 <tr class="separator:a775cbf2cadb8063efba3a13a4e4780c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24e3d597a314c9f947ecac379defdb1b" id="r_a24e3d597a314c9f947ecac379defdb1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a24e3d597a314c9f947ecac379defdb1b">BIT_WIDTH_64</a>&#160;&#160;&#160;64</td></tr>
+<tr class="memdesc:a24e3d597a314c9f947ecac379defdb1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample has a bit width of 64 (the actual width of the sample in a word).  <br /></td></tr>
 <tr class="separator:a24e3d597a314c9f947ecac379defdb1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a966a173771e3169c0f8020fbfe4b844e" id="r_a966a173771e3169c0f8020fbfe4b844e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a966a173771e3169c0f8020fbfe4b844e">PCM_LSB_ALIGNED</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a966a173771e3169c0f8020fbfe4b844e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for LSB alignment.  <br /></td></tr>
 <tr class="separator:a966a173771e3169c0f8020fbfe4b844e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afefbe8f9773ed8352aea82cfa39f7f7a" id="r_afefbe8f9773ed8352aea82cfa39f7f7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#afefbe8f9773ed8352aea82cfa39f7f7a">PCM_MSB_ALIGNED</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:afefbe8f9773ed8352aea82cfa39f7f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for MSB alignment.  <br /></td></tr>
 <tr class="separator:afefbe8f9773ed8352aea82cfa39f7f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a9d0d88a8bd7b9a8b69d156a3629d7a" id="r_a8a9d0d88a8bd7b9a8b69d156a3629d7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a8a9d0d88a8bd7b9a8b69d156a3629d7a">PCM_Q_FACTOR_15</a>&#160;&#160;&#160;15</td></tr>
+<tr class="memdesc:a8a9d0d88a8bd7b9a8b69d156a3629d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for the Q15 factor.  <br /></td></tr>
 <tr class="separator:a8a9d0d88a8bd7b9a8b69d156a3629d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73f861bb218f22dc0e9badefdb7b5e78" id="r_a73f861bb218f22dc0e9badefdb7b5e78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a73f861bb218f22dc0e9badefdb7b5e78">PCM_Q_FACTOR_23</a>&#160;&#160;&#160;23</td></tr>
+<tr class="memdesc:a73f861bb218f22dc0e9badefdb7b5e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for the Q23 factor.  <br /></td></tr>
 <tr class="separator:a73f861bb218f22dc0e9badefdb7b5e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e47310486042fe6a448848d4884351e" id="r_a9e47310486042fe6a448848d4884351e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a9e47310486042fe6a448848d4884351e">PCM_Q_FACTOR_27</a>&#160;&#160;&#160;27</td></tr>
+<tr class="memdesc:a9e47310486042fe6a448848d4884351e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for the Q27 factor.  <br /></td></tr>
 <tr class="separator:a9e47310486042fe6a448848d4884351e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6afb62f63aca01698b97bfc1ed57387" id="r_aa6afb62f63aca01698b97bfc1ed57387"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#aa6afb62f63aca01698b97bfc1ed57387">PCM_Q_FACTOR_31</a>&#160;&#160;&#160;31</td></tr>
+<tr class="memdesc:aa6afb62f63aca01698b97bfc1ed57387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for the Q31 factor.  <br /></td></tr>
 <tr class="separator:aa6afb62f63aca01698b97bfc1ed57387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a975c909939e069adb745d1faf007e86d" id="r_a975c909939e069adb745d1faf007e86d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a975c909939e069adb745d1faf007e86d">PCM_QFORMAT_SHIFT_FACTOR</a>&#160;&#160;&#160;(<a class="el" href="media__fmt__api__basic_8h.html#aa6afb62f63aca01698b97bfc1ed57387">PCM_Q_FACTOR_31</a> - <a class="el" href="media__fmt__api__basic_8h.html#a9e47310486042fe6a448848d4884351e">PCM_Q_FACTOR_27</a>)</td></tr>
+<tr class="memdesc:a975c909939e069adb745d1faf007e86d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift factor for Q31 &lt;=&gt; Q28 conversion for 32-bit P.  <br /></td></tr>
 <tr class="separator:a975c909939e069adb745d1faf007e86d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5085492ea43188f5b59d4cb50829d938" id="r_a5085492ea43188f5b59d4cb50829d938"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a5085492ea43188f5b59d4cb50829d938">SAMPLE_RATE_8K</a>&#160;&#160;&#160;8000</td></tr>
+<tr class="memdesc:a5085492ea43188f5b59d4cb50829d938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 8 kHz.  <br /></td></tr>
 <tr class="separator:a5085492ea43188f5b59d4cb50829d938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5805d14d68870094a13efc91e76da5d6" id="r_a5805d14d68870094a13efc91e76da5d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a5805d14d68870094a13efc91e76da5d6">SAMPLE_RATE_11_025K</a>&#160;&#160;&#160;11025</td></tr>
+<tr class="memdesc:a5805d14d68870094a13efc91e76da5d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 11.025 kHz.  <br /></td></tr>
 <tr class="separator:a5805d14d68870094a13efc91e76da5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a572871bbc5afdd2072052f5c92d2de3a" id="r_a572871bbc5afdd2072052f5c92d2de3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a572871bbc5afdd2072052f5c92d2de3a">SAMPLE_RATE_12K</a>&#160;&#160;&#160;12000</td></tr>
+<tr class="memdesc:a572871bbc5afdd2072052f5c92d2de3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 12 kHz.  <br /></td></tr>
 <tr class="separator:a572871bbc5afdd2072052f5c92d2de3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d868c187bcd330b5884356e5153f55e" id="r_a2d868c187bcd330b5884356e5153f55e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a2d868c187bcd330b5884356e5153f55e">SAMPLE_RATE_16K</a>&#160;&#160;&#160;16000</td></tr>
+<tr class="memdesc:a2d868c187bcd330b5884356e5153f55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 16 kHz.  <br /></td></tr>
 <tr class="separator:a2d868c187bcd330b5884356e5153f55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac13106d07bfe8c5704ab807e4b3214d1" id="r_ac13106d07bfe8c5704ab807e4b3214d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#ac13106d07bfe8c5704ab807e4b3214d1">SAMPLE_RATE_22_05K</a>&#160;&#160;&#160;22050</td></tr>
+<tr class="memdesc:ac13106d07bfe8c5704ab807e4b3214d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 22.05 kHz.  <br /></td></tr>
 <tr class="separator:ac13106d07bfe8c5704ab807e4b3214d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8043ddb3ec1c4d03b0f7aebc5f6a730b" id="r_a8043ddb3ec1c4d03b0f7aebc5f6a730b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a8043ddb3ec1c4d03b0f7aebc5f6a730b">SAMPLE_RATE_24K</a>&#160;&#160;&#160;24000</td></tr>
+<tr class="memdesc:a8043ddb3ec1c4d03b0f7aebc5f6a730b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 24 kHz.  <br /></td></tr>
 <tr class="separator:a8043ddb3ec1c4d03b0f7aebc5f6a730b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6701084547c2fed56386006a33648415" id="r_a6701084547c2fed56386006a33648415"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a6701084547c2fed56386006a33648415">SAMPLE_RATE_32K</a>&#160;&#160;&#160;32000</td></tr>
+<tr class="memdesc:a6701084547c2fed56386006a33648415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 32 kHz.  <br /></td></tr>
 <tr class="separator:a6701084547c2fed56386006a33648415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b397d66ded91769fe5e5c0ad8ad463c" id="r_a3b397d66ded91769fe5e5c0ad8ad463c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a3b397d66ded91769fe5e5c0ad8ad463c">SAMPLE_RATE_44_1K</a>&#160;&#160;&#160;44100</td></tr>
+<tr class="memdesc:a3b397d66ded91769fe5e5c0ad8ad463c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 44.1 kHz.  <br /></td></tr>
 <tr class="separator:a3b397d66ded91769fe5e5c0ad8ad463c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a084c900b4c493ac55e6ad86b13fd28ba" id="r_a084c900b4c493ac55e6ad86b13fd28ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a084c900b4c493ac55e6ad86b13fd28ba">SAMPLE_RATE_48K</a>&#160;&#160;&#160;48000</td></tr>
+<tr class="memdesc:a084c900b4c493ac55e6ad86b13fd28ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 48 kHz.  <br /></td></tr>
 <tr class="separator:a084c900b4c493ac55e6ad86b13fd28ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0f0be6c248b2fa7be47d43b03613992" id="r_ab0f0be6c248b2fa7be47d43b03613992"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#ab0f0be6c248b2fa7be47d43b03613992">SAMPLE_RATE_88_2K</a>&#160;&#160;&#160;88200</td></tr>
+<tr class="memdesc:ab0f0be6c248b2fa7be47d43b03613992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 88.2 kHz.  <br /></td></tr>
 <tr class="separator:ab0f0be6c248b2fa7be47d43b03613992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ec098b93c7b6cb9cd05d3eaa78908a9" id="r_a7ec098b93c7b6cb9cd05d3eaa78908a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a7ec098b93c7b6cb9cd05d3eaa78908a9">SAMPLE_RATE_96K</a>&#160;&#160;&#160;96000</td></tr>
+<tr class="memdesc:a7ec098b93c7b6cb9cd05d3eaa78908a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 96 kHz.  <br /></td></tr>
 <tr class="separator:a7ec098b93c7b6cb9cd05d3eaa78908a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e545eec2accd3e432b439d854c1073f" id="r_a0e545eec2accd3e432b439d854c1073f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a0e545eec2accd3e432b439d854c1073f">SAMPLE_RATE_176_4K</a>&#160;&#160;&#160;176400</td></tr>
+<tr class="memdesc:a0e545eec2accd3e432b439d854c1073f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 176.4 kHz.  <br /></td></tr>
 <tr class="separator:a0e545eec2accd3e432b439d854c1073f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade910542b9c43d458d7983a414e98de9" id="r_ade910542b9c43d458d7983a414e98de9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#ade910542b9c43d458d7983a414e98de9">SAMPLE_RATE_192K</a>&#160;&#160;&#160;192000</td></tr>
+<tr class="memdesc:ade910542b9c43d458d7983a414e98de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 192 kHz.  <br /></td></tr>
 <tr class="separator:ade910542b9c43d458d7983a414e98de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe6cd32e851a03345c9f3f4a4de8cf33" id="r_afe6cd32e851a03345c9f3f4a4de8cf33"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#afe6cd32e851a03345c9f3f4a4de8cf33">SAMPLE_RATE_352_8K</a>&#160;&#160;&#160;352800</td></tr>
+<tr class="memdesc:afe6cd32e851a03345c9f3f4a4de8cf33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 352.8 kHz.  <br /></td></tr>
 <tr class="separator:afe6cd32e851a03345c9f3f4a4de8cf33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae04f8d2283c549fb9e9bf5a2b7c6a9ae" id="r_ae04f8d2283c549fb9e9bf5a2b7c6a9ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#ae04f8d2283c549fb9e9bf5a2b7c6a9ae">SAMPLE_RATE_384K</a>&#160;&#160;&#160;384000</td></tr>
+<tr class="memdesc:ae04f8d2283c549fb9e9bf5a2b7c6a9ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling rate is 384 kHz.  <br /></td></tr>
 <tr class="separator:ae04f8d2283c549fb9e9bf5a2b7c6a9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ccdd123f04e372c57743184fb614be9" id="r_a0ccdd123f04e372c57743184fb614be9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a0ccdd123f04e372c57743184fb614be9">PCM_LITTLE_ENDIAN</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a0ccdd123f04e372c57743184fb614be9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte order is little endian.  <br /></td></tr>
 <tr class="separator:a0ccdd123f04e372c57743184fb614be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e207197f46618c500f8cc913e6dc77e" id="r_a7e207197f46618c500f8cc913e6dc77e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a7e207197f46618c500f8cc913e6dc77e">PCM_BIG_ENDIAN</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:a7e207197f46618c500f8cc913e6dc77e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte order is big endian.  <br /></td></tr>
 <tr class="separator:a7e207197f46618c500f8cc913e6dc77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73a47ea9aa1ef65be5cee6cabda4ac68" id="r_a73a47ea9aa1ef65be5cee6cabda4ac68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a73a47ea9aa1ef65be5cee6cabda4ac68">PCM_INTERLEAVED</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a73a47ea9aa1ef65be5cee6cabda4ac68"><td class="mdescLeft">&#160;</td><td class="mdescRight">PCM data is interleaved.  <br /></td></tr>
 <tr class="separator:a73a47ea9aa1ef65be5cee6cabda4ac68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb04e7e467f6006c9f76d9a68160f5fa" id="r_afb04e7e467f6006c9f76d9a68160f5fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#afb04e7e467f6006c9f76d9a68160f5fa">PCM_DEINTERLEAVED_PACKED</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:afb04e7e467f6006c9f76d9a68160f5fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">PCM data is de-interleaved packed.  <br /></td></tr>
 <tr class="separator:afb04e7e467f6006c9f76d9a68160f5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ded088a364e1e855879cdd19fcfa538" id="r_a2ded088a364e1e855879cdd19fcfa538"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a2ded088a364e1e855879cdd19fcfa538">PCM_DEINTERLEAVED_UNPACKED</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a2ded088a364e1e855879cdd19fcfa538"><td class="mdescLeft">&#160;</td><td class="mdescRight">PCM data is de-interleaved unpacked.  <br /></td></tr>
 <tr class="separator:a2ded088a364e1e855879cdd19fcfa538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cf82c20d07549d0f73035be77e71732" id="r_a7cf82c20d07549d0f73035be77e71732"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a7cf82c20d07549d0f73035be77e71732">DATA_FORMAT_FIXED_POINT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a7cf82c20d07549d0f73035be77e71732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for the fixed-point data format.  <br /></td></tr>
 <tr class="separator:a7cf82c20d07549d0f73035be77e71732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad997c9f56e0aca9419bad7273253dd08" id="r_ad997c9f56e0aca9419bad7273253dd08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#ad997c9f56e0aca9419bad7273253dd08">DATA_FORMAT_IEC61937_PACKETIZED</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:ad997c9f56e0aca9419bad7273253dd08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data format is an IEC 61937 packetized stream.  <br /></td></tr>
 <tr class="separator:ad997c9f56e0aca9419bad7273253dd08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a654e4a20f0f87457021e04117eb40db5" id="r_a654e4a20f0f87457021e04117eb40db5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a654e4a20f0f87457021e04117eb40db5">DATA_FORMAT_IEC60958_PACKETIZED</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a654e4a20f0f87457021e04117eb40db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data format is IEC 60958 packetized stream for PCM only.  <br /></td></tr>
 <tr class="separator:a654e4a20f0f87457021e04117eb40db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecebf7ddc2915f740960eb857689be60" id="r_aecebf7ddc2915f740960eb857689be60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#aecebf7ddc2915f740960eb857689be60">DATA_FORMAT_DSD_OVER_PCM</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:aecebf7ddc2915f740960eb857689be60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data format is a DSD-over-PCM stream.  <br /></td></tr>
 <tr class="separator:aecebf7ddc2915f740960eb857689be60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5a244aaaa842b2ea6bcfbb5a0de2b3f" id="r_af5a244aaaa842b2ea6bcfbb5a0de2b3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#af5a244aaaa842b2ea6bcfbb5a0de2b3f">DATA_FORMAT_GENERIC_COMPRESSED</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:af5a244aaaa842b2ea6bcfbb5a0de2b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data format is a generic compressed stream.  <br /></td></tr>
 <tr class="separator:af5a244aaaa842b2ea6bcfbb5a0de2b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c39ae7cdca806499e091bc190a86b95" id="r_a2c39ae7cdca806499e091bc190a86b95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a2c39ae7cdca806499e091bc190a86b95">DATA_FORMAT_RAW_COMPRESSED</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memdesc:a2c39ae7cdca806499e091bc190a86b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data format is a Raw compressed stream.  <br /></td></tr>
 <tr class="separator:a2c39ae7cdca806499e091bc190a86b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9390792ff98a21a0d4db7f7023ebaf04" id="r_a9390792ff98a21a0d4db7f7023ebaf04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a9390792ff98a21a0d4db7f7023ebaf04">DATA_FORMAT_COMPR_OVER_PCM_PACKETIZED</a>&#160;&#160;&#160;7</td></tr>
+<tr class="memdesc:a9390792ff98a21a0d4db7f7023ebaf04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressed bitstreams are packetized like PCM using a QTI-designed packetizer.  <br /></td></tr>
 <tr class="separator:a9390792ff98a21a0d4db7f7023ebaf04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d75b4ed99cdd87e4ef960897018b1bb" id="r_a8d75b4ed99cdd87e4ef960897018b1bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a8d75b4ed99cdd87e4ef960897018b1bb">DATA_FORMAT_IEC60958_PACKETIZED_NON_LINEAR</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:a8d75b4ed99cdd87e4ef960897018b1bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data format is an IEC 60958 packetized stream for compressed streams.  <br /></td></tr>
 <tr class="separator:a8d75b4ed99cdd87e4ef960897018b1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82034351c520daf6b9c8a651ec6e1177" id="r_a82034351c520daf6b9c8a651ec6e1177"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a82034351c520daf6b9c8a651ec6e1177">DATA_FORMAT_FLOATING_POINT</a>&#160;&#160;&#160;9</td></tr>
 <tr class="separator:a82034351c520daf6b9c8a651ec6e1177"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21012e0ca7cc17576b88efe94ee69944" id="r_a21012e0ca7cc17576b88efe94ee69944"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a21012e0ca7cc17576b88efe94ee69944">DATA_FORMAT_DEINTERLEAVED_RAW_COMPRESSED</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:a21012e0ca7cc17576b88efe94ee69944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data format is deinterleaved raw compressed unlike other formats it has no channels or buffers.  <br /></td></tr>
 <tr class="separator:a21012e0ca7cc17576b88efe94ee69944"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3794a2c0dc3b647b6bb1b588e85d9e1e" id="r_a3794a2c0dc3b647b6bb1b588e85d9e1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a3794a2c0dc3b647b6bb1b588e85d9e1e">PARAM_VAL_UNSET</a>&#160;&#160;&#160;(-2)</td></tr>
+<tr class="memdesc:a3794a2c0dc3b647b6bb1b588e85d9e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value of a configured parameter (like bits_per_sample and num_channels) is <em>don't care</em> .  <br /></td></tr>
 <tr class="separator:a3794a2c0dc3b647b6bb1b588e85d9e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af791cd2267084d268ce4d70e184218ef" id="r_af791cd2267084d268ce4d70e184218ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#af791cd2267084d268ce4d70e184218ef">PARAM_VAL_NATIVE</a>&#160;&#160;&#160;(-1)</td></tr>
+<tr class="memdesc:af791cd2267084d268ce4d70e184218ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value of a configured parameter (like bits_per_sample and num_channels) must follow the input media format that the module will receive or has received.  <br /></td></tr>
 <tr class="separator:af791cd2267084d268ce4d70e184218ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77332ab4f6281afa1ee316792d177e8d" id="r_a77332ab4f6281afa1ee316792d177e8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a77332ab4f6281afa1ee316792d177e8d">PARAM_VAL_INVALID</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a77332ab4f6281afa1ee316792d177e8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value of a configured parameter (like bits_per_sample and num_channels) is considered invalid and the Set parameter command should result in an error.  <br /></td></tr>
 <tr class="separator:a77332ab4f6281afa1ee316792d177e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a386ae87605878d262bee5695100ce33d" id="r_a386ae87605878d262bee5695100ce33d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a386ae87605878d262bee5695100ce33d">MEDIA_FMT_ID_PCM</a>&#160;&#160;&#160;0x09001000</td></tr>
+<tr class="memdesc:a386ae87605878d262bee5695100ce33d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the media format used to identify a PCM stream.  <br /></td></tr>
 <tr class="separator:a386ae87605878d262bee5695100ce33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3fb22010aa4f389b03f1b00d204cb79" id="r_ab3fb22010aa4f389b03f1b00d204cb79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#ab3fb22010aa4f389b03f1b00d204cb79">PARAM_ID_MEDIA_FORMAT</a>&#160;&#160;&#160;0x0800100C</td></tr>
+<tr class="memdesc:ab3fb22010aa4f389b03f1b00d204cb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the parameter used to set the media format on any Shared Memory Endpoint module.  <br /></td></tr>
 <tr class="separator:ab3fb22010aa4f389b03f1b00d204cb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05dbcc040f2d76cb8c24f2d66e33003c" id="r_a05dbcc040f2d76cb8c24f2d66e33003c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="media__fmt__api__basic_8h.html#a05dbcc040f2d76cb8c24f2d66e33003c">PARAM_ID_ENCODER_OUTPUT_CONFIG</a>&#160;&#160;&#160;0x08001009</td></tr>
+<tr class="memdesc:a05dbcc040f2d76cb8c24f2d66e33003c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the parameter that configures the encoder.  <br /></td></tr>
 <tr class="separator:a05dbcc040f2d76cb8c24f2d66e33003c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -401,6 +460,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="media__fmt__api__basic_8h.html#abd710d003829b1af0ac49a6d97f1b803af988187ea7fb0f992348e82cf6d10e40">PCM_MAX_CHANNEL_MAP_V2</a> = 128
 <br />
  }</td></tr>
+<tr class="memdesc:abd710d003829b1af0ac49a6d97f1b803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel map values.  <a href="media__fmt__api__basic_8h.html#abd710d003829b1af0ac49a6d97f1b803">More...</a><br /></td></tr>
 <tr class="separator:abd710d003829b1af0ac49a6d97f1b803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -418,6 +478,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sample has a bit width of 16 (the actual width of the sample in a word). </p>
 
 </div>
@@ -433,6 +494,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sample has a bit width of 24 (the actual width of the sample in a word). </p>
 
 </div>
@@ -448,6 +510,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sample has a bit width of 32 (the actual width of the sample in a word). </p>
 
 </div>
@@ -463,6 +526,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sample has a bit width of 64 (the actual width of the sample in a word). </p>
 
 </div>
@@ -478,6 +542,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sixteen bits per sample (= sample word size). </p>
 
 </div>
@@ -493,6 +558,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Twenty-four bits per sample (= sample word size). </p>
 
 </div>
@@ -508,6 +574,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Thirty-two bits per sample (= sample word size). </p>
 
 </div>
@@ -523,6 +590,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sixty-four bits per sample (= sample word size). </p>
 
 </div>
@@ -538,6 +606,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Four bytes per sample. </p>
 
 </div>
@@ -553,6 +622,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Three bytes per sample. </p>
 
 </div>
@@ -568,6 +638,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Two bytes per sample. </p>
 
 </div>
@@ -583,6 +654,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Compressed bitstreams are packetized like PCM using a QTI-designed packetizer. </p>
 
 </div>
@@ -598,7 +670,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Data format is deinterleaved raw compressed unlike other formats it has no channels or buffers </p>
+
+<p>Data format is deinterleaved raw compressed unlike other formats it has no channels or buffers. </p>
 
 </div>
 </div>
@@ -613,7 +686,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Data format is a DSD-over-PCM stream.</p>
+
+<p>Data format is a DSD-over-PCM stream. </p>
 <p>Like PCM, the data has properties such as sample rate, number of channels, and bit width. </p>
 
 </div>
@@ -629,6 +703,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enumeration for the fixed-point data format. </p>
 
 </div>
@@ -661,7 +736,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Data format is a generic compressed stream.</p>
+
+<p>Data format is a generic compressed stream. </p>
 <p>Like PCM, the data has properties such as sample rate, number of channels, and bit width. </p>
 
 </div>
@@ -677,7 +753,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Data format is IEC 60958 packetized stream for PCM only.</p>
+
+<p>Data format is IEC 60958 packetized stream for PCM only. </p>
 <p>Like PCM, the data has properties such as sample rate, number of channels, and bit width. </p>
 
 </div>
@@ -693,7 +770,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Data format is an IEC 60958 packetized stream for compressed streams.</p>
+
+<p>Data format is an IEC 60958 packetized stream for compressed streams. </p>
 <p>Like PCM, the data has properties such as sample rate, number of channels, and bit width. </p>
 
 </div>
@@ -709,7 +787,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Data format is an IEC 61937 packetized stream.</p>
+
+<p>Data format is an IEC 61937 packetized stream. </p>
 <p>Like PCM, the data has properties such as sample rate, number of channels, and bit width. </p>
 
 </div>
@@ -725,7 +804,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Data format is a Raw compressed stream.</p>
+
+<p>Data format is a Raw compressed stream. </p>
 <p>Like PCM, the data does not have properties such as sample rate, number of channels, and bit width. </p>
 
 </div>
@@ -741,6 +821,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enumeration for infinity. </p>
 
 </div>
@@ -756,6 +837,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enumeration for an invalid value. </p>
 
 </div>
@@ -771,15 +853,16 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the media format used to identify a PCM stream.</p>
+
+<p>Identifier for the media format used to identify a PCM stream. </p>
 <p>Following is the overall payload structure:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>complete_media_fmt_pcm_t</div>
 <div class="line">{</div>
 <div class="line">   <a class="code hl_struct" href="structpayload__media__fmt__pcm__t.html">payload_media_fmt_pcm_t</a> pcm;</div>
 <div class="line">   uint8_t ch_map[num_channels];</div>
 <div class="line">}</div>
-<div class="ttc" id="astructpayload__media__fmt__pcm__t_html"><div class="ttname"><a href="structpayload__media__fmt__pcm__t.html">payload_media_fmt_pcm_t</a></div><div class="ttdef"><b>Definition</b> media_fmt_api_basic.h:608</div></div>
-</div><!-- fragment --><p>@msgpayload <a class="el" href="structpayload__media__fmt__pcm__t.html">payload_media_fmt_pcm_t</a> </p>
+<div class="ttc" id="astructpayload__media__fmt__pcm__t_html"><div class="ttname"><a href="structpayload__media__fmt__pcm__t.html">payload_media_fmt_pcm_t</a></div><div class="ttdoc">Payload of MEDIA_FMT_ID_PCM when media_format_t::fmt_id = MEDIA_FMT_ID_PCM and data_format = DATA_FOR...</div><div class="ttdef"><b>Definition</b> media_fmt_api_basic.h:608</div></div>
+</div><!-- fragment --><p>@msgpayload <a class="el" href="structpayload__media__fmt__pcm__t.html" title="Payload of MEDIA_FMT_ID_PCM when media_format_t::fmt_id = MEDIA_FMT_ID_PCM and data_format = DATA_FOR...">payload_media_fmt_pcm_t</a> </p>
 
 </div>
 </div>
@@ -794,7 +877,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the parameter that configures the encoder.</p>
+
+<p>Identifier for the parameter that configures the encoder. </p>
 <p>Encoding occurs at the incoming sample rate, number of channels, and bit width. These parameters are controlled by the resamplers, MFC, channel mixer, or PCM converter. Not all encoders support the encoder output configuration.</p>
 <p>Following is the overall payload structure:</p>
 <div class="fragment"><div class="line">{</div>
@@ -802,8 +886,8 @@ Enumerations</h2></td></tr>
 <div class="line">   uint8_t custom_enc_cfg[payload_size];</div>
 <div class="line">   uint8_t padding[if_any];</div>
 <div class="line">}</div>
-<div class="ttc" id="astructparam__id__encoder__output__config__t_html"><div class="ttname"><a href="structparam__id__encoder__output__config__t.html">param_id_encoder_output_config_t</a></div><div class="ttdef"><b>Definition</b> media_fmt_api_basic.h:965</div></div>
-</div><!-- fragment --><p>@msgpayload <a class="el" href="structparam__id__encoder__output__config__t.html">param_id_encoder_output_config_t</a> @newpage </p>
+<div class="ttc" id="astructparam__id__encoder__output__config__t_html"><div class="ttname"><a href="structparam__id__encoder__output__config__t.html">param_id_encoder_output_config_t</a></div><div class="ttdoc">Payload of the PARAM_ID_ENCODER_OUTPUT_CONFIG parameter.</div><div class="ttdef"><b>Definition</b> media_fmt_api_basic.h:965</div></div>
+</div><!-- fragment --><p>@msgpayload <a class="el" href="structparam__id__encoder__output__config__t.html" title="Payload of the PARAM_ID_ENCODER_OUTPUT_CONFIG parameter.">param_id_encoder_output_config_t</a> @newpage </p>
 
 </div>
 </div>
@@ -818,9 +902,10 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the parameter used to set the media format on any Shared Memory Endpoint module.</p>
+
+<p>Identifier for the parameter used to set the media format on any Shared Memory Endpoint module. </p>
 <p>This parameter ID is set via APM_CMD_SET_CFG (see AudioReach Signal Processing Framework (SPF) API Reference). It is accepted only when the subgraph is in the Stop or Prepare state.</p>
-<p>@msgpayload <a class="el" href="structmedia__format__t.html">media_format_t</a> </p>
+<p>@msgpayload <a class="el" href="structmedia__format__t.html" title="Payload structure used by the following opcodes:">media_format_t</a> </p>
 
 </div>
 </div>
@@ -835,7 +920,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Value of a configured parameter (like bits_per_sample and num_channels) is considered invalid and the Set parameter command should result in an error.</p>
+
+<p>Value of a configured parameter (like bits_per_sample and num_channels) is considered invalid and the Set parameter command should result in an error. </p>
 <p>This mode is used to detect explicit initialization vs. initialization by a zero-memory setting. @newpage </p>
 
 </div>
@@ -851,6 +937,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Value of a configured parameter (like bits_per_sample and num_channels) must follow the input media format that the module will receive or has received. </p>
 
 </div>
@@ -866,7 +953,9 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Value of a configured parameter (like bits_per_sample and num_channels) is <em>don't care</em> . The module should continue to use the previously set configuration (or module defaults).</p>
+
+<p>Value of a configured parameter (like bits_per_sample and num_channels) is <em>don't care</em> . </p>
+<p>The module should continue to use the previously set configuration (or module defaults).</p>
 <p>For example, if the client is to control num_channels from the host but control bits_per_sample from the ACDB, the ACDB will have the value of -2. After a graph is opened, the host can issue a command with bits_per_sample = -2 and num_channels with a proper value. </p>
 
 </div>
@@ -882,6 +971,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Byte order is big endian. </p>
 
 </div>
@@ -897,7 +987,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>PCM data is de-interleaved packed.</p>
+
+<p>PCM data is de-interleaved packed. </p>
 <p>A buffer of maximum size M with C channels and N/C actual bytes per channel is de-interleaved packed if (M - N) is zero. </p>
 
 </div>
@@ -913,7 +1004,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>PCM data is de-interleaved unpacked.</p>
+
+<p>PCM data is de-interleaved unpacked. </p>
 <p>A buffer of maximum size M with C channels and N/C actual bytes per channel is de-interleaved unpacked if (M - N) is nonzero.</p>
 <p>Or, each channel has its own buffers where the actual length is less than the maximum length. </p>
 
@@ -930,6 +1022,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>PCM data is interleaved. </p>
 
 </div>
@@ -945,6 +1038,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Byte order is little endian. </p>
 
 </div>
@@ -960,6 +1054,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enumeration for LSB alignment. </p>
 
 </div>
@@ -975,6 +1070,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enumeration for MSB alignment. </p>
 
 </div>
@@ -990,6 +1086,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enumeration for the Q15 factor. </p>
 
 </div>
@@ -1005,6 +1102,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enumeration for the Q23 factor. </p>
 
 </div>
@@ -1020,6 +1118,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enumeration for the Q27 factor. </p>
 
 </div>
@@ -1035,6 +1134,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Enumeration for the Q31 factor. </p>
 
 </div>
@@ -1050,6 +1150,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Shift factor for Q31 &lt;=&gt; Q28 conversion for 32-bit P. </p>
 
 </div>
@@ -1065,6 +1166,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 11.025 kHz. </p>
 
 </div>
@@ -1080,6 +1182,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 12 kHz. </p>
 
 </div>
@@ -1095,6 +1198,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 16 kHz. </p>
 
 </div>
@@ -1110,6 +1214,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 176.4 kHz. </p>
 
 </div>
@@ -1125,6 +1230,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 192 kHz. </p>
 
 </div>
@@ -1140,6 +1246,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 22.05 kHz. </p>
 
 </div>
@@ -1155,6 +1262,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 24 kHz. </p>
 
 </div>
@@ -1170,6 +1278,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 32 kHz. </p>
 
 </div>
@@ -1185,6 +1294,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 352.8 kHz. </p>
 
 </div>
@@ -1200,6 +1310,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 384 kHz. </p>
 
 </div>
@@ -1215,6 +1326,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 44.1 kHz. </p>
 
 </div>
@@ -1230,6 +1342,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 48 kHz. </p>
 
 </div>
@@ -1245,6 +1358,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 88.2 kHz. </p>
 
 </div>
@@ -1260,6 +1374,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 8 kHz. </p>
 
 </div>
@@ -1275,6 +1390,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Sampling rate is 96 kHz. </p>
 
 </div>
@@ -1362,6 +1478,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Channel map values. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abd710d003829b1af0ac49a6d97f1b803ac5d28d042d3757d9cef498eb24842793" name="abd710d003829b1af0ac49a6d97f1b803ac5d28d042d3757d9cef498eb24842793"></a>PCM_CHANNEL_L&#160;</td><td class="fielddoc"><p>Front left channel. </p>

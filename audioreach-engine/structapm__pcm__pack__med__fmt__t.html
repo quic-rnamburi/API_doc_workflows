@@ -66,6 +66,9 @@ $(document).ready(function(){initNavTree('structapm__pcm__pack__med__fmt__t.html
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="structapm__param__id__port__media__fmt__list__t.html">apm_param_id_port_media_fmt_list_t</a> The below structures exist depending on the data_format  
+ <a href="structapm__pcm__pack__med__fmt__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_debug_info.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -73,10 +76,13 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a1e61378fda989d230455e9ddec205666" id="r_a1e61378fda989d230455e9ddec205666"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__pcm__pack__med__fmt__t.html#a1e61378fda989d230455e9ddec205666">sample_rate</a></td></tr>
 <tr class="separator:a1e61378fda989d230455e9ddec205666"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7375195bf098eab4fcb61a846a41209e" id="r_a7375195bf098eab4fcb61a846a41209e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__pcm__pack__med__fmt__t.html#a7375195bf098eab4fcb61a846a41209e">bit_width</a></td></tr>
+<tr class="memdesc:a7375195bf098eab4fcb61a846a41209e"><td class="mdescLeft">&#160;</td><td class="mdescRight">16, 24, 32 (actual bit width independent of the word size)  <br /></td></tr>
 <tr class="separator:a7375195bf098eab4fcb61a846a41209e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d3c01e85375ab730e5a3834bb144fb7" id="r_a7d3c01e85375ab730e5a3834bb144fb7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__pcm__pack__med__fmt__t.html#a7d3c01e85375ab730e5a3834bb144fb7">bits_per_sample</a></td></tr>
+<tr class="memdesc:a7d3c01e85375ab730e5a3834bb144fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">bits per sample 16 or 32.  <br /></td></tr>
 <tr class="separator:a7d3c01e85375ab730e5a3834bb144fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a766ba5f9d94ddddd0709cc5c4dd051ec" id="r_a766ba5f9d94ddddd0709cc5c4dd051ec"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__pcm__pack__med__fmt__t.html#a766ba5f9d94ddddd0709cc5c4dd051ec">q_factor</a></td></tr>
+<tr class="memdesc:a766ba5f9d94ddddd0709cc5c4dd051ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">15, 27, 31  <br /></td></tr>
 <tr class="separator:a766ba5f9d94ddddd0709cc5c4dd051ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afef63768605ee442662b0b805ced0166" id="r_afef63768605ee442662b0b805ced0166"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__pcm__pack__med__fmt__t.html#afef63768605ee442662b0b805ced0166">num_channels</a></td></tr>
 <tr class="separator:afef63768605ee442662b0b805ced0166"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,6 +105,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>16, 24, 32 (actual bit width independent of the word size) </p>
 
 </div>
@@ -114,7 +121,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>bits per sample 16 or 32. This is actually word size in bits </p>
+
+<p>bits per sample 16 or 32. </p>
+<p>This is actually word size in bits </p>
 
 </div>
 </div>
@@ -171,6 +180,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>15, 27, 31 </p>
 
 </div>

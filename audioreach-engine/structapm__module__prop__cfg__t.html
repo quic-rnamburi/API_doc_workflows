@@ -66,17 +66,22 @@ $(document).ready(function(){initNavTree('structapm__module__prop__cfg__t.html',
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="apm__module__api_8h.html#a2aed37940ca78fd16ab0e56123810c64" title="Identifier for the parameter that configures the module properties.">APM_PARAM_ID_MODULE_PROP</a>.  
+ <a href="structapm__module__prop__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/apm/apm_module_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a7e5ff9bd7609ae9c9df631e5e547999c" id="r_a7e5ff9bd7609ae9c9df631e5e547999c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__prop__cfg__t.html#a7e5ff9bd7609ae9c9df631e5e547999c">instance_id</a></td></tr>
+<tr class="memdesc:a7e5ff9bd7609ae9c9df631e5e547999c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance identifier for the module.  <br /></td></tr>
 <tr class="separator:a7e5ff9bd7609ae9c9df631e5e547999c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77cc2e076f8a7af8682feb421967c13b" id="r_a77cc2e076f8a7af8682feb421967c13b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__module__prop__cfg__t.html#a77cc2e076f8a7af8682feb421967c13b">num_props</a></td></tr>
+<tr class="memdesc:a77cc2e076f8a7af8682feb421967c13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of properties for the module (default = 0).  <br /></td></tr>
 <tr class="separator:a77cc2e076f8a7af8682feb421967c13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="apm__module__api_8h.html#a2aed37940ca78fd16ab0e56123810c64">APM_PARAM_ID_MODULE_PROP</a>.</p>
+<div class="textblock"><p>Payload for <a class="el" href="apm__module__api_8h.html#a2aed37940ca78fd16ab0e56123810c64" title="Identifier for the parameter that configures the module properties.">APM_PARAM_ID_MODULE_PROP</a>. </p>
 <p>Immediately following this structure is a variable length array of structure objects that correspond to each module property. The length of the array is determined by the number of module properties being configured. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a7e5ff9bd7609ae9c9df631e5e547999c" name="a7e5ff9bd7609ae9c9df631e5e547999c"></a>
@@ -90,6 +95,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Instance identifier for the module. </p>
 
 </div>
@@ -105,6 +111,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Number of properties for the module (default = 0). </p>
 
 </div>

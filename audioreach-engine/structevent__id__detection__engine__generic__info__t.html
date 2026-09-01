@@ -66,17 +66,23 @@ $(document).ready(function(){initNavTree('structevent__id__detection__engine__ge
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_parameter {"EVENT_ID_DETECTION_ENGINE_GENERIC_INFO", EVENT_ID_DETECTION_ENGINE_GENERIC_INFO} @h2xmlp_description { Detection event raised by the Detection Engine module.  
+ <a href="structevent__id__detection__engine__generic__info__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/detection_cmn_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ab053d6858db9abfe0c33d7d90f62c140" id="r_ab053d6858db9abfe0c33d7d90f62c140"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevent__id__detection__engine__generic__info__t.html#ab053d6858db9abfe0c33d7d90f62c140">status</a></td></tr>
+<tr class="memdesc:ab053d6858db9abfe0c33d7d90f62c140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status sent by the Detection Engine module to the client.  <br /></td></tr>
 <tr class="separator:ab053d6858db9abfe0c33d7d90f62c140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0952f4ca8343700e77b7fd8cd2e6edb" id="r_ad0952f4ca8343700e77b7fd8cd2e6edb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevent__id__detection__engine__generic__info__t.html#ad0952f4ca8343700e77b7fd8cd2e6edb">payload_size</a></td></tr>
+<tr class="memdesc:ad0952f4ca8343700e77b7fd8cd2e6edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual size of the parameter data payload that follows this structure.  <br /></td></tr>
 <tr class="separator:ad0952f4ca8343700e77b7fd8cd2e6edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_parameter {"EVENT_ID_DETECTION_ENGINE_GENERIC_INFO", EVENT_ID_DETECTION_ENGINE_GENERIC_INFO} @h2xmlp_description { Detection event raised by the Detection Engine module.} @h2xmlp_toolPolicy {NO_SUPPORT} </p>
+<div class="textblock"><p>@h2xmlp_parameter {"EVENT_ID_DETECTION_ENGINE_GENERIC_INFO", EVENT_ID_DETECTION_ENGINE_GENERIC_INFO} @h2xmlp_description { Detection event raised by the Detection Engine module. </p>
+<p>} @h2xmlp_toolPolicy {NO_SUPPORT} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ad0952f4ca8343700e77b7fd8cd2e6edb" name="ad0952f4ca8343700e77b7fd8cd2e6edb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0952f4ca8343700e77b7fd8cd2e6edb">&#9670;&#160;</a></span>payload_size</h2>
@@ -89,7 +95,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Actual size of the parameter data payload that follows this structure.</p>
+
+<p>Actual size of the parameter data payload that follows this structure. </p>
 <p>@values &gt; 0 bytes </p>
 
 </div>
@@ -105,10 +112,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Status sent by the Detection Engine module to the client.</p>
+
+<p>Status sent by the Detection Engine module to the client. </p>
 <p>@values</p><ul>
-<li><a class="el" href="detection__cmn__api_8h.html#a3fd7ad63e5626eab6df68d4b7def9965">DETECTION_STATUS_SUCCESS</a></li>
-<li><a class="el" href="detection__cmn__api_8h.html#ac899ea53f959def177573ccb69f611bb">DETECTION_STATUS_FAILURE</a> @tablebulletend </li>
+<li><a class="el" href="detection__cmn__api_8h.html#a3fd7ad63e5626eab6df68d4b7def9965" title="Status (Detected) sent to notify that the detection engine has detected a keyword.">DETECTION_STATUS_SUCCESS</a></li>
+<li><a class="el" href="detection__cmn__api_8h.html#ac899ea53f959def177573ccb69f611bb" title="Status (Rejected) sent to notify the that a detection module has rejected a keyword.">DETECTION_STATUS_FAILURE</a> @tablebulletend </li>
 </ul>
 
 </div>

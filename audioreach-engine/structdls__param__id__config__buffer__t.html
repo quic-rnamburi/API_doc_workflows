@@ -66,25 +66,34 @@ $(document).ready(function(){initNavTree('structdls__param__id__config__buffer__
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for #DLS_CMD_CONFIG_BUFFER.  
+ <a href="structdls__param__id__config__buffer__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/spf/dls/api/dls_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aeaf2962acfa5d3aecda87873d9c298be" id="r_aeaf2962acfa5d3aecda87873d9c298be"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__config__buffer__t.html#aeaf2962acfa5d3aecda87873d9c298be">buf_start_addr_lsw</a></td></tr>
+<tr class="memdesc:aeaf2962acfa5d3aecda87873d9c298be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower 32-bits of the 64-bit buffer starting address.  <br /></td></tr>
 <tr class="separator:aeaf2962acfa5d3aecda87873d9c298be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa378c0f27680147ea5e886c6a06466b" id="r_afa378c0f27680147ea5e886c6a06466b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__config__buffer__t.html#afa378c0f27680147ea5e886c6a06466b">buf_start_addr_msw</a></td></tr>
+<tr class="memdesc:afa378c0f27680147ea5e886c6a06466b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper 32-bits of the 64-bit buffer starting address.  <br /></td></tr>
 <tr class="separator:afa378c0f27680147ea5e886c6a06466b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56e5a7972d3bde5f5f8eb78f998fed31" id="r_a56e5a7972d3bde5f5f8eb78f998fed31"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__config__buffer__t.html#a56e5a7972d3bde5f5f8eb78f998fed31">mem_map_handle</a></td></tr>
+<tr class="memdesc:a56e5a7972d3bde5f5f8eb78f998fed31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for a shared memory address.  <br /></td></tr>
 <tr class="separator:a56e5a7972d3bde5f5f8eb78f998fed31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f2f80e3cc61da335b0068d36b343018" id="r_a9f2f80e3cc61da335b0068d36b343018"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__config__buffer__t.html#a9f2f80e3cc61da335b0068d36b343018">total_buf_size</a></td></tr>
+<tr class="memdesc:a9f2f80e3cc61da335b0068d36b343018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total allocated buffer size for the data logging service.  <br /></td></tr>
 <tr class="separator:a9f2f80e3cc61da335b0068d36b343018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba11a37e8dd80c4e3437d1a2539016a4" id="r_aba11a37e8dd80c4e3437d1a2539016a4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__config__buffer__t.html#aba11a37e8dd80c4e3437d1a2539016a4">max_log_pkt_size</a></td></tr>
+<tr class="memdesc:aba11a37e8dd80c4e3437d1a2539016a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum one single log packet size.  <br /></td></tr>
 <tr class="separator:aba11a37e8dd80c4e3437d1a2539016a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad791fa5e51d72c320321fa39557c9c9" id="r_aad791fa5e51d72c320321fa39557c9c9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdls__param__id__config__buffer__t.html#aad791fa5e51d72c320321fa39557c9c9">is_cfg</a></td></tr>
+<tr class="memdesc:aad791fa5e51d72c320321fa39557c9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This parameter is used to differentiate between the buffer configuration before starting the data logging and deconfiguration when the data logging is complete 1 - Configuration at the beginning to use the given memory space for the data logging.  <br /></td></tr>
 <tr class="separator:aad791fa5e51d72c320321fa39557c9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for #DLS_CMD_CONFIG_BUFFER.</p>
+<div class="textblock"><p>Payload for #DLS_CMD_CONFIG_BUFFER. </p>
 <p>Consists the 64-bit buffer starting address in buf_start_addr_lsw and buf_start_addr_msw. Followed by a single buffer size and the total allocated buffer size for DLS. Finally a configuration flag to config or deconfig the buffer information in the DLS </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="aeaf2962acfa5d3aecda87873d9c298be" name="aeaf2962acfa5d3aecda87873d9c298be"></a>
@@ -98,7 +107,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Lower 32-bits of the 64-bit buffer starting address. This field is an input configuration parameter. </p>
+
+<p>Lower 32-bits of the 64-bit buffer starting address. </p>
+<p>This field is an input configuration parameter. </p>
 
 </div>
 </div>
@@ -113,7 +124,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Upper 32-bits of the 64-bit buffer starting address. This field is an input configuration parameter. </p>
+
+<p>Upper 32-bits of the 64-bit buffer starting address. </p>
+<p>This field is an input configuration parameter. </p>
 
 </div>
 </div>
@@ -128,7 +141,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This parameter is used to differentiate between the buffer configuration before starting the data logging and deconfiguration when the data logging is complete 1 - Configuration at the beginning to use the given memory space for the data logging. 0 - Deconfigiuration, to not use the given memory space for the data logging </p>
+
+<p>This parameter is used to differentiate between the buffer configuration before starting the data logging and deconfiguration when the data logging is complete 1 - Configuration at the beginning to use the given memory space for the data logging. </p>
+<p>0 - Deconfigiuration, to not use the given memory space for the data logging </p>
 
 </div>
 </div>
@@ -143,7 +158,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Maximum one single log packet size. This field is an input configuration parameter. -1 - default: maximum single buffer size will be used the internal from the DLS internal define </p>
+
+<p>Maximum one single log packet size. </p>
+<p>This field is an input configuration parameter. -1 - default: maximum single buffer size will be used the internal from the DLS internal define </p>
 
 </div>
 </div>
@@ -158,7 +175,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Unique identifier for a shared memory address.</p>
+
+<p>Unique identifier for a shared memory address. </p>
 <p>@values</p><ul>
 <li>NULL &ndash; buffer address is the physical memory address and it doesn't need mapping.</li>
 <li>Non-NULL &ndash; when buffers starting address needs to be mapped to fetch the physical address. </li>
@@ -177,7 +195,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Total allocated buffer size for the data logging service. This field is an input configuration parameter. </p>
+
+<p>Total allocated buffer size for the data logging service. </p>
+<p>This field is an input configuration parameter. </p>
 
 </div>
 </div>

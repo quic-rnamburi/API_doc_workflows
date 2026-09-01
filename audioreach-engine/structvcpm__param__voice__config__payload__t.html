@@ -66,15 +66,19 @@ $(document).ready(function(){initNavTree('structvcpm__param__voice__config__payl
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="vcpm__api_8h.html#a03eaa82c2242df91b7243a4c1605a8f5" title="Identifier for the parameter that contains instance IDs of specific modules in a stream subgraph that...">VCPM_PARAM_ID_VOICE_CONFIG</a>.  
+ <a href="structvcpm__param__voice__config__payload__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:abb76b31ed016a385cb6f8986fd6635bc" id="r_abb76b31ed016a385cb6f8986fd6635bc"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__voice__config__payload__t.html#abb76b31ed016a385cb6f8986fd6635bc">num_sub_graphs</a></td></tr>
+<tr class="memdesc:abb76b31ed016a385cb6f8986fd6635bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of vcpm_cfg_subgraph_properties_t structures and payloads that immediately follow this structure.  <br /></td></tr>
 <tr class="separator:abb76b31ed016a385cb6f8986fd6635bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a03eaa82c2242df91b7243a4c1605a8f5">VCPM_PARAM_ID_VOICE_CONFIG</a>.</p>
+<div class="textblock"><p>Payload for <a class="el" href="vcpm__api_8h.html#a03eaa82c2242df91b7243a4c1605a8f5" title="Identifier for the parameter that contains instance IDs of specific modules in a stream subgraph that...">VCPM_PARAM_ID_VOICE_CONFIG</a>. </p>
 <p>Immediately following this structure is an array of structures of type vcpm_cfg_subgraph_properties_t. The length of the array is equal to num_voice_subgraph_info_objects. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="abb76b31ed016a385cb6f8986fd6635bc" name="abb76b31ed016a385cb6f8986fd6635bc"></a>
@@ -88,6 +92,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Number of vcpm_cfg_subgraph_properties_t structures and payloads that immediately follow this structure. </p>
 
 </div>

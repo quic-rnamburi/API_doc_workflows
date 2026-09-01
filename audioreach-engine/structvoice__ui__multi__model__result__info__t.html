@@ -66,15 +66,20 @@ $(document).ready(function(){initNavTree('structvoice__ui__multi__model__result_
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT}  
+ <a href="structvoice__ui__multi__model__result__info__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/detection_cmn_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a34bdfea16028513eee471b4002fa6569" id="r_a34bdfea16028513eee471b4002fa6569"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvoice__ui__multi__model__result__info__t.html#a34bdfea16028513eee471b4002fa6569">num_detected_models</a></td></tr>
+<tr class="memdesc:a34bdfea16028513eee471b4002fa6569"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Indicates number of models that got detected.  <br /></td></tr>
 <tr class="separator:a34bdfea16028513eee471b4002fa6569"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT} &lt;@h2xmlp_description {Information about the key ID Stage1 SVA5 Result info. Used when this SVA5 result information is expected in a generic detection engine event. To get the information, the mode field in PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG must be set accordingly.} </p>
+<div class="textblock"><p>@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT} </p>
+<p>&lt;@h2xmlp_description {Information about the key ID Stage1 SVA5 Result info. Used when this SVA5 result information is expected in a generic detection engine event. To get the information, the mode field in PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG must be set accordingly.} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a34bdfea16028513eee471b4002fa6569" name="a34bdfea16028513eee471b4002fa6569"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a34bdfea16028513eee471b4002fa6569">&#9670;&#160;</a></span>num_detected_models</h2>
@@ -87,7 +92,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Indicates number of models that got detected. If 3 models are registered with STAGE1_SVA5 and detected happened for 2 models, then this value will be set to 2 Following this will be num_detected_models number of <a class="el" href="structmodel__stats__t.html">model_stats_t</a> type payloads each containing the result statistics for each detected model} @h2xmle_range {1..MAX_MODELS_SUPPORTED} @h2xmle_default {0} </p>
+
+<p>@h2xmle_description {Indicates number of models that got detected. </p>
+<p>If 3 models are registered with STAGE1_SVA5 and detected happened for 2 models, then this value will be set to 2 Following this will be num_detected_models number of <a class="el" href="structmodel__stats__t.html">model_stats_t</a> type payloads each containing the result statistics for each detected model} @h2xmle_range {1..MAX_MODELS_SUPPORTED} @h2xmle_default {0} </p>
 
 </div>
 </div>

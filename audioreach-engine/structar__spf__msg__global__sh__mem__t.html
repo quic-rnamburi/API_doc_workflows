@@ -66,23 +66,31 @@ $(document).ready(function(){initNavTree('structar__spf__msg__global__sh__mem__t
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="ar__spf__cmd__api_8h.html#a3e1f52a3ed655502b53e60698ea73b0e" title="This command carries an OOB payload from global shared memory (APM_CMD_GLOBAL_SHARED_MEM_MAP_REGIONS)...">AR_SPF_MSG_GLOBAL_SH_MEM</a>.  
+ <a href="structar__spf__msg__global__sh__mem__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/ar_spf_cmd_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aef2db09bb62d178e53cde1647ca5e401" id="r_aef2db09bb62d178e53cde1647ca5e401"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar__spf__msg__global__sh__mem__t.html#aef2db09bb62d178e53cde1647ca5e401">shmem_id</a></td></tr>
+<tr class="memdesc:aef2db09bb62d178e53cde1647ca5e401"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unique ID used by the client to map the global memory regions using command <a class="el" href="group__spf__apm__memory__map.html#ga2ca4ea01467e00f32e7aa8a0ed8f2a67" title="Commands the APM to map multiple shared memory regions from a memory pool and associate it with the s...">APM_CMD_GLOBAL_SHARED_MEM_MAP_REGIONS</a>.  <br /></td></tr>
 <tr class="separator:aef2db09bb62d178e53cde1647ca5e401"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af169862e7001a378b918b1c870d7e4a3" id="r_af169862e7001a378b918b1c870d7e4a3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar__spf__msg__global__sh__mem__t.html#af169862e7001a378b918b1c870d7e4a3">property_flag</a></td></tr>
+<tr class="memdesc:af169862e7001a378b918b1c870d7e4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures property for this command.  <br /></td></tr>
 <tr class="separator:af169862e7001a378b918b1c870d7e4a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a73a0a7d930403de3c01ea42b495358" id="r_a4a73a0a7d930403de3c01ea42b495358"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar__spf__msg__global__sh__mem__t.html#a4a73a0a7d930403de3c01ea42b495358">shmem_addr_lsw</a></td></tr>
+<tr class="memdesc:a4a73a0a7d930403de3c01ea42b495358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower 32 bits of the physical/Virtual/byte-offset address value.  <br /></td></tr>
 <tr class="separator:a4a73a0a7d930403de3c01ea42b495358"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a643a9f055c01acadb4d326c08cdab0" id="r_a3a643a9f055c01acadb4d326c08cdab0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar__spf__msg__global__sh__mem__t.html#a3a643a9f055c01acadb4d326c08cdab0">shmem_addr_msw</a></td></tr>
+<tr class="memdesc:a3a643a9f055c01acadb4d326c08cdab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper 32 bits of the physical/Virtual address value.  <br /></td></tr>
 <tr class="separator:a3a643a9f055c01acadb4d326c08cdab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af246c08939faa9e92ba233977df5c706" id="r_af246c08939faa9e92ba233977df5c706"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar__spf__msg__global__sh__mem__t.html#af246c08939faa9e92ba233977df5c706">shmem_size</a></td></tr>
+<tr class="memdesc:af246c08939faa9e92ba233977df5c706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes in the shared memory used by the client/modules to communicate.  <br /></td></tr>
 <tr class="separator:af246c08939faa9e92ba233977df5c706"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="ar__spf__cmd__api_8h.html#a3e1f52a3ed655502b53e60698ea73b0e">AR_SPF_MSG_GLOBAL_SH_MEM</a>. </p>
+<div class="textblock"><p>Payload for <a class="el" href="ar__spf__cmd__api_8h.html#a3e1f52a3ed655502b53e60698ea73b0e" title="This command carries an OOB payload from global shared memory (APM_CMD_GLOBAL_SHARED_MEM_MAP_REGIONS)...">AR_SPF_MSG_GLOBAL_SH_MEM</a>. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="af169862e7001a378b918b1c870d7e4a3" name="af169862e7001a378b918b1c870d7e4a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af169862e7001a378b918b1c870d7e4a3">&#9670;&#160;</a></span>property_flag</h2>
@@ -95,7 +103,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Configures property for this command.</p>
+
+<p>Configures property for this command. </p>
 <p>@values 0x00000000 through 0x00000001</p>
 <p>@contcell @subhead{Bit 0 &ndash; is_ack_not_required flag}</p>
 <p>Indicates if acknowledgment is needed for this command:</p><ul>
@@ -123,7 +132,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Lower 32 bits of the physical/Virtual/byte-offset address value.</p>
+
+<p>Lower 32 bits of the physical/Virtual/byte-offset address value. </p>
 <p>This refers to the memory which is used by client/module to communicate.</p>
 <p>If global shared memory was mapped with offset property (Bit 2 is set) then this value is a byte offset from the base virtual address of global shared memory.</p>
 <p>If global shared memory was not mapped with offset property (Bit 2 is unset) then this value either refers to a physical or a virtual address depending on the Bit 0 configuration in the global shared memory map property.</p>
@@ -142,7 +152,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Upper 32 bits of the physical/Virtual address value.</p>
+
+<p>Upper 32 bits of the physical/Virtual address value. </p>
 <p>@valuesbul</p><ul>
 <li>For offset based addressing, this field must be set to 0.</li>
 <li>For a 32-bit shared memory address, this field must be set to 0.</li>
@@ -163,7 +174,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A unique ID used by the client to map the global memory regions using command <a class="el" href="group__spf__apm__memory__map.html#ga2ca4ea01467e00f32e7aa8a0ed8f2a67">APM_CMD_GLOBAL_SHARED_MEM_MAP_REGIONS</a>. </p>
+
+<p>A unique ID used by the client to map the global memory regions using command <a class="el" href="group__spf__apm__memory__map.html#ga2ca4ea01467e00f32e7aa8a0ed8f2a67" title="Commands the APM to map multiple shared memory regions from a memory pool and associate it with the s...">APM_CMD_GLOBAL_SHARED_MEM_MAP_REGIONS</a>. </p>
 
 </div>
 </div>
@@ -178,7 +190,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of bytes in the shared memory used by the client/modules to communicate. Base virtual address of this memory will be retrieved from the physical/virtual/byte-offset address value specified in this payload. </p>
+
+<p>Number of bytes in the shared memory used by the client/modules to communicate. </p>
+<p>Base virtual address of this memory will be retrieved from the physical/virtual/byte-offset address value specified in this payload. </p>
 
 </div>
 </div>

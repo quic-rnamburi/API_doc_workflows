@@ -66,29 +66,41 @@ $(document).ready(function(){initNavTree('structparam__id__congestion__buf__conf
 </div><!--header-->
 <div class="contents">
 
+<p>This parameter ID is used to configure the Congestion Buffer module.  
+ <a href="structparam__id__congestion__buf__config__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/congestion_buf_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a7d1829c3ff21df8896bc404b15b6e00e" id="r_a7d1829c3ff21df8896bc404b15b6e00e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__congestion__buf__config__t.html#a7d1829c3ff21df8896bc404b15b6e00e">bit_rate_mode</a></td></tr>
+<tr class="memdesc:a7d1829c3ff21df8896bc404b15b6e00e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the bit rate mode of the module.  <br /></td></tr>
 <tr class="separator:a7d1829c3ff21df8896bc404b15b6e00e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90744a3bba1599badf1dde0518d149df" id="r_a90744a3bba1599badf1dde0518d149df"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__congestion__buf__config__t.html#a90744a3bba1599badf1dde0518d149df">bit_rate</a></td></tr>
+<tr class="memdesc:a90744a3bba1599badf1dde0518d149df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the bit rate of the decoder.  <br /></td></tr>
 <tr class="separator:a90744a3bba1599badf1dde0518d149df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89823d2d6962d703e1386e765199bc43" id="r_a89823d2d6962d703e1386e765199bc43"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__congestion__buf__config__t.html#a89823d2d6962d703e1386e765199bc43">congestion_buffer_duration_ms</a></td></tr>
+<tr class="memdesc:a89823d2d6962d703e1386e765199bc43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the congestion buffer size (not latency) in milliseconds.  <br /></td></tr>
 <tr class="separator:a89823d2d6962d703e1386e765199bc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0b629e9d364b2972a25e904c7bd1fe2" id="r_ab0b629e9d364b2972a25e904c7bd1fe2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__congestion__buf__config__t.html#ab0b629e9d364b2972a25e904c7bd1fe2">delay_buffer_duration_ms</a></td></tr>
+<tr class="memdesc:ab0b629e9d364b2972a25e904c7bd1fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
 <tr class="separator:ab0b629e9d364b2972a25e904c7bd1fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5d6c114473192dd8aa7cde408d67b0c" id="r_ae5d6c114473192dd8aa7cde408d67b0c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__congestion__buf__config__t.html#ae5d6c114473192dd8aa7cde408d67b0c">frame_size_mode</a></td></tr>
+<tr class="memdesc:ae5d6c114473192dd8aa7cde408d67b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the mode of the frame size, which can be duration or samples.  <br /></td></tr>
 <tr class="separator:ae5d6c114473192dd8aa7cde408d67b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4b4ff12680b7de372207dc69bd3555a" id="r_ac4b4ff12680b7de372207dc69bd3555a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__congestion__buf__config__t.html#ac4b4ff12680b7de372207dc69bd3555a">frame_size_value</a></td></tr>
+<tr class="memdesc:ac4b4ff12680b7de372207dc69bd3555a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decoder frame size in us or samples, where 0 is unset or variable.  <br /></td></tr>
 <tr class="separator:ac4b4ff12680b7de372207dc69bd3555a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb34554f3e4a4fd920e779db042f2d8c" id="r_aeb34554f3e4a4fd920e779db042f2d8c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__congestion__buf__config__t.html#aeb34554f3e4a4fd920e779db042f2d8c">sampling_rate</a></td></tr>
+<tr class="memdesc:aeb34554f3e4a4fd920e779db042f2d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decoder sampling rate, which is used to derive frame duration when frame size mode is samples.  <br /></td></tr>
 <tr class="separator:aeb34554f3e4a4fd920e779db042f2d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae8187ae5a34efa4086ecc1160472f60" id="r_aae8187ae5a34efa4086ecc1160472f60"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__congestion__buf__config__t.html#aae8187ae5a34efa4086ecc1160472f60">mtu_size</a></td></tr>
+<tr class="memdesc:aae8187ae5a34efa4086ecc1160472f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum Transfer Unit in bytes.  <br /></td></tr>
 <tr class="separator:aae8187ae5a34efa4086ecc1160472f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This parameter ID is used to configure the Congestion Buffer module. @h2xmlp_parameter {"PARAM_ID_CONGESTION_BUF_CONFIG", PARAM_ID_CONGESTION_BUF_CONFIG} @h2xmlp_description { This param ID is used to configure Congestion Buffer module. } @h2xmlp_toolPolicy {NO_SUPPORT} </p>
+<div class="textblock"><p>This parameter ID is used to configure the Congestion Buffer module. </p>
+<p>@h2xmlp_parameter {"PARAM_ID_CONGESTION_BUF_CONFIG", PARAM_ID_CONGESTION_BUF_CONFIG} @h2xmlp_description { This param ID is used to configure Congestion Buffer module. } @h2xmlp_toolPolicy {NO_SUPPORT} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a90744a3bba1599badf1dde0518d149df" name="a90744a3bba1599badf1dde0518d149df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90744a3bba1599badf1dde0518d149df">&#9670;&#160;</a></span>bit_rate</h2>
@@ -101,7 +113,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines the bit rate of the decoder. A value of 0 indicates unknown or unset bitrate. @h2xmle_description { Defines the bit rate of decoder. A value of '0' indicates unknown\unset bitrate} @h2xmle_default { 0 } </p>
+
+<p>Defines the bit rate of the decoder. </p>
+<p>A value of 0 indicates unknown or unset bitrate. @h2xmle_description { Defines the bit rate of decoder. A value of '0' indicates unknown\unset bitrate} @h2xmle_default { 0 } </p>
 
 </div>
 </div>
@@ -116,7 +130,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines the bit rate mode of the module. @h2xmle_description { Defines the bit rate mode of module } @h2xmle_rangeList {"UNSET" = 0; "AVG" = 1; "MAX" = 2} </p>
+
+<p>Defines the bit rate mode of the module. </p>
+<p>@h2xmle_description { Defines the bit rate mode of module } @h2xmle_rangeList {"UNSET" = 0; "AVG" = 1; "MAX" = 2} </p>
 
 </div>
 </div>
@@ -131,7 +147,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines the congestion buffer size (not latency) in milliseconds. @h2xmle_description { Defines the congestion buffer size (not latency) in milli seconds} @h2xmle_default { 0 } @h2xmle_range {0..300} </p>
+
+<p>Defines the congestion buffer size (not latency) in milliseconds. </p>
+<p>@h2xmle_description { Defines the congestion buffer size (not latency) in milli seconds} @h2xmle_default { 0 } @h2xmle_range {0..300} </p>
 
 </div>
 </div>
@@ -146,7 +164,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Reserved. Set to 0. @h2xmle_description { Reserved, set to 0 } @h2xmle_default { 0 } </p>
+
+<p>Reserved. </p>
+<p>Set to 0. @h2xmle_description { Reserved, set to 0 } @h2xmle_default { 0 } </p>
 
 </div>
 </div>
@@ -161,7 +181,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines the mode of the frame size, which can be duration or samples. @h2xmle_description { Defines the mode of frame size which can be duration or samples } @h2xmle_rangeList {"UNSET" = 0; "DURATION IN US" = 1; "SAMPLES" = 2} </p>
+
+<p>Defines the mode of the frame size, which can be duration or samples. </p>
+<p>@h2xmle_description { Defines the mode of frame size which can be duration or samples } @h2xmle_rangeList {"UNSET" = 0; "DURATION IN US" = 1; "SAMPLES" = 2} </p>
 
 </div>
 </div>
@@ -176,7 +198,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Decoder frame size in us or samples, where 0 is unset or variable. @h2xmle_description { Decoder frame size in us or samples - 0 : unset\variable} @h2xmle_default { 0 } </p>
+
+<p>Decoder frame size in us or samples, where 0 is unset or variable. </p>
+<p>@h2xmle_description { Decoder frame size in us or samples - 0 : unset\variable} @h2xmle_default { 0 } </p>
 
 </div>
 </div>
@@ -191,7 +215,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Maximum Transfer Unit in bytes. @h2xmle_description { Maximum Transfer Unit in bytes } @h2xmle_default { 1024 } @h2xmle_range {0..1200} </p>
+
+<p>Maximum Transfer Unit in bytes. </p>
+<p>@h2xmle_description { Maximum Transfer Unit in bytes } @h2xmle_default { 1024 } @h2xmle_range {0..1200} </p>
 
 </div>
 </div>
@@ -206,7 +232,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Decoder sampling rate, which is used to derive frame duration when frame size mode is samples. @h2xmle_description { Decoder sampling rate, used to derive frame duration when frame size mode is samples } </p>
+
+<p>Decoder sampling rate, which is used to derive frame duration when frame size mode is samples. </p>
+<p>@h2xmle_description { Decoder sampling rate, used to derive frame duration when frame size mode is samples } </p>
 
 </div>
 </div>

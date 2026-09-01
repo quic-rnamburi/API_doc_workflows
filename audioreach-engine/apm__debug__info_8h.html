@@ -90,16 +90,19 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__sub__graph__id__state__t.html">apm_sub_graph_id_state_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__param__id__port__media__fmt__report__cfg__enable__t.html">apm_param_id_port_media_fmt_report_cfg_enable_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">All container cfg should be contiguous for optimality.  <a href="structapm__param__id__port__media__fmt__report__cfg__enable__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__param__id__port__media__fmt__list__t.html">apm_param_id_port_media_fmt_list_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__pcm__pack__med__fmt__t.html">apm_pcm_pack_med_fmt_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structapm__param__id__port__media__fmt__list__t.html">apm_param_id_port_media_fmt_list_t</a> The below structures exist depending on the data_format  <a href="structapm__pcm__pack__med__fmt__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__channel__mask__t.html">apm_channel_mask_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__deint__raw__med__fmt__t.html">apm_deint_raw_med_fmt_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__media__format__t.html">apm_media_format_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">different ports of a module should be contiguous for optimality.  <a href="structapm__media__format__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__param__id__port__media__format__t.html">apm_param_id_port_media_format_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,18 +110,25 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ae1ef72db7c8e7d9f3020459d896c17f3" id="r_ae1ef72db7c8e7d9f3020459d896c17f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apm__debug__info_8h.html#ae1ef72db7c8e7d9f3020459d896c17f3">APM_PARAM_ID_SG_STATE_REPORT_CFG</a>&#160;&#160;&#160;0x08001506</td></tr>
+<tr class="memdesc:ae1ef72db7c8e7d9f3020459d896c17f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for #APM_PARAM_ID_SUB_GRAPH_STATE.  <br /></td></tr>
 <tr class="separator:ae1ef72db7c8e7d9f3020459d896c17f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a495b2a1b899ca3fa0788e9e924bb7e07" id="r_a495b2a1b899ca3fa0788e9e924bb7e07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apm__debug__info_8h.html#a495b2a1b899ca3fa0788e9e924bb7e07">APM_SG_STATE_INVALID</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a495b2a1b899ca3fa0788e9e924bb7e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sub-graph payload for #APM_PARAM_ID_SUB_GRAPH_STATE.  <br /></td></tr>
 <tr class="separator:a495b2a1b899ca3fa0788e9e924bb7e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a116ff53838f6f70d10ff8d9ed18ebf51" id="r_a116ff53838f6f70d10ff8d9ed18ebf51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apm__debug__info_8h.html#a116ff53838f6f70d10ff8d9ed18ebf51">APM_SG_STATE_STOPPED</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a116ff53838f6f70d10ff8d9ed18ebf51"><td class="mdescLeft">&#160;</td><td class="mdescRight">APM Sub Graph States.  <br /></td></tr>
 <tr class="separator:a116ff53838f6f70d10ff8d9ed18ebf51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f4d642c8e517df93b738f661b88313d" id="r_a3f4d642c8e517df93b738f661b88313d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apm__debug__info_8h.html#a3f4d642c8e517df93b738f661b88313d">APM_SG_STATE_SUSPENDED</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:a3f4d642c8e517df93b738f661b88313d"><td class="mdescLeft">&#160;</td><td class="mdescRight">APM Sub Graph States.  <br /></td></tr>
 <tr class="separator:a3f4d642c8e517df93b738f661b88313d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15a47679ec265359e852b2b04842ea8d" id="r_a15a47679ec265359e852b2b04842ea8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apm__debug__info_8h.html#a15a47679ec265359e852b2b04842ea8d">APM_SG_STATE_PREPARED</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a15a47679ec265359e852b2b04842ea8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">APM Sub Graph States.  <br /></td></tr>
 <tr class="separator:a15a47679ec265359e852b2b04842ea8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb49be71c7a688dcdb1c85f1b9ffc8fb" id="r_aeb49be71c7a688dcdb1c85f1b9ffc8fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apm__debug__info_8h.html#aeb49be71c7a688dcdb1c85f1b9ffc8fb">APM_SG_STATE_STARTED</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:aeb49be71c7a688dcdb1c85f1b9ffc8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">APM Sub Graph States.  <br /></td></tr>
 <tr class="separator:aeb49be71c7a688dcdb1c85f1b9ffc8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a031e47f564414dc776568afe76cb2054" id="r_a031e47f564414dc776568afe76cb2054"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apm__debug__info_8h.html#a031e47f564414dc776568afe76cb2054">APM_PARAM_ID_PORT_MEDIA_FMT_REPORT_CFG</a>&#160;&#160;&#160;0x08001507</td></tr>
+<tr class="memdesc:a031e47f564414dc776568afe76cb2054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for <a class="el" href="apm__debug__info_8h.html#a031e47f564414dc776568afe76cb2054" title="Payload for APM_PARAM_ID_PORT_MEDIA_FMT_REPORT_CFG.">APM_PARAM_ID_PORT_MEDIA_FMT_REPORT_CFG</a>.  <br /></td></tr>
 <tr class="separator:a031e47f564414dc776568afe76cb2054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -159,7 +169,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Payload for <a class="el" href="apm__debug__info_8h.html#a031e47f564414dc776568afe76cb2054">APM_PARAM_ID_PORT_MEDIA_FMT_REPORT_CFG</a> </p>
+
+<p>Payload for <a class="el" href="apm__debug__info_8h.html#a031e47f564414dc776568afe76cb2054" title="Payload for APM_PARAM_ID_PORT_MEDIA_FMT_REPORT_CFG.">APM_PARAM_ID_PORT_MEDIA_FMT_REPORT_CFG</a>. </p>
 
 </div>
 </div>
@@ -174,7 +185,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Payload for #APM_PARAM_ID_SUB_GRAPH_STATE.</p>
+
+<p>Payload for #APM_PARAM_ID_SUB_GRAPH_STATE. </p>
 <p>Immediately following this are the number of sub graphs and structure <a class="el" href="structapm__sub__graph__id__state__t.html">apm_sub_graph_id_state_t</a> repeats as many times as num_sub_graphs This param can be only be used with APM_CMD_SET_CFG and not with APM_CMD_GET_CFG </p>
 
 </div>
@@ -190,7 +202,8 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sub-graph payload for #APM_PARAM_ID_SUB_GRAPH_STATE.</p>
+
+<p>Sub-graph payload for #APM_PARAM_ID_SUB_GRAPH_STATE. </p>
 <p>APM Sub Graph States Sub-graph state INVALID </p>
 
 </div>
@@ -206,7 +219,9 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>APM Sub Graph States Sub-graph state PREPARED </p>
+
+<p>APM Sub Graph States. </p>
+<p>Sub-graph state PREPARED </p>
 
 </div>
 </div>
@@ -221,7 +236,9 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>APM Sub Graph States Sub-graph state STARTED </p>
+
+<p>APM Sub Graph States. </p>
+<p>Sub-graph state STARTED </p>
 
 </div>
 </div>
@@ -236,7 +253,9 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>APM Sub Graph States Sub-graph state STOPPED </p>
+
+<p>APM Sub Graph States. </p>
+<p>Sub-graph state STOPPED </p>
 
 </div>
 </div>
@@ -251,7 +270,9 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>APM Sub Graph States Sub-graph state SUSPENDED </p>
+
+<p>APM Sub Graph States. </p>
+<p>Sub-graph state SUSPENDED </p>
 
 </div>
 </div>

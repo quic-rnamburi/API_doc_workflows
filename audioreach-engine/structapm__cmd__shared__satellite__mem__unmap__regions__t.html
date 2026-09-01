@@ -71,8 +71,10 @@ $(document).ready(function(){initNavTree('structapm__cmd__shared__satellite__mem
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ae6779f49b54fa72cef5a921d79c94f9d" id="r_ae6779f49b54fa72cef5a921d79c94f9d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__cmd__shared__satellite__mem__unmap__regions__t.html#ae6779f49b54fa72cef5a921d79c94f9d">satellite_proc_domain_id</a></td></tr>
+<tr class="memdesc:ae6779f49b54fa72cef5a921d79c94f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the satellite process domain ID whose memory must be unmapped.  <br /></td></tr>
 <tr class="separator:ae6779f49b54fa72cef5a921d79c94f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5971f1be13b3e23055ee75698e8119f8" id="r_a5971f1be13b3e23055ee75698e8119f8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapm__cmd__shared__satellite__mem__unmap__regions__t.html#a5971f1be13b3e23055ee75698e8119f8">master_mem_handle</a></td></tr>
+<tr class="memdesc:a5971f1be13b3e23055ee75698e8119f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the shared memory address.  <br /></td></tr>
 <tr class="separator:a5971f1be13b3e23055ee75698e8119f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
@@ -87,9 +89,10 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Unique identifier for the shared memory address.</p>
+
+<p>Unique identifier for the shared memory address. </p>
 <p>@values Any 32-bit value</p>
-<p>The satellite process domain uses this handle to retrieve the associated shared memory regions and unmap them. The APM returns this handle through <a class="el" href="group__spf__apm__memory__map.html#ga1ce60dc4ecfeb594f3f635cd75a20386">APM_CMD_SHARED_SATELLITE_MEM_MAP_REGIONS</a>. </p>
+<p>The satellite process domain uses this handle to retrieve the associated shared memory regions and unmap them. The APM returns this handle through <a class="el" href="group__spf__apm__memory__map.html#ga1ce60dc4ecfeb594f3f635cd75a20386" title="Commands the APM to map multiple MDF shared memory regions.">APM_CMD_SHARED_SATELLITE_MEM_MAP_REGIONS</a>. </p>
 
 </div>
 </div>
@@ -104,17 +107,18 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specifies the satellite process domain ID whose memory must be unmapped.</p>
+
+<p>Specifies the satellite process domain ID whose memory must be unmapped. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="apm__graph__properties_8h.html#a87f3c6ba095ea3a985c7d25b818164f6">APM_PROC_DOMAIN_ID_MDSP</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#adf4caab3b93903a7eae17cac3574af04">APM_PROC_DOMAIN_ID_APPS</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#aac8fd98c7c9e205b414b2025d13adc0f">APM_PROC_DOMAIN_ID_SDSP</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#a4d9a2ead3115b8c8a97030ced8989366">APM_PROC_DOMAIN_ID_CDSP</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#a0e679225a82013b829485e1ee9ce4252">APM_PROC_DOMAIN_ID_GDSP_0</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#a2ab39e07e8861bf93511841aa9ef5026">APM_PROC_DOMAIN_ID_GDSP_1</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#ae12a18c58f28783a35644bbff55995ec">APM_PROC_DOMAIN_ID_APPS_2</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#aebf16443f84c36c1ec74903a96db3fb2">APM_PROC_DOMAIN_ID_ADSP_1</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#a79d8c4bcf88a75e7058ed87192e2fab7">APM_PROC_DOMAIN_ID_ADSP_2</a> @tablebulletend </li>
+<li><a class="el" href="apm__graph__properties_8h.html#a87f3c6ba095ea3a985c7d25b818164f6" title="Processor domain identifier for the modem DSP.">APM_PROC_DOMAIN_ID_MDSP</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#adf4caab3b93903a7eae17cac3574af04" title="Processor domain identifier for the SPF-on-ARM process running on APPS.">APM_PROC_DOMAIN_ID_APPS</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#aac8fd98c7c9e205b414b2025d13adc0f" title="Processor domain identifier for the sensors DSP.">APM_PROC_DOMAIN_ID_SDSP</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#a4d9a2ead3115b8c8a97030ced8989366" title="Processor domain identifier for the Hexagon Tensor Processor (previously called the compute DSP).">APM_PROC_DOMAIN_ID_CDSP</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#a0e679225a82013b829485e1ee9ce4252" title="Processor domain identifier for the GP_DSP 0.">APM_PROC_DOMAIN_ID_GDSP_0</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#a2ab39e07e8861bf93511841aa9ef5026" title="Processor domain identifier for the GP_DSP 1.">APM_PROC_DOMAIN_ID_GDSP_1</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#ae12a18c58f28783a35644bbff55995ec" title="Processor domain identifier for the SPF-on-ARM process running on HLOS.">APM_PROC_DOMAIN_ID_APPS_2</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#aebf16443f84c36c1ec74903a96db3fb2" title="Processor domain identifier for the audio DSP 2nd core i.e Execution environment 1 (EE1) .">APM_PROC_DOMAIN_ID_ADSP_1</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#a79d8c4bcf88a75e7058ed87192e2fab7" title="Processor domain identifier for the audio DSP 3rd core i.e Execution environment 2 (EE2) .">APM_PROC_DOMAIN_ID_ADSP_2</a> @tablebulletend </li>
 </ul>
 
 </div>

@@ -66,17 +66,22 @@ $(document).ready(function(){initNavTree('structdata__cmd__rsp__wr__sh__mem__ep_
 </div><!--header-->
 <div class="contents">
 
+<p>Payload of the <a class="el" href="wr__sh__mem__ep__api_8h.html#aec9743d79b743a5ee3fbff5ab35b6a58" title="Indicates that DATA_CMD_WR_SH_MEM_EP_EOS has been received by the final endpoint.">DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED</a> command response.  
+ <a href="structdata__cmd__rsp__wr__sh__mem__ep__eos__rendered__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/wr_sh_mem_ep_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a5d0fdb75324de88e1244de8ca60adb24" id="r_a5d0fdb75324de88e1244de8ca60adb24"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__wr__sh__mem__ep__eos__rendered__t.html#a5d0fdb75324de88e1244de8ca60adb24">module_instance_id</a></td></tr>
+<tr class="memdesc:a5d0fdb75324de88e1244de8ca60adb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier for the module instance from which <a class="el" href="wr__sh__mem__ep__api_8h.html#aec9743d79b743a5ee3fbff5ab35b6a58" title="Indicates that DATA_CMD_WR_SH_MEM_EP_EOS has been received by the final endpoint.">DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED</a> is being raised.  <br /></td></tr>
 <tr class="separator:a5d0fdb75324de88e1244de8ca60adb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4220560018a4d8266447c0eed2ea6be1" id="r_a4220560018a4d8266447c0eed2ea6be1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__cmd__rsp__wr__sh__mem__ep__eos__rendered__t.html#a4220560018a4d8266447c0eed2ea6be1">render_status</a></td></tr>
+<tr class="memdesc:a4220560018a4d8266447c0eed2ea6be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render status of the EoS.  <br /></td></tr>
 <tr class="separator:a4220560018a4d8266447c0eed2ea6be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload of the <a class="el" href="wr__sh__mem__ep__api_8h.html#aec9743d79b743a5ee3fbff5ab35b6a58">DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED</a> command response. </p>
+<div class="textblock"><p>Payload of the <a class="el" href="wr__sh__mem__ep__api_8h.html#aec9743d79b743a5ee3fbff5ab35b6a58" title="Indicates that DATA_CMD_WR_SH_MEM_EP_EOS has been received by the final endpoint.">DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED</a> command response. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a5d0fdb75324de88e1244de8ca60adb24" name="a5d0fdb75324de88e1244de8ca60adb24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d0fdb75324de88e1244de8ca60adb24">&#9670;&#160;</a></span>module_instance_id</h2>
@@ -89,7 +94,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Identifier for the module instance from which <a class="el" href="wr__sh__mem__ep__api_8h.html#aec9743d79b743a5ee3fbff5ab35b6a58">DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED</a> is being raised.</p>
+
+<p>Identifier for the module instance from which <a class="el" href="wr__sh__mem__ep__api_8h.html#aec9743d79b743a5ee3fbff5ab35b6a58" title="Indicates that DATA_CMD_WR_SH_MEM_EP_EOS has been received by the final endpoint.">DATA_CMD_RSP_WR_SH_MEM_EP_EOS_RENDERED</a> is being raised. </p>
 <p>This value is invalid (0) when the EoS metadata is dropped. </p>
 
 </div>
@@ -105,10 +111,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Render status of the EoS.</p>
+
+<p>Render status of the EoS. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="wr__sh__mem__ep__api_8h.html#a83f5e8f31b4e7f544b63adb01e739bb8">WR_SH_MEM_EP_EOS_RENDER_STATUS_RENDERED</a></li>
-<li><a class="el" href="wr__sh__mem__ep__api_8h.html#ae52d22ab788208923c6644055778daa5">WR_SH_MEM_EP_EOS_RENDER_STATUS_DROPPED</a> @tablebulletend </li>
+<li><a class="el" href="wr__sh__mem__ep__api_8h.html#a83f5e8f31b4e7f544b63adb01e739bb8" title="Render status of the EoS, where the EoS message is rendered on the final end device.">WR_SH_MEM_EP_EOS_RENDER_STATUS_RENDERED</a></li>
+<li><a class="el" href="wr__sh__mem__ep__api_8h.html#ae52d22ab788208923c6644055778daa5" title="Render status of the EoS, where the EoS message is dropped before it reaches the final end device.">WR_SH_MEM_EP_EOS_RENDER_STATUS_DROPPED</a> @tablebulletend </li>
 </ul>
 
 </div>

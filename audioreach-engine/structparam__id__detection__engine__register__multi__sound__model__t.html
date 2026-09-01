@@ -66,19 +66,27 @@ $(document).ready(function(){initNavTree('structparam__id__detection__engine__re
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_Parameter {"PARAM_ID_DETECTION_ENGINE_REGISTER_MULTI_SOUND_MODEL", PARAM_ID_DETECTION_ENGINE_REGISTER_MULTI_SOUND_MODEL} @h2xmlp_description {Registers a sound model of a specific model id with a module.  
+ <a href="structparam__id__detection__engine__register__multi__sound__model__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/detection_cmn_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a0dc10c4ea85cb5e001f6db3b88d355bb" id="r_a0dc10c4ea85cb5e001f6db3b88d355bb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__register__multi__sound__model__t.html#a0dc10c4ea85cb5e001f6db3b88d355bb">model_id</a></td></tr>
+<tr class="memdesc:a0dc10c4ea85cb5e001f6db3b88d355bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {This is an unique number to differentiate between different sound models to be loaded on DSP} @h2xmle_range {0..0xFFFFFFFE} <br  />
+ @h2xmle_default {0x0}  <br /></td></tr>
 <tr class="separator:a0dc10c4ea85cb5e001f6db3b88d355bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ceccb7122149b43ec5b13e518796a49" id="r_a0ceccb7122149b43ec5b13e518796a49"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__register__multi__sound__model__t.html#a0ceccb7122149b43ec5b13e518796a49">model_size</a></td></tr>
+<tr class="memdesc:a0ceccb7122149b43ec5b13e518796a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Indicated the size of the sound model.  <br /></td></tr>
 <tr class="separator:a0ceccb7122149b43ec5b13e518796a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85ffbec9246117f22945e413412b77da" id="r_a85ffbec9246117f22945e413412b77da"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__register__multi__sound__model__t.html#a85ffbec9246117f22945e413412b77da">model</a> [0]</td></tr>
+<tr class="memdesc:a85ffbec9246117f22945e413412b77da"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Sound Model Data Blob which is interpreted by the Library This Sound Model blob must be 256 bytes aligned if MLA is used This Sound Model blob must be 8byte aligned if MLA is not used.  <br /></td></tr>
 <tr class="separator:a85ffbec9246117f22945e413412b77da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_Parameter {"PARAM_ID_DETECTION_ENGINE_REGISTER_MULTI_SOUND_MODEL", PARAM_ID_DETECTION_ENGINE_REGISTER_MULTI_SOUND_MODEL} @h2xmlp_description {Registers a sound model of a specific model id with a module. <br  />
+<div class="textblock"><p>@h2xmlp_Parameter {"PARAM_ID_DETECTION_ENGINE_REGISTER_MULTI_SOUND_MODEL", PARAM_ID_DETECTION_ENGINE_REGISTER_MULTI_SOUND_MODEL} @h2xmlp_description {Registers a sound model of a specific model id with a module. </p>
+<p><br  />
  <br  />
  -The sound model is a blob of data interpreted by the module that supports this parameter. The model contains unique sound characteristics and signatures that are used by the algorithm hosted in the module. <br  />
  <br  />
@@ -97,7 +105,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Sound Model Data Blob which is interpreted by the Library This Sound Model blob must be 256 bytes aligned if MLA is used This Sound Model blob must be 8byte aligned if MLA is not used.} @h2xmle_default {0} <br  />
+
+<p>@h2xmle_description {Sound Model Data Blob which is interpreted by the Library This Sound Model blob must be 256 bytes aligned if MLA is used This Sound Model blob must be 8byte aligned if MLA is not used. </p>
+<p>} @h2xmle_default {0} <br  />
  </p>
 
 </div>
@@ -113,6 +123,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {This is an unique number to differentiate between different sound models to be loaded on DSP} @h2xmle_range {0..0xFFFFFFFE} <br  />
  @h2xmle_default {0x0} </p>
 
@@ -129,7 +140,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Indicated the size of the sound model. Sound model payload follows this variable} @h2xmle_range {0..0xFFFFFFFF} <br  />
+
+<p>@h2xmle_description {Indicated the size of the sound model. </p>
+<p>Sound model payload follows this variable} @h2xmle_range {0..0xFFFFFFFF} <br  />
  @h2xmle_default {0x0} </p>
 
 </div>

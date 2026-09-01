@@ -66,19 +66,26 @@ $(document).ready(function(){initNavTree('structamdb__module__deregistration__t.
 </div><!--header-->
 <div class="contents">
 
+<p>Payload for <a class="el" href="amdb__api_8h.html#a3ecadb8e3135f431ddcf2ee15be7c03b" title="Deregisters one or more registered modules.">AMDB_CMD_DEREGISTER_MODULES</a>.  
+ <a href="structamdb__module__deregistration__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/amdb_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a35bc1a8a04e5a0425722558df1eed05d" id="r_a35bc1a8a04e5a0425722558df1eed05d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__deregistration__t.html#a35bc1a8a04e5a0425722558df1eed05d">proc_domain</a></td></tr>
+<tr class="memdesc:a35bc1a8a04e5a0425722558df1eed05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID for the processor domain in which the AMDB is running.  <br /></td></tr>
 <tr class="separator:a35bc1a8a04e5a0425722558df1eed05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a756c9dd47426ecc400bd8a360e214779" id="r_a756c9dd47426ecc400bd8a360e214779"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__deregistration__t.html#a756c9dd47426ecc400bd8a360e214779">num_modules</a></td></tr>
+<tr class="memdesc:a756c9dd47426ecc400bd8a360e214779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of modules being registered.  <br /></td></tr>
 <tr class="separator:a756c9dd47426ecc400bd8a360e214779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a019e24cb76f51c29e452f32ba5411545" id="r_a019e24cb76f51c29e452f32ba5411545"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamdb__module__deregistration__t.html#a019e24cb76f51c29e452f32ba5411545">module_id</a> [0]</td></tr>
+<tr class="memdesc:a019e24cb76f51c29e452f32ba5411545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of module IDs for num_modules (module_id[num_modules]).  <br /></td></tr>
 <tr class="separator:a019e24cb76f51c29e452f32ba5411545"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Payload for <a class="el" href="amdb__api_8h.html#a3ecadb8e3135f431ddcf2ee15be7c03b">AMDB_CMD_DEREGISTER_MODULES</a>. This payload can be both in-band and out-of-band. </p>
+<div class="textblock"><p>Payload for <a class="el" href="amdb__api_8h.html#a3ecadb8e3135f431ddcf2ee15be7c03b" title="Deregisters one or more registered modules.">AMDB_CMD_DEREGISTER_MODULES</a>. </p>
+<p>This payload can be both in-band and out-of-band. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a019e24cb76f51c29e452f32ba5411545" name="a019e24cb76f51c29e452f32ba5411545"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a019e24cb76f51c29e452f32ba5411545">&#9670;&#160;</a></span>module_id</h2>
@@ -91,6 +98,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Array of module IDs for num_modules (module_id[num_modules]). </p>
 
 </div>
@@ -106,6 +114,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Number of modules being registered. </p>
 
 </div>
@@ -121,17 +130,18 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>ID for the processor domain in which the AMDB is running.</p>
+
+<p>ID for the processor domain in which the AMDB is running. </p>
 <p>@valuesbul</p><ul>
-<li><a class="el" href="apm__graph__properties_8h.html#a87f3c6ba095ea3a985c7d25b818164f6">APM_PROC_DOMAIN_ID_MDSP</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#a27a325b464616da4d928f4a37acfdcc8">APM_PROC_DOMAIN_ID_ADSP</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#aebf16443f84c36c1ec74903a96db3fb2">APM_PROC_DOMAIN_ID_ADSP_1</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#a79d8c4bcf88a75e7058ed87192e2fab7">APM_PROC_DOMAIN_ID_ADSP_2</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#aac8fd98c7c9e205b414b2025d13adc0f">APM_PROC_DOMAIN_ID_SDSP</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#a4d9a2ead3115b8c8a97030ced8989366">APM_PROC_DOMAIN_ID_CDSP</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#a0e679225a82013b829485e1ee9ce4252">APM_PROC_DOMAIN_ID_GDSP_0</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#a2ab39e07e8861bf93511841aa9ef5026">APM_PROC_DOMAIN_ID_GDSP_1</a></li>
-<li><a class="el" href="apm__graph__properties_8h.html#ae1227ff51a9f3e655f94bf725d72c931">APM_PROP_ID_DONT_CARE</a> (Default) @tablebulletend </li>
+<li><a class="el" href="apm__graph__properties_8h.html#a87f3c6ba095ea3a985c7d25b818164f6" title="Processor domain identifier for the modem DSP.">APM_PROC_DOMAIN_ID_MDSP</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#a27a325b464616da4d928f4a37acfdcc8" title="Processor domain identifier for the audio DSP.">APM_PROC_DOMAIN_ID_ADSP</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#aebf16443f84c36c1ec74903a96db3fb2" title="Processor domain identifier for the audio DSP 2nd core i.e Execution environment 1 (EE1) .">APM_PROC_DOMAIN_ID_ADSP_1</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#a79d8c4bcf88a75e7058ed87192e2fab7" title="Processor domain identifier for the audio DSP 3rd core i.e Execution environment 2 (EE2) .">APM_PROC_DOMAIN_ID_ADSP_2</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#aac8fd98c7c9e205b414b2025d13adc0f" title="Processor domain identifier for the sensors DSP.">APM_PROC_DOMAIN_ID_SDSP</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#a4d9a2ead3115b8c8a97030ced8989366" title="Processor domain identifier for the Hexagon Tensor Processor (previously called the compute DSP).">APM_PROC_DOMAIN_ID_CDSP</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#a0e679225a82013b829485e1ee9ce4252" title="Processor domain identifier for the GP_DSP 0.">APM_PROC_DOMAIN_ID_GDSP_0</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#a2ab39e07e8861bf93511841aa9ef5026" title="Processor domain identifier for the GP_DSP 1.">APM_PROC_DOMAIN_ID_GDSP_1</a></li>
+<li><a class="el" href="apm__graph__properties_8h.html#ae1227ff51a9f3e655f94bf725d72c931" title="Property identifier for the don&#39;t care value.">APM_PROP_ID_DONT_CARE</a> (Default) @tablebulletend </li>
 </ul>
 
 </div>

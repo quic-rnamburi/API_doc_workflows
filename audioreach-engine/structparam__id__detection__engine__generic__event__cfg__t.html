@@ -66,15 +66,20 @@ $(document).ready(function(){initNavTree('structparam__id__detection__engine__ge
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG", PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG} @h2xmlp_description { Configures the payload of the detection events.  
+ <a href="structparam__id__detection__engine__generic__event__cfg__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/detection_cmn_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ad1ab3504e5b63b0c7a8179ab27d4bb4e" id="r_ad1ab3504e5b63b0c7a8179ab27d4bb4e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__generic__event__cfg__t.html#ad1ab3504e5b63b0c7a8179ab27d4bb4e">event_mode</a></td></tr>
+<tr class="memdesc:ad1ab3504e5b63b0c7a8179ab27d4bb4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Bit field used to indicate which type of information is to be embedded in the event.  <br /></td></tr>
 <tr class="separator:ad1ab3504e5b63b0c7a8179ab27d4bb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG", PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG} @h2xmlp_description { Configures the payload of the detection events. } @h2xmlp_toolPolicy {Calibration} </p>
+<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG", PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG} @h2xmlp_description { Configures the payload of the detection events. </p>
+<p>} @h2xmlp_toolPolicy {Calibration} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ad1ab3504e5b63b0c7a8179ab27d4bb4e" name="ad1ab3504e5b63b0c7a8179ab27d4bb4e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1ab3504e5b63b0c7a8179ab27d4bb4e">&#9670;&#160;</a></span>event_mode</h2>
@@ -87,13 +92,15 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Bit field used to indicate which type of information is to be embedded in the event. Set this field only if the event_type variable is set to 1.}</p>
+
+<p>@h2xmle_description {Bit field used to indicate which type of information is to be embedded in the event. </p>
+<p>Set this field only if the event_type variable is set to 1.}</p>
 <p>@h2xmle_bitField {0x00000001} @h2xmle_bitName {confidence_level_information} @h2xmle_description {Includes confidence level information in detection events.} @h2xmle_rangeList {Disabled=0;Enabled=1} @h2xmle_bitFieldEnd</p>
 <p>@h2xmle_bitField {0x00000002} @h2xmle_bitName {keyword_indices_information} @h2xmle_description {Includes keyword index information in detection events from the detection engine.} @h2xmle_rangeList {Disabled=0;Enabled=1} @h2xmle_bitFieldEnd</p>
 <p>@h2xmle_bitField {0x00000004} @h2xmle_bitName {detection_timestamp} @h2xmle_description {Includes detection timestamp info in the detection event payload.} @h2xmle_rangeList {Disabled=0;Enabled=1} @h2xmle_bitFieldEnd</p>
 <p>@h2xmle_bitField {0x00000008} @h2xmle_bitName {ftrt_data_information} @h2xmle_description {Includes ftrt data length information in the detection event payload.} @h2xmle_rangeList {Disabled=0;Enabled=1} @h2xmle_bitFieldEnd</p>
 <p>@h2xmle_bitField {0x00000010} @h2xmle_bitName {best_channel_index_information} @h2xmle_description {Includes best channel index information in detection events from the Engine} @h2xmle_rangeList {Disabled=0;Enabled=1} @h2xmle_bitFieldEnd</p>
-<p>@h2xmle_bitField {0x00000020} @h2xmle_bitName {<a class="el" href="structvoice__ui__multi__model__result__info__t.html">voice_ui_multi_model_result_info_t</a>} @h2xmle_description {Includes result information in detection events from the SVA5 Engine} @h2xmle_rangeList {Disabled=0;Enabled=1} @h2xmle_bitFieldEnd</p>
+<p>@h2xmle_bitField {0x00000020} @h2xmle_bitName {<a class="el" href="structvoice__ui__multi__model__result__info__t.html" title="@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT}">voice_ui_multi_model_result_info_t</a>} @h2xmle_description {Includes result information in detection events from the SVA5 Engine} @h2xmle_rangeList {Disabled=0;Enabled=1} @h2xmle_bitFieldEnd</p>
 <p>@h2xmle_default {1} </p>
 
 </div>

@@ -66,23 +66,34 @@ $(document).ready(function(){initNavTree('structpayload__media__fmt__flac__t.htm
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_subStruct @h2xmlp_description {Payload of the FLAC decoder format block structure parameters in the MEDIA_FMT_ID_FLAC media format..<br  />
+ } @h2xmlp_toolPolicy {Calibration}  
+ <a href="structpayload__media__fmt__flac__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/media_fmt_api_ext.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aa7ebdf0bfa2c61eb49c2d808fb1f0216" id="r_aa7ebdf0bfa2c61eb49c2d808fb1f0216"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__flac__t.html#aa7ebdf0bfa2c61eb49c2d808fb1f0216">num_channels</a></td></tr>
+<tr class="memdesc:aa7ebdf0bfa2c61eb49c2d808fb1f0216"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Number of channels present in the Flac stream.  <br /></td></tr>
 <tr class="separator:aa7ebdf0bfa2c61eb49c2d808fb1f0216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d5f11d5c92987309f39c55e816ae041" id="r_a5d5f11d5c92987309f39c55e816ae041"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__flac__t.html#a5d5f11d5c92987309f39c55e816ae041">sample_size</a></td></tr>
+<tr class="memdesc:a5d5f11d5c92987309f39c55e816ae041"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Bits per sample} @h2xmle_default {16} @h2xmle_rangeList {16,24} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a5d5f11d5c92987309f39c55e816ae041"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0551f20f0161e6e86876eb55ab2079a7" id="r_a0551f20f0161e6e86876eb55ab2079a7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__flac__t.html#a0551f20f0161e6e86876eb55ab2079a7">min_blk_size</a></td></tr>
+<tr class="memdesc:a0551f20f0161e6e86876eb55ab2079a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Minimum block size (in samples) used in the stream.  <br /></td></tr>
 <tr class="separator:a0551f20f0161e6e86876eb55ab2079a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8c72f0fa1d4cb4ced6202f73afd0be7" id="r_ad8c72f0fa1d4cb4ced6202f73afd0be7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__flac__t.html#ad8c72f0fa1d4cb4ced6202f73afd0be7">max_blk_size</a></td></tr>
+<tr class="memdesc:ad8c72f0fa1d4cb4ced6202f73afd0be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Maximum block size (in samples) used in the stream.  <br /></td></tr>
 <tr class="separator:ad8c72f0fa1d4cb4ced6202f73afd0be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ed0a9d572f887f0473a082f25e3e592" id="r_a4ed0a9d572f887f0473a082f25e3e592"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__flac__t.html#a4ed0a9d572f887f0473a082f25e3e592">sample_rate</a></td></tr>
+<tr class="memdesc:a4ed0a9d572f887f0473a082f25e3e592"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Supported sampling rates} @h2xmle_default {0} @h2xmle_rangeList {INVALID_VALUE=0,0,8000, 11025, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 64000, 88200, 96000, 128000, 176400, 192000} @h2xmle_policy {Basic}  <br /></td></tr>
 <tr class="separator:a4ed0a9d572f887f0473a082f25e3e592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac340c6fe24ad6279fa55800ee08b0b0b" id="r_ac340c6fe24ad6279fa55800ee08b0b0b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__flac__t.html#ac340c6fe24ad6279fa55800ee08b0b0b">min_frame_size</a></td></tr>
+<tr class="memdesc:ac340c6fe24ad6279fa55800ee08b0b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Minimum frame size.  <br /></td></tr>
 <tr class="separator:ac340c6fe24ad6279fa55800ee08b0b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0e1e00841c697b1858e488ab88ed6a5" id="r_ad0e1e00841c697b1858e488ab88ed6a5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpayload__media__fmt__flac__t.html#ad0e1e00841c697b1858e488ab88ed6a5">max_frame_size</a></td></tr>
+<tr class="memdesc:ad0e1e00841c697b1858e488ab88ed6a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Maximum frame size.  <br /></td></tr>
 <tr class="separator:ad0e1e00841c697b1858e488ab88ed6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -100,7 +111,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Maximum block size (in samples) used in the stream. If the minimum block size equals the maximum block size, a fixed block size stream is implied} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Maximum block size (in samples) used in the stream. </p>
+<p>If the minimum block size equals the maximum block size, a fixed block size stream is implied} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -115,7 +128,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Maximum frame size. This should be greater than 0} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Maximum frame size. </p>
+<p>This should be greater than 0} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -130,7 +145,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Minimum block size (in samples) used in the stream. It must be lessthan or equal to max_blk_size.} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Minimum block size (in samples) used in the stream. </p>
+<p>It must be lessthan or equal to max_blk_size.} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -145,7 +162,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Minimum frame size. This should be greater than 0} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Minimum frame size. </p>
+<p>This should be greater than 0} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -160,7 +179,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Number of channels present in the Flac stream.} @h2xmle_default {1} @h2xmle_rangeList {"Mono"=1, "Stereo"=2} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {Number of channels present in the Flac stream. </p>
+<p>} @h2xmle_default {1} @h2xmle_rangeList {"Mono"=1, "Stereo"=2} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -175,6 +196,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Supported sampling rates} @h2xmle_default {0} @h2xmle_rangeList {INVALID_VALUE=0,0,8000, 11025, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 64000, 88200, 96000, 128000, 176400, 192000} @h2xmle_policy {Basic} </p>
 
 </div>
@@ -190,6 +212,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>@h2xmle_description {Bits per sample} @h2xmle_default {16} @h2xmle_rangeList {16,24} @h2xmle_policy {Basic} </p>
 
 </div>

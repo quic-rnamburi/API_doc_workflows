@@ -66,6 +66,9 @@ $(document).ready(function(){initNavTree('structvcpm__param__id__scale__factor__
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_parameter {"VCPM_PARAM_ID_SCALE_FACTOR", VCPM_PARAM_ID_SCALE_FACTOR} @h2xmlp_description { Identifier for the parameter that sets the scale factor info.  
+ <a href="structvcpm__param__id__scale__factor__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/vcpm/vcpm_config_api.h&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for vcpm_param_id_scale_factor_t:</div>
@@ -76,12 +79,15 @@ Collaboration diagram for vcpm_param_id_scale_factor_t:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a281981dcd266567a673fa576ecb24847" id="r_a281981dcd266567a673fa576ecb24847"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__scale__factor__t.html#a281981dcd266567a673fa576ecb24847">num_configs</a></td></tr>
+<tr class="memdesc:a281981dcd266567a673fa576ecb24847"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {number of scale factor configs for this SubGraph.  <br /></td></tr>
 <tr class="separator:a281981dcd266567a673fa576ecb24847"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45aa17c1e0744cf1c93cf54ff02ff25a" id="r_a45aa17c1e0744cf1c93cf54ff02ff25a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvcpm__param__id__scale__factor__payload__t.html">vcpm_param_id_scale_factor_payload_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvcpm__param__id__scale__factor__t.html#a45aa17c1e0744cf1c93cf54ff02ff25a">scale_factor</a> [0]</td></tr>
+<tr class="memdesc:a45aa17c1e0744cf1c93cf54ff02ff25a"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmle_description {Specifies the scale factor configuration per domain.  <br /></td></tr>
 <tr class="separator:a45aa17c1e0744cf1c93cf54ff02ff25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_parameter {"VCPM_PARAM_ID_SCALE_FACTOR", VCPM_PARAM_ID_SCALE_FACTOR} @h2xmlp_description { Identifier for the parameter that sets the scale factor info. Note that this parameter can be utilized by master and satellite domains as well.} @h2xmlp_copySrc {0x080011AE} @h2xmlp_toolPolicy { Calibration} </p>
+<div class="textblock"><p>@h2xmlp_parameter {"VCPM_PARAM_ID_SCALE_FACTOR", VCPM_PARAM_ID_SCALE_FACTOR} @h2xmlp_description { Identifier for the parameter that sets the scale factor info. </p>
+<p>Note that this parameter can be utilized by master and satellite domains as well.} @h2xmlp_copySrc {0x080011AE} @h2xmlp_toolPolicy { Calibration} </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a281981dcd266567a673fa576ecb24847" name="a281981dcd266567a673fa576ecb24847"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a281981dcd266567a673fa576ecb24847">&#9670;&#160;</a></span>num_configs</h2>
@@ -94,7 +100,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {number of scale factor configs for this SubGraph. Each proc domain should not have more than one config.} @h2xmle_default {0} @h2xmle_range {0...32} @h2xmle_policy {Basic} </p>
+
+<p>@h2xmle_description {number of scale factor configs for this SubGraph. </p>
+<p>Each proc domain should not have more than one config.} @h2xmle_default {0} @h2xmle_range {0...32} @h2xmle_policy {Basic} </p>
 
 </div>
 </div>
@@ -109,7 +117,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@h2xmle_description {Specifies the scale factor configuration per domain. } @h2xmle_variableArraySize {num_configs} @h2xmle_default {0} </p>
+
+<p>@h2xmle_description {Specifies the scale factor configuration per domain. </p>
+<p>} @h2xmle_variableArraySize {num_configs} @h2xmle_default {0} </p>
 
 </div>
 </div>

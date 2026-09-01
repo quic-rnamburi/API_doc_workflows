@@ -66,15 +66,20 @@ $(document).ready(function(){initNavTree('structparam__id__jitter__buf__settling
 </div><!--header-->
 <div class="contents">
 
+<p>@h2xmlp_parameter {"PARAM_ID_JITTER_BUF_SETTLING_TIME", PARAM_ID_JITTER_BUF_SETTLING_TIME} @h2xmlp_description { This param ID is used to configure settling time before accurate drift can be reported.  
+ <a href="structparam__id__jitter__buf__settling__time__t.html#details">More...</a></p>
+
 <p><code>#include &lt;fwk/api/modules/jitter_buf_api.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aebd77cf095796190ef1490718080ed02" id="r_aebd77cf095796190ef1490718080ed02"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__jitter__buf__settling__time__t.html#aebd77cf095796190ef1490718080ed02">drift_settlement_in_ms</a></td></tr>
+<tr class="memdesc:aebd77cf095796190ef1490718080ed02"><td class="mdescLeft">&#160;</td><td class="mdescRight">It defines the maximum time usually taken to settle.  <br /></td></tr>
 <tr class="separator:aebd77cf095796190ef1490718080ed02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_JITTER_BUF_SETTLING_TIME", PARAM_ID_JITTER_BUF_SETTLING_TIME} @h2xmlp_description { This param ID is used to configure settling time before accurate drift can be reported. } @h2xmlp_toolPolicy {CALIBRATION}</p>
+<div class="textblock"><p>@h2xmlp_parameter {"PARAM_ID_JITTER_BUF_SETTLING_TIME", PARAM_ID_JITTER_BUF_SETTLING_TIME} @h2xmlp_description { This param ID is used to configure settling time before accurate drift can be reported. </p>
+<p>} @h2xmlp_toolPolicy {CALIBRATION}</p>
 <p>Configure settling time before accurate drift can be reported. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="aebd77cf095796190ef1490718080ed02" name="aebd77cf095796190ef1490718080ed02"></a>
@@ -88,7 +93,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>It defines the maximum time usually taken to settle. in steady state to start reporting drift. @h2xmle_description { It defines the max time usually taken to settle. in steady state to start reporting drift. } @h2xmle_default { 0 } @h2xmle_range {0..10000} </p>
+
+<p>It defines the maximum time usually taken to settle. </p>
+<p>in steady state to start reporting drift. @h2xmle_description { It defines the max time usually taken to settle. in steady state to start reporting drift. } @h2xmle_default { 0 } @h2xmle_range {0..10000} </p>
 
 </div>
 </div>

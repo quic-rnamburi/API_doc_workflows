@@ -81,15 +81,19 @@ Include dependency graph for ar_spf_cmd_api.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structar__spf__msg__global__sh__mem__t.html">ar_spf_msg_global_sh_mem_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Payload for <a class="el" href="ar__spf__cmd__api_8h.html#a3e1f52a3ed655502b53e60698ea73b0e" title="This command carries an OOB payload from global shared memory (APM_CMD_GLOBAL_SHARED_MEM_MAP_REGIONS)...">AR_SPF_MSG_GLOBAL_SH_MEM</a>.  <a href="structar__spf__msg__global__sh__mem__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a3e1f52a3ed655502b53e60698ea73b0e" id="r_a3e1f52a3ed655502b53e60698ea73b0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__spf__cmd__api_8h.html#a3e1f52a3ed655502b53e60698ea73b0e">AR_SPF_MSG_GLOBAL_SH_MEM</a>&#160;&#160;&#160;0x0100105B</td></tr>
+<tr class="memdesc:a3e1f52a3ed655502b53e60698ea73b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This command carries an OOB payload from global shared memory (<a class="el" href="group__spf__apm__memory__map.html#ga2ca4ea01467e00f32e7aa8a0ed8f2a67" title="Commands the APM to map multiple shared memory regions from a memory pool and associate it with the s...">APM_CMD_GLOBAL_SHARED_MEM_MAP_REGIONS</a>) and used by the client to signal module to read the payload and handle accordingly.  <br /></td></tr>
 <tr class="separator:a3e1f52a3ed655502b53e60698ea73b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fe0f9516424a31addb8c69c40d3820d" id="r_a9fe0f9516424a31addb8c69c40d3820d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__spf__cmd__api_8h.html#a9fe0f9516424a31addb8c69c40d3820d">AR_SPF_MSG_GLOBAL_SH_MEM_BIT_MASK_IS_ACK_NOT_REQUIRED</a>&#160;&#160;&#160;(0x00000001UL)</td></tr>
+<tr class="memdesc:a9fe0f9516424a31addb8c69c40d3820d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of the is_ack_required flag bitmask.  <br /></td></tr>
 <tr class="separator:a9fe0f9516424a31addb8c69c40d3820d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a559e99a54d0b1598b925e2d2b459ba6c" id="r_a559e99a54d0b1598b925e2d2b459ba6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__spf__cmd__api_8h.html#a559e99a54d0b1598b925e2d2b459ba6c">AR_SPF_MSG_GLOBAL_SH_MEM_BIT_MASK_IS_MEM_RELEASE</a>&#160;&#160;&#160;(0x00000002UL)</td></tr>
+<tr class="memdesc:a559e99a54d0b1598b925e2d2b459ba6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of the is_memory_release flag bitmask.  <br /></td></tr>
 <tr class="separator:a559e99a54d0b1598b925e2d2b459ba6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -109,11 +113,12 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This command carries an OOB payload from global shared memory (<a class="el" href="group__spf__apm__memory__map.html#ga2ca4ea01467e00f32e7aa8a0ed8f2a67">APM_CMD_GLOBAL_SHARED_MEM_MAP_REGIONS</a>) and used by the client to signal module to read the payload and handle accordingly.</p>
+
+<p>This command carries an OOB payload from global shared memory (<a class="el" href="group__spf__apm__memory__map.html#ga2ca4ea01467e00f32e7aa8a0ed8f2a67" title="Commands the APM to map multiple shared memory regions from a memory pool and associate it with the s...">APM_CMD_GLOBAL_SHARED_MEM_MAP_REGIONS</a>) and used by the client to signal module to read the payload and handle accordingly. </p>
 <p>OOB payload structure and the communication protocol is private to client and module.</p>
 <p>@gpr_hdr_fields Opcode &ndash; AR_SPF_MSG_GLOBAL_SH_MEM</p>
-<p>@msgpayload <a class="el" href="structar__spf__msg__global__sh__mem__t.html">ar_spf_msg_global_sh_mem_t</a></p>
-<dl class="section user"><dt></dt><dd>This command can be issued for all the module instance IDs that were configured at least once using <a class="el" href="apm__api_8h.html#aaaa0bf4dcabe9923b4d99fff615b554a">APM_CMD_GRAPH_OPEN</a>.</dd></dl>
+<p>@msgpayload <a class="el" href="structar__spf__msg__global__sh__mem__t.html" title="Payload for AR_SPF_MSG_GLOBAL_SH_MEM.">ar_spf_msg_global_sh_mem_t</a></p>
+<dl class="section user"><dt></dt><dd>This command can be issued for all the module instance IDs that were configured at least once using <a class="el" href="apm__api_8h.html#aaaa0bf4dcabe9923b4d99fff615b554a" title="Opens a list of one or more sub-graphs.">APM_CMD_GRAPH_OPEN</a>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>GPR_IBASIC_RSP_RESULT </dd></dl>
 
 </div>
@@ -129,6 +134,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Definition of the is_ack_required flag bitmask. </p>
 
 </div>
@@ -144,6 +150,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Definition of the is_memory_release flag bitmask. </p>
 
 </div>
