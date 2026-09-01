@@ -1,0 +1,12 @@
+digraph "remote_arg"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="remote_arg",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="32-bit Remote Arg structure for RPC calls"];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" buf",fontcolor="grey" ];
+  Node2 [id="Node000002",label="remote_buf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structremote__buf.html",tooltip="32-bit Remote buffer parameter for RPC calls"];
+  Node3 -> Node1 [id="edge2_Node000001_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" dma",fontcolor="grey" ];
+  Node3 [id="Node000003",label="remote_dma_handle",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structremote__dma__handle.html",tooltip="32-bit Remote DMA handle parameter for RPC calls"];
+}

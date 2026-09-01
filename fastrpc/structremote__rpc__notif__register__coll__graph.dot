@@ -1,0 +1,10 @@
+digraph "remote_rpc_notif_register"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="remote_rpc_notif_register",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Structure for remote_session_control, used with FASTRPC_REGISTER_STATUS_NOTIFICATIONS request ID to r..."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" notifier_fn",fontcolor="grey" ];
+  Node2 [id="Node000002",label="domain",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structdomain.html",tooltip="Domain type for multi-domain RPC calls."];
+}
