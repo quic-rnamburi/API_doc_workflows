@@ -1,0 +1,454 @@
+---
+title: "detection_cmn_api.h"
+description: "This file contains common parameters for listen libraries."
+---
+
+## Structures
+
+### `param_id_detection_engine_config_t`
+
+@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_CONFIG", PARAM_ID_DETECTION_ENGINE_CONFIG} @h2xmlp_description {Configures the Detection Engine module.
+
+**Members**
+
+<ParamField path="mode" type="uint16_t">
+  @h2xmle_description {Flags that configure the Detection Engine module to run in different modes.
+</ParamField>
+<ParamField path="custom_payload_size" type="uint16_t">
+  @h2xmle_description {Size of of additional custom configuration sent to the Detection Engine module.
+</ParamField>
+
+### `param_id_detection_gain_t`
+
+@h2xmlp_parameter {"PARAM_ID_DETECTION_GAIN", PARAM_ID_DETECTION_GAIN} @h2xmlp_description {Sets the gain that is applied to incoming audio data.
+
+**Members**
+
+<ParamField path="gain" type="int16_t">
+  @h2xmle_description {Gain that is applied to the data.
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+  @h2xmle_description {Used for alignment; must be set to 0.
+</ParamField>
+
+### `param_id_detection_engine_register_multi_sound_model_t`
+
+@h2xmlp_Parameter {"PARAM_ID_DETECTION_ENGINE_REGISTER_MULTI_SOUND_MODEL", PARAM_ID_DETECTION_ENGINE_REGISTER_MULTI_SOUND_MODEL} @h2xmlp_description {Registers a sound model of a specific model id with a module.
+
+**Members**
+
+<ParamField path="model_id" type="uint32_t">
+  @h2xmle_description {This is an unique number to differentiate between different sound models to be loaded on DSP} @h2xmle_range {0..0xFFFFFFFE} 
+ @h2xmle_default {0x0}
+</ParamField>
+<ParamField path="model_size" type="uint32_t">
+  @h2xmle_description {Indicated the size of the sound model.
+</ParamField>
+<ParamField path="model" type="uint8_t">
+  @h2xmle_description {Sound Model Data Blob which is interpreted by the Library This Sound Model blob must be 256 bytes aligned if MLA is used This Sound Model blob must be 8byte aligned if MLA is not used.
+</ParamField>
+
+### `param_id_detection_engine_deregister_multi_sound_model_t`
+
+@h2xmlp_Parameter {"PARAM_ID_DETECTION_ENGINE_DEREGISTER_MULTI_SOUND_MODEL", PARAM_ID_DETECTION_ENGINE_DEREGISTER_MULTI_SOUND_MODEL} @h2xmlp_description {Deregisters a sound model of a specific model id with a module.
+
+**Members**
+
+<ParamField path="model_id" type="uint32_t">
+  @h2xmle_description {This is an unique number to differentiate between different sound models to be unloaded from DSP} @h2xmle_range {0..0xFFFFFFFE} 
+ @h2xmle_default {0x0}
+</ParamField>
+
+### `param_id_best_ch_enable_t`
+
+@h2xmlp_parameter {"PARAM_ID_BEST_CH_ENABLE", PARAM_ID_BEST_CH_ENABLE} @h2xmlp_description {Enables the reporting of best channel to DAM Module.
+
+**Members**
+
+<ParamField path="enable" type="uint32_t">
+  @h2xmle_description {Enables or disables best ch reporting.
+</ParamField>
+
+### `param_id_detection_engine_generic_event_cfg_t`
+
+@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG", PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG} @h2xmlp_description { Configures the payload of the detection events.
+
+**Members**
+
+<ParamField path="event_mode" type="uint32_t">
+  @h2xmle_description {Bit field used to indicate which type of information is to be embedded in the event.
+</ParamField>
+
+### `event_id_detection_engine_generic_info_t`
+
+@h2xmlp_parameter {"EVENT_ID_DETECTION_ENGINE_GENERIC_INFO", EVENT_ID_DETECTION_ENGINE_GENERIC_INFO} @h2xmlp_description { Detection event raised by the Detection Engine module.
+
+**Members**
+
+<ParamField path="status" type="uint16_t">
+  Status sent by the Detection Engine module to the client.
+</ParamField>
+<ParamField path="payload_size" type="uint16_t">
+  Actual size of the parameter data payload that follows this structure.
+</ParamField>
+
+### `detection_event_info_header_t`
+
+**Members**
+
+<ParamField path="key_id" type="detection_engine_event_key_id_info_t">
+  Different key_ids @values.
+</ParamField>
+<ParamField path="payload_size" type="uint32_t">
+  Size of a specific key payload.
+</ParamField>
+
+### `confidence_level_info_t`
+
+@h2xmlp_subStruct
+
+**Members**
+
+<ParamField path="number_of_confidence_values" type="uint32_t">
+  @h2xmle_description {Sum of all keyword models plus the active user models.
+</ParamField>
+<ParamField path="confidence_levels" type="uint8_t">
+  @h2xmle_description {Array of confidence levels for each keyword and active user pair.
+</ParamField>
+
+### `keyword_position_info_t`
+
+@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT}
+
+**Members**
+
+<ParamField path="kw_start_timestamp_lsw" type="uint32_t">
+  @h2xmle_description {Lower 32 bits of the 64-bit Keyword start time stamp.
+</ParamField>
+<ParamField path="kw_start_timestamp_msw" type="uint32_t">
+  @h2xmle_description {Upper 32 bits of the 64-bit Keyword start time stamp.
+</ParamField>
+<ParamField path="kw_end_timestamp_lsw" type="uint32_t">
+  @h2xmle_description {Lower 32 bits of the 64-bit Keyword end time stamp.
+</ParamField>
+<ParamField path="kw_end_timestamp_msw" type="uint32_t">
+  @h2xmle_description {Upper 32 bits of the 64-bit Keyword end time stamp.
+</ParamField>
+
+### `detection_timestamp_info_t`
+
+@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT}
+
+**Members**
+
+<ParamField path="detection_timestamp_lsw" type="uint32_t">
+  @h2xmle_description {Lower 32 bits of the 64-bit detection timestamp.
+</ParamField>
+<ParamField path="detection_timestamp_msw" type="uint32_t">
+  @h2xmle_description {Upper 32 bits of the 64-bit detection timestamp (in milliseconds).
+</ParamField>
+
+### `ftrt_data_info_t`
+
+@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT}
+
+**Members**
+
+<ParamField path="ftrt_data_length_in_us" type="uint32_t">
+  @h2xmle_description {Amount of data (in micro seconds) buffered in Dam module, to read data in FTRT mode.
+</ParamField>
+
+### `best_ch_idx_info_t`
+
+@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT}
+
+**Members**
+
+<ParamField path="best_ch_idx" type="uint32_t">
+  @h2xmle_description {Best Channel Index} @h2xmle_range {0..15} @h2xmle_default {0}
+</ParamField>
+
+### `voice_ui_multi_model_result_info_t`
+
+@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT}
+
+**Members**
+
+<ParamField path="num_detected_models" type="uint32_t">
+  @h2xmle_description {Indicates number of models that got detected.
+</ParamField>
+
+### `model_stats_t`
+
+**Members**
+
+<ParamField path="detected_model_id" type="uint32_t">
+  @h2xmle_description {Model ID of the model which got detected} @h2xmle_range {0..0xFFFFFFFE} @h2xmle_default {0}
+</ParamField>
+<ParamField path="detected_keyword_id" type="uint32_t">
+  @h2xmle_description {Keyword ID of the keyword which got detected} @h2xmle_range {0..MAX_KEYWORDS_SUPPORTED} @h2xmle_default {0}
+</ParamField>
+<ParamField path="best_channel_idx" type="uint32_t">
+  @h2xmle_description {Best channel index} @h2xmle_range {0..15} @h2xmle_default {0}
+</ParamField>
+<ParamField path="best_confidence_level" type="uint32_t">
+  @h2xmle_description {Best Confidence Level for the detected model} @h2xmle_range {0..100} @h2xmle_default {0}
+</ParamField>
+<ParamField path="kw_start_timestamp_lsw" type="uint32_t">
+  @h2xmle_description {Lower 32 bits of the 64-bit Keyword start time stamp.
+</ParamField>
+<ParamField path="kw_start_timestamp_msw" type="uint32_t">
+  @h2xmle_description {Upper 32 bits of the 64-bit Keyword start time stamp.
+</ParamField>
+<ParamField path="kw_end_timestamp_lsw" type="uint32_t">
+  @h2xmle_description {Lower 32 bits of the 64-bit Keyword end time stamp.
+</ParamField>
+<ParamField path="kw_end_timestamp_msw" type="uint32_t">
+  @h2xmle_description {Upper 32 bits of the 64-bit Keyword end time stamp.
+</ParamField>
+<ParamField path="detection_timestamp_lsw" type="uint32_t">
+  @h2xmle_description {Lower 32 bits of the 64-bit detection timestamp.
+</ParamField>
+<ParamField path="detection_timestamp_msw" type="uint32_t">
+  @h2xmle_description {Upper 32 bits of the 64-bit detection timestamp (in milliseconds).
+</ParamField>
+
+### `param_id_detection_engine_buffering_config_t`
+
+@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG", PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG} @h2xmlp_description { Set the buffering requirements for the detection module.
+
+**Members**
+
+<ParamField path="hist_buffer_duration_msec" type="uint32_t">
+  @h2xmle_description {Duration (in milliseconds) of the history buffer that holds the keyword.
+</ParamField>
+<ParamField path="pre_roll_duration_msec" type="uint32_t">
+  @h2xmle_description {Amount of data before a keyword start (in milliseconds).
+</ParamField>
+
+### `param_id_detection_engine_multi_model_buffering_config_t`
+
+@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_MULTI_MODEL_BUFFERING_CONFIG", PARAM_ID_DETECTION_ENGINE_MULTI_MODEL_BUFFERING_CONFIG} @h2xmlp_description { Set the buffering requirements for the PDK module.
+
+**Members**
+
+<ParamField path="model_id" type="uint32_t">
+  @h2xmle_description {Model id of the model for which buffering config is being done The Model has to be registered before sending this set param} @h2xmle_policy {Basic} @h2xmle_range {0..0xFFFFFFFE} @h2xmle_default {0}
+</ParamField>
+<ParamField path="hist_buffer_duration_msec" type="uint32_t">
+  @h2xmle_description {Duration (in milliseconds) of the history buffer that holds both the data before keyword detection and the keyword.
+</ParamField>
+<ParamField path="pre_roll_duration_msec" type="uint32_t">
+  @h2xmle_description {Amount of data before a keyword start (in milliseconds).
+</ParamField>
+
+### `param_id_detection_engine_per_model_reset_t`
+
+@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_PER_MODEL_RESET", PARAM_ID_DETECTION_ENGINE_PER_MODEL_RESET} @h2xmlp_description { Resets the Detection Engine model to its initial algorithm stage and begins a new detection
+} @h2xmlp_toolPolicy {Calibration}
+
+**Members**
+
+<ParamField path="model_id" type="uint32_t">
+  @h2xmle_description {This is an unique number to differentiate between different sound models to perform reset} @h2xmle_default {0x0} @h2xmle_range {0..0xFFFFFFFE}
+</ParamField>
+
+## Type Definitions
+
+### `param_id_detection_engine_config_t`
+
+```c
+typedef struct param_id_detection_engine_config_t param_id_detection_engine_config_t
+```
+
+### `param_id_detection_gain_t`
+
+```c
+typedef struct param_id_detection_gain_t param_id_detection_gain_t
+```
+
+### `param_id_detection_engine_register_multi_sound_model_t`
+
+```c
+typedef struct param_id_detection_engine_register_multi_sound_model_t param_id_detection_engine_register_multi_sound_model_t
+```
+
+### `param_id_detection_engine_deregister_multi_sound_model_t`
+
+```c
+typedef struct param_id_detection_engine_deregister_multi_sound_model_t param_id_detection_engine_deregister_multi_sound_model_t
+```
+
+### `param_id_best_ch_enable_t`
+
+```c
+typedef struct param_id_best_ch_enable_t param_id_best_ch_enable_t
+```
+
+### `param_id_detection_engine_generic_event_cfg_t`
+
+```c
+typedef struct param_id_detection_engine_generic_event_cfg_t param_id_detection_engine_generic_event_cfg_t
+```
+
+### `event_id_detection_engine_generic_info_t`
+
+```c
+typedef struct event_id_detection_engine_generic_info_t event_id_detection_engine_generic_info_t
+```
+
+### `detection_engine_event_key_id_info_t`
+
+IDs for keyword index information and confidence value information in the detection engine generic event payload.
+
+```c
+typedef enum detection_engine_event_key_id_info_t detection_engine_event_key_id_info_t
+```
+
+### `param_id_detection_engine_buffering_config_t`
+
+```c
+typedef struct param_id_detection_engine_buffering_config_t param_id_detection_engine_buffering_config_t
+```
+
+### `param_id_detection_engine_multi_model_buffering_config_t`
+
+```c
+typedef struct param_id_detection_engine_multi_model_buffering_config_t param_id_detection_engine_multi_model_buffering_config_t
+```
+
+### `param_id_detection_engine_per_model_reset_t`
+
+```c
+typedef struct param_id_detection_engine_per_model_reset_t param_id_detection_engine_per_model_reset_t
+```
+
+## Enumerations
+
+### `detection_engine_event_key_id_info_t`
+
+IDs for keyword index information and confidence value information in the detection engine generic event payload.
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `KEY_ID_CONFIDENCE_LEVELS_INFO` | = 0x2000 | Confidence levels detected per sound model. |
+| `KEY_ID_KWD_POSITION_INFO` |  | Keyword start and end timestamps. |
+| `KEY_ID_TIMESTAMP_INFO` |  | Detetion timestamp info. |
+| `KEY_ID_FTRT_DATA_INFO` |  | FTRT Data length in the circular buffer. |
+| `KEY_ID_BEST_CH_IDX_INFO` |  | Best Ch Idx detected by the algorithm |
+| `KEY_ID_VOICE_UI_MULTI_MODEL_RESULT_INFO` |  | Multi Model Detection Engine result info. |
+| `KEY_ID_MAX_VALUE` | =  0x7FFFFFFF | Maxium supported value for KEY_ID. |
+
+## Macros
+
+### `DETECTION_ENGINE_MAX_REGISTERED_MODELS`
+
+```c
+#define DETECTION_ENGINE_MAX_REGISTERED_MODELS 20
+```
+
+### `DETECTION_STATUS_SUCCESS`
+
+Status (Detected) sent to notify that the detection engine has detected a keyword.
+
+```c
+#define DETECTION_STATUS_SUCCESS 0
+```
+
+### `DETECTION_STATUS_FAILURE`
+
+Status (Rejected) sent to notify the that a detection module has rejected a keyword.
+
+```c
+#define DETECTION_STATUS_FAILURE 1
+```
+
+### `MAX_MODELS_SUPPORTED`
+
+```c
+#define MAX_MODELS_SUPPORTED 8
+```
+
+### `MAX_KEYWORDS_SUPPORTED`
+
+```c
+#define MAX_KEYWORDS_SUPPORTED 8
+```
+
+### `PARAM_ID_DETECTION_ENGINE_CONFIG`
+
+```c
+#define PARAM_ID_DETECTION_ENGINE_CONFIG 0x08001049
+```
+
+### `PARAM_ID_DETECTION_GAIN`
+
+```c
+#define PARAM_ID_DETECTION_GAIN 0x0800104B
+```
+
+### `PARAM_ID_DETECTION_ENGINE_SOUND_MODEL`
+
+```c
+#define PARAM_ID_DETECTION_ENGINE_SOUND_MODEL 0x0800104C
+```
+
+### `PARAM_ID_DETECTION_ENGINE_REGISTER_MULTI_SOUND_MODEL`
+
+@h2xmlp_emptyParameter {"PARAM_ID_DETECTION_ENGINE_SOUND_MODEL", PARAM_ID_DETECTION_ENGINE_SOUND_MODEL} @h2xmlp_description {Registers a sound model with a module.
+
+```c
+#define PARAM_ID_DETECTION_ENGINE_REGISTER_MULTI_SOUND_MODEL 0x0800124E
+```
+
+### `PARAM_ID_DETECTION_ENGINE_DEREGISTER_MULTI_SOUND_MODEL`
+
+```c
+#define PARAM_ID_DETECTION_ENGINE_DEREGISTER_MULTI_SOUND_MODEL 0x08001250
+```
+
+### `PARAM_ID_BEST_CH_ENABLE`
+
+```c
+#define PARAM_ID_BEST_CH_ENABLE 0x08001065
+```
+
+### `PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG`
+
+```c
+#define PARAM_ID_DETECTION_ENGINE_GENERIC_EVENT_CFG 0x0800104E
+```
+
+### `EVENT_ID_DETECTION_ENGINE_GENERIC_INFO`
+
+```c
+#define EVENT_ID_DETECTION_ENGINE_GENERIC_INFO 0x0800104F
+```
+
+### `PARAM_ID_DETECTION_ENGINE_RESET`
+
+```c
+#define PARAM_ID_DETECTION_ENGINE_RESET 0x08001051
+```
+
+### `PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG`
+
+@h2xmlp_emptyParameter {"PARAM_ID_DETECTION_ENGINE_RESET", PARAM_ID_DETECTION_ENGINE_RESET} @h2xmlp_description {Resets the Detection Engine module to its initial algorithm stage and begins a new detection.
+
+```c
+#define PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG 0x08001044
+```
+
+### `PARAM_ID_DETECTION_ENGINE_MULTI_MODEL_BUFFERING_CONFIG`
+
+```c
+#define PARAM_ID_DETECTION_ENGINE_MULTI_MODEL_BUFFERING_CONFIG 0x0800124F
+```
+
+### `PARAM_ID_DETECTION_ENGINE_PER_MODEL_RESET`
+
+```c
+#define PARAM_ID_DETECTION_ENGINE_PER_MODEL_RESET 0x080014ED
+```

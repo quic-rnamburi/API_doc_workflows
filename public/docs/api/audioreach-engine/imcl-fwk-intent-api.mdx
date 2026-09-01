@@ -1,0 +1,60 @@
+---
+title: "imcl_fwk_intent_api.h"
+description: "This file contains all the public intent names."
+---
+
+## Macros
+
+### `INTENT_ID_BT_DEADLINE_TIME`
+
+Identifier for the IMCL intent used to send a deadline time.
+
+```c
+#define INTENT_ID_BT_DEADLINE_TIME 0x080010D3
+```
+
+### `INTENT_ID_AUDIO_DAM_DETECTION_ENGINE_CTRL`
+
+Identifier for the IMCL intent used to define the payload structure of an IMCL message.
+
+```c
+#define INTENT_ID_AUDIO_DAM_DETECTION_ENGINE_CTRL 0x08001064
+```
+
+### `INTENT_ID_DETECTION_ENGINE_STAGE2_TO_STAGE1`
+
+Identifier for the IMCL intent used for the control link between the detection engine and stage 2 detection engine.
+
+```c
+#define INTENT_ID_DETECTION_ENGINE_STAGE2_TO_STAGE1 0x0800124B
+```
+
+### `INTENT_ID_BT_ENCODER_FEEDBACK`
+
+Identifier for the IMCL intent used to communicate between depack v1,v2/conn proxy src and encoder.
+
+```c
+#define INTENT_ID_BT_ENCODER_FEEDBACK 0x080010D7
+```
+
+### `INTENT_ID_AAD_STATE_CONTROL`
+
+```c
+#define INTENT_ID_AAD_STATE_CONTROL 0x08001386
+```
+
+### `INTENT_ID_BT_CONN_PROXY_FEEDBACK`
+
+Identifier for the IMCL intent used to communicate between Conn proxy modules @subhead4{Supported parameter IDs}.
+
+```c
+#define INTENT_ID_BT_CONN_PROXY_FEEDBACK 0x080013C5
+```
+
+### `INTENT_ID_PRBDMA_CONTROL`
+
+Identifier for the IMCL intent used to communicate between AAD and Codec DMA module.
+
+```c
+#define INTENT_ID_PRBDMA_CONTROL 0x08001A74
+```

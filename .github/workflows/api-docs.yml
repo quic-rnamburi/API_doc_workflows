@@ -475,7 +475,53 @@ jobs:
           print(f"Navigation group written to {MDX_DIR}/mint-navigation.json")
           EOF
 
-      # ── 9. Upload HTML artifact ───────────────────────────────────────────
+      # ── 9. Merge new navigation group into docs.json ─────────────────────
+      - name: Update docs.json navigation
+        run: |
+          python3 - <<'EOF'
+          import json, os
+
+          nav_path  = "api-docs/mdx/mint-navigation.json"
+          docs_path = "docs.json"
+
+          with open(nav_path) as f:
+              new_group = json.load(f)
+
+          with open(docs_path) as f:
+              docs = json.load(f)
+
+          groups = docs.setdefault("navigation", {}).setdefault("groups", [])
+
+          # Replace existing group for this repo if present, otherwise append
+          repo_name = os.environ["REPO_NAME"]
+          for i, g in enumerate(groups):
+              if g.get("group") == new_group["group"] or any(
+                  repo_name in p for p in g.get("pages", [])
+              ):
+                  groups[i] = new_group
+                  break
+          else:
+              groups.append(new_group)
+
+          with open(docs_path, "w") as f:
+              json.dump(docs, f, indent=2)
+              f.write("\n")
+
+          print(f"docs.json updated with group: {new_group['group']}")
+          EOF
+
+      # ── 10. Commit and push docs.json + MDX files ─────────────────────────
+      - name: Commit updated docs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp -r api-docs/mdx/. public/docs/api/${{ env.REPO_NAME }}/
+          git add docs.json public/docs/api/${{ env.REPO_NAME }}/
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "docs: update API reference for ${{ env.REPO_NAME }} @ ${{ inputs.sha }}"
+          git push
+
+      # ── 11. Upload HTML artifact ───────────────────────────────────────────
       - name: Upload API docs artifact (HTML)
         uses: actions/upload-artifact@v4
         with:

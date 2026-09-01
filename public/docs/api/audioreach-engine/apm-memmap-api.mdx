@@ -1,0 +1,170 @@
+---
+title: "apm_memmap_api.h"
+description: "This file contains the structure definitions for the memory map commands."
+---
+
+## Structures
+
+### `apm_cmd_global_shared_mem_map_regions_t`
+
+Immediately following this structure are num_regions of apm_shared_map_region_payload_t.
+
+**Members**
+
+<ParamField path="shmem_id" type="uint32_t">
+  A unique ID assigned by the client for these memory regions.
+</ParamField>
+<ParamField path="mem_pool_id" type="uint16_t">
+  Type of memory on which this memory region is mapped.
+</ParamField>
+<ParamField path="num_regions" type="uint16_t">
+  Number of physical regions to map.
+</ParamField>
+<ParamField path="property_flag" type="uint32_t">
+  Configures one common property for all regions in the payload.
+</ParamField>
+
+### `apm_cmd_shared_mem_map_regions_t`
+
+Immediately following this structure are num_regions of apm_shared_map_region_payload_t.
+
+**Members**
+
+<ParamField path="mem_pool_id" type="uint16_t">
+  Type of memory on which this memory region is mapped.
+</ParamField>
+<ParamField path="num_regions" type="uint16_t">
+  Number of regions to map.
+</ParamField>
+<ParamField path="property_flag" type="uint32_t">
+  Configures one common property for all regions in the payload.
+</ParamField>
+
+### `apm_cmd_shared_satellite_mem_map_regions_t`
+
+Immediately following this structure are num_regions of apm_shared_map_region_payload_t.
+
+**Members**
+
+<ParamField path="master_mem_handle" type="uint32_t">
+  Specifies the memory handle of the master processor that corresponds to the shared memory region being mapped to the satellite process domain.
+</ParamField>
+<ParamField path="satellite_proc_domain_id" type="uint32_t">
+  Specifies the satellite process domain ID to which the memory is mapped.
+</ParamField>
+<ParamField path="mem_pool_id" type="uint16_t">
+  Type of memory on which this memory region is mapped.
+</ParamField>
+<ParamField path="num_regions" type="uint16_t">
+  Number of regions to map.
+</ParamField>
+<ParamField path="property_flag" type="uint32_t">
+  Configures one common property for all regions in the payload.
+</ParamField>
+
+### `apm_shared_map_region_payload_t`
+
+**Members**
+
+<ParamField path="shm_addr_lsw" type="uint32_t">
+  Lower 32 bits of the shared memory address of the memory region to map.
+</ParamField>
+<ParamField path="shm_addr_msw" type="uint32_t">
+  Upper 32 bits of the shared memory address of the memory region to map.
+</ParamField>
+<ParamField path="mem_size_bytes" type="uint32_t">
+  Number of bytes in the region.
+</ParamField>
+
+### `apm_cmd_rsp_shared_mem_map_regions_t`
+
+**Members**
+
+<ParamField path="mem_map_handle" type="uint32_t">
+  Unique identifier for the shared memory address.
+</ParamField>
+
+### `apm_cmd_rsp_shared_satellite_mem_map_regions_t`
+
+**Members**
+
+<ParamField path="mem_map_handle" type="uint32_t">
+  Unique identifier for the shared memory address.
+</ParamField>
+
+### `apm_cmd_global_shared_mem_unmap_regions_t`
+
+**Members**
+
+<ParamField path="shmem_id" type="uint32_t">
+  Unique identifier for the global shared memory.
+</ParamField>
+
+### `apm_cmd_shared_mem_unmap_regions_t`
+
+**Members**
+
+<ParamField path="mem_map_handle" type="uint32_t">
+  Unique identifier for the shared memory address.
+</ParamField>
+
+### `apm_cmd_shared_satellite_mem_unmap_regions_t`
+
+**Members**
+
+<ParamField path="satellite_proc_domain_id" type="uint32_t">
+  Specifies the satellite process domain ID whose memory must be unmapped.
+</ParamField>
+<ParamField path="master_mem_handle" type="uint32_t">
+  Unique identifier for the shared memory address.
+</ParamField>
+
+### `apm_cmd_shared_mem_map_regions_v2_t`
+
+Immediately following this structure are num_regions of apm_shared_map_region_payload_t.
+
+**Members**
+
+<ParamField path="unique_shm_id" type="uint32_t">
+  Unique identifier set by the client for the current shared memory region being mapped.
+</ParamField>
+<ParamField path="proc_domain_id" type="uint32_t">
+  Destination processor domain to which the current command is intended to.
+</ParamField>
+<ParamField path="mem_pool_id" type="uint16_t">
+  Type of memory on which this memory region is mapped.
+</ParamField>
+<ParamField path="num_regions" type="uint16_t">
+  Number of regions to map.
+</ParamField>
+<ParamField path="property_flag" type="uint32_t">
+  Configures one common property for all regions in the payload.
+</ParamField>
+
+### `apm_cmd_shared_mem_unmap_regions_v2_t`
+
+**Members**
+
+<ParamField path="unique_shm_id" type="uint32_t">
+  Unique identifier that was set by the client in the APM_CMD_SHARED_MEM_MAP_REGIONS_V2 payload.
+</ParamField>
+<ParamField path="proc_domain_id" type="uint32_t">
+  Destination processor domain to which the current command is intended to.
+</ParamField>
+
+### `apm_cmd_shared_mem_region_access_info_t`
+
+**Members**
+
+<ParamField path="unique_shm_id" type="uint32_t">
+  Unique identifier that was set by the client in the APM_CMD_SHARED_MEM_MAP_REGIONS_V2 payload.
+</ParamField>
+<ParamField path="proc_domain_id" type="uint32_t">
+  Destination processor domain to which the current command is intended to.
+</ParamField>
+<ParamField path="num_peer_proc_domain_ids" type="uint32_t">
+  Number of processor domains to which the shared memory region has been mapped to.
+</ParamField>
+<ParamField path="peer_proc_domain_list" type="uint32_t">
+  List of Processor domain IDs to which the mapping has been done.
+</ParamField>

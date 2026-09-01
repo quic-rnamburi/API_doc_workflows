@@ -1,0 +1,92 @@
+---
+title: "vcpm_config_api.h"
+description: "This file contains declarations of the VCPM config API."
+---
+
+## Structures
+
+### `vcpm_param_id_scale_factor_payload_t`
+
+@h2xmlp_subStruct
+
+**Members**
+
+<ParamField path="proc_id" type="uint32_t">
+  @h2xmle_description {Proc ID for which this param is applicable} @h2xmle_default {APM_PROC_DOMAIN_ID_INVALID} @h2xmle_rangeList {"INVALID_VALUE"=APM_PROC_DOMAIN_ID_INVALID, "ADSP"=APM_PROC_DOMAIN_ID_ADSP, "MDSP"=APM_PROC_DOMAIN_ID_MDSP, "CDSP"=APM_PROC_DOMAIN_ID_CDSP} @h2xmle_policy {Basic}
+</ParamField>
+<ParamField path="kpps_sf" type="uint32_t">
+  @h2xmle_description { Scale factor to apply to the aggregated kpps of the offload path.
+</ParamField>
+<ParamField path="bus_bw_sf" type="uint32_t">
+  @h2xmle_description { Scale factor to apply to the aggregated BW.
+</ParamField>
+
+### `vcpm_param_id_scale_factor_t`
+
+@h2xmlp_parameter {"VCPM_PARAM_ID_SCALE_FACTOR", VCPM_PARAM_ID_SCALE_FACTOR} @h2xmlp_description { Identifier for the parameter that sets the scale factor info.
+
+**Members**
+
+<ParamField path="num_configs" type="uint32_t">
+  @h2xmle_description {number of scale factor configs for this SubGraph.
+</ParamField>
+<ParamField path="scale_factor" type="vcpm_param_id_scale_factor_payload_t">
+  @h2xmle_description {Specifies the scale factor configuration per domain.
+</ParamField>
+
+### `vcpm_param_id_safety_margin_t`
+
+@h2xmlp_parameter {"VCPM_PARAM_ID_SAFETY_MARGIN", VCPM_PARAM_ID_SAFETY_MARGIN} @h2xmlp_description { Identifier for the parameter that sets the Safety margin info.
+
+**Members**
+
+<ParamField path="safety_margin_us" type="uint32_t">
+</ParamField>
+
+## Type Definitions
+
+### `vcpm_param_id_scale_factor_payload_t`
+
+```c
+typedef struct vcpm_param_id_scale_factor_payload_t vcpm_param_id_scale_factor_payload_t
+```
+
+### `vcpm_param_id_scale_factor_t`
+
+```c
+typedef struct vcpm_param_id_scale_factor_t vcpm_param_id_scale_factor_t
+```
+
+### `vcpm_param_id_safety_margin_t`
+
+Payload for VCPM_PARAM_ID_SAFETY_MARGIN.
+
+```c
+typedef struct vcpm_param_id_safety_margin_t vcpm_param_id_safety_margin_t
+```
+
+## Macros
+
+### `VCPM_PARAM_ID_SCALE_FACTOR`
+
+@h2xmlm_module {"VCPM_MODULE_INSTANCE_ID",VCPM_MODULE_INSTANCE_ID} @h2xmlm_displayName {"VCPM"}
+
+```c
+#define VCPM_PARAM_ID_SCALE_FACTOR 0x08001B33
+```
+
+### `VCPM_PARAM_ID_SAFETY_MARGIN`
+
+Identifier for the parameter that sets the safety margin.
+
+```c
+#define VCPM_PARAM_ID_SAFETY_MARGIN 0x08001B34
+```
+
+### `VCPM_MODULE_INSTANCE_ID`
+
+Instance identifier for the VCPM static module.
+
+```c
+#define VCPM_MODULE_INSTANCE_ID 0x00000004
+```

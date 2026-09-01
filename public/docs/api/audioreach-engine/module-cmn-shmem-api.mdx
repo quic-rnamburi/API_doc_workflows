@@ -1,0 +1,92 @@
+---
+title: "module_cmn_shmem_api.h"
+---
+
+## Structures
+
+### `sh_mem_peer_client_property_payload_t`
+
+Payload definition of the shared memory client property configuration.
+
+**Members**
+
+<ParamField path="property_type" type="uint32_t">
+  @h2xmle_description {specifies the property type} @h2xmle_default {PROPERTY_TYPE_IS_INVALID} @h2xmle_rangeList {"PROPERTY_TYPE_IS_INVALID" = PROPERTY_TYPE_IS_INVALID, "PROPERTY_TYPE_IS_UPSTREAM_REALTIME" = PROPERTY_TYPE_IS_UPSTREAM_REALTIME, "PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME" = PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME} @h2xmle_policy {advanced}
+</ParamField>
+<ParamField path="property_value" type="uint32_t">
+  @h2xmle_description {specifies the property value.
+</ParamField>
+
+### `param_id_sh_mem_peer_client_property_config_t`
+
+@h2xmlp_parameter {"PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG", PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG} @h2xmlp_description {Parameter for setting the up/downstream (basically client) state configuration information to the WR/RD_EP module in the SPF graph.
+
+**Members**
+
+<ParamField path="num_properties" type="uint32_t">
+  @h2xmle_description {determines the number of client state properties following this payload.
+</ParamField>
+
+## Type Definitions
+
+### `sh_mem_peer_client_property_payload_t`
+
+```c
+typedef struct sh_mem_peer_client_property_payload_t sh_mem_peer_client_property_payload_t
+```
+
+### `param_id_sh_mem_peer_client_property_config_t`
+
+```c
+typedef struct param_id_sh_mem_peer_client_property_config_t param_id_sh_mem_peer_client_property_config_t
+```
+
+## Macros
+
+### `PROPERTY_TYPE_IS_INVALID`
+
+Configuration Value to configure the client state property type as INVALID.
+
+```c
+#define PROPERTY_TYPE_IS_INVALID 0
+```
+
+### `PROPERTY_TYPE_IS_UPSTREAM_REALTIME`
+
+Configuration Value to configure the client state property type as Upstream Realtime.
+
+```c
+#define PROPERTY_TYPE_IS_UPSTREAM_REALTIME 1
+```
+
+### `PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME`
+
+Configuration Value to configure the client state property type as downstream Realtime.
+
+```c
+#define PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME 2
+```
+
+### `PROPERTY_VALUE_IS_FTRT`
+
+Defines the client state configuration value as faster than real time (FTRT) This configuration value is only applicable for following property type PROPERTY_TYPE_IS_UPSTREAM_REALTIME PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME.
+
+```c
+#define PROPERTY_VALUE_IS_FTRT 0
+```
+
+### `PROPERTY_VALUE_IS_RT`
+
+Defines the client state configuration Value as Real time (RT) This configuration value is only applicable for following property type PROPERTY_TYPE_IS_UPSTREAM_REALTIME PROPERTY_TYPE_IS_DOWNSTREAM_REALTIME.
+
+```c
+#define PROPERTY_VALUE_IS_RT 1
+```
+
+### `PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG`
+
+Configuration parameter ID for setting the up/downstream (basically client) state configuration information to the WR/RD_EP module in the SPF graph.
+
+```c
+#define PARAM_ID_SH_MEM_PEER_CLIENT_PROPERTY_CONFIG 0x08001A6F
+```

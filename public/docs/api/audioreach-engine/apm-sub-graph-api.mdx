@@ -1,0 +1,342 @@
+---
+title: "apm_sub_graph_api.h"
+description: "This file contains APM sub-graph related commands and events data structures definitions."
+---
+
+## Structures
+
+### `apm_param_id_sub_graph_cfg_t`
+
+Payload for APM_PARAM_ID_SUB_GRAPH_CONFIG.
+
+**Members**
+
+<ParamField path="num_sub_graphs" type="uint32_t">
+  Number of sub-graphs being configured.
+</ParamField>
+
+### `apm_sub_graph_cfg_t`
+
+Sub-graph configuration payload for APM_PARAM_ID_SUB_GRAPH_CONFIG.
+
+**Members**
+
+<ParamField path="sub_graph_id" type="uint32_t">
+  Unique identifier for the sub-graph.
+</ParamField>
+<ParamField path="num_sub_graph_prop" type="uint32_t">
+  Number of properties being configured for this sub-graph (default=0).
+</ParamField>
+
+### `apm_sg_prop_id_perf_mode_t`
+
+Payload for APM_SUB_GRAPH_PROP_ID_PERF_MODE.
+
+**Members**
+
+<ParamField path="perf_mode" type="uint32_t">
+  Performance mode of the sub-graph.
+</ParamField>
+
+### `apm_sg_prop_id_direction_t`
+
+Payload for APM_SUB_GRAPH_PROP_ID_DIRECTION.
+
+**Members**
+
+<ParamField path="direction" type="uint32_t">
+  Data flow direction for the sub-graph.
+</ParamField>
+
+### `apm_sg_prop_id_scenario_id_t`
+
+Payload for APM_SUB_GRAPH_PROP_ID_SCENARIO_ID.
+
+**Members**
+
+<ParamField path="scenario_id" type="uint32_t">
+  Scenario identifier for the sub-graph.
+</ParamField>
+
+### `apm_sg_prop_id_vsid_t`
+
+Payload for APM_SUB_GRAPH_PROP_ID_VSID.
+
+**Members**
+
+<ParamField path="vsid" type="uint32_t">
+  Voice System identifier for the sub-graph.
+</ParamField>
+
+### `apm_subgraph_prop_id_clock_scale_factor_t`
+
+@h2xmlp_property {"Clock Scale Factor", APM_SUBGRAPH_PROP_ID_CLOCK_SCALE_FACTOR} @h2xmlp_description {Sub-graph property ID Clock Scale factor} @h2xmlp_isVoice {false}
+
+**Members**
+
+<ParamField path="enable_duty_cycling" type="uint16_t">
+  @h2xmle_rangeList {"Supports Duty Cycling" = 1, "Does Not support Duty Cycling" = 0} @h2xmle_default {0} @h2xmle_description{Duty Cycling Mode}
+</ParamField>
+<ParamField path="duty_cycling_clock_scale_factor_q4" type="uint16_t">
+  @h2xmle_range {0x0000..0xFFFF} @h2xmle_default {0x10} @h2xmle_description {Duty Cycling Clock Scale Factor, to be modified only if enable flag is set
+ i.e.
+</ParamField>
+<ParamField path="clock_scale_factor_q4" type="uint16_t">
+  @h2xmle_range {0x0000..0xFFFF} @h2xmle_default {0x10} @h2xmle_description {clock scale factors to be set only for non duty cycling subgraphs.
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+  Used for alignment; must be set to 0.
+</ParamField>
+
+### `apm_subgraph_prop_id_bw_scale_factor_t`
+
+@h2xmlp_property {"Bus Bandwidth Scale Factor", APM_SUBGRAPH_PROP_ID_BW_SCALE_FACTOR} @h2xmlp_description {Sub-graph property ID Bus Bandwidth Scale factor} @h2xmlp_isVoice {false}
+
+**Members**
+
+<ParamField path="bus_scale_factor_q4" type="uint16_t">
+  @h2xmle_range {0x0000..0xFFFF} @h2xmle_default {0x10} @h2xmle_description {bw scale factors to be set for any subgraphs.
+</ParamField>
+<ParamField path="reserved" type="uint16_t">
+  Used for alignment; must be set to 0.
+</ParamField>
+
+### `apm_param_id_sub_graph_list_t`
+
+Payload for APM_PARAM_ID_SUB_GRAPH_LIST.
+
+**Members**
+
+<ParamField path="num_sub_graphs" type="uint32_t">
+  Number of sub-graphs being configured.
+</ParamField>
+
+### `apm_sub_graph_id_t`
+
+Sub-graph payload for APM_PARAM_ID_SUB_GRAPH_LIST.
+
+**Members**
+
+<ParamField path="sub_graph_id" type="uint32_t">
+  Unique identifier for the sub-graph being configured.
+</ParamField>
+
+## Type Definitions
+
+### `apm_param_id_sub_graph_cfg_t`
+
+```c
+typedef struct apm_param_id_sub_graph_cfg_t apm_param_id_sub_graph_cfg_t
+```
+
+### `apm_sub_graph_cfg_t`
+
+```c
+typedef struct apm_sub_graph_cfg_t apm_sub_graph_cfg_t
+```
+
+### `apm_sg_prop_id_perf_mode_t`
+
+```c
+typedef struct apm_sg_prop_id_perf_mode_t apm_sg_prop_id_perf_mode_t
+```
+
+### `apm_sg_prop_id_direction_t`
+
+```c
+typedef struct apm_sg_prop_id_direction_t apm_sg_prop_id_direction_t
+```
+
+### `apm_sg_prop_id_scenario_id_t`
+
+```c
+typedef struct apm_sg_prop_id_scenario_id_t apm_sg_prop_id_scenario_id_t
+```
+
+### `apm_sg_prop_id_vsid_t`
+
+```c
+typedef struct apm_sg_prop_id_vsid_t apm_sg_prop_id_vsid_t
+```
+
+### `apm_subgraph_prop_id_clock_scale_factor_t`
+
+```c
+typedef struct apm_subgraph_prop_id_clock_scale_factor_t apm_subgraph_prop_id_clock_scale_factor_t
+```
+
+### `apm_subgraph_prop_id_bw_scale_factor_t`
+
+```c
+typedef struct apm_subgraph_prop_id_bw_scale_factor_t apm_subgraph_prop_id_bw_scale_factor_t
+```
+
+### `apm_param_id_sub_graph_list_t`
+
+```c
+typedef struct apm_param_id_sub_graph_list_t apm_param_id_sub_graph_list_t
+```
+
+### `apm_sub_graph_id_t`
+
+```c
+typedef struct apm_sub_graph_id_t apm_sub_graph_id_t
+```
+
+## Macros
+
+### `APM_PARAM_ID_SUB_GRAPH_CONFIG`
+
+Identifier for the parameter that configures the sub-graph properties.
+
+```c
+#define APM_PARAM_ID_SUB_GRAPH_CONFIG 0x08001001
+```
+
+### `APM_SUB_GRAPH_PROP_ID_PERF_MODE`
+
+Sub-graph property identifier for the performance mode.
+
+```c
+#define APM_SUB_GRAPH_PROP_ID_PERF_MODE 0x0800100E
+```
+
+### `APM_SG_PERF_MODE_LOW_POWER`
+
+Low Power performance mode for the sub-graph.
+
+```c
+#define APM_SG_PERF_MODE_LOW_POWER 0x1
+```
+
+### `APM_SG_PERF_MODE_LOW_LATENCY`
+
+Low Latency performance mode for the sub-graph.
+
+```c
+#define APM_SG_PERF_MODE_LOW_LATENCY 0x2
+```
+
+### `APM_SUB_GRAPH_PROP_ID_DIRECTION`
+
+Direction of the sub-graph property ID.
+
+```c
+#define APM_SUB_GRAPH_PROP_ID_DIRECTION 0x0800100F
+```
+
+### `APM_SUB_GRAPH_DIRECTION_TX`
+
+Transmit direction for the sub-graph.
+
+```c
+#define APM_SUB_GRAPH_DIRECTION_TX 0x1
+```
+
+### `APM_SUB_GRAPH_DIRECTION_RX`
+
+Receive direction for the sub-graph.
+
+```c
+#define APM_SUB_GRAPH_DIRECTION_RX 0x2
+```
+
+### `APM_SUB_GRAPH_PROP_ID_SCENARIO_ID`
+
+Scenario identifier for the sub-graph property ID.
+
+```c
+#define APM_SUB_GRAPH_PROP_ID_SCENARIO_ID 0x08001010
+```
+
+### `APM_SUB_GRAPH_SID_AUDIO_PLAYBACK`
+
+Scenario ID for audio playback .
+
+```c
+#define APM_SUB_GRAPH_SID_AUDIO_PLAYBACK 0x1
+```
+
+### `APM_SUB_GRAPH_SID_AUDIO_RECORD`
+
+Scenario ID for audio record.
+
+```c
+#define APM_SUB_GRAPH_SID_AUDIO_RECORD 0x2
+```
+
+### `APM_SUB_GRAPH_SID_VOICE_CALL`
+
+Scenario ID for a voice call.
+
+```c
+#define APM_SUB_GRAPH_SID_VOICE_CALL 0x3
+```
+
+### `APM_SUB_GRAPH_PROP_ID_VSID`
+
+Voice System identifier (VSID) for the sub-graph property ID.
+
+```c
+#define APM_SUB_GRAPH_PROP_ID_VSID 0x080010CC
+```
+
+### `APM_SUB_GRAPH_VSID_SUB1`
+
+VSID voice call with Subscription 1 and VSID 0x11C05000.
+
+```c
+#define APM_SUB_GRAPH_VSID_SUB1 AR_NON_GUID(0x11C05000)
+```
+
+### `APM_SUB_GRAPH_VSID_SUB2`
+
+VSID voice call with Subscription 2 and VSID 0x11DC5000.
+
+```c
+#define APM_SUB_GRAPH_VSID_SUB2 AR_NON_GUID(0x11DC5000)
+```
+
+### `APM_SUB_GRAPH_VSID_VOC_LB_SUB1`
+
+Applications-only mode with a vocoder loopback on Subscription 1.
+
+```c
+#define APM_SUB_GRAPH_VSID_VOC_LB_SUB1 AR_NON_GUID(0x12006000)
+```
+
+### `APM_SUB_GRAPH_VSID_VOC_LB_SUB2`
+
+Applications-only mode with a vocoder loopback on Subscription 2.
+
+```c
+#define APM_SUB_GRAPH_VSID_VOC_LB_SUB2 AR_NON_GUID(0x121C6000)
+```
+
+### `APM_SUB_GRAPH_VSID_DONT_CARE`
+
+Don't care value for the VSID, which the HLOS client enumerates at a later time.
+
+```c
+#define APM_SUB_GRAPH_VSID_DONT_CARE AR_NON_GUID(0xFFFFFFFF)
+```
+
+### `APM_SUBGRAPH_PROP_ID_CLOCK_SCALE_FACTOR`
+
+```c
+#define APM_SUBGRAPH_PROP_ID_CLOCK_SCALE_FACTOR 0x08001374
+```
+
+### `APM_SUBGRAPH_PROP_ID_BW_SCALE_FACTOR`
+
+```c
+#define APM_SUBGRAPH_PROP_ID_BW_SCALE_FACTOR 0x08001531
+```
+
+### `APM_PARAM_ID_SUB_GRAPH_LIST`
+
+Identifier for the parameter that configures the list of sub-graphs.
+
+```c
+#define APM_PARAM_ID_SUB_GRAPH_LIST 0x08001005
+```
