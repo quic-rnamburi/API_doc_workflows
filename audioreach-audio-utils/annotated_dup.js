@@ -1,0 +1,27 @@
+var annotated_dup =
+[
+    [ "audio_aac_encoder_config", "structaudio__aac__encoder__config.html", "structaudio__aac__encoder__config" ],
+    [ "audio_aptx_ad_config", "structaudio__aptx__ad__config.html", "structaudio__aptx__ad__config" ],
+    [ "audio_aptx_default_config", "structaudio__aptx__default__config.html", "structaudio__aptx__default__config" ],
+    [ "audio_aptx_dual_mono_config", "structaudio__aptx__dual__mono__config.html", "structaudio__aptx__dual__mono__config" ],
+    [ "audio_attributes_t", "structaudio__attributes__t.html", "structaudio__attributes__t" ],
+    [ "audio_config", "structaudio__config.html", "structaudio__config" ],
+    [ "audio_config_base", "structaudio__config__base.html", "structaudio__config__base" ],
+    [ "audio_gain", "structaudio__gain.html", "structaudio__gain" ],
+    [ "audio_gain_config", "structaudio__gain__config.html", "structaudio__gain__config" ],
+    [ "audio_microphone_characteristic_t", "structaudio__microphone__characteristic__t.html", "structaudio__microphone__characteristic__t" ],
+    [ "audio_microphone_coordinate", "structaudio__microphone__coordinate.html", "structaudio__microphone__coordinate" ],
+    [ "audio_mmap_buffer_info", "structaudio__mmap__buffer__info.html", "structaudio__mmap__buffer__info" ],
+    [ "audio_mmap_position", "structaudio__mmap__position.html", "structaudio__mmap__position" ],
+    [ "audio_offload_info_t", "structaudio__offload__info__t.html", "structaudio__offload__info__t" ],
+    [ "audio_patch", "structaudio__patch.html", "structaudio__patch" ],
+    [ "audio_port", "structaudio__port.html", "structaudio__port" ],
+    [ "audio_port_config", "structaudio__port__config.html", "structaudio__port__config" ],
+    [ "audio_port_config_device_ext", "structaudio__port__config__device__ext.html", "structaudio__port__config__device__ext" ],
+    [ "audio_port_config_mix_ext", "structaudio__port__config__mix__ext.html", "structaudio__port__config__mix__ext" ],
+    [ "audio_port_config_session_ext", "structaudio__port__config__session__ext.html", "structaudio__port__config__session__ext" ],
+    [ "audio_port_device_ext", "structaudio__port__device__ext.html", "structaudio__port__device__ext" ],
+    [ "audio_port_mix_ext", "structaudio__port__mix__ext.html", "structaudio__port__mix__ext" ],
+    [ "audio_port_session_ext", "structaudio__port__session__ext.html", "structaudio__port__session__ext" ],
+    [ "audio_sbc_encoder_config", "structaudio__sbc__encoder__config.html", "structaudio__sbc__encoder__config" ]
+];

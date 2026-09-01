@@ -1,0 +1,12 @@
+digraph "audio-route/include/audio_route"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_ef7bcde9747cffde869864f120678fb7 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="include", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_ef7bcde9747cffde869864f120678fb7.html",tooltip=""]
+  dir_7e0680ad19d8b3b24c40e114de0d72e7 [label="audio_route", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_7e0680ad19d8b3b24c40e114de0d72e7.html",tooltip=""];
+  }
+}
