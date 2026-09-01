@@ -8,48 +8,6 @@
     "dark": "#1A3AB8"
   },
   "navigation": {
-    "groups": [
-      {
-        "group": "API Reference",
-        "pages": [
-          "public/docs/api/audioreach-engine/apm-api",
-          "public/docs/api/audioreach-engine/apm-container-api",
-          "public/docs/api/audioreach-engine/apm-debug-info",
-          "public/docs/api/audioreach-engine/apm-graph-properties",
-          "public/docs/api/audioreach-engine/apm-memmap-api",
-          "public/docs/api/audioreach-engine/apm-module-api",
-          "public/docs/api/audioreach-engine/apm-proxy-graph-mgmt-api",
-          "public/docs/api/audioreach-engine/apm-sub-graph-api",
-          "public/docs/api/audioreach-engine/ar-guids",
-          "public/docs/api/audioreach-engine/amdb-api",
-          "public/docs/api/audioreach-engine/ar-spf-cmd-api",
-          "public/docs/api/audioreach-engine/audioss-dsp-mem-api",
-          "public/docs/api/audioreach-engine/codec-metadata-api",
-          "public/docs/api/audioreach-engine/common-enc-dec-api",
-          "public/docs/api/audioreach-engine/congestion-buf-api",
-          "public/docs/api/audioreach-engine/contexts-api",
-          "public/docs/api/audioreach-engine/detection-cmn-api",
-          "public/docs/api/audioreach-engine/dtmf-detection-api",
-          "public/docs/api/audioreach-engine/imcl-fwk-intent-api",
-          "public/docs/api/audioreach-engine/jitter-buf-api",
-          "public/docs/api/audioreach-engine/media-fmt-api-basic",
-          "public/docs/api/audioreach-engine/media-fmt-api-ext",
-          "public/docs/api/audioreach-engine/metadata-api",
-          "public/docs/api/audioreach-engine/module-cmn-api",
-          "public/docs/api/audioreach-engine/module-cmn-shmem-api",
-          "public/docs/api/audioreach-engine/rd-sh-mem-client-api",
-          "public/docs/api/audioreach-engine/rd-sh-mem-ep-api",
-          "public/docs/api/audioreach-engine/rtm-logging-api",
-          "public/docs/api/audioreach-engine/vocoder-cmn-api",
-          "public/docs/api/audioreach-engine/wr-sh-mem-client-api",
-          "public/docs/api/audioreach-engine/wr-sh-mem-ep-api",
-          "public/docs/api/audioreach-engine/vcpm-api",
-          "public/docs/api/audioreach-engine/vcpm-config-api",
-          "public/docs/api/audioreach-engine/vcpm-tst-fwk-api",
-          "public/docs/api/audioreach-engine/dls-api",
-          "public/docs/api/audioreach-engine/dls-log-pkt-hdr-api"
-        ]
-      }
-    ]
+    "groups": []
   }
 }

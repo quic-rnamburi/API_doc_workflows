@@ -198,12 +198,16 @@ jobs:
                   return ""
               return "".join(node.itertext()).strip()
 
+          def clean(s):
+              """Strip artefacts from Doxygen /**< ... */ extraction."""
+              return re.sub(r'^<\s*', '', s.strip())
+
           def brief_of(parent):
               node = parent.find("briefdescription")
               if node is None:
                   return ""
               para = node.find("para")
-              return "".join(para.itertext()).strip() if para is not None else ""
+              return clean("".join(para.itertext())) if para is not None else ""
 
           def detail_of(parent):
               node = parent.find("detaileddescription")
@@ -215,7 +219,7 @@ jobs:
                       continue
                   if para.find("simplesect") is not None:
                       continue
-                  t = "".join(para.itertext()).strip()
+                  t = clean("".join(para.itertext()))
                   if t:
                       parts.append(t)
               return "\n\n".join(parts)
