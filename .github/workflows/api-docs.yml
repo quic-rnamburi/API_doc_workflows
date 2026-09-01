@@ -17,6 +17,11 @@ on:
         description: "Commit SHA, branch, or tag to check out"
         required: true
         type: string
+      tab:
+        description: "Tab group name to nest this repo under (e.g. AudioReach). Leave empty for no tab."
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: write      # needed to push to gh-pages
@@ -42,6 +47,7 @@ jobs:
           REPO_NAME=$(basename "${{ inputs.repo_url }}" .git)
           echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
           echo "WORK_DIR=target-repo"   >> $GITHUB_ENV
+          echo "TAB_NAME=${{ inputs.tab }}" >> $GITHUB_ENV
 
       # ── 4. Install tools ──────────────────────────────────────────────────
       - name: Install Doxygen and PyYAML
@@ -199,13 +205,22 @@ jobs:
               return "".join(node.itertext()).strip()
 
           def clean(s):
-              """Strip Doxygen /**< marker and @h2xml annotation noise."""
+              """Strip Doxygen /**< marker and annotation noise."""
               s = re.sub(r'^<\s*', '', s.strip())
-              # Remove @h2xml* annotations and everything after them on the same token
-              s = re.sub(r'@h2xml\w*\s*\{[^}]*\}', '', s)
-              s = re.sub(r'@h2xml\w*[^\n]*', '', s)
-              # Remove leftover { } blocks from annotations
+              # Remove @h2xml* and bare h2xml* annotations with braced args
+              s = re.sub(r'@?h2xml\w*\s*\{[^}]*\}', '', s)
+              s = re.sub(r'@?h2xml\w*[^\n]*', '', s)
+              # Remove bare keywords left after stripping (e.g. "description")
+              s = re.sub(r'^\s*description\s*', '', s)
+              # Remove any unclosed { ... } that runs to end of string
+              s = re.sub(r'\{[^}]*$', '', s, flags=re.DOTALL)
+              # Remove balanced { } blocks
               s = re.sub(r'\{[^}]*\}', '', s)
+              # Escape bare < and > that are not valid JSX tags
+              s = re.sub(r'<(?!/?\w)', r'\\<', s)
+              s = re.sub(r'(?<=\w)>', r'\\>', s)
+              # Escape <=> and similar operator sequences
+              s = re.sub(r'\\<=>', r'\\<\\=>', s)
               return s.strip()
 
           def brief_of(parent):
@@ -493,6 +508,7 @@ jobs:
 
           nav_path  = "api-docs/mdx/mint-navigation.json"
           docs_path = "docs.json"
+          tab_name  = os.environ.get("TAB_NAME", "").strip()
 
           with open(nav_path) as f:
               new_group = json.load(f)
@@ -501,21 +517,36 @@ jobs:
               docs = json.load(f)
 
           groups = docs.setdefault("navigation", {}).setdefault("groups", [])
-
-          # Replace existing group for this repo if present, otherwise append
           repo_name = os.environ["REPO_NAME"]
-          for i, g in enumerate(groups):
-              if g.get("group") == repo_name:
-                  groups[i] = new_group
-                  break
+
+          if tab_name:
+              # Find or create the tab group
+              tab_idx = next((i for i, g in enumerate(groups) if g.get("group") == tab_name), None)
+              if tab_idx is None:
+                  groups.append({"group": tab_name, "pages": []})
+                  tab_idx = len(groups) - 1
+
+              # Within the tab group's pages, replace or append the repo sub-group
+              tab_pages = groups[tab_idx].setdefault("pages", [])
+              repo_idx = next((i for i, p in enumerate(tab_pages)
+                               if isinstance(p, dict) and p.get("group") == repo_name), None)
+              if repo_idx is not None:
+                  tab_pages[repo_idx] = new_group
+              else:
+                  tab_pages.append(new_group)
           else:
-              groups.append(new_group)
+              # Flat — replace or append at top level
+              repo_idx = next((i for i, g in enumerate(groups) if g.get("group") == repo_name), None)
+              if repo_idx is not None:
+                  groups[repo_idx] = new_group
+              else:
+                  groups.append(new_group)
 
           with open(docs_path, "w") as f:
               json.dump(docs, f, indent=2)
               f.write("\n")
 
-          print(f"docs.json updated with group: {new_group['group']}")
+          print(f"docs.json updated: tab='{tab_name}' group='{repo_name}'")
           EOF
 
       # ── 10. Commit and push docs.json + MDX files ─────────────────────────
