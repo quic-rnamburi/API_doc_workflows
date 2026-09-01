@@ -1,0 +1,37 @@
+var us__detect__api_8h =
+[
+    [ "param_id_us_detect_tone_frequency_t", "structparam__id__us__detect__tone__frequency__t.html", "structparam__id__us__detect__tone__frequency__t" ],
+    [ "event_id_upd_detection_event_t", "structevent__id__upd__detection__event__t.html", "structevent__id__upd__detection__event__t" ],
+    [ "param_id_us_detect_duty_cycling_t", "structparam__id__us__detect__duty__cycling__t.html", "structparam__id__us__detect__duty__cycling__t" ],
+    [ "param_id_us_detect_codec_duty_cycling_t", "structparam__id__us__detect__codec__duty__cycling__t.html", "structparam__id__us__detect__codec__duty__cycling__t" ],
+    [ "param_id_us_detect_sensor_access_t", "structparam__id__us__detect__sensor__access__t.html", "structparam__id__us__detect__sensor__access__t" ],
+    [ "param_id_us_detect_param_1_t", "structparam__id__us__detect__param__1__t.html", "structparam__id__us__detect__param__1__t" ],
+    [ "param_id_us_detect_param_2_t", "structparam__id__us__detect__param__2__t.html", "structparam__id__us__detect__param__2__t" ],
+    [ "EVENT_ID_GENERIC_US_DETECTION", "us__detect__api_8h.html#a3bbef62fcd3abdf0ad3f64141c88a03c", null ],
+    [ "MODULE_ID_EXAMPLE_US_DETECT0x070010D7", "us__detect__api_8h.html#a46500bc6b26ec1cc220d25bfb5b96404", null ],
+    [ "PARAM_ID_EXAMPLE_US_DETECT_CODEC_DUTY_CYCLING", "us__detect__api_8h.html#a49f147b3ce707e84aba7e69e9d152e7f", null ],
+    [ "PARAM_ID_EXAMPLE_US_DETECT_DUTY_CYCLING", "us__detect__api_8h.html#ad1db16c499886274de578dea2a6dc833", null ],
+    [ "PARAM_ID_EXAMPLE_US_DETECT_PARAM_1", "us__detect__api_8h.html#a1faf3ed2cdfbe06df71abaa52dff3547", null ],
+    [ "PARAM_ID_EXAMPLE_US_DETECT_PARAM_2", "us__detect__api_8h.html#ad32a262c5f3145cdd7c9375dbbb3dc41", null ],
+    [ "PARAM_ID_EXAMPLE_US_DETECT_SENSOR_ACCESS", "us__detect__api_8h.html#a79fabb2b4c53699ef799363eeffbf801", null ],
+    [ "PARAM_ID_EXAMPLE_US_DETECT_TONE_FREQUENCY", "us__detect__api_8h.html#ab8e873c97bc2ba7dd710eef5ea24de04", null ],
+    [ "US_DETECTOR_DATA_MAX_INPUT_PORTS", "us__detect__api_8h.html#a46d96ac97fbbaca1eec268921d37b76d", null ],
+    [ "US_DETECTOR_DATA_MAX_OUTPUT_PORTS", "us__detect__api_8h.html#a757545ae2b3087185be534875dd52bf3", null ],
+    [ "US_DETECTOR_DATA_OUTPUT_PORT", "us__detect__api_8h.html#a13ba29bc2a25ffc320d35cf491f41565", null ],
+    [ "US_DETECTOR_MODULE_STACK_SIZE", "us__detect__api_8h.html#a5db5d98d7ee785a98468a71b0807ccdb", null ],
+    [ "US_DETECTOR_PRIMARY_DATA_INPUT_PORT", "us__detect__api_8h.html#a72d5e93bc1744e7e3bb9481c1e17eb89", null ],
+    [ "US_DETECTOR_REFERENCE_DATA_INPUT_PORT", "us__detect__api_8h.html#a6b19a23aa594051419fa07cec53a17bd", null ],
+    [ "US_MAX_DETECTION_EVENT_CLIENTS", "us__detect__api_8h.html#a3144ec20aa6c555a0d7b9171993ea3e6", null ],
+    [ "event_id_upd_detection_event_t", "us__detect__api_8h.html#a3d4219a1f611bb45e62b48dcc4a8c552", null ],
+    [ "param_id_us_detect_codec_duty_cycling_t", "us__detect__api_8h.html#acf06911ecda51f7d6d9ca284731e515e", null ],
+    [ "param_id_us_detect_duty_cycling_t", "us__detect__api_8h.html#a07c2c54010883f39491f2092ab1e4f1d", null ],
+    [ "param_id_us_detect_param_1_t", "us__detect__api_8h.html#a3941fa898cc78d0678dc7b1171d6f54e", null ],
+    [ "param_id_us_detect_param_2_t", "us__detect__api_8h.html#ab9137f279e323562dfc39edc44219144", null ],
+    [ "param_id_us_detect_sensor_access_t", "us__detect__api_8h.html#a33a7447f91fba22ef1fae78641731127", null ],
+    [ "param_id_us_detect_tone_frequency_t", "us__detect__api_8h.html#ac33f055f02006272a9b5992268bad11f", null ],
+    [ "us_detect_event_type", "us__detect__api_8h.html#ac1746906210746ff540612277acb1977", [
+      [ "US_DETECT_INVALID", "us__detect__api_8h.html#ac1746906210746ff540612277acb1977a61e8b91e859d596d128b6e3c2d3f3ab8", null ],
+      [ "US_DETECT_NEAR", "us__detect__api_8h.html#ac1746906210746ff540612277acb1977a6b15acf8222deeac9f011c7168f6746d", null ],
+      [ "US_DETECT_FAR", "us__detect__api_8h.html#ac1746906210746ff540612277acb1977ac01dd29b91f2aa43f5add22560fd5277", null ]
+    ] ]
+];

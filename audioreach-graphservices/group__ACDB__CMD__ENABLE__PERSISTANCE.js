@@ -1,0 +1,4 @@
+var group__ACDB__CMD__ENABLE__PERSISTANCE =
+[
+    [ "ACDB_CMD_ENABLE_PERSISTANCE", "group__ACDB__CMD__ENABLE__PERSISTANCE.html#ga30aed4da71a504daff0e147de7594920", null ]
+];

@@ -1,0 +1,47 @@
+digraph "Spf_mods_irm"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir=LR;
+  Node1 [id="Node000001",label="Spf_mods_irm",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node16 [id="Node000016",label="Weak_irm_enable_disable\l_block_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__enable__disable__block__t.html",tooltip=" "];
+  Node12 [id="Node000012",label="Weak_irm_metric_capabilities_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__metric__capabilities__t.html",tooltip=" "];
+  Node13 [id="Node000013",label="Weak_irm_metric_capability\l_block_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__metric__capability__block__t.html",tooltip=" "];
+  Node3 [id="Node000003",label="Weak_irm_metric_id\l_current_clock_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__metric__id__current__clock__t.html",tooltip=" "];
+  Node4 [id="Node000004",label="Weak_irm_metric_id\l_heap_info_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__metric__id__heap__info__t.html",tooltip=" "];
+  Node7 [id="Node000007",label="Weak_irm_metric_id\l_mem_transactions_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__metric__id__mem__transactions__t.html",tooltip=" "];
+  Node6 [id="Node000006",label="Weak_irm_metric_id\l_packet_count_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__metric__id__packet__count__t.html",tooltip=" "];
+  Node2 [id="Node000002",label="Weak_irm_metric_id\l_processor_cycles_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__metric__id__processor__cycles__t.html",tooltip=" "];
+  Node5 [id="Node000005",label="Weak_irm_per_heap_id\l_info_payload_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__per__heap__id__info__payload__t.html",tooltip=" "];
+  Node20 [id="Node000020",label="Weak_irm_report_metric\l_payload_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__report__metric__payload__t.html",tooltip=" "];
+  Node19 [id="Node000019",label="Weak_irm_report_metric_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__report__metric__t.html",tooltip=" "];
+  Node18 [id="Node000018",label="Weak_irm_report_metrics\l_block_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__report__metrics__block__t.html",tooltip=" "];
+  Node10 [id="Node000010",label="Weak_irm_system_capabilities_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__irm__system__capabilities__t.html",tooltip=" "];
+  Node15 [id="Node000015",label="Weak_param_id_enable\l_disable_metrics_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__param__id__enable__disable__metrics__t.html",tooltip=" "];
+  Node11 [id="Node000011",label="Weak_param_id_irm_metric\l_capabilities_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__param__id__irm__metric__capabilities__t.html",tooltip=" "];
+  Node14 [id="Node000014",label="Weak_param_id_irm_profiling\l_params_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__param__id__irm__profiling__params__t.html",tooltip=" "];
+  Node9 [id="Node000009",label="Weak_param_id_irm_system\l_capabilities_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__param__id__irm__system__capabilities__t.html",tooltip=" "];
+  Node8 [id="Node000008",label="Weak_param_id_irm_version_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__param__id__irm__version__t.html",tooltip=" "];
+  Node17 [id="Node000017",label="Weak_param_id_report\l_metrics_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__weak__param__id__report__metrics__t.html",tooltip=" "];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node10 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node11 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node12 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node13 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node14 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node15 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node16 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node17 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node18 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node19 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node20 [shape=plaintext, dir="back", style="solid"];
+}

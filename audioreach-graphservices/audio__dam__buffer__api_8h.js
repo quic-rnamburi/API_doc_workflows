@@ -1,0 +1,27 @@
+var audio__dam__buffer__api_8h =
+[
+    [ "audio_dam_input_port_cfg_t", "structaudio__dam__input__port__cfg__t.html", "structaudio__dam__input__port__cfg__t" ],
+    [ "param_id_audio_dam_input_ports_cfg_t", "structparam__id__audio__dam__input__ports__cfg__t.html", "structparam__id__audio__dam__input__ports__cfg__t" ],
+    [ "channel_map_t", "structchannel__map__t.html", "structchannel__map__t" ],
+    [ "audio_dam_output_port_cfg_t", "structaudio__dam__output__port__cfg__t.html", "structaudio__dam__output__port__cfg__t" ],
+    [ "param_id_audio_dam_output_ports_cfg_t", "structparam__id__audio__dam__output__ports__cfg__t.html", "structparam__id__audio__dam__output__ports__cfg__t" ],
+    [ "audio_dam_downstream_setup_duration_t", "structaudio__dam__downstream__setup__duration__t.html", "structaudio__dam__downstream__setup__duration__t" ],
+    [ "param_id_audio_dam_downstream_setup_duration_t", "structparam__id__audio__dam__downstream__setup__duration__t.html", "structparam__id__audio__dam__downstream__setup__duration__t" ],
+    [ "audio_dam_port_binding_t", "structaudio__dam__port__binding__t.html", "structaudio__dam__port__binding__t" ],
+    [ "param_id_audio_ctrl_to_data_port_map_t", "structparam__id__audio__ctrl__to__data__port__map__t.html", "structparam__id__audio__ctrl__to__data__port__map__t" ],
+    [ "AUDIO_DAM_STACK_SIZE_REQUIREMENT", "audio__dam__buffer__api_8h.html#a0801f51e67037e0d44da220d1c536816", null ],
+    [ "MODULE_ID_AUDIO_DAM_BUFFER", "audio__dam__buffer__api_8h.html#a9f9b744c90f20579a60a347694130b9d", null ],
+    [ "PARAM_ID_AUDIO_DAM_CTRL_TO_DATA_PORT_MAP", "audio__dam__buffer__api_8h.html#a36883a1c4db76428408b6118e1819625", null ],
+    [ "PARAM_ID_AUDIO_DAM_DOWNSTREAM_SETUP_DURATION", "audio__dam__buffer__api_8h.html#a72b1fa0b1921b910a0b9b4db1431571c", null ],
+    [ "PARAM_ID_AUDIO_DAM_INPUT_PORTS_CFG", "audio__dam__buffer__api_8h.html#a6df50af5dc55d4362274da33f860f7f0", null ],
+    [ "PARAM_ID_AUDIO_DAM_OUTPUT_PORTS_CFG", "audio__dam__buffer__api_8h.html#a48348c921601a69aafe6c6e7265815bc", null ],
+    [ "audio_dam_downstream_setup_duration_t", "audio__dam__buffer__api_8h.html#a367f36910754c4105d4d0bf64447e9fa", null ],
+    [ "audio_dam_input_port_cfg_t", "audio__dam__buffer__api_8h.html#abc611114e57832a3580971c13173ba04", null ],
+    [ "audio_dam_output_port_cfg_t", "audio__dam__buffer__api_8h.html#aa12c80b531753b71620cc2844d1985a8", null ],
+    [ "audio_dam_port_binding_t", "audio__dam__buffer__api_8h.html#a2f41c84c71e4634d309b577d130fd069", null ],
+    [ "channel_map_t", "audio__dam__buffer__api_8h.html#a91de5f4f706edfb85278fb0471e079c2", null ],
+    [ "param_id_audio_ctrl_to_data_port_map_t", "audio__dam__buffer__api_8h.html#a5bc00fbd9383325e1f0d23785c593719", null ],
+    [ "param_id_audio_dam_downstream_setup_duration_t", "audio__dam__buffer__api_8h.html#a726ff05fdb5a8e3a5da81f78abccfbe0", null ],
+    [ "param_id_audio_dam_input_ports_cfg_t", "audio__dam__buffer__api_8h.html#af304142b17552cee79354650a392c2e2", null ],
+    [ "param_id_audio_dam_output_ports_cfg_t", "audio__dam__buffer__api_8h.html#a506d973ce25e1d36ef0855f108679df2", null ]
+];

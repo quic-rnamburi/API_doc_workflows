@@ -1,0 +1,25 @@
+var mailbox__api_8h =
+[
+    [ "payload_media_fmt_dtmf_tone_t", "structpayload__media__fmt__dtmf__tone__t.html", "structpayload__media__fmt__dtmf__tone__t" ],
+    [ "mailbox_config_t", "structmailbox__config__t.html", "structmailbox__config__t" ],
+    [ "mailbox_voc_packet_t", "structmailbox__voc__packet__t.html", "structmailbox__voc__packet__t" ],
+    [ "mailbox_voc_request_t", "structmailbox__voc__request__t.html", "structmailbox__voc__request__t" ],
+    [ "mailbox_voc_req_circ_buffer_t", "structmailbox__voc__req__circ__buffer__t.html", "structmailbox__voc__req__circ__buffer__t" ],
+    [ "MAILBOX_PKTEXG_EVT_NO_DATA_PACKET", "mailbox__api_8h.html#a26172fc5f8d228acc885570458552fcb", null ],
+    [ "MAILBOX_RX_DTMF_GEN_STATIC_CONTROL_PORT_ID", "mailbox__api_8h.html#ab21b74fa1e4f1a1de9b46f0efe3aac01", null ],
+    [ "MAILBOX_RX_MAX_INPUT_PORTS", "mailbox__api_8h.html#a3454c3269ca6dbfee1977fc19e2ac781", null ],
+    [ "MAILBOX_RX_MAX_OUTPUT_PORTS", "mailbox__api_8h.html#a924c3582df7a768bd296557cb5a80f3f", null ],
+    [ "MAILBOX_RX_STACK_SIZE_REQUIREMENT", "mailbox__api_8h.html#a355c9c5986408349b24b655e24f1c196", null ],
+    [ "MAILBOX_TX_MAX_INPUT_PORTS", "mailbox__api_8h.html#a377e8a326b1d935f956ed72b6bb3a738", null ],
+    [ "MAILBOX_TX_MAX_OUTPUT_PORTS", "mailbox__api_8h.html#af2762ad44700fcba6bf65eda3b45b902", null ],
+    [ "MAILBOX_TX_STACK_SIZE_REQUIREMENT", "mailbox__api_8h.html#ac6bcdd9c0e94ab28cfa143278c25355a", null ],
+    [ "MEDIA_FMT_ID_DTMF", "mailbox__api_8h.html#ad10c506a0d10932e9ee8e541c01f494a", null ],
+    [ "MODULE_ID_MAILBOX_RX", "mailbox__api_8h.html#a5d0c1aa7dbfddd7ac60b0858e662c390", null ],
+    [ "MODULE_ID_MAILBOX_TX", "mailbox__api_8h.html#a4c3c200d2e4dd3bb91d197645524fa06", null ],
+    [ "PARAM_ID_MAILBOX_CFG", "mailbox__api_8h.html#a462a65daa86ea9d859a0b686f6c2481c", null ],
+    [ "mailbox_config_t", "mailbox__api_8h.html#a60e34971e8f07da9eb559b03cbd566b1", null ],
+    [ "mailbox_voc_packet_t", "mailbox__api_8h.html#a7bcb8d3cdd16cfe6a51a345be3eb7910", null ],
+    [ "mailbox_voc_req_circ_buffer_t", "mailbox__api_8h.html#acbe78aaab7c54158a51530547df13744", null ],
+    [ "mailbox_voc_request_t", "mailbox__api_8h.html#ad9b53e22c9820ebb8481b882cbd47ba3", null ],
+    [ "payload_media_fmt_dtmf_tone_t", "mailbox__api_8h.html#ab3204f56806e415d6038c39f7436a90d", null ]
+];

@@ -1,0 +1,27 @@
+var ar__util__data__log__codes_8h =
+[
+    [ "AR_DATA_LOG_CODE_AFE_ALGO_CALIB", "ar__util__data__log__codes_8h.html#a8a224b96f95839a6e18da1503dd45ede", null ],
+    [ "AR_DATA_LOG_CODE_AFE_RX_TX_OUT", "ar__util__data__log__codes_8h.html#a103f8846028bf760d50a22ac062ff3a6", null ],
+    [ "AR_DATA_LOG_CODE_ATS", "ar__util__data__log__codes_8h.html#a8a4a602cedd5f96adc5b8cb59aaf3b29", null ],
+    [ "AR_DATA_LOG_CODE_AUD_COPP_IN", "ar__util__data__log__codes_8h.html#a0f177582a0c4aad558713e6baa16f11e", null ],
+    [ "AR_DATA_LOG_CODE_AUD_COPP_OUT", "ar__util__data__log__codes_8h.html#a5c0bb1140c3d49f1bd515ef8e31115f9", null ],
+    [ "AR_DATA_LOG_CODE_AUD_COPREP_IN", "ar__util__data__log__codes_8h.html#ab15ae7c3d6b624b5b845d245e4ef9619", null ],
+    [ "AR_DATA_LOG_CODE_AUD_DEC_IN", "ar__util__data__log__codes_8h.html#a64218a502286fd6fedbf00f957d19504", null ],
+    [ "AR_DATA_LOG_CODE_AUD_DEC_OUT", "ar__util__data__log__codes_8h.html#a0314ae6fee44751daa5089700f3fa710", null ],
+    [ "AR_DATA_LOG_CODE_AUD_ENC_IN", "ar__util__data__log__codes_8h.html#ab96e0d33ab719ad34e1ca05954c4bcad", null ],
+    [ "AR_DATA_LOG_CODE_AUD_ENC_OUT", "ar__util__data__log__codes_8h.html#af9a6b204a62d20e28b58f5274965aa65", null ],
+    [ "AR_DATA_LOG_CODE_AUD_MTMX_RX_IN", "ar__util__data__log__codes_8h.html#a7d1f135741fe123b5bc44c985da47d75", null ],
+    [ "AR_DATA_LOG_CODE_AUD_MTMX_TX_IN", "ar__util__data__log__codes_8h.html#a1e95605cd4d85ff6873229ced55fe3a3", null ],
+    [ "AR_DATA_LOG_CODE_AUD_POPP_IN", "ar__util__data__log__codes_8h.html#a448e5b6b59f161e25a457ab6dc59ecd9", null ],
+    [ "AR_DATA_LOG_CODE_AUD_POPP_OUT", "ar__util__data__log__codes_8h.html#ab0cecfc08fff80e1863f5697cee1f7df", null ],
+    [ "AR_DATA_LOG_CODE_AUD_POPREP_IN", "ar__util__data__log__codes_8h.html#a7935263cb8473dc728d5c0fc53d94f39", null ],
+    [ "AR_DATA_LOG_CODE_LSM_OUTPUT", "ar__util__data__log__codes_8h.html#a6600b66097e1de15d9b674404618d8ba", null ],
+    [ "AR_DATA_LOG_CODE_PP_RTM", "ar__util__data__log__codes_8h.html#ae13e9fcfee4a32fe0404fc422783718d", null ],
+    [ "AR_DATA_LOG_CODE_UNUSED", "ar__util__data__log__codes_8h.html#a3fd56a8fbe00b7d81d17ffb32beca9f6", null ],
+    [ "AR_DATA_LOG_CODE_VOC_DEC_OUT", "ar__util__data__log__codes_8h.html#ae78ec296902320341f85ea8a50c2cc47", null ],
+    [ "AR_DATA_LOG_CODE_VOC_ENC_IN", "ar__util__data__log__codes_8h.html#a66c6d93d322b6edf57a36277e5089ed9", null ],
+    [ "AR_DATA_LOG_CODE_VOC_PKT_IN", "ar__util__data__log__codes_8h.html#ab5c9fbc611af0bee3a57c5e87d7b8585", null ],
+    [ "AR_DATA_LOG_CODE_VOC_PKT_OUT", "ar__util__data__log__codes_8h.html#a01790566679bdeec04fa12aa2bc9e09f", null ],
+    [ "AR_DATA_LOG_CODE_VPRX", "ar__util__data__log__codes_8h.html#a451da2990913e14d28c4d548e79c81ea", null ],
+    [ "AR_DATA_LOG_CODE_VPTX", "ar__util__data__log__codes_8h.html#a6f02f372bc11a9c5c9dd1a76ad4fe482", null ]
+];

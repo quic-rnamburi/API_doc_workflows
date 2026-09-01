@@ -1,0 +1,26 @@
+var soft__pause__api_8h =
+[
+    [ "pause_ramp_params_t", "structpause__ramp__params__t.html", "structpause__ramp__params__t" ],
+    [ "pause_resume_threshold_t", "structpause__resume__threshold__t.html", "structpause__resume__threshold__t" ],
+    [ "pause_downstream_delay_t", "structpause__downstream__delay__t.html", "structpause__downstream__delay__t" ],
+    [ "pause_rampup_delay_t", "structpause__rampup__delay__t.html", "structpause__rampup__delay__t" ],
+    [ "EVENT_ID_SOFT_PAUSE_PAUSE_COMPLETE", "soft__pause__api_8h.html#a4b442f71fb2fa9dd5623d5dc0c11cddd", null ],
+    [ "EVENT_ID_SOFT_PAUSE_RESUME_COMPLETE", "soft__pause__api_8h.html#a44e02ad31906ba857abfa5df80310409", null ],
+    [ "MODULE_ID_SOFT_PAUSE", "soft__pause__api_8h.html#af5d9b65f4edde6b4242c2004dca6d231", null ],
+    [ "PARAM_ID_SOFT_PAUSE_DOWNSTREAM_DELAY", "soft__pause__api_8h.html#aae4203bd194562f3f2acba3299eba717", null ],
+    [ "PARAM_ID_SOFT_PAUSE_RAMP_PARAMETERS", "soft__pause__api_8h.html#a0f4152b8ab78a100c5044b8453a106e7", null ],
+    [ "PARAM_ID_SOFT_PAUSE_RESUME", "soft__pause__api_8h.html#ae2469f89e8fd6bece855421fc92541ea", null ],
+    [ "PARAM_ID_SOFT_PAUSE_RESUME_DEFERRED_RAMPUP", "soft__pause__api_8h.html#aec7ee6d413273a9f7a51259743cc146f", null ],
+    [ "PARAM_ID_SOFT_PAUSE_RESUME_THRESHOLD", "soft__pause__api_8h.html#a1181816cf1aa7d6ea414ae8718b606db", null ],
+    [ "PARAM_ID_SOFT_PAUSE_START", "soft__pause__api_8h.html#a7576fef22069f23a6052b215d6b03bc1", null ],
+    [ "PARAM_PAUSE_RAMPINGCURVE_EXP", "soft__pause__api_8h.html#a61058bc8b2013b66fb60ebbe7c944e44", null ],
+    [ "PARAM_PAUSE_RAMPINGCURVE_FRAC_EXP", "soft__pause__api_8h.html#a243f4bb4c527c4e8aef0ed7284f38a56", null ],
+    [ "PARAM_PAUSE_RAMPINGCURVE_LINEAR", "soft__pause__api_8h.html#a967f5bfeba110612f295d50bb3c78ee7", null ],
+    [ "PARAM_PAUSE_RAMPINGCURVE_LOG", "soft__pause__api_8h.html#a9bf004dbff6913717c3980aeccaadec9", null ],
+    [ "PAUSE_DATA_INPUT_PORT", "soft__pause__api_8h.html#a0096968cefd5ea1b024186c05f311269", null ],
+    [ "PAUSE_DATA_OUTPUT_PORT", "soft__pause__api_8h.html#ac0db3fe22ec3ba9e87e3391d9f332e00", null ],
+    [ "pause_downstream_delay_t", "soft__pause__api_8h.html#a6fb96979ecb54ffdf2c9a4ca3698493a", null ],
+    [ "pause_ramp_params_t", "soft__pause__api_8h.html#ab2eba914dcf0129e7417171594c25bc0", null ],
+    [ "pause_rampup_delay_t", "soft__pause__api_8h.html#a8b6c312321d3bc7959644355ad3dcdfc", null ],
+    [ "pause_resume_threshold_t", "soft__pause__api_8h.html#acf86770b6c89612a9d34e6b6e01dfd6a", null ]
+];

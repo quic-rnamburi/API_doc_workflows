@@ -1,0 +1,10 @@
+digraph "_acdb_hw_accel_subgraphs_info_req_t"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="_acdb_hw_accel_subgraphs\l_info_req_t",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" subgraph_list",fontcolor="grey" ];
+  Node2 [id="Node000002",label="_acdb_uint_list_t",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$struct__acdb__uint__list__t.html",tooltip="List of uint32_t with a zero sized array."];
+}

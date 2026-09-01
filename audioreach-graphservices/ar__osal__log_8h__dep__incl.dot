@@ -1,0 +1,10 @@
+digraph "ar_osal/api/ar_osal_log.h"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="ar_osal/api/ar_osal\l_log.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Defines public APIs for message logging."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="spf/api/ar_utils/generic\l/ar_msg.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ar__msg_8h.html",tooltip="This file contains a utility for generating diagnostic messages."];
+}

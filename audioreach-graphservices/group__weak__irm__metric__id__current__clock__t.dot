@@ -1,0 +1,11 @@
+digraph "Weak_irm_metric_id_current_clock_t"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir=LR;
+  Node2 [id="Node000002",label="Spf_mods_irm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__spf__mods__irm.html",tooltip=" "];
+  Node1 [id="Node000001",label="Weak_irm_metric_id\l_current_clock_t",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

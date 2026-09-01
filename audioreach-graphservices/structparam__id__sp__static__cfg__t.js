@@ -1,0 +1,25 @@
+var structparam__id__sp__static__cfg__t =
+[
+    [ "bits_per_sample", "structparam__id__sp__static__cfg__t.html#ad66f45cba5bc90074586ec902542c4d0", null ],
+    [ "chip", "structparam__id__sp__static__cfg__t.html#ab30e3b2d19c5188cb42197ba62d1e603", null ],
+    [ "cps_mode_flag", "structparam__id__sp__static__cfg__t.html#a54fb984f034c5addaefe84c127e6acbf", null ],
+    [ "cps_sampling_rate", "structparam__id__sp__static__cfg__t.html#ab57d7dff158fe5b527695bb787d9f840", null ],
+    [ "ctrl_rate", "structparam__id__sp__static__cfg__t.html#a8b0baa42865dd667aa7ba07a334deabf", null ],
+    [ "dyn_proc_delay_ms", "structparam__id__sp__static__cfg__t.html#a052e5fcc47b1b2ff369a5a14d69caaf9", null ],
+    [ "features", "structparam__id__sp__static__cfg__t.html#a008fdcb217787036e3a768232f532576", null ],
+    [ "fpilot", "structparam__id__sp__static__cfg__t.html#a51cc50949c7b3fc6c05ed3fe7343c109", null ],
+    [ "frame_size_ms", "structparam__id__sp__static__cfg__t.html#ab430bddf3f35218e893c1d8b7ab2a2fe", null ],
+    [ "hist_buf_length", "structparam__id__sp__static__cfg__t.html#a6d98b03e6742a507e147d8a1432871d4", null ],
+    [ "log_dump_en_flag", "structparam__id__sp__static__cfg__t.html#aba439b9dbbeec9dd4389075de440ec5c", null ],
+    [ "logging_count_period", "structparam__id__sp__static__cfg__t.html#a8ad59ef2d3b49b281666fdb8b80eb31e", null ],
+    [ "num_nch_filter_stages", "structparam__id__sp__static__cfg__t.html#a8b1c1f1d9de37834e61eaa61b06e353d", null ],
+    [ "num_speakers", "structparam__id__sp__static__cfg__t.html#a4aafb6bd27a35dca7df530ce7cdb8cb5", null ],
+    [ "pow_est_smooth_flag", "structparam__id__sp__static__cfg__t.html#a1e8271e1bc452d5fc3fcd003a85333b2", null ],
+    [ "pt_lvl_switch_en", "structparam__id__sp__static__cfg__t.html#aa03d752be1c3063b7efaceca8754e5af", null ],
+    [ "pt_masking_delay_ms", "structparam__id__sp__static__cfg__t.html#a476c2d625175441db2b6dec9c3109731", null ],
+    [ "pt_masking_thr_q27", "structparam__id__sp__static__cfg__t.html#ab335dcf217c0a5bf36364360662fc7fa", null ],
+    [ "rx_static_gain_q27", "structparam__id__sp__static__cfg__t.html#a11bab6caf330e76669881144c7b195b7", null ],
+    [ "sampling_rate", "structparam__id__sp__static__cfg__t.html#aecbef4caf2420bbe6ac7d3a2a02cbdd7", null ],
+    [ "temp_loop_dly_ms", "structparam__id__sp__static__cfg__t.html#a0b83b4ee930a24502e0cbdf053d75b1d", null ],
+    [ "tuning_mode_en_flag", "structparam__id__sp__static__cfg__t.html#af19f1ed927af41293a82e8e20748a278", null ]
+];

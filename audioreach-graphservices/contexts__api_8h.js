@@ -1,0 +1,26 @@
+var contexts__api_8h =
+[
+    [ "MODULE_CMN_CONTEXT_ID_AMBIENCE_MUSIC", "contexts__api_8h.html#a84f33fea5cf3856056c953b2dc4abe7b", null ],
+    [ "MODULE_CMN_CONTEXT_ID_AMBIENCE_NOISY_SFLUX", "contexts__api_8h.html#af108430dec14cf0907d49dd87573ce65", null ],
+    [ "MODULE_CMN_CONTEXT_ID_AMBIENCE_NOISY_SPL", "contexts__api_8h.html#a1e97735cad8f0e48a1340b7c808835c0", null ],
+    [ "MODULE_CMN_CONTEXT_ID_AMBIENCE_SILENT_SFLUX", "contexts__api_8h.html#abb5b351fdaa6cdf6061da14c2cc19f13", null ],
+    [ "MODULE_CMN_CONTEXT_ID_AMBIENCE_SILENT_SPL", "contexts__api_8h.html#a035f75a9a86b20008f5138b3c83b06d1", null ],
+    [ "MODULE_CMN_CONTEXT_ID_AMBIENCE_SPEECH", "contexts__api_8h.html#a4116a90c10a01bd1533e555f1f9b7f44", null ],
+    [ "MODULE_CMN_CONTEXT_ID_ENV_HOME", "contexts__api_8h.html#af6aa3eca748de36a177448a64421040e", null ],
+    [ "MODULE_CMN_CONTEXT_ID_ENV_INCAR", "contexts__api_8h.html#ad72a9169744d710634adf9b90335b99e", null ],
+    [ "MODULE_CMN_CONTEXT_ID_ENV_INDOOR", "contexts__api_8h.html#a37b0470392f5d2f499f13d0ce010b810", null ],
+    [ "MODULE_CMN_CONTEXT_ID_ENV_INSTREET", "contexts__api_8h.html#a639da4322369df680341191bdea78e84", null ],
+    [ "MODULE_CMN_CONTEXT_ID_ENV_INTRAIN", "contexts__api_8h.html#af88d6efd906ce5d354920634cc13f17e", null ],
+    [ "MODULE_CMN_CONTEXT_ID_ENV_OFFICE", "contexts__api_8h.html#a6201623d8faf77861b612746339a3b7a", null ],
+    [ "MODULE_CMN_CONTEXT_ID_ENV_OUTDOOR", "contexts__api_8h.html#a90aac0b4802138953115faadf5f25daa", null ],
+    [ "MODULE_CMN_CONTEXT_ID_ENV_RESTAURANT", "contexts__api_8h.html#aff04d08b849b089af3e3efc781f27cf4", null ],
+    [ "MODULE_CMN_CONTEXT_ID_ENV_UNKNOWN", "contexts__api_8h.html#afeceb139baebdecc9e2476966bd490ae", null ],
+    [ "MODULE_CMN_CONTEXT_ID_EVENT_ALARM", "contexts__api_8h.html#ada23f7bbfa44bd247b4f280a96e78c9c", null ],
+    [ "MODULE_CMN_CONTEXT_ID_EVENT_BABYCRYING", "contexts__api_8h.html#a2bec2d43caa9b95ffbdde5cd4d91eb25", null ],
+    [ "MODULE_CMN_CONTEXT_ID_EVENT_CRASH", "contexts__api_8h.html#a264f6cc2d390bae6bdad4db652ff7d7f", null ],
+    [ "MODULE_CMN_CONTEXT_ID_EVENT_DOGBARKING", "contexts__api_8h.html#abe20c08a79a667ae9d65d9bfa630b398", null ],
+    [ "MODULE_CMN_CONTEXT_ID_EVENT_DOORBELL", "contexts__api_8h.html#a7786e5798cca42173eabf0796f79edb5", null ],
+    [ "MODULE_CMN_CONTEXT_ID_EVENT_DOOROPENCLOSE", "contexts__api_8h.html#aae5e1a82bf8c1259fb8b8010df356d77", null ],
+    [ "MODULE_CMN_CONTEXT_ID_EVENT_GLASSBREAKING", "contexts__api_8h.html#a7d0ad28e4286fa94f971de7951a80731", null ],
+    [ "MODULE_CMN_CONTEXT_ID_EVENT_SIREN", "contexts__api_8h.html#a786794381af3db60d74f081ba6bec77d", null ]
+];

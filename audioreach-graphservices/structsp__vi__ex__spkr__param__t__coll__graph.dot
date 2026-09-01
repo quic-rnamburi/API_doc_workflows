@@ -1,0 +1,10 @@
+digraph "sp_vi_ex_spkr_param_t"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="sp_vi_ex_spkr_param_t",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="@h2xmlp_subStruct"];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" bandpss_HPfilter_cfg\nbandpss_LPfilter_cfg\ninductor_filter_cfg",fontcolor="grey" ];
+  Node2 [id="Node000002",label="fbsp_tdf_2_cfg_t",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structfbsp__tdf__2__cfg__t.html",tooltip="@h2xmlp_subStruct"];
+}

@@ -1,0 +1,12 @@
+digraph "gsl_cmd_remove_graph"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="gsl_cmd_remove_graph",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Cmd payload for GSL_CMD_REMOVE_GRAPH."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" graph_key_vector",fontcolor="grey" ];
+  Node2 [id="Node000002",label="gsl_key_vector",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structgsl__key__vector.html",tooltip="a complete key vector"];
+  Node3 -> Node2 [id="edge2_Node000002_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" kvp",fontcolor="grey" ];
+  Node3 [id="Node000003",label="gsl_key_value_pair",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structgsl__key__value__pair.html",tooltip="a single entry in a key vector"];
+}

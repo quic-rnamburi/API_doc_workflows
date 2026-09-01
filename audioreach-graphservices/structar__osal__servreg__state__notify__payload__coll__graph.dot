@@ -1,0 +1,10 @@
+digraph "ar_osal_servreg_state_notify_payload"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="ar_osal_servreg_state\l_notify_payload",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="servreg service state notify callback payload."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" domain\nservice",fontcolor="grey" ];
+  Node2 [id="Node000002",label="ar_osal_servreg_entry_type",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structar__osal__servreg__entry__type.html",tooltip="Struct representing the name of the service or domain and the instance id."];
+}

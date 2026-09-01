@@ -1,0 +1,4 @@
+var group__ACDB__CMD__GET__AMDB__REGISTRATION__DATA =
+[
+    [ "ACDB_CMD_GET_AMDB_REGISTRATION_DATA", "group__ACDB__CMD__GET__AMDB__REGISTRATION__DATA.html#gafcda9606d3fe1eb2e8f3ca0dbd5aec9d", null ]
+];

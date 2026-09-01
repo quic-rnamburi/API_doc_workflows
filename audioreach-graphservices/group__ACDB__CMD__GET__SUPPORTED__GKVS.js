@@ -1,0 +1,4 @@
+var group__ACDB__CMD__GET__SUPPORTED__GKVS =
+[
+    [ "ACDB_CMD_GET_SUPPORTED_GKVS", "group__ACDB__CMD__GET__SUPPORTED__GKVS.html#gaff7060b6aad7cb6119452ef1b7e1e500", null ]
+];
