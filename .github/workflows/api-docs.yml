@@ -515,6 +515,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p public/docs/api/${{ env.REPO_NAME }}
           cp -r api-docs/mdx/. public/docs/api/${{ env.REPO_NAME }}/
           git add docs.json public/docs/api/${{ env.REPO_NAME }}/
           git diff --cached --quiet && echo "Nothing to commit" && exit 0
