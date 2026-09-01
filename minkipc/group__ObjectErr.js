@@ -1,0 +1,26 @@
+var group__ObjectErr =
+[
+    [ "Object_ERROR", "group__ObjectErr.html#ga9a5efb8750f72645cf6c4a5818a2e438", null ],
+    [ "Object_ERROR_ABORT", "group__ObjectErr.html#ga3422c42a584e16e9dfec74bdd7505654", null ],
+    [ "Object_ERROR_AUTH", "group__ObjectErr.html#ga479803aae3db082bbb6ae28a6184d4ac", null ],
+    [ "Object_ERROR_BADOBJ", "group__ObjectErr.html#ga6197b745eb9f3bde97d6d5dc83fa0a9a", null ],
+    [ "Object_ERROR_BUSY", "group__ObjectErr.html#ga92455a647200575c0542e56d556ebce5", null ],
+    [ "Object_ERROR_DEFUNCT", "group__ObjectErr.html#gaea7d0312b9fd4b540f146bc579955e71", null ],
+    [ "Object_ERROR_INVALID", "group__ObjectErr.html#ga3377080b8d40ada0aada9c363b856538", null ],
+    [ "Object_ERROR_KMEM", "group__ObjectErr.html#gacc6c0c92d9ed17272e765fd6f581c3d6", null ],
+    [ "Object_ERROR_MAXARGS", "group__ObjectErr.html#ga9828aa0872020a2a94b6e62432f7ff78", null ],
+    [ "Object_ERROR_MAXDATA", "group__ObjectErr.html#ga39e458c633573e09c62cc8c8baa25533", null ],
+    [ "Object_ERROR_MAXREPLAY", "group__ObjectErr.html#ga2dcdbab7fc728bb6f79003782b7bb8c1", null ],
+    [ "Object_ERROR_MEM", "group__ObjectErr.html#ga24305ba9733b6ad1d6a9981b3221bb01", null ],
+    [ "Object_ERROR_NOSLOTS", "group__ObjectErr.html#gaaed7adb38489b50c7daa0fde25f002e4", null ],
+    [ "Object_ERROR_REMOTE", "group__ObjectErr.html#ga1663a60b4127399914f6ba50ebc05ee5", null ],
+    [ "Object_ERROR_REPLAY", "group__ObjectErr.html#ga747e99196625c0ec7189855e7096dfd4", null ],
+    [ "Object_ERROR_SIZE_IN", "group__ObjectErr.html#gab8f9cb64ada3d5a81946edbe9f5f407d", null ],
+    [ "Object_ERROR_SIZE_OUT", "group__ObjectErr.html#ga5e0c7d126c9cee2ce13df8682b265b55", null ],
+    [ "Object_ERROR_TIMEOUT", "group__ObjectErr.html#ga1a0f6611018e6e80a8821a033306fad1", null ],
+    [ "Object_ERROR_UNAVAIL", "group__ObjectErr.html#ga9029335da8b88bc4d9eaa1f500149484", null ],
+    [ "Object_ERROR_USERBASE", "group__ObjectErr.html#gac0f228595bc8fc54e7d7f487abce7cbd", null ],
+    [ "Object_isERROR", "group__ObjectErr.html#gafc6d6b1920cf436b7c310c07eac9ab4b", null ],
+    [ "Object_isOK", "group__ObjectErr.html#gac98623feb65859e1070aa4b4dc4f29b9", null ],
+    [ "Object_OK", "group__ObjectErr.html#gaed0f36b10bfe2fe0c8cbc59dbe46ac09", null ]
+];

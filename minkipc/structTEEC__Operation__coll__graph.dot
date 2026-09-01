@@ -1,0 +1,35 @@
+digraph "TEEC_Operation"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="TEEC_Operation",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" params",fontcolor="grey" ];
+  Node2 [id="Node000002",label="TEEC_Parameter",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structTEEC__Parameter.html",tooltip=" "];
+  Node3 -> Node2 [id="edge2_Node000002_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" tmpref",fontcolor="grey" ];
+  Node3 [id="Node000003",label="TEEC_TempMemoryReference",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structTEEC__TempMemoryReference.html",tooltip=" "];
+  Node4 -> Node2 [id="edge3_Node000002_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" memref",fontcolor="grey" ];
+  Node4 [id="Node000004",label="TEEC_RegisteredMemoryReference",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structTEEC__RegisteredMemoryReference.html",tooltip=" "];
+  Node5 -> Node4 [id="edge4_Node000004_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" parent",fontcolor="grey" ];
+  Node5 [id="Node000005",label="TEEC_SharedMemory",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structTEEC__SharedMemory.html",tooltip=" "];
+  Node6 -> Node5 [id="edge5_Node000005_Node000006",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" ctx",fontcolor="grey" ];
+  Node6 [id="Node000006",label="TEEC_Context",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structTEEC__Context.html",tooltip=" "];
+  Node7 -> Node6 [id="edge6_Node000006_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" app_client\nroot_obj\nwaiter_cbo",fontcolor="grey" ];
+  Node7 [id="Node000007",label="Object",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structObject.html",tooltip=" "];
+  Node8 -> Node7 [id="edge7_Node000007_Node000008",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" invoke",fontcolor="grey" ];
+  Node8 [id="Node000008",label="ObjectArg",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$unionObjectArg.html",tooltip=" "];
+  Node9 -> Node8 [id="edge8_Node000008_Node000009",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" b",fontcolor="grey" ];
+  Node9 [id="Node000009",label="ObjectBuf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structObjectBuf.html",tooltip=" "];
+  Node10 -> Node8 [id="edge9_Node000008_Node000010",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" bi",fontcolor="grey" ];
+  Node10 [id="Node000010",label="ObjectBufIn",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structObjectBufIn.html",tooltip=" "];
+  Node7 -> Node8 [id="edge10_Node000008_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" o",fontcolor="grey" ];
+  Node7 -> Node5 [id="edge11_Node000005_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" mem_obj",fontcolor="grey" ];
+  Node11 -> Node2 [id="edge12_Node000002_Node000011",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" value",fontcolor="grey" ];
+  Node11 [id="Node000011",label="TEEC_Value",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structTEEC__Value.html",tooltip=" "];
+  Node12 -> Node1 [id="edge13_Node000001_Node000012",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" session",fontcolor="grey" ];
+  Node12 [id="Node000012",label="TEEC_Session",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structTEEC__Session.html",tooltip=" "];
+  Node6 -> Node12 [id="edge14_Node000012_Node000006",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" ctx",fontcolor="grey" ];
+  Node7 -> Node12 [id="edge15_Node000012_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" session_obj",fontcolor="grey" ];
+}
