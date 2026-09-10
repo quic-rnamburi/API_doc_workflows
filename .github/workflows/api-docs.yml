@@ -485,9 +485,15 @@ jobs:
               if not any(sections.values()) and not structs:
                   continue
               if kind == "group":
-                  # Use the human-readable <title> element when available
-                  title = cdef.findtext("title") or cname
-                  base  = slugify(title)
+                  # Use source filename (e.g. UrmAPIs.h → UrmAPIs) for
+                  # consistency with file-compound naming. Fall back to
+                  # group title then group ID if no innerfile exists.
+                  innerfile = cdef.findtext("innerfile")
+                  if innerfile:
+                      title = os.path.splitext(innerfile)[0]
+                  else:
+                      title = cdef.findtext("title") or cname
+                  base = slugify(title)
               else:
                   base  = os.path.splitext(cname)[0]
                   title = cname
