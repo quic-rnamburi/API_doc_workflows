@@ -444,7 +444,12 @@ jobs:
           index_root = ET.parse(index_path).getroot()
           generated  = []
 
-          for compound in index_root.findall("compound[@kind='file']"):
+          all_compounds = (
+              index_root.findall("compound[@kind='file']") +
+              index_root.findall("compound[@kind='group']")
+          )
+          for compound in all_compounds:
+              kind     = compound.get("kind")
               refid    = compound.get("refid")
               cname    = text_of(compound.find("name"))
               xml_file = os.path.join(XML_DIR, f"{refid}.xml")
@@ -479,9 +484,14 @@ jobs:
                       structs.append(ic_cdef)
               if not any(sections.values()) and not structs:
                   continue
-              base           = os.path.splitext(cname)[0]
+              if kind == "group":
+                  # Use the human-readable <title> element when available
+                  title = cdef.findtext("title") or cname
+                  base  = slugify(title)
+              else:
+                  base  = os.path.splitext(cname)[0]
+                  title = cname
               slug           = slugify(base)
-              title          = cname
               compound_brief = brief_of(cdef)
               out_path       = os.path.join(MDX_DIR, f"{slug}.mdx")
               write_mdx(slug, title, compound_brief, sections, structs, out_path)
