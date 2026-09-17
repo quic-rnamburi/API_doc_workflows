@@ -311,12 +311,13 @@ jobs:
               "shmem": "Shared Memory",
           }
           _TITLE_OVERRIDES = {
-              "ISession":   "Session Interface",
-              "UrmAPIs":    "URM APIs",
-              "acdb":       "ACDB",
-              "ats":        "ATS",
-              "gpr_msg_if": "GPR Message Interface",
-              "remote":     "FastRPC Remote",
+              "ISession":    "Session Interface",
+              "UrmAPIs":     "URM APIs",
+              "acdb":        "ACDB",
+              "ats":         "ATS",
+              "gpr_msg_if":  "GPR Message Interface",
+              "remote":      "FastRPC Remote",
+              "client_apis": "URM Client APIs",
           }
 
           def make_title(filename):
@@ -743,8 +744,9 @@ jobs:
                       title = make_title(innerfile)
                       base  = slugify(os.path.splitext(innerfile)[0])
                   else:
-                      title = cdef.findtext("title") or cname
-                      base  = slugify(title)
+                      raw_title = cdef.findtext("title") or cname
+                      title = _TITLE_OVERRIDES.get(cname, raw_title)
+                      base  = slugify(raw_title)
               else:
                   # Use the repo-relative path from location/@file (Doxygen strips WORK_DIR
                   # via STRIP_FROM_PATH), falling back to bare filename if not available.
