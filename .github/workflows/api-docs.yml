@@ -217,7 +217,7 @@ jobs:
               # Remove balanced { } blocks
               s = re.sub(r'\{[^}]*\}', '', s)
               # Escape bare < and > that are not valid JSX tags
-              s = re.sub(r'<(?!/?\w)', r'\\<', s)
+              s = re.sub(r'<(?!/?\s*\w)', r'\\<', s)
               s = re.sub(r'(?<=\w)>', r'\\>', s)
               # Escape << bitshift operator
               s = re.sub(r'<<', r'\\<\\<', s)
