@@ -478,6 +478,14 @@ jobs:
                   for m in funcs:
                       lines.append(render_function(m, level=level + 2))
 
+              # enums defined inside the class
+              enums = [m for m in cdef.findall("sectiondef/memberdef[@kind='enum']")
+                       if m.get("prot") in ("public", "protected")]
+              if enums:
+                  lines.append(f"{'#' * (level + 1)} Enumerations\n")
+                  for m in enums:
+                      lines.append(render_enum(m, level=level + 2))
+
               # using aliases
               usings = [m for m in cdef.findall("sectiondef/memberdef[@kind='typedef']")
                         if m.get("prot") in ("public", "protected")]
