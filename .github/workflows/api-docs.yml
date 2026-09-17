@@ -283,6 +283,21 @@ jobs:
           def slugify(s):
               return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
+          def template_prefix_of(node):
+              tpl = node.find("templateparamlist")
+              if tpl is None:
+                  return ""
+              params = []
+              for p in tpl.findall("param"):
+                  ptype = text_of(p.find("type"))
+                  pdecl = text_of(p.find("declname"))
+                  pdef  = text_of(p.find("defval"))
+                  part  = f"{ptype} {pdecl}".strip() if pdecl else ptype
+                  if pdef:
+                      part += f" = {pdef}"
+                  params.append(part)
+              return f"template<{', '.join(params)}>\n"
+
           # ── renderers ────────────────────────────────────────────────────
 
           def render_function(m, level=3):
@@ -295,12 +310,16 @@ jobs:
               pdocs     = params_doc_of(m)
               ret_doc   = returns_doc_of(m)
               ptypes    = param_types_of(m)
+              prot      = m.get("prot", "")
+              tpl       = template_prefix_of(m)
               lines = [f"{H} `{name}`\n"]
+              if prot == "protected":
+                  lines.append("_protected_\n")
               if brief:
                   lines.append(f"{brief}\n")
               if detail:
                   lines.append(f"{detail}\n")
-              lines.append(f"```c\n{ret_type} {name}{argsstr}\n```\n")
+              lines.append(f"```cpp\n{tpl}{ret_type} {name}{argsstr}\n```\n")
               if pdocs:
                   lines.append("**Parameters**\n")
                   for p in pdocs:
@@ -345,10 +364,11 @@ jobs:
               name = text_of(m.find("name"))
               typ  = text_of(m.find("type"))
               brief = brief_of(m)
+              tpl  = template_prefix_of(m)
               lines = [f"{H} `{name}`\n"]
               if brief:
                   lines.append(f"{brief}\n")
-              lines.append(f"```c\ntypedef {typ} {name}\n```\n")
+              lines.append(f"```cpp\n{tpl}typedef {typ} {name}\n```\n")
               return "\n".join(lines)
 
           def render_define(m, level=3):
@@ -370,28 +390,109 @@ jobs:
               lines = [f"{H} `{name}`\n"]
               if brief:
                   lines.append(f"{brief}\n")
-              lines.append(f"```c\n{typ} {name}\n```\n")
+              lines.append(f"```cpp\n{typ} {name}\n```\n")
               return "\n".join(lines)
 
-          def render_struct_inline(cdef, level=3):
+          def render_using(m, level=3):
               H    = "#" * level
-              name = text_of(cdef.find("compoundname"))
-              brief = brief_of(cdef)
+              name = text_of(m.find("name"))
+              typ  = text_of(m.find("type"))
+              brief = brief_of(m)
+              tpl  = template_prefix_of(m)
               lines = [f"{H} `{name}`\n"]
               if brief:
                   lines.append(f"{brief}\n")
-              members = cdef.findall("sectiondef/memberdef[@kind='variable']")
+              lines.append(f"```cpp\n{tpl}using {name} = {typ}\n```\n")
+              return "\n".join(lines)
+
+          def render_friend(m, level=3):
+              H    = "#" * level
+              name = text_of(m.find("name"))
+              typ  = text_of(m.find("type"))
+              brief = brief_of(m)
+              argsstr = text_of(m.find("argsstring"))
+              lines = [f"{H} `{name}`\n"]
+              if brief:
+                  lines.append(f"{brief}\n")
+              lines.append(f"```cpp\nfriend {typ} {name}{argsstr}\n```\n")
+              return "\n".join(lines)
+
+          def render_struct_inline(cdef, level=3, visited=None):
+              if visited is None:
+                  visited = set()
+              refid = cdef.get("id", "")
+              if refid in visited:
+                  return ""
+              visited.add(refid)
+              H    = "#" * level
+              name = text_of(cdef.find("compoundname"))
+              brief = brief_of(cdef)
+              tpl  = template_prefix_of(cdef)
+              lines = [f"{H} `{name}`\n"]
+              if tpl:
+                  lines.append(f"```cpp\n{tpl}```\n")
+              if brief:
+                  lines.append(f"{brief}\n")
+
+              # Nested classes/structs/unions
+              nested = []
+              for ic in cdef.findall("innerclass"):
+                  ic_refid = ic.get("refid")
+                  ic_file  = os.path.join(XML_DIR, f"{ic_refid}.xml")
+                  if not os.path.exists(ic_file):
+                      continue
+                  try:
+                      ic_cdef = ET.parse(ic_file).getroot().find("compounddef")
+                  except ET.ParseError:
+                      continue
+                  if ic_cdef is not None and ic_cdef.get("kind") in ("struct", "union", "class"):
+                      nested.append(ic_cdef)
+              if nested:
+                  lines.append(f"{'#' * (level + 1)} Nested Types\n")
+                  for nc in nested:
+                      lines.append(render_struct_inline(nc, level=level + 2, visited=visited))
+
+              # Data members (public + protected)
+              members = [m for m in cdef.findall("sectiondef/memberdef[@kind='variable']")
+                         if m.get("prot") in ("public", "protected")]
               if members:
                   lines.append("**Members**\n")
                   for m in members:
                       mname  = text_of(m.find("name"))
                       mtype  = text_of(m.find("type"))
                       mbrief = brief_of(m) or detail_of(m)
-                      lines.append(f'<ParamField path="{mname}" type="{mtype}">')
+                      mprot  = m.get("prot", "")
+                      label  = f"{mname} _(protected)_" if mprot == "protected" else mname
+                      lines.append(f'<ParamField path="{label}" type="{mtype}">')
                       if mbrief:
                           lines.append(f'  {mbrief}')
                       lines.append("</ParamField>")
                   lines.append("")
+
+              # Public + protected functions
+              funcs = [m for m in cdef.findall("sectiondef/memberdef[@kind='function']")
+                       if m.get("prot") in ("public", "protected")]
+              if funcs:
+                  lines.append(f"{'#' * (level + 1)} Functions\n")
+                  for m in funcs:
+                      lines.append(render_function(m, level=level + 2))
+
+              # using aliases
+              usings = [m for m in cdef.findall("sectiondef/memberdef[@kind='typedef']")
+                        if m.get("prot") in ("public", "protected")]
+              if usings:
+                  lines.append(f"{'#' * (level + 1)} Type Aliases\n")
+                  for m in usings:
+                      # Doxygen may represent `using X = Y` as typedef kind
+                      lines.append(render_using(m, level=level + 2))
+
+              # friend declarations
+              friends = cdef.findall("sectiondef/memberdef[@kind='friend']")
+              if friends:
+                  lines.append(f"{'#' * (level + 1)} Friends\n")
+                  for m in friends:
+                      lines.append(render_friend(m, level=level + 2))
+
               return "\n".join(lines)
 
           RENDERERS = {
@@ -400,6 +501,8 @@ jobs:
               "typedef":  render_typedef,
               "define":   render_define,
               "variable": render_variable,
+              "using":    render_using,
+              "friend":   render_friend,
           }
 
           SECTION_TITLES = {
@@ -408,6 +511,8 @@ jobs:
               "enum":     "Enumerations",
               "define":   "Macros",
               "variable": "Variables",
+              "using":    "Type Aliases",
+              "friend":   "Friends",
           }
 
           # ── MDX writer ───────────────────────────────────────────────────
@@ -446,7 +551,8 @@ jobs:
 
           all_compounds = (
               index_root.findall("compound[@kind='file']") +
-              index_root.findall("compound[@kind='group']")
+              index_root.findall("compound[@kind='group']") +
+              index_root.findall("compound[@kind='namespace']")
           )
           for compound in all_compounds:
               kind     = compound.get("kind")
@@ -480,7 +586,7 @@ jobs:
                   except ET.ParseError as e:
                       print(f"WARNING: skipping malformed XML {ic_file}: {e}", file=sys.stderr)
                       continue
-                  if ic_cdef is not None and ic_cdef.get("kind") in ("struct", "union"):
+                  if ic_cdef is not None and ic_cdef.get("kind") in ("struct", "union", "class"):
                       structs.append(ic_cdef)
               if not any(sections.values()) and not structs:
                   continue
@@ -494,6 +600,9 @@ jobs:
                   else:
                       title = cdef.findtext("title") or cname
                   base = slugify(title)
+              elif kind == "namespace":
+                  title = cname
+                  base  = slugify(cname)
               else:
                   base  = os.path.splitext(cname)[0]
                   title = cname
