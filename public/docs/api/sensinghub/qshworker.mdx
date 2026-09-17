@@ -2,14 +2,68 @@
 title: "qshWorker.h"
 ---
 
+## Structures
+
+### `qshWorker`
+
+Implementation of a worker thread with its own task-queue.
+
+#### Functions
+
+##### `qshWorker`
+
+creates a worker thread and starts processing tasks
+
+```cpp
+ qshWorker()
+```
+
+##### `~qshWorker`
+
+terminates the worker thread, after shutting it down
+
+```cpp
+ ~qshWorker()
+```
+
+##### `shutdownWorker`
+
+Signals the worker thread to stop processing tasks, waits until the thread completes execution.
+
+```cpp
+void shutdownWorker()
+```
+
+##### `setName`
+
+```cpp
+void setName(const char *name)
+```
+
+##### `addTask`
+
+add a new task for the worker to do
+
+Tasks are performed in order in which they are added
+
+```cpp
+void addTask(const workerTask &task)
+```
+
+**Parameters**
+
+<ParamField path="task" type="const workerTask &">
+  task to perform
+</ParamField>
+
 ## Type Definitions
 
 ### `workerTask`
 
 type alias for worker's task function
 
-```c
-typedef std::function\< void()> workerTask
+```cpp
+typedef std::function< void()> workerTask
 ```
 
 ## Macros

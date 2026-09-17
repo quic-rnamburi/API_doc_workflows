@@ -10,7 +10,7 @@ Output context passed to the decode_suids() nanopb callback.
 
 **Members**
 
-<ParamField path="suids" type="std::vector\< suid > *">
+<ParamField path="suids" type="std::vector< suid > *">
   Destination vector for decoded SUIDs.
 </ParamField>
 <ParamField path="datatype" type="std::string *">
@@ -26,7 +26,7 @@ Holds a single decoded sns_std_attr_value_data value.
 <ParamField path="has_subtype" type="bool">
   True if the value is a nested subtype.
 </ParamField>
-<ParamField path="subtype" type="std::vector\< float >">
+<ParamField path="subtype" type="std::vector< float >">
   Decoded float subtype values.
 </ParamField>
 <ParamField path="has_str" type="bool">
@@ -53,3 +53,129 @@ Holds a single decoded sns_std_attr_value_data value.
 <ParamField path="boolean" type="bool">
   Decoded boolean value.
 </ParamField>
+
+## Functions
+
+### `get_msg_id`
+
+Extract the message ID from a client event stream.
+
+Decodes only the msg_id field of the first sns_client_event_msg_sns_client_event in stream.
+
+```cpp
+uint32_t get_msg_id(pb_istream_t stream)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_istream_t">
+  A copy of the nanopb input stream positioned at the event.
+</ParamField>
+
+**Returns**
+
+The decoded message ID, or 0 on failure.
+
+### `decode_suids`
+
+Nanopb repeated-field callback that decodes SUID lookup events.
+
+Expects the stream to contain sns_client_event_msg_sns_client_event records carrying SNS_SUID_MSGID_SNS_SUID_EVENT payloads. Appends each discovered SUID to suid_list::suids and stores the datatype string in suid_list::datatype.
+
+```cpp
+bool decode_suids(pb_istream_t *stream, const pb_field_t *field, void **arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_istream_t *">
+  Nanopb input stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Field descriptor (unused).
+</ParamField>
+<ParamField path="arg" type="void **">
+  Pointer to a suid_list output context.
+</ParamField>
+
+**Returns**
+
+true on success, false on decode error.
+
+### `decode_attribute`
+
+Nanopb repeated-field callback that decodes a single sns_std_attr.
+
+Appends the decoded attribute and its values to the sensor_attributes map passed via arg.
+
+```cpp
+bool decode_attribute(pb_istream_t *stream, const pb_field_t *field, void **arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_istream_t *">
+  Nanopb input stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Field descriptor (unused).
+</ParamField>
+<ParamField path="arg" type="void **">
+  Pointer to a sensor_attributes output map.
+</ParamField>
+
+**Returns**
+
+true on success, false on decode error.
+
+### `decode_attributes`
+
+Nanopb repeated-field callback that decodes attribute events.
+
+Expects the stream to contain sns_client_event_msg_sns_client_event records carrying SNS_STD_MSGID_SNS_STD_ATTR_EVENT payloads. Populates the sensor_attributes map passed via arg.
+
+```cpp
+bool decode_attributes(pb_istream_t *stream, const pb_field_t *field, void **arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_istream_t *">
+  Nanopb input stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Field descriptor (unused).
+</ParamField>
+<ParamField path="arg" type="void **">
+  Pointer to a sensor_attributes output map.
+</ParamField>
+
+**Returns**
+
+true on success, false on decode error.
+
+## Type Definitions
+
+### `suid`
+
+Convenience alias for the public session SUID type.
+
+```cpp
+typedef com::quic::sensinghub::suid suid
+```
+
+### `attributes`
+
+A list of attribute values for a single attribute ID.
+
+```cpp
+typedef std::vector< attribute > attributes
+```
+
+### `sensor_attributes`
+
+Map from attribute ID (sns_std_attr_id) to its decoded values.
+
+```cpp
+typedef std::map< int32_t, attributes > sensor_attributes
+```

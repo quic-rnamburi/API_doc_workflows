@@ -1,0 +1,152 @@
+---
+title: "ISession.h"
+description: "============================================================================"
+---
+
+## Structures
+
+### `com::quic::sensinghub::session::V1_0::ISession`
+
+ISession is transport-neutral, OS-agnostic, extensible interface for communicating to Sensing Hub.
+
+#### Functions
+
+##### `open`
+
+Open the session and establish a connection to Sensing Hub.
+
+Initiates the client session created using getSession(). Sets up and establishes communication channel between the client and the Sensing Hub framework.
+
+This should be called exactly once per ISession instance before any other operations such as setCallBacks() or sendRequest().
+
+```cpp
+int open()=0
+```
+
+**Returns**
+
+0 Success (session is now open and ready for use).
+-1 Failure (session remains closed).
+
+##### `close`
+
+Closes the session for this instance and release associated resources.
+
+Terminates the communication channel between the client and the Sensing Hub framework and frees any resources held by this session.
+
+After close() is called:
+No further requests should be sent using this ISession instance.
+Registered callbacks will no longer receive events.
+The client is expected to call close() once it is done with the session to avoid leaks and dangling resources.
+
+```cpp
+void close()=0
+```
+
+##### `setCallBacks`
+
+Set the callbacks for specified sensor SUID.
+
+Client needs to call only once per given suid.
+
+Associates response, error, and event callbacks with the given SUID for this session. These callbacks are invoked for messages received from Sensing Hub that correspond to the specified SUID.
+
+```cpp
+int setCallBacks(suid suid, respCallBack respCB, errorCallBack errorCB, eventCallBack eventCB)=0
+```
+
+**Parameters**
+
+<ParamField path="suid" type="suid">
+  Unique SUID of the sensor for which callbacks are set.
+</ParamField>
+<ParamField path="respCB" type="respCallBack">
+  respCallBack pointer (may be nullptr).
+</ParamField>
+<ParamField path="errorCB" type="errorCallBack">
+  errorCallBack pointer (may be nullptr)
+</ParamField>
+<ParamField path="eventCB" type="eventCallBack">
+  eventCallBack pointer (may be nullptr).
+</ParamField>
+
+**Returns**
+
+0 Success.
+-1 Failure, if all callback functions are nullptr for an unregistered SUID.
+
+##### `sendRequest`
+
+Send an asynchronous request for a given sensor.
+
+Sends a protocol-buffer-encoded request message to the Sensing Hub for the specified SUID.
+
+```cpp
+int sendRequest(suid suid, std::string message)=0
+```
+
+**Parameters**
+
+<ParamField path="suid" type="suid">
+  Unique SUID of the target sensor.
+</ParamField>
+<ParamField path="message" type="std::string">
+  Proto encoded request message, formulated with client API for the given sensor.
+</ParamField>
+
+**Returns**
+
+0 Success
+-1 Failure
+Session is not open or already closed.
+Encoded message size exceeds the allowed limit.
+Underlying transport/channel error while sending.
+
+##### `~ISession`
+
+Destructor for ISession.
+
+Clients are expected to delete the ISession instance once the use case is complete to avoid memory leaks.
+
+```cpp
+ ~ISession()
+```
+
+#### Enumerations
+
+##### `error`
+
+Error codes, if any, from ISession.
+
+###### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `RESET` |  |  |
+| `SERVICE_DOWN` |  |  |
+
+#### Type Aliases
+
+##### `respCallBack`
+
+This callback is invoked when a response is received for the registered sensor SUID.
+
+```cpp
+using respCallBack = std::function< void(const uint32_t respValue, uint64_t clientConnectID)>
+```
+
+##### `errorCallBack`
+
+This callback is invoked when an error occurs in Sensing Hub.
+
+```cpp
+using errorCallBack = std::function< void(error errorValue)>
+```
+
+##### `eventCallBack`
+
+This callback is invoked when an event is received for the registered sensor SUID.
+
+```cpp
+using eventCallBack = std::function< void(const uint8_t *sensorData, size_t sensorDataSize, uint64_t sensorDataTimeStamp)>
+```

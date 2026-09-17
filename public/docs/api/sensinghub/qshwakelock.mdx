@@ -2,6 +2,36 @@
 title: "qshWakelock.h"
 ---
 
+## Structures
+
+### `qshWakelock`
+
+#### Functions
+
+##### `getInstance`
+
+Static function to get instance of qshWakelock with file name.
+
+```cpp
+qshWakelock * getInstance(const char *lockName)
+```
+
+##### `acquire`
+
+Number of wakeup samples pushed to framework.
+
+```cpp
+int32_t acquire(unsigned int count)
+```
+
+##### `release`
+
+Number of wakeup samples processed by framework.
+
+```cpp
+int32_t release(unsigned int count)
+```
+
 ## Macros
 
 ### `QSH_POWER_WAKE_lOCK_ACQUIRE_INDEX`
@@ -20,12 +50,12 @@ title: "qshWakelock.h"
 
 ### `FD_COUNT`
 
-```c
+```cpp
 const int FD_COUNT
 ```
 
 ### `PATHS`
 
-```c
+```cpp
 const char *const PATHS
 ```

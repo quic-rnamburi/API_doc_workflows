@@ -1,0 +1,75 @@
+---
+title: "qshJsonParser.h"
+---
+
+## Structures
+
+### `qshJsonParser`
+
+#### Functions
+
+##### `qshJsonParser`
+
+```cpp
+ qshJsonParser()
+```
+
+##### `~qshJsonParser`
+
+```cpp
+ ~qshJsonParser()
+```
+
+##### `loadFile`
+
+```cpp
+int loadFile(const char *path)
+```
+
+##### `getHubIdList`
+
+```cpp
+std::vector< int > getHubIdList()
+```
+
+##### `getHubId`
+
+```cpp
+int getHubId(std::string hubName)
+```
+
+##### `getCommHandleAttrs`
+
+```cpp
+int getCommHandleAttrs(int hubID)
+```
+
+##### `getCommType`
+
+```cpp
+int getCommType(int hubID)
+```
+
+##### `getHubName`
+
+```cpp
+std::string getHubName(int hubID)
+```
+
+##### `isFileParsed`
+
+```cpp
+bool isFileParsed()
+```
+
+##### `getInstance`
+
+get handle to qshJsonParser get_instance
+
+```cpp
+qshJsonParser & getInstance()
+```
+
+**Returns**
+
+parser_instance&

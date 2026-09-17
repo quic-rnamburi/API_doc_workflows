@@ -1,0 +1,82 @@
+---
+title: "SessionFactory.h"
+description: "============================================================================"
+---
+
+## Structures
+
+### `com::quic::sensinghub::session::V1_0::sessionFactory`
+
+Runtime factory for creating ISession instances.
+
+#### Functions
+
+##### `sessionFactory`
+
+Construct a sessionFactory instance.
+
+Creates a factory object that can be used to obtain ISession instances and query supported Sensing Hub IDs. Multiple sessionFactory instances are allowed; they may share the same underlying runtime resources.
+
+```cpp
+ sessionFactory()
+```
+
+##### `~sessionFactory`
+
+Destroy the sessionFactory instance.
+
+Once the client no longer needs to create sessions or query hub IDs, it should destroy the sessionFactory instance to release any associated resources.
+
+```cpp
+ ~sessionFactory()
+```
+
+##### `getSession`
+
+Creates ISession instance for the specified sensing-hub ID.
+
+This API loads the ISession implementation at runtime and constructs a ISession object that can be used to communicate with the Sensing Hub.
+
+```cpp
+ISession * getSession(int hub_id)
+```
+
+**Parameters**
+
+<ParamField path="hub_id" type="int">
+  Hub ID of the desired sensing-hub Default value = -1.
+</ParamField>
+
+**Returns**
+
+Pointer to ISession object Success.
+Nullptr Failure.
+
+##### `getSession`
+
+Creates an ISession instance using the default sensing-hub.
+
+This is a convenience overload of getSession(int hub_id) that requests a session for the default hub by internally using the implementation-defined default hub ID.
+
+```cpp
+ISession * getSession()
+```
+
+**Returns**
+
+Pointer to ISession object Success.
+Nullptr Failure.
+
+##### `getSensingHubIds`
+
+Retrieve the IDs of supported Sensing Hubs.
+
+Queries the underlying implementation for all available Sensing Hub IDs on the system. These IDs can be used as input to getSession().
+
+```cpp
+std::vector< int > getSensingHubIds()
+```
+
+**Returns**
+
+A std::vector<int> containing the hub IDs supported by the current platform. An empty vector indicates that no Sensing Hubs were discovered or that discovery is not supported.

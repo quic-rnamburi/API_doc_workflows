@@ -1,0 +1,168 @@
+---
+title: "qshTimeUtil.h"
+---
+
+## Structures
+
+### `qshTimeUtil`
+
+Sensors time utilities.
+
+**Members**
+
+<ParamField path="mOffsetNs" type="std::atomic< std::int64_t >">
+</ParamField>
+
+#### Functions
+
+##### `getInstance`
+
+get singleton instance of the timeutil class
+
+```cpp
+qshTimeUtil & getInstance()
+```
+
+**Returns**
+
+qshTimeUtil&
+
+##### `qtimerGetTicks`
+
+reads the current QTimer count value
+
+```cpp
+uint64_t qtimerGetTicks()
+```
+
+**Returns**
+
+uint64_t QTimer tick-count
+
+##### `qtimerGetFreq`
+
+get QTimer frequency in Hz
+
+```cpp
+uint64_t qtimerGetFreq()
+```
+
+**Returns**
+
+uint64_t
+
+##### `qtimerGetTimeNs`
+
+get time in nanoseconds since boot-up
+
+```cpp
+uint64_t qtimerGetTimeNs()
+```
+
+**Returns**
+
+uint64_t nanoseconds
+
+##### `qtimerTicksToNs`
+
+convert the qtimer tick value of nanoseconds
+
+```cpp
+uint64_t qtimerTicksToNs(uint64_t ticks)
+```
+
+**Parameters**
+
+<ParamField path="ticks" type="uint64_t">
+</ParamField>
+
+**Returns**
+
+uint64_t qtimer time in nanoseconds
+
+##### `qtimerNsToElapsedRealtimeNano`
+
+convert qtimer timestamp (in ns) to android system time (in ns)
+
+```cpp
+int64_t qtimerNsToElapsedRealtimeNano(uint64_t qtimerTS)
+```
+
+**Parameters**
+
+<ParamField path="qtimer_ts" type="">
+</ParamField>
+
+**Returns**
+
+int64_t
+
+##### `elapsedRealtimeNanoToQtimerNs`
+
+convert android system time (in ns) to qtimer timestamp (in ns)
+
+```cpp
+uint64_t elapsedRealtimeNanoToQtimerNs(int64_t androidTS)
+```
+
+**Parameters**
+
+<ParamField path="androidTS" type="int64_t">
+</ParamField>
+
+**Returns**
+
+uint64_t
+
+##### `qtimerTicksToElapsedRealtimeNano`
+
+convert qtimer timestamp (in ticks) to android timestamp (in ns)
+
+```cpp
+int64_t qtimerTicksToElapsedRealtimeNano(uint64_t qtimerTicks)
+```
+
+**Parameters**
+
+<ParamField path="qtimer_ticks" type="">
+</ParamField>
+
+**Returns**
+
+int64_t
+
+##### `getElapsedRealtimeNanoOffset`
+
+get offset between sensor time system and Android time system (in ns)
+
+```cpp
+int64_t getElapsedRealtimeNanoOffset()
+```
+
+**Returns**
+
+int64_t
+
+##### `recalculateOffset`
+
+kick in the logic to recalculate offset for drift
+
+```cpp
+bool recalculateOffset(bool forceUpdate)
+```
+
+**Parameters**
+
+<ParamField path="force_update" type="">
+  if true, always update the offset (even if the previous update was more recent than the last update)
+</ParamField>
+
+**Returns**
+
+true if offset changed, false otherwise
+
+##### `getOffsetUpdateScheduleNs`
+
+```cpp
+uint64_t getOffsetUpdateScheduleNs() const
+```

@@ -6,9 +6,98 @@ title: "qshLog.h"
 
 ### `sns_log_message`
 
-```c
+```cpp
 void sns_log_message(int level, const char *fmt,...)
 ```
+
+### `set_level`
+
+sets global log level for current process
+
+```cpp
+void set_level(log_level level)
+```
+
+**Parameters**
+
+<ParamField path="level" type="log_level">
+</ParamField>
+
+### `get_tag`
+
+get current log tag
+
+```cpp
+const char * get_tag()
+```
+
+**Returns**
+
+const char*
+
+### `set_tag`
+
+set log tag
+
+```cpp
+void set_tag(const char *tag)
+```
+
+**Parameters**
+
+<ParamField path="tag" type="const char *">
+</ParamField>
+
+### `get_level`
+
+get current log level value
+
+```cpp
+log_level get_level()
+```
+
+**Returns**
+
+log_level
+
+### `set_stderr_logging`
+
+enable/disable logging over stderr
+
+```cpp
+void set_stderr_logging(bool val)
+```
+
+**Parameters**
+
+<ParamField path="enable" type="">
+</ParamField>
+
+### `get_stderr_logging`
+
+get current status of stderr logging
+
+```cpp
+bool get_stderr_logging()
+```
+
+**Returns**
+
+bool
+
+## Enumerations
+
+### `log_level`
+
+#### Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `SILENT` | = 0 |  |
+| `ERROR` | = 1 |  |
+| `INFO` | = 2 |  |
+| `DEBUG` | = 3 |  |
+| `VERBOSE` | = 4 |  |
 
 ## Macros
 

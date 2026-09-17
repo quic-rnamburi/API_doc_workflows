@@ -6,7 +6,7 @@ title: "qshTrace.h"
 
 ### `QSH_TRACE_ENABLE`
 
-```c
+```cpp
 void QSH_TRACE_ENABLE(bool enable)
 ```
 
@@ -21,21 +21,30 @@ void QSH_TRACE_ENABLE(bool enable)
 ### `QSH_TRACE_INT64`
 
 ```c
-#define QSH_TRACE_INT64 ( \
+#define QSH_TRACE_INT64 ({\
+    if (CC_UNLIKELY(qsh_trace_enabled)) { \
+        ATRACE_INT64(name, value); \
+    } \
 })
 ```
 
 ### `QSH_TRACE_BEGIN`
 
 ```c
-#define QSH_TRACE_BEGIN ( \
+#define QSH_TRACE_BEGIN ({\
+    if (CC_UNLIKELY(qsh_trace_enabled)) { \
+        ATRACE_BEGIN(name); \
+    } \
 })
 ```
 
 ### `QSH_TRACE_END`
 
 ```c
-#define QSH_TRACE_END ( \
+#define QSH_TRACE_END ({\
+    if (CC_UNLIKELY(qsh_trace_enabled)) { \
+        ATRACE_END(); \
+    } \
 })
 ```
 
@@ -43,6 +52,6 @@ void QSH_TRACE_ENABLE(bool enable)
 
 ### `qsh_trace_enabled`
 
-```c
+```cpp
 bool qsh_trace_enabled
 ```

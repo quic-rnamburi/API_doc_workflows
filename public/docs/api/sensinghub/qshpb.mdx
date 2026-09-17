@@ -28,6 +28,248 @@ Simple buffer descriptor used by nanopb callbacks.
 <ParamField path="size" type="size_t">
 </ParamField>
 
+## Functions
+
+### `encode_bytes_callback`
+
+----------------- Encoding callbacks -----------------
+
+Encode bytes field from a provided buffer.
+
+```cpp
+bool encode_bytes_callback(pb_ostream_t *stream, const pb_field_t *field, void *const *arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_ostream_t *">
+  Nanopb output stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Target field metadata.
+</ParamField>
+<ParamField path="arg" type="void *const *">
+  Pointer to pb_buffer_arg (const void*).
+</ParamField>
+
+**Returns**
+
+true on success, false otherwise.
+
+### `encode_cstring_cb`
+
+Encode a C-string (UTF-8) for a string field.
+
+```cpp
+bool encode_cstring_cb(pb_ostream_t *stream, const pb_field_t *field, void *const *arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_ostream_t *">
+  Nanopb output stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Target field metadata.
+</ParamField>
+<ParamField path="arg" type="void *const *">
+  Pointer to const char*.
+</ParamField>
+
+**Returns**
+
+true on success, false otherwise.
+
+### `encode_nowakeup_msg_ids`
+
+Encode repeated fixed32 message IDs (no-wakeup IDs).
+
+```cpp
+bool encode_nowakeup_msg_ids(pb_ostream_t *stream, const pb_field_t *field, void *const *arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_ostream_t *">
+  Nanopb output stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Target field metadata (repeated fixed32).
+</ParamField>
+<ParamField path="arg" type="void *const *">
+  Pointer to const std::vector<uint32_t>.
+</ParamField>
+
+**Returns**
+
+true on success, false otherwise.
+
+### `encode_string_cb`
+
+Encode repeated strings.
+
+```cpp
+bool encode_string_cb(pb_ostream_t *stream, const pb_field_t *field, void *const *arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_ostream_t *">
+  Nanopb output stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Target field metadata (repeated fixed32).
+</ParamField>
+<ParamField path="arg" type="void *const *">
+  Pointer to const std::vector<uint32_t>.
+</ParamField>
+
+**Returns**
+
+true on success, false otherwise.
+
+### `decode_payload`
+
+----------------- Decoding callbacks -----------------
+
+```cpp
+bool decode_payload(pb_istream_t *stream, const pb_field_t *field, void **arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_istream_t *">
+  Nanopb input stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Source field metadata.
+</ParamField>
+<ParamField path="arg" type="void **">
+  Pointer to pb_buffer_arg*.
+</ParamField>
+
+**Returns**
+
+true on success, false otherwise.
+
+### `decode_string`
+
+Decode a string field to a std::string.
+
+```cpp
+bool decode_string(pb_istream_t *stream, const pb_field_t *field, void **arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_istream_t *">
+  Nanopb input stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Source field metadata.
+</ParamField>
+<ParamField path="arg" type="void **">
+  Pointer to std::string*.
+</ParamField>
+
+**Returns**
+
+true on success, false otherwise.
+
+### `decode_suid`
+
+Decode sns_std_suid entries into a vector.
+
+```cpp
+bool decode_suid(pb_istream_t *stream, const pb_field_t *field, void **arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_istream_t *">
+  Nanopb input stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Source field metadata (submessage).
+</ParamField>
+<ParamField path="arg" type="void **">
+  Pointer to std::vector<sns_std_suid>*.
+</ParamField>
+
+**Returns**
+
+true on success, false otherwise.
+
+### `decode_float_array`
+
+Decode repeated float values into a vector.
+
+```cpp
+bool decode_float_array(pb_istream_t *stream, const pb_field_t *field, void **arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_istream_t *">
+  Nanopb input stream.
+</ParamField>
+<ParamField path="field" type="const pb_field_t *">
+  Source field metadata (repeated fixed32 or float).
+</ParamField>
+<ParamField path="arg" type="void **">
+  Pointer to std::vector<float>*.
+</ParamField>
+
+**Returns**
+
+true on success, false otherwise.
+
+### `decode_repeated_enum`
+
+Decode repeated enum values into a vector.
+
+```cpp
+bool decode_repeated_enum(pb_istream_t *stream, const pb_field_t *, void **arg)
+```
+
+**Parameters**
+
+<ParamField path="stream" type="pb_istream_t *">
+  Nanopb input stream.
+</ParamField>
+<ParamField path="field" type="">
+  Source field metadata (repeated fixed32 or float).
+</ParamField>
+<ParamField path="arg" type="void **">
+  Pointer to std::vector<float>*.
+</ParamField>
+
+**Returns**
+
+true on success, false otherwise.
+
+### `printHex`
+
+----------------- Utilities -----------------
+
+Print a hex dump of the given buffer (16 bytes per row).
+
+```cpp
+void printHex(const pb_byte_t *data, size_t size, const char *title="Hex Dump")
+```
+
+**Parameters**
+
+<ParamField path="data" type="const pb_byte_t *">
+  Pointer to data.
+</ParamField>
+<ParamField path="size" type="size_t">
+  Size in bytes.
+</ParamField>
+<ParamField path="title" type="const char *">
+  Optional label printed before the dump.
+</ParamField>
+
 ## Macros
 
 ### `PB_DEBUG`
