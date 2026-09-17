@@ -217,6 +217,7 @@ jobs:
               # Remove balanced { } blocks
               s = re.sub(r'\{[^}]*\}', '', s)
               # Escape bare < and > that are not valid JSX tags
+              s = re.sub(r'(?<=\w)<', r'\\<', s)
               s = re.sub(r'<(?!/?\s*\w)', r'\\<', s)
               s = re.sub(r'(?<=\w)>', r'\\>', s)
               # Escape << bitshift operator
@@ -551,8 +552,7 @@ jobs:
 
           all_compounds = (
               index_root.findall("compound[@kind='file']") +
-              index_root.findall("compound[@kind='group']") +
-              index_root.findall("compound[@kind='namespace']")
+              index_root.findall("compound[@kind='group']")
           )
           for compound in all_compounds:
               kind     = compound.get("kind")
@@ -569,12 +569,52 @@ jobs:
                   continue
               if cdef is None:
                   continue
+
+              # The canonical file path as Doxygen records it in location/@file
+              file_loc = cdef.find("location")
+              canon_file = file_loc.get("file", "") if file_loc is not None else ""
+
+              def member_in_file(mdef):
+                  loc = mdef.find("location")
+                  return loc is not None and loc.get("file", "").endswith(
+                      canon_file.lstrip("./") if canon_file else "__nomatch__"
+                  )
+
+              def class_in_file(ic_cdef):
+                  loc = ic_cdef.find("location")
+                  return loc is not None and loc.get("file", "").endswith(
+                      canon_file.lstrip("./") if canon_file else "__nomatch__"
+                  )
+
+              # Direct members in this file compound
               sections = {}
               for sdef in cdef.findall("sectiondef"):
                   for mdef in sdef.findall("memberdef"):
                       mk = mdef.get("kind")
                       if mk in RENDERERS:
                           sections.setdefault(mk, []).append(mdef)
+
+              # Members declared inside a namespace but defined in this file
+              for ins in cdef.findall("innernamespace"):
+                  ns_refid = ins.get("refid")
+                  ns_file  = os.path.join(XML_DIR, f"{ns_refid}.xml")
+                  if not os.path.exists(ns_file):
+                      continue
+                  try:
+                      ns_cdef = ET.parse(ns_file).getroot().find("compounddef")
+                  except ET.ParseError:
+                      continue
+                  if ns_cdef is None:
+                      continue
+                  for sdef in ns_cdef.findall("sectiondef"):
+                      for mdef in sdef.findall("memberdef"):
+                          if not member_in_file(mdef):
+                              continue
+                          mk = mdef.get("kind")
+                          if mk in RENDERERS:
+                              sections.setdefault(mk, []).append(mdef)
+
+              # Inner classes/structs/unions — direct and via namespace
               structs = []
               for ic in cdef.findall("innerclass"):
                   ic_refid = ic.get("refid")
@@ -588,21 +628,40 @@ jobs:
                       continue
                   if ic_cdef is not None and ic_cdef.get("kind") in ("struct", "union", "class"):
                       structs.append(ic_cdef)
+
+              for ins in cdef.findall("innernamespace"):
+                  ns_refid = ins.get("refid")
+                  ns_file  = os.path.join(XML_DIR, f"{ns_refid}.xml")
+                  if not os.path.exists(ns_file):
+                      continue
+                  try:
+                      ns_cdef = ET.parse(ns_file).getroot().find("compounddef")
+                  except ET.ParseError:
+                      continue
+                  if ns_cdef is None:
+                      continue
+                  for ic in ns_cdef.findall("innerclass"):
+                      ic_refid = ic.get("refid")
+                      ic_file  = os.path.join(XML_DIR, f"{ic_refid}.xml")
+                      if not os.path.exists(ic_file):
+                          continue
+                      try:
+                          ic_cdef = ET.parse(ic_file).getroot().find("compounddef")
+                      except ET.ParseError:
+                          continue
+                      if ic_cdef is not None and ic_cdef.get("kind") in ("struct", "union", "class"):
+                          if class_in_file(ic_cdef):
+                              structs.append(ic_cdef)
+
               if not any(sections.values()) and not structs:
                   continue
               if kind == "group":
-                  # Use source filename (e.g. UrmAPIs.h → UrmAPIs) for
-                  # consistency with file-compound naming. Fall back to
-                  # group title then group ID if no innerfile exists.
                   innerfile = cdef.findtext("innerfile")
                   if innerfile:
                       title = os.path.splitext(innerfile)[0]
                   else:
                       title = cdef.findtext("title") or cname
                   base = slugify(title)
-              elif kind == "namespace":
-                  title = cname
-                  base  = slugify(cname)
               else:
                   base  = os.path.splitext(cname)[0]
                   title = cname
