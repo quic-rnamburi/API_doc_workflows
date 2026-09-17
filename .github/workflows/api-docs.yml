@@ -403,7 +403,8 @@ jobs:
               Hs = "#" * (level + 1)
               name  = text_of(m.find("name"))
               brief = brief_of(m)
-              lines = [f"{H} `{name}`\n"]
+              heading = f"`{name}`" if name else "_(anonymous)_"
+              lines = [f"{H} {heading}\n"]
               if brief:
                   lines.append(f"{brief}\n")
               values = m.findall("enumvalue")
@@ -414,6 +415,8 @@ jobs:
                   for v in values:
                       vname  = text_of(v.find("name"))
                       vinit  = text_of(v.find("initializer"))
+                      # Escape pipe and shift operators so they don't break MDX table syntax
+                      vinit  = vinit.replace("|", "\\|").replace("<<", "&lt;&lt;").replace(">>", "&gt;&gt;")
                       vbrief = ""
                       vb = v.find("briefdescription")
                       if vb is not None:
@@ -743,7 +746,9 @@ jobs:
                       title = cdef.findtext("title") or cname
                       base  = slugify(title)
               else:
-                  header_filename = cname
+                  # Use the repo-relative path from location/@file (Doxygen strips WORK_DIR
+                  # via STRIP_FROM_PATH), falling back to bare filename if not available.
+                  header_filename = canon_file if canon_file else cname
                   base            = os.path.splitext(cname)[0]
                   title           = make_title(cname)
               slug           = slugify(base)
