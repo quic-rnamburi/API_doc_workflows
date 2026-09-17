@@ -257,7 +257,7 @@ jobs:
                   for item in plist.findall("parameteritem"):
                       names = [text_of(n) for n in item.findall(".//parametername")]
                       desc_node = item.find("parameterdescription")
-                      desc = "".join(desc_node.itertext()).strip() if desc_node is not None else ""
+                      desc = clean("".join(desc_node.itertext()).strip()) if desc_node is not None else ""
                       for name in names:
                           out.append({"name": name, "desc": desc})
               return out
@@ -267,7 +267,7 @@ jobs:
               if node is None:
                   return ""
               for ss in node.findall(".//simplesect[@kind='return']"):
-                  return "".join(ss.itertext()).strip()
+                  return clean("".join(ss.itertext()).strip())
               return ""
 
           def param_types_of(memberdef):
@@ -283,6 +283,70 @@ jobs:
 
           def slugify(s):
               return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+
+          _ACRONYMS = {
+              "aac", "alac", "al", "amrwb", "amrwbplus", "ape", "apm", "aptx",
+              "ar", "api", "apis", "cmn", "dc", "dsp", "dtmf", "ecns",
+              "gpr", "gsl", "hd", "hw", "i2s", "id", "ids", "imc", "imcl",
+              "ipc", "irm", "lc3", "ldac", "mp2", "mp3", "pal", "pcm",
+              "prm", "qsh", "rtc", "rtm", "rx", "sa", "sbc", "sdz", "slimbus",
+              "spm", "spf", "spr", "ssr", "suid", "swb", "tdm", "tee", "trm",
+              "tts", "tty", "tx", "ui", "uri", "urm", "usb", "vad",
+              "vcpm", "vi", "wsa",
+          }
+          _EXPAND = {
+              "rd":    "Read",
+              "wr":    "Write",
+              "sh":    "Shared",
+              "mem":   "Memory",
+              "ep":    "Endpoint",
+              "intf":  "Interface",
+              "fwk":   "Framework",
+              "mgmt":  "Management",
+              "props": "Properties",
+              "pb":    "Protobuf",
+              "com":   "Communication",
+              "util":  "Utility",
+              "cfg":   "Config",
+              "shmem": "Shared Memory",
+          }
+          _TITLE_OVERRIDES = {
+              "ISession":   "Session Interface",
+              "UrmAPIs":    "URM APIs",
+              "acdb":       "ACDB",
+              "ats":        "ATS",
+              "gpr_msg_if": "GPR Message Interface",
+              "remote":     "FastRPC Remote",
+          }
+
+          def make_title(filename):
+              base = re.sub(r'\.(h|hpp)$', '', filename, flags=re.IGNORECASE)
+              if base in _TITLE_OVERRIDES:
+                  return _TITLE_OVERRIDES[base]
+              tokens = re.sub(r'([a-z])([A-Z])', r'\1 \2', base)
+              tokens = re.sub(r'([A-Z]+)([A-Z][a-z])', r'\1 \2', tokens)
+              words = re.split(r'[\s_\-]+', tokens)
+              result = []
+              for w in words:
+                  if not w:
+                      continue
+                  lo = w.lower()
+                  if lo in _EXPAND:
+                      result.append(_EXPAND[lo])
+                  elif lo in _ACRONYMS:
+                      result.append(lo.upper())
+                  else:
+                      result.append(w.capitalize())
+              return " ".join(result)
+
+          _BAD_DESC_RE = re.compile(
+              r'^\\?brie|^={4,}|^Copyright|^[A-Z](\s[A-Z]){3,}|^\w[\w_.]+\.h[p]*:'
+          )
+
+          def clean_description(desc):
+              if not desc or _BAD_DESC_RE.search(desc.strip()):
+                  return ""
+              return desc
 
           def template_prefix_of(node):
               tpl = node.find("templateparamlist")
@@ -526,13 +590,14 @@ jobs:
 
           # ── MDX writer ───────────────────────────────────────────────────
 
-          def write_mdx(slug, title, compound_brief, sections, structs, out_path):
-              # Mintlify reads title/description from frontmatter and renders
-              # its own H1 — no explicit heading needed in the body.
+          def write_mdx(slug, title, header_filename, compound_brief, sections, structs, out_path):
               lines = ["---", f'title: "{escape_fm(title)}"']
-              if compound_brief:
-                  lines.append(f'description: "{escape_fm(compound_brief)}"')
+              desc = clean_description(compound_brief)
+              if desc:
+                  lines.append(f'description: "{escape_fm(desc)}"')
               lines.append("---\n")
+              if header_filename:
+                  lines.append(f'**Header:** `{header_filename}`\n')
               if structs:
                   lines.append("## Structures\n")
                   for scdef in structs:
@@ -584,15 +649,12 @@ jobs:
 
               def member_in_file(mdef):
                   loc = mdef.find("location")
-                  return loc is not None and loc.get("file", "").endswith(
-                      canon_file.lstrip("./") if canon_file else "__nomatch__"
-                  )
-
-              def class_in_file(ic_cdef):
-                  loc = ic_cdef.find("location")
-                  return loc is not None and loc.get("file", "").endswith(
-                      canon_file.lstrip("./") if canon_file else "__nomatch__"
-                  )
+                  if loc is None:
+                      return False
+                  member_file = loc.get("file", "")
+                  # Doxygen can use absolute paths or paths relative to the project;
+                  # compare by basename of canon_file to avoid prefix mismatches.
+                  return os.path.basename(member_file) == os.path.basename(canon_file)
 
               # Direct members in this file compound
               sections = {}
@@ -665,25 +727,29 @@ jobs:
                       except ET.ParseError:
                           continue
                       if ic_cdef is not None and ic_cdef.get("kind") in ("struct", "union", "class"):
-                          if class_in_file(ic_cdef):
+                          loc = ic_cdef.find("location")
+                          if loc is not None and os.path.basename(loc.get("file", "")) == os.path.basename(canon_file):
                               add_struct(ic_cdef)
 
               if not any(sections.values()) and not structs:
                   continue
               if kind == "group":
                   innerfile = cdef.findtext("innerfile")
+                  header_filename = innerfile if innerfile else None
                   if innerfile:
-                      title = os.path.splitext(innerfile)[0]
+                      title = make_title(innerfile)
+                      base  = slugify(os.path.splitext(innerfile)[0])
                   else:
                       title = cdef.findtext("title") or cname
-                  base = slugify(title)
+                      base  = slugify(title)
               else:
-                  base  = os.path.splitext(cname)[0]
-                  title = cname
+                  header_filename = cname
+                  base            = os.path.splitext(cname)[0]
+                  title           = make_title(cname)
               slug           = slugify(base)
               compound_brief = brief_of(cdef)
               out_path       = os.path.join(MDX_DIR, f"{slug}.mdx")
-              write_mdx(slug, title, compound_brief, sections, structs, out_path)
+              write_mdx(slug, title, header_filename, compound_brief, sections, structs, out_path)
               generated.append({"slug": slug, "title": title})
 
           # Mintlify navigation group — merge the "pages" list into mint.json
