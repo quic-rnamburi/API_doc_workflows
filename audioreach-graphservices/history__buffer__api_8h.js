@@ -10,6 +10,7 @@ var history__buffer__api_8h =
     [ "HISTORY_BUFFER_STACK_SIZE_REQUIREMENT", "history__buffer__api_8h.html#aa828f2ccedb26ad1539f1e56101e275a", null ],
     [ "MODULE_ID_HISTORY_BUFFER", "history__buffer__api_8h.html#ac4a9c7f8a242c2f5d811b860ff3a04cb", null ],
     [ "PARAM_ID_HISTORY_BUFFER_DETECTION_TRIGGER", "history__buffer__api_8h.html#a4a9d685cf2c2554aa0ce1157a0ea6fd1", null ],
+    [ "PARAM_ID_HISTORY_BUFFER_FORCE_DRAIN_BATCH", "history__buffer__api_8h.html#af4860adb64993422e82d306c8631f814", null ],
     [ "PARAM_ID_HISTORY_BUFFER_MODE", "history__buffer__api_8h.html#afcc1ed9b33f7dee5355c2a4cb901fc01", null ],
     [ "param_id_history_buffer_mode_t", "history__buffer__api_8h.html#adcd6d31bcadbff9716fb1c40f085ac29", null ]
 ];

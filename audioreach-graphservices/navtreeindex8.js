@@ -1,5 +1,8 @@
 var NAVTREEINDEX8 =
 {
+"gsl__intf_8h.html#a7a34fe41e0e1c9ba6bf3772e7cc0e4baa22160edc9129bb22f5176c47c614c9fa":[3,0,4,0,0,53,16],
+"gsl__intf_8h.html#a7a34fe41e0e1c9ba6bf3772e7cc0e4baa320db27ebc2cfa0e2bd39b48d6f724b0":[3,0,4,0,0,53,5],
+"gsl__intf_8h.html#a7a34fe41e0e1c9ba6bf3772e7cc0e4baa45a4614a58a2ff0bf09d56233d4fe8c5":[3,0,4,0,0,53,12],
 "gsl__intf_8h.html#a7a34fe41e0e1c9ba6bf3772e7cc0e4baa4d042b0c26be56d04562d2aba602be43":[3,0,4,0,0,53,4],
 "gsl__intf_8h.html#a7a34fe41e0e1c9ba6bf3772e7cc0e4baa5557cc7f47e6a4d24f2f23bffe25e913":[3,0,4,0,0,53,20],
 "gsl__intf_8h.html#a7a34fe41e0e1c9ba6bf3772e7cc0e4baa5b63f742c0f98f79ce7623dbcac6fcf2":[3,0,4,0,0,53,0],
@@ -112,9 +115,10 @@ var NAVTREEINDEX8 =
 "history__buffer__api_8h.html#abebe5cca82806ff23d82d8461a394b45":[3,0,5,0,3,45,6],
 "history__buffer__api_8h.html#ac4a9c7f8a242c2f5d811b860ff3a04cb":[3,0,5,0,3,45,8],
 "history__buffer__api_8h.html#ad3ad785cb60927e1ab068c238526ba78":[3,0,5,0,3,45,1],
-"history__buffer__api_8h.html#adcd6d31bcadbff9716fb1c40f085ac29":[3,0,5,0,3,45,11],
+"history__buffer__api_8h.html#adcd6d31bcadbff9716fb1c40f085ac29":[3,0,5,0,3,45,12],
 "history__buffer__api_8h.html#af114251886465184d7e0850f59c722b3":[3,0,5,0,3,45,2],
-"history__buffer__api_8h.html#afcc1ed9b33f7dee5355c2a4cb901fc01":[3,0,5,0,3,45,10],
+"history__buffer__api_8h.html#af4860adb64993422e82d306c8631f814":[3,0,5,0,3,45,10],
+"history__buffer__api_8h.html#afcc1ed9b33f7dee5355c2a4cb901fc01":[3,0,5,0,3,45,11],
 "hw__core__api_8h.html":[3,0,5,0,3,46],
 "hw__core__api_8h.html#a142f585b2bc2a216303ebea05b35ee1b":[3,0,5,0,3,46,2],
 "hw__core__api_8h.html#ac1e7c20e3eb72279888010a19ae999ba":[3,0,5,0,3,46,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX8 =
 "ldac__encoder__api_8h.html#a28c18cc05d43a780bd4f006d7a73db0c":[3,0,5,0,3,55,3],
 "ldac__encoder__api_8h.html#a2ee3c9242f4bdd7979dcaa65e698e4ad":[3,0,5,0,3,55,2],
 "ldac__encoder__api_8h.html#a66b6d0536513790166ff0a1656040cbd":[3,0,5,0,3,55,8],
-"ldac__encoder__api_8h.html#a78b039899836c5233fc26766d5791afe":[3,0,5,0,3,55,9],
-"ldac__encoder__api_8h.html#aa9e1588f522b829d0bae25cf38a647b8":[3,0,5,0,3,55,6],
-"ldac__encoder__api_8h.html#ac62d4383094ebb78996d9c813f663982":[3,0,5,0,3,55,5],
-"lpass__core__api_8h.html":[3,0,5,0,3,56],
-"lpass__core__api_8h.html#a7ae27c5cf7b365c0f32ccbf1a6f8aa69":[3,0,5,0,3,56,0]
+"ldac__encoder__api_8h.html#a78b039899836c5233fc26766d5791afe":[3,0,5,0,3,55,9]
 };

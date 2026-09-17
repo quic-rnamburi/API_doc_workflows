@@ -171,6 +171,7 @@ var annotated_dup =
     [ "audio_hw_clk_rel_cfg_t", "structaudio__hw__clk__rel__cfg__t.html", "structaudio__hw__clk__rel__cfg__t" ],
     [ "audio_hw_clk_rsp_cfg_t", "structaudio__hw__clk__rsp__cfg__t.html", "structaudio__hw__clk__rsp__cfg__t" ],
     [ "audio_hw_clk_status_cfg_t", "structaudio__hw__clk__status__cfg__t.html", "structaudio__hw__clk__status__cfg__t" ],
+    [ "batch_drain_complete_info_t", "structbatch__drain__complete__info__t.html", "structbatch__drain__complete__info__t" ],
     [ "best_ch_idx_info_t", "structbest__ch__idx__info__t.html", "structbest__ch__idx__info__t" ],
     [ "bitrate_level_map_t", "structbitrate__level__map__t.html", "structbitrate__level__map__t" ],
     [ "capi_mma_context_threshold_struct_t", "structcapi__mma__context__threshold__struct__t.html", "structcapi__mma__context__threshold__struct__t" ],

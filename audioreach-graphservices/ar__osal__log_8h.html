@@ -99,6 +99,8 @@ Macros</h2></td></tr>
 <tr class="memitem:a8ccdc951c53113574e480953088bab2e" id="r_a8ccdc951c53113574e480953088bab2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__osal__log_8h.html#a8ccdc951c53113574e480953088bab2e">AR_VERBOSE</a>&#160;&#160;&#160;(0x10</td></tr>
 <tr class="memdesc:a8ccdc951c53113574e480953088bab2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">verbose message, useful primarily to help developers debug low-level code  <br /></td></tr>
 <tr class="separator:a8ccdc951c53113574e480953088bab2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3bfb5fa6c94aec8354e297783e5b4e" id="r_a2b3bfb5fa6c94aec8354e297783e5b4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__osal__log_8h.html#a2b3bfb5fa6c94aec8354e297783e5b4e">AR_LOG_FILE_NAME</a>&#160;&#160;&#160;__FILE__</td></tr>
+<tr class="separator:a2b3bfb5fa6c94aec8354e297783e5b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaabfd4ed887902bf54c7950eccffd5b2" id="r_aaabfd4ed887902bf54c7950eccffd5b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__osal__log_8h.html#aaabfd4ed887902bf54c7950eccffd5b2">AR_LOG_VERBOSE</a>(log_tag, ...)</td></tr>
 <tr class="separator:aaabfd4ed887902bf54c7950eccffd5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dd8b6b6fc41f51d3d0dd06ab3a02c16" id="r_a8dd8b6b6fc41f51d3d0dd06ab3a02c16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ar__osal__log_8h.html#a8dd8b6b6fc41f51d3d0dd06ab3a02c16">AR_LOG_INFO</a>(log_tag, ...)</td></tr>
@@ -294,8 +296,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (<a class="code hl_variable" href="ar__osal__log_8h.html#a9e93508abcee071acc9ed93eb2a7d994">ar_log_lvl</a> &amp; <a class="code hl_define" href="ar__osal__log_8h.html#a2c9176c13b446a7ddbdfd06cdcfc8ded">AR_CRITICAL</a>) {                                    \</div>
-<div class="line">        ar_log(<a class="code hl_define" href="ar__osal__log_8h.html#a2c9176c13b446a7ddbdfd06cdcfc8ded">AR_CRITICAL</a>, log_tag, __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__); \</div>
+<div class="line">        ar_log(<a class="code hl_define" href="ar__osal__log_8h.html#a2c9176c13b446a7ddbdfd06cdcfc8ded">AR_CRITICAL</a>, log_tag, <a class="code hl_define" href="ar__osal__log_8h.html#a2b3bfb5fa6c94aec8354e297783e5b4e">AR_LOG_FILE_NAME</a>, __FUNCTION__, __LINE__, __VA_ARGS__); \</div>
 <div class="line">    }</div>
+<div class="ttc" id="aar__osal__log_8h_html_a2b3bfb5fa6c94aec8354e297783e5b4e"><div class="ttname"><a href="ar__osal__log_8h.html#a2b3bfb5fa6c94aec8354e297783e5b4e">AR_LOG_FILE_NAME</a></div><div class="ttdeci">#define AR_LOG_FILE_NAME</div><div class="ttdef"><b>Definition</b> ar_osal_log.h:55</div></div>
 <div class="ttc" id="aar__osal__log_8h_html_a2c9176c13b446a7ddbdfd06cdcfc8ded"><div class="ttname"><a href="ar__osal__log_8h.html#a2c9176c13b446a7ddbdfd06cdcfc8ded">AR_CRITICAL</a></div><div class="ttdeci">#define AR_CRITICAL</div><div class="ttdoc">critical message, log unrecoverable condition .</div><div class="ttdef"><b>Definition</b> ar_osal_log.h:19</div></div>
 <div class="ttc" id="aar__osal__log_8h_html_a9e93508abcee071acc9ed93eb2a7d994"><div class="ttname"><a href="ar__osal__log_8h.html#a9e93508abcee071acc9ed93eb2a7d994">ar_log_lvl</a></div><div class="ttdeci">uint32_t ar_log_lvl</div></div>
 </div><!-- fragment -->
@@ -327,7 +330,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (<a class="code hl_variable" href="ar__osal__log_8h.html#a9e93508abcee071acc9ed93eb2a7d994">ar_log_lvl</a> &amp; <a class="code hl_define" href="ar__osal__log_8h.html#ad766c8bf5c7afc34f52b2968b7786cea">AR_DEBUG</a>) {                                    \</div>
-<div class="line">        ar_log(<a class="code hl_define" href="ar__osal__log_8h.html#ad766c8bf5c7afc34f52b2968b7786cea">AR_DEBUG</a>, log_tag, __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__); \</div>
+<div class="line">        ar_log(<a class="code hl_define" href="ar__osal__log_8h.html#ad766c8bf5c7afc34f52b2968b7786cea">AR_DEBUG</a>, log_tag, <a class="code hl_define" href="ar__osal__log_8h.html#a2b3bfb5fa6c94aec8354e297783e5b4e">AR_LOG_FILE_NAME</a>, __FUNCTION__, __LINE__, __VA_ARGS__); \</div>
 <div class="line">    }</div>
 <div class="ttc" id="aar__osal__log_8h_html_ad766c8bf5c7afc34f52b2968b7786cea"><div class="ttname"><a href="ar__osal__log_8h.html#ad766c8bf5c7afc34f52b2968b7786cea">AR_DEBUG</a></div><div class="ttdeci">#define AR_DEBUG</div><div class="ttdoc">debug message, required for debug.</div><div class="ttdef"><b>Definition</b> ar_osal_log.h:21</div></div>
 </div><!-- fragment -->
@@ -359,7 +362,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (<a class="code hl_variable" href="ar__osal__log_8h.html#a9e93508abcee071acc9ed93eb2a7d994">ar_log_lvl</a> &amp; <a class="code hl_define" href="ar__osal__log_8h.html#a4f6863419814507f10da1253901f61f8">AR_ERROR</a>) {                                    \</div>
-<div class="line">        ar_log(<a class="code hl_define" href="ar__osal__log_8h.html#a4f6863419814507f10da1253901f61f8">AR_ERROR</a>, log_tag, __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__); \</div>
+<div class="line">        ar_log(<a class="code hl_define" href="ar__osal__log_8h.html#a4f6863419814507f10da1253901f61f8">AR_ERROR</a>, log_tag, <a class="code hl_define" href="ar__osal__log_8h.html#a2b3bfb5fa6c94aec8354e297783e5b4e">AR_LOG_FILE_NAME</a>, __FUNCTION__, __LINE__, __VA_ARGS__); \</div>
 <div class="line">    }</div>
 <div class="ttc" id="aar__osal__log_8h_html_a4f6863419814507f10da1253901f61f8"><div class="ttname"><a href="ar__osal__log_8h.html#a4f6863419814507f10da1253901f61f8">AR_ERROR</a></div><div class="ttdeci">#define AR_ERROR</div><div class="ttdoc">error message, represents code bugs that should be debugged and fixed.</div><div class="ttdef"><b>Definition</b> ar_osal_log.h:20</div></div>
 </div><!-- fragment -->
@@ -421,6 +424,20 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a2b3bfb5fa6c94aec8354e297783e5b4e" name="a2b3bfb5fa6c94aec8354e297783e5b4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b3bfb5fa6c94aec8354e297783e5b4e">&#9670;&#160;</a></span>AR_LOG_FILE_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AR_LOG_FILE_NAME&#160;&#160;&#160;__FILE__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a48e2dfb7f9c83e8cec6e1f431851f6a1" name="a48e2dfb7f9c83e8cec6e1f431851f6a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a48e2dfb7f9c83e8cec6e1f431851f6a1">&#9670;&#160;</a></span>AR_LOG_HIGH</h2>
 
@@ -475,7 +492,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (<a class="code hl_variable" href="ar__osal__log_8h.html#a9e93508abcee071acc9ed93eb2a7d994">ar_log_lvl</a> &amp; <a class="code hl_define" href="ar__osal__log_8h.html#ad9405146cac58b107bf242a2a2750054">AR_INFO</a>) {                                    \</div>
-<div class="line">        ar_log(<a class="code hl_define" href="ar__osal__log_8h.html#ad9405146cac58b107bf242a2a2750054">AR_INFO</a>, log_tag, __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__); \</div>
+<div class="line">        ar_log(<a class="code hl_define" href="ar__osal__log_8h.html#ad9405146cac58b107bf242a2a2750054">AR_INFO</a>, log_tag, <a class="code hl_define" href="ar__osal__log_8h.html#a2b3bfb5fa6c94aec8354e297783e5b4e">AR_LOG_FILE_NAME</a>, __FUNCTION__, __LINE__, __VA_ARGS__); \</div>
 <div class="line">    }</div>
 <div class="ttc" id="aar__osal__log_8h_html_ad9405146cac58b107bf242a2a2750054"><div class="ttname"><a href="ar__osal__log_8h.html#ad9405146cac58b107bf242a2a2750054">AR_INFO</a></div><div class="ttdeci">#define AR_INFO</div><div class="ttdoc">Use for vital info that needs to exist in default logs.</div><div class="ttdef"><b>Definition</b> ar_osal_log.h:22</div></div>
 </div><!-- fragment -->
@@ -563,7 +580,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (<a class="code hl_variable" href="ar__osal__log_8h.html#a9e93508abcee071acc9ed93eb2a7d994">ar_log_lvl</a> &amp; <a class="code hl_define" href="ar__osal__log_8h.html#a8ccdc951c53113574e480953088bab2e">AR_VERBOSE</a>) {                                    \</div>
-<div class="line">        ar_log(<a class="code hl_define" href="ar__osal__log_8h.html#a8ccdc951c53113574e480953088bab2e">AR_VERBOSE</a>, log_tag, __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__); \</div>
+<div class="line">        ar_log(<a class="code hl_define" href="ar__osal__log_8h.html#a8ccdc951c53113574e480953088bab2e">AR_VERBOSE</a>, log_tag, <a class="code hl_define" href="ar__osal__log_8h.html#a2b3bfb5fa6c94aec8354e297783e5b4e">AR_LOG_FILE_NAME</a>, __FUNCTION__, __LINE__, __VA_ARGS__); \</div>
 <div class="line">    }</div>
 <div class="ttc" id="aar__osal__log_8h_html_a8ccdc951c53113574e480953088bab2e"><div class="ttname"><a href="ar__osal__log_8h.html#a8ccdc951c53113574e480953088bab2e">AR_VERBOSE</a></div><div class="ttdeci">#define AR_VERBOSE</div><div class="ttdoc">verbose message, useful primarily to help developers debug low-level code</div><div class="ttdef"><b>Definition</b> ar_osal_log.h:23</div></div>
 </div><!-- fragment -->

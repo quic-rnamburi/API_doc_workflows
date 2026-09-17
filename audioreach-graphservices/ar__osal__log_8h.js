@@ -12,6 +12,7 @@ var ar__osal__log_8h =
     [ "AR_LOG_ERR", "ar__osal__log_8h.html#adbd7622cbcba70de91987ddb2156dc6f", null ],
     [ "AR_LOG_ERROR", "ar__osal__log_8h.html#a0cce5fdfeba539315683fabc8dd7d52f", null ],
     [ "AR_LOG_FATAL", "ar__osal__log_8h.html#a3be8dc4ec1360fc24b29af4a05653e26", null ],
+    [ "AR_LOG_FILE_NAME", "ar__osal__log_8h.html#a2b3bfb5fa6c94aec8354e297783e5b4e", null ],
     [ "AR_LOG_HIGH", "ar__osal__log_8h.html#a48e2dfb7f9c83e8cec6e1f431851f6a1", null ],
     [ "AR_LOG_INFO", "ar__osal__log_8h.html#a8dd8b6b6fc41f51d3d0dd06ab3a02c16", null ],
     [ "AR_LOG_LOW", "ar__osal__log_8h.html#a69e898d5907bd49bcab9b2eaa13c145d", null ],

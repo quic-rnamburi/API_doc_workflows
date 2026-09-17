@@ -1,5 +1,9 @@
 var NAVTREEINDEX13 =
 {
+"sp__rx_8h.html#a7603290267c2f34c658d7bd5982d8d2c":[3,0,5,0,3,95,66],
+"sp__rx_8h.html#a77c62a84a04ed878cce862275a4e6dc0":[3,0,5,0,3,95,110],
+"sp__rx_8h.html#a7959ad657fd804f4a562c0d44868aef9":[3,0,5,0,3,95,146],
+"sp__rx_8h.html#a7a568e9de70ca8ae178294076bb0cdfc":[3,0,5,0,3,95,90],
 "sp__rx_8h.html#a7bb249bb52b3d0b6d580bc7930f843f2":[3,0,5,0,3,95,127],
 "sp__rx_8h.html#a7bea9f5d3ac09d4619483d29ec290395":[3,0,5,0,3,95,102],
 "sp__rx_8h.html#a7db26be878dadd33f94f53f1847a1eaa":[3,0,5,0,3,95,170],
@@ -245,9 +249,5 @@ var NAVTREEINDEX13 =
 "struct__acdb__driver__data__t.html#acf1ba523a8ab6b4546ae6ef65da7b7a9":[0,8,0,1],
 "struct__acdb__driver__property__data__t.html":[0,2,3],
 "struct__acdb__driver__property__data__t.html#a1549a421ab56cfb3aff378c47ee014a4":[0,2,3,1],
-"struct__acdb__driver__property__data__t.html#a8731c70d5b3ff310e6a792388551b031":[0,2,3,2],
-"struct__acdb__driver__property__data__t.html#ad08e26a2efd1fae74cd247afd3fe618e":[0,2,3,0],
-"struct__acdb__file__t.html":[2,0,10],
-"struct__acdb__file__t.html#a7ea7a96aff0aff07b320eeb91cb9105b":[2,0,10,0],
-"struct__acdb__file__t.html#a97ac8f32620a3d0adaba3f96f19c537f":[2,0,10,1]
+"struct__acdb__driver__property__data__t.html#a8731c70d5b3ff310e6a792388551b031":[0,2,3,2]
 };

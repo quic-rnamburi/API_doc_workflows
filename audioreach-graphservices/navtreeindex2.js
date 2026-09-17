@@ -1,10 +1,11 @@
 var NAVTREEINDEX2 =
 {
+"ar__osal__log_8h.html#ab97bc1bf95d822face54bc6926b3fc7d":[3,0,1,0,4,23],
 "ar__osal__log_8h.html#ac9315b75838f7baab04bd613ae49d14f":[3,0,1,0,4,7],
 "ar__osal__log_8h.html#ad766c8bf5c7afc34f52b2968b7786cea":[3,0,1,0,4,1],
 "ar__osal__log_8h.html#ad9405146cac58b107bf242a2a2750054":[3,0,1,0,4,6],
 "ar__osal__log_8h.html#adbd7622cbcba70de91987ddb2156dc6f":[3,0,1,0,4,9],
-"ar__osal__log_8h.html#afc7c85a635f8e0b94714faa7db469539":[3,0,1,0,4,17],
+"ar__osal__log_8h.html#afc7c85a635f8e0b94714faa7db469539":[3,0,1,0,4,18],
 "ar__osal__log_8h.html#afdfec5b3afe9e4751b8feddb6e4dc75c":[3,0,1,0,4,5],
 "ar__osal__log__pkt__op_8h.html":[3,0,1,0,5],
 "ar__osal__log__pkt__op_8h.html#a056e99aa14a0073b50e781e5f1108261":[3,0,1,0,5,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "asps__acm__api_8h.html#a3946d24662996ef1c5166112ae84d18a":[3,0,5,0,2,1,7],
 "asps__acm__api_8h.html#a476885d5c79fb4c8c2e5501be00f0799":[3,0,5,0,2,1,16],
 "asps__acm__api_8h.html#a4d21a5ecadd6cfa9d742e0f5ab840962":[3,0,5,0,2,1,12],
-"asps__acm__api_8h.html#a527935fbc6c452ca04af7e8aba967b98":[3,0,5,0,2,1,19],
-"asps__acm__api_8h.html#a7a0fa8cf38f20013b0eee4cff1ec5bca":[3,0,5,0,2,1,11]
+"asps__acm__api_8h.html#a527935fbc6c452ca04af7e8aba967b98":[3,0,5,0,2,1,19]
 };

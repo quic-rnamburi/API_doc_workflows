@@ -39,6 +39,10 @@ var group__weak__detection__event__info__header__t =
       [ "kw_start_timestamp_lsw", "structmodel__stats__t.html#aaf3699a7491421b32d1b3dd09c4fd680", null ],
       [ "kw_start_timestamp_msw", "structmodel__stats__t.html#a6fb3c10464c213c65c1ca6b7a71bc34b", null ]
     ] ],
+    [ "batch_drain_complete_info_t", "structbatch__drain__complete__info__t.html", [
+      [ "drain_complete", "structbatch__drain__complete__info__t.html#a09c64330cd9f98c6a2878f66cec34e92", null ]
+    ] ],
+    [ "batch_drain_complete_info_t", "group__weak__detection__event__info__header__t.html#ga26376be149ba4d052a55fea40ce0dfed", null ],
     [ "best_ch_idx_info_t", "group__weak__detection__event__info__header__t.html#ga0ad774de0d101e060e247db724a953b7", null ],
     [ "confidence_level_info_t", "group__weak__detection__event__info__header__t.html#ga4c6ed37ee03012863ecb51d9b183928e", null ],
     [ "detection_event_info_header_t", "group__weak__detection__event__info__header__t.html#ga29c4081cff4a1dbcdbf660c460edee50", null ],

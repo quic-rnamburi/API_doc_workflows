@@ -27,6 +27,7 @@ var detection__cmn__api_8h =
     [ "PARAM_ID_DETECTION_ENGINE_RESET", "detection__cmn__api_8h.html#a6957713c0a067cdb50e5d50097adb289", null ],
     [ "PARAM_ID_DETECTION_ENGINE_SOUND_MODEL", "detection__cmn__api_8h.html#a3e5030230fe76ae385395b4ce95295f0", null ],
     [ "PARAM_ID_DETECTION_GAIN", "detection__cmn__api_8h.html#aa0e4bf4625b25a14093e44e6251ba2ae", null ],
+    [ "batch_drain_complete_info_t", "group__weak__detection__event__info__header__t.html#ga26376be149ba4d052a55fea40ce0dfed", null ],
     [ "best_ch_idx_info_t", "group__weak__detection__event__info__header__t.html#ga0ad774de0d101e060e247db724a953b7", null ],
     [ "confidence_level_info_t", "group__weak__detection__event__info__header__t.html#ga4c6ed37ee03012863ecb51d9b183928e", null ],
     [ "detection_engine_event_key_id_info_t", "detection__cmn__api_8h.html#ab880664ac177b6c1c8cd995a8ad67f51", null ],
@@ -53,6 +54,7 @@ var detection__cmn__api_8h =
       [ "KEY_ID_FTRT_DATA_INFO", "detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698ad9f16111eb9a638058e5cf248c3ce337", null ],
       [ "KEY_ID_BEST_CH_IDX_INFO", "detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a8877accc985fe2a16cbd62dcb8677849", null ],
       [ "KEY_ID_VOICE_UI_MULTI_MODEL_RESULT_INFO", "detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a370c3e9f6c16d926d34e83091a3bfa92", null ],
+      [ "KEY_ID_BATCH_DRAIN_COMPLETE", "detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a35e237be169436b0073f57e578934bff", null ],
       [ "KEY_ID_MAX_VALUE", "detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698aad1e502caf6bb02a3083795e3ae94452", null ]
     ] ]
 ];

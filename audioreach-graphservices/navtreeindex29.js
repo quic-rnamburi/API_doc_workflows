@@ -1,5 +1,11 @@
 var NAVTREEINDEX29 =
 {
+"vocoder__cmn__api_8h.html#a862cf1c06bc84988e8c85f53c13bb77d":[3,0,5,0,3,110,15],
+"vocoder__cmn__api_8h.html#a8ba1d9a4b34c3ba1444464bb9b5533ae":[3,0,5,0,3,110,23],
+"vocoder__cmn__api_8h.html#a9a0547e09cc69c499783664e44a1953d":[3,0,5,0,3,110,16],
+"vocoder__cmn__api_8h.html#a9b4346d8dc42de7e008ffe1a64bef5ff":[3,0,5,0,3,110,26],
+"vocoder__cmn__api_8h.html#aa08bf2087e4a5d47f33cfdde243b9303":[3,0,5,0,3,110,29],
+"vocoder__cmn__api_8h.html#abc0a1781b8ff68be5c815fb8d1463e1d":[3,0,5,0,3,110,27],
 "vocoder__cmn__api_8h.html#ac0cd4c94177368d362a1ccd10df7b88c":[3,0,5,0,3,110,17],
 "vocoder__cmn__api_8h.html#acd978984588fbe1cd468468dc6d31a75":[3,0,5,0,3,110,8],
 "vocoder__cmn__api_8h.html#add0b76853f75eb7d92bb35151e8c77ce":[3,0,5,0,3,110,24],

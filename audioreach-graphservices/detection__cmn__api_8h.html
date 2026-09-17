@@ -132,6 +132,9 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmodel__stats__t.html">model_stats_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbatch__drain__complete__info__t.html">batch_drain_complete_info_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmlp_subStruct @h2xmlp_toolPolicy {NO_SUPPORT}  <a href="structbatch__drain__complete__info__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparam__id__detection__engine__buffering__config__t.html">param_id_detection_engine_buffering_config_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">@h2xmlp_parameter {"PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG", PARAM_ID_DETECTION_ENGINE_BUFFERING_CONFIG} @h2xmlp_description { Set the buffering requirements for the detection module.  <a href="structparam__id__detection__engine__buffering__config__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,6 +222,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga9f61bdf55c05527e85a567fad16095fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad66132f6fd11fbd35d035104ed9e4f80" id="r_gad66132f6fd11fbd35d035104ed9e4f80"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmodel__stats__t.html">model_stats_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__weak__detection__event__info__header__t.html#gad66132f6fd11fbd35d035104ed9e4f80">model_stats_t</a></td></tr>
 <tr class="separator:gad66132f6fd11fbd35d035104ed9e4f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26376be149ba4d052a55fea40ce0dfed" id="r_ga26376be149ba4d052a55fea40ce0dfed"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structbatch__drain__complete__info__t.html">batch_drain_complete_info_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__weak__detection__event__info__header__t.html#ga26376be149ba4d052a55fea40ce0dfed">batch_drain_complete_info_t</a></td></tr>
+<tr class="separator:ga26376be149ba4d052a55fea40ce0dfed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af66d47dc008967771366444346d53fb4" id="r_af66d47dc008967771366444346d53fb4"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structparam__id__detection__engine__buffering__config__t.html">param_id_detection_engine_buffering_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detection__cmn__api_8h.html#af66d47dc008967771366444346d53fb4">param_id_detection_engine_buffering_config_t</a></td></tr>
 <tr class="separator:af66d47dc008967771366444346d53fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c97066bcb87fc0eae0a3f1bb1b734ec" id="r_a6c97066bcb87fc0eae0a3f1bb1b734ec"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structparam__id__detection__engine__multi__model__buffering__config__t.html">param_id_detection_engine_multi_model_buffering_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detection__cmn__api_8h.html#a6c97066bcb87fc0eae0a3f1bb1b734ec">param_id_detection_engine_multi_model_buffering_config_t</a></td></tr>
@@ -236,6 +241,7 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a8877accc985fe2a16cbd62dcb8677849">KEY_ID_BEST_CH_IDX_INFO</a>
 , <a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a370c3e9f6c16d926d34e83091a3bfa92">KEY_ID_VOICE_UI_MULTI_MODEL_RESULT_INFO</a>
+, <a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698a35e237be169436b0073f57e578934bff">KEY_ID_BATCH_DRAIN_COMPLETE</a>
 , <a class="el" href="detection__cmn__api_8h.html#a4f3239bdc2684e81962be8af47f0f698aad1e502caf6bb02a3083795e3ae94452">KEY_ID_MAX_VALUE</a> = 0x7FFFFFFF
 <br />
  }</td></tr>
@@ -454,7 +460,7 @@ Enumerations</h2></td></tr>
  <br  />
  -This paramter must be registered by using the APM_CMD_REGISTER_CFG with the sound model in a persistent payload only. <br  />
  <br  />
- -All calibration parameters start from a 4-byte aligned address. This parameter for this module has an additional 8-byte alignment requirement because it performs vector processing directly on the data.} @h2xmlp_persistType { Shared } @h2xmlp_toolPolicy {Calibration} </p>
+ -All calibration parameters start from a 4-byte aligned address. This parameter for this module has an additional 8-byte alignment requirement because it performs vector processing directly on the data.} @h2xmlp_toolPolicy {Calibration} </p>
 
 </div>
 </div>
@@ -688,6 +694,8 @@ Enumerations</h2></td></tr>
  </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a4f3239bdc2684e81962be8af47f0f698a370c3e9f6c16d926d34e83091a3bfa92" name="a4f3239bdc2684e81962be8af47f0f698a370c3e9f6c16d926d34e83091a3bfa92"></a>KEY_ID_VOICE_UI_MULTI_MODEL_RESULT_INFO&#160;</td><td class="fielddoc"><p>Multi Model Detection Engine result info. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4f3239bdc2684e81962be8af47f0f698a35e237be169436b0073f57e578934bff" name="a4f3239bdc2684e81962be8af47f0f698a35e237be169436b0073f57e578934bff"></a>KEY_ID_BATCH_DRAIN_COMPLETE&#160;</td><td class="fielddoc"><p>Batch drain complete notification for Force Recognition in batching mode. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a4f3239bdc2684e81962be8af47f0f698aad1e502caf6bb02a3083795e3ae94452" name="a4f3239bdc2684e81962be8af47f0f698aad1e502caf6bb02a3083795e3ae94452"></a>KEY_ID_MAX_VALUE&#160;</td><td class="fielddoc"><p>Maxium supported value for KEY_ID. </p>
 <p><br  />

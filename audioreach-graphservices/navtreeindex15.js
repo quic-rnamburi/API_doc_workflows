@@ -1,5 +1,9 @@
 var NAVTREEINDEX15 =
 {
+"structapm__cmd__global__shared__mem__map__regions__t.html":[0,55,1,0],
+"structapm__cmd__global__shared__mem__map__regions__t.html#a83db23cf77ed3dd0267eca5edf2bdb49":[0,55,1,0,0],
+"structapm__cmd__global__shared__mem__map__regions__t.html#aa5c6850698f6dd4c8d7a81bf8d60c3e3":[0,55,1,0,3],
+"structapm__cmd__global__shared__mem__map__regions__t.html#ad2eed9ca9c81ed2c91d0c0462b5ced74":[0,55,1,0,2],
 "structapm__cmd__global__shared__mem__map__regions__t.html#af389ff1e6c9a05570395bf26e76564d6":[0,55,1,0,1],
 "structapm__cmd__global__shared__mem__unmap__regions__t.html":[0,55,7,0],
 "structapm__cmd__global__shared__mem__unmap__regions__t.html#aa46c58310a15c41d247776f7e895d7ce":[0,55,7,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX15 =
 "structar__shmem__proc__info__t.html#aa9a909cc16ade89848ea3ee06420e0cf":[2,0,144,2],
 "structar__spf__msg__global__sh__mem__t.html":[2,0,145],
 "structar__spf__msg__global__sh__mem__t.html#a3a643a9f055c01acadb4d326c08cdab0":[2,0,145,2],
-"structar__spf__msg__global__sh__mem__t.html#a4a73a0a7d930403de3c01ea42b495358":[2,0,145,1],
-"structar__spf__msg__global__sh__mem__t.html#aef2db09bb62d178e53cde1647ca5e401":[2,0,145,3],
-"structar__spf__msg__global__sh__mem__t.html#af169862e7001a378b918b1c870d7e4a3":[2,0,145,0],
-"structar__spf__msg__global__sh__mem__t.html#af246c08939faa9e92ba233977df5c706":[2,0,145,4],
-"structasps__acd__usecase__register__ack__payload__t.html":[2,0,146]
+"structar__spf__msg__global__sh__mem__t.html#a4a73a0a7d930403de3c01ea42b495358":[2,0,145,1]
 };

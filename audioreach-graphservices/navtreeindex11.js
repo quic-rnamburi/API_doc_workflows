@@ -1,5 +1,9 @@
 var NAVTREEINDEX11 =
 {
+"opus__decoder__api_8h.html":[3,0,5,0,3,70],
+"opus__decoder__api_8h.html#a014c45f5305e530e5f24ef0f4be458fa":[3,0,5,0,3,70,0],
+"opus__decoder__api_8h.html#a0815e3c214e9dc210d9eab47a5aca77d":[3,0,5,0,3,70,4],
+"opus__decoder__api_8h.html#a9a9bfdc79d91de8a26b31d305287880d":[3,0,5,0,3,70,5],
 "opus__decoder__api_8h.html#ad9c4f97c40c828a47c7dcc4e7f9c41dd":[3,0,5,0,3,70,3],
 "opus__decoder__api_8h.html#ae45d6fd8c670c083638fb4457d2c89be":[3,0,5,0,3,70,1],
 "opus__decoder__api_8h.html#af46011ea42ace5e3d81688da11eb0390":[3,0,5,0,3,70,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX11 =
 "rx__haptics__api_8h.html#ad069f9cb6386cea833182d1e9eb8c966":[3,0,5,0,3,83,145],
 "rx__haptics__api_8h.html#ad0991c2a30d7aa09fc8e9bf70b06855f":[3,0,5,0,3,83,158],
 "rx__haptics__api_8h.html#ad120e4131f2b90a69eb62bea44913d16":[3,0,5,0,3,83,138],
-"rx__haptics__api_8h.html#ad2403383e4f82524231561f563ef52e5":[3,0,5,0,3,83,96],
-"rx__haptics__api_8h.html#ad3bfe850b8da7dc906b16d840d2403cf":[3,0,5,0,3,83,79],
-"rx__haptics__api_8h.html#ad47b2654f732d8d422f14958a6c2594f":[3,0,5,0,3,83,129],
-"rx__haptics__api_8h.html#ad4da5a7fd402fdb69166d6efb3738dc2":[3,0,5,0,3,83,114],
-"rx__haptics__api_8h.html#ad930f5d701e58f858c2672d292fc6cd7":[3,0,5,0,3,83,150]
+"rx__haptics__api_8h.html#ad2403383e4f82524231561f563ef52e5":[3,0,5,0,3,83,96]
 };
