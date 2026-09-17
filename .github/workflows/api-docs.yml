@@ -622,8 +622,15 @@ jobs:
                           if mk in RENDERERS:
                               sections.setdefault(mk, []).append(mdef)
 
-              # Inner classes/structs/unions — direct and via namespace
+              # Inner classes/structs/unions — direct and via namespace, deduped by refid
+              seen_refids = set()
               structs = []
+              def add_struct(ic_cdef):
+                  rid = ic_cdef.get("id", "")
+                  if rid and rid in seen_refids:
+                      return
+                  seen_refids.add(rid)
+                  structs.append(ic_cdef)
               for ic in cdef.findall("innerclass"):
                   ic_refid = ic.get("refid")
                   ic_file  = os.path.join(XML_DIR, f"{ic_refid}.xml")
@@ -635,7 +642,7 @@ jobs:
                       print(f"WARNING: skipping malformed XML {ic_file}: {e}", file=sys.stderr)
                       continue
                   if ic_cdef is not None and ic_cdef.get("kind") in ("struct", "union", "class"):
-                      structs.append(ic_cdef)
+                      add_struct(ic_cdef)
 
               for ins in cdef.findall("innernamespace"):
                   ns_refid = ins.get("refid")
@@ -659,7 +666,7 @@ jobs:
                           continue
                       if ic_cdef is not None and ic_cdef.get("kind") in ("struct", "union", "class"):
                           if class_in_file(ic_cdef):
-                              structs.append(ic_cdef)
+                              add_struct(ic_cdef)
 
               if not any(sections.values()) and not structs:
                   continue
